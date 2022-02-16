@@ -1,0 +1,90 @@
+/* Noto Sans, Noto Serif and Fira Mono fonts from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* Generic styles */
+body {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  font-family: "Noto Serif", serif;
+  width: 60%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Serif", serif;
+}
+
+span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, span.xxlarge, span.bold, span.italic, span.slanted, span.monospace, span.serif, span.sans {
+  color: blue;
+}
+
+/* Specific styles for classes defined by the Lua filter */
+.monospace {
+  font-family: "Fira Mono", monospace;
+}
+
+.sans {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.serif {
+  font-family: "Noto Serif", serif;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.slanted {
+  font-style: oblique;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.smallcaps {
+  font-variant: small-caps;
+}
+
+.xxsmall {
+  font-size: xx-small;
+}
+
+.xsmall {
+  font-size: x-small;
+}
+
+.small {
+  font-size: smaller;
+}
+
+.normal {
+  font-size: 1rem;
+}
+
+.large {
+  font-size: larger;
+}
+
+.xlarge {
+  font-size: x-large;
+}
+
+.xxlarge {
+  font-size: xx-large;
+}
+
+div.center, div.centering {
+  text-align: center;
+}
+div.flushright, div.raggedleft {
+  text-align: right;
+}
+div.flushleft, div.raggedright {
+  text-align: left;
+}

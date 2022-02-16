@@ -14,7 +14,7 @@ DIFF = diff
 # The automatic variable `$<` refers to the first dependency
 # (i.e., the filter file).
 test: $(FILTER_FILE) test/input.md
-	$(PANDOC) --lua-filter=$< --to=native --standalone test/input.md | \
+	$(PANDOC) --lua-filter=$< --to=native test/input.md | \
 		$(DIFF) test/expected.native -
 
 # Ensure that the `test` target is run each time it's called.
@@ -24,8 +24,22 @@ test: $(FILTER_FILE) test/input.md
 # dependency of the `test` target, as that would cause it to be
 # regenerated on each run, making the test pointless.
 test/expected.native: $(FILTER_FILE) test/input.md
-	$(PANDOC) --lua-filter=$< --standalone --to=native --output=$@ \
+	$(PANDOC) --lua-filter=$< --to=native --output=$@ \
 		test/input.md
+
+# Generate specimen documents
+test/fonts-and-alignment.css:
+	sass --no-source-map test/fonts-and-alignment.sass test/fonts-and-alignment.css
+
+test/specimen.html: $(FILTER_FILE) test/input.md
+	$(PANDOC) --lua-filter=$< --to=html5 --standalone \
+		--css=fonts-and-alignment.css --output=$@ test/input.md
+
+test/specimen.pdf: $(FILTER_FILE) test/input.md
+	$(PANDOC) --lua-filter=$< --to=latex --standalone --pdf-engine=lualatex \
+		--output=$@ test/input.md
+
+specimens: test/fonts-and-alignment.css test/specimen.html test/specimen.pdf
 
 #
 # Docs
@@ -64,4 +78,4 @@ docs/$(FILTER_FILE): $(FILTER_FILE)
 
 .PHONY: clean
 clean:
-	rm -f docs/output.md docs/index.html docs/style.css
+	rm -f docs/output.md docs/index.html docs/style.css test/fonts-and-alignment.css test/specimen.*

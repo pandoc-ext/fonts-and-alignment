@@ -1,43 +1,62 @@
-Greetings, a Lua Filter Template
-==================================================================
+Fonts and Alignment a Lua Filter for styling fonts and aligning text
+==============================================================================
 
 [![GitHub build status][CI badge]][CI workflow]
 
-Greetings is a friendly Lua filter that adds a welcoming message
-to the document.
+Fonts and Alignment is a Lua filter designed to style fonts and align text through specification of classes defined by the filter.
 
-This repository serves as a template intended to make publishing
-of pandoc [Lua filters][] easy and convenient. Just click "use
-this template" and then make modifications in your new repository.
-See also the GitHub documentation on [creating a repository from a
-template][from template].
+This filter was originally written to use only with Pandoc generated LaTeX documents but can now be used for HTML and ePub documents.
 
-[Lua filters]: https://pandoc.org/lua-filters.html
-[from template]: https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
+For LaTeX specify your fonts and font options for your document as variables in a [Pandoc defaults file](https://pandoc.org/MANUAL.html#defaults-files) as shown below:
+
+```yaml
+variables:
+  fontsize: 12pt
+  mainfont:  Noto Serif
+  mainfontoptions:
+    - Scale=1.0
+    - BoldFont=* Semibold
+  sansfont: Noto Sans
+  sansfontoptions:
+    - BoldFont=* Semibold
+  monofont: Fira Mono
+  monofontoptions:
+    - BoldFont=* Bold
+  linestretch: 1.2
+```
+
+Alternatively, you may also specify them in a YAML header block at the beginning of your source document like so:
+
+```yaml
+fontsize: 12pt
+mainfont: Noto Serif
+mainfontoptions:
+  - Scale=1.0
+  - BoldFont=* Semibold
+sansfont: Noto Sans
+sansfontoptions:
+  - BoldFont=* Semibold
+monofont: Fira Mono
+monofontoptions:
+  - BoldFont=* Bold
+linestretch: 1.25
+```
+
+For HTML and ePub documents you may use the [fonts-and-alignment.css](https://github.com/nandac/fonts-and-alignment/blob/main/test/fonts-and-alignment.css) as a base file which you may tweak to fit your document.
+
+
 [CI badge]: https://img.shields.io/github/workflow/status/tarleb/lua-filter-template/CI?logo=github
 [CI workflow]: https://github.com/tarleb/lua-filter-template/actions/workflows/ci.yaml
 
-Checklist
-------------------------------------------------------------------
+Basic Usage
+-----------------------------------------------------------------
 
-This is just a template, so a few things should be changed to make
-good use of this template. You can use the checklist below to
-ensure that you get the most out of it. We recommend that you
-perform at least the first two steps, everything else is up to
-you.
+The fonts and alignment filter supports the styling and aligning of both inline and block elements in LaTeX documents.
 
-1. [ ] **Rename the filter**: rename the filter `greetings.lua` to
-   your chosen name. It's often a good idea to make the filter
-   name match the repository name: if your repository is named
-   `lorem`, then the filter should be named `lorem.lua`.
+### Styling for Block and Inline elements
 
-2. [ ] **Update the license**: The template is published under the
-   MIT, and we recommend to keep the same license for your code.
-   You should update the LICENSE file so it has your name.
 
-3. [ ] **Update this README**: describe your filter, so people
-   will know what to expect. You may also want to update the URLs
-   above to match your repository.
+### Styling for Block elements only
 
 License
 ------------------------------------------------------------------
