@@ -10,55 +10,59 @@
 --- License: MIT - see LICENSE for details
 -- Makes sure users know if their pandoc version is too old for this
 -- filter.
-PANDOC_VERSION:must_be_at_least '2.17'
+PANDOC_VERSION:must_be_at_least '2.14'
 
--- Font styles
+-- The table below is categorized according to element tag either Span or Div
+-- and then uner each element tag we have set of styles that apply to that tag.
+-- Those styles in turn correspond to another table containing two values.
+-- The element at index 1 is the LaTeX begin code and the element at index 2 is
+-- LaTeX end code.
 LATEX_CODES_FOR_TAGS = {
   Span = {
     -- Font Styles
-    bold = '\\bfseries ',
-    italic = '\\itshape ',
-    monospace = '\\ttfamily ',
-    sans = '\\sffamily ',
-    serif = '\\rmfamily ',
-    slanted = '\\slshape ',
-    smallcaps = '\\scshape ',
+    bold = { '\\textbf{', '}' },
+    italic = { '\\textit{', '}' },
+    monospace = { '\\texttt{', '}' },
+    sans = { '\\textsf{', '}' },
+    serif = { '\\textrm{', '}' },
+    slanted = { '\\textsl{', '}' },
+    smallcaps = { '\\textsc{', '}' },
 
     -- Font Sizes
-    xxsmall = '\\scriptsize ',
-    xsmall = '\\footnotesize ',
-    small = '\\small ',
-    normal = '\\normalsize ',
-    large = '\\large ',
-    xlarge = '\\Large ',
-    xxlarge = '\\LARGE ',
+    xxsmall = { '\\scriptsize ', nil },
+    xsmall = { '\\footnotesize ', nil },
+    small = { '\\small ', nil },
+    normal = { '\\normalsize ', nil },
+    large = { '\\large ', nil },
+    xlarge = { '\\Large ', nil },
+    xxlarge = { '\\LARGE ', nil },
   },
   Div = {
     -- Font Styles
-    bold = '\\begin{bfseries}',
-    italic = '\\begin{itshape}',
-    monospace = '\\begin{ttfamily}',
-    sans = '\\begin{sffamily}',
-    serif = '\\begin{rmfamily}',
-    slanted = '\\begin{slshape}',
-    smallcaps = '\\begin{scshape}',
+    bold = { '\\begin{bfseries}', '\\end{bfseries}' },
+    italic = { '\\begin{itshape}', '\\end{itshape}' },
+    monospace = { '\\begin{ttfamily}', '\\end{ttfamily}' },
+    sans = { '\\begin{sffamily}', '\\end{sffamily}' },
+    serif = { '\\begin{rmfamily}', '\\end{rmfamily}' },
+    slanted = { '\\begin{slshape}', '\\end{slshape}' },
+    smallcaps = { '\\begin{scshape}',  '\\end{scshape}' },
 
     -- Font Sizes
-    xxsmall = '\\begin{scriptsize}',
-    xsmall = '\\begin{footnotesize}',
-    small = '\\begin{small}',
-    normal = '\\begin{normalsize}',
-    large = '\\begin{large}',
-    xlarge = '\\begin{Large}',
-    xxlarge = '\\begin{LARGE}',
+    xxsmall = { '\\begin{scriptsize}', '\\end{scriptsize}' },
+    xsmall = { '\\begin{footnotesize}', '\\end{footnotesize}' },
+    small = { '\\begin{small}', '\\end{small}' },
+    normal = { '\\begin{normalsize}', '\\end{normalsize}' },
+    large = { '\\begin{large}', '\\end{large}' },
+    xlarge = { '\\begin{Large}', '\\end{Large}' },
+    xxlarge = { '\\begin{LARGE}', '\\end{LARGE}' },
 
     -- Layouts
-    center = '\\begin{center}',
-    flushright = '\\begin{flushright}',
-    flushleft = '\\begin{flushleft}',
-    centering = '\\begin{centering}',
-    raggedleft = '\\begin{raggedleft}',
-    raggedright = '\\begin{raggedright}'
+    center = { '\\begin{center}', '\\end{center}' },
+    flushright = { '\\begin{flushright}', '\\end{flushright}' },
+    flushleft = { '\\begin{flushleft}', '\\end{flushleft}' },
+    centering = { '\\begin{centering}', '\\end{centering}' },
+    raggedleft = { '\\begin{raggedleft}', '\\end{raggedleft}' },
+    raggedright = { '\\begin{raggedright}', '\\end{raggedright}' },
   }
 }
 
@@ -71,13 +75,18 @@ local raw_code_function = {
 -- the LaTeX codes applied based on the class attached to the element
 local function handler (elem)
   local tag = elem.tag
-  local code_for_class = LATEX_CODES_FOR_TAGS[tag]
   local raw = raw_code_function[tag]
+  local code_for_class = LATEX_CODES_FOR_TAGS[tag]
+
+  -- Retrieve the class and the corresponding code and check if any
+  -- of them are specified for the element. If yes add the LaTeX codes.
   for class, code in pairs(code_for_class) do
     if elem.classes:includes(class) then
-      table.insert(elem.content, 1, raw('latex', code))
-      if tag == "Div" then
-        table.insert(elem.content, raw('latex', code:gsub('begin', 'end')))
+      local begin_code = code[1] -- LaTeX code placed in front
+      local end_code = code[2] -- LaTeX code placed at the end
+      table.insert(elem.content, 1, raw('latex', begin_code))
+      if end_code then
+        table.insert(elem.content, raw('latex', end_code))
       end
     end
   end

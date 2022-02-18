@@ -1,34 +1,3 @@
----
-author: Nandakumar Chandrasekhar
-date: 2022-02-09
-fontsize: 12pt
-geometry:
-- margin=25mm
-header-includes: |
-  ```{=tex}
-  \usepackage{hyperref}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  ```
-linestretch: 1.25
-mainfont: Noto Serif
-mainfontoptions:
-- Scale=1.0
-- BoldFont=\* Semibold
-monofont: Fira Mono
-monofontoptions:
-- BoldFont=\* Bold
-papersize: letter
-sansfont: Noto Sans
-sansfontoptions:
-- BoldFont=\* Semibold
-title: Fonts and Alignment for Pandoc Generated Documents
----
-
-```{=tex}
-\usepackage{hyperref}
-\defaultfontfeatures{Scale=MatchLowercase}
-```
-
 ## Layouts for Block Elements
 
 ### Centered Block
@@ -417,40 +386,41 @@ veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
 
 ### Sans-serif Font Inline
 
-[`\sffamily `{=latex}This text should be in sans-serif font even if that
-is not the default font.]{.sans} Lorem ipsum dolor sit amet, consectetur
-adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-magna aliqua.
+[`\textsf{`{=latex}This text should be in sans-serif font even if that
+is not the default font.`}`{=latex}]{.sans} Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
 
 ### Serif Font Inline
 
-[`\rmfamily `{=latex}This text should be in serif font even if that is
-not the default font.]{.serif} Lorem ipsum dolor sit amet, consectetur
-adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-magna aliqua.
+[`\textrm{`{=latex}This text should be in serif font even if that is not
+the default font.`}`{=latex}]{.serif} Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
 
 ### Monospace Font Inline
 
-[`\ttfamily `{=latex}This text should be in monospace.]{.monospace}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua.
+[`\texttt{`{=latex}This text should be in
+monospace.`}`{=latex}]{.monospace} Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
 
 ### Slanted Font Inline
 
-[`\slshape `{=latex}This text should be slanted.]{.slanted} Lorem ipsum
-dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua.
+[`\textsl{`{=latex}This text should be slanted.`}`{=latex}]{.slanted}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
 
 ### Italic Font Inline
 
-[`\itshape `{=latex}This text should be in italic.]{.italic} Lorem ipsum
-dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua.
+[`\textit{`{=latex}This text should be in italic.`}`{=latex}]{.italic}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
 
 ### Bold Font Inline
 
-[`\bfseries `{=latex}This text should be in Bold.]{.bold} Lorem ipsum
-dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+[`\textbf{`{=latex}This text should be in Bold.`}`{=latex}]{.bold} Lorem
+ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.
 
 ### Small Capitals Font Inline

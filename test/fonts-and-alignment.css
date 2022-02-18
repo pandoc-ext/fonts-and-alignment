@@ -19,7 +19,7 @@ h6 {
 }
 
 span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, span.xxlarge, span.bold, span.italic, span.slanted, span.monospace, span.serif, span.sans, span.smallcaps {
-  color: green;
+  color: maroon;
 }
 
 .title,
@@ -66,7 +66,7 @@ span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, spa
 }
 
 .small {
-  font-size: smaller;
+  font-size: small;
 }
 
 .normal {
@@ -74,7 +74,7 @@ span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, spa
 }
 
 .large {
-  font-size: larger;
+  font-size: large;
 }
 
 .xlarge {

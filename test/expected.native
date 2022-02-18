@@ -38,7 +38,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -62,7 +62,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -84,7 +84,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -104,7 +104,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -124,7 +124,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -144,7 +144,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -191,7 +191,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -215,7 +215,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -237,7 +237,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -257,7 +257,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -277,7 +277,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -297,7 +297,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -344,7 +344,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -368,7 +368,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -390,7 +390,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -410,7 +410,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -430,7 +430,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -450,7 +450,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -1030,7 +1030,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -1054,7 +1054,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -1076,7 +1076,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -1096,7 +1096,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -1116,7 +1116,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -1136,7 +1136,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -1178,7 +1178,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -1202,7 +1202,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -1224,7 +1224,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -1244,7 +1244,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -1264,7 +1264,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -1284,7 +1284,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -1331,7 +1331,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -1355,7 +1355,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -1377,7 +1377,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -1397,7 +1397,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -1417,7 +1417,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -1437,7 +1437,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -1479,7 +1479,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -1503,7 +1503,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -1525,7 +1525,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -1545,7 +1545,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -1565,7 +1565,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -1585,7 +1585,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -1627,7 +1627,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -1651,7 +1651,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -1673,7 +1673,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -1693,7 +1693,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -1713,7 +1713,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -1733,7 +1733,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -1775,7 +1775,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -1799,7 +1799,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -1821,7 +1821,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -1841,7 +1841,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -1861,7 +1861,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -1881,7 +1881,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -1930,7 +1930,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -1954,7 +1954,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -1976,7 +1976,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -1996,7 +1996,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -2016,7 +2016,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -2036,7 +2036,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -2100,7 +2100,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -2124,7 +2124,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -2146,7 +2146,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -2166,7 +2166,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -2186,7 +2186,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -2206,7 +2206,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -2255,7 +2255,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -2279,7 +2279,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -2301,7 +2301,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -2321,7 +2321,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -2341,7 +2341,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -2361,7 +2361,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -2403,7 +2403,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -2427,7 +2427,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -2449,7 +2449,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -2469,7 +2469,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -2489,7 +2489,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -2509,7 +2509,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -2551,7 +2551,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -2575,7 +2575,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -2597,7 +2597,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -2617,7 +2617,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -2637,7 +2637,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -2657,7 +2657,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -2699,7 +2699,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -2723,7 +2723,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -2745,7 +2745,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -2765,7 +2765,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -2785,7 +2785,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -2805,7 +2805,7 @@
         , Str "officia"
         , Space
         , Str "deserunt"
-        , Space
+        , SoftBreak
         , Str "mollit"
         , Space
         , Str "anim"
@@ -2854,7 +2854,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -2878,7 +2878,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -2900,7 +2900,7 @@
         , Str "ex"
         , Space
         , Str "ea"
-        , Space
+        , SoftBreak
         , Str "commodo"
         , Space
         , Str "consequat."
@@ -2920,7 +2920,7 @@
         , Str "in"
         , Space
         , Str "voluptate"
-        , Space
+        , SoftBreak
         , Str "velit"
         , Space
         , Str "esse"
@@ -2940,7 +2940,7 @@
         , Str "Excepteur"
         , Space
         , Str "sint"
-        , Space
+        , SoftBreak
         , Str "occaecat"
         , Space
         , Str "cupidatat"
@@ -2989,7 +2989,7 @@
         , Str "do"
         , Space
         , Str "eiusmod"
-        , Space
+        , SoftBreak
         , Str "tempor"
         , Space
         , Str "incididunt"
@@ -3013,7 +3013,7 @@
         , Str "ad"
         , Space
         , Str "minim"
-        , Space
+        , SoftBreak
         , Str "veniam,"
         , Space
         , Str "quis"
@@ -3061,7 +3061,7 @@
 , Para
     [ Span
         ( "" , [ "sans" ] , [] )
-        [ RawInline (Format "latex") "\\sffamily "
+        [ RawInline (Format "latex") "\\textsf{"
         , Str "This"
         , Space
         , Str "text"
@@ -3089,8 +3089,9 @@
         , Str "the"
         , Space
         , Str "default"
-        , Space
+        , SoftBreak
         , Str "font."
+        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
@@ -3108,7 +3109,7 @@
     , Str "adipiscing"
     , Space
     , Str "elit,"
-    , Space
+    , SoftBreak
     , Str "sed"
     , Space
     , Str "do"
@@ -3138,7 +3139,7 @@
 , Para
     [ Span
         ( "" , [ "serif" ] , [] )
-        [ RawInline (Format "latex") "\\rmfamily "
+        [ RawInline (Format "latex") "\\textrm{"
         , Str "This"
         , Space
         , Str "text"
@@ -3166,8 +3167,9 @@
         , Str "the"
         , Space
         , Str "default"
-        , Space
+        , SoftBreak
         , Str "font."
+        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
@@ -3185,7 +3187,7 @@
     , Str "adipiscing"
     , Space
     , Str "elit,"
-    , Space
+    , SoftBreak
     , Str "sed"
     , Space
     , Str "do"
@@ -3220,7 +3222,7 @@
 , Para
     [ Span
         ( "" , [ "monospace" ] , [] )
-        [ RawInline (Format "latex") "\\ttfamily "
+        [ RawInline (Format "latex") "\\texttt{"
         , Str "This"
         , Space
         , Str "text"
@@ -3232,6 +3234,7 @@
         , Str "in"
         , Space
         , Str "monospace."
+        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
@@ -3241,7 +3244,7 @@
     , Str "dolor"
     , Space
     , Str "sit"
-    , Space
+    , SoftBreak
     , Str "amet,"
     , Space
     , Str "consectetur"
@@ -3261,7 +3264,7 @@
     , Str "incididunt"
     , Space
     , Str "ut"
-    , Space
+    , SoftBreak
     , Str "labore"
     , Space
     , Str "et"
@@ -3284,7 +3287,7 @@
 , Para
     [ Span
         ( "" , [ "slanted" ] , [] )
-        [ RawInline (Format "latex") "\\slshape "
+        [ RawInline (Format "latex") "\\textsl{"
         , Str "This"
         , Space
         , Str "text"
@@ -3294,6 +3297,7 @@
         , Str "be"
         , Space
         , Str "slanted."
+        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
@@ -3305,7 +3309,7 @@
     , Str "sit"
     , Space
     , Str "amet,"
-    , Space
+    , SoftBreak
     , Str "consectetur"
     , Space
     , Str "adipiscing"
@@ -3325,7 +3329,7 @@
     , Str "ut"
     , Space
     , Str "labore"
-    , Space
+    , SoftBreak
     , Str "et"
     , Space
     , Str "dolore"
@@ -3341,7 +3345,7 @@
 , Para
     [ Span
         ( "" , [ "italic" ] , [] )
-        [ RawInline (Format "latex") "\\itshape "
+        [ RawInline (Format "latex") "\\textit{"
         , Str "This"
         , Space
         , Str "text"
@@ -3353,6 +3357,7 @@
         , Str "in"
         , Space
         , Str "italic."
+        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
@@ -3364,7 +3369,7 @@
     , Str "sit"
     , Space
     , Str "amet,"
-    , Space
+    , SoftBreak
     , Str "consectetur"
     , Space
     , Str "adipiscing"
@@ -3384,7 +3389,7 @@
     , Str "ut"
     , Space
     , Str "labore"
-    , Space
+    , SoftBreak
     , Str "et"
     , Space
     , Str "dolore"
@@ -3400,7 +3405,7 @@
 , Para
     [ Span
         ( "" , [ "bold" ] , [] )
-        [ RawInline (Format "latex") "\\bfseries "
+        [ RawInline (Format "latex") "\\textbf{"
         , Str "This"
         , Space
         , Str "text"
@@ -3412,6 +3417,7 @@
         , Str "in"
         , Space
         , Str "Bold."
+        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
@@ -3423,7 +3429,7 @@
     , Str "sit"
     , Space
     , Str "amet,"
-    , Space
+    , SoftBreak
     , Str "consectetur"
     , Space
     , Str "adipiscing"
@@ -3443,7 +3449,7 @@
     , Str "ut"
     , Space
     , Str "labore"
-    , Space
+    , SoftBreak
     , Str "et"
     , Space
     , Str "dolore"
@@ -3485,7 +3491,7 @@
     , Str "ipsum"
     , Space
     , Str "dolor"
-    , Space
+    , SoftBreak
     , Str "sit"
     , Space
     , Str "amet,"
@@ -3505,7 +3511,7 @@
     , Str "tempor"
     , Space
     , Str "incididunt"
-    , Space
+    , SoftBreak
     , Str "ut"
     , Space
     , Str "labore"
@@ -3568,7 +3574,7 @@
     , Str "Lorem"
     , Space
     , Str "ipsum"
-    , Space
+    , SoftBreak
     , Str "dolor"
     , Space
     , Str "sit"
@@ -3588,7 +3594,7 @@
     , Str "eiusmod"
     , Space
     , Str "tempor"
-    , Space
+    , SoftBreak
     , Str "incididunt"
     , Space
     , Str "ut"
@@ -3640,7 +3646,7 @@
     , Str "ipsum"
     , Space
     , Str "dolor"
-    , Space
+    , SoftBreak
     , Str "sit"
     , Space
     , Str "amet,"
@@ -3660,7 +3666,7 @@
     , Str "tempor"
     , Space
     , Str "incididunt"
-    , Space
+    , SoftBreak
     , Str "ut"
     , Space
     , Str "labore"
@@ -3705,7 +3711,7 @@
     , Str "sit"
     , Space
     , Str "amet,"
-    , Space
+    , SoftBreak
     , Str "consectetur"
     , Space
     , Str "adipiscing"
@@ -3725,7 +3731,7 @@
     , Str "ut"
     , Space
     , Str "labore"
-    , Space
+    , SoftBreak
     , Str "et"
     , Space
     , Str "dolore"
@@ -3764,7 +3770,7 @@
     , Str "dolor"
     , Space
     , Str "sit"
-    , Space
+    , SoftBreak
     , Str "amet,"
     , Space
     , Str "consectetur"
@@ -3784,7 +3790,7 @@
     , Str "incididunt"
     , Space
     , Str "ut"
-    , Space
+    , SoftBreak
     , Str "labore"
     , Space
     , Str "et"
@@ -3827,7 +3833,7 @@
     , Str "sit"
     , Space
     , Str "amet,"
-    , Space
+    , SoftBreak
     , Str "consectetur"
     , Space
     , Str "adipiscing"
@@ -3847,7 +3853,7 @@
     , Str "ut"
     , Space
     , Str "labore"
-    , Space
+    , SoftBreak
     , Str "et"
     , Space
     , Str "dolore"
@@ -3893,7 +3899,7 @@
     , Str "ipsum"
     , Space
     , Str "dolor"
-    , Space
+    , SoftBreak
     , Str "sit"
     , Space
     , Str "amet,"
@@ -3913,7 +3919,7 @@
     , Str "tempor"
     , Space
     , Str "incididunt"
-    , Space
+    , SoftBreak
     , Str "ut"
     , Space
     , Str "labore"
@@ -3965,7 +3971,7 @@
     , Str "Lorem"
     , Space
     , Str "ipsum"
-    , Space
+    , SoftBreak
     , Str "dolor"
     , Space
     , Str "sit"
@@ -3985,7 +3991,7 @@
     , Str "eiusmod"
     , Space
     , Str "tempor"
-    , Space
+    , SoftBreak
     , Str "incididunt"
     , Space
     , Str "ut"
