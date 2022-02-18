@@ -447,14 +447,17 @@ incididunt ut labore et dolore magna aliqua.
 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.
 
-### Bold Weight Inline
+### Bold Font Inline
 
 [`\bfseries `{=latex}This text should be in Bold.]{.bold} Lorem ipsum
 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.
 
-**Pandoc already provides and inline smallcaps font style hence, it is
-not implemented by this plugin.**
+### Small Capitals Font Inline
+
+[This text should be in small capitals.]{.smallcaps} Lorem ipsum dolor
+sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.
 
 ## Font sizes for Inline Elements
 

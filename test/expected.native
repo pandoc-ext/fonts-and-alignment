@@ -3395,8 +3395,8 @@
     ]
 , Header
     3
-    ( "bold-weight-inline" , [] , [] )
-    [ Str "Bold" , Space , Str "Weight" , Space , Str "Inline" ]
+    ( "bold-font-inline" , [] , [] )
+    [ Str "Bold" , Space , Str "Font" , Space , Str "Inline" ]
 , Para
     [ Span
         ( "" , [ "bold" ] , [] )
@@ -3452,40 +3452,71 @@
     , Space
     , Str "aliqua."
     ]
+, Header
+    3
+    ( "small-capitals-font-inline" , [] , [] )
+    [ Str "Small"
+    , Space
+    , Str "Capitals"
+    , Space
+    , Str "Font"
+    , Space
+    , Str "Inline"
+    ]
 , Para
-    [ Strong
-        [ Str "Pandoc"
+    [ SmallCaps
+        [ Str "This"
         , Space
-        , Str "already"
+        , Str "text"
         , Space
-        , Str "provides"
+        , Str "should"
         , Space
-        , Str "and"
+        , Str "be"
         , Space
-        , Str "inline"
+        , Str "in"
         , Space
-        , Str "smallcaps"
+        , Str "small"
         , Space
-        , Str "font"
-        , Space
-        , Str "style"
-        , Space
-        , Str "hence,"
-        , Space
-        , Str "it"
-        , Space
-        , Str "is"
-        , Space
-        , Str "not"
-        , Space
-        , Str "implemented"
-        , Space
-        , Str "by"
-        , Space
-        , Str "this"
-        , Space
-        , Str "plugin."
+        , Str "capitals."
         ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
     ]
 , Header
     2

@@ -18,8 +18,14 @@ h6 {
   font-family: "Noto Serif", serif;
 }
 
-span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, span.xxlarge, span.bold, span.italic, span.slanted, span.monospace, span.serif, span.sans {
-  color: blue;
+span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, span.xxlarge, span.bold, span.italic, span.slanted, span.monospace, span.serif, span.sans, span.smallcaps {
+  color: green;
+}
+
+.title,
+.author,
+.date {
+  text-align: center;
 }
 
 /* Specific styles for classes defined by the Lua filter */
