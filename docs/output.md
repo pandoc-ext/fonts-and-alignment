@@ -1,3 +1,29 @@
+---
+author: Nandakumar Chandrasekhar
+date: 2022-02-19
+fontsize: 12pt
+geometry:
+- margin=25mm
+header-includes: |
+  ```{=tex}
+  \usepackage{hyperref}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  ```
+linestretch: 1.25
+mainfont: Noto Serif
+mainfontoptions:
+- Scale=1.0
+monofont: Fira Mono
+papersize: letter
+sansfont: Noto Sans
+title: Fonts and Alignment Lua Filter Example Styling
+---
+
+```{=tex}
+\usepackage{hyperref}
+\defaultfontfeatures{Scale=MatchLowercase}
+```
+
 ## Layouts for Block Elements
 
 ### Centered Block
@@ -16,25 +42,6 @@ mollit anim id est laborum.
 
 ```{=latex}
 \end{center}
-```
-:::
-
-### Right Justified Block
-
-::: flushright
-```{=latex}
-\begin{flushright}
-```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-
-```{=latex}
-\end{flushright}
 ```
 :::
 
@@ -57,20 +64,46 @@ mollit anim id est laborum.
 ```
 :::
 
+### Right Justified Block
+
+::: flushright
+```{=latex}
+\begin{flushright}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+
+```{=latex}
+\end{flushright}
+```
+:::
+
 ### Centered Block with User-defined Line Breaks
 
 ::: centering
 ```{=latex}
 \begin{centering}
 ```
-Three Rings for the Elven-kings under the sky,\
-Seven for the Dwarf-lords in their halls of stone,\
-Nine for Mortal Men doomed to die,\
-One for the Dark Lord on his dark throne\
-In the Land of Mordor where the Shadows lie.\
-One Ring to rule them all, One Ring to find them,\
-One Ring to bring them all, and in the darkness bind them,\
-In the Land of Mordor where the Shadows lie.\
+[`\Large `{=latex}Lorem Ipsum]{.xlarge}
+
+Lorem ipsum dolor sit amet, consectetur\
+adipiscing elit, sed do eiusmod\
+tempor incididunt ut labore et dolore\
+magna aliqua. Ut enim ad minim\
+veniam, quis nostrud exercitation ullamco\
+laboris nisi ut aliquip ex ea\
+commodo consequat. Duis aute irure\
+dolor in reprehenderit in voluptate\
+velit esse cillum dolore eu fugiat\
+nulla pariatur. Excepteur sint\
+occaecat cupidatat non proident,\
+sunt in culpa qui officia deserunt\
+mollit anim id est laborum.
 
 ```{=latex}
 \end{centering}
@@ -83,14 +116,21 @@ In the Land of Mordor where the Shadows lie.\
 ```{=latex}
 \begin{raggedleft}
 ```
-Three Rings for the Elven-kings under the sky,\
-Seven for the Dwarf-lords in their halls of stone,\
-Nine for Mortal Men doomed to die,\
-One for the Dark Lord on his dark throne\
-In the Land of Mordor where the Shadows lie.\
-One Ring to rule them all, One Ring to find them,\
-One Ring to bring them all, and in the darkness bind them,\
-In the Land of Mordor where the Shadows lie.\
+[`\Large `{=latex}Lorem Ipsum]{.xlarge}
+
+Lorem ipsum dolor sit amet, consectetur\
+adipiscing elit, sed do eiusmod\
+tempor incididunt ut labore et dolore\
+magna aliqua. Ut enim ad minim\
+veniam, quis nostrud exercitation ullamco\
+laboris nisi ut aliquip ex ea\
+commodo consequat. Duis aute irure\
+dolor in reprehenderit in voluptate\
+velit esse cillum dolore eu fugiat\
+nulla pariatur. Excepteur sint\
+occaecat cupidatat non proident,\
+sunt in culpa qui officia deserunt\
+mollit anim id est laborum.
 
 ```{=latex}
 \end{raggedleft}
@@ -103,14 +143,21 @@ In the Land of Mordor where the Shadows lie.\
 ```{=latex}
 \begin{raggedright}
 ```
-Three Rings for the Elven-kings under the sky,\
-Seven for the Dwarf-lords in their halls of stone,\
-Nine for Mortal Men doomed to die,\
-One for the Dark Lord on his dark throne\
-In the Land of Mordor where the Shadows lie.\
-One Ring to rule them all, One Ring to find them,\
-One Ring to bring them all, and in the darkness bind them,\
-In the Land of Mordor where the Shadows lie.\
+[`\Large `{=latex}Lorem Ipsum]{.xlarge}
+
+Lorem ipsum dolor sit amet, consectetur\
+adipiscing elit, sed do eiusmod\
+tempor incididunt ut labore et dolore\
+magna aliqua. Ut enim ad minim\
+veniam, quis nostrud exercitation ullamco\
+laboris nisi ut aliquip ex ea\
+commodo consequat. Duis aute irure\
+dolor in reprehenderit in voluptate\
+velit esse cillum dolore eu fugiat\
+nulla pariatur. Excepteur sint\
+occaecat cupidatat non proident,\
+sunt in culpa qui officia deserunt\
+mollit anim id est laborum.
 
 ```{=latex}
 \end{raggedright}
@@ -118,6 +165,63 @@ In the Land of Mordor where the Shadows lie.\
 :::
 
 ## Font Styles for Block Elements
+
+### Bold Font Block
+
+::: bold
+```{=latex}
+\begin{bfseries}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+
+```{=latex}
+\end{bfseries}
+```
+:::
+
+### Italic Font Block
+
+::: italic
+```{=latex}
+\begin{itshape}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+
+```{=latex}
+\end{itshape}
+```
+:::
+
+### Monospace Font Block
+
+::: monospace
+```{=latex}
+\begin{ttfamily}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+
+```{=latex}
+\end{ttfamily}
+```
+:::
 
 ### Sans-serif Font Block
 
@@ -154,82 +258,6 @@ mollit anim id est laborum.
 
 ```{=latex}
 \end{rmfamily}
-```
-:::
-
-### Monospace Font Block
-
-::: monospace
-```{=latex}
-\begin{ttfamily}
-```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-
-```{=latex}
-\end{ttfamily}
-```
-:::
-
-### Slanted Font Block
-
-::: slanted
-```{=latex}
-\begin{slshape}
-```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-
-```{=latex}
-\end{slshape}
-```
-:::
-
-### Italic Font Block
-
-::: italic
-```{=latex}
-\begin{itshape}
-```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-
-```{=latex}
-\end{itshape}
-```
-:::
-
-### Bold Font Block
-
-::: bold
-```{=latex}
-\begin{bfseries}
-```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-
-```{=latex}
-\end{bfseries}
 ```
 :::
 
@@ -384,19 +412,17 @@ veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
 
 ## Font Styles for Inline Elements
 
-### Sans-serif Font Inline
+### Bold Font Inline
 
-[`\textsf{`{=latex}This text should be in sans-serif font even if that
-is not the default font.`}`{=latex}]{.sans} Lorem ipsum dolor sit amet,
-consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua.
+[`\textbf{`{=latex}This text should be in bold.`}`{=latex}]{.bold} Lorem
+ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
 
-### Serif Font Inline
+### Italic Font Inline
 
-[`\textrm{`{=latex}This text should be in serif font even if that is not
-the default font.`}`{=latex}]{.serif} Lorem ipsum dolor sit amet,
-consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua.
+[`\textit{`{=latex}This text should be in italic.`}`{=latex}]{.italic}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
 
 ### Monospace Font Inline
 
@@ -405,23 +431,17 @@ monospace.`}`{=latex}]{.monospace} Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua.
 
-### Slanted Font Inline
+### Sans-serif Font Inline
 
-[`\textsl{`{=latex}This text should be slanted.`}`{=latex}]{.slanted}
+[`\textsf{`{=latex}This text should be in sans-serif.`}`{=latex}]{.sans}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
 
-### Italic Font Inline
+### Serif Font Inline
 
-[`\textit{`{=latex}This text should be in italic.`}`{=latex}]{.italic}
+[`\textrm{`{=latex}This text should be in serif.`}`{=latex}]{.serif}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
-
-### Bold Font Inline
-
-[`\textbf{`{=latex}This text should be in Bold.`}`{=latex}]{.bold} Lorem
-ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua.
 
 ### Small Capitals Font Inline
 

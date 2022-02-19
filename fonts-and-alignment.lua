@@ -1,22 +1,18 @@
---- fonts-and-alignment.lua - Enables setting font styles and text alignment in LaTex documents
+--- fonts-and-alignment.lua - Sets font styles and text alignment in LaTeX documents
 ---
 --- Copyright: © 2021-2022 Nandakumar Chandrasekhar and Contributors
 --- License: MIT - see LICENSE for details
--- Makes sure users know if their pandoc version is too old for this
--- filter.
---- fonts-and-alignment.lua - Enables setting font styles and text alignment in LaTex documents
 ---
---- Copyright: © 2021-2022 Nandakumar Chandrasekhar and Contributors
---- License: MIT - see LICENSE for details
 -- Makes sure users know if their pandoc version is too old for this
 -- filter.
 PANDOC_VERSION:must_be_at_least '2.14'
 
--- The table below is categorized according to element tag either Span or Div
--- and then uner each element tag we have set of styles that apply to that tag.
--- Those styles in turn correspond to another table containing two values.
--- The element at index 1 is the LaTeX begin code and the element at index 2 is
--- LaTeX end code.
+-- The table below is categorized according to element tag.
+--
+-- Under each element tag we have a set of styles that apply to that tag.
+-- Those styles in turn correspond to another table containing two values,
+-- the LaTeX begin code and the LaTeX end code. Some styles have a begin code
+-- but no end code in which case the value is nil.
 LATEX_CODES_FOR_TAGS = {
   Span = {
     -- Font Styles
@@ -25,7 +21,6 @@ LATEX_CODES_FOR_TAGS = {
     monospace = { '\\texttt{', '}' },
     sans = { '\\textsf{', '}' },
     serif = { '\\textrm{', '}' },
-    slanted = { '\\textsl{', '}' },
     smallcaps = { '\\textsc{', '}' },
 
     -- Font Sizes
@@ -44,7 +39,6 @@ LATEX_CODES_FOR_TAGS = {
     monospace = { '\\begin{ttfamily}', '\\end{ttfamily}' },
     sans = { '\\begin{sffamily}', '\\end{sffamily}' },
     serif = { '\\begin{rmfamily}', '\\end{rmfamily}' },
-    slanted = { '\\begin{slshape}', '\\end{slshape}' },
     smallcaps = { '\\begin{scshape}',  '\\end{scshape}' },
 
     -- Font Sizes

@@ -4,7 +4,9 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>input</title>
+  <meta name="author" content="Nandakumar Chandrasekhar" />
+  <meta name="dcterms.date" content="2022-02-19" />
+  <title>Fonts and Alignment Lua Filter Example Styling</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -15,24 +17,20 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="fonts-and-alignment.css" />
+  
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
 <body>
+<header id="title-block-header">
+<h1 class="title">Fonts and Alignment Lua Filter Example Styling</h1>
+<p class="author">Nandakumar Chandrasekhar</p>
+<p class="date">2022-02-19</p>
+</header>
 <h2 id="layouts-for-block-elements">Layouts for Block Elements</h2>
 <h3 id="centered-block">Centered Block</h3>
 <div class="center">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.</p>
-</div>
-<h3 id="right-justified-block">Right Justified Block</h3>
-<div class="flushright">
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -51,79 +49,74 @@ voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
 sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.</p>
 </div>
+<h3 id="right-justified-block">Right Justified Block</h3>
+<div class="flushright">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.</p>
+</div>
 <h3 id="centered-block-with-user-defined-line-breaks">Centered Block
 with User-defined Line Breaks</h3>
 <div class="centering">
-<p>Three Rings for the Elven-kings under the sky,<br />
-Seven for the Dwarf-lords in their halls of stone,<br />
-Nine for Mortal Men doomed to die,<br />
-One for the Dark Lord on his dark throne<br />
-In the Land of Mordor where the Shadows lie.<br />
-One Ring to rule them all, One Ring to find them,<br />
-One Ring to bring them all, and in the darkness bind them,<br />
-In the Land of Mordor where the Shadows lie.<br />
-</p>
+<p><span class="xlarge">Lorem Ipsum</span></p>
+<p>Lorem ipsum dolor sit amet, consectetur<br />
+adipiscing elit, sed do eiusmod<br />
+tempor incididunt ut labore et dolore<br />
+magna aliqua. Ut enim ad minim<br />
+veniam, quis nostrud exercitation ullamco<br />
+laboris nisi ut aliquip ex ea<br />
+commodo consequat. Duis aute irure<br />
+dolor in reprehenderit in voluptate<br />
+velit esse cillum dolore eu fugiat<br />
+nulla pariatur. Excepteur sint<br />
+occaecat cupidatat non proident,<br />
+sunt in culpa qui officia deserunt<br />
+mollit anim id est laborum.</p>
 </div>
 <h3 id="right-justified-block-with-user-defined-line-breaks">Right
 Justified Block with User-defined Line Breaks</h3>
 <div class="raggedleft">
-<p>Three Rings for the Elven-kings under the sky,<br />
-Seven for the Dwarf-lords in their halls of stone,<br />
-Nine for Mortal Men doomed to die,<br />
-One for the Dark Lord on his dark throne<br />
-In the Land of Mordor where the Shadows lie.<br />
-One Ring to rule them all, One Ring to find them,<br />
-One Ring to bring them all, and in the darkness bind them,<br />
-In the Land of Mordor where the Shadows lie.<br />
-</p>
+<p><span class="xlarge">Lorem Ipsum</span></p>
+<p>Lorem ipsum dolor sit amet, consectetur<br />
+adipiscing elit, sed do eiusmod<br />
+tempor incididunt ut labore et dolore<br />
+magna aliqua. Ut enim ad minim<br />
+veniam, quis nostrud exercitation ullamco<br />
+laboris nisi ut aliquip ex ea<br />
+commodo consequat. Duis aute irure<br />
+dolor in reprehenderit in voluptate<br />
+velit esse cillum dolore eu fugiat<br />
+nulla pariatur. Excepteur sint<br />
+occaecat cupidatat non proident,<br />
+sunt in culpa qui officia deserunt<br />
+mollit anim id est laborum.</p>
 </div>
 <h3 id="left-justified-block-with-user-defined-line-breaks">Left
 Justified Block with User-defined Line Breaks</h3>
 <div class="raggedright">
-<p>Three Rings for the Elven-kings under the sky,<br />
-Seven for the Dwarf-lords in their halls of stone,<br />
-Nine for Mortal Men doomed to die,<br />
-One for the Dark Lord on his dark throne<br />
-In the Land of Mordor where the Shadows lie.<br />
-One Ring to rule them all, One Ring to find them,<br />
-One Ring to bring them all, and in the darkness bind them,<br />
-In the Land of Mordor where the Shadows lie.<br />
-</p>
+<p><span class="xlarge">Lorem Ipsum</span></p>
+<p>Lorem ipsum dolor sit amet, consectetur<br />
+adipiscing elit, sed do eiusmod<br />
+tempor incididunt ut labore et dolore<br />
+magna aliqua. Ut enim ad minim<br />
+veniam, quis nostrud exercitation ullamco<br />
+laboris nisi ut aliquip ex ea<br />
+commodo consequat. Duis aute irure<br />
+dolor in reprehenderit in voluptate<br />
+velit esse cillum dolore eu fugiat<br />
+nulla pariatur. Excepteur sint<br />
+occaecat cupidatat non proident,<br />
+sunt in culpa qui officia deserunt<br />
+mollit anim id est laborum.</p>
 </div>
 <h2 id="font-styles-for-block-elements">Font Styles for Block
 Elements</h2>
-<h3 id="sans-serif-font-block">Sans-serif Font Block</h3>
-<div class="sans">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.</p>
-</div>
-<h3 id="serif-font-block">Serif Font Block</h3>
-<div class="serif">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.</p>
-</div>
-<h3 id="monospace-font-block">Monospace Font Block</h3>
-<div class="monospace">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.</p>
-</div>
-<h3 id="slanted-font-block">Slanted Font Block</h3>
-<div class="slanted">
+<h3 id="bold-font-block">Bold Font Block</h3>
+<div class="bold">
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -142,8 +135,28 @@ voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
 sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.</p>
 </div>
-<h3 id="bold-font-block">Bold Font Block</h3>
-<div class="bold">
+<h3 id="monospace-font-block">Monospace Font Block</h3>
+<div class="monospace">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.</p>
+</div>
+<h3 id="sans-serif-font-block">Sans-serif Font Block</h3>
+<div class="sans">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.</p>
+</div>
+<h3 id="serif-font-block">Serif Font Block</h3>
+<div class="serif">
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -232,30 +245,24 @@ ex.</p>
 </div>
 <h2 id="font-styles-for-inline-elements">Font Styles for Inline
 Elements</h2>
-<h3 id="sans-serif-font-inline">Sans-serif Font Inline</h3>
-<p><span class="sans">This text should be in sans-serif font even if
-that is not the default font.</span> Lorem ipsum dolor sit amet,
-consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua.</p>
-<h3 id="serif-font-inline">Serif Font Inline</h3>
-<p><span class="serif">This text should be in serif font even if that is
-not the default font.</span> Lorem ipsum dolor sit amet, consectetur
-adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-magna aliqua.</p>
-<h3 id="monospace-font-inline">Monospace Font Inline</h3>
-<p><span class="monospace">This text should be in monospace.</span>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua.</p>
-<h3 id="slanted-font-inline">Slanted Font Inline</h3>
-<p><span class="slanted">This text should be slanted.</span> Lorem ipsum
+<h3 id="bold-font-inline">Bold Font Inline</h3>
+<p><span class="bold">This text should be in bold.</span> Lorem ipsum
 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.</p>
 <h3 id="italic-font-inline">Italic Font Inline</h3>
 <p><span class="italic">This text should be in italic.</span> Lorem
 ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.</p>
-<h3 id="bold-font-inline">Bold Font Inline</h3>
-<p><span class="bold">This text should be in Bold.</span> Lorem ipsum
+<h3 id="monospace-font-inline">Monospace Font Inline</h3>
+<p><span class="monospace">This text should be in monospace.</span>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.</p>
+<h3 id="sans-serif-font-inline">Sans-serif Font Inline</h3>
+<p><span class="sans">This text should be in sans-serif.</span> Lorem
+ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.</p>
+<h3 id="serif-font-inline">Serif Font Inline</h3>
+<p><span class="serif">This text should be in serif.</span> Lorem ipsum
 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.</p>
 <h3 id="small-capitals-font-inline">Small Capitals Font Inline</h3>

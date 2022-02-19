@@ -1,20 +1,26 @@
+---
+title: Fonts and Alignment Lua Filter Example Styling
+author: Nandakumar Chandrasekhar
+date: 2022-02-19
+papersize: letter
+geometry:
+  - margin=25mm
+fontsize: 12pt
+mainfont: Noto Serif
+mainfontoptions:
+  - Scale=1.0
+sansfont:  Noto Sans
+monofont: Fira Mono
+linestretch: 1.25
+header-includes: |
+  \usepackage{hyperref}
+  \defaultfontfeatures{Scale=MatchLowercase}
+---
 ## Layouts for Block Elements
 
 ### Centered Block
 
 ::: center
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-:::
-
-### Right Justified Block
-
-::: flushright
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -36,86 +42,83 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.
 :::
 
+### Right Justified Block
+
+::: flushright
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+:::
+
 ### Centered Block with User-defined Line Breaks
 
 ::: centering
-Three Rings for the Elven-kings under the sky,\
-Seven for the Dwarf-lords in their halls of stone,\
-Nine for Mortal Men doomed to die,\
-One for the Dark Lord on his dark throne\
-In the Land of Mordor where the Shadows lie.\
-One Ring to rule them all, One Ring to find them,\
-One Ring to bring them all, and in the darkness bind them,\
-In the Land of Mordor where the Shadows lie.\
+[Lorem Ipsum]{.xlarge}
+
+Lorem ipsum dolor sit amet, consectetur\
+adipiscing elit, sed do eiusmod\
+tempor incididunt ut labore et dolore\
+magna aliqua. Ut enim ad minim\
+veniam, quis nostrud exercitation ullamco\
+laboris nisi ut aliquip ex ea\
+commodo consequat. Duis aute irure\
+dolor in reprehenderit in voluptate\
+velit esse cillum dolore eu fugiat\
+nulla pariatur. Excepteur sint\
+occaecat cupidatat non proident,\
+sunt in culpa qui officia deserunt\
+mollit anim id est laborum.
 :::
 
 ### Right Justified Block with User-defined Line Breaks
 
 ::: raggedleft
-Three Rings for the Elven-kings under the sky,\
-Seven for the Dwarf-lords in their halls of stone,\
-Nine for Mortal Men doomed to die,\
-One for the Dark Lord on his dark throne\
-In the Land of Mordor where the Shadows lie.\
-One Ring to rule them all, One Ring to find them,\
-One Ring to bring them all, and in the darkness bind them,\
-In the Land of Mordor where the Shadows lie.\
+[Lorem Ipsum]{.xlarge}
+
+Lorem ipsum dolor sit amet, consectetur\
+adipiscing elit, sed do eiusmod\
+tempor incididunt ut labore et dolore\
+magna aliqua. Ut enim ad minim\
+veniam, quis nostrud exercitation ullamco\
+laboris nisi ut aliquip ex ea\
+commodo consequat. Duis aute irure\
+dolor in reprehenderit in voluptate\
+velit esse cillum dolore eu fugiat\
+nulla pariatur. Excepteur sint\
+occaecat cupidatat non proident,\
+sunt in culpa qui officia deserunt\
+mollit anim id est laborum.
 :::
 
 ### Left Justified Block with User-defined Line Breaks
 
 ::: raggedright
-Three Rings for the Elven-kings under the sky,\
-Seven for the Dwarf-lords in their halls of stone,\
-Nine for Mortal Men doomed to die,\
-One for the Dark Lord on his dark throne\
-In the Land of Mordor where the Shadows lie.\
-One Ring to rule them all, One Ring to find them,\
-One Ring to bring them all, and in the darkness bind them,\
-In the Land of Mordor where the Shadows lie.\
+[Lorem Ipsum]{.xlarge}
+
+Lorem ipsum dolor sit amet, consectetur\
+adipiscing elit, sed do eiusmod\
+tempor incididunt ut labore et dolore\
+magna aliqua. Ut enim ad minim\
+veniam, quis nostrud exercitation ullamco\
+laboris nisi ut aliquip ex ea\
+commodo consequat. Duis aute irure\
+dolor in reprehenderit in voluptate\
+velit esse cillum dolore eu fugiat\
+nulla pariatur. Excepteur sint\
+occaecat cupidatat non proident,\
+sunt in culpa qui officia deserunt\
+mollit anim id est laborum.
 :::
 
 ## Font Styles for Block Elements
 
-### Sans-serif Font Block
+### Bold Font Block
 
-::: sans
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-:::
-
-### Serif Font Block
-
-::: serif
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-:::
-
-### Monospace Font Block
-
-::: monospace
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-:::
-
-### Slanted Font Block
-
-::: slanted
+::: bold
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -137,9 +140,33 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.
 :::
 
-### Bold Font Block
+### Monospace Font Block
 
-::: bold
+::: monospace
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+:::
+
+### Sans-serif Font Block
+
+::: sans
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+:::
+
+### Serif Font Block
+
+::: serif
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -244,27 +271,9 @@ veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
 
 ## Font Styles for Inline Elements
 
-### Sans-serif Font Inline
+### Bold Font Inline
 
-[This text should be in sans-serif font even if that is not the default
-font.]{.sans} Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-### Serif Font Inline
-
-[This text should be in serif font even if that is not the default
-font.]{.serif} Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-### Monospace Font Inline
-
-[This text should be in monospace.]{.monospace} Lorem ipsum dolor sit
-amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-labore et dolore magna aliqua.
-
-### Slanted Font Inline
-
-[This text should be slanted.]{.slanted} Lorem ipsum dolor sit amet,
+[This text should be in bold.]{.bold} Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua.
 
@@ -274,11 +283,21 @@ et dolore magna aliqua.
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua.
 
-### Bold Font Inline
+### Monospace Font Inline
 
-[This text should be in Bold.]{.bold} Lorem ipsum dolor sit amet,
-consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua.
+[This text should be in monospace.]{.monospace} Lorem ipsum dolor sit
+amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna aliqua.
+
+### Sans-serif Font Inline
+
+[This text should be in sans-serif.]{.sans} Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+### Serif Font Inline
+
+[This text should be in serif.]{.serif} Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 ### Small Capitals Font Inline
 
