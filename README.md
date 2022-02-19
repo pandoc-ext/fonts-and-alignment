@@ -1,4 +1,4 @@
-Fonts and Alignment a Lua Filter for styling fonts and aligning text
+Fonts and Alignment Lua Filter
 ==============================================================================
 
 [![GitHub build status][CI badge]][CI workflow]
