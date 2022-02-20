@@ -7,7 +7,7 @@ Fonts and Alignment is a Lua filter designed to style fonts and align text in Pa
 
 The filter defines a number of classes that when specified correspond to LaTeX commands which in turn provide the requisite styling.
 
-The same classes may be used when generating HTML but you will need to provide a stylesheet to define the required styles. To aid in the creation of a stylesheet a [specimen](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.css) has been provided. You may view the rendered HTML [here](https://htmlpreview.github.io/?https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.html).
+The same classes may be used when generating HTML but you will need to provide a stylesheet to define the required styles. To aid in the creation of a stylesheet a [specimen CSS file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.css) and a [specimen SASS file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.sass) have been provided. You may view the rendered HTML [here](https://htmlpreview.github.io/?https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.html).
 
 To preview the PDF document please see [here](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.pdf).
 
@@ -21,23 +21,25 @@ Before starting to use this filter we recommend that you set up the fonts you wi
 
 ```yaml
 variables:
-  fontsize: 12pt
-  mainfont: Noto Serif
-  sansfont: Noto Sans
-  monofont: Fira Mono
+  fontsize: <font-size>
+  mainfont: <serif-font>
+  sansfont: <sans-serif-font>
+  monofont: <monospace-font>
 ```
 
 Or in a YAML block at the beginning of your source document:
 
 ```yaml
 ---
-fontsize: 12pt
-mainfont: Noto Serif
-sansfont: Noto Sans
-monofont: Fira Mono
+fontsize: <font-size>
+mainfont: <serif-font>
+sansfont: <sans-serif-font>
+monofont: <monospace-font>
 ---
 
 ```
+
+Replace the placeholders above with your choices for Serif, Sans-serif and Monospace fonts.
 
 Classes Defined in the Filter
 -----------------------------------------------------------------
@@ -48,12 +50,12 @@ The following classes have been defined for various font styles and supports bot
 
 | Class       | Short Hand | Inline LaTeX   | Block LaTeX                         | Description               |
 |-------------|------------|----------------|-------------------------------------|---------------------------|
-| `bold`      | `bf`       | `\textbf{...}` | `\begin{bfseries}...\end{bfseries}` | Bold font weight.          |
-| `italic`    | `it`       | `\textit{...}` | `\begin{itshape}...\end{itshape}`   | Italic font style.         |
+| `bold`      | `bf`       | `\textbf{...}` | `\begin{bfseries}...\end{bfseries}` | Bold font series/weight.          |
+| `italic`    | `it`       | `\textit{...}` | `\begin{itshape}...\end{itshape}`   | Italic font shape.         |
 | `monospace` | `tt`       | `\texttt{...}` | `\begin{ttfamily}...\end{ttfamily}` | Monospace font family.     |
 | `sans`      | `sf`       | `\textsf{...}` | `\begin{sffamily}...\end{sffamily}` | Sans-serif font family.    |
 | `serif`     | `rm`       | `\textrm{...}` | `\begin{rmfamily}...\end{rmfamily}` | Serif font family.         |
-| `smallcaps` | `sc`       | `\textsc{...}` | `\begin{scshape}...\end{scshape}`   | Small capitals font style. |
+| `smallcaps` | `sc`       | `\textsc{...}` | `\begin{scshape}...\end{scshape}`   | Small capitals font shape. |
 
 __Please make sure that your font has support for the styles you wish to use in your document. Otherwise LaTeX will substitute the font with its default font giving you unexpected results.__
 
@@ -73,12 +75,12 @@ The following layouts are defined for block elements exclusively:
 
 | Class         | LaTeX code                                | Description                                                                 |
 |---------------|-------------------------------------------|-----------------------------------------------------------------------------|
-| `center`      | `\begin{center}...\end{center}`           | Center blocks of text like paragraphs.                                      |
-| `flushright`  | `\begin{flushright}...\end{flushright}`   | Right justify blocks of text like paragraphs.                               |
-| `flushleft`   | `\begin{flushleft}...\end{flushleft}`     | Left justify blocks of text like paragraphs.                                |
-| `centering`   | `\begin{centering}...\end{centering}`     | Center blocks of text with manual line breaks like verses of poetry.        |
-| `raggedleft`  | `\begin{raggedleft}...\end{raggedleft}`   | Right justify blocks of text with manual line breaks like verses of poetry. |
-| `raggedright` | `\begin{raggedright}...\end{raggedright}` | Left justify blocks of text with manual line breaks like verses of poetry.  |
+| `center`      | `\begin{center}...\end{center}`           | Center blocks of text, like paragraphs.                                      |
+| `flushright`  | `\begin{flushright}...\end{flushright}`   | Right justify blocks of text, like paragraphs.                               |
+| `flushleft`   | `\begin{flushleft}...\end{flushleft}`     | Left justify blocks of text, like paragraphs.                                |
+| `centering`   | `\begin{centering}...\end{centering}`     | Center blocks of text with manual line breaks,like verses of poetry.        |
+| `raggedleft`  | `\begin{raggedleft}...\end{raggedleft}`   | Right justify blocks of text with manual line breaks, like verses of poetry. |
+| `raggedright` | `\begin{raggedright}...\end{raggedright}` | Left justify blocks of text with manual line breaks, like verses of poetry.  |
 
 Styling Inline Elements
 -----------------------------------------------------------------
@@ -86,7 +88,7 @@ Styling Inline Elements
 To style an inline element in your document use the syntax below:
 
 ```markdown
-[<inline-text>]{.<class>}
+[<inline-text>]{.<class-name>}
 ```
 
 For example to change the font weight for some inline text into bold we do:
@@ -121,7 +123,7 @@ Styling Block elements
 To style a block element use the following syntax below:
 
 ```markdown
-::: <class>
+::: <class-name>
 <block-of-text>
 :::
 ```
@@ -129,7 +131,7 @@ To style a block element use the following syntax below:
 Therefore, to center a block of text you would do:
 
 ```markdown
-::: center
+::: center # Curly brackets not required when specifying only a single class
 This is some text that is centered.
 :::
 ```
@@ -137,14 +139,41 @@ This is some text that is centered.
 You may also combine styles like so:
 
 ```markdown
-::: {.center .bold}
+::: {.center .bold} # Curly brackets required when specifying more than one class
 This is some text that is centered and in bold font.
 :::
 ```
 
-Please note the change in syntax when combining two styles for block elements.
-
 Refer to the [Pandoc documentation](https://pandoc.org/MANUAL.html#extension-fenced_divs) for more information on styling block elements.
+
+Usage
+------------------------------------------------------------------
+
+To use this filter in your projects follow the steps below:
+
+1. Download the filter from the repository:
+
+    ```bash
+    wget https://github.com/nandac/fonts-and-alignment/blob/main/fonts-and-alignment.lua
+    ```
+
+1. Move the filter to a location of your choosing.
+
+1. You may add the filter to your defaults file like so:
+
+    ```yaml
+    filters:
+      - fonts-and-alignment.lua
+    ```
+
+    or specify it as an option on the command line:
+
+    ```bash
+    pandoc --from markdown --to latex --lua-filter fonts-and-alignment.lua \
+    --pdf-engine lualatex --output <output.pdf> <input.md>
+    ```
+
+    Take care to replace the placeholder above with your output and input files.
 
 Acknowledgements
 ------------------------------------------------------------------
