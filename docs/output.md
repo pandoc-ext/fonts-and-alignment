@@ -1,28 +1,16 @@
 ---
 author: Nandakumar Chandrasekhar
-date: 2022-02-19
+date: 2022-02-20
 fontsize: 12pt
 geometry:
 - margin=25mm
-header-includes: |
-  ```{=tex}
-  \usepackage{hyperref}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  ```
 linestretch: 1.25
 mainfont: Noto Serif
-mainfontoptions:
-- Scale=1.0
 monofont: Fira Mono
 papersize: letter
 sansfont: Noto Sans
-title: Fonts and Alignment Lua Filter Example Styling
+title: Fonts and Alignment Lua Filter Sample Outputs
 ---
-
-```{=tex}
-\usepackage{hyperref}
-\defaultfontfeatures{Scale=MatchLowercase}
-```
 
 ## Layouts for Block Elements
 
@@ -89,8 +77,6 @@ mollit anim id est laborum.
 ```{=latex}
 \begin{centering}
 ```
-[`\Large `{=latex}Lorem Ipsum]{.xlarge}
-
 Lorem ipsum dolor sit amet, consectetur\
 adipiscing elit, sed do eiusmod\
 tempor incididunt ut labore et dolore\
@@ -116,8 +102,6 @@ mollit anim id est laborum.
 ```{=latex}
 \begin{raggedleft}
 ```
-[`\Large `{=latex}Lorem Ipsum]{.xlarge}
-
 Lorem ipsum dolor sit amet, consectetur\
 adipiscing elit, sed do eiusmod\
 tempor incididunt ut labore et dolore\
@@ -143,8 +127,6 @@ mollit anim id est laborum.
 ```{=latex}
 \begin{raggedright}
 ```
-[`\Large `{=latex}Lorem Ipsum]{.xlarge}
-
 Lorem ipsum dolor sit amet, consectetur\
 adipiscing elit, sed do eiusmod\
 tempor incididunt ut labore et dolore\

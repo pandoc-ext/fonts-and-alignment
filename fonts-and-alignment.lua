@@ -23,6 +23,14 @@ LATEX_CODES_FOR_TAGS = {
     serif = { '\\textrm{', '}' },
     smallcaps = { '\\textsc{', '}' },
 
+    -- Font styles corresponding to TeX font switches
+    bf = { '\\textbf{', '}' },
+    it = { '\\textit{', '}' },
+    tt = { '\\texttt{', '}' },
+    sf = { '\\textsf{', '}' },
+    rm = { '\\textrm{', '}' },
+    sc = { '\\textsc{', '}' },
+
     -- Font Sizes
     xxsmall = { '\\scriptsize ', nil },
     xsmall = { '\\footnotesize ', nil },
@@ -40,6 +48,14 @@ LATEX_CODES_FOR_TAGS = {
     sans = { '\\begin{sffamily}', '\\end{sffamily}' },
     serif = { '\\begin{rmfamily}', '\\end{rmfamily}' },
     smallcaps = { '\\begin{scshape}',  '\\end{scshape}' },
+
+    -- Font styles corresponding to TeX font switches
+    bf = { '\\begin{bfseries}', '\\end{bfseries}' },
+    it = { '\\begin{itshape}', '\\end{itshape}' },
+    tt = { '\\begin{ttfamily}', '\\end{ttfamily}' },
+    sf = { '\\begin{sffamily}', '\\end{sffamily}' },
+    rm = { '\\begin{rmfamily}', '\\end{rmfamily}' },
+    sc = { '\\begin{scshape}',  '\\end{scshape}' },
 
     -- Font Sizes
     xxsmall = { '\\begin{scriptsize}', '\\end{scriptsize}' },

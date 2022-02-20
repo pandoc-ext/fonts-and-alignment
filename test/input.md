@@ -1,20 +1,15 @@
 ---
-title: Fonts and Alignment Lua Filter Example Styling
+title: Fonts and Alignment Lua Filter Sample Outputs
 author: Nandakumar Chandrasekhar
-date: 2022-02-19
+date: 2022-02-20
 papersize: letter
 geometry:
   - margin=25mm
 fontsize: 12pt
 mainfont: Noto Serif
-mainfontoptions:
-  - Scale=1.0
-sansfont:  Noto Sans
+sansfont: Noto Sans
 monofont: Fira Mono
 linestretch: 1.25
-header-includes: |
-  \usepackage{hyperref}
-  \defaultfontfeatures{Scale=MatchLowercase}
 ---
 ## Layouts for Block Elements
 
@@ -57,8 +52,6 @@ mollit anim id est laborum.
 ### Centered Block with User-defined Line Breaks
 
 ::: centering
-[Lorem Ipsum]{.xlarge}
-
 Lorem ipsum dolor sit amet, consectetur\
 adipiscing elit, sed do eiusmod\
 tempor incididunt ut labore et dolore\
@@ -77,8 +70,6 @@ mollit anim id est laborum.
 ### Right Justified Block with User-defined Line Breaks
 
 ::: raggedleft
-[Lorem Ipsum]{.xlarge}
-
 Lorem ipsum dolor sit amet, consectetur\
 adipiscing elit, sed do eiusmod\
 tempor incididunt ut labore et dolore\
@@ -97,8 +88,6 @@ mollit anim id est laborum.
 ### Left Justified Block with User-defined Line Breaks
 
 ::: raggedright
-[Lorem Ipsum]{.xlarge}
-
 Lorem ipsum dolor sit amet, consectetur\
 adipiscing elit, sed do eiusmod\
 tempor incididunt ut labore et dolore\
@@ -291,13 +280,15 @@ labore et dolore magna aliqua.
 
 ### Sans-serif Font Inline
 
-[This text should be in sans-serif.]{.sans} Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+[This text should be in sans-serif.]{.sans} Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
 
 ### Serif Font Inline
 
-[This text should be in serif.]{.serif} Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+[This text should be in serif.]{.serif} Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
 
 ### Small Capitals Font Inline
 

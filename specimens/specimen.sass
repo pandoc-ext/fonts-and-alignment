@@ -18,20 +18,25 @@ h6
   font-family: "Noto Serif", serif
 
 span
+  &.bold,
+  &.italic,
+  &.monospace,
+  &.serif,
+  &.sans,
+  &.smallcaps,
+  &.bf,
+  &.it,
+  &.tt,
+  &.rm,
+  &.sf,
+  &.sc,
   &.xxsmall,
   &.xsmall,
   &.small,
   &.normal,
   &.large,
   &.xlarge,
-  &.xxlarge,
-  &.bold,
-  &.italic,
-  &.slanted,
-  &.monospace,
-  &.serif,
-  &.sans,
-  &.smallcaps
+  &.xxlarge
     color: maroon
 
 .title,
@@ -40,22 +45,28 @@ span
   text-align: center
 
 /* Specific styles for classes defined by the Lua filter */
-.bold
+.bold,
+.bf
   font-weight: 700
 
-.italic
+.italic,
+.it
   font-style: italic
 
-.monospace
+.monospace,
+.tt
   font-family: "Fira Mono", monospace
 
-.sans
+.sans,
+.sf
   font-family: "Noto Sans", sans-serif
 
-.serif
+.serif,
+.rm
   font-family: "Noto Serif", serif
 
-.smallcaps
+.smallcaps,
+.sc
   font-variant: small-caps
 
 .xxsmall

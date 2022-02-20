@@ -18,7 +18,7 @@ h6 {
   font-family: "Noto Serif", serif;
 }
 
-span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, span.xxlarge, span.bold, span.italic, span.slanted, span.monospace, span.serif, span.sans, span.smallcaps {
+span.bold, span.italic, span.monospace, span.serif, span.sans, span.smallcaps, span.bf, span.it, span.tt, span.rm, span.sf, span.sc, span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, span.xxlarge {
   color: maroon;
 }
 
@@ -29,27 +29,33 @@ span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, spa
 }
 
 /* Specific styles for classes defined by the Lua filter */
-.bold {
+.bold,
+.bf {
   font-weight: 700;
 }
 
-.italic {
+.italic,
+.it {
   font-style: italic;
 }
 
-.monospace {
+.monospace,
+.tt {
   font-family: "Fira Mono", monospace;
 }
 
-.sans {
+.sans,
+.sf {
   font-family: "Noto Sans", sans-serif;
 }
 
-.serif {
+.serif,
+.rm {
   font-family: "Noto Serif", serif;
 }
 
-.smallcaps {
+.smallcaps,
+.sc {
   font-variant: small-caps;
 }
 

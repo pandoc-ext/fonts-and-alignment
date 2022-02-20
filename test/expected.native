@@ -482,15 +482,6 @@
     ( "" , [ "centering" ] , [] )
     [ RawBlock (Format "latex") "\\begin{centering}"
     , Para
-        [ Span
-            ( "" , [ "xlarge" ] , [] )
-            [ RawInline (Format "latex") "\\Large "
-            , Str "Lorem"
-            , Space
-            , Str "Ipsum"
-            ]
-        ]
-    , Para
         [ Str "Lorem"
         , Space
         , Str "ipsum"
@@ -655,15 +646,6 @@
     ( "" , [ "raggedleft" ] , [] )
     [ RawBlock (Format "latex") "\\begin{raggedleft}"
     , Para
-        [ Span
-            ( "" , [ "xlarge" ] , [] )
-            [ RawInline (Format "latex") "\\Large "
-            , Str "Lorem"
-            , Space
-            , Str "Ipsum"
-            ]
-        ]
-    , Para
         [ Str "Lorem"
         , Space
         , Str "ipsum"
@@ -827,15 +809,6 @@
 , Div
     ( "" , [ "raggedright" ] , [] )
     [ RawBlock (Format "latex") "\\begin{raggedright}"
-    , Para
-        [ Span
-            ( "" , [ "xlarge" ] , [] )
-            [ RawInline (Format "latex") "\\Large "
-            , Str "Lorem"
-            , Space
-            , Str "Ipsum"
-            ]
-        ]
     , Para
         [ Str "Lorem"
         , Space
@@ -3116,13 +3089,13 @@
     , Str "sit"
     , Space
     , Str "amet,"
-    , Space
+    , SoftBreak
     , Str "consectetur"
     , Space
     , Str "adipiscing"
     , Space
     , Str "elit,"
-    , SoftBreak
+    , Space
     , Str "sed"
     , Space
     , Str "do"
@@ -3136,7 +3109,7 @@
     , Str "ut"
     , Space
     , Str "labore"
-    , Space
+    , SoftBreak
     , Str "et"
     , Space
     , Str "dolore"
@@ -3176,13 +3149,13 @@
     , Str "sit"
     , Space
     , Str "amet,"
-    , Space
+    , SoftBreak
     , Str "consectetur"
     , Space
     , Str "adipiscing"
     , Space
     , Str "elit,"
-    , SoftBreak
+    , Space
     , Str "sed"
     , Space
     , Str "do"
@@ -3196,7 +3169,7 @@
     , Str "ut"
     , Space
     , Str "labore"
-    , Space
+    , SoftBreak
     , Str "et"
     , Space
     , Str "dolore"
