@@ -146,6 +146,11 @@ Please note the change in syntax when combining two styles for block elements.
 
 Refer to the [Pandoc documentation](https://pandoc.org/MANUAL.html#extension-fenced_divs) for more information on styling block elements.
 
+Acknowledgements
+------------------------------------------------------------------
+
+Special thanks to [Albert Krewinkel](https://github.com/tarleb) and [Benct Philip Jonsson](https://github.com/bpj) for their valuable feedback and suggestions during the development of this filter.
+
 License
 ------------------------------------------------------------------
 
