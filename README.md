@@ -53,7 +53,7 @@ The following classes have been defined for various font styles and supports bot
 | `serif`     | `rm`       | `\textrm{...}` | `\begin{rmfamily}...\end{rmfamily}` | Serif font family.         |
 | `smallcaps` | `sc`       | `\textsc{...}` | `\begin{scshape}...\end{scshape}`   | Small capitals font style. |
 
-__Please make sure that your font has support for the style you wish to use in your document.__
+__Please make sure that your font has support for the styles you wish to use in your document. Otherwise LaTeX will substitute the font with its default font giving you unexpected results.__
 
 The following font sizes have also been defined for inline and block elements:
 
