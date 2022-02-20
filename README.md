@@ -9,8 +9,8 @@ The filter defines a number of classes that when specified correspond to LaTeX c
 
 The same classes may be used when generating HTML but you will need to provide a stylesheet to define the required styles. To aid in the creation of a stylesheet a [specimen stylesheet](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.css) has been provided.
 
-[CI badge]: https://img.shields.io/github/workflow/status/tarleb/lua-filter-template/CI?logo=github
-[CI workflow]: https://github.com/tarleb/lua-filter-template/actions/workflows/ci.yaml
+[CI badge]: https://img.shields.io/github/workflow/status/nandac/fonts-and-alignment/CI?logo=github
+[CI workflow]: https://github.com/nandac/fonts-and-alignment/actions/workflows/ci.yaml
 
 Prerequisites
 -----------------------------------------------------------------
