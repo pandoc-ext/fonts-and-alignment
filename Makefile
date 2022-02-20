@@ -13,6 +13,9 @@ SPECIMEN_CSS = specimen.css
 SPECIMEN_HTML = specimen.html
 SPECIMEN_PDF = specimen.pdf
 
+.PHONY: all
+all: clean docs specimens test/expected.native
+
 # Test that running the filter on the sample input document yields
 # the expected output.
 #
