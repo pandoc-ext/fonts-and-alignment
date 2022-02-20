@@ -154,7 +154,7 @@ To use this filter in your projects follow the steps below:
 1. Download the filter from the repository:
 
     ```bash
-    wget https://github.com/nandac/fonts-and-alignment/blob/main/fonts-and-alignment.lua
+    wget https://raw.githubusercontent.com/nandac/fonts-and-alignment/main/fonts-and-alignment.lua
     ```
 
 1. Move the filter to a location of your choosing.
