@@ -2887,8 +2887,8 @@
     ]
 , Div
     ( "" , [ "sc" , "bf" , "it" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{bfseries}"
-    , RawBlock (Format "latex") "\\begin{itshape}"
+    [ RawBlock (Format "latex") "\\begin{itshape}"
+    , RawBlock (Format "latex") "\\begin{bfseries}"
     , RawBlock (Format "latex") "\\begin{scshape}"
     , Para
         [ Str "Lorem"
@@ -3008,8 +3008,8 @@
         , Str "proident"
         ]
     , RawBlock (Format "latex") "\\end{scshape}"
-    , RawBlock (Format "latex") "\\end{itshape}"
     , RawBlock (Format "latex") "\\end{bfseries}"
+    , RawBlock (Format "latex") "\\end{itshape}"
     ]
 , Header
     3
@@ -3036,8 +3036,8 @@
 , Div
     ( "" , [ "tt" , "xsmall" , "bf" ] , [] )
     [ RawBlock (Format "latex") "\\begin{bfseries}"
-    , RawBlock (Format "latex") "\\begin{ttfamily}"
     , RawBlock (Format "latex") "\\begin{footnotesize}"
+    , RawBlock (Format "latex") "\\begin{ttfamily}"
     , Para
         [ Str "Lorem"
         , Space
@@ -3155,8 +3155,8 @@
         , Space
         , Str "proident"
         ]
-    , RawBlock (Format "latex") "\\end{footnotesize}"
     , RawBlock (Format "latex") "\\end{ttfamily}"
+    , RawBlock (Format "latex") "\\end{footnotesize}"
     , RawBlock (Format "latex") "\\end{bfseries}"
     ]
 , Header
@@ -3181,9 +3181,9 @@
     ]
 , Div
     ( "" , [ "flushright" , "sf" , "it" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{flushright}"
+    [ RawBlock (Format "latex") "\\begin{itshape}"
     , RawBlock (Format "latex") "\\begin{sffamily}"
-    , RawBlock (Format "latex") "\\begin{itshape}"
+    , RawBlock (Format "latex") "\\begin{flushright}"
     , Para
         [ Str "Lorem"
         , Space
@@ -3301,9 +3301,9 @@
         , Space
         , Str "proident"
         ]
-    , RawBlock (Format "latex") "\\end{itshape}"
-    , RawBlock (Format "latex") "\\end{sffamily}"
     , RawBlock (Format "latex") "\\end{flushright}"
+    , RawBlock (Format "latex") "\\end{sffamily}"
+    , RawBlock (Format "latex") "\\end{itshape}"
     ]
 , Header
     2
@@ -4209,8 +4209,8 @@
 , Para
     [ Span
         ( "" , [ "sc" , "bf" , "it" ] , [] )
-        [ RawInline (Format "latex") "\\textbf{"
-        , RawInline (Format "latex") "\\textit{"
+        [ RawInline (Format "latex") "\\textit{"
+        , RawInline (Format "latex") "\\textbf{"
         , RawInline (Format "latex") "\\textsc{"
         , Str "This"
         , Space
@@ -4298,8 +4298,8 @@
     [ Span
         ( "" , [ "tt" , "xsmall" , "bf" ] , [] )
         [ RawInline (Format "latex") "\\textbf{"
-        , RawInline (Format "latex") "\\texttt{"
         , RawInline (Format "latex") "\\footnotesize "
+        , RawInline (Format "latex") "\\texttt{"
         , Str "This"
         , Space
         , Str "text"
@@ -4379,8 +4379,8 @@
 , Para
     [ Span
         ( "" , [ "sf" , "it" ] , [] )
-        [ RawInline (Format "latex") "\\textsf{"
-        , RawInline (Format "latex") "\\textit{"
+        [ RawInline (Format "latex") "\\textit{"
+        , RawInline (Format "latex") "\\textsf{"
         , Str "This"
         , Space
         , Str "text"

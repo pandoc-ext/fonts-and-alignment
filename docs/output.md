@@ -401,10 +401,10 @@ veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
 \begin{itshape}
 ```
 ```{=latex}
-\begin{scshape}
+\begin{bfseries}
 ```
 ```{=latex}
-\begin{bfseries}
+\begin{scshape}
 ```
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -414,10 +414,10 @@ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
 occaecat cupidatat non proident
 
 ```{=latex}
-\end{bfseries}
+\end{scshape}
 ```
 ```{=latex}
-\end{scshape}
+\end{bfseries}
 ```
 ```{=latex}
 \end{itshape}
@@ -428,13 +428,13 @@ occaecat cupidatat non proident
 
 ::: {.tt .xsmall .bf}
 ```{=latex}
-\begin{ttfamily}
-```
-```{=latex}
 \begin{bfseries}
 ```
 ```{=latex}
 \begin{footnotesize}
+```
+```{=latex}
+\begin{ttfamily}
 ```
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -444,13 +444,13 @@ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
 occaecat cupidatat non proident
 
 ```{=latex}
+\end{ttfamily}
+```
+```{=latex}
 \end{footnotesize}
 ```
 ```{=latex}
 \end{bfseries}
-```
-```{=latex}
-\end{ttfamily}
 ```
 :::
 
@@ -579,7 +579,7 @@ ut labore et dolore magna aliqua.
 
 ### Monospace, Extra Small Text and Bold for Inline
 
-[`\texttt{`{=latex}`\textbf{`{=latex}`\footnotesize `{=latex}This text
+[`\textbf{`{=latex}`\footnotesize `{=latex}`\texttt{`{=latex}This text
 should be in monospace, extra small size and
 bold.`}`{=latex}`}`{=latex}]{.tt .xsmall .bf} Lorem ipsum dolor sit
 amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

@@ -82,16 +82,17 @@ local raw_code_function = {
 }
 
 -- This function takes an element object and returns it with
--- the LaTeX codes applied based on the class attached to the element
+-- the LaTeX codes applied based on the classes attached to the element
 local function handler (elem)
   local tag = elem.tag
   local raw = raw_code_function[tag]
   local code_for_class = LATEX_CODES_FOR_TAGS[tag]
 
-  -- Retrieve the class and the corresponding code and check if any
-  -- of them are specified for the element. If yes add the LaTeX codes.
-  for class, code in pairs(code_for_class) do
-    if elem.classes:includes(class) then
+  -- Iterate through the classes specified on the element and if
+  -- any of them match a LaTeX code add the code to the element
+  for _, class in pairs(elem.classes) do
+    if code_for_class[class] then
+      local code = code_for_class[class]
       local begin_code = code[1] -- LaTeX code placed in front
       local end_code = code[2] -- LaTeX code placed at the end
       table.insert(elem.content, 1, raw('latex', begin_code))
