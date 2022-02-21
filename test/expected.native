@@ -624,170 +624,6 @@
     ]
 , Header
     3
-    ( "right-justified-block-with-user-defined-line-breaks"
-    , []
-    , []
-    )
-    [ Str "Right"
-    , Space
-    , Str "Justified"
-    , Space
-    , Str "Block"
-    , Space
-    , Str "with"
-    , Space
-    , Str "User-defined"
-    , Space
-    , Str "Line"
-    , Space
-    , Str "Breaks"
-    ]
-, Div
-    ( "" , [ "raggedleft" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{raggedleft}"
-    , Para
-        [ Str "Lorem"
-        , Space
-        , Str "ipsum"
-        , Space
-        , Str "dolor"
-        , Space
-        , Str "sit"
-        , Space
-        , Str "amet,"
-        , Space
-        , Str "consectetur"
-        , LineBreak
-        , Str "adipiscing"
-        , Space
-        , Str "elit,"
-        , Space
-        , Str "sed"
-        , Space
-        , Str "do"
-        , Space
-        , Str "eiusmod"
-        , LineBreak
-        , Str "tempor"
-        , Space
-        , Str "incididunt"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "labore"
-        , Space
-        , Str "et"
-        , Space
-        , Str "dolore"
-        , LineBreak
-        , Str "magna"
-        , Space
-        , Str "aliqua."
-        , Space
-        , Str "Ut"
-        , Space
-        , Str "enim"
-        , Space
-        , Str "ad"
-        , Space
-        , Str "minim"
-        , LineBreak
-        , Str "veniam,"
-        , Space
-        , Str "quis"
-        , Space
-        , Str "nostrud"
-        , Space
-        , Str "exercitation"
-        , Space
-        , Str "ullamco"
-        , LineBreak
-        , Str "laboris"
-        , Space
-        , Str "nisi"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "aliquip"
-        , Space
-        , Str "ex"
-        , Space
-        , Str "ea"
-        , LineBreak
-        , Str "commodo"
-        , Space
-        , Str "consequat."
-        , Space
-        , Str "Duis"
-        , Space
-        , Str "aute"
-        , Space
-        , Str "irure"
-        , LineBreak
-        , Str "dolor"
-        , Space
-        , Str "in"
-        , Space
-        , Str "reprehenderit"
-        , Space
-        , Str "in"
-        , Space
-        , Str "voluptate"
-        , LineBreak
-        , Str "velit"
-        , Space
-        , Str "esse"
-        , Space
-        , Str "cillum"
-        , Space
-        , Str "dolore"
-        , Space
-        , Str "eu"
-        , Space
-        , Str "fugiat"
-        , LineBreak
-        , Str "nulla"
-        , Space
-        , Str "pariatur."
-        , Space
-        , Str "Excepteur"
-        , Space
-        , Str "sint"
-        , LineBreak
-        , Str "occaecat"
-        , Space
-        , Str "cupidatat"
-        , Space
-        , Str "non"
-        , Space
-        , Str "proident,"
-        , LineBreak
-        , Str "sunt"
-        , Space
-        , Str "in"
-        , Space
-        , Str "culpa"
-        , Space
-        , Str "qui"
-        , Space
-        , Str "officia"
-        , Space
-        , Str "deserunt"
-        , LineBreak
-        , Str "mollit"
-        , Space
-        , Str "anim"
-        , Space
-        , Str "id"
-        , Space
-        , Str "est"
-        , Space
-        , Str "laborum."
-        ]
-    , RawBlock (Format "latex") "\\end{raggedleft}"
-    ]
-, Header
-    3
     ( "left-justified-block-with-user-defined-line-breaks"
     , []
     , []
@@ -949,6 +785,170 @@
         , Str "laborum."
         ]
     , RawBlock (Format "latex") "\\end{raggedright}"
+    ]
+, Header
+    3
+    ( "right-justified-block-with-user-defined-line-breaks"
+    , []
+    , []
+    )
+    [ Str "Right"
+    , Space
+    , Str "Justified"
+    , Space
+    , Str "Block"
+    , Space
+    , Str "with"
+    , Space
+    , Str "User-defined"
+    , Space
+    , Str "Line"
+    , Space
+    , Str "Breaks"
+    ]
+, Div
+    ( "" , [ "raggedleft" ] , [] )
+    [ RawBlock (Format "latex") "\\begin{raggedleft}"
+    , Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , LineBreak
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , LineBreak
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , LineBreak
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        , Space
+        , Str "Ut"
+        , Space
+        , Str "enim"
+        , Space
+        , Str "ad"
+        , Space
+        , Str "minim"
+        , LineBreak
+        , Str "veniam,"
+        , Space
+        , Str "quis"
+        , Space
+        , Str "nostrud"
+        , Space
+        , Str "exercitation"
+        , Space
+        , Str "ullamco"
+        , LineBreak
+        , Str "laboris"
+        , Space
+        , Str "nisi"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "aliquip"
+        , Space
+        , Str "ex"
+        , Space
+        , Str "ea"
+        , LineBreak
+        , Str "commodo"
+        , Space
+        , Str "consequat."
+        , Space
+        , Str "Duis"
+        , Space
+        , Str "aute"
+        , Space
+        , Str "irure"
+        , LineBreak
+        , Str "dolor"
+        , Space
+        , Str "in"
+        , Space
+        , Str "reprehenderit"
+        , Space
+        , Str "in"
+        , Space
+        , Str "voluptate"
+        , LineBreak
+        , Str "velit"
+        , Space
+        , Str "esse"
+        , Space
+        , Str "cillum"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "eu"
+        , Space
+        , Str "fugiat"
+        , LineBreak
+        , Str "nulla"
+        , Space
+        , Str "pariatur."
+        , Space
+        , Str "Excepteur"
+        , Space
+        , Str "sint"
+        , LineBreak
+        , Str "occaecat"
+        , Space
+        , Str "cupidatat"
+        , Space
+        , Str "non"
+        , Space
+        , Str "proident,"
+        , LineBreak
+        , Str "sunt"
+        , Space
+        , Str "in"
+        , Space
+        , Str "culpa"
+        , Space
+        , Str "qui"
+        , Space
+        , Str "officia"
+        , Space
+        , Str "deserunt"
+        , LineBreak
+        , Str "mollit"
+        , Space
+        , Str "anim"
+        , Space
+        , Str "id"
+        , Space
+        , Str "est"
+        , Space
+        , Str "laborum."
+        ]
+    , RawBlock (Format "latex") "\\end{raggedleft}"
     ]
 , Header
     2

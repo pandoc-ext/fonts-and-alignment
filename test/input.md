@@ -67,9 +67,9 @@ sunt in culpa qui officia deserunt\
 mollit anim id est laborum.
 :::
 
-### Right Justified Block with User-defined Line Breaks
+### Left Justified Block with User-defined Line Breaks
 
-::: raggedleft
+::: raggedright
 Lorem ipsum dolor sit amet, consectetur\
 adipiscing elit, sed do eiusmod\
 tempor incididunt ut labore et dolore\
@@ -85,9 +85,9 @@ sunt in culpa qui officia deserunt\
 mollit anim id est laborum.
 :::
 
-### Left Justified Block with User-defined Line Breaks
+### Right Justified Block with User-defined Line Breaks
 
-::: raggedright
+::: raggedleft
 Lorem ipsum dolor sit amet, consectetur\
 adipiscing elit, sed do eiusmod\
 tempor incididunt ut labore et dolore\

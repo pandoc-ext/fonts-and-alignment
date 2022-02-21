@@ -302,19 +302,19 @@ elements:</p>
 <td><code>centering</code></td>
 <td><code>\begin{centering}...\end{centering}</code></td>
 <td>Center a block of text with manual line breaks using backslash
-().</td>
+(<code>\</code>).</td>
 </tr>
 <tr class="odd">
 <td><code>raggedleft</code></td>
 <td><code>\begin{raggedleft}...\end{raggedleft}</code></td>
 <td>Right justify a block of text with manual line breaks using
-backslash ().</td>
+backslash (<code>\</code>).</td>
 </tr>
 <tr class="even">
 <td><code>raggedright</code></td>
 <td><code>\begin{raggedright}...\end{raggedright}</code></td>
 <td>Left justify a block of text with manual line breaks using backslash
-().</td>
+(<code>\</code>).</td>
 </tr>
 </tbody>
 </table>
@@ -455,9 +455,9 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a>mollit anim id est laborum.</span>
 <span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right Justified Block with User-defined Line Breaks</span></span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left Justified Block with User-defined Line Breaks</span></span>
 <span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a>::: raggedleft</span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a>::: raggedright</span>
 <span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur\</span>
 <span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a>adipiscing elit, sed do eiusmod\</span>
 <span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore\</span>
@@ -473,9 +473,9 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a>mollit anim id est laborum.</span>
 <span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left Justified Block with User-defined Line Breaks</span></span>
+<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right Justified Block with User-defined Line Breaks</span></span>
 <span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>::: raggedright</span>
+<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>::: raggedleft</span>
 <span id="cb14-91"><a href="#cb14-91" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur\</span>
 <span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a>adipiscing elit, sed do eiusmod\</span>
 <span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore\</span>
@@ -882,11 +882,11 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb15-96"><a href="#cb15-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb15-97"><a href="#cb15-97" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb15-98"><a href="#cb15-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-99"><a href="#cb15-99" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right Justified Block with User-defined Line Breaks</span></span>
+<span id="cb15-99"><a href="#cb15-99" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left Justified Block with User-defined Line Breaks</span></span>
 <span id="cb15-100"><a href="#cb15-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-101"><a href="#cb15-101" aria-hidden="true" tabindex="-1"></a>::: raggedleft</span>
+<span id="cb15-101"><a href="#cb15-101" aria-hidden="true" tabindex="-1"></a>::: raggedright</span>
 <span id="cb15-102"><a href="#cb15-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
-<span id="cb15-103"><a href="#cb15-103" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{raggedleft}</span></span>
+<span id="cb15-103"><a href="#cb15-103" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{raggedright}</span></span>
 <span id="cb15-104"><a href="#cb15-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb15-105"><a href="#cb15-105" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur\</span>
 <span id="cb15-106"><a href="#cb15-106" aria-hidden="true" tabindex="-1"></a>adipiscing elit, sed do eiusmod\</span>
@@ -903,15 +903,15 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb15-117"><a href="#cb15-117" aria-hidden="true" tabindex="-1"></a>mollit anim id est laborum.</span>
 <span id="cb15-118"><a href="#cb15-118" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-119"><a href="#cb15-119" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
-<span id="cb15-120"><a href="#cb15-120" aria-hidden="true" tabindex="-1"></a><span class="in">\end{raggedleft}</span></span>
+<span id="cb15-120"><a href="#cb15-120" aria-hidden="true" tabindex="-1"></a><span class="in">\end{raggedright}</span></span>
 <span id="cb15-121"><a href="#cb15-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb15-122"><a href="#cb15-122" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb15-123"><a href="#cb15-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-124"><a href="#cb15-124" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left Justified Block with User-defined Line Breaks</span></span>
+<span id="cb15-124"><a href="#cb15-124" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right Justified Block with User-defined Line Breaks</span></span>
 <span id="cb15-125"><a href="#cb15-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-126"><a href="#cb15-126" aria-hidden="true" tabindex="-1"></a>::: raggedright</span>
+<span id="cb15-126"><a href="#cb15-126" aria-hidden="true" tabindex="-1"></a>::: raggedleft</span>
 <span id="cb15-127"><a href="#cb15-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
-<span id="cb15-128"><a href="#cb15-128" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{raggedright}</span></span>
+<span id="cb15-128"><a href="#cb15-128" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{raggedleft}</span></span>
 <span id="cb15-129"><a href="#cb15-129" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb15-130"><a href="#cb15-130" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur\</span>
 <span id="cb15-131"><a href="#cb15-131" aria-hidden="true" tabindex="-1"></a>adipiscing elit, sed do eiusmod\</span>
@@ -928,7 +928,7 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb15-142"><a href="#cb15-142" aria-hidden="true" tabindex="-1"></a>mollit anim id est laborum.</span>
 <span id="cb15-143"><a href="#cb15-143" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-144"><a href="#cb15-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
-<span id="cb15-145"><a href="#cb15-145" aria-hidden="true" tabindex="-1"></a><span class="in">\end{raggedright}</span></span>
+<span id="cb15-145"><a href="#cb15-145" aria-hidden="true" tabindex="-1"></a><span class="in">\end{raggedleft}</span></span>
 <span id="cb15-146"><a href="#cb15-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb15-147"><a href="#cb15-147" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb15-148"><a href="#cb15-148" aria-hidden="true" tabindex="-1"></a></span>
@@ -1472,7 +1472,7 @@ class="sourceCode lua"><code class="sourceCode lua"><span id="fonts-and-alignmen
 <span id="fonts-and-alignment.lua-90"><a href="#fonts-and-alignment.lua-90" aria-hidden="true" tabindex="-1"></a></span>
 <span id="fonts-and-alignment.lua-91"><a href="#fonts-and-alignment.lua-91" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- Iterate through the classes specified on the element and if</span></span>
 <span id="fonts-and-alignment.lua-92"><a href="#fonts-and-alignment.lua-92" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- any of them match a LaTeX code add the code to the element</span></span>
-<span id="fonts-and-alignment.lua-93"><a href="#fonts-and-alignment.lua-93" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="cn">_</span><span class="op">,</span> class <span class="kw">in</span> <span class="fu">pairs</span><span class="op">(</span>elem<span class="op">.</span>classes<span class="op">)</span> <span class="cf">do</span></span>
+<span id="fonts-and-alignment.lua-93"><a href="#fonts-and-alignment.lua-93" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="cn">_</span><span class="op">,</span> class <span class="kw">in</span> <span class="fu">ipairs</span><span class="op">(</span>elem<span class="op">.</span>classes<span class="op">)</span> <span class="cf">do</span></span>
 <span id="fonts-and-alignment.lua-94"><a href="#fonts-and-alignment.lua-94" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> code_for_class<span class="op">[</span>class<span class="op">]</span> <span class="cf">then</span></span>
 <span id="fonts-and-alignment.lua-95"><a href="#fonts-and-alignment.lua-95" aria-hidden="true" tabindex="-1"></a>      <span class="kw">local</span> code <span class="op">=</span> code_for_class<span class="op">[</span>class<span class="op">]</span></span>
 <span id="fonts-and-alignment.lua-96"><a href="#fonts-and-alignment.lua-96" aria-hidden="true" tabindex="-1"></a>      <span class="kw">local</span> begin_code <span class="op">=</span> code<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="co">-- LaTeX code placed in front</span></span>

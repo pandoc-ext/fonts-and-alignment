@@ -90,7 +90,7 @@ local function handler (elem)
 
   -- Iterate through the classes specified on the element and if
   -- any of them match a LaTeX code add the code to the element
-  for _, class in pairs(elem.classes) do
+  for _, class in ipairs(elem.classes) do
     if code_for_class[class] then
       local code = code_for_class[class]
       local begin_code = code[1] -- LaTeX code placed in front
