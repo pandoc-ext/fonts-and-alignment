@@ -258,6 +258,41 @@ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
 :::
 
+## Combination Styles for Block Elements
+
+### Small Capitals, Bold and Italic for Blocks
+
+::: {.sc .bf .it}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident
+:::
+
+### Monospace, Extra Small Text and Bold for Blocks
+
+::: {.tt .xsmall .bf}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident
+:::
+
+### Right Justified, Sans-serif and Italic for Blocks
+
+::: {.flushright .sf .it}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident
+:::
+
 ## Font Styles for Inline Elements
 
 ### Bold Font Inline
@@ -337,5 +372,25 @@ ut labore et dolore magna aliqua.
 ### Extra Extra Large Font Inline
 
 [This text should be in extra extra large size.]{.xxlarge} Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+## Combination Styles for Inline Elements
+
+### Small Capitals, Bold and Italic for Inline
+
+[This text should be small capitals, bold and italic.]{.sc .bf .it}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+### Monospace, Extra Small Text and Bold for Inline
+
+[This text should be in monospace, extra small size and bold.]{.tt
+.xsmall .bf} Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+### Sans-serif and Italic for Inline
+
+[This text should be in sans-serif and italic.]{.sf .it} Lorem ipsum
 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.

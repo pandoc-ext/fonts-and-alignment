@@ -392,6 +392,98 @@ veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
 ```
 :::
 
+## Combination Styles for Block Elements
+
+### Small Capitals, Bold and Italic for Blocks
+
+::: {.sc .bf .it}
+```{=latex}
+\begin{itshape}
+```
+```{=latex}
+\begin{scshape}
+```
+```{=latex}
+\begin{bfseries}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident
+
+```{=latex}
+\end{bfseries}
+```
+```{=latex}
+\end{scshape}
+```
+```{=latex}
+\end{itshape}
+```
+:::
+
+### Monospace, Extra Small Text and Bold for Blocks
+
+::: {.tt .xsmall .bf}
+```{=latex}
+\begin{ttfamily}
+```
+```{=latex}
+\begin{bfseries}
+```
+```{=latex}
+\begin{footnotesize}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident
+
+```{=latex}
+\end{footnotesize}
+```
+```{=latex}
+\end{bfseries}
+```
+```{=latex}
+\end{ttfamily}
+```
+:::
+
+### Right Justified, Sans-serif and Italic for Blocks
+
+::: {.flushright .sf .it}
+```{=latex}
+\begin{itshape}
+```
+```{=latex}
+\begin{sffamily}
+```
+```{=latex}
+\begin{flushright}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident
+
+```{=latex}
+\end{flushright}
+```
+```{=latex}
+\end{sffamily}
+```
+```{=latex}
+\end{itshape}
+```
+:::
+
 ## Font Styles for Inline Elements
 
 ### Bold Font Inline
@@ -474,3 +566,28 @@ tempor incididunt ut labore et dolore magna aliqua.
 [`\LARGE `{=latex}This text should be in extra extra large
 size.]{.xxlarge} Lorem ipsum dolor sit amet, consectetur adipiscing
 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+## Combination Styles for Inline Elements
+
+### Small Capitals, Bold and Italic for Inline
+
+[`\textit{`{=latex}`\textbf{`{=latex}`\textsc{`{=latex}This text should
+be small capitals, bold and
+italic.`}`{=latex}`}`{=latex}`}`{=latex}]{.sc .bf .it} Lorem ipsum dolor
+sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.
+
+### Monospace, Extra Small Text and Bold for Inline
+
+[`\texttt{`{=latex}`\textbf{`{=latex}`\footnotesize `{=latex}This text
+should be in monospace, extra small size and
+bold.`}`{=latex}`}`{=latex}]{.tt .xsmall .bf} Lorem ipsum dolor sit
+amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna aliqua.
+
+### Sans-serif and Italic for Inline
+
+[`\textit{`{=latex}`\textsf{`{=latex}This text should be in sans-serif
+and italic.`}`{=latex}`}`{=latex}]{.sf .it} Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.

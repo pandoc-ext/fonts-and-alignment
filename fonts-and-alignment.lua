@@ -5,7 +5,7 @@
 ---
 -- Makes sure users know if their pandoc version is too old for this
 -- filter.
-PANDOC_VERSION:must_be_at_least '2.14'
+PANDOC_VERSION:must_be_at_least '2.17'
 
 -- The table below is categorized according to element tag.
 --

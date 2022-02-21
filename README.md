@@ -7,9 +7,11 @@ Fonts and Alignment is a Lua filter designed to style fonts and align text in Pa
 
 The filter defines a number of classes that when specified correspond to LaTeX commands which in turn provide the requisite styling.
 
-The same classes may be used when generating HTML but you will need to provide a stylesheet to define the required styles. To aid in the creation of a stylesheet a [specimen CSS file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.css) and a [specimen SASS file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.sass) have been provided. You may view the rendered HTML [here](https://htmlpreview.github.io/?https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.html).
+You may preview a specimen PDF document that uses these styles [here](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.pdf).
 
-To preview the PDF document please see [here](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.pdf).
+The same classes may be used when generating HTML but you will need to provide a stylesheet to define the required styles. To aid in the creation of a stylesheet a [specimen CSS file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.css) and a [specimen SASS file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.sass) have been provided.
+
+You may view the HTML version [here](https://htmlpreview.github.io/?https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.html).
 
 [CI badge]: https://img.shields.io/github/workflow/status/nandac/fonts-and-alignment/CI?logo=github
 [CI workflow]: https://github.com/nandac/fonts-and-alignment/actions/workflows/ci.yaml
@@ -75,12 +77,12 @@ The following layouts are defined for block elements exclusively:
 
 | Class         | LaTeX code                                | Description                                                                 |
 |---------------|-------------------------------------------|-----------------------------------------------------------------------------|
-| `center`      | `\begin{center}...\end{center}`           | Center blocks of text, like paragraphs.                                      |
-| `flushright`  | `\begin{flushright}...\end{flushright}`   | Right justify blocks of text, like paragraphs.                               |
-| `flushleft`   | `\begin{flushleft}...\end{flushleft}`     | Left justify blocks of text, like paragraphs.                                |
-| `centering`   | `\begin{centering}...\end{centering}`     | Center blocks of text with manual line breaks,like verses of poetry.        |
-| `raggedleft`  | `\begin{raggedleft}...\end{raggedleft}`   | Right justify blocks of text with manual line breaks, like verses of poetry. |
-| `raggedright` | `\begin{raggedright}...\end{raggedright}` | Left justify blocks of text with manual line breaks, like verses of poetry.  |
+| `center`      | `\begin{center}...\end{center}`           | Center a block of text,                                    |
+| `flushright`  | `\begin{flushright}...\end{flushright}`   | Right justify a block of text.                               |
+| `flushleft`   | `\begin{flushleft}...\end{flushleft}`     | Left justify a block of text.                                |
+| `centering`   | `\begin{centering}...\end{centering}`     | Center a block of text with manual line breaks using backslash (\).        |
+| `raggedleft`  | `\begin{raggedleft}...\end{raggedleft}`   | Right justify a block of text with manual line breaks using backslash (\). |
+| `raggedright` | `\begin{raggedright}...\end{raggedright}` | Left justify a block of text with manual line breaks using backslash (\).  |
 
 Styling Inline Elements
 -----------------------------------------------------------------

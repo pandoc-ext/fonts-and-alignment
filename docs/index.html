@@ -112,16 +112,17 @@ alt="GitHub build status" /></a></p>
 text in Pandoc generated LaTeX documents.</p>
 <p>The filter defines a number of classes that when specified correspond
 to LaTeX commands which in turn provide the requisite styling.</p>
+<p>You may preview a specimen PDF document that uses these styles <a
+href="https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.pdf">here</a>.</p>
 <p>The same classes may be used when generating HTML but you will need
 to provide a stylesheet to define the required styles. To aid in the
 creation of a stylesheet a <a
 href="https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.css">specimen
 CSS file</a> and a <a
 href="https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.sass">specimen
-SASS file</a> have been provided. You may view the rendered HTML <a
+SASS file</a> have been provided.</p>
+<p>You may view the HTML version <a
 href="https://htmlpreview.github.io/?https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.html">here</a>.</p>
-<p>To preview the PDF document please see <a
-href="https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.pdf">here</a>.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Before starting to use this filter we recommend that you set up the
 fonts you wish to use either in a <a
@@ -285,35 +286,35 @@ elements:</p>
 <tr class="odd">
 <td><code>center</code></td>
 <td><code>\begin{center}...\end{center}</code></td>
-<td>Center blocks of text, like paragraphs.</td>
+<td>Center a block of text,</td>
 </tr>
 <tr class="even">
 <td><code>flushright</code></td>
 <td><code>\begin{flushright}...\end{flushright}</code></td>
-<td>Right justify blocks of text, like paragraphs.</td>
+<td>Right justify a block of text.</td>
 </tr>
 <tr class="odd">
 <td><code>flushleft</code></td>
 <td><code>\begin{flushleft}...\end{flushleft}</code></td>
-<td>Left justify blocks of text, like paragraphs.</td>
+<td>Left justify a block of text.</td>
 </tr>
 <tr class="even">
 <td><code>centering</code></td>
 <td><code>\begin{centering}...\end{centering}</code></td>
-<td>Center blocks of text with manual line breaks,like verses of
-poetry.</td>
+<td>Center a block of text with manual line breaks using backslash
+().</td>
 </tr>
 <tr class="odd">
 <td><code>raggedleft</code></td>
 <td><code>\begin{raggedleft}...\end{raggedleft}</code></td>
-<td>Right justify blocks of text with manual line breaks, like verses of
-poetry.</td>
+<td>Right justify a block of text with manual line breaks using
+backslash ().</td>
 </tr>
 <tr class="even">
 <td><code>raggedright</code></td>
 <td><code>\begin{raggedright}...\end{raggedright}</code></td>
-<td>Left justify blocks of text with manual line breaks, like verses of
-poetry.</td>
+<td>Left justify a block of text with manual line breaks using backslash
+().</td>
 </tr>
 </tbody>
 </table>
@@ -645,87 +646,142 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb14-258"><a href="#cb14-258" aria-hidden="true" tabindex="-1"></a>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</span>
 <span id="cb14-259"><a href="#cb14-259" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-260"><a href="#cb14-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-261"><a href="#cb14-261" aria-hidden="true" tabindex="-1"></a><span class="fu">## Font Styles for Inline Elements</span></span>
+<span id="cb14-261"><a href="#cb14-261" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combination Styles for Block Elements</span></span>
 <span id="cb14-262"><a href="#cb14-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-263"><a href="#cb14-263" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bold Font Inline</span></span>
+<span id="cb14-263"><a href="#cb14-263" aria-hidden="true" tabindex="-1"></a><span class="fu">### Small Capitals, Bold and Italic for Blocks</span></span>
 <span id="cb14-264"><a href="#cb14-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-265"><a href="#cb14-265" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in bold.</span><span class="co">]</span>{.bold} Lorem ipsum dolor sit amet,</span>
-<span id="cb14-266"><a href="#cb14-266" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
-<span id="cb14-267"><a href="#cb14-267" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
-<span id="cb14-268"><a href="#cb14-268" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-269"><a href="#cb14-269" aria-hidden="true" tabindex="-1"></a><span class="fu">### Italic Font Inline</span></span>
-<span id="cb14-270"><a href="#cb14-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-271"><a href="#cb14-271" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in italic.</span><span class="co">]</span>{.italic} Lorem ipsum dolor sit amet,</span>
-<span id="cb14-272"><a href="#cb14-272" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
-<span id="cb14-273"><a href="#cb14-273" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
-<span id="cb14-274"><a href="#cb14-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-275"><a href="#cb14-275" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monospace Font Inline</span></span>
-<span id="cb14-276"><a href="#cb14-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-277"><a href="#cb14-277" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in monospace.</span><span class="co">]</span>{.monospace} Lorem ipsum dolor sit</span>
-<span id="cb14-278"><a href="#cb14-278" aria-hidden="true" tabindex="-1"></a>amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</span>
-<span id="cb14-279"><a href="#cb14-279" aria-hidden="true" tabindex="-1"></a>labore et dolore magna aliqua.</span>
-<span id="cb14-280"><a href="#cb14-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-281"><a href="#cb14-281" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sans-serif Font Inline</span></span>
-<span id="cb14-282"><a href="#cb14-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-283"><a href="#cb14-283" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in sans-serif.</span><span class="co">]</span>{.sans} Lorem ipsum dolor sit amet,</span>
-<span id="cb14-284"><a href="#cb14-284" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
-<span id="cb14-285"><a href="#cb14-285" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
+<span id="cb14-265"><a href="#cb14-265" aria-hidden="true" tabindex="-1"></a>::: {.sc .bf .it}</span>
+<span id="cb14-266"><a href="#cb14-266" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
+<span id="cb14-267"><a href="#cb14-267" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</span>
+<span id="cb14-268"><a href="#cb14-268" aria-hidden="true" tabindex="-1"></a>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</span>
+<span id="cb14-269"><a href="#cb14-269" aria-hidden="true" tabindex="-1"></a>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</span>
+<span id="cb14-270"><a href="#cb14-270" aria-hidden="true" tabindex="-1"></a>velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</span>
+<span id="cb14-271"><a href="#cb14-271" aria-hidden="true" tabindex="-1"></a>occaecat cupidatat non proident</span>
+<span id="cb14-272"><a href="#cb14-272" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-273"><a href="#cb14-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-274"><a href="#cb14-274" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monospace, Extra Small Text and Bold for Blocks</span></span>
+<span id="cb14-275"><a href="#cb14-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-276"><a href="#cb14-276" aria-hidden="true" tabindex="-1"></a>::: {.tt .xsmall .bf}</span>
+<span id="cb14-277"><a href="#cb14-277" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
+<span id="cb14-278"><a href="#cb14-278" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</span>
+<span id="cb14-279"><a href="#cb14-279" aria-hidden="true" tabindex="-1"></a>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</span>
+<span id="cb14-280"><a href="#cb14-280" aria-hidden="true" tabindex="-1"></a>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</span>
+<span id="cb14-281"><a href="#cb14-281" aria-hidden="true" tabindex="-1"></a>velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</span>
+<span id="cb14-282"><a href="#cb14-282" aria-hidden="true" tabindex="-1"></a>occaecat cupidatat non proident</span>
+<span id="cb14-283"><a href="#cb14-283" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-284"><a href="#cb14-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-285"><a href="#cb14-285" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right Justified, Sans-serif and Italic for Blocks</span></span>
 <span id="cb14-286"><a href="#cb14-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-287"><a href="#cb14-287" aria-hidden="true" tabindex="-1"></a><span class="fu">### Serif Font Inline</span></span>
-<span id="cb14-288"><a href="#cb14-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-289"><a href="#cb14-289" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in serif.</span><span class="co">]</span>{.serif} Lorem ipsum dolor sit amet,</span>
-<span id="cb14-290"><a href="#cb14-290" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
-<span id="cb14-291"><a href="#cb14-291" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
-<span id="cb14-292"><a href="#cb14-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-293"><a href="#cb14-293" aria-hidden="true" tabindex="-1"></a><span class="fu">### Small Capitals Font Inline</span></span>
-<span id="cb14-294"><a href="#cb14-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-295"><a href="#cb14-295" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in small capitals.</span><span class="co">]</span>{.smallcaps} Lorem ipsum dolor</span>
-<span id="cb14-296"><a href="#cb14-296" aria-hidden="true" tabindex="-1"></a>sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
-<span id="cb14-297"><a href="#cb14-297" aria-hidden="true" tabindex="-1"></a>ut labore et dolore magna aliqua.</span>
-<span id="cb14-298"><a href="#cb14-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-299"><a href="#cb14-299" aria-hidden="true" tabindex="-1"></a><span class="fu">## Font sizes for Inline Elements</span></span>
-<span id="cb14-300"><a href="#cb14-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-301"><a href="#cb14-301" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Extra Small Font Inline</span></span>
-<span id="cb14-302"><a href="#cb14-302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-303"><a href="#cb14-303" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This test should be extra extra small size.</span><span class="co">]</span>{.xxsmall} Lorem ipsum</span>
-<span id="cb14-304"><a href="#cb14-304" aria-hidden="true" tabindex="-1"></a>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
-<span id="cb14-305"><a href="#cb14-305" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb14-306"><a href="#cb14-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-307"><a href="#cb14-307" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Small Font Inline</span></span>
-<span id="cb14-308"><a href="#cb14-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-309"><a href="#cb14-309" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in extra small size.</span><span class="co">]</span>{.xsmall} Lorem ipsum dolor</span>
-<span id="cb14-310"><a href="#cb14-310" aria-hidden="true" tabindex="-1"></a>sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
-<span id="cb14-311"><a href="#cb14-311" aria-hidden="true" tabindex="-1"></a>ut labore et dolore magna aliqua.</span>
-<span id="cb14-312"><a href="#cb14-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-313"><a href="#cb14-313" aria-hidden="true" tabindex="-1"></a><span class="fu">### Small Font Inline</span></span>
-<span id="cb14-314"><a href="#cb14-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-315"><a href="#cb14-315" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in small size.</span><span class="co">]</span>{.small} Lorem ipsum dolor sit amet,</span>
-<span id="cb14-316"><a href="#cb14-316" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
-<span id="cb14-317"><a href="#cb14-317" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
-<span id="cb14-318"><a href="#cb14-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-319"><a href="#cb14-319" aria-hidden="true" tabindex="-1"></a><span class="fu">### Normal Font Inline</span></span>
-<span id="cb14-320"><a href="#cb14-320" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-321"><a href="#cb14-321" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in normal size.</span><span class="co">]</span>{.normal} Lorem ipsum dolor sit</span>
-<span id="cb14-322"><a href="#cb14-322" aria-hidden="true" tabindex="-1"></a>amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</span>
-<span id="cb14-323"><a href="#cb14-323" aria-hidden="true" tabindex="-1"></a>labore et dolore magna aliqua.</span>
-<span id="cb14-324"><a href="#cb14-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-325"><a href="#cb14-325" aria-hidden="true" tabindex="-1"></a><span class="fu">### Large Font Inline</span></span>
-<span id="cb14-326"><a href="#cb14-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-327"><a href="#cb14-327" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in large size.</span><span class="co">]</span>{.large} Lorem ipsum dolor sit amet,</span>
-<span id="cb14-328"><a href="#cb14-328" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
-<span id="cb14-329"><a href="#cb14-329" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
-<span id="cb14-330"><a href="#cb14-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-331"><a href="#cb14-331" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Large Font Inline</span></span>
-<span id="cb14-332"><a href="#cb14-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-333"><a href="#cb14-333" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in extra large size.</span><span class="co">]</span>{.xlarge} Lorem ipsum dolor</span>
-<span id="cb14-334"><a href="#cb14-334" aria-hidden="true" tabindex="-1"></a>sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
-<span id="cb14-335"><a href="#cb14-335" aria-hidden="true" tabindex="-1"></a>ut labore et dolore magna aliqua.</span>
-<span id="cb14-336"><a href="#cb14-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-337"><a href="#cb14-337" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Extra Large Font Inline</span></span>
-<span id="cb14-338"><a href="#cb14-338" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-339"><a href="#cb14-339" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in extra extra large size.</span><span class="co">]</span>{.xxlarge} Lorem ipsum</span>
-<span id="cb14-340"><a href="#cb14-340" aria-hidden="true" tabindex="-1"></a>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
-<span id="cb14-341"><a href="#cb14-341" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span></code></pre></div>
+<span id="cb14-287"><a href="#cb14-287" aria-hidden="true" tabindex="-1"></a>::: {.flushright .sf .it}</span>
+<span id="cb14-288"><a href="#cb14-288" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
+<span id="cb14-289"><a href="#cb14-289" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</span>
+<span id="cb14-290"><a href="#cb14-290" aria-hidden="true" tabindex="-1"></a>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</span>
+<span id="cb14-291"><a href="#cb14-291" aria-hidden="true" tabindex="-1"></a>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</span>
+<span id="cb14-292"><a href="#cb14-292" aria-hidden="true" tabindex="-1"></a>velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</span>
+<span id="cb14-293"><a href="#cb14-293" aria-hidden="true" tabindex="-1"></a>occaecat cupidatat non proident</span>
+<span id="cb14-294"><a href="#cb14-294" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-295"><a href="#cb14-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-296"><a href="#cb14-296" aria-hidden="true" tabindex="-1"></a><span class="fu">## Font Styles for Inline Elements</span></span>
+<span id="cb14-297"><a href="#cb14-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-298"><a href="#cb14-298" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bold Font Inline</span></span>
+<span id="cb14-299"><a href="#cb14-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-300"><a href="#cb14-300" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in bold.</span><span class="co">]</span>{.bold} Lorem ipsum dolor sit amet,</span>
+<span id="cb14-301"><a href="#cb14-301" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+<span id="cb14-302"><a href="#cb14-302" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
+<span id="cb14-303"><a href="#cb14-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-304"><a href="#cb14-304" aria-hidden="true" tabindex="-1"></a><span class="fu">### Italic Font Inline</span></span>
+<span id="cb14-305"><a href="#cb14-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-306"><a href="#cb14-306" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in italic.</span><span class="co">]</span>{.italic} Lorem ipsum dolor sit amet,</span>
+<span id="cb14-307"><a href="#cb14-307" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+<span id="cb14-308"><a href="#cb14-308" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
+<span id="cb14-309"><a href="#cb14-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-310"><a href="#cb14-310" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monospace Font Inline</span></span>
+<span id="cb14-311"><a href="#cb14-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-312"><a href="#cb14-312" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in monospace.</span><span class="co">]</span>{.monospace} Lorem ipsum dolor sit</span>
+<span id="cb14-313"><a href="#cb14-313" aria-hidden="true" tabindex="-1"></a>amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</span>
+<span id="cb14-314"><a href="#cb14-314" aria-hidden="true" tabindex="-1"></a>labore et dolore magna aliqua.</span>
+<span id="cb14-315"><a href="#cb14-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-316"><a href="#cb14-316" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sans-serif Font Inline</span></span>
+<span id="cb14-317"><a href="#cb14-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-318"><a href="#cb14-318" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in sans-serif.</span><span class="co">]</span>{.sans} Lorem ipsum dolor sit amet,</span>
+<span id="cb14-319"><a href="#cb14-319" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+<span id="cb14-320"><a href="#cb14-320" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
+<span id="cb14-321"><a href="#cb14-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-322"><a href="#cb14-322" aria-hidden="true" tabindex="-1"></a><span class="fu">### Serif Font Inline</span></span>
+<span id="cb14-323"><a href="#cb14-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-324"><a href="#cb14-324" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in serif.</span><span class="co">]</span>{.serif} Lorem ipsum dolor sit amet,</span>
+<span id="cb14-325"><a href="#cb14-325" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+<span id="cb14-326"><a href="#cb14-326" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
+<span id="cb14-327"><a href="#cb14-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-328"><a href="#cb14-328" aria-hidden="true" tabindex="-1"></a><span class="fu">### Small Capitals Font Inline</span></span>
+<span id="cb14-329"><a href="#cb14-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-330"><a href="#cb14-330" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in small capitals.</span><span class="co">]</span>{.smallcaps} Lorem ipsum dolor</span>
+<span id="cb14-331"><a href="#cb14-331" aria-hidden="true" tabindex="-1"></a>sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
+<span id="cb14-332"><a href="#cb14-332" aria-hidden="true" tabindex="-1"></a>ut labore et dolore magna aliqua.</span>
+<span id="cb14-333"><a href="#cb14-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-334"><a href="#cb14-334" aria-hidden="true" tabindex="-1"></a><span class="fu">## Font sizes for Inline Elements</span></span>
+<span id="cb14-335"><a href="#cb14-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-336"><a href="#cb14-336" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Extra Small Font Inline</span></span>
+<span id="cb14-337"><a href="#cb14-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-338"><a href="#cb14-338" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This test should be extra extra small size.</span><span class="co">]</span>{.xxsmall} Lorem ipsum</span>
+<span id="cb14-339"><a href="#cb14-339" aria-hidden="true" tabindex="-1"></a>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+<span id="cb14-340"><a href="#cb14-340" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb14-341"><a href="#cb14-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-342"><a href="#cb14-342" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Small Font Inline</span></span>
+<span id="cb14-343"><a href="#cb14-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-344"><a href="#cb14-344" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in extra small size.</span><span class="co">]</span>{.xsmall} Lorem ipsum dolor</span>
+<span id="cb14-345"><a href="#cb14-345" aria-hidden="true" tabindex="-1"></a>sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
+<span id="cb14-346"><a href="#cb14-346" aria-hidden="true" tabindex="-1"></a>ut labore et dolore magna aliqua.</span>
+<span id="cb14-347"><a href="#cb14-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-348"><a href="#cb14-348" aria-hidden="true" tabindex="-1"></a><span class="fu">### Small Font Inline</span></span>
+<span id="cb14-349"><a href="#cb14-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-350"><a href="#cb14-350" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in small size.</span><span class="co">]</span>{.small} Lorem ipsum dolor sit amet,</span>
+<span id="cb14-351"><a href="#cb14-351" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+<span id="cb14-352"><a href="#cb14-352" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
+<span id="cb14-353"><a href="#cb14-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-354"><a href="#cb14-354" aria-hidden="true" tabindex="-1"></a><span class="fu">### Normal Font Inline</span></span>
+<span id="cb14-355"><a href="#cb14-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-356"><a href="#cb14-356" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in normal size.</span><span class="co">]</span>{.normal} Lorem ipsum dolor sit</span>
+<span id="cb14-357"><a href="#cb14-357" aria-hidden="true" tabindex="-1"></a>amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</span>
+<span id="cb14-358"><a href="#cb14-358" aria-hidden="true" tabindex="-1"></a>labore et dolore magna aliqua.</span>
+<span id="cb14-359"><a href="#cb14-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-360"><a href="#cb14-360" aria-hidden="true" tabindex="-1"></a><span class="fu">### Large Font Inline</span></span>
+<span id="cb14-361"><a href="#cb14-361" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-362"><a href="#cb14-362" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in large size.</span><span class="co">]</span>{.large} Lorem ipsum dolor sit amet,</span>
+<span id="cb14-363"><a href="#cb14-363" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+<span id="cb14-364"><a href="#cb14-364" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
+<span id="cb14-365"><a href="#cb14-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-366"><a href="#cb14-366" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Large Font Inline</span></span>
+<span id="cb14-367"><a href="#cb14-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-368"><a href="#cb14-368" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in extra large size.</span><span class="co">]</span>{.xlarge} Lorem ipsum dolor</span>
+<span id="cb14-369"><a href="#cb14-369" aria-hidden="true" tabindex="-1"></a>sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
+<span id="cb14-370"><a href="#cb14-370" aria-hidden="true" tabindex="-1"></a>ut labore et dolore magna aliqua.</span>
+<span id="cb14-371"><a href="#cb14-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-372"><a href="#cb14-372" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Extra Large Font Inline</span></span>
+<span id="cb14-373"><a href="#cb14-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-374"><a href="#cb14-374" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in extra extra large size.</span><span class="co">]</span>{.xxlarge} Lorem ipsum</span>
+<span id="cb14-375"><a href="#cb14-375" aria-hidden="true" tabindex="-1"></a>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+<span id="cb14-376"><a href="#cb14-376" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb14-377"><a href="#cb14-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-378"><a href="#cb14-378" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combination Styles for Inline Elements</span></span>
+<span id="cb14-379"><a href="#cb14-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-380"><a href="#cb14-380" aria-hidden="true" tabindex="-1"></a><span class="fu">### Small Capitals, Bold and Italic for Inline</span></span>
+<span id="cb14-381"><a href="#cb14-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-382"><a href="#cb14-382" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be small capitals, bold and italic.</span><span class="co">]</span>{.sc .bf .it}</span>
+<span id="cb14-383"><a href="#cb14-383" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
+<span id="cb14-384"><a href="#cb14-384" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb14-385"><a href="#cb14-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-386"><a href="#cb14-386" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monospace, Extra Small Text and Bold for Inline</span></span>
+<span id="cb14-387"><a href="#cb14-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-388"><a href="#cb14-388" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in monospace, extra small size and bold.</span><span class="co">]</span>{.tt</span>
+<span id="cb14-389"><a href="#cb14-389" aria-hidden="true" tabindex="-1"></a>.xsmall .bf} Lorem ipsum dolor sit amet, consectetur adipiscing elit,</span>
+<span id="cb14-390"><a href="#cb14-390" aria-hidden="true" tabindex="-1"></a>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb14-391"><a href="#cb14-391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-392"><a href="#cb14-392" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sans-serif and Italic for Inline</span></span>
+<span id="cb14-393"><a href="#cb14-393" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-394"><a href="#cb14-394" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in sans-serif and italic.</span><span class="co">]</span>{.sf .it} Lorem ipsum</span>
+<span id="cb14-395"><a href="#cb14-395" aria-hidden="true" tabindex="-1"></a>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+<span id="cb14-396"><a href="#cb14-396" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span></code></pre></div>
 <h3 id="output.md">output.md</h3>
 <div class="sourceCode" id="cb15"><pre
 class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
@@ -1122,88 +1178,205 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb15-392"><a href="#cb15-392" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb15-393"><a href="#cb15-393" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb15-394"><a href="#cb15-394" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-395"><a href="#cb15-395" aria-hidden="true" tabindex="-1"></a><span class="fu">## Font Styles for Inline Elements</span></span>
+<span id="cb15-395"><a href="#cb15-395" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combination Styles for Block Elements</span></span>
 <span id="cb15-396"><a href="#cb15-396" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-397"><a href="#cb15-397" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bold Font Inline</span></span>
+<span id="cb15-397"><a href="#cb15-397" aria-hidden="true" tabindex="-1"></a><span class="fu">### Small Capitals, Bold and Italic for Blocks</span></span>
 <span id="cb15-398"><a href="#cb15-398" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-399"><a href="#cb15-399" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\textbf{`{=latex}This text should be in bold.`}`{=latex}</span><span class="co">]</span>{.bold} Lorem</span>
-<span id="cb15-400"><a href="#cb15-400" aria-hidden="true" tabindex="-1"></a>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
-<span id="cb15-401"><a href="#cb15-401" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb15-402"><a href="#cb15-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-403"><a href="#cb15-403" aria-hidden="true" tabindex="-1"></a><span class="fu">### Italic Font Inline</span></span>
-<span id="cb15-404"><a href="#cb15-404" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-405"><a href="#cb15-405" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\textit{`{=latex}This text should be in italic.`}`{=latex}</span><span class="co">]</span>{.italic}</span>
-<span id="cb15-406"><a href="#cb15-406" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
-<span id="cb15-407"><a href="#cb15-407" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb15-408"><a href="#cb15-408" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-409"><a href="#cb15-409" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monospace Font Inline</span></span>
-<span id="cb15-410"><a href="#cb15-410" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-411"><a href="#cb15-411" aria-hidden="true" tabindex="-1"></a>[<span class="in">`\texttt{`</span>{=latex}This text should be in</span>
-<span id="cb15-412"><a href="#cb15-412" aria-hidden="true" tabindex="-1"></a>monospace.<span class="in">`}`</span>{=latex}]{.monospace} Lorem ipsum dolor sit amet,</span>
-<span id="cb15-413"><a href="#cb15-413" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
-<span id="cb15-414"><a href="#cb15-414" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
+<span id="cb15-399"><a href="#cb15-399" aria-hidden="true" tabindex="-1"></a>::: {.sc .bf .it}</span>
+<span id="cb15-400"><a href="#cb15-400" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-401"><a href="#cb15-401" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{itshape}</span></span>
+<span id="cb15-402"><a href="#cb15-402" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-403"><a href="#cb15-403" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-404"><a href="#cb15-404" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{scshape}</span></span>
+<span id="cb15-405"><a href="#cb15-405" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-406"><a href="#cb15-406" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-407"><a href="#cb15-407" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{bfseries}</span></span>
+<span id="cb15-408"><a href="#cb15-408" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-409"><a href="#cb15-409" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
+<span id="cb15-410"><a href="#cb15-410" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</span>
+<span id="cb15-411"><a href="#cb15-411" aria-hidden="true" tabindex="-1"></a>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</span>
+<span id="cb15-412"><a href="#cb15-412" aria-hidden="true" tabindex="-1"></a>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</span>
+<span id="cb15-413"><a href="#cb15-413" aria-hidden="true" tabindex="-1"></a>velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</span>
+<span id="cb15-414"><a href="#cb15-414" aria-hidden="true" tabindex="-1"></a>occaecat cupidatat non proident</span>
 <span id="cb15-415"><a href="#cb15-415" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-416"><a href="#cb15-416" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sans-serif Font Inline</span></span>
-<span id="cb15-417"><a href="#cb15-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-418"><a href="#cb15-418" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\textsf{`{=latex}This text should be in sans-serif.`}`{=latex}</span><span class="co">]</span>{.sans}</span>
-<span id="cb15-419"><a href="#cb15-419" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
-<span id="cb15-420"><a href="#cb15-420" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb15-421"><a href="#cb15-421" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-422"><a href="#cb15-422" aria-hidden="true" tabindex="-1"></a><span class="fu">### Serif Font Inline</span></span>
-<span id="cb15-423"><a href="#cb15-423" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-424"><a href="#cb15-424" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\textrm{`{=latex}This text should be in serif.`}`{=latex}</span><span class="co">]</span>{.serif}</span>
-<span id="cb15-425"><a href="#cb15-425" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
-<span id="cb15-426"><a href="#cb15-426" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb15-427"><a href="#cb15-427" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-428"><a href="#cb15-428" aria-hidden="true" tabindex="-1"></a><span class="fu">### Small Capitals Font Inline</span></span>
-<span id="cb15-429"><a href="#cb15-429" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-430"><a href="#cb15-430" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in small capitals.</span><span class="co">]</span>{.smallcaps} Lorem ipsum dolor</span>
-<span id="cb15-431"><a href="#cb15-431" aria-hidden="true" tabindex="-1"></a>sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
-<span id="cb15-432"><a href="#cb15-432" aria-hidden="true" tabindex="-1"></a>ut labore et dolore magna aliqua.</span>
-<span id="cb15-433"><a href="#cb15-433" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-434"><a href="#cb15-434" aria-hidden="true" tabindex="-1"></a><span class="fu">## Font sizes for Inline Elements</span></span>
-<span id="cb15-435"><a href="#cb15-435" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-436"><a href="#cb15-436" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Extra Small Font Inline</span></span>
-<span id="cb15-437"><a href="#cb15-437" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-438"><a href="#cb15-438" aria-hidden="true" tabindex="-1"></a>[<span class="in">`\scriptsize `</span>{=latex}This test should be extra extra small</span>
-<span id="cb15-439"><a href="#cb15-439" aria-hidden="true" tabindex="-1"></a>size.]{.xxsmall} Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-<span id="cb15-440"><a href="#cb15-440" aria-hidden="true" tabindex="-1"></a>elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb15-441"><a href="#cb15-441" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-442"><a href="#cb15-442" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Small Font Inline</span></span>
-<span id="cb15-443"><a href="#cb15-443" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-444"><a href="#cb15-444" aria-hidden="true" tabindex="-1"></a>[<span class="in">`\footnotesize `</span>{=latex}This text should be in extra small</span>
-<span id="cb15-445"><a href="#cb15-445" aria-hidden="true" tabindex="-1"></a>size.]{.xsmall} Lorem ipsum dolor sit amet, consectetur adipiscing elit,</span>
-<span id="cb15-446"><a href="#cb15-446" aria-hidden="true" tabindex="-1"></a>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb15-447"><a href="#cb15-447" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-448"><a href="#cb15-448" aria-hidden="true" tabindex="-1"></a><span class="fu">### Small Font Inline</span></span>
-<span id="cb15-449"><a href="#cb15-449" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-450"><a href="#cb15-450" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\small `{=latex}This text should be in small size.</span><span class="co">]</span>{.small} Lorem</span>
-<span id="cb15-451"><a href="#cb15-451" aria-hidden="true" tabindex="-1"></a>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
-<span id="cb15-452"><a href="#cb15-452" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb15-453"><a href="#cb15-453" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-454"><a href="#cb15-454" aria-hidden="true" tabindex="-1"></a><span class="fu">### Normal Font Inline</span></span>
-<span id="cb15-455"><a href="#cb15-455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-456"><a href="#cb15-456" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\normalsize `{=latex}This text should be in normal size.</span><span class="co">]</span>{.normal}</span>
-<span id="cb15-457"><a href="#cb15-457" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
-<span id="cb15-458"><a href="#cb15-458" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb15-459"><a href="#cb15-459" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-460"><a href="#cb15-460" aria-hidden="true" tabindex="-1"></a><span class="fu">### Large Font Inline</span></span>
-<span id="cb15-461"><a href="#cb15-461" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-462"><a href="#cb15-462" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\large `{=latex}This text should be in large size.</span><span class="co">]</span>{.large} Lorem</span>
-<span id="cb15-463"><a href="#cb15-463" aria-hidden="true" tabindex="-1"></a>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
-<span id="cb15-464"><a href="#cb15-464" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb15-465"><a href="#cb15-465" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-466"><a href="#cb15-466" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Large Font Inline</span></span>
-<span id="cb15-467"><a href="#cb15-467" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-468"><a href="#cb15-468" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\Large `{=latex}This text should be in extra large size.</span><span class="co">]</span>{.xlarge}</span>
+<span id="cb15-416"><a href="#cb15-416" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-417"><a href="#cb15-417" aria-hidden="true" tabindex="-1"></a><span class="in">\end{bfseries}</span></span>
+<span id="cb15-418"><a href="#cb15-418" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-419"><a href="#cb15-419" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-420"><a href="#cb15-420" aria-hidden="true" tabindex="-1"></a><span class="in">\end{scshape}</span></span>
+<span id="cb15-421"><a href="#cb15-421" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-422"><a href="#cb15-422" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-423"><a href="#cb15-423" aria-hidden="true" tabindex="-1"></a><span class="in">\end{itshape}</span></span>
+<span id="cb15-424"><a href="#cb15-424" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-425"><a href="#cb15-425" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-426"><a href="#cb15-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-427"><a href="#cb15-427" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monospace, Extra Small Text and Bold for Blocks</span></span>
+<span id="cb15-428"><a href="#cb15-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-429"><a href="#cb15-429" aria-hidden="true" tabindex="-1"></a>::: {.tt .xsmall .bf}</span>
+<span id="cb15-430"><a href="#cb15-430" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-431"><a href="#cb15-431" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{ttfamily}</span></span>
+<span id="cb15-432"><a href="#cb15-432" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-433"><a href="#cb15-433" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-434"><a href="#cb15-434" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{bfseries}</span></span>
+<span id="cb15-435"><a href="#cb15-435" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-436"><a href="#cb15-436" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-437"><a href="#cb15-437" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{footnotesize}</span></span>
+<span id="cb15-438"><a href="#cb15-438" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-439"><a href="#cb15-439" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
+<span id="cb15-440"><a href="#cb15-440" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</span>
+<span id="cb15-441"><a href="#cb15-441" aria-hidden="true" tabindex="-1"></a>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</span>
+<span id="cb15-442"><a href="#cb15-442" aria-hidden="true" tabindex="-1"></a>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</span>
+<span id="cb15-443"><a href="#cb15-443" aria-hidden="true" tabindex="-1"></a>velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</span>
+<span id="cb15-444"><a href="#cb15-444" aria-hidden="true" tabindex="-1"></a>occaecat cupidatat non proident</span>
+<span id="cb15-445"><a href="#cb15-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-446"><a href="#cb15-446" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-447"><a href="#cb15-447" aria-hidden="true" tabindex="-1"></a><span class="in">\end{footnotesize}</span></span>
+<span id="cb15-448"><a href="#cb15-448" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-449"><a href="#cb15-449" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-450"><a href="#cb15-450" aria-hidden="true" tabindex="-1"></a><span class="in">\end{bfseries}</span></span>
+<span id="cb15-451"><a href="#cb15-451" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-452"><a href="#cb15-452" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-453"><a href="#cb15-453" aria-hidden="true" tabindex="-1"></a><span class="in">\end{ttfamily}</span></span>
+<span id="cb15-454"><a href="#cb15-454" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-455"><a href="#cb15-455" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-456"><a href="#cb15-456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-457"><a href="#cb15-457" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right Justified, Sans-serif and Italic for Blocks</span></span>
+<span id="cb15-458"><a href="#cb15-458" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-459"><a href="#cb15-459" aria-hidden="true" tabindex="-1"></a>::: {.flushright .sf .it}</span>
+<span id="cb15-460"><a href="#cb15-460" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-461"><a href="#cb15-461" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{itshape}</span></span>
+<span id="cb15-462"><a href="#cb15-462" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-463"><a href="#cb15-463" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-464"><a href="#cb15-464" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{sffamily}</span></span>
+<span id="cb15-465"><a href="#cb15-465" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-466"><a href="#cb15-466" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-467"><a href="#cb15-467" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{flushright}</span></span>
+<span id="cb15-468"><a href="#cb15-468" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb15-469"><a href="#cb15-469" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
-<span id="cb15-470"><a href="#cb15-470" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb15-471"><a href="#cb15-471" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-472"><a href="#cb15-472" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Extra Large Font Inline</span></span>
-<span id="cb15-473"><a href="#cb15-473" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-474"><a href="#cb15-474" aria-hidden="true" tabindex="-1"></a>[<span class="in">`\LARGE `</span>{=latex}This text should be in extra extra large</span>
-<span id="cb15-475"><a href="#cb15-475" aria-hidden="true" tabindex="-1"></a>size.]{.xxlarge} Lorem ipsum dolor sit amet, consectetur adipiscing</span>
-<span id="cb15-476"><a href="#cb15-476" aria-hidden="true" tabindex="-1"></a>elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span></code></pre></div>
+<span id="cb15-470"><a href="#cb15-470" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</span>
+<span id="cb15-471"><a href="#cb15-471" aria-hidden="true" tabindex="-1"></a>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</span>
+<span id="cb15-472"><a href="#cb15-472" aria-hidden="true" tabindex="-1"></a>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</span>
+<span id="cb15-473"><a href="#cb15-473" aria-hidden="true" tabindex="-1"></a>velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</span>
+<span id="cb15-474"><a href="#cb15-474" aria-hidden="true" tabindex="-1"></a>occaecat cupidatat non proident</span>
+<span id="cb15-475"><a href="#cb15-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-476"><a href="#cb15-476" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-477"><a href="#cb15-477" aria-hidden="true" tabindex="-1"></a><span class="in">\end{flushright}</span></span>
+<span id="cb15-478"><a href="#cb15-478" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-479"><a href="#cb15-479" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-480"><a href="#cb15-480" aria-hidden="true" tabindex="-1"></a><span class="in">\end{sffamily}</span></span>
+<span id="cb15-481"><a href="#cb15-481" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-482"><a href="#cb15-482" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb15-483"><a href="#cb15-483" aria-hidden="true" tabindex="-1"></a><span class="in">\end{itshape}</span></span>
+<span id="cb15-484"><a href="#cb15-484" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-485"><a href="#cb15-485" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-486"><a href="#cb15-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-487"><a href="#cb15-487" aria-hidden="true" tabindex="-1"></a><span class="fu">## Font Styles for Inline Elements</span></span>
+<span id="cb15-488"><a href="#cb15-488" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-489"><a href="#cb15-489" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bold Font Inline</span></span>
+<span id="cb15-490"><a href="#cb15-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-491"><a href="#cb15-491" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\textbf{`{=latex}This text should be in bold.`}`{=latex}</span><span class="co">]</span>{.bold} Lorem</span>
+<span id="cb15-492"><a href="#cb15-492" aria-hidden="true" tabindex="-1"></a>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+<span id="cb15-493"><a href="#cb15-493" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb15-494"><a href="#cb15-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-495"><a href="#cb15-495" aria-hidden="true" tabindex="-1"></a><span class="fu">### Italic Font Inline</span></span>
+<span id="cb15-496"><a href="#cb15-496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-497"><a href="#cb15-497" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\textit{`{=latex}This text should be in italic.`}`{=latex}</span><span class="co">]</span>{.italic}</span>
+<span id="cb15-498"><a href="#cb15-498" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
+<span id="cb15-499"><a href="#cb15-499" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb15-500"><a href="#cb15-500" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-501"><a href="#cb15-501" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monospace Font Inline</span></span>
+<span id="cb15-502"><a href="#cb15-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-503"><a href="#cb15-503" aria-hidden="true" tabindex="-1"></a>[<span class="in">`\texttt{`</span>{=latex}This text should be in</span>
+<span id="cb15-504"><a href="#cb15-504" aria-hidden="true" tabindex="-1"></a>monospace.<span class="in">`}`</span>{=latex}]{.monospace} Lorem ipsum dolor sit amet,</span>
+<span id="cb15-505"><a href="#cb15-505" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+<span id="cb15-506"><a href="#cb15-506" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span>
+<span id="cb15-507"><a href="#cb15-507" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-508"><a href="#cb15-508" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sans-serif Font Inline</span></span>
+<span id="cb15-509"><a href="#cb15-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-510"><a href="#cb15-510" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\textsf{`{=latex}This text should be in sans-serif.`}`{=latex}</span><span class="co">]</span>{.sans}</span>
+<span id="cb15-511"><a href="#cb15-511" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
+<span id="cb15-512"><a href="#cb15-512" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb15-513"><a href="#cb15-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-514"><a href="#cb15-514" aria-hidden="true" tabindex="-1"></a><span class="fu">### Serif Font Inline</span></span>
+<span id="cb15-515"><a href="#cb15-515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-516"><a href="#cb15-516" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\textrm{`{=latex}This text should be in serif.`}`{=latex}</span><span class="co">]</span>{.serif}</span>
+<span id="cb15-517"><a href="#cb15-517" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
+<span id="cb15-518"><a href="#cb15-518" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb15-519"><a href="#cb15-519" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-520"><a href="#cb15-520" aria-hidden="true" tabindex="-1"></a><span class="fu">### Small Capitals Font Inline</span></span>
+<span id="cb15-521"><a href="#cb15-521" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-522"><a href="#cb15-522" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in small capitals.</span><span class="co">]</span>{.smallcaps} Lorem ipsum dolor</span>
+<span id="cb15-523"><a href="#cb15-523" aria-hidden="true" tabindex="-1"></a>sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
+<span id="cb15-524"><a href="#cb15-524" aria-hidden="true" tabindex="-1"></a>ut labore et dolore magna aliqua.</span>
+<span id="cb15-525"><a href="#cb15-525" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-526"><a href="#cb15-526" aria-hidden="true" tabindex="-1"></a><span class="fu">## Font sizes for Inline Elements</span></span>
+<span id="cb15-527"><a href="#cb15-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-528"><a href="#cb15-528" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Extra Small Font Inline</span></span>
+<span id="cb15-529"><a href="#cb15-529" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-530"><a href="#cb15-530" aria-hidden="true" tabindex="-1"></a>[<span class="in">`\scriptsize `</span>{=latex}This test should be extra extra small</span>
+<span id="cb15-531"><a href="#cb15-531" aria-hidden="true" tabindex="-1"></a>size.]{.xxsmall} Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+<span id="cb15-532"><a href="#cb15-532" aria-hidden="true" tabindex="-1"></a>elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb15-533"><a href="#cb15-533" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-534"><a href="#cb15-534" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Small Font Inline</span></span>
+<span id="cb15-535"><a href="#cb15-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-536"><a href="#cb15-536" aria-hidden="true" tabindex="-1"></a>[<span class="in">`\footnotesize `</span>{=latex}This text should be in extra small</span>
+<span id="cb15-537"><a href="#cb15-537" aria-hidden="true" tabindex="-1"></a>size.]{.xsmall} Lorem ipsum dolor sit amet, consectetur adipiscing elit,</span>
+<span id="cb15-538"><a href="#cb15-538" aria-hidden="true" tabindex="-1"></a>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb15-539"><a href="#cb15-539" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-540"><a href="#cb15-540" aria-hidden="true" tabindex="-1"></a><span class="fu">### Small Font Inline</span></span>
+<span id="cb15-541"><a href="#cb15-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-542"><a href="#cb15-542" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\small `{=latex}This text should be in small size.</span><span class="co">]</span>{.small} Lorem</span>
+<span id="cb15-543"><a href="#cb15-543" aria-hidden="true" tabindex="-1"></a>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+<span id="cb15-544"><a href="#cb15-544" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb15-545"><a href="#cb15-545" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-546"><a href="#cb15-546" aria-hidden="true" tabindex="-1"></a><span class="fu">### Normal Font Inline</span></span>
+<span id="cb15-547"><a href="#cb15-547" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-548"><a href="#cb15-548" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\normalsize `{=latex}This text should be in normal size.</span><span class="co">]</span>{.normal}</span>
+<span id="cb15-549"><a href="#cb15-549" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
+<span id="cb15-550"><a href="#cb15-550" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb15-551"><a href="#cb15-551" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-552"><a href="#cb15-552" aria-hidden="true" tabindex="-1"></a><span class="fu">### Large Font Inline</span></span>
+<span id="cb15-553"><a href="#cb15-553" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-554"><a href="#cb15-554" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\large `{=latex}This text should be in large size.</span><span class="co">]</span>{.large} Lorem</span>
+<span id="cb15-555"><a href="#cb15-555" aria-hidden="true" tabindex="-1"></a>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+<span id="cb15-556"><a href="#cb15-556" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb15-557"><a href="#cb15-557" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-558"><a href="#cb15-558" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Large Font Inline</span></span>
+<span id="cb15-559"><a href="#cb15-559" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-560"><a href="#cb15-560" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\Large `{=latex}This text should be in extra large size.</span><span class="co">]</span>{.xlarge}</span>
+<span id="cb15-561"><a href="#cb15-561" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
+<span id="cb15-562"><a href="#cb15-562" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb15-563"><a href="#cb15-563" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-564"><a href="#cb15-564" aria-hidden="true" tabindex="-1"></a><span class="fu">### Extra Extra Large Font Inline</span></span>
+<span id="cb15-565"><a href="#cb15-565" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-566"><a href="#cb15-566" aria-hidden="true" tabindex="-1"></a>[<span class="in">`\LARGE `</span>{=latex}This text should be in extra extra large</span>
+<span id="cb15-567"><a href="#cb15-567" aria-hidden="true" tabindex="-1"></a>size.]{.xxlarge} Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+<span id="cb15-568"><a href="#cb15-568" aria-hidden="true" tabindex="-1"></a>elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+<span id="cb15-569"><a href="#cb15-569" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-570"><a href="#cb15-570" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combination Styles for Inline Elements</span></span>
+<span id="cb15-571"><a href="#cb15-571" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-572"><a href="#cb15-572" aria-hidden="true" tabindex="-1"></a><span class="fu">### Small Capitals, Bold and Italic for Inline</span></span>
+<span id="cb15-573"><a href="#cb15-573" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-574"><a href="#cb15-574" aria-hidden="true" tabindex="-1"></a>[<span class="in">`\textit{`</span>{=latex}<span class="in">`\textbf{`</span>{=latex}<span class="in">`\textsc{`</span>{=latex}This text should</span>
+<span id="cb15-575"><a href="#cb15-575" aria-hidden="true" tabindex="-1"></a>be small capitals, bold and</span>
+<span id="cb15-576"><a href="#cb15-576" aria-hidden="true" tabindex="-1"></a>italic.<span class="in">`}`</span>{=latex}<span class="in">`}`</span>{=latex}<span class="in">`}`</span>{=latex}]{.sc .bf .it} Lorem ipsum dolor</span>
+<span id="cb15-577"><a href="#cb15-577" aria-hidden="true" tabindex="-1"></a>sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
+<span id="cb15-578"><a href="#cb15-578" aria-hidden="true" tabindex="-1"></a>ut labore et dolore magna aliqua.</span>
+<span id="cb15-579"><a href="#cb15-579" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-580"><a href="#cb15-580" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monospace, Extra Small Text and Bold for Inline</span></span>
+<span id="cb15-581"><a href="#cb15-581" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-582"><a href="#cb15-582" aria-hidden="true" tabindex="-1"></a>[<span class="in">`\texttt{`</span>{=latex}<span class="in">`\textbf{`</span>{=latex}<span class="in">`\footnotesize `</span>{=latex}This text</span>
+<span id="cb15-583"><a href="#cb15-583" aria-hidden="true" tabindex="-1"></a>should be in monospace, extra small size and</span>
+<span id="cb15-584"><a href="#cb15-584" aria-hidden="true" tabindex="-1"></a>bold.<span class="in">`}`</span>{=latex}<span class="in">`}`</span>{=latex}]{.tt .xsmall .bf} Lorem ipsum dolor sit</span>
+<span id="cb15-585"><a href="#cb15-585" aria-hidden="true" tabindex="-1"></a>amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</span>
+<span id="cb15-586"><a href="#cb15-586" aria-hidden="true" tabindex="-1"></a>labore et dolore magna aliqua.</span>
+<span id="cb15-587"><a href="#cb15-587" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-588"><a href="#cb15-588" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sans-serif and Italic for Inline</span></span>
+<span id="cb15-589"><a href="#cb15-589" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-590"><a href="#cb15-590" aria-hidden="true" tabindex="-1"></a>[<span class="in">`\textit{`</span>{=latex}<span class="in">`\textsf{`</span>{=latex}This text should be in sans-serif</span>
+<span id="cb15-591"><a href="#cb15-591" aria-hidden="true" tabindex="-1"></a>and italic.<span class="in">`}`</span>{=latex}<span class="in">`}`</span>{=latex}]{.sf .it} Lorem ipsum dolor sit amet,</span>
+<span id="cb15-592"><a href="#cb15-592" aria-hidden="true" tabindex="-1"></a>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+<span id="cb15-593"><a href="#cb15-593" aria-hidden="true" tabindex="-1"></a>et dolore magna aliqua.</span></code></pre></div>
 <h2 id="Code">Code</h2>
 <p><a href="fonts-and-alignment.lua">fonts-and-alignment.lua</a></p>
 <div class="sourceCode" id="fonts-and-alignment.lua"><pre
@@ -1214,7 +1387,7 @@ class="sourceCode lua"><code class="sourceCode lua"><span id="fonts-and-alignmen
 <span id="fonts-and-alignment.lua-5"><a href="#fonts-and-alignment.lua-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="fonts-and-alignment.lua-6"><a href="#fonts-and-alignment.lua-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- Makes sure users know if their pandoc version is too old for this</span></span>
 <span id="fonts-and-alignment.lua-7"><a href="#fonts-and-alignment.lua-7" aria-hidden="true" tabindex="-1"></a><span class="co">-- filter.</span></span>
-<span id="fonts-and-alignment.lua-8"><a href="#fonts-and-alignment.lua-8" aria-hidden="true" tabindex="-1"></a><span class="cn">PANDOC_VERSION</span><span class="op">:</span>must_be_at_least <span class="st">&#39;2.14&#39;</span></span>
+<span id="fonts-and-alignment.lua-8"><a href="#fonts-and-alignment.lua-8" aria-hidden="true" tabindex="-1"></a><span class="cn">PANDOC_VERSION</span><span class="op">:</span>must_be_at_least <span class="st">&#39;2.17&#39;</span></span>
 <span id="fonts-and-alignment.lua-9"><a href="#fonts-and-alignment.lua-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="fonts-and-alignment.lua-10"><a href="#fonts-and-alignment.lua-10" aria-hidden="true" tabindex="-1"></a><span class="co">-- The table below is categorized according to element tag.</span></span>
 <span id="fonts-and-alignment.lua-11"><a href="#fonts-and-alignment.lua-11" aria-hidden="true" tabindex="-1"></a><span class="co">--</span></span>
