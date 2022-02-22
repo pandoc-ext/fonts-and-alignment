@@ -1,102 +1,123 @@
---- fonts-and-alignment.lua - Sets font styles and text alignment in LaTeX documents
+--- fonts-and-alignment.lua - Sets the fonts and alignment in LaTeX documents
 ---
---- Copyright: © 2021-2022 Nandakumar Chandrasekhar and Contributors
+--- Copyright: © 2021-2022 Nandakumar Chandrasekhar
 --- License: MIT - see LICENSE for details
 ---
--- Makes sure users know if their pandoc version is too old for this
--- filter.
+-- Makes sure users know if their pandoc version is too old for this filter.
 PANDOC_VERSION:must_be_at_least '2.17'
 
--- The table below is categorized according to element tag.
---
--- Under each element tag we have a set of styles that apply to that tag.
--- Those styles in turn correspond to another table containing two values,
--- the LaTeX begin code and the LaTeX end code. Some styles have a begin code
--- but no end code in which case the value is nil.
-LATEX_CODES_FOR_TAGS = {
-  Span = {
-    -- Font Styles
-    bold = { '\\textbf{', '}' },
-    italic = { '\\textit{', '}' },
-    monospace = { '\\texttt{', '}' },
-    sans = { '\\textsf{', '}' },
-    serif = { '\\textrm{', '}' },
-    smallcaps = { '\\textsc{', '}' },
+-- For the tables below the first variable in the LaTeX code for an inline
+-- element or Span and the second is far a block element or Div.
 
-    -- Font styles corresponding to TeX font switches
-    bf = { '\\textbf{', '}' },
-    it = { '\\textit{', '}' },
-    tt = { '\\texttt{', '}' },
-    sf = { '\\textsf{', '}' },
-    rm = { '\\textrm{', '}' },
-    sc = { '\\textsc{', '}' },
-
-    -- Font Sizes
-    xxsmall = { '\\scriptsize ', nil },
-    xsmall = { '\\footnotesize ', nil },
-    small = { '\\small ', nil },
-    normal = { '\\normalsize ', nil },
-    large = { '\\large ', nil },
-    xlarge = { '\\Large ', nil },
-    xxlarge = { '\\LARGE ', nil },
-  },
-  Div = {
-    -- Font Styles
-    bold = { '\\begin{bfseries}', '\\end{bfseries}' },
-    italic = { '\\begin{itshape}', '\\end{itshape}' },
-    monospace = { '\\begin{ttfamily}', '\\end{ttfamily}' },
-    sans = { '\\begin{sffamily}', '\\end{sffamily}' },
-    serif = { '\\begin{rmfamily}', '\\end{rmfamily}' },
-    smallcaps = { '\\begin{scshape}',  '\\end{scshape}' },
-
-    -- Font styles corresponding to TeX font switches
-    bf = { '\\begin{bfseries}', '\\end{bfseries}' },
-    it = { '\\begin{itshape}', '\\end{itshape}' },
-    tt = { '\\begin{ttfamily}', '\\end{ttfamily}' },
-    sf = { '\\begin{sffamily}', '\\end{sffamily}' },
-    rm = { '\\begin{rmfamily}', '\\end{rmfamily}' },
-    sc = { '\\begin{scshape}',  '\\end{scshape}' },
-
-    -- Font Sizes
-    xxsmall = { '\\begin{scriptsize}', '\\end{scriptsize}' },
-    xsmall = { '\\begin{footnotesize}', '\\end{footnotesize}' },
-    small = { '\\begin{small}', '\\end{small}' },
-    normal = { '\\begin{normalsize}', '\\end{normalsize}' },
-    large = { '\\begin{large}', '\\end{large}' },
-    xlarge = { '\\begin{Large}', '\\end{Large}' },
-    xxlarge = { '\\begin{LARGE}', '\\end{LARGE}' },
-
-    -- Layouts
-    center = { '\\begin{center}', '\\end{center}' },
-    flushright = { '\\begin{flushright}', '\\end{flushright}' },
-    flushleft = { '\\begin{flushleft}', '\\end{flushleft}' },
-    centering = { '\\begin{centering}', '\\end{centering}' },
-    raggedleft = { '\\begin{raggedleft}', '\\end{raggedleft}' },
-    raggedright = { '\\begin{raggedright}', '\\end{raggedright}' },
-  }
+-- LaTeX font types
+LATEX_FONT_TYPES = {
+  bold = { 'textbf', 'bfseries' },
+  italic = { 'textit', 'itshape' },
+  monospace = { 'texttt', 'ttfamily' },
+  sans = { 'textsf', 'sffamily' },
+  serif = { 'textrm', 'rmfamily' },
+  smallcaps = { 'textsc', 'scshape' },
+  bf = { 'textbf', 'bfseries' },
+  it = { 'textit', 'itshape' },
+  tt = { 'texttt', 'ttfamily' },
+  sf = { 'textsf', 'sffamily' },
+  rm = { 'textrm', 'rmfamily' },
+  sc = { 'textsc', 'scshape' },
 }
 
-local raw_code_function = {
+-- LaTeX font sizes
+LATEX_FONT_SIZES = {
+  xxsmall = { 'scriptsize', 'scriptsize'},
+  xsmall = { 'footnotesize', 'footnotesize' },
+  small = { 'small', 'small' },
+  normal = { 'normalsize', 'normalsize' },
+  large = { 'large', 'large' },
+  xlarge = { 'Large', 'Large' },
+  xxlarge = { 'LARGE', 'LARGE' },
+}
+
+-- LaTeX layouts
+LATEX_LAYOUTS = {
+  center = { nil, 'center' },
+  flushright = { nil, 'flushright' },
+  flushleft = { nil, 'flushleft' },
+  centering = { nil, 'centering' },
+  raggedleft = { nil, 'raggedleft' },
+  raggedright = { nil, 'raggedright' },
+}
+
+-- Pandoc code to write raw inline and raw block elements
+RAW_CODE_FUNCTION = {
   Span = pandoc.RawInline,
   Div = pandoc.RawBlock
 }
+
+-- Table to hold the constructed LaTeX commands
+-- categorized by tag and then style
+local latex_cmd_for_tags = {
+  Span = {},
+  Div = {}
+}
+
+-- Construct the LaTeX code based on type of element
+local function construct_latex_cmd(class, span_code, div_code, span_end_code)
+  -- Construct codes for span
+  if span_code then
+    -- Decide on the format of the LaTeX code for spans based on this variable
+    if not span_end_code then
+      latex_cmd_for_tags.Span[class] = {'\\' .. span_code .. ' ', nil}
+    else
+      latex_cmd_for_tags.Span[class] = {'\\' .. span_code .. '{', '}'}
+    end
+  end
+  -- Consruct codes for div
+  if div_code then
+    latex_cmd_for_tags.Div[class] = {
+      '\\begin{' .. div_code .. '}', '\\end{' .. div_code .. '}'
+    }
+  end
+end
+
+-- Extract the LaTeX codes for Spans and Divs to construct the LaTeX command
+local function extract_latex_codes(styles_list, span_end_code)
+  -- This variable helps us construct the correct LaTeX start and end code
+  span_end_code = (span_end_code == nil and false) or span_end_code
+  for class, latex_codes in pairs(styles_list) do
+    -- Check that the table latex_codes is not empty
+    if next(latex_codes) then
+      local span_code = latex_codes[1]
+      local div_code = latex_codes[2]
+      construct_latex_cmd(class, span_code, div_code, span_end_code)
+    end
+  end
+end
+
+-- Construct the LaTeX commands for font types, font sizes and layouts
+extract_latex_codes(LATEX_FONT_TYPES, true)
+extract_latex_codes(LATEX_FONT_SIZES)
+extract_latex_codes(LATEX_LAYOUTS)
 
 -- This function takes an element object and returns it with
 -- the LaTeX codes applied based on the classes attached to the element
 local function handler (elem)
   local tag = elem.tag
-  local raw = raw_code_function[tag]
-  local code_for_class = LATEX_CODES_FOR_TAGS[tag]
+  local raw = RAW_CODE_FUNCTION[tag]
+  local code_for_class = latex_cmd_for_tags[tag]
 
   -- Iterate through the classes specified on the element and if
-  -- any of them match a LaTeX code add the code to the element
+  -- any of them match a LaTeX code add the code to the element.
+  -- We also avoid the issue where the order of the classes is
+  -- non-determinsitic creating a different document every time.
   for _, class in ipairs(elem.classes) do
     if code_for_class[class] then
       local code = code_for_class[class]
       local begin_code = code[1] -- LaTeX code placed in front
       local end_code = code[2] -- LaTeX code placed at the end
+
+      -- Add LaTeX code at the beginning
       table.insert(elem.content, 1, raw('latex', begin_code))
       if end_code then
+        -- Add LaTeX code at the end
         table.insert(elem.content, raw('latex', end_code))
       end
     end

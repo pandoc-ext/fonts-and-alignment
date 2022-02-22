@@ -1,954 +1,1135 @@
 [ Header
     2
-    ( "layouts-for-block-elements" , [] , [] )
-    [ Str "Layouts"
+    ( "font-styles-for-inline-elements" , [] , [] )
+    [ Str "Font"
+    , Space
+    , Str "Styles"
     , Space
     , Str "for"
     , Space
-    , Str "Block"
+    , Str "Inline"
     , Space
     , Str "Elements"
     ]
 , Header
     3
-    ( "centered-block" , [] , [] )
-    [ Str "Centered" , Space , Str "Block" ]
-, Div
-    ( "" , [ "center" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{center}"
-    , Para
-        [ Str "Lorem"
+    ( "bold-font-inline" , [] , [] )
+    [ Str "Bold" , Space , Str "Font" , Space , Str "Inline" ]
+, Para
+    [ Span
+        ( "" , [ "bold" ] , [] )
+        [ RawInline (Format "latex") "\\textbf{"
+        , Str "This"
         , Space
-        , Str "ipsum"
+        , Str "text"
         , Space
-        , Str "dolor"
+        , Str "should"
         , Space
-        , Str "sit"
-        , Space
-        , Str "amet,"
-        , Space
-        , Str "consectetur"
-        , Space
-        , Str "adipiscing"
-        , Space
-        , Str "elit,"
-        , Space
-        , Str "sed"
-        , Space
-        , Str "do"
-        , Space
-        , Str "eiusmod"
-        , SoftBreak
-        , Str "tempor"
-        , Space
-        , Str "incididunt"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "labore"
-        , Space
-        , Str "et"
-        , Space
-        , Str "dolore"
-        , Space
-        , Str "magna"
-        , Space
-        , Str "aliqua."
-        , Space
-        , Str "Ut"
-        , Space
-        , Str "enim"
-        , Space
-        , Str "ad"
-        , Space
-        , Str "minim"
-        , SoftBreak
-        , Str "veniam,"
-        , Space
-        , Str "quis"
-        , Space
-        , Str "nostrud"
-        , Space
-        , Str "exercitation"
-        , Space
-        , Str "ullamco"
-        , Space
-        , Str "laboris"
-        , Space
-        , Str "nisi"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "aliquip"
-        , Space
-        , Str "ex"
-        , Space
-        , Str "ea"
-        , SoftBreak
-        , Str "commodo"
-        , Space
-        , Str "consequat."
-        , Space
-        , Str "Duis"
-        , Space
-        , Str "aute"
-        , Space
-        , Str "irure"
-        , Space
-        , Str "dolor"
+        , Str "be"
         , Space
         , Str "in"
         , Space
-        , Str "reprehenderit"
-        , Space
-        , Str "in"
-        , Space
-        , Str "voluptate"
-        , SoftBreak
-        , Str "velit"
-        , Space
-        , Str "esse"
-        , Space
-        , Str "cillum"
-        , Space
-        , Str "dolore"
-        , Space
-        , Str "eu"
-        , Space
-        , Str "fugiat"
-        , Space
-        , Str "nulla"
-        , Space
-        , Str "pariatur."
-        , Space
-        , Str "Excepteur"
-        , Space
-        , Str "sint"
-        , SoftBreak
-        , Str "occaecat"
-        , Space
-        , Str "cupidatat"
-        , Space
-        , Str "non"
-        , Space
-        , Str "proident,"
-        , Space
-        , Str "sunt"
-        , Space
-        , Str "in"
-        , Space
-        , Str "culpa"
-        , Space
-        , Str "qui"
-        , Space
-        , Str "officia"
-        , Space
-        , Str "deserunt"
-        , SoftBreak
-        , Str "mollit"
-        , Space
-        , Str "anim"
-        , Space
-        , Str "id"
-        , Space
-        , Str "est"
-        , Space
-        , Str "laborum."
+        , Str "bold."
+        , RawInline (Format "latex") "}"
         ]
-    , RawBlock (Format "latex") "\\end{center}"
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , SoftBreak
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , SoftBreak
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
     ]
 , Header
     3
-    ( "left-justified-block" , [] , [] )
-    [ Str "Left"
-    , Space
-    , Str "Justified"
-    , Space
-    , Str "Block"
-    ]
-, Div
-    ( "" , [ "flushleft" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{flushleft}"
-    , Para
-        [ Str "Lorem"
+    ( "italic-font-inline" , [] , [] )
+    [ Str "Italic" , Space , Str "Font" , Space , Str "Inline" ]
+, Para
+    [ Span
+        ( "" , [ "italic" ] , [] )
+        [ RawInline (Format "latex") "\\textit{"
+        , Str "This"
         , Space
-        , Str "ipsum"
+        , Str "text"
         , Space
-        , Str "dolor"
+        , Str "should"
         , Space
-        , Str "sit"
-        , Space
-        , Str "amet,"
-        , Space
-        , Str "consectetur"
-        , Space
-        , Str "adipiscing"
-        , Space
-        , Str "elit,"
-        , Space
-        , Str "sed"
-        , Space
-        , Str "do"
-        , Space
-        , Str "eiusmod"
-        , SoftBreak
-        , Str "tempor"
-        , Space
-        , Str "incididunt"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "labore"
-        , Space
-        , Str "et"
-        , Space
-        , Str "dolore"
-        , Space
-        , Str "magna"
-        , Space
-        , Str "aliqua."
-        , Space
-        , Str "Ut"
-        , Space
-        , Str "enim"
-        , Space
-        , Str "ad"
-        , Space
-        , Str "minim"
-        , SoftBreak
-        , Str "veniam,"
-        , Space
-        , Str "quis"
-        , Space
-        , Str "nostrud"
-        , Space
-        , Str "exercitation"
-        , Space
-        , Str "ullamco"
-        , Space
-        , Str "laboris"
-        , Space
-        , Str "nisi"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "aliquip"
-        , Space
-        , Str "ex"
-        , Space
-        , Str "ea"
-        , SoftBreak
-        , Str "commodo"
-        , Space
-        , Str "consequat."
-        , Space
-        , Str "Duis"
-        , Space
-        , Str "aute"
-        , Space
-        , Str "irure"
-        , Space
-        , Str "dolor"
+        , Str "be"
         , Space
         , Str "in"
         , Space
-        , Str "reprehenderit"
-        , Space
-        , Str "in"
-        , Space
-        , Str "voluptate"
-        , SoftBreak
-        , Str "velit"
-        , Space
-        , Str "esse"
-        , Space
-        , Str "cillum"
-        , Space
-        , Str "dolore"
-        , Space
-        , Str "eu"
-        , Space
-        , Str "fugiat"
-        , Space
-        , Str "nulla"
-        , Space
-        , Str "pariatur."
-        , Space
-        , Str "Excepteur"
-        , Space
-        , Str "sint"
-        , SoftBreak
-        , Str "occaecat"
-        , Space
-        , Str "cupidatat"
-        , Space
-        , Str "non"
-        , Space
-        , Str "proident,"
-        , Space
-        , Str "sunt"
-        , Space
-        , Str "in"
-        , Space
-        , Str "culpa"
-        , Space
-        , Str "qui"
-        , Space
-        , Str "officia"
-        , Space
-        , Str "deserunt"
-        , SoftBreak
-        , Str "mollit"
-        , Space
-        , Str "anim"
-        , Space
-        , Str "id"
-        , Space
-        , Str "est"
-        , Space
-        , Str "laborum."
+        , Str "italic."
+        , RawInline (Format "latex") "}"
         ]
-    , RawBlock (Format "latex") "\\end{flushleft}"
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , SoftBreak
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , SoftBreak
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
     ]
 , Header
     3
-    ( "right-justified-block" , [] , [] )
-    [ Str "Right"
+    ( "monospace-font-inline" , [] , [] )
+    [ Str "Monospace"
     , Space
-    , Str "Justified"
+    , Str "Font"
     , Space
-    , Str "Block"
+    , Str "Inline"
     ]
-, Div
-    ( "" , [ "flushright" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{flushright}"
-    , Para
-        [ Str "Lorem"
+, Para
+    [ Span
+        ( "" , [ "monospace" ] , [] )
+        [ RawInline (Format "latex") "\\texttt{"
+        , Str "This"
         , Space
-        , Str "ipsum"
+        , Str "text"
         , Space
-        , Str "dolor"
+        , Str "should"
         , Space
-        , Str "sit"
-        , Space
-        , Str "amet,"
-        , Space
-        , Str "consectetur"
-        , Space
-        , Str "adipiscing"
-        , Space
-        , Str "elit,"
-        , Space
-        , Str "sed"
-        , Space
-        , Str "do"
-        , Space
-        , Str "eiusmod"
-        , SoftBreak
-        , Str "tempor"
-        , Space
-        , Str "incididunt"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "labore"
-        , Space
-        , Str "et"
-        , Space
-        , Str "dolore"
-        , Space
-        , Str "magna"
-        , Space
-        , Str "aliqua."
-        , Space
-        , Str "Ut"
-        , Space
-        , Str "enim"
-        , Space
-        , Str "ad"
-        , Space
-        , Str "minim"
-        , SoftBreak
-        , Str "veniam,"
-        , Space
-        , Str "quis"
-        , Space
-        , Str "nostrud"
-        , Space
-        , Str "exercitation"
-        , Space
-        , Str "ullamco"
-        , Space
-        , Str "laboris"
-        , Space
-        , Str "nisi"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "aliquip"
-        , Space
-        , Str "ex"
-        , Space
-        , Str "ea"
-        , SoftBreak
-        , Str "commodo"
-        , Space
-        , Str "consequat."
-        , Space
-        , Str "Duis"
-        , Space
-        , Str "aute"
-        , Space
-        , Str "irure"
-        , Space
-        , Str "dolor"
+        , Str "be"
         , Space
         , Str "in"
         , Space
-        , Str "reprehenderit"
-        , Space
-        , Str "in"
-        , Space
-        , Str "voluptate"
-        , SoftBreak
-        , Str "velit"
-        , Space
-        , Str "esse"
-        , Space
-        , Str "cillum"
-        , Space
-        , Str "dolore"
-        , Space
-        , Str "eu"
-        , Space
-        , Str "fugiat"
-        , Space
-        , Str "nulla"
-        , Space
-        , Str "pariatur."
-        , Space
-        , Str "Excepteur"
-        , Space
-        , Str "sint"
-        , SoftBreak
-        , Str "occaecat"
-        , Space
-        , Str "cupidatat"
-        , Space
-        , Str "non"
-        , Space
-        , Str "proident,"
-        , Space
-        , Str "sunt"
-        , Space
-        , Str "in"
-        , Space
-        , Str "culpa"
-        , Space
-        , Str "qui"
-        , Space
-        , Str "officia"
-        , Space
-        , Str "deserunt"
-        , SoftBreak
-        , Str "mollit"
-        , Space
-        , Str "anim"
-        , Space
-        , Str "id"
-        , Space
-        , Str "est"
-        , Space
-        , Str "laborum."
+        , Str "monospace."
+        , RawInline (Format "latex") "}"
         ]
-    , RawBlock (Format "latex") "\\end{flushright}"
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , SoftBreak
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , SoftBreak
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
     ]
 , Header
     3
-    ( "centered-block-with-user-defined-line-breaks" , [] , [] )
-    [ Str "Centered"
+    ( "sans-serif-font-inline" , [] , [] )
+    [ Str "Sans-serif"
     , Space
-    , Str "Block"
+    , Str "Font"
     , Space
-    , Str "with"
-    , Space
-    , Str "User-defined"
-    , Space
-    , Str "Line"
-    , Space
-    , Str "Breaks"
+    , Str "Inline"
     ]
-, Div
-    ( "" , [ "centering" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{centering}"
-    , Para
-        [ Str "Lorem"
+, Para
+    [ Span
+        ( "" , [ "sans" ] , [] )
+        [ RawInline (Format "latex") "\\textsf{"
+        , Str "This"
         , Space
-        , Str "ipsum"
+        , Str "text"
         , Space
-        , Str "dolor"
+        , Str "should"
         , Space
-        , Str "sit"
-        , Space
-        , Str "amet,"
-        , Space
-        , Str "consectetur"
-        , LineBreak
-        , Str "adipiscing"
-        , Space
-        , Str "elit,"
-        , Space
-        , Str "sed"
-        , Space
-        , Str "do"
-        , Space
-        , Str "eiusmod"
-        , LineBreak
-        , Str "tempor"
-        , Space
-        , Str "incididunt"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "labore"
-        , Space
-        , Str "et"
-        , Space
-        , Str "dolore"
-        , LineBreak
-        , Str "magna"
-        , Space
-        , Str "aliqua."
-        , Space
-        , Str "Ut"
-        , Space
-        , Str "enim"
-        , Space
-        , Str "ad"
-        , Space
-        , Str "minim"
-        , LineBreak
-        , Str "veniam,"
-        , Space
-        , Str "quis"
-        , Space
-        , Str "nostrud"
-        , Space
-        , Str "exercitation"
-        , Space
-        , Str "ullamco"
-        , LineBreak
-        , Str "laboris"
-        , Space
-        , Str "nisi"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "aliquip"
-        , Space
-        , Str "ex"
-        , Space
-        , Str "ea"
-        , LineBreak
-        , Str "commodo"
-        , Space
-        , Str "consequat."
-        , Space
-        , Str "Duis"
-        , Space
-        , Str "aute"
-        , Space
-        , Str "irure"
-        , LineBreak
-        , Str "dolor"
+        , Str "be"
         , Space
         , Str "in"
         , Space
-        , Str "reprehenderit"
-        , Space
-        , Str "in"
-        , Space
-        , Str "voluptate"
-        , LineBreak
-        , Str "velit"
-        , Space
-        , Str "esse"
-        , Space
-        , Str "cillum"
-        , Space
-        , Str "dolore"
-        , Space
-        , Str "eu"
-        , Space
-        , Str "fugiat"
-        , LineBreak
-        , Str "nulla"
-        , Space
-        , Str "pariatur."
-        , Space
-        , Str "Excepteur"
-        , Space
-        , Str "sint"
-        , LineBreak
-        , Str "occaecat"
-        , Space
-        , Str "cupidatat"
-        , Space
-        , Str "non"
-        , Space
-        , Str "proident,"
-        , LineBreak
-        , Str "sunt"
-        , Space
-        , Str "in"
-        , Space
-        , Str "culpa"
-        , Space
-        , Str "qui"
-        , Space
-        , Str "officia"
-        , Space
-        , Str "deserunt"
-        , LineBreak
-        , Str "mollit"
-        , Space
-        , Str "anim"
-        , Space
-        , Str "id"
-        , Space
-        , Str "est"
-        , Space
-        , Str "laborum."
+        , Str "sans-serif."
+        , RawInline (Format "latex") "}"
         ]
-    , RawBlock (Format "latex") "\\end{centering}"
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , SoftBreak
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , SoftBreak
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
     ]
 , Header
     3
-    ( "left-justified-block-with-user-defined-line-breaks"
+    ( "serif-font-inline" , [] , [] )
+    [ Str "Serif" , Space , Str "Font" , Space , Str "Inline" ]
+, Para
+    [ Span
+        ( "" , [ "serif" ] , [] )
+        [ RawInline (Format "latex") "\\textrm{"
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "in"
+        , Space
+        , Str "serif."
+        , RawInline (Format "latex") "}"
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , SoftBreak
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , SoftBreak
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "small-capitals-font-inline" , [] , [] )
+    [ Str "Small"
+    , Space
+    , Str "Capitals"
+    , Space
+    , Str "Font"
+    , Space
+    , Str "Inline"
+    ]
+, Para
+    [ SmallCaps
+        [ Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "in"
+        , Space
+        , Str "small"
+        , Space
+        , Str "capitals."
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , SoftBreak
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , SoftBreak
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    2
+    ( "font-sizes-for-inline-elements" , [] , [] )
+    [ Str "Font"
+    , Space
+    , Str "sizes"
+    , Space
+    , Str "for"
+    , Space
+    , Str "Inline"
+    , Space
+    , Str "Elements"
+    ]
+, Header
+    3
+    ( "extra-extra-small-font-inline" , [] , [] )
+    [ Str "Extra"
+    , Space
+    , Str "Extra"
+    , Space
+    , Str "Small"
+    , Space
+    , Str "Font"
+    , Space
+    , Str "Inline"
+    ]
+, Para
+    [ Span
+        ( "" , [ "xxsmall" ] , [] )
+        [ RawInline (Format "latex") "\\scriptsize "
+        , Str "This"
+        , Space
+        , Str "test"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "extra"
+        , Space
+        , Str "extra"
+        , Space
+        , Str "small"
+        , Space
+        , Str "size."
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , SoftBreak
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , SoftBreak
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "extra-small-font-inline" , [] , [] )
+    [ Str "Extra"
+    , Space
+    , Str "Small"
+    , Space
+    , Str "Font"
+    , Space
+    , Str "Inline"
+    ]
+, Para
+    [ Span
+        ( "" , [ "xsmall" ] , [] )
+        [ RawInline (Format "latex") "\\footnotesize "
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "in"
+        , Space
+        , Str "extra"
+        , Space
+        , Str "small"
+        , Space
+        , Str "size."
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , SoftBreak
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , SoftBreak
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "small-font-inline" , [] , [] )
+    [ Str "Small" , Space , Str "Font" , Space , Str "Inline" ]
+, Para
+    [ Span
+        ( "" , [ "small" ] , [] )
+        [ RawInline (Format "latex") "\\small "
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "in"
+        , Space
+        , Str "small"
+        , Space
+        , Str "size."
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , SoftBreak
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , SoftBreak
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "normal-font-inline" , [] , [] )
+    [ Str "Normal" , Space , Str "Font" , Space , Str "Inline" ]
+, Para
+    [ Span
+        ( "" , [ "normal" ] , [] )
+        [ RawInline (Format "latex") "\\normalsize "
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "in"
+        , Space
+        , Str "normal"
+        , Space
+        , Str "size."
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , SoftBreak
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , SoftBreak
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "large-font-inline" , [] , [] )
+    [ Str "Large" , Space , Str "Font" , Space , Str "Inline" ]
+, Para
+    [ Span
+        ( "" , [ "large" ] , [] )
+        [ RawInline (Format "latex") "\\large "
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "in"
+        , Space
+        , Str "large"
+        , Space
+        , Str "size."
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , SoftBreak
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , SoftBreak
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "extra-large-font-inline" , [] , [] )
+    [ Str "Extra"
+    , Space
+    , Str "Large"
+    , Space
+    , Str "Font"
+    , Space
+    , Str "Inline"
+    ]
+, Para
+    [ Span
+        ( "" , [ "xlarge" ] , [] )
+        [ RawInline (Format "latex") "\\Large "
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "in"
+        , Space
+        , Str "extra"
+        , Space
+        , Str "large"
+        , Space
+        , Str "size."
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , SoftBreak
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , SoftBreak
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "extra-extra-large-font-inline" , [] , [] )
+    [ Str "Extra"
+    , Space
+    , Str "Extra"
+    , Space
+    , Str "Large"
+    , Space
+    , Str "Font"
+    , Space
+    , Str "Inline"
+    ]
+, Para
+    [ Span
+        ( "" , [ "xxlarge" ] , [] )
+        [ RawInline (Format "latex") "\\LARGE "
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "in"
+        , Space
+        , Str "extra"
+        , Space
+        , Str "extra"
+        , Space
+        , Str "large"
+        , Space
+        , Str "size."
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , SoftBreak
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , SoftBreak
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    2
+    ( "combination-styles-for-inline-elements" , [] , [] )
+    [ Str "Combination"
+    , Space
+    , Str "Styles"
+    , Space
+    , Str "for"
+    , Space
+    , Str "Inline"
+    , Space
+    , Str "Elements"
+    ]
+, Header
+    3
+    ( "small-capitals-bold-and-italic-for-inline" , [] , [] )
+    [ Str "Small"
+    , Space
+    , Str "Capitals,"
+    , Space
+    , Str "Bold"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Italic"
+    , Space
+    , Str "for"
+    , Space
+    , Str "Inline"
+    ]
+, Para
+    [ Span
+        ( "" , [ "sc" , "bf" , "it" ] , [] )
+        [ RawInline (Format "latex") "\\textit{"
+        , RawInline (Format "latex") "\\textbf{"
+        , RawInline (Format "latex") "\\textsc{"
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "small"
+        , Space
+        , Str "capitals,"
+        , Space
+        , Str "bold"
+        , Space
+        , Str "and"
+        , Space
+        , Str "italic."
+        , RawInline (Format "latex") "}"
+        , RawInline (Format "latex") "}"
+        , RawInline (Format "latex") "}"
+        ]
+    , SoftBreak
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , SoftBreak
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "monospace-extra-small-text-and-bold-for-inline"
     , []
     , []
     )
-    [ Str "Left"
+    [ Str "Monospace,"
     , Space
-    , Str "Justified"
+    , Str "Extra"
     , Space
-    , Str "Block"
+    , Str "Small"
     , Space
-    , Str "with"
+    , Str "Text"
     , Space
-    , Str "User-defined"
+    , Str "and"
     , Space
-    , Str "Line"
+    , Str "Bold"
     , Space
-    , Str "Breaks"
+    , Str "for"
+    , Space
+    , Str "Inline"
     ]
-, Div
-    ( "" , [ "raggedright" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{raggedright}"
-    , Para
-        [ Str "Lorem"
+, Para
+    [ Span
+        ( "" , [ "tt" , "xsmall" , "bf" ] , [] )
+        [ RawInline (Format "latex") "\\textbf{"
+        , RawInline (Format "latex") "\\footnotesize "
+        , RawInline (Format "latex") "\\texttt{"
+        , Str "This"
         , Space
-        , Str "ipsum"
+        , Str "text"
         , Space
-        , Str "dolor"
+        , Str "should"
         , Space
-        , Str "sit"
-        , Space
-        , Str "amet,"
-        , Space
-        , Str "consectetur"
-        , LineBreak
-        , Str "adipiscing"
-        , Space
-        , Str "elit,"
-        , Space
-        , Str "sed"
-        , Space
-        , Str "do"
-        , Space
-        , Str "eiusmod"
-        , LineBreak
-        , Str "tempor"
-        , Space
-        , Str "incididunt"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "labore"
-        , Space
-        , Str "et"
-        , Space
-        , Str "dolore"
-        , LineBreak
-        , Str "magna"
-        , Space
-        , Str "aliqua."
-        , Space
-        , Str "Ut"
-        , Space
-        , Str "enim"
-        , Space
-        , Str "ad"
-        , Space
-        , Str "minim"
-        , LineBreak
-        , Str "veniam,"
-        , Space
-        , Str "quis"
-        , Space
-        , Str "nostrud"
-        , Space
-        , Str "exercitation"
-        , Space
-        , Str "ullamco"
-        , LineBreak
-        , Str "laboris"
-        , Space
-        , Str "nisi"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "aliquip"
-        , Space
-        , Str "ex"
-        , Space
-        , Str "ea"
-        , LineBreak
-        , Str "commodo"
-        , Space
-        , Str "consequat."
-        , Space
-        , Str "Duis"
-        , Space
-        , Str "aute"
-        , Space
-        , Str "irure"
-        , LineBreak
-        , Str "dolor"
+        , Str "be"
         , Space
         , Str "in"
         , Space
-        , Str "reprehenderit"
+        , Str "monospace,"
         , Space
-        , Str "in"
+        , Str "extra"
         , Space
-        , Str "voluptate"
-        , LineBreak
-        , Str "velit"
+        , Str "small"
         , Space
-        , Str "esse"
+        , Str "size"
         , Space
-        , Str "cillum"
+        , Str "and"
         , Space
-        , Str "dolore"
-        , Space
-        , Str "eu"
-        , Space
-        , Str "fugiat"
-        , LineBreak
-        , Str "nulla"
-        , Space
-        , Str "pariatur."
-        , Space
-        , Str "Excepteur"
-        , Space
-        , Str "sint"
-        , LineBreak
-        , Str "occaecat"
-        , Space
-        , Str "cupidatat"
-        , Space
-        , Str "non"
-        , Space
-        , Str "proident,"
-        , LineBreak
-        , Str "sunt"
-        , Space
-        , Str "in"
-        , Space
-        , Str "culpa"
-        , Space
-        , Str "qui"
-        , Space
-        , Str "officia"
-        , Space
-        , Str "deserunt"
-        , LineBreak
-        , Str "mollit"
-        , Space
-        , Str "anim"
-        , Space
-        , Str "id"
-        , Space
-        , Str "est"
-        , Space
-        , Str "laborum."
+        , Str "bold."
+        , RawInline (Format "latex") "}"
+        , RawInline (Format "latex") "}"
         ]
-    , RawBlock (Format "latex") "\\end{raggedright}"
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , Space
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , SoftBreak
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , Space
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
     ]
 , Header
     3
-    ( "right-justified-block-with-user-defined-line-breaks"
-    , []
-    , []
-    )
-    [ Str "Right"
+    ( "sans-serif-and-italic-for-inline" , [] , [] )
+    [ Str "Sans-serif"
     , Space
-    , Str "Justified"
+    , Str "and"
     , Space
-    , Str "Block"
+    , Str "Italic"
     , Space
-    , Str "with"
+    , Str "for"
     , Space
-    , Str "User-defined"
-    , Space
-    , Str "Line"
-    , Space
-    , Str "Breaks"
+    , Str "Inline"
     ]
-, Div
-    ( "" , [ "raggedleft" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{raggedleft}"
-    , Para
-        [ Str "Lorem"
+, Para
+    [ Span
+        ( "" , [ "sf" , "it" ] , [] )
+        [ RawInline (Format "latex") "\\textit{"
+        , RawInline (Format "latex") "\\textsf{"
+        , Str "This"
         , Space
-        , Str "ipsum"
+        , Str "text"
         , Space
-        , Str "dolor"
+        , Str "should"
         , Space
-        , Str "sit"
-        , Space
-        , Str "amet,"
-        , Space
-        , Str "consectetur"
-        , LineBreak
-        , Str "adipiscing"
-        , Space
-        , Str "elit,"
-        , Space
-        , Str "sed"
-        , Space
-        , Str "do"
-        , Space
-        , Str "eiusmod"
-        , LineBreak
-        , Str "tempor"
-        , Space
-        , Str "incididunt"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "labore"
-        , Space
-        , Str "et"
-        , Space
-        , Str "dolore"
-        , LineBreak
-        , Str "magna"
-        , Space
-        , Str "aliqua."
-        , Space
-        , Str "Ut"
-        , Space
-        , Str "enim"
-        , Space
-        , Str "ad"
-        , Space
-        , Str "minim"
-        , LineBreak
-        , Str "veniam,"
-        , Space
-        , Str "quis"
-        , Space
-        , Str "nostrud"
-        , Space
-        , Str "exercitation"
-        , Space
-        , Str "ullamco"
-        , LineBreak
-        , Str "laboris"
-        , Space
-        , Str "nisi"
-        , Space
-        , Str "ut"
-        , Space
-        , Str "aliquip"
-        , Space
-        , Str "ex"
-        , Space
-        , Str "ea"
-        , LineBreak
-        , Str "commodo"
-        , Space
-        , Str "consequat."
-        , Space
-        , Str "Duis"
-        , Space
-        , Str "aute"
-        , Space
-        , Str "irure"
-        , LineBreak
-        , Str "dolor"
+        , Str "be"
         , Space
         , Str "in"
         , Space
-        , Str "reprehenderit"
+        , Str "sans-serif"
         , Space
-        , Str "in"
+        , Str "and"
         , Space
-        , Str "voluptate"
-        , LineBreak
-        , Str "velit"
-        , Space
-        , Str "esse"
-        , Space
-        , Str "cillum"
-        , Space
-        , Str "dolore"
-        , Space
-        , Str "eu"
-        , Space
-        , Str "fugiat"
-        , LineBreak
-        , Str "nulla"
-        , Space
-        , Str "pariatur."
-        , Space
-        , Str "Excepteur"
-        , Space
-        , Str "sint"
-        , LineBreak
-        , Str "occaecat"
-        , Space
-        , Str "cupidatat"
-        , Space
-        , Str "non"
-        , Space
-        , Str "proident,"
-        , LineBreak
-        , Str "sunt"
-        , Space
-        , Str "in"
-        , Space
-        , Str "culpa"
-        , Space
-        , Str "qui"
-        , Space
-        , Str "officia"
-        , Space
-        , Str "deserunt"
-        , LineBreak
-        , Str "mollit"
-        , Space
-        , Str "anim"
-        , Space
-        , Str "id"
-        , Space
-        , Str "est"
-        , Space
-        , Str "laborum."
+        , Str "italic."
+        , RawInline (Format "latex") "}"
+        , RawInline (Format "latex") "}"
         ]
-    , RawBlock (Format "latex") "\\end{raggedleft}"
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , SoftBreak
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , SoftBreak
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
     ]
 , Header
     2
@@ -3307,1135 +3488,954 @@
     ]
 , Header
     2
-    ( "font-styles-for-inline-elements" , [] , [] )
-    [ Str "Font"
-    , Space
-    , Str "Styles"
+    ( "layouts-for-block-elements" , [] , [] )
+    [ Str "Layouts"
     , Space
     , Str "for"
     , Space
-    , Str "Inline"
+    , Str "Block"
     , Space
     , Str "Elements"
     ]
 , Header
     3
-    ( "bold-font-inline" , [] , [] )
-    [ Str "Bold" , Space , Str "Font" , Space , Str "Inline" ]
-, Para
-    [ Span
-        ( "" , [ "bold" ] , [] )
-        [ RawInline (Format "latex") "\\textbf{"
-        , Str "This"
+    ( "centered-block" , [] , [] )
+    [ Str "Centered" , Space , Str "Block" ]
+, Div
+    ( "" , [ "center" ] , [] )
+    [ RawBlock (Format "latex") "\\begin{center}"
+    , Para
+        [ Str "Lorem"
         , Space
-        , Str "text"
+        , Str "ipsum"
         , Space
-        , Str "should"
+        , Str "dolor"
         , Space
-        , Str "be"
+        , Str "sit"
         , Space
-        , Str "in"
+        , Str "amet,"
         , Space
-        , Str "bold."
-        , RawInline (Format "latex") "}"
-        ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , SoftBreak
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , SoftBreak
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
-    ]
-, Header
-    3
-    ( "italic-font-inline" , [] , [] )
-    [ Str "Italic" , Space , Str "Font" , Space , Str "Inline" ]
-, Para
-    [ Span
-        ( "" , [ "italic" ] , [] )
-        [ RawInline (Format "latex") "\\textit{"
-        , Str "This"
+        , Str "consectetur"
         , Space
-        , Str "text"
+        , Str "adipiscing"
         , Space
-        , Str "should"
+        , Str "elit,"
         , Space
-        , Str "be"
+        , Str "sed"
         , Space
-        , Str "in"
+        , Str "do"
         , Space
-        , Str "italic."
-        , RawInline (Format "latex") "}"
-        ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , SoftBreak
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , SoftBreak
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
-    ]
-, Header
-    3
-    ( "monospace-font-inline" , [] , [] )
-    [ Str "Monospace"
-    , Space
-    , Str "Font"
-    , Space
-    , Str "Inline"
-    ]
-, Para
-    [ Span
-        ( "" , [ "monospace" ] , [] )
-        [ RawInline (Format "latex") "\\texttt{"
-        , Str "This"
+        , Str "eiusmod"
+        , SoftBreak
+        , Str "tempor"
         , Space
-        , Str "text"
+        , Str "incididunt"
         , Space
-        , Str "should"
+        , Str "ut"
         , Space
-        , Str "be"
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        , Space
+        , Str "Ut"
+        , Space
+        , Str "enim"
+        , Space
+        , Str "ad"
+        , Space
+        , Str "minim"
+        , SoftBreak
+        , Str "veniam,"
+        , Space
+        , Str "quis"
+        , Space
+        , Str "nostrud"
+        , Space
+        , Str "exercitation"
+        , Space
+        , Str "ullamco"
+        , Space
+        , Str "laboris"
+        , Space
+        , Str "nisi"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "aliquip"
+        , Space
+        , Str "ex"
+        , Space
+        , Str "ea"
+        , SoftBreak
+        , Str "commodo"
+        , Space
+        , Str "consequat."
+        , Space
+        , Str "Duis"
+        , Space
+        , Str "aute"
+        , Space
+        , Str "irure"
+        , Space
+        , Str "dolor"
         , Space
         , Str "in"
         , Space
-        , Str "monospace."
-        , RawInline (Format "latex") "}"
-        ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , SoftBreak
-    , Str "amet,"
-    , Space
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , SoftBreak
-    , Str "labore"
-    , Space
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
-    ]
-, Header
-    3
-    ( "sans-serif-font-inline" , [] , [] )
-    [ Str "Sans-serif"
-    , Space
-    , Str "Font"
-    , Space
-    , Str "Inline"
-    ]
-, Para
-    [ Span
-        ( "" , [ "sans" ] , [] )
-        [ RawInline (Format "latex") "\\textsf{"
-        , Str "This"
-        , Space
-        , Str "text"
-        , Space
-        , Str "should"
-        , Space
-        , Str "be"
+        , Str "reprehenderit"
         , Space
         , Str "in"
         , Space
-        , Str "sans-serif."
-        , RawInline (Format "latex") "}"
-        ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , SoftBreak
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , SoftBreak
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
-    ]
-, Header
-    3
-    ( "serif-font-inline" , [] , [] )
-    [ Str "Serif" , Space , Str "Font" , Space , Str "Inline" ]
-, Para
-    [ Span
-        ( "" , [ "serif" ] , [] )
-        [ RawInline (Format "latex") "\\textrm{"
-        , Str "This"
+        , Str "voluptate"
+        , SoftBreak
+        , Str "velit"
         , Space
-        , Str "text"
+        , Str "esse"
         , Space
-        , Str "should"
+        , Str "cillum"
         , Space
-        , Str "be"
+        , Str "dolore"
+        , Space
+        , Str "eu"
+        , Space
+        , Str "fugiat"
+        , Space
+        , Str "nulla"
+        , Space
+        , Str "pariatur."
+        , Space
+        , Str "Excepteur"
+        , Space
+        , Str "sint"
+        , SoftBreak
+        , Str "occaecat"
+        , Space
+        , Str "cupidatat"
+        , Space
+        , Str "non"
+        , Space
+        , Str "proident,"
+        , Space
+        , Str "sunt"
         , Space
         , Str "in"
         , Space
-        , Str "serif."
-        , RawInline (Format "latex") "}"
+        , Str "culpa"
+        , Space
+        , Str "qui"
+        , Space
+        , Str "officia"
+        , Space
+        , Str "deserunt"
+        , SoftBreak
+        , Str "mollit"
+        , Space
+        , Str "anim"
+        , Space
+        , Str "id"
+        , Space
+        , Str "est"
+        , Space
+        , Str "laborum."
         ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , SoftBreak
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , SoftBreak
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
+    , RawBlock (Format "latex") "\\end{center}"
     ]
 , Header
     3
-    ( "small-capitals-font-inline" , [] , [] )
-    [ Str "Small"
+    ( "left-justified-block" , [] , [] )
+    [ Str "Left"
     , Space
-    , Str "Capitals"
+    , Str "Justified"
     , Space
-    , Str "Font"
-    , Space
-    , Str "Inline"
+    , Str "Block"
     ]
-, Para
-    [ SmallCaps
-        [ Str "This"
+, Div
+    ( "" , [ "flushleft" ] , [] )
+    [ RawBlock (Format "latex") "\\begin{flushleft}"
+    , Para
+        [ Str "Lorem"
         , Space
-        , Str "text"
+        , Str "ipsum"
         , Space
-        , Str "should"
+        , Str "dolor"
         , Space
-        , Str "be"
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , SoftBreak
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        , Space
+        , Str "Ut"
+        , Space
+        , Str "enim"
+        , Space
+        , Str "ad"
+        , Space
+        , Str "minim"
+        , SoftBreak
+        , Str "veniam,"
+        , Space
+        , Str "quis"
+        , Space
+        , Str "nostrud"
+        , Space
+        , Str "exercitation"
+        , Space
+        , Str "ullamco"
+        , Space
+        , Str "laboris"
+        , Space
+        , Str "nisi"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "aliquip"
+        , Space
+        , Str "ex"
+        , Space
+        , Str "ea"
+        , SoftBreak
+        , Str "commodo"
+        , Space
+        , Str "consequat."
+        , Space
+        , Str "Duis"
+        , Space
+        , Str "aute"
+        , Space
+        , Str "irure"
+        , Space
+        , Str "dolor"
         , Space
         , Str "in"
         , Space
-        , Str "small"
-        , Space
-        , Str "capitals."
-        ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , SoftBreak
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , Space
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , SoftBreak
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , Space
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
-    ]
-, Header
-    2
-    ( "font-sizes-for-inline-elements" , [] , [] )
-    [ Str "Font"
-    , Space
-    , Str "sizes"
-    , Space
-    , Str "for"
-    , Space
-    , Str "Inline"
-    , Space
-    , Str "Elements"
-    ]
-, Header
-    3
-    ( "extra-extra-small-font-inline" , [] , [] )
-    [ Str "Extra"
-    , Space
-    , Str "Extra"
-    , Space
-    , Str "Small"
-    , Space
-    , Str "Font"
-    , Space
-    , Str "Inline"
-    ]
-, Para
-    [ Span
-        ( "" , [ "xxsmall" ] , [] )
-        [ RawInline (Format "latex") "\\scriptsize "
-        , Str "This"
-        , Space
-        , Str "test"
-        , Space
-        , Str "should"
-        , Space
-        , Str "be"
-        , Space
-        , Str "extra"
-        , Space
-        , Str "extra"
-        , Space
-        , Str "small"
-        , Space
-        , Str "size."
-        ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , SoftBreak
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , Space
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , SoftBreak
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , Space
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
-    ]
-, Header
-    3
-    ( "extra-small-font-inline" , [] , [] )
-    [ Str "Extra"
-    , Space
-    , Str "Small"
-    , Space
-    , Str "Font"
-    , Space
-    , Str "Inline"
-    ]
-, Para
-    [ Span
-        ( "" , [ "xsmall" ] , [] )
-        [ RawInline (Format "latex") "\\footnotesize "
-        , Str "This"
-        , Space
-        , Str "text"
-        , Space
-        , Str "should"
-        , Space
-        , Str "be"
+        , Str "reprehenderit"
         , Space
         , Str "in"
         , Space
-        , Str "extra"
+        , Str "voluptate"
+        , SoftBreak
+        , Str "velit"
         , Space
-        , Str "small"
+        , Str "esse"
         , Space
-        , Str "size."
-        ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , SoftBreak
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , Space
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , SoftBreak
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , Space
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
-    ]
-, Header
-    3
-    ( "small-font-inline" , [] , [] )
-    [ Str "Small" , Space , Str "Font" , Space , Str "Inline" ]
-, Para
-    [ Span
-        ( "" , [ "small" ] , [] )
-        [ RawInline (Format "latex") "\\small "
-        , Str "This"
+        , Str "cillum"
         , Space
-        , Str "text"
+        , Str "dolore"
         , Space
-        , Str "should"
+        , Str "eu"
         , Space
-        , Str "be"
+        , Str "fugiat"
+        , Space
+        , Str "nulla"
+        , Space
+        , Str "pariatur."
+        , Space
+        , Str "Excepteur"
+        , Space
+        , Str "sint"
+        , SoftBreak
+        , Str "occaecat"
+        , Space
+        , Str "cupidatat"
+        , Space
+        , Str "non"
+        , Space
+        , Str "proident,"
+        , Space
+        , Str "sunt"
         , Space
         , Str "in"
         , Space
-        , Str "small"
+        , Str "culpa"
         , Space
-        , Str "size."
+        , Str "qui"
+        , Space
+        , Str "officia"
+        , Space
+        , Str "deserunt"
+        , SoftBreak
+        , Str "mollit"
+        , Space
+        , Str "anim"
+        , Space
+        , Str "id"
+        , Space
+        , Str "est"
+        , Space
+        , Str "laborum."
         ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , SoftBreak
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , SoftBreak
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
+    , RawBlock (Format "latex") "\\end{flushleft}"
     ]
 , Header
     3
-    ( "normal-font-inline" , [] , [] )
-    [ Str "Normal" , Space , Str "Font" , Space , Str "Inline" ]
-, Para
-    [ Span
-        ( "" , [ "normal" ] , [] )
-        [ RawInline (Format "latex") "\\normalsize "
-        , Str "This"
+    ( "right-justified-block" , [] , [] )
+    [ Str "Right"
+    , Space
+    , Str "Justified"
+    , Space
+    , Str "Block"
+    ]
+, Div
+    ( "" , [ "flushright" ] , [] )
+    [ RawBlock (Format "latex") "\\begin{flushright}"
+    , Para
+        [ Str "Lorem"
         , Space
-        , Str "text"
+        , Str "ipsum"
         , Space
-        , Str "should"
+        , Str "dolor"
         , Space
-        , Str "be"
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , SoftBreak
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        , Space
+        , Str "Ut"
+        , Space
+        , Str "enim"
+        , Space
+        , Str "ad"
+        , Space
+        , Str "minim"
+        , SoftBreak
+        , Str "veniam,"
+        , Space
+        , Str "quis"
+        , Space
+        , Str "nostrud"
+        , Space
+        , Str "exercitation"
+        , Space
+        , Str "ullamco"
+        , Space
+        , Str "laboris"
+        , Space
+        , Str "nisi"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "aliquip"
+        , Space
+        , Str "ex"
+        , Space
+        , Str "ea"
+        , SoftBreak
+        , Str "commodo"
+        , Space
+        , Str "consequat."
+        , Space
+        , Str "Duis"
+        , Space
+        , Str "aute"
+        , Space
+        , Str "irure"
+        , Space
+        , Str "dolor"
         , Space
         , Str "in"
         , Space
-        , Str "normal"
-        , Space
-        , Str "size."
-        ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , SoftBreak
-    , Str "amet,"
-    , Space
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , SoftBreak
-    , Str "labore"
-    , Space
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
-    ]
-, Header
-    3
-    ( "large-font-inline" , [] , [] )
-    [ Str "Large" , Space , Str "Font" , Space , Str "Inline" ]
-, Para
-    [ Span
-        ( "" , [ "large" ] , [] )
-        [ RawInline (Format "latex") "\\large "
-        , Str "This"
-        , Space
-        , Str "text"
-        , Space
-        , Str "should"
-        , Space
-        , Str "be"
+        , Str "reprehenderit"
         , Space
         , Str "in"
         , Space
-        , Str "large"
+        , Str "voluptate"
+        , SoftBreak
+        , Str "velit"
         , Space
-        , Str "size."
-        ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , SoftBreak
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , SoftBreak
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
-    ]
-, Header
-    3
-    ( "extra-large-font-inline" , [] , [] )
-    [ Str "Extra"
-    , Space
-    , Str "Large"
-    , Space
-    , Str "Font"
-    , Space
-    , Str "Inline"
-    ]
-, Para
-    [ Span
-        ( "" , [ "xlarge" ] , [] )
-        [ RawInline (Format "latex") "\\Large "
-        , Str "This"
+        , Str "esse"
         , Space
-        , Str "text"
+        , Str "cillum"
         , Space
-        , Str "should"
+        , Str "dolore"
         , Space
-        , Str "be"
+        , Str "eu"
+        , Space
+        , Str "fugiat"
+        , Space
+        , Str "nulla"
+        , Space
+        , Str "pariatur."
+        , Space
+        , Str "Excepteur"
+        , Space
+        , Str "sint"
+        , SoftBreak
+        , Str "occaecat"
+        , Space
+        , Str "cupidatat"
+        , Space
+        , Str "non"
+        , Space
+        , Str "proident,"
+        , Space
+        , Str "sunt"
         , Space
         , Str "in"
         , Space
-        , Str "extra"
+        , Str "culpa"
         , Space
-        , Str "large"
+        , Str "qui"
         , Space
-        , Str "size."
+        , Str "officia"
+        , Space
+        , Str "deserunt"
+        , SoftBreak
+        , Str "mollit"
+        , Space
+        , Str "anim"
+        , Space
+        , Str "id"
+        , Space
+        , Str "est"
+        , Space
+        , Str "laborum."
         ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , SoftBreak
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , Space
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , SoftBreak
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , Space
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
+    , RawBlock (Format "latex") "\\end{flushright}"
     ]
 , Header
     3
-    ( "extra-extra-large-font-inline" , [] , [] )
-    [ Str "Extra"
+    ( "centered-block-with-user-defined-line-breaks" , [] , [] )
+    [ Str "Centered"
     , Space
-    , Str "Extra"
+    , Str "Block"
     , Space
-    , Str "Large"
+    , Str "with"
     , Space
-    , Str "Font"
+    , Str "User-defined"
     , Space
-    , Str "Inline"
+    , Str "Line"
+    , Space
+    , Str "Breaks"
     ]
-, Para
-    [ Span
-        ( "" , [ "xxlarge" ] , [] )
-        [ RawInline (Format "latex") "\\LARGE "
-        , Str "This"
+, Div
+    ( "" , [ "centering" ] , [] )
+    [ RawBlock (Format "latex") "\\begin{centering}"
+    , Para
+        [ Str "Lorem"
         , Space
-        , Str "text"
+        , Str "ipsum"
         , Space
-        , Str "should"
+        , Str "dolor"
         , Space
-        , Str "be"
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , LineBreak
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , LineBreak
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , LineBreak
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        , Space
+        , Str "Ut"
+        , Space
+        , Str "enim"
+        , Space
+        , Str "ad"
+        , Space
+        , Str "minim"
+        , LineBreak
+        , Str "veniam,"
+        , Space
+        , Str "quis"
+        , Space
+        , Str "nostrud"
+        , Space
+        , Str "exercitation"
+        , Space
+        , Str "ullamco"
+        , LineBreak
+        , Str "laboris"
+        , Space
+        , Str "nisi"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "aliquip"
+        , Space
+        , Str "ex"
+        , Space
+        , Str "ea"
+        , LineBreak
+        , Str "commodo"
+        , Space
+        , Str "consequat."
+        , Space
+        , Str "Duis"
+        , Space
+        , Str "aute"
+        , Space
+        , Str "irure"
+        , LineBreak
+        , Str "dolor"
         , Space
         , Str "in"
         , Space
-        , Str "extra"
+        , Str "reprehenderit"
         , Space
-        , Str "extra"
+        , Str "in"
         , Space
-        , Str "large"
+        , Str "voluptate"
+        , LineBreak
+        , Str "velit"
         , Space
-        , Str "size."
+        , Str "esse"
+        , Space
+        , Str "cillum"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "eu"
+        , Space
+        , Str "fugiat"
+        , LineBreak
+        , Str "nulla"
+        , Space
+        , Str "pariatur."
+        , Space
+        , Str "Excepteur"
+        , Space
+        , Str "sint"
+        , LineBreak
+        , Str "occaecat"
+        , Space
+        , Str "cupidatat"
+        , Space
+        , Str "non"
+        , Space
+        , Str "proident,"
+        , LineBreak
+        , Str "sunt"
+        , Space
+        , Str "in"
+        , Space
+        , Str "culpa"
+        , Space
+        , Str "qui"
+        , Space
+        , Str "officia"
+        , Space
+        , Str "deserunt"
+        , LineBreak
+        , Str "mollit"
+        , Space
+        , Str "anim"
+        , Space
+        , Str "id"
+        , Space
+        , Str "est"
+        , Space
+        , Str "laborum."
         ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , SoftBreak
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , Space
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , SoftBreak
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , Space
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
-    ]
-, Header
-    2
-    ( "combination-styles-for-inline-elements" , [] , [] )
-    [ Str "Combination"
-    , Space
-    , Str "Styles"
-    , Space
-    , Str "for"
-    , Space
-    , Str "Inline"
-    , Space
-    , Str "Elements"
+    , RawBlock (Format "latex") "\\end{centering}"
     ]
 , Header
     3
-    ( "small-capitals-bold-and-italic-for-inline" , [] , [] )
-    [ Str "Small"
-    , Space
-    , Str "Capitals,"
-    , Space
-    , Str "Bold"
-    , Space
-    , Str "and"
-    , Space
-    , Str "Italic"
-    , Space
-    , Str "for"
-    , Space
-    , Str "Inline"
-    ]
-, Para
-    [ Span
-        ( "" , [ "sc" , "bf" , "it" ] , [] )
-        [ RawInline (Format "latex") "\\textit{"
-        , RawInline (Format "latex") "\\textbf{"
-        , RawInline (Format "latex") "\\textsc{"
-        , Str "This"
-        , Space
-        , Str "text"
-        , Space
-        , Str "should"
-        , Space
-        , Str "be"
-        , Space
-        , Str "small"
-        , Space
-        , Str "capitals,"
-        , Space
-        , Str "bold"
-        , Space
-        , Str "and"
-        , Space
-        , Str "italic."
-        , RawInline (Format "latex") "}"
-        , RawInline (Format "latex") "}"
-        , RawInline (Format "latex") "}"
-        ]
-    , SoftBreak
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , Space
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , SoftBreak
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , Space
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
-    ]
-, Header
-    3
-    ( "monospace-extra-small-text-and-bold-for-inline"
+    ( "left-justified-block-with-user-defined-line-breaks"
     , []
     , []
     )
-    [ Str "Monospace,"
+    [ Str "Left"
     , Space
-    , Str "Extra"
+    , Str "Justified"
     , Space
-    , Str "Small"
+    , Str "Block"
     , Space
-    , Str "Text"
+    , Str "with"
     , Space
-    , Str "and"
+    , Str "User-defined"
     , Space
-    , Str "Bold"
+    , Str "Line"
     , Space
-    , Str "for"
-    , Space
-    , Str "Inline"
+    , Str "Breaks"
     ]
-, Para
-    [ Span
-        ( "" , [ "tt" , "xsmall" , "bf" ] , [] )
-        [ RawInline (Format "latex") "\\textbf{"
-        , RawInline (Format "latex") "\\footnotesize "
-        , RawInline (Format "latex") "\\texttt{"
-        , Str "This"
+, Div
+    ( "" , [ "raggedright" ] , [] )
+    [ RawBlock (Format "latex") "\\begin{raggedright}"
+    , Para
+        [ Str "Lorem"
         , Space
-        , Str "text"
+        , Str "ipsum"
         , Space
-        , Str "should"
+        , Str "dolor"
         , Space
-        , Str "be"
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , LineBreak
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , LineBreak
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , LineBreak
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        , Space
+        , Str "Ut"
+        , Space
+        , Str "enim"
+        , Space
+        , Str "ad"
+        , Space
+        , Str "minim"
+        , LineBreak
+        , Str "veniam,"
+        , Space
+        , Str "quis"
+        , Space
+        , Str "nostrud"
+        , Space
+        , Str "exercitation"
+        , Space
+        , Str "ullamco"
+        , LineBreak
+        , Str "laboris"
+        , Space
+        , Str "nisi"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "aliquip"
+        , Space
+        , Str "ex"
+        , Space
+        , Str "ea"
+        , LineBreak
+        , Str "commodo"
+        , Space
+        , Str "consequat."
+        , Space
+        , Str "Duis"
+        , Space
+        , Str "aute"
+        , Space
+        , Str "irure"
+        , LineBreak
+        , Str "dolor"
         , Space
         , Str "in"
         , Space
-        , Str "monospace,"
+        , Str "reprehenderit"
         , Space
-        , Str "extra"
+        , Str "in"
         , Space
-        , Str "small"
+        , Str "voluptate"
+        , LineBreak
+        , Str "velit"
         , Space
-        , Str "size"
+        , Str "esse"
         , Space
-        , Str "and"
+        , Str "cillum"
         , Space
-        , Str "bold."
-        , RawInline (Format "latex") "}"
-        , RawInline (Format "latex") "}"
+        , Str "dolore"
+        , Space
+        , Str "eu"
+        , Space
+        , Str "fugiat"
+        , LineBreak
+        , Str "nulla"
+        , Space
+        , Str "pariatur."
+        , Space
+        , Str "Excepteur"
+        , Space
+        , Str "sint"
+        , LineBreak
+        , Str "occaecat"
+        , Space
+        , Str "cupidatat"
+        , Space
+        , Str "non"
+        , Space
+        , Str "proident,"
+        , LineBreak
+        , Str "sunt"
+        , Space
+        , Str "in"
+        , Space
+        , Str "culpa"
+        , Space
+        , Str "qui"
+        , Space
+        , Str "officia"
+        , Space
+        , Str "deserunt"
+        , LineBreak
+        , Str "mollit"
+        , Space
+        , Str "anim"
+        , Space
+        , Str "id"
+        , Space
+        , Str "est"
+        , Space
+        , Str "laborum."
         ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , Space
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , SoftBreak
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , Space
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
+    , RawBlock (Format "latex") "\\end{raggedright}"
     ]
 , Header
     3
-    ( "sans-serif-and-italic-for-inline" , [] , [] )
-    [ Str "Sans-serif"
+    ( "right-justified-block-with-user-defined-line-breaks"
+    , []
+    , []
+    )
+    [ Str "Right"
     , Space
-    , Str "and"
+    , Str "Justified"
     , Space
-    , Str "Italic"
+    , Str "Block"
     , Space
-    , Str "for"
+    , Str "with"
     , Space
-    , Str "Inline"
+    , Str "User-defined"
+    , Space
+    , Str "Line"
+    , Space
+    , Str "Breaks"
     ]
-, Para
-    [ Span
-        ( "" , [ "sf" , "it" ] , [] )
-        [ RawInline (Format "latex") "\\textit{"
-        , RawInline (Format "latex") "\\textsf{"
-        , Str "This"
+, Div
+    ( "" , [ "raggedleft" ] , [] )
+    [ RawBlock (Format "latex") "\\begin{raggedleft}"
+    , Para
+        [ Str "Lorem"
         , Space
-        , Str "text"
+        , Str "ipsum"
         , Space
-        , Str "should"
+        , Str "dolor"
         , Space
-        , Str "be"
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , LineBreak
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , LineBreak
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , LineBreak
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        , Space
+        , Str "Ut"
+        , Space
+        , Str "enim"
+        , Space
+        , Str "ad"
+        , Space
+        , Str "minim"
+        , LineBreak
+        , Str "veniam,"
+        , Space
+        , Str "quis"
+        , Space
+        , Str "nostrud"
+        , Space
+        , Str "exercitation"
+        , Space
+        , Str "ullamco"
+        , LineBreak
+        , Str "laboris"
+        , Space
+        , Str "nisi"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "aliquip"
+        , Space
+        , Str "ex"
+        , Space
+        , Str "ea"
+        , LineBreak
+        , Str "commodo"
+        , Space
+        , Str "consequat."
+        , Space
+        , Str "Duis"
+        , Space
+        , Str "aute"
+        , Space
+        , Str "irure"
+        , LineBreak
+        , Str "dolor"
         , Space
         , Str "in"
         , Space
-        , Str "sans-serif"
+        , Str "reprehenderit"
         , Space
-        , Str "and"
+        , Str "in"
         , Space
-        , Str "italic."
-        , RawInline (Format "latex") "}"
-        , RawInline (Format "latex") "}"
+        , Str "voluptate"
+        , LineBreak
+        , Str "velit"
+        , Space
+        , Str "esse"
+        , Space
+        , Str "cillum"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "eu"
+        , Space
+        , Str "fugiat"
+        , LineBreak
+        , Str "nulla"
+        , Space
+        , Str "pariatur."
+        , Space
+        , Str "Excepteur"
+        , Space
+        , Str "sint"
+        , LineBreak
+        , Str "occaecat"
+        , Space
+        , Str "cupidatat"
+        , Space
+        , Str "non"
+        , Space
+        , Str "proident,"
+        , LineBreak
+        , Str "sunt"
+        , Space
+        , Str "in"
+        , Space
+        , Str "culpa"
+        , Space
+        , Str "qui"
+        , Space
+        , Str "officia"
+        , Space
+        , Str "deserunt"
+        , LineBreak
+        , Str "mollit"
+        , Space
+        , Str "anim"
+        , Space
+        , Str "id"
+        , Space
+        , Str "est"
+        , Space
+        , Str "laborum."
         ]
-    , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , SoftBreak
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , Space
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , SoftBreak
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , Space
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
+    , RawBlock (Format "latex") "\\end{raggedleft}"
     ]
 ]

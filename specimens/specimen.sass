@@ -1,7 +1,8 @@
-/* Noto Sans, Noto Serif and Fira Mono fonts from Google Fonts */
+/* Noto Sans, Noto Serif and Fira Mono fonts from Google Fonts change as needed */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap')
 
-/* Generic styles */
+/* These styles are not needed to make to enable the fonts and alignment styles
+  but kepe here for the sake of readability */
 body
   margin-left: auto
   margin-right: auto
@@ -44,7 +45,10 @@ span
 .date
   text-align: center
 
-/* Specific styles for classes defined by the Lua filter */
+/* Styles for classes defined in the Lua filter are below modify
+  as required. This is needed for styling HTML documents. */
+
+/* Font styles
 .bold,
 .bf
   font-weight: 700
@@ -69,27 +73,29 @@ span
 .sc
   font-variant: small-caps
 
+/* Font sizes relative to a 16px/12pt document
 .xxsmall
-  font-size: xx-small
+  font-size: 0.75rem
 
 .xsmall
-  font-size: x-small
+  font-size: 0.84rem
 
 .small
-  font-size: small
+  font-size: 0.92rem
 
 .normal
   font-size: 1rem
 
 .large
-  font-size: large
+  font-size: 1.2rem
 
 .xlarge
-  font-size: x-large
+  font-size: 1.44rem
 
 .xxlarge
-  font-size: xx-large
+  font-size: 1.73em
 
+/* Layouts */
 div
   &.center,
   &.centering

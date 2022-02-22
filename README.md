@@ -80,9 +80,9 @@ The following layouts are defined for block elements exclusively:
 | `center`      | `\begin{center}...\end{center}`           | Center a block of text,                                    |
 | `flushright`  | `\begin{flushright}...\end{flushright}`   | Right justify a block of text.                               |
 | `flushleft`   | `\begin{flushleft}...\end{flushleft}`     | Left justify a block of text.                                |
-| `centering`   | `\begin{centering}...\end{centering}`     | Center a block of text with manual line breaks using backslash (`\`).        |
-| `raggedleft`  | `\begin{raggedleft}...\end{raggedleft}`   | Right justify a block of text with manual line breaks using backslash (`\`). |
-| `raggedright` | `\begin{raggedright}...\end{raggedright}` | Left justify a block of text with manual line breaks using backslash (`\`).  |
+| `centering`   | `\begin{centering}...\end{centering}`     | Center a block of text with user-defined line breaks using backslash (`\`).        |
+| `raggedleft`  | `\begin{raggedleft}...\end{raggedleft}`   | Right justify a block of text with user-defined line breaks using backslash (`\`). |
+| `raggedright` | `\begin{raggedright}...\end{raggedright}` | Left justify a block of text with user-defined line breaks using backslash (`\`).  |
 
 Styling Inline Elements
 -----------------------------------------------------------------
