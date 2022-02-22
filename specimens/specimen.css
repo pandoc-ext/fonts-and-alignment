@@ -19,7 +19,7 @@ h6 {
   font-family: "Noto Serif", serif;
 }
 
-span.bold, span.italic, span.monospace, span.serif, span.sans, span.smallcaps, span.bf, span.it, span.tt, span.rm, span.sf, span.sc, span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, span.xxlarge {
+span.bold, span.italic, span.medium, span.monospace, span.normalfont, span.serif, span.sans, span.smallcaps, span.bf, span.it, span.md, span.tt, span.nf, span.rm, span.sf, span.sc, span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, span.xxlarge {
   color: maroon;
 }
 
@@ -40,6 +40,17 @@ span.bold, span.italic, span.monospace, span.serif, span.sans, span.smallcaps, s
 .italic,
 .it {
   font-style: italic;
+}
+
+.medium,
+.md {
+  font-weight: 400;
+}
+
+.normalfont,
+.nf {
+  font-family: "Noto Serif", serif;
+  font-style: normal;
 }
 
 .monospace,
