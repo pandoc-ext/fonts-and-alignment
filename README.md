@@ -61,6 +61,12 @@ The following classes have been defined for various font styles and supports bot
 | `serif`     | `rm`       | `\textrm{...}` | `\begin{rmfamily}...\end{rmfamily}` | Serif font family.         |
 | `smallcaps` | `sc`       | `\textsc{...}` | `\begin{scshape}...\end{scshape}`   | Small capitals font shape. |
 
+As pandoc already has built in support for emphasis the `emph` keyword has not been added.
+
+The light font series `\lfseries` has not been added as there is no standardization on the prefix `lf` standing for light font.
+
+Other font styles such as `\slshape`, `\upshape`, `\uppercase` and `\lowercase` do not have a practical purpose in most cases and as a result not supported.
+
 __Please make sure that your font has support for the styles you wish to use in your document. Otherwise LaTeX will substitute the font with its default font giving you unexpected results.__
 
 The following font sizes have also been defined for inline and block elements:
@@ -74,6 +80,8 @@ The following font sizes have also been defined for inline and block elements:
 | `large`   | `\large ...`        | Large font. 14.4pt for a 12pt document.            |
 | `xlarge`  | `\Large ...`        | Extra large font. 17.28 for a 12pt document.       |
 | `xxlarge` | `\LARGE ...`        | Extra extra large font. 20.74 for a 12pt document. |
+
+The `\tiny`, `\huge` and `\Huge` have not been added as they lack a practical purpose in most documents.
 
 The following layouts are defined for block elements exclusively:
 

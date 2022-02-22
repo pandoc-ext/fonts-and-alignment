@@ -226,6 +226,15 @@ supports both inline and block elements:</p>
 </tr>
 </tbody>
 </table>
+<p>As pandoc already has built in support for emphasis the
+<code>emph</code> keyword has not been added.</p>
+<p>The light font series <code>\lfseries</code> has not been added as
+there is no standardization on the prefix <code>lf</code> standing for
+light font.</p>
+<p>Other font styles such as <code>\slshape</code>,
+<code>\upshape</code>, <code>\uppercase</code> and
+<code>\lowercase</code> do not have a practical purpose in most cases
+and as a result not supported.</p>
 <p><strong>Please make sure that your font has support for the styles
 you wish to use in your document. Otherwise LaTeX will substitute the
 font with its default font giving you unexpected results.</strong></p>
@@ -282,6 +291,9 @@ elements:</p>
 </tr>
 </tbody>
 </table>
+<p>The <code>\tiny</code>, <code>\huge</code> and <code>\Huge</code>
+have not been added as they lack a practical purpose in most
+documents.</p>
 <p>The following layouts are defined for block elements exclusively:</p>
 <table>
 <colgroup>
