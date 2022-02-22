@@ -13,13 +13,17 @@ PANDOC_VERSION:must_be_at_least '2.17'
 LATEX_FONT_TYPES = {
   bold = { 'textbf', 'bfseries' },
   italic = { 'textit', 'itshape' },
+  medium = { 'textmd', 'mdseries' },
   monospace = { 'texttt', 'ttfamily' },
+  normalfont = { 'textnormal', 'normalfont' },
   sans = { 'textsf', 'sffamily' },
   serif = { 'textrm', 'rmfamily' },
   smallcaps = { 'textsc', 'scshape' },
   bf = { 'textbf', 'bfseries' },
   it = { 'textit', 'itshape' },
+  md = { 'textmd',  'mdseries' },
   tt = { 'texttt', 'ttfamily' },
+  nf = { 'textnormal', 'normalfont' },
   sf = { 'textsf', 'sffamily' },
   rm = { 'textrm', 'rmfamily' },
   sc = { 'textsc', 'scshape' },
@@ -103,14 +107,14 @@ local function handler (elem)
   local tag = elem.tag
   local raw = RAW_CODE_FUNCTION[tag]
   local code_for_class = latex_cmd_for_tags[tag]
+  local classes = elem.classes
 
-  -- Iterate through the classes specified on the element and if
-  -- any of them match a LaTeX code add the code to the element.
-  -- We also avoid the issue where the order of the classes is
-  -- non-determinsitic creating a different document every time.
-  for _, class in ipairs(elem.classes) do
-    if code_for_class[class] then
-      local code = code_for_class[class]
+  -- Iterating over the classes in the element is more efficient.
+  -- Looping backwards so that the LaTeX commands come in the
+  -- same order the classes were specified in the source document.
+  for i=#classes, 1, -1  do
+    if code_for_class[classes[i]] then
+      local code = code_for_class[classes[i]]
       local begin_code = code[1] -- LaTeX code placed in front
       local end_code = code[2] -- LaTeX code placed at the end
 

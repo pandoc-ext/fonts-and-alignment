@@ -133,6 +133,73 @@
     ]
 , Header
     3
+    ( "medium-font-inline" , [] , [] )
+    [ Str "Medium" , Space , Str "Font" , Space , Str "Inline" ]
+, Div
+    ( "" , [ "bold" ] , [] )
+    [ RawBlock (Format "latex") "\\begin{bfseries}"
+    , Para
+        [ Span
+            ( "" , [ "medium" ] , [] )
+            [ RawInline (Format "latex") "\\textmd{"
+            , Str "This"
+            , Space
+            , Str "text"
+            , Space
+            , Str "should"
+            , Space
+            , Str "be"
+            , Space
+            , Str "in"
+            , Space
+            , Str "medium"
+            , Space
+            , Str "weight."
+            , RawInline (Format "latex") "}"
+            ]
+        , Space
+        , Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , SoftBreak
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , SoftBreak
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua"
+        ]
+    , RawBlock (Format "latex") "\\end{bfseries}"
+    ]
+, Header
+    3
     ( "monospace-font-inline" , [] , [] )
     [ Str "Monospace"
     , Space
@@ -195,6 +262,73 @@
     , Str "magna"
     , Space
     , Str "aliqua."
+    ]
+, Header
+    3
+    ( "normal-font-inline" , [] , [] )
+    [ Str "Normal" , Space , Str "Font" , Space , Str "Inline" ]
+, Div
+    ( "" , [ "italic" ] , [] )
+    [ RawBlock (Format "latex") "\\begin{itshape}"
+    , Para
+        [ Span
+            ( "" , [ "normalfont" ] , [] )
+            [ RawInline (Format "latex") "\\textnormal{"
+            , Str "This"
+            , Space
+            , Str "text"
+            , Space
+            , Str "should"
+            , Space
+            , Str "be"
+            , Space
+            , Str "in"
+            , Space
+            , Str "normal"
+            , Space
+            , Str "font."
+            , RawInline (Format "latex") "}"
+            ]
+        , Space
+        , Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , SoftBreak
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , SoftBreak
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    , RawBlock (Format "latex") "\\end{itshape}"
     ]
 , Header
     3
@@ -402,12 +536,14 @@
     ]
 , Header
     3
-    ( "extra-extra-small-font-inline" , [] , [] )
+    ( "extra-extra-small-size-font-inline" , [] , [] )
     [ Str "Extra"
     , Space
     , Str "Extra"
     , Space
     , Str "Small"
+    , Space
+    , Str "Size"
     , Space
     , Str "Font"
     , Space
@@ -474,10 +610,12 @@
     ]
 , Header
     3
-    ( "extra-small-font-inline" , [] , [] )
+    ( "extra-small-size-font-inline" , [] , [] )
     [ Str "Extra"
     , Space
     , Str "Small"
+    , Space
+    , Str "Size"
     , Space
     , Str "Font"
     , Space
@@ -544,8 +682,15 @@
     ]
 , Header
     3
-    ( "small-font-inline" , [] , [] )
-    [ Str "Small" , Space , Str "Font" , Space , Str "Inline" ]
+    ( "small-size-font-inline" , [] , [] )
+    [ Str "Small"
+    , Space
+    , Str "Size"
+    , Space
+    , Str "Font"
+    , Space
+    , Str "Inline"
+    ]
 , Para
     [ Span
         ( "" , [ "small" ] , [] )
@@ -605,8 +750,15 @@
     ]
 , Header
     3
-    ( "normal-font-inline" , [] , [] )
-    [ Str "Normal" , Space , Str "Font" , Space , Str "Inline" ]
+    ( "normal-size-font-inline" , [] , [] )
+    [ Str "Normal"
+    , Space
+    , Str "Size"
+    , Space
+    , Str "Font"
+    , Space
+    , Str "Inline"
+    ]
 , Para
     [ Span
         ( "" , [ "normal" ] , [] )
@@ -666,8 +818,15 @@
     ]
 , Header
     3
-    ( "large-font-inline" , [] , [] )
-    [ Str "Large" , Space , Str "Font" , Space , Str "Inline" ]
+    ( "large-size-font-inline" , [] , [] )
+    [ Str "Large"
+    , Space
+    , Str "Size"
+    , Space
+    , Str "Font"
+    , Space
+    , Str "Inline"
+    ]
 , Para
     [ Span
         ( "" , [ "large" ] , [] )
@@ -727,10 +886,12 @@
     ]
 , Header
     3
-    ( "extra-large-font-inline" , [] , [] )
+    ( "extra-large-size-font-inline" , [] , [] )
     [ Str "Extra"
     , Space
     , Str "Large"
+    , Space
+    , Str "Size"
     , Space
     , Str "Font"
     , Space
@@ -797,12 +958,14 @@
     ]
 , Header
     3
-    ( "extra-extra-large-font-inline" , [] , [] )
+    ( "extra-extra-large-size-font-inline" , [] , [] )
     [ Str "Extra"
     , Space
     , Str "Extra"
     , Space
     , Str "Large"
+    , Space
+    , Str "Size"
     , Space
     , Str "Font"
     , Space
@@ -902,9 +1065,9 @@
 , Para
     [ Span
         ( "" , [ "sc" , "bf" , "it" ] , [] )
-        [ RawInline (Format "latex") "\\textit{"
+        [ RawInline (Format "latex") "\\textsc{"
         , RawInline (Format "latex") "\\textbf{"
-        , RawInline (Format "latex") "\\textsc{"
+        , RawInline (Format "latex") "\\textit{"
         , Str "This"
         , Space
         , Str "text"
@@ -990,9 +1153,9 @@
 , Para
     [ Span
         ( "" , [ "tt" , "xsmall" , "bf" ] , [] )
-        [ RawInline (Format "latex") "\\textbf{"
+        [ RawInline (Format "latex") "\\texttt{"
         , RawInline (Format "latex") "\\footnotesize "
-        , RawInline (Format "latex") "\\texttt{"
+        , RawInline (Format "latex") "\\textbf{"
         , Str "This"
         , Space
         , Str "text"
@@ -1072,8 +1235,8 @@
 , Para
     [ Span
         ( "" , [ "sf" , "it" ] , [] )
-        [ RawInline (Format "latex") "\\textit{"
-        , RawInline (Format "latex") "\\textsf{"
+        [ RawInline (Format "latex") "\\textsf{"
+        , RawInline (Format "latex") "\\textit{"
         , Str "This"
         , Space
         , Str "text"
@@ -1442,6 +1605,154 @@
     ]
 , Header
     3
+    ( "medium-font-block" , [] , [] )
+    [ Str "Medium" , Space , Str "Font" , Space , Str "Block" ]
+, Div
+    ( "" , [ "medium" ] , [] )
+    [ RawBlock (Format "latex") "\\begin{mdseries}"
+    , Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , SoftBreak
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        , Space
+        , Str "Ut"
+        , Space
+        , Str "enim"
+        , Space
+        , Str "ad"
+        , Space
+        , Str "minim"
+        , SoftBreak
+        , Str "veniam,"
+        , Space
+        , Str "quis"
+        , Space
+        , Str "nostrud"
+        , Space
+        , Str "exercitation"
+        , Space
+        , Str "ullamco"
+        , Space
+        , Str "laboris"
+        , Space
+        , Str "nisi"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "aliquip"
+        , Space
+        , Str "ex"
+        , Space
+        , Str "ea"
+        , SoftBreak
+        , Str "commodo"
+        , Space
+        , Str "consequat."
+        , Space
+        , Str "Duis"
+        , Space
+        , Str "aute"
+        , Space
+        , Str "irure"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "in"
+        , Space
+        , Str "reprehenderit"
+        , Space
+        , Str "in"
+        , Space
+        , Str "voluptate"
+        , SoftBreak
+        , Str "velit"
+        , Space
+        , Str "esse"
+        , Space
+        , Str "cillum"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "eu"
+        , Space
+        , Str "fugiat"
+        , Space
+        , Str "nulla"
+        , Space
+        , Str "pariatur."
+        , Space
+        , Str "Excepteur"
+        , Space
+        , Str "sint"
+        , SoftBreak
+        , Str "occaecat"
+        , Space
+        , Str "cupidatat"
+        , Space
+        , Str "non"
+        , Space
+        , Str "proident,"
+        , Space
+        , Str "sunt"
+        , Space
+        , Str "in"
+        , Space
+        , Str "culpa"
+        , Space
+        , Str "qui"
+        , Space
+        , Str "officia"
+        , Space
+        , Str "deserunt"
+        , SoftBreak
+        , Str "mollit"
+        , Space
+        , Str "anim"
+        , Space
+        , Str "id"
+        , Space
+        , Str "est"
+        , Space
+        , Str "laborum."
+        ]
+    , RawBlock (Format "latex") "\\end{mdseries}"
+    ]
+, Header
+    3
     ( "monospace-font-block" , [] , [] )
     [ Str "Monospace"
     , Space
@@ -1592,6 +1903,154 @@
         , Str "laborum."
         ]
     , RawBlock (Format "latex") "\\end{ttfamily}"
+    ]
+, Header
+    3
+    ( "normal-font-block" , [] , [] )
+    [ Str "Normal" , Space , Str "Font" , Space , Str "Block" ]
+, Div
+    ( "" , [ "normalfont" ] , [] )
+    [ RawBlock (Format "latex") "\\begin{normalfont}"
+    , Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , SoftBreak
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        , Space
+        , Str "Ut"
+        , Space
+        , Str "enim"
+        , Space
+        , Str "ad"
+        , Space
+        , Str "minim"
+        , SoftBreak
+        , Str "veniam,"
+        , Space
+        , Str "quis"
+        , Space
+        , Str "nostrud"
+        , Space
+        , Str "exercitation"
+        , Space
+        , Str "ullamco"
+        , Space
+        , Str "laboris"
+        , Space
+        , Str "nisi"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "aliquip"
+        , Space
+        , Str "ex"
+        , Space
+        , Str "ea"
+        , SoftBreak
+        , Str "commodo"
+        , Space
+        , Str "consequat."
+        , Space
+        , Str "Duis"
+        , Space
+        , Str "aute"
+        , Space
+        , Str "irure"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "in"
+        , Space
+        , Str "reprehenderit"
+        , Space
+        , Str "in"
+        , Space
+        , Str "voluptate"
+        , SoftBreak
+        , Str "velit"
+        , Space
+        , Str "esse"
+        , Space
+        , Str "cillum"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "eu"
+        , Space
+        , Str "fugiat"
+        , Space
+        , Str "nulla"
+        , Space
+        , Str "pariatur."
+        , Space
+        , Str "Excepteur"
+        , Space
+        , Str "sint"
+        , SoftBreak
+        , Str "occaecat"
+        , Space
+        , Str "cupidatat"
+        , Space
+        , Str "non"
+        , Space
+        , Str "proident,"
+        , Space
+        , Str "sunt"
+        , Space
+        , Str "in"
+        , Space
+        , Str "culpa"
+        , Space
+        , Str "qui"
+        , Space
+        , Str "officia"
+        , Space
+        , Str "deserunt"
+        , SoftBreak
+        , Str "mollit"
+        , Space
+        , Str "anim"
+        , Space
+        , Str "id"
+        , Space
+        , Str "est"
+        , Space
+        , Str "laborum."
+        ]
+    , RawBlock (Format "latex") "\\end{normalfont}"
     ]
 , Header
     3
@@ -2064,12 +2523,14 @@
     ]
 , Header
     3
-    ( "extra-extra-small-font-block" , [] , [] )
+    ( "extra-extra-small-size-font-block" , [] , [] )
     [ Str "Extra"
     , Space
     , Str "Extra"
     , Space
     , Str "Small"
+    , Space
+    , Str "Size"
     , Space
     , Str "Font"
     , Space
@@ -2221,10 +2682,12 @@
     ]
 , Header
     3
-    ( "extra-small-font-block" , [] , [] )
+    ( "extra-small-size-font-block" , [] , [] )
     [ Str "Extra"
     , Space
     , Str "Small"
+    , Space
+    , Str "Size"
     , Space
     , Str "Font"
     , Space
@@ -2376,8 +2839,15 @@
     ]
 , Header
     3
-    ( "small-font-block" , [] , [] )
-    [ Str "Small" , Space , Str "Font" , Space , Str "Block" ]
+    ( "small-size-font-block" , [] , [] )
+    [ Str "Small"
+    , Space
+    , Str "Size"
+    , Space
+    , Str "Font"
+    , Space
+    , Str "Block"
+    ]
 , Div
     ( "" , [ "small" ] , [] )
     [ RawBlock (Format "latex") "\\begin{small}"
@@ -2524,8 +2994,15 @@
     ]
 , Header
     3
-    ( "normal-font-block" , [] , [] )
-    [ Str "Normal" , Space , Str "Font" , Space , Str "Block" ]
+    ( "normal-size-font-block" , [] , [] )
+    [ Str "Normal"
+    , Space
+    , Str "Size"
+    , Space
+    , Str "Font"
+    , Space
+    , Str "Block"
+    ]
 , Div
     ( "" , [ "normal" ] , [] )
     [ RawBlock (Format "latex") "\\begin{normalsize}"
@@ -2672,8 +3149,15 @@
     ]
 , Header
     3
-    ( "large-font-block" , [] , [] )
-    [ Str "Large" , Space , Str "Font" , Space , Str "Block" ]
+    ( "large-size-font-block" , [] , [] )
+    [ Str "Large"
+    , Space
+    , Str "Size"
+    , Space
+    , Str "Font"
+    , Space
+    , Str "Block"
+    ]
 , Div
     ( "" , [ "large" ] , [] )
     [ RawBlock (Format "latex") "\\begin{large}"
@@ -2820,10 +3304,12 @@
     ]
 , Header
     3
-    ( "extra-large-font-block" , [] , [] )
+    ( "extra-large-size-font-block" , [] , [] )
     [ Str "Extra"
     , Space
     , Str "Large"
+    , Space
+    , Str "Size"
     , Space
     , Str "Font"
     , Space
@@ -2953,12 +3439,14 @@
     ]
 , Header
     3
-    ( "extra-extra-large-font-block" , [] , [] )
+    ( "extra-extra-large-size-font-block" , [] , [] )
     [ Str "Extra"
     , Space
     , Str "Extra"
     , Space
     , Str "Large"
+    , Space
+    , Str "Size"
     , Space
     , Str "Font"
     , Space
@@ -3068,9 +3556,9 @@
     ]
 , Div
     ( "" , [ "sc" , "bf" , "it" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{itshape}"
+    [ RawBlock (Format "latex") "\\begin{scshape}"
     , RawBlock (Format "latex") "\\begin{bfseries}"
-    , RawBlock (Format "latex") "\\begin{scshape}"
+    , RawBlock (Format "latex") "\\begin{itshape}"
     , Para
         [ Str "Lorem"
         , Space
@@ -3188,9 +3676,9 @@
         , Space
         , Str "proident"
         ]
-    , RawBlock (Format "latex") "\\end{scshape}"
-    , RawBlock (Format "latex") "\\end{bfseries}"
     , RawBlock (Format "latex") "\\end{itshape}"
+    , RawBlock (Format "latex") "\\end{bfseries}"
+    , RawBlock (Format "latex") "\\end{scshape}"
     ]
 , Header
     3
@@ -3216,9 +3704,9 @@
     ]
 , Div
     ( "" , [ "tt" , "xsmall" , "bf" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{bfseries}"
+    [ RawBlock (Format "latex") "\\begin{ttfamily}"
     , RawBlock (Format "latex") "\\begin{footnotesize}"
-    , RawBlock (Format "latex") "\\begin{ttfamily}"
+    , RawBlock (Format "latex") "\\begin{bfseries}"
     , Para
         [ Str "Lorem"
         , Space
@@ -3336,9 +3824,9 @@
         , Space
         , Str "proident"
         ]
-    , RawBlock (Format "latex") "\\end{ttfamily}"
-    , RawBlock (Format "latex") "\\end{footnotesize}"
     , RawBlock (Format "latex") "\\end{bfseries}"
+    , RawBlock (Format "latex") "\\end{footnotesize}"
+    , RawBlock (Format "latex") "\\end{ttfamily}"
     ]
 , Header
     3
@@ -3362,9 +3850,9 @@
     ]
 , Div
     ( "" , [ "flushright" , "sf" , "it" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{itshape}"
+    [ RawBlock (Format "latex") "\\begin{flushright}"
     , RawBlock (Format "latex") "\\begin{sffamily}"
-    , RawBlock (Format "latex") "\\begin{flushright}"
+    , RawBlock (Format "latex") "\\begin{itshape}"
     , Para
         [ Str "Lorem"
         , Space
@@ -3482,9 +3970,9 @@
         , Space
         , Str "proident"
         ]
-    , RawBlock (Format "latex") "\\end{flushright}"
-    , RawBlock (Format "latex") "\\end{sffamily}"
     , RawBlock (Format "latex") "\\end{itshape}"
+    , RawBlock (Format "latex") "\\end{sffamily}"
+    , RawBlock (Format "latex") "\\end{flushright}"
     ]
 , Header
     2

@@ -1,8 +1,8 @@
 ---
 title: Fonts and Alignment Lua Filter Sample Outputs
 author: Nandakumar Chandrasekhar
-date: 2022-02-20
-papersize: letter
+date: 2022-02-22
+papersize: A4
 geometry:
   - margin=25mm
 fontsize: 12pt
@@ -25,11 +25,27 @@ et dolore magna aliqua.
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua.
 
+### Medium Font Inline
+
+::: bold
+[This text should be in medium weight.]{.medium} Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua
+:::
+
 ### Monospace Font Inline
 
 [This text should be in monospace.]{.monospace} Lorem ipsum dolor sit
 amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 labore et dolore magna aliqua.
+
+### Normal Font Inline
+
+::: italic
+[This text should be in normal font.]{.normalfont} Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
+:::
 
 ### Sans-serif Font Inline
 
@@ -51,43 +67,43 @@ ut labore et dolore magna aliqua.
 
 ## Font sizes for Inline Elements
 
-### Extra Extra Small Font Inline
+### Extra Extra Small Size Font Inline
 
 [This test should be extra extra small size.]{.xxsmall} Lorem ipsum
 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.
 
-### Extra Small Font Inline
+### Extra Small Size Font Inline
 
 [This text should be in extra small size.]{.xsmall} Lorem ipsum dolor
 sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua.
 
-### Small Font Inline
+### Small Size Font Inline
 
 [This text should be in small size.]{.small} Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua.
 
-### Normal Font Inline
+### Normal Size Font Inline
 
 [This text should be in normal size.]{.normal} Lorem ipsum dolor sit
 amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 labore et dolore magna aliqua.
 
-### Large Font Inline
+### Large Size Font Inline
 
 [This text should be in large size.]{.large} Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua.
 
-### Extra Large Font Inline
+### Extra Large Size Font Inline
 
 [This text should be in extra large size.]{.xlarge} Lorem ipsum dolor
 sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua.
 
-### Extra Extra Large Font Inline
+### Extra Extra Large Size Font Inline
 
 [This text should be in extra extra large size.]{.xxlarge} Lorem ipsum
 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -139,9 +155,33 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.
 :::
 
+### Medium Font Block
+
+::: medium
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+:::
+
 ### Monospace Font Block
 
 ::: monospace
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+:::
+
+### Normal Font Block
+
+::: normalfont
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -189,7 +229,7 @@ mollit anim id est laborum.
 
 ## Font sizes for Block Elements
 
-### Extra Extra Small Font Block
+### Extra Extra Small Size Font Block
 
 ::: xxsmall
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -201,7 +241,7 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.
 :::
 
-### Extra Small Font Block
+### Extra Small Size Font Block
 
 ::: xsmall
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -213,7 +253,7 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.
 :::
 
-### Small Font Block
+### Small Size Font Block
 
 ::: small
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -225,7 +265,7 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.
 :::
 
-### Normal Font Block
+### Normal Size Font Block
 
 ::: normal
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -237,7 +277,7 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.
 :::
 
-### Large Font Block
+### Large Size Font Block
 
 ::: large
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -249,7 +289,7 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.
 :::
 
-### Extra Large Font Block
+### Extra Large Size Font Block
 
 ::: xlarge
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -260,7 +300,7 @@ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
 occaecat cupidatat non proident
 :::
 
-### Extra Extra Large Font Block
+### Extra Extra Large Size Font Block
 
 ::: xxlarge
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

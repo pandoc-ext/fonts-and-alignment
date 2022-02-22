@@ -54,7 +54,9 @@ The following classes have been defined for various font styles and supports bot
 |-------------|------------|----------------|-------------------------------------|---------------------------|
 | `bold`      | `bf`       | `\textbf{...}` | `\begin{bfseries}...\end{bfseries}` | Bold font series/weight.          |
 | `italic`    | `it`       | `\textit{...}` | `\begin{itshape}...\end{itshape}`   | Italic font shape.         |
+| `medium`    | `md`       | `\textmd{...}` | `\begin{mdseries}...\end{mdseries}`   | Medium font series.         |
 | `monospace` | `tt`       | `\texttt{...}` | `\begin{ttfamily}...\end{ttfamily}` | Monospace font family.     |
+| `normalfont`    | `nf`       | `\textnormal{...}` | `\begin{normalfont}...\end{normalfont}`   | Normal font.         |
 | `sans`      | `sf`       | `\textsf{...}` | `\begin{sffamily}...\end{sffamily}` | Sans-serif font family.    |
 | `serif`     | `rm`       | `\textrm{...}` | `\begin{rmfamily}...\end{rmfamily}` | Serif font family.         |
 | `smallcaps` | `sc`       | `\textsc{...}` | `\begin{scshape}...\end{scshape}`   | Small capitals font shape. |

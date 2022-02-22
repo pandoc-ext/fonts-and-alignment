@@ -1,13 +1,13 @@
 ---
 author: Nandakumar Chandrasekhar
-date: 2022-02-20
+date: 2022-02-22
 fontsize: 12pt
 geometry:
 - margin=25mm
 linestretch: 1.25
 mainfont: Noto Serif
 monofont: Fira Mono
-papersize: letter
+papersize: A4
 sansfont: Noto Sans
 title: Fonts and Alignment Lua Filter Sample Outputs
 ---
@@ -26,12 +26,44 @@ incididunt ut labore et dolore magna aliqua.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
 
+### Medium Font Inline
+
+::: bold
+```{=latex}
+\begin{bfseries}
+```
+[`\textmd{`{=latex}This text should be in medium
+weight.`}`{=latex}]{.medium} Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+magna aliqua
+
+```{=latex}
+\end{bfseries}
+```
+:::
+
 ### Monospace Font Inline
 
 [`\texttt{`{=latex}This text should be in
 monospace.`}`{=latex}]{.monospace} Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua.
+
+### Normal Font Inline
+
+::: italic
+```{=latex}
+\begin{itshape}
+```
+[`\textnormal{`{=latex}This text should be in normal
+font.`}`{=latex}]{.normalfont} Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+magna aliqua.
+
+```{=latex}
+\end{itshape}
+```
+:::
 
 ### Sans-serif Font Inline
 
@@ -53,43 +85,43 @@ ut labore et dolore magna aliqua.
 
 ## Font sizes for Inline Elements
 
-### Extra Extra Small Font Inline
+### Extra Extra Small Size Font Inline
 
 [`\scriptsize `{=latex}This test should be extra extra small
 size.]{.xxsmall} Lorem ipsum dolor sit amet, consectetur adipiscing
 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-### Extra Small Font Inline
+### Extra Small Size Font Inline
 
 [`\footnotesize `{=latex}This text should be in extra small
 size.]{.xsmall} Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-### Small Font Inline
+### Small Size Font Inline
 
 [`\small `{=latex}This text should be in small size.]{.small} Lorem
 ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.
 
-### Normal Font Inline
+### Normal Size Font Inline
 
 [`\normalsize `{=latex}This text should be in normal size.]{.normal}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
 
-### Large Font Inline
+### Large Size Font Inline
 
 [`\large `{=latex}This text should be in large size.]{.large} Lorem
 ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.
 
-### Extra Large Font Inline
+### Extra Large Size Font Inline
 
 [`\Large `{=latex}This text should be in extra large size.]{.xlarge}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
 
-### Extra Extra Large Font Inline
+### Extra Extra Large Size Font Inline
 
 [`\LARGE `{=latex}This text should be in extra extra large
 size.]{.xxlarge} Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -99,7 +131,7 @@ elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 ### Small Capitals, Bold and Italic for Inline
 
-[`\textit{`{=latex}`\textbf{`{=latex}`\textsc{`{=latex}This text should
+[`\textsc{`{=latex}`\textbf{`{=latex}`\textit{`{=latex}This text should
 be small capitals, bold and
 italic.`}`{=latex}`}`{=latex}`}`{=latex}]{.sc .bf .it} Lorem ipsum dolor
 sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -107,7 +139,7 @@ ut labore et dolore magna aliqua.
 
 ### Monospace, Extra Small Text and Bold for Inline
 
-[`\textbf{`{=latex}`\footnotesize `{=latex}`\texttt{`{=latex}This text
+[`\texttt{`{=latex}`\footnotesize `{=latex}`\textbf{`{=latex}This text
 should be in monospace, extra small size and
 bold.`}`{=latex}`}`{=latex}]{.tt .xsmall .bf} Lorem ipsum dolor sit
 amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -115,7 +147,7 @@ labore et dolore magna aliqua.
 
 ### Sans-serif and Italic for Inline
 
-[`\textit{`{=latex}`\textsf{`{=latex}This text should be in sans-serif
+[`\textsf{`{=latex}`\textit{`{=latex}This text should be in sans-serif
 and italic.`}`{=latex}`}`{=latex}]{.sf .it} Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua.
@@ -160,6 +192,25 @@ mollit anim id est laborum.
 ```
 :::
 
+### Medium Font Block
+
+::: medium
+```{=latex}
+\begin{mdseries}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+
+```{=latex}
+\end{mdseries}
+```
+:::
+
 ### Monospace Font Block
 
 ::: monospace
@@ -176,6 +227,25 @@ mollit anim id est laborum.
 
 ```{=latex}
 \end{ttfamily}
+```
+:::
+
+### Normal Font Block
+
+::: normalfont
+```{=latex}
+\begin{normalfont}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+
+```{=latex}
+\end{normalfont}
 ```
 :::
 
@@ -238,7 +308,7 @@ mollit anim id est laborum.
 
 ## Font sizes for Block Elements
 
-### Extra Extra Small Font Block
+### Extra Extra Small Size Font Block
 
 ::: xxsmall
 ```{=latex}
@@ -257,7 +327,7 @@ mollit anim id est laborum.
 ```
 :::
 
-### Extra Small Font Block
+### Extra Small Size Font Block
 
 ::: xsmall
 ```{=latex}
@@ -276,7 +346,7 @@ mollit anim id est laborum.
 ```
 :::
 
-### Small Font Block
+### Small Size Font Block
 
 ::: small
 ```{=latex}
@@ -295,7 +365,7 @@ mollit anim id est laborum.
 ```
 :::
 
-### Normal Font Block
+### Normal Size Font Block
 
 ::: normal
 ```{=latex}
@@ -314,7 +384,7 @@ mollit anim id est laborum.
 ```
 :::
 
-### Large Font Block
+### Large Size Font Block
 
 ::: large
 ```{=latex}
@@ -333,7 +403,7 @@ mollit anim id est laborum.
 ```
 :::
 
-### Extra Large Font Block
+### Extra Large Size Font Block
 
 ::: xlarge
 ```{=latex}
@@ -351,7 +421,7 @@ occaecat cupidatat non proident
 ```
 :::
 
-### Extra Extra Large Font Block
+### Extra Extra Large Size Font Block
 
 ::: xxlarge
 ```{=latex}
@@ -372,13 +442,13 @@ veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
 
 ::: {.sc .bf .it}
 ```{=latex}
-\begin{itshape}
+\begin{scshape}
 ```
 ```{=latex}
 \begin{bfseries}
 ```
 ```{=latex}
-\begin{scshape}
+\begin{itshape}
 ```
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -388,13 +458,13 @@ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
 occaecat cupidatat non proident
 
 ```{=latex}
-\end{scshape}
+\end{itshape}
 ```
 ```{=latex}
 \end{bfseries}
 ```
 ```{=latex}
-\end{itshape}
+\end{scshape}
 ```
 :::
 
@@ -402,13 +472,13 @@ occaecat cupidatat non proident
 
 ::: {.tt .xsmall .bf}
 ```{=latex}
-\begin{bfseries}
+\begin{ttfamily}
 ```
 ```{=latex}
 \begin{footnotesize}
 ```
 ```{=latex}
-\begin{ttfamily}
+\begin{bfseries}
 ```
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -418,13 +488,13 @@ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
 occaecat cupidatat non proident
 
 ```{=latex}
-\end{ttfamily}
+\end{bfseries}
 ```
 ```{=latex}
 \end{footnotesize}
 ```
 ```{=latex}
-\end{bfseries}
+\end{ttfamily}
 ```
 :::
 
@@ -432,13 +502,13 @@ occaecat cupidatat non proident
 
 ::: {.flushright .sf .it}
 ```{=latex}
-\begin{itshape}
+\begin{flushright}
 ```
 ```{=latex}
 \begin{sffamily}
 ```
 ```{=latex}
-\begin{flushright}
+\begin{itshape}
 ```
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -448,13 +518,13 @@ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
 occaecat cupidatat non proident
 
 ```{=latex}
-\end{flushright}
+\end{itshape}
 ```
 ```{=latex}
 \end{sffamily}
 ```
 ```{=latex}
-\end{itshape}
+\end{flushright}
 ```
 :::
 
