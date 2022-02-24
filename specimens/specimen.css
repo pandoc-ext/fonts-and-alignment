@@ -1,25 +1,17 @@
-/* Noto Sans, Noto Serif and Fira Mono fonts from Google Fonts change as needed */
+/* Noto Sans, Noto Serif and Fira Mono fonts from Google change as needed */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Mono&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-/* These styles are not needed to make to enable the fonts and alignment styles
- * but kepe here for the sake of readability */
+/* The below styles are not defined in fonts and alignment filter
+ * but are kept here to ease the readability of the rendered HTML content */
 body {
   margin-left: auto;
   margin-right: auto;
-  font-size: 16px;
+  font-size: "16px";
   font-family: "Noto Serif", serif;
+  line-height: 1.25;
   width: 60%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Noto Serif", serif;
-}
-
-span.bold, span.italic, span.medium, span.monospace, span.normalfont, span.serif, span.sans, span.smallcaps, span.bf, span.it, span.md, span.tt, span.nf, span.rm, span.sf, span.sc, span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, span.xxlarge {
+span.bold, span.emphasis, span.italic, span.lower, span.medium, span.monospace, span.normalfont, span.sans, span.serif, span.slanted, span.smallcaps, span.upper, span.upright, span.bf, span.em, span.it, span.md, span.tt, span.nf, span.sf, span.rm, span.sl, span.sc, span.up, span.tiny, span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, span.xxlarge, span.huge {
   color: maroon;
 }
 
@@ -29,17 +21,24 @@ span.bold, span.italic, span.medium, span.monospace, span.normalfont, span.serif
   text-align: center;
 }
 
-/* Styles for classes defined in the Lua filter are below modify
- * as required. This is needed for styling HTML documents. */
+/* The styles below are for the classes defined in the fonts and alignment
+ * Lua filter. Modify them as required to style the HTML document. */
 /* Font styles */
 .bold,
 .bf {
   font-weight: 700;
 }
 
+.emphasis,
 .italic,
-.it {
+.it,
+.slanted,
+.sl {
   font-style: italic;
+}
+
+.lower {
+  text-transform: lowercase;
 }
 
 .medium,
@@ -48,9 +47,12 @@ span.bold, span.italic, span.medium, span.monospace, span.normalfont, span.serif
 }
 
 .normalfont,
-.nf {
+.nf,
+.upright,
+.up {
   font-family: "Noto Serif", serif;
   font-style: normal;
+  font-weight: 400;
 }
 
 .monospace,
@@ -73,17 +75,25 @@ span.bold, span.italic, span.medium, span.monospace, span.normalfont, span.serif
   font-variant: small-caps;
 }
 
+.upper {
+  text-transform: uppercase;
+}
+
 /* Font sizes relative to a 16px/12pt document */
+.tiny {
+  font-size: 0.5rem;
+}
+
 .xxsmall {
-  font-size: 0.75rem;
+  font-size: 0.6666666667rem;
 }
 
 .xsmall {
-  font-size: 0.84rem;
+  font-size: 0.8333333333rem;
 }
 
 .small {
-  font-size: 0.92rem;
+  font-size: 0.9125rem;
 }
 
 .normal {
@@ -99,7 +109,11 @@ span.bold, span.italic, span.medium, span.monospace, span.normalfont, span.serif
 }
 
 .xxlarge {
-  font-size: 1.73em;
+  font-size: 1.7283333333rem;
+}
+
+.huge {
+  font-size: 2.0733333333rem;
 }
 
 /* Layouts */

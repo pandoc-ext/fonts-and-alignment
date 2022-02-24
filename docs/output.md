@@ -20,11 +20,24 @@ title: Fonts and Alignment Lua Filter Sample Outputs
 ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.
 
+### Emphasis Inline
+
+[`\emph{`{=latex}This text should have emphasis.`}`{=latex}]{.emphasis}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
 ### Italic Font Inline
 
 [`\textit{`{=latex}This text should be in italic.`}`{=latex}]{.italic}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
+
+### Lowercase Inline
+
+[`\lowercase{`{=latex}This text should be in
+lowercase.`}`{=latex}]{.lower} Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+magna aliqua.
 
 ### Medium Font Inline
 
@@ -77,17 +90,51 @@ tempor incididunt ut labore et dolore magna aliqua.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
 
+### Slanted Font Inline
+
+[`\textsl{`{=latex}This text should be slanted.`}`{=latex}]{.slanted}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
 ### Small Capitals Font Inline
 
 [This text should be in small capitals.]{.smallcaps} Lorem ipsum dolor
 sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua.
 
+### Uppercase Font Inline
+
+[`\uppercase{`{=latex}This text should be in
+uppercase.`}`{=latex}]{.upper} Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+magna aliqua.
+
+### Upright Font Inline
+
+::: italic
+```{=latex}
+\begin{itshape}
+```
+[`\textup{`{=latex}This text should be upright.`}`{=latex}]{.upright}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+```{=latex}
+\end{itshape}
+```
+:::
+
 ## Font sizes for Inline Elements
+
+### Tiny Size Font Inline
+
+[`\tiny `{=latex}This test should be in tiny size.]{.tiny} Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
 
 ### Extra Extra Small Size Font Inline
 
-[`\scriptsize `{=latex}This test should be extra extra small
+[`\scriptsize `{=latex}This text should be in extra extra small
 size.]{.xxsmall} Lorem ipsum dolor sit amet, consectetur adipiscing
 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
@@ -126,6 +173,12 @@ tempor incididunt ut labore et dolore magna aliqua.
 [`\LARGE `{=latex}This text should be in extra extra large
 size.]{.xxlarge} Lorem ipsum dolor sit amet, consectetur adipiscing
 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+### Huge Size Font Inline
+
+[`\huge `{=latex}This text should be in huge size.]{.huge} Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
 
 ## Combination Styles for Inline Elements
 
@@ -170,6 +223,25 @@ mollit anim id est laborum.
 
 ```{=latex}
 \end{bfseries}
+```
+:::
+
+### Emphasis Font Block
+
+::: emphasis
+```{=latex}
+\begin{em}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+
+```{=latex}
+\end{em}
 ```
 :::
 
@@ -287,6 +359,25 @@ mollit anim id est laborum.
 ```
 :::
 
+### Slanted Font Block
+
+::: slanted
+```{=latex}
+\begin{slshape}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+
+```{=latex}
+\end{slshape}
+```
+:::
+
 ### Small Capitals Font Block
 
 ::: smallcaps
@@ -306,7 +397,45 @@ mollit anim id est laborum.
 ```
 :::
 
+### Upright Font Block
+
+::: upright
+```{=latex}
+\begin{upshape}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+
+```{=latex}
+\end{upshape}
+```
+:::
+
 ## Font sizes for Block Elements
+
+### Tiny Size Font Block
+
+::: tiny
+```{=latex}
+\begin{tiny}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+
+```{=latex}
+\end{tiny}
+```
+:::
 
 ### Extra Extra Small Size Font Block
 
@@ -433,6 +562,21 @@ veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
 
 ```{=latex}
 \end{LARGE}
+```
+:::
+
+### Huge Size Font Block
+
+::: huge
+```{=latex}
+\begin{huge}
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
+
+```{=latex}
+\end{huge}
 ```
 :::
 

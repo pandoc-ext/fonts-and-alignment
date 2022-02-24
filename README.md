@@ -48,24 +48,26 @@ Classes Defined in the Filter
 
 The filter defines several classes for styling fonts and text alignment.
 
-The following classes have been defined for various font styles and supports both inline and block elements:
+The following classes have been defined for various font styles and supports both inline and block elements unless stated otherwise:
 
 | Class       | Short Hand | Inline LaTeX   | Block LaTeX                         | Description               |
 |-------------|------------|----------------|-------------------------------------|---------------------------|
-| `bold`      | `bf`       | `\textbf{...}` | `\begin{bfseries}...\end{bfseries}` | Bold font series/weight.          |
-| `italic`    | `it`       | `\textit{...}` | `\begin{itshape}...\end{itshape}`   | Italic font shape.         |
-| `medium`    | `md`       | `\textmd{...}` | `\begin{mdseries}...\end{mdseries}`   | Medium font series.         |
-| `monospace` | `tt`       | `\texttt{...}` | `\begin{ttfamily}...\end{ttfamily}` | Monospace font family.     |
-| `normalfont`    | `nf`       | `\textnormal{...}` | `\begin{normalfont}...\end{normalfont}`   | Normal font.         |
-| `sans`      | `sf`       | `\textsf{...}` | `\begin{sffamily}...\end{sffamily}` | Sans-serif font family.    |
-| `serif`     | `rm`       | `\textrm{...}` | `\begin{rmfamily}...\end{rmfamily}` | Serif font family.         |
+| `bold`      | `bf`       | `\textbf{...}` | `\begin{bfseries}...\end{bfseries}` | Bold font series/weight.|
+| `emphasis`  | `em`       | `\emph{...}` | `\begin{em}...\end{em}`               | Emphasis Font series.       |
+| `italic`    | `it`       | `\textit{...}` | `\begin{itshape}...\end{itshape}`   | Italic font shape.        |
+| `lower`     | N/A        | `\lowercase{...}` | N/A                              | Lowercase font not available for blocks.         |
+| `medium`    | `md`       | `\textmd{...}` | `\begin{mdseries}...\end{mdseries}` | Medium font series.       |
+| `monospace` | `tt`       | `\texttt{...}` | `\begin{ttfamily}...\end{ttfamily}` | Monospace font family.       |
+| `normalfont`| `nf`       | `\textnormal{...}` | `\begin{normalfont}...\end{normalfont}`   | Normal font.  |
+| `sans`      | `sf`       | `\textsf{...}` | `\begin{sffamily}...\end{sffamily}` | Sans-serif font family.       |
+| `serif`     | `rm`       | `\textrm{...}` | `\begin{rmfamily}...\end{rmfamily}` | Serif font family.       |
+| `upper`     | N/A       | `\uppercase{...}` | N/A | Uppercase font not available for blocks.
+| `upright`   | `up`       | `\textup{...}` | `\begin{upshape}...\end{upshape}`   | Upright font shape.
 | `smallcaps` | `sc`       | `\textsc{...}` | `\begin{scshape}...\end{scshape}`   | Small capitals font shape. |
 
-As pandoc already has built in support for emphasis the `emph` keyword has not been added.
+The `\emph` command has been added purely for completeness and we encourage users to use Pandoc Markdown's built in support for emphasis wherever possible.
 
-The light font series `\lfseries` has not been added as there is no standardization on the prefix `lf` standing for light font.
-
-Other font styles such as `\slshape`, `\upshape`, `\uppercase` and `\lowercase` do not have a practical purpose in most cases and as a result not supported.
+The light font series `\lfseries` has been omitted as there is no standardization on the prefix `lf` standing for light font in LaTeX packages as things currently stand.
 
 __Please make sure that your font has support for the styles you wish to use in your document. Otherwise LaTeX will substitute the font with its default font giving you unexpected results.__
 
@@ -73,15 +75,17 @@ The following font sizes have also been defined for inline and block elements:
 
 | Class     | LaTeX code          | Description                                        |
 |-----------|---------------------|----------------------------------------------------|
-| `xxsmall` | `\scriptsize ...`   | Extra extra small font. 9pt for a 12pt document.   |
+| `tiny`    | `\tiny ...`         | Tiny small font. 6pt for a 12pt document.          |
+| `xxsmall` | `\scriptsize ...`   | Extra extra small font. 8pt for a 12pt document.   |
 | `xsmall`  | `\footnotesize ...` | Extra small font. 10pt for a 12pt document.        |
 | `small`   | `\small ...`        | Small font. 10.95pt for a 12pt document.           |
 | `normal`  | `\normal ...`       | Normal font. 12pt for a 12pt document.             |
 | `large`   | `\large ...`        | Large font. 14.4pt for a 12pt document.            |
 | `xlarge`  | `\Large ...`        | Extra large font. 17.28 for a 12pt document.       |
 | `xxlarge` | `\LARGE ...`        | Extra extra large font. 20.74 for a 12pt document. |
+| `huge`    | `\huge ...`         | Extra extra large font. 24.88 for a 12pt document. |
 
-The `\tiny`, `\huge` and `\Huge` have not been added as they lack a practical purpose in most documents.
+The `\Huge` LaTeX size has been omitted as it does not produce any font size significantly larger than `\huge` for 12pt documents.
 
 The following layouts are defined for block elements exclusively:
 
@@ -151,7 +155,7 @@ This is some text that is centered.
 You may also combine styles like so:
 
 ```markdown
-::: {.center .bold} # Curly brackets required when specifying more than one class
+::: {.center .bold} # Curly brackets and period (.) required when specifying more than one class
 This is some text that is centered and in bold font.
 :::
 ```

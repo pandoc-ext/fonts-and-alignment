@@ -12,14 +12,20 @@ PANDOC_VERSION:must_be_at_least '2.17'
 -- LaTeX font types
 LATEX_FONT_TYPES = {
   bold = { 'textbf', 'bfseries' },
+  emphasis =  { 'emph', 'em' },
   italic = { 'textit', 'itshape' },
+  lower = { 'lowercase', nil },
   medium = { 'textmd', 'mdseries' },
   monospace = { 'texttt', 'ttfamily' },
   normalfont = { 'textnormal', 'normalfont' },
   sans = { 'textsf', 'sffamily' },
   serif = { 'textrm', 'rmfamily' },
+  slanted = { 'textsl', 'slshape' },
   smallcaps = { 'textsc', 'scshape' },
+  upper = { 'uppercase', nil },
+  upright = { 'textup', 'upshape'},
   bf = { 'textbf', 'bfseries' },
+  em =  { 'emph', 'em' },
   it = { 'textit', 'itshape' },
   md = { 'textmd',  'mdseries' },
   tt = { 'texttt', 'ttfamily' },
@@ -27,10 +33,13 @@ LATEX_FONT_TYPES = {
   sf = { 'textsf', 'sffamily' },
   rm = { 'textrm', 'rmfamily' },
   sc = { 'textsc', 'scshape' },
+  sl = { 'textsl', 'slshape' },
+  up = { 'textup', 'upshape'},
 }
 
 -- LaTeX font sizes
 LATEX_FONT_SIZES = {
+  tiny = { 'tiny', 'tiny' },
   xxsmall = { 'scriptsize', 'scriptsize'},
   xsmall = { 'footnotesize', 'footnotesize' },
   small = { 'small', 'small' },
@@ -38,6 +47,7 @@ LATEX_FONT_SIZES = {
   large = { 'large', 'large' },
   xlarge = { 'Large', 'Large' },
   xxlarge = { 'LARGE', 'LARGE' },
+  huge = { 'huge', 'huge' },
 }
 
 -- LaTeX layouts

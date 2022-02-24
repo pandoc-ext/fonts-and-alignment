@@ -19,9 +19,21 @@ linestretch: 1.25
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua.
 
+### Emphasis Inline
+
+[This text should have emphasis.]{.emphasis} Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
+
 ### Italic Font Inline
 
 [This text should be in italic.]{.italic} Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
+
+### Lowercase Inline
+
+[This text should be in lowercase.]{.lower} Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua.
 
@@ -59,25 +71,51 @@ et dolore magna aliqua.
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
 et dolore magna aliqua.
 
+### Slanted Font Inline
+
+[This text should be slanted.]{.slanted} Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
+
 ### Small Capitals Font Inline
 
 [This text should be in small capitals.]{.smallcaps} Lorem ipsum dolor
 sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua.
 
+### Uppercase Font Inline
+
+[This text should be in uppercase.]{.upper} Lorem ipsum dolor
+sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.
+
+### Upright Font Inline
+
+:::italic
+[This text should be upright.]{.upright} Lorem ipsum dolor
+sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.
+:::
+
 ## Font sizes for Inline Elements
 
-### Extra Extra Small Size Font Inline
+### Tiny Size Font Inline
 
-[This test should be extra extra small size.]{.xxsmall} Lorem ipsum
+[This test should be in tiny size.]{.tiny} Lorem ipsum
 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.
 
-### Extra Small Size Font Inline
+### Extra Extra Small Size Font Inline
 
-[This text should be in extra small size.]{.xsmall} Lorem ipsum dolor
+[This text should be in extra extra small size.]{.xxsmall} Lorem ipsum dolor
 sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua.
+
+### Extra Small Size Font Inline
+
+[This text should be in extra small size.]{.xsmall} Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
 
 ### Small Size Font Inline
 
@@ -109,6 +147,12 @@ ut labore et dolore magna aliqua.
 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.
 
+### Huge Size Font Inline
+
+[This text should be in huge size.]{.huge} Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
 ## Combination Styles for Inline Elements
 
 ### Small Capitals, Bold and Italic for Inline
@@ -134,6 +178,18 @@ incididunt ut labore et dolore magna aliqua.
 ### Bold Font Block
 
 ::: bold
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+:::
+
+### Emphasis Font Block
+
+::: emphasis
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -215,6 +271,18 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.
 :::
 
+### Slanted Font Block
+
+::: slanted
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+:::
+
 ### Small Capitals Font Block
 
 ::: smallcaps
@@ -227,7 +295,31 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 mollit anim id est laborum.
 :::
 
+### Upright Font Block
+
+::: upright
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+:::
+
 ## Font sizes for Block Elements
+
+### Tiny Size Font Block
+
+::: tiny
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.
+:::
 
 ### Extra Extra Small Size Font Block
 
@@ -303,6 +395,14 @@ occaecat cupidatat non proident
 ### Extra Extra Large Size Font Block
 
 ::: xxlarge
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
+:::
+
+### Huge Size Font Block
+
+::: huge
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.

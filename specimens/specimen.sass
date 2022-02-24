@@ -1,47 +1,69 @@
-/* Noto Sans, Noto Serif and Fira Mono fonts from Google Fonts change as needed */
+/* Noto Sans, Noto Serif and Fira Mono fonts from Google change as needed */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap')
 
-/* These styles are not needed to make to enable the fonts and alignment styles
-  but kepe here for the sake of readability */
+// Variables that correspond to the LaTeX font values set in the YAML block
+$fontsize: "16px"
+$mainfont: "Noto Serif", serif
+$sansfont: "Noto Sans", sans-serif
+$monofont: "Fira Mono", monospace
+$linestretch: 1.25
+
+// Calculate REM font sizes that correspond to LaTeX font sizes
+$tiny: calc(1rem / 12) * 6
+$xxsmall: calc(1rem / 12) * 8
+$xsmall: calc(1rem / 12) * 10
+$small: calc(1rem / 12) * 10.95
+$normal: calc(1rem / 12) * 12
+$large: calc(1rem / 12) * 14.4
+$xlarge: calc(1rem / 12) * 17.28
+$xxlarge: calc(1rem / 12) * 20.74
+$huge: calc(1rem / 12) * 24.88
+
+
+/* The below styles are not defined in fonts and alignment filter
+  but are kept here to ease the readability of the rendered HTML content */
 body
   margin-left: auto
   margin-right: auto
-  font-size: 16px
-  font-family: "Noto Serif", serif
+  font-size: $fontsize
+  font-family: $mainfont
+  line-height: $linestretch
   width: 60%
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6
-  font-family: "Noto Serif", serif
 
 span
   &.bold,
+  &.emphasis,
   &.italic,
+  &.lower,
   &.medium,
   &.monospace,
   &.normalfont,
-  &.serif,
   &.sans,
+  &.serif,
+  &.slanted,
   &.smallcaps,
+  &.upper,
+  &.upright,
   &.bf,
+  &.em,
   &.it,
   &.md,
   &.tt,
   &.nf,
-  &.rm,
   &.sf,
+  &.rm,
+  &.sl,
   &.sc,
+  &.up,
+  &.tiny,
   &.xxsmall,
   &.xsmall,
   &.small,
   &.normal,
   &.large,
   &.xlarge,
-  &.xxlarge
+  &.xxlarge,
+  &.huge
     color: maroon
 
 .title,
@@ -49,64 +71,82 @@ span
 .date
   text-align: center
 
-/* Styles for classes defined in the Lua filter are below modify
-  as required. This is needed for styling HTML documents. */
+/* The styles below are for the classes defined in the fonts and alignment
+  Lua filter. Modify them as required to style the HTML document. */
 
 /* Font styles
 .bold,
 .bf
   font-weight: 700
 
+.emphasis,
 .italic,
-.it
+.it,
+.slanted,
+.sl
   font-style: italic
+
+.lower
+  text-transform: lowercase
 
 .medium,
 .md
   font-weight: 400
 
 .normalfont,
-.nf
-  font-family: "Noto Serif", serif
+.nf,
+.upright,
+.up
+  font-family: $mainfont
   font-style: normal
+  font-weight: 400
 
 .monospace,
 .tt
-  font-family: "Fira Mono", monospace
+  font-family: $monofont
 
 .sans,
 .sf
-  font-family: "Noto Sans", sans-serif
+  font-family: $sansfont
 
 .serif,
 .rm
-  font-family: "Noto Serif", serif
+  font-family: $mainfont
 
 .smallcaps,
 .sc
   font-variant: small-caps
 
+.upper
+  text-transform: uppercase
+
 /* Font sizes relative to a 16px/12pt document
+.tiny
+  font-size: $tiny
+
 .xxsmall
-  font-size: 0.75rem
+  font-size: $xxsmall
 
 .xsmall
-  font-size: 0.84rem
+  font-size: $xsmall
 
 .small
-  font-size: 0.92rem
+  font-size: $small
 
 .normal
-  font-size: 1rem
+  font-size: $normal
 
 .large
-  font-size: 1.2rem
+  font-size: $large
 
 .xlarge
-  font-size: 1.44rem
+  font-size: $xlarge
 
 .xxlarge
-  font-size: 1.73em
+  font-size: $xxlarge
+
+.huge
+  font-size: $huge
 
 /* Layouts */
 div
