@@ -5,7 +5,7 @@
 body {
   margin-left: auto;
   margin-right: auto;
-  font-size: "16px";
+  font-size: 16px;
   font-family: "Noto Serif", serif;
   line-height: 1.25;
   width: 60%;
@@ -23,6 +23,15 @@ span.bold, span.emphasis, span.italic, span.lower, span.medium, span.monospace, 
 
 /* The styles below are for the classes defined in the fonts and alignment
  * Lua filter. Modify them as required to style the HTML document. */
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /* Font styles */
 .bold,
 .bf {

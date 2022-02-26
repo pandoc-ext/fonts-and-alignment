@@ -9,7 +9,9 @@ The filter defines a number of classes that when specified correspond to LaTeX c
 
 You may preview a specimen PDF document that uses these styles [here](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.pdf).
 
-The same classes may be used when generating HTML but you will need to provide a stylesheet to define the required styles. To aid in the creation of a stylesheet a [specimen CSS file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.css) and a [specimen SASS file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.sass) have been provided.
+The same classes may be used when generating HTML but you will need to provide a stylesheet to define the required styles. To aid in the creation of a stylesheet a [specimen CSS file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.css).
+
+If you prefer using [Sass](https://sass-lang.com/) you may download the [specimen Sass file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.sass) to generate your CSS.
 
 You may view the HTML version [here](https://htmlpreview.github.io/?https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.html).
 
@@ -182,7 +184,13 @@ To use this filter in your projects follow the steps below:
       - fonts-and-alignment.lua
     ```
 
-    or specify it as an option on the command line:
+    or specify it as an option on the command line with:
+
+    ```bash
+    --lua-filter fonts-and-alignment.lua
+    ```
+
+1. To generate the PDF document you may execute the following command:
 
     ```bash
     pandoc --from markdown --to latex --lua-filter fonts-and-alignment.lua \
@@ -190,6 +198,21 @@ To use this filter in your projects follow the steps below:
     ```
 
     Take care to replace the placeholder above with your output and input files.
+
+1. To generate the HTML document you would first download the CSS file like so:
+
+    ```bash
+    wget https://raw.githubusercontent.com/nandac/fonts-and-alignment/main/specimens/specimen.css
+    ```
+
+1. Then execute the following command:
+
+    ```bash
+    pandoc --from markdown --to html5 --lua-filter fonts-and-alignment.lua \
+    --css <path/to/file/specimen.css> --output <output.html> <input.md>
+    ```
+
+    Again please take to replace the placeholder above with your output, input and CSS files.
 
 Acknowledgements
 ------------------------------------------------------------------

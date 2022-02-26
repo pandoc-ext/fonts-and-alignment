@@ -836,6 +836,393 @@
     , RawBlock (Format "latex") "\\end{itshape}"
     ]
 , Header
+    3
+    ( "font-style-for-links" , [] , [] )
+    [ Str "Font"
+    , Space
+    , Str "Style"
+    , Space
+    , Str "for"
+    , Space
+    , Str "Links"
+    ]
+, Table
+    ( "" , [] , [] )
+    (Caption Nothing [])
+    [ ( AlignLeft , ColWidthDefault )
+    , ( AlignLeft , ColWidthDefault )
+    ]
+    (TableHead
+       ( "" , [] , [] )
+       [ Row
+           ( "" , [] , [] )
+           [ Cell
+               ( "" , [] , [] )
+               AlignDefault
+               (RowSpan 1)
+               (ColSpan 1)
+               [ Plain [ Str "Font" , Space , Str "Styles" ] ]
+           , Cell
+               ( "" , [] , [] )
+               AlignDefault
+               (RowSpan 1)
+               (ColSpan 1)
+               [ Plain [ Str "Output" ] ]
+           ]
+       ])
+    [ TableBody
+        ( "" , [] , [] )
+        (RowHeadColumns 0)
+        []
+        [ Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain [ Str "Bold" , Space , Str "Font" ] ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "bf" ] , [] )
+                        [ RawInline (Format "latex") "\\textbf{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        , Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain [ Str "Emphasis" , Space , Str "Font" ] ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "em" ] , [] )
+                        [ RawInline (Format "latex") "\\emph{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        , Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain [ Str "Italic" , Space , Str "Font" ] ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "it" ] , [] )
+                        [ RawInline (Format "latex") "\\textit{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        , Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain [ Str "Lowercase" , Space , Str "Font" ] ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "lower" ] , [] )
+                        [ RawInline (Format "latex") "\\lowercase{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        , Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain [ Str "Medium" , Space , Str "Font" ] ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "md" ] , [] )
+                        [ RawInline (Format "latex") "\\textmd{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        , Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain [ Str "Monospace" , Space , Str "Font" ] ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "tt" ] , [] )
+                        [ RawInline (Format "latex") "\\texttt{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        , Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain [ Str "Normal" , Space , Str "Font" ] ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "nf" ] , [] )
+                        [ RawInline (Format "latex") "\\textnormal{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        , Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain [ Str "Sans-serif" , Space , Str "Font" ] ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "sf" ] , [] )
+                        [ RawInline (Format "latex") "\\textsf{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        , Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain [ Str "Serif" , Space , Str "Font" ] ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "rm" ] , [] )
+                        [ RawInline (Format "latex") "\\textrm{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        , Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain [ Str "Slanted" , Space , Str "Font" ] ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "sl" ] , [] )
+                        [ RawInline (Format "latex") "\\textsl{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        , Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Str "Small"
+                    , Space
+                    , Str "Capitals"
+                    , Space
+                    , Str "Font"
+                    ]
+                ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "sc" ] , [] )
+                        [ RawInline (Format "latex") "\\textsc{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        , Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain [ Str "Uppercase" , Space , Str "Font" ] ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "upper" ] , [] )
+                        [ RawInline (Format "latex") "\\uppercase{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        , Row
+            ( "" , [] , [] )
+            [ Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain [ Str "Upright" , Space , Str "Font" ] ]
+            , Cell
+                ( "" , [] , [] )
+                AlignDefault
+                (RowSpan 1)
+                (ColSpan 1)
+                [ Plain
+                    [ Link
+                        ( "" , [ "up" ] , [] )
+                        [ RawInline (Format "latex") "\\textup{"
+                        , Str "GitHub"
+                        , Space
+                        , Str "Homepage"
+                        , RawInline (Format "latex") "}"
+                        ]
+                        ( "https://github.com" , "" )
+                    ]
+                ]
+            ]
+        ]
+    ]
+    (TableFoot ( "" , [] , [] ) [])
+, Header
     2
     ( "font-sizes-for-inline-elements" , [] , [] )
     [ Str "Font"

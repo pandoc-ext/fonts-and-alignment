@@ -115,6 +115,12 @@ extract_latex_codes(LATEX_LAYOUTS)
 -- the LaTeX codes applied based on the classes attached to the element
 local function handler (elem)
   local tag = elem.tag
+
+  -- We can use the code for Spans for styling Links as well
+  if tag == "Link" then
+    tag = "Span"
+  end
+
   local raw = RAW_CODE_FUNCTION[tag]
   local code_for_class = latex_cmd_for_tags[tag]
   local classes = elem.classes
@@ -139,6 +145,7 @@ local function handler (elem)
   return elem
 end
 
--- Call handler for each Span and Div element
-Span = handler
+-- Call handler for each Div, Link and Span element
 Div = handler
+Link = handler
+Span = handler

@@ -9,6 +9,7 @@ fontsize: 12pt
 mainfont: Noto Serif
 sansfont: Noto Sans
 monofont: Fira Mono
+linkcolor: blue
 linestretch: 1.25
 ---
 ## Font Styles for Inline Elements
@@ -96,6 +97,24 @@ ut labore et dolore magna aliqua.
 sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua.
 :::
+
+### Font Style for Links
+
+Font Styles           Output
+-------------------   -------------------------------------------
+Bold Font             [GitHub Homepage](https://github.com){.bf}
+Emphasis Font         [GitHub Homepage](https://github.com){.em}
+Italic Font           [GitHub Homepage](https://github.com){.it}
+Lowercase Font        [GitHub Homepage](https://github.com){.lower}
+Medium Font           [GitHub Homepage](https://github.com){.md}
+Monospace Font        [GitHub Homepage](https://github.com){.tt}
+Normal Font           [GitHub Homepage](https://github.com){.nf}
+Sans-serif Font       [GitHub Homepage](https://github.com){.sf}
+Serif Font            [GitHub Homepage](https://github.com){.rm}
+Slanted Font          [GitHub Homepage](https://github.com){.sl}
+Small Capitals Font   [GitHub Homepage](https://github.com){.sc}
+Uppercase Font        [GitHub Homepage](https://github.com){.upper}
+Upright Font          [GitHub Homepage](https://github.com){.up}
 
 ## Font sizes for Inline Elements
 

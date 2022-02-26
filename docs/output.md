@@ -5,6 +5,7 @@ fontsize: 12pt
 geometry:
 - margin=25mm
 linestretch: 1.25
+linkcolor: blue
 mainfont: Noto Serif
 monofont: Fira Mono
 papersize: A4
@@ -123,6 +124,24 @@ tempor incididunt ut labore et dolore magna aliqua.
 \end{itshape}
 ```
 :::
+
+### Font Style for Links
+
+  Font Styles           Output
+  --------------------- -------------------------------------------------------------------------------
+  Bold Font             [`\textbf{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.bf}
+  Emphasis Font         [`\emph{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.em}
+  Italic Font           [`\textit{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.it}
+  Lowercase Font        [`\lowercase{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.lower}
+  Medium Font           [`\textmd{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.md}
+  Monospace Font        [`\texttt{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.tt}
+  Normal Font           [`\textnormal{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.nf}
+  Sans-serif Font       [`\textsf{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.sf}
+  Serif Font            [`\textrm{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.rm}
+  Slanted Font          [`\textsl{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.sl}
+  Small Capitals Font   [`\textsc{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.sc}
+  Uppercase Font        [`\uppercase{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.upper}
+  Upright Font          [`\textup{`{=latex}GitHub Homepage`}`{=latex}](https://github.com){.up}
 
 ## Font sizes for Inline Elements
 
