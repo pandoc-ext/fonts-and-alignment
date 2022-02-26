@@ -121,7 +121,15 @@ or
 [My bold text]{.bf}
 ```
 
-You may specify more than one style like so:
+It is also possible to style [inline links](https://pandoc.org/MANUAL.html#inline-links) using the following syntax:
+
+[My link](https://my-link.com){.monospace}
+
+or
+
+[My link](https://my-link.com){.tt}
+
+To specify more than one style, list them one after the other as shown below:
 
 ```markdown
 [My bold and italic text]{.bold .italic}
