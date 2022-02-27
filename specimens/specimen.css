@@ -21,8 +21,6 @@ span.bold, span.emphasis, span.italic, span.lower, span.medium, span.monospace, 
   text-align: center;
 }
 
-/* The styles below are for the classes defined in the fonts and alignment
- * Lua filter. Modify them as required to style the HTML document. */
 a {
   color: blue;
   text-decoration: none;
@@ -32,6 +30,8 @@ a:hover {
   text-decoration: underline;
 }
 
+/* The styles below are for the classes defined in the fonts and alignment
+ * Lua filter. Modify them as required to style the HTML document. */
 /* Font styles */
 .bold,
 .bf {
@@ -134,4 +134,30 @@ div.flushright, div.raggedleft {
 }
 div.flushleft, div.raggedright {
   text-align: left;
+}
+
+/* Underline Styles */
+span {
+  /* Not supported look into at future date
+  * &.xout,
+  * &.xo
+  *  text-decoration: none */
+}
+span.dashuline, span.dau {
+  text-decoration: underline dashed;
+}
+span.dotuline, span.dou {
+  text-decoration: underline dotted;
+}
+span.uline, span.u {
+  text-decoration: underline;
+}
+span.uuline, span.uu {
+  text-decoration: underline double;
+}
+span.uwave, span.uw {
+  text-decoration: underline wavy;
+}
+span.sout, span.so {
+  text-decoration: line-through;
 }

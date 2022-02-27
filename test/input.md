@@ -192,11 +192,55 @@ sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.
 
+## Styles Provided by the `ulem` LaTeX Package
+
+### Dashed Underline Text
+
+[This text should be dashed underlined.]{.dashuline} Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+### Dotted Underline Text
+
+[This text should be dotted underlined.]{.dotuline} Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+### Underlined Text
+
+[This text should be underlined.]{.uline} Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+### Double Underlined Text
+
+[This text should be double underlined.]{.uuline} Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+### Wavy Underlined Text
+
+[This text should be wavy underlined.]{.uwave} Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+### Stricken Out Text
+
+[This text should be stricken out.]{.sout} Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+### Marked Over Text (not supported in HTML)
+
+[This text should be marked over.]{.xout} Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
 ## Font Styles for Block Elements
 
 ### Bold Font Block
 
-::: bold
+::: .bold
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea

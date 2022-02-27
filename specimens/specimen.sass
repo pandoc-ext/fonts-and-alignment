@@ -72,14 +72,15 @@ span
 .date
   text-align: center
 
-/* The styles below are for the classes defined in the fonts and alignment
-  Lua filter. Modify them as required to style the HTML document. */
 a
   color: $linkcolor
   text-decoration: none
 
 a:hover
   text-decoration: underline
+
+/* The styles below are for the classes defined in the fonts and alignment
+  Lua filter. Modify them as required to style the HTML document. */
 
 /* Font styles
 .bold,
@@ -168,3 +169,34 @@ div
   &.flushleft,
   &.raggedright
     text-align: left
+
+/* Underline Styles */
+span
+  &.dashuline,
+  &.dau
+    text-decoration: underline dashed
+
+  &.dotuline,
+  &.dou
+    text-decoration: underline dotted
+
+  &.uline,
+  &.u
+    text-decoration: underline
+
+  &.uuline,
+  &.uu
+    text-decoration: underline double
+
+  &.uwave,
+  &.uw
+    text-decoration: underline wavy
+
+  &.sout,
+  &.so
+    text-decoration: line-through
+
+  /* Not supported look into at future date
+    &.xout,
+    &.xo
+      text-decoration: none */

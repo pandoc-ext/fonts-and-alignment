@@ -2135,6 +2135,474 @@
     ]
 , Header
     2
+    ( "styles-provided-by-the-ulem-latex-package" , [] , [] )
+    [ Str "Styles"
+    , Space
+    , Str "Provided"
+    , Space
+    , Str "by"
+    , Space
+    , Str "the"
+    , Space
+    , Code ( "" , [] , [] ) "ulem"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Str "Package"
+    ]
+, Header
+    3
+    ( "dashed-underline-text" , [] , [] )
+    [ Str "Dashed"
+    , Space
+    , Str "Underline"
+    , Space
+    , Str "Text"
+    ]
+, Para
+    [ Span
+        ( "" , [ "dashuline" ] , [] )
+        [ RawInline (Format "latex") "\\dashuline{"
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "dashed"
+        , Space
+        , Str "underlined."
+        , RawInline (Format "latex") "}"
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , SoftBreak
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , SoftBreak
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "dotted-underline-text" , [] , [] )
+    [ Str "Dotted"
+    , Space
+    , Str "Underline"
+    , Space
+    , Str "Text"
+    ]
+, Para
+    [ Span
+        ( "" , [ "dotuline" ] , [] )
+        [ RawInline (Format "latex") "\\dotuline{"
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "dotted"
+        , Space
+        , Str "underlined."
+        , RawInline (Format "latex") "}"
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , SoftBreak
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , SoftBreak
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "underlined-text" , [] , [] )
+    [ Str "Underlined" , Space , Str "Text" ]
+, Para
+    [ Span
+        ( "" , [ "uline" ] , [] )
+        [ RawInline (Format "latex") "\\uline{"
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "underlined."
+        , RawInline (Format "latex") "}"
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , SoftBreak
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , SoftBreak
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "double-underlined-text" , [] , [] )
+    [ Str "Double"
+    , Space
+    , Str "Underlined"
+    , Space
+    , Str "Text"
+    ]
+, Para
+    [ Span
+        ( "" , [ "uuline" ] , [] )
+        [ RawInline (Format "latex") "\\uuline{"
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "double"
+        , Space
+        , Str "underlined."
+        , RawInline (Format "latex") "}"
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , SoftBreak
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , SoftBreak
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "wavy-underlined-text" , [] , [] )
+    [ Str "Wavy"
+    , Space
+    , Str "Underlined"
+    , Space
+    , Str "Text"
+    ]
+, Para
+    [ Span
+        ( "" , [ "uwave" ] , [] )
+        [ RawInline (Format "latex") "\\uwave{"
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "wavy"
+        , Space
+        , Str "underlined."
+        , RawInline (Format "latex") "}"
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , SoftBreak
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , SoftBreak
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "stricken-out-text" , [] , [] )
+    [ Str "Stricken" , Space , Str "Out" , Space , Str "Text" ]
+, Para
+    [ Span
+        ( "" , [ "sout" ] , [] )
+        [ RawInline (Format "latex") "\\sout{"
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "stricken"
+        , Space
+        , Str "out."
+        , RawInline (Format "latex") "}"
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , SoftBreak
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , SoftBreak
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    3
+    ( "marked-over-text-not-supported-in-html" , [] , [] )
+    [ Str "Marked"
+    , Space
+    , Str "Over"
+    , Space
+    , Str "Text"
+    , Space
+    , Str "(not"
+    , Space
+    , Str "supported"
+    , Space
+    , Str "in"
+    , Space
+    , Str "HTML)"
+    ]
+, Para
+    [ Span
+        ( "" , [ "xout" ] , [] )
+        [ RawInline (Format "latex") "\\xout{"
+        , Str "This"
+        , Space
+        , Str "text"
+        , Space
+        , Str "should"
+        , Space
+        , Str "be"
+        , Space
+        , Str "marked"
+        , Space
+        , Str "over."
+        , RawInline (Format "latex") "}"
+        ]
+    , Space
+    , Str "Lorem"
+    , Space
+    , Str "ipsum"
+    , SoftBreak
+    , Str "dolor"
+    , Space
+    , Str "sit"
+    , Space
+    , Str "amet,"
+    , Space
+    , Str "consectetur"
+    , Space
+    , Str "adipiscing"
+    , Space
+    , Str "elit,"
+    , Space
+    , Str "sed"
+    , Space
+    , Str "do"
+    , Space
+    , Str "eiusmod"
+    , Space
+    , Str "tempor"
+    , SoftBreak
+    , Str "incididunt"
+    , Space
+    , Str "ut"
+    , Space
+    , Str "labore"
+    , Space
+    , Str "et"
+    , Space
+    , Str "dolore"
+    , Space
+    , Str "magna"
+    , Space
+    , Str "aliqua."
+    ]
+, Header
+    2
     ( "font-styles-for-block-elements" , [] , [] )
     [ Str "Font"
     , Space
@@ -2151,9 +2619,8 @@
     ( "bold-font-block" , [] , [] )
     [ Str "Bold" , Space , Str "Font" , Space , Str "Block" ]
 , Div
-    ( "" , [ "bold" ] , [] )
-    [ RawBlock (Format "latex") "\\begin{bfseries}"
-    , Para
+    ( "" , [ ".bold" ] , [] )
+    [ Para
         [ Str "Lorem"
         , Space
         , Str "ipsum"
@@ -2292,7 +2759,6 @@
         , Space
         , Str "laborum."
         ]
-    , RawBlock (Format "latex") "\\end{bfseries}"
     ]
 , Header
     3

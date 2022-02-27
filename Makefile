@@ -22,7 +22,8 @@ all: clean docs specimens test/expected.native
 # The automatic variable `$<` refers to the first dependency
 # (i.e., the filter file).
 test: $(FILTER_FILE) test/input.md
-	$(PANDOC) --lua-filter=$< --to=native test/input.md | \
+	$(PANDOC) --lua-filter=$< --to=native test/input.md \
+		--metadata=ulem_styles | \
 		$(DIFF) test/expected.native -
 
 # Ensure that the `test` target is run each time it's called.
@@ -33,6 +34,7 @@ test: $(FILTER_FILE) test/input.md
 # regenerated on each run, making the test pointless.
 test/expected.native: $(FILTER_FILE) test/input.md
 	$(PANDOC) --lua-filter=$< --to=native --output=$@ \
+		--metadata=ulem_styles \
 		test/input.md
 
 #
@@ -46,10 +48,12 @@ specimens/specimen.css: specimens/${SPECIMEN_SASS}
 
 specimens/specimen.html: $(FILTER_FILE) test/input.md
 	$(PANDOC) --lua-filter=$< --to=html5 --standalone \
+		--metadata=ulem_styles \
 		--css=${SPECIMEN_CSS} --output=$@ test/input.md
 
 specimens/specimen.pdf: $(FILTER_FILE) test/input.md
 	$(PANDOC) --lua-filter=$< --to=latex --standalone --pdf-engine=lualatex \
+		--metadata=ulem_styles \
 		--output=$@ test/input.md
 
 #

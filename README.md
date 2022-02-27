@@ -100,6 +100,35 @@ The following layouts are defined for block elements exclusively:
 | `raggedleft`  | `\begin{raggedleft}...\end{raggedleft}`   | Right justify a block of text with user-defined line breaks using backslash (`\`). |
 | `raggedright` | `\begin{raggedright}...\end{raggedright}` | Left justify a block of text with user-defined line breaks using backslash (`\`).  |
 
+The styles below are provided by the `ulem` LaTeX package and only available for inline elements:
+
+| Class       | Short Hand | LaTeX code        | Description                                    |
+|-------------|------------|-------------------|------------------------------------------------|
+| `dashuline` | `dau`      | `\dashuline{...}` | Dashed underline.                              |
+| `dotuline`  | `dou`      | `\dotuline{...}`  | Dotted underline like.                         |
+| `uline`     | `u`        | `\uline{...}`     | Underline.                                     |
+| `uuline`    | `uu`       | `\uuline{...}`    | Double underline.                              |
+| `uwave`     | `uw`       | `\uwave{...}`     | Wavy underline.                                |
+| `sout`      | `so`       | `\sout{...}`      | Stricken out line.                             |
+| `xout`      | `xo`       | `\xout{...}`      | Marked over line __(not available for HTML).__ |
+
+The `ulem` LaTeX package is not added by default. To add it you have to explicitly specify the `ulem_styles` metadata attribute in your defaults file, source document or command line.
+
+In a defaults file or source document you would specify it as:
+
+```yaml
+metadata:
+  - ulem_styles
+```
+
+On the command line you may specify it as:
+
+```bash
+--metadata ulem_styles
+```
+
+Please note that with the exception of the marked out style `\xout`, the ulem styles are always available for use with HTML documents ---regardless of either specifying or not specifying the metadata field--- if you use the CSS or SASS file provided in this repository.
+
 Styling Inline Elements
 -----------------------------------------------------------------
 
@@ -123,11 +152,15 @@ or
 
 It is also possible to style [inline links](https://pandoc.org/MANUAL.html#inline-links) using the following syntax:
 
+```markdown
 [My link](https://my-link.com){.monospace}
+```
 
 or
 
+```markdown
 [My link](https://my-link.com){.tt}
+```
 
 To specify more than one style, list them one after the other as shown below:
 
@@ -220,7 +253,7 @@ To use this filter in your projects follow the steps below:
     --css <path/to/file/specimen.css> --output <output.html> <input.md>
     ```
 
-    Again please take to replace the placeholder above with your output, input and CSS files.
+    Again please take care to replace the placeholder above with your output, input and CSS files.
 
 Acknowledgements
 ------------------------------------------------------------------

@@ -60,14 +60,70 @@ LATEX_LAYOUTS = {
   raggedright = { nil, 'raggedright' },
 }
 
+-- LaTeX ulem styles
+LATEX_ULEM_STYLES = {
+  dashuline = {'dashuline', nil},
+  dotuline = {'dotuline', nil},
+  uline = {'uline', nil},
+  uuline = {'uuline', nil},
+  uwave = {'uwave', nil},
+  sout = {'sout', nil},
+  xout = {'xout', nil},
+  dau = {'dashuline', nil},
+  dou = {'dotuline', nil},
+  so = {'sout', nil},
+  u = {'uline', nil},
+  uu = {'uuline', nil},
+  uw = {'uwave', nil},
+  xo = {'xout', nil},
+}
+
 -- Pandoc code to write raw inline and raw block elements
 RAW_CODE_FUNCTION = {
   Span = pandoc.RawInline,
   Div = pandoc.RawBlock
 }
 
+-- Save some typing and check that we have got the pandoc libraries
+local p = assert(pandoc, "Cannot find the pandoc library")
+if not ('table' == type(p)) then
+  error("Expected variable pandoc to be a table")
+end
+local utils = assert(pandoc.utils, "Cannot find the pandoc.utils library")
+local List = assert(pandoc.List, "Cannot find the pandoc.List class")
+
+-- Convert the given value to a string
+local function stringify(val, accept_bool)
+  -- First try converting to a string
+  local status, retval = pcall(utils.stringify, val)
+  if status and retval then
+    return retval
+  end
+  local val_type = utils.type(val)
+  if ((val_type == "string" ) or (val_type == "number") or
+        (accept_bool and (val_type == "boolean"))) then
+    return tostring(val)
+  else
+    return error("Cannot convert to string " .. val_type)
+  end
+end
+
+-- Convert appropriate values in meta or env to boolean
+local get_bool_val = {
+  ["true"]  = true,  -- string to bool
+  ["false"] = false,
+  yes = true,
+  no  = false
+}
+
+-- Convert the given value to a boolean
+local function boolify (val)
+  local str = stringify(val, true):lower() -- case insensitive
+  return get_bool_val[str]
+end
+
 -- Table to hold the constructed LaTeX commands
--- categorized by tag and then style
+-- categorized by tag and then by class name
 local latex_cmd_for_tags = {
   Span = {},
   Div = {}
@@ -92,8 +148,8 @@ local function construct_latex_cmd(class, span_code, div_code, span_end_code)
   end
 end
 
--- Extract the LaTeX codes for Spans and Divs to construct the LaTeX command
-local function extract_latex_codes(styles_list, span_end_code)
+-- Create the LaTeX codes for elements by extracting them from the given table
+local function create_latex_codes(styles_list, span_end_code)
   -- This variable helps us construct the correct LaTeX start and end code
   span_end_code = (span_end_code == nil and false) or span_end_code
   for class, latex_codes in pairs(styles_list) do
@@ -106,10 +162,10 @@ local function extract_latex_codes(styles_list, span_end_code)
   end
 end
 
--- Construct the LaTeX commands for font types, font sizes and layouts
-extract_latex_codes(LATEX_FONT_TYPES, true)
-extract_latex_codes(LATEX_FONT_SIZES)
-extract_latex_codes(LATEX_LAYOUTS)
+-- Create the LaTeX commands for font types, font sizes and layouts
+create_latex_codes(LATEX_FONT_TYPES, true)
+create_latex_codes(LATEX_FONT_SIZES)
+create_latex_codes(LATEX_LAYOUTS)
 
 -- This function takes an element object and returns it with
 -- the LaTeX codes applied based on the classes attached to the element
@@ -145,7 +201,54 @@ local function handler (elem)
   return elem
 end
 
+-- Let the user request the ulem styles through a metadata field
+local function Meta(meta)
+  -- Check if we have a meta value specifying ulem styles
+  local uline_styles_metavar = meta.ulem_styles
+
+  -- If the metadata is not specified set it to false
+  if uline_styles_metavar == nil then
+    uline_styles_metavar = false
+  end
+
+  uline_styles_metavar = boolify(uline_styles_metavar)
+
+  -- Validate the result: if it was a boolean or an appropriate string
+  -- it is now a boolean. If not it is now a nil, and probably a mistake.
+  if uline_styles_metavar == nil then
+    error("Expected meta.ulem_styles should be 'true', 'false' or unset")
+  end
+
+  -- If the user wants ulem styles make sure we have a list of header-includes
+  if uline_styles_metavar then
+    -- Get header-includes if any
+    local includes = meta['header-includes']
+    -- Default to a List
+    includes = includes or List({ })
+    -- If not a List make it one!
+    if 'List' ~= utils.type(includes) then
+      includes = List({ includes })
+    end
+    -- Add the ulem usepackage LaTeX statement
+    includes:insert(p.RawBlock('latex', "\\usepackage[normalem]{ulem}"))
+    -- Make sure Pandoc gets our changes
+    meta['header-includes'] = includes
+
+    -- Create the ulem LaTeX codes
+    create_latex_codes(LATEX_ULEM_STYLES, true)
+
+    -- Make sure Pandoc gets our changes
+    return meta
+  end
+  -- No request, do nothing
+  return nil
+end
+
 -- Call handler for each Div, Link and Span element
-Div = handler
-Link = handler
-Span = handler
+return {
+  { Meta = Meta},
+  { Div = handler,
+    Link = handler,
+    Span = handler
+  }
+}
