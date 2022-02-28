@@ -137,12 +137,6 @@ div.flushleft, div.raggedright {
 }
 
 /* Underline Styles */
-span {
-  /* Not supported look into at future date
-  * &.xout,
-  * &.xo
-  *  text-decoration: none */
-}
 span.dashuline, span.dau {
   text-decoration: underline dashed;
 }

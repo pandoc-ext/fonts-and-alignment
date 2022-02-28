@@ -9,11 +9,11 @@ The filter defines a number of classes that when specified correspond to LaTeX c
 
 You may preview a specimen PDF document that uses these styles [here](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.pdf).
 
-The same classes may be used when generating HTML but you will need to provide a stylesheet to define the required styles. To aid in the creation of a stylesheet a [specimen CSS file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.css).
+The same classes may be used when generating HTML but you will need to provide a stylesheet to define the required styles. To aid in the creation of a stylesheet a [specimen CSS file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.css) has been provided.
 
 If you prefer using [Sass](https://sass-lang.com/) you may download the [specimen Sass file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.sass) to generate your CSS.
 
-You may view the HTML version [here](https://htmlpreview.github.io/?https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.html).
+The specimen HTML document is available [here](https://htmlpreview.github.io/?https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.html).
 
 [CI badge]: https://img.shields.io/github/workflow/status/nandac/fonts-and-alignment/CI?logo=github
 [CI workflow]: https://github.com/nandac/fonts-and-alignment/actions/workflows/ci.yaml
@@ -21,7 +21,7 @@ You may view the HTML version [here](https://htmlpreview.github.io/?https://gith
 Prerequisites
 -----------------------------------------------------------------
 
-Before starting to use this filter we recommend that you set up the fonts you wish to use either in a [Pandoc defaults file](https://pandoc.org/MANUAL.html#defaults-files) like so:
+Before starting to use this filter, we recommend that you set up the fonts you wish to use either in a [Pandoc defaults file](https://pandoc.org/MANUAL.html#defaults-files) like so:
 
 ```yaml
 variables:
@@ -67,9 +67,9 @@ The following classes have been defined for various font styles and supports bot
 | `upright`   | `up`       | `\textup{...}` | `\begin{upshape}...\end{upshape}`   | Upright font shape.
 | `smallcaps` | `sc`       | `\textsc{...}` | `\begin{scshape}...\end{scshape}`   | Small capitals font shape. |
 
-The `\emph` command has been added purely for completeness and we encourage users to use Pandoc Markdown's built in support for emphasis wherever possible.
+The `\emph` command has been added purely for completeness and we encourage users to use Pandoc Markdown's built in support for emphasis whenever possible.
 
-The light font series `\lfseries` has been omitted as there is no standardization on the prefix `lf` standing for light font in LaTeX packages as things currently stand.
+The light font series `\lfseries` has been omitted, as there is no standardization on the LaTeX command to specify light fonts at present.
 
 __Please make sure that your font has support for the styles you wish to use in your document. Otherwise LaTeX will substitute the font with its default font giving you unexpected results.__
 
@@ -87,7 +87,7 @@ The following font sizes have also been defined for inline and block elements:
 | `xxlarge` | `\LARGE ...`        | Extra extra large font. 20.74 for a 12pt document. |
 | `huge`    | `\huge ...`         | Extra extra large font. 24.88 for a 12pt document. |
 
-The `\Huge` LaTeX size has been omitted as it does not produce any font size significantly larger than `\huge` for 12pt documents.
+The `\Huge` LaTeX size has been omitted as it does not produce any significant increase in size, compared to `\huge` for 12pt documents.
 
 The following layouts are defined for block elements exclusively:
 
@@ -127,7 +127,7 @@ On the command line you may specify it as:
 --metadata ulem_styles
 ```
 
-Please note that with the exception of the marked out style `\xout`, the ulem styles are always available for use with HTML documents ---regardless of either specifying or not specifying the metadata field--- if you use the CSS or SASS file provided in this repository.
+Please note that with the exception of the marked out style `\xout`, the ulem styles are always available for use with HTML documents ---regardless of specifying or not specifying the metadata field--- if you use the CSS or SASS file provided in this repository.
 
 Styling Inline Elements
 -----------------------------------------------------------------
@@ -138,7 +138,7 @@ To style an inline element in your document use the syntax below:
 [<inline-text>]{.<class-name>}
 ```
 
-For example to change the font weight for some inline text into bold we do:
+For example to change the font weight for some inline text into bold you would do:
 
 ```markdown
 [My bold text]{.bold}
@@ -174,7 +174,7 @@ or
 [My bold and italic text]{.bf .it}
 ```
 
-Refer to the [Pandoc documentation](https://pandoc.org/MANUAL.html#extension-bracketed_spans) for more information on styling inline elements.
+Please refer to the [Pandoc documentation](https://pandoc.org/MANUAL.html#extension-bracketed_spans) for more information on styling inline elements.
 
 Styling Block elements
 -----------------------------------------------------------------
@@ -190,7 +190,7 @@ To style a block element use the following syntax below:
 Therefore, to center a block of text you would do:
 
 ```markdown
-::: center # Curly brackets not required when specifying only a single class
+::: center # Curly brackets are not required when specifying only a single class
 This is some text that is centered.
 :::
 ```
@@ -203,7 +203,7 @@ This is some text that is centered and in bold font.
 :::
 ```
 
-Refer to the [Pandoc documentation](https://pandoc.org/MANUAL.html#extension-fenced_divs) for more information on styling block elements.
+Please refer to the [Pandoc documentation](https://pandoc.org/MANUAL.html#extension-fenced_divs) for more information on styling block elements.
 
 Usage
 ------------------------------------------------------------------
@@ -238,7 +238,7 @@ To use this filter in your projects follow the steps below:
     --pdf-engine lualatex --output <output.pdf> <input.md>
     ```
 
-    Take care to replace the placeholder above with your output and input files.
+    Take care to replace the placeholders above with your output and input files.
 
 1. To generate the HTML document you would first download the CSS file like so:
 
@@ -253,7 +253,7 @@ To use this filter in your projects follow the steps below:
     --css <path/to/file/specimen.css> --output <output.html> <input.md>
     ```
 
-    Again please take care to replace the placeholder above with your output, input and CSS files.
+    Again please take care to replace the placeholders above with your output, input and CSS files.
 
 Acknowledgements
 ------------------------------------------------------------------
