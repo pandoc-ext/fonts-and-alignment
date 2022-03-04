@@ -71,7 +71,7 @@ The `\emph` command has been added purely for completeness and we encourage user
 
 The light font series `\lfseries` has been omitted, as there is no standardization on the LaTeX command to specify light fonts at present.
 
-__Please make sure that your font has support for the styles you wish to use in your document. Otherwise LaTeX will substitute the font with its default font giving you unexpected results.__
+__N.B. Please make sure that your font has support for the styles you wish to use in your document. Otherwise LaTeX will substitute the font with its default font giving you unexpected results.__
 
 The following font sizes have also been defined for inline and block elements:
 
@@ -112,22 +112,28 @@ The styles below are provided by the `ulem` LaTeX package and only available for
 | `sout`      | `so`       | `\sout{...}`      | Stricken out line.                             |
 | `xout`      | `xo`       | `\xout{...}`      | Marked over line __(not available for HTML).__ |
 
-The `ulem` LaTeX package is not added by default. To add it you have to explicitly specify the `ulem_styles` metadata attribute in your defaults file, source document or command line.
+The `ulem` LaTeX package is not added by default and must be explicitly specified as a metadata attribute, in your defaults file, source document or on the command line.
 
-In a defaults file or source document you would specify it as:
+In a defaults file you may specify the `ulem_styles` attribute using the `metadata` field like so:
 
 ```yaml
 metadata:
-  - ulem_styles
+  ulem_styles: true
 ```
 
-On the command line you may specify it as:
+Similarly, in a source document you may define this in a YAML block as shown:
+
+```yaml
+ulem_styles: true
+```
+
+On the command line you may use the `--metadata` option to enable ulem styles as follows:
 
 ```bash
 --metadata ulem_styles
 ```
 
-Please note that with the exception of the marked out style `\xout`, the ulem styles are always available for use with HTML documents ---regardless of specifying or not specifying the metadata field--- if you use the CSS or SASS file provided in this repository.
+__N.B. with the exception of the marked out style `\xout`, the ulem styles are always available for use with HTML documents if you use the CSS or SASS file provided in this repository.__
 
 Styling Inline Elements
 -----------------------------------------------------------------
