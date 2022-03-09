@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Fonts and Alignment Lua Filter</title>
+  <title>Fonts and Alignment</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -84,7 +84,7 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Fonts and Alignment Lua Filter</h1>
+<h1 class="title">Fonts and Alignment</h1>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
@@ -108,26 +108,28 @@ Filter</a></li>
 href="https://github.com/nandac/fonts-and-alignment/actions/workflows/ci.yaml"><img
 src="https://img.shields.io/github/workflow/status/nandac/fonts-and-alignment/CI?logo=github"
 alt="GitHub build status" /></a></p>
-<p>Fonts and Alignment is a Lua filter designed to style fonts and align
-text in Pandoc generated LaTeX documents.</p>
-<p>The filter defines a number of classes that when specified correspond
-to LaTeX commands which in turn provide the requisite styling.</p>
+<p><em>Fonts and Alignment</em> is a Lua filter for styling fonts and
+aligning text in Pandoc-generated LaTeX documents.</p>
+<p>The filter defines a number of classes, that when specified,
+correspond to LaTeX commands, which in turn provide the requisite
+styling.</p>
 <p>You may preview a specimen PDF document that uses these styles <a
 href="https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.pdf">here</a>.</p>
-<p>The same classes may be used when generating HTML but you will need
-to provide a stylesheet to define the required styles. To aid in the
-creation of a stylesheet a <a
+<p>The <em>same</em> classes may be used when generating HTML, but that
+requires the support of a CSS stylesheet to define the necessary styles.
+To aid this, a <a
 href="https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.css">specimen
-CSS file</a> has been provided.</p>
-<p>If you prefer using <a href="https://sass-lang.com/">Sass</a> you may
-download the <a
+CSS file</a> has been provided. Copy and modify it according to your
+preferences.</p>
+<p>For those who prefer <a href="https://sass-lang.com/">Sass</a> a <a
 href="https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.sass">specimen
-Sass file</a> to generate your CSS.</p>
-<p>The specimen HTML document is available <a
+Sass file</a> has also been provided to generate CSS. Again copy and
+modify it as required.</p>
+<p>The corresponding specimen HTML document is available <a
 href="https://htmlpreview.github.io/?https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.html">here</a>.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>Before starting to use this filter, we recommend that you set up the
-fonts you wish to use either in a <a
+<p>Before starting to use this filter, we recommend that you specify the
+fonts you wish to use <strong>either</strong> in a <a
 href="https://pandoc.org/MANUAL.html#defaults-files">Pandoc defaults
 file</a> like so:</p>
 <div class="sourceCode" id="cb1"><pre
@@ -136,7 +138,8 @@ class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> &lt;serif-font&gt;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sansfont</span><span class="kw">:</span><span class="at"> &lt;sans-serif-font&gt;</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">monofont</span><span class="kw">:</span><span class="at"> &lt;monospace-font&gt;</span></span></code></pre></div>
-<p>Or in a YAML block at the beginning of your source document:</p>
+<p><strong>or</strong> in a YAML block at the beginning of your source
+document:</p>
 <div class="sourceCode" id="cb2"><pre
 class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> &lt;font-size&gt;</span></span>
@@ -144,14 +147,13 @@ class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sansfont</span><span class="kw">:</span><span class="at"> &lt;sans-serif-font&gt;</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">monofont</span><span class="kw">:</span><span class="at"> &lt;monospace-font&gt;</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>Replace the placeholders above with your choices for Serif,
-Sans-serif and Monospace fonts.</p>
+<p>Replace the placeholders above with your choices.</p>
 <h2 id="classes-defined-in-the-filter">Classes Defined in the
 Filter</h2>
 <p>The filter defines several classes for styling fonts and text
 alignment.</p>
-<p>The following classes have been defined for various font styles and
-supports both inline and block elements unless stated otherwise:</p>
+<p>The following classes have been defined for the various <em>font
+styles</em> that are supported:</p>
 <table>
 <colgroup>
 <col style="width: 12%" />
@@ -182,7 +184,7 @@ supports both inline and block elements unless stated otherwise:</p>
 <td><code>em</code></td>
 <td><code>\emph{...}</code></td>
 <td><code>\begin{em}...\end{em}</code></td>
-<td>Emphasis Font series.</td>
+<td>Emphasis font.</td>
 </tr>
 <tr class="odd">
 <td><code>italic</code></td>
@@ -196,7 +198,7 @@ supports both inline and block elements unless stated otherwise:</p>
 <td>N/A</td>
 <td><code>\lowercase{...}</code></td>
 <td>N/A</td>
-<td>Lowercase font not available for blocks.</td>
+<td>Lowercase font; not available for blocks.</td>
 </tr>
 <tr class="odd">
 <td><code>medium</code></td>
@@ -238,7 +240,7 @@ supports both inline and block elements unless stated otherwise:</p>
 <td>N/A</td>
 <td><code>\uppercase{...}</code></td>
 <td>N/A</td>
-<td>Uppercase font not available for blocks.</td>
+<td>Uppercase font; not available for blocks.</td>
 </tr>
 <tr class="odd">
 <td><code>upright</code></td>
@@ -266,8 +268,8 @@ at present.</p>
 styles you wish to use in your document. Otherwise LaTeX will substitute
 the font with its default font giving you unexpected
 results.</strong></p>
-<p>The following font sizes have also been defined for inline and block
-elements:</p>
+<p>The following <em>font sizes</em> have also been defined for inline
+and block elements:</p>
 <table>
 <colgroup>
 <col style="width: 13%" />
@@ -285,7 +287,7 @@ elements:</p>
 <tr class="odd">
 <td><code>tiny</code></td>
 <td><code>\tiny ...</code></td>
-<td>Tiny small font. 6pt for a 12pt document.</td>
+<td>Tiny font. 6pt for a 12pt document.</td>
 </tr>
 <tr class="even">
 <td><code>xxsmall</code></td>
@@ -325,14 +327,15 @@ elements:</p>
 <tr class="odd">
 <td><code>huge</code></td>
 <td><code>\huge ...</code></td>
-<td>Extra extra large font. 24.88 for a 12pt document.</td>
+<td>Huge font. 24.88 for a 12pt document.</td>
 </tr>
 </tbody>
 </table>
 <p>The <code>\Huge</code> LaTeX size has been omitted as it does not
 produce any significant increase in size, compared to <code>\huge</code>
 for 12pt documents.</p>
-<p>The following layouts are defined for block elements exclusively:</p>
+<p>The following <em>text-alignments</em> are defined for block elements
+exclusively:</p>
 <table>
 <colgroup>
 <col style="width: 11%" />
@@ -382,8 +385,12 @@ backslash (<code>\</code>).</td>
 </tr>
 </tbody>
 </table>
-<p>The styles below are provided by the <code>ulem</code> LaTeX package
-and only available for inline elements:</p>
+<p>While not widely used, <em>additional font styles</em> such as
+underlining, strikeout etc., may be required from time to time. Pandoc
+already directly supports strikeout, for example. For the sake of
+completeness the following additional font styles, provided by the
+<code>ulem</code> LaTeX package, are available only for inline
+elements:</p>
 <table>
 <colgroup>
 <col style="width: 14%" />
@@ -440,29 +447,31 @@ and only available for inline elements:</p>
 <td><code>xout</code></td>
 <td><code>xo</code></td>
 <td><code>\xout{...}</code></td>
-<td>Marked over line <strong>(not available for HTML).</strong></td>
+<td>Marked over line; not available for HTML.</td>
 </tr>
 </tbody>
 </table>
-<p>The <code>ulem</code> LaTeX package is not added by default and must
-be explicitly specified as a metadata attribute, in your defaults file,
-source document or on the command line.</p>
-<p>In a defaults file you may specify the <code>ulem_styles</code>
-attribute using the <code>metadata</code> field like so:</p>
+<p>The <code>ulem</code> LaTeX package is not invoked by default and
+must be explicitly specified as a metadata attribute, in your defaults
+file, source document, or on the command line. In a defaults file you
+may specify the <code>ulem_styles</code> attribute using the
+<code>metadata</code> field like so:</p>
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">metadata</span><span class="kw">:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ulem_styles</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
-<p>Similarly, in a source document you may define this in a YAML block
-as shown:</p>
+<p>Similarly, in a source document you may define this requirement in a
+YAML block as shown:</p>
 <div class="sourceCode" id="cb4"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ulem_styles</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ulem_styles</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>On the command line you may use the <code>--metadata</code> option to
-enable ulem styles as follows:</p>
+enable <code>ulem_styles</code> as follows:</p>
 <div class="sourceCode" id="cb5"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">--metadata</span> ulem_styles</span></code></pre></div>
 <p><strong>N.B. with the exception of the marked out style
-<code>\xout</code>, the ulem styles are always available for use with
-HTML documents if you use the CSS or SASS file provided in this
+<code>\xout</code>, the ulem styles are available by default for use
+with HTML documents, if you use the CSS or SASS files provided in this
 repository.</strong></p>
 <h2 id="styling-inline-elements">Styling Inline Elements</h2>
 <p>To style an inline element in your document use the syntax below:</p>
@@ -490,7 +499,7 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1">
 <p>or</p>
 <div class="sourceCode" id="cb12"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">My bold and italic text</span><span class="co">]</span>{.bf .it}</span></code></pre></div>
-<p>Please refer to the <a
+<p>Refer to the <a
 href="https://pandoc.org/MANUAL.html#extension-bracketed_spans">Pandoc
 documentation</a> for more information on styling inline elements.</p>
 <h2 id="styling-block-elements">Styling Block elements</h2>
@@ -506,10 +515,10 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1">
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <p>You may also combine styles like so:</p>
 <div class="sourceCode" id="cb15"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>::: {.center .bold} # Curly brackets and period (.) required when specifying more than one class</span>
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>::: {.center .bold} # Curly brackets and period (.) are required when specifying more than one class</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>This is some text that is centered and in bold font.</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<p>Please refer to the <a
+<p>Refer to the <a
 href="https://pandoc.org/MANUAL.html#extension-fenced_divs">Pandoc
 documentation</a> for more information on styling block elements.</p>
 <h2 id="usage">Usage</h2>
@@ -518,21 +527,20 @@ documentation</a> for more information on styling block elements.</p>
 <li><p>Download the filter from the repository:</p>
 <div class="sourceCode" id="cb16"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://raw.githubusercontent.com/nandac/fonts-and-alignment/main/fonts-and-alignment.lua</span></code></pre></div></li>
-<li><p>Move the filter to a location of your choosing.</p></li>
-<li><p>You may add the filter to your defaults file like so:</p>
+<li><p>Move the filter to a location recognized by Pandoc.</p></li>
+<li><p>Add the filter to your defaults file like so:</p>
 <div class="sourceCode" id="cb17"><pre
 class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filters</span><span class="kw">:</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> fonts-and-alignment.lua</span></span></code></pre></div>
 <p>or specify it as an option on the command line with:</p>
 <div class="sourceCode" id="cb18"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">--lua-filter</span> fonts-and-alignment.lua</span></code></pre></div></li>
-<li><p>To generate the PDF document you may execute the following
-command:</p>
+<li><p>To generate the PDF document, execute the following command:</p>
 <div class="sourceCode" id="cb19"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--from</span> markdown <span class="at">--to</span> latex <span class="at">--lua-filter</span> fonts-and-alignment.lua <span class="dt">\</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>--pdf-engine lualatex <span class="at">--output</span> <span class="op">&lt;</span>output.pdf<span class="op">&gt;</span> <span class="op">&lt;</span>input.md<span class="op">&gt;</span></span></code></pre></div>
-<p>Take care to replace the placeholders above with your output and
-input files.</p></li>
+<p>Replace the placeholders above with your output and input
+files.</p></li>
 <li><p>To generate the HTML document you would first download the CSS
 file like so:</p>
 <div class="sourceCode" id="cb20"><pre
@@ -541,8 +549,8 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href=
 <div class="sourceCode" id="cb21"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--from</span> markdown <span class="at">--to</span> html5 <span class="at">--lua-filter</span> fonts-and-alignment.lua <span class="dt">\</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>--css <span class="op">&lt;</span>path/to/file/specimen.css<span class="op">&gt;</span> --output <span class="op">&lt;</span>output.html<span class="op">&gt;</span> <span class="op">&lt;</span>input.md<span class="op">&gt;</span></span></code></pre></div>
-<p>Again please take care to replace the placeholders above with your
-output, input and CSS files.</p></li>
+<p>Again, take care to replace the placeholders above with your output,
+input and CSS files.</p></li>
 </ol>
 <h2 id="acknowledgements">Acknowledgements</h2>
 <p>Special thanks to <a href="https://github.com/tarleb">Albert
@@ -677,7 +685,7 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb22-120"><a href="#cb22-120" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-121"><a href="#cb22-121" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tiny Size Font Inline</span></span>
 <span id="cb22-122"><a href="#cb22-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-123"><a href="#cb22-123" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This test should be in tiny size.</span><span class="co">]</span>{.tiny} Lorem ipsum</span>
+<span id="cb22-123"><a href="#cb22-123" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This text should be in tiny size.</span><span class="co">]</span>{.tiny} Lorem ipsum</span>
 <span id="cb22-124"><a href="#cb22-124" aria-hidden="true" tabindex="-1"></a>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
 <span id="cb22-125"><a href="#cb22-125" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span>
 <span id="cb22-126"><a href="#cb22-126" aria-hidden="true" tabindex="-1"></a></span>
@@ -1305,7 +1313,7 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb23-147"><a href="#cb23-147" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-148"><a href="#cb23-148" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tiny Size Font Inline</span></span>
 <span id="cb23-149"><a href="#cb23-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-150"><a href="#cb23-150" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\tiny `{=latex}This test should be in tiny size.</span><span class="co">]</span>{.tiny} Lorem ipsum</span>
+<span id="cb23-150"><a href="#cb23-150" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`\tiny `{=latex}This text should be in tiny size.</span><span class="co">]</span>{.tiny} Lorem ipsum</span>
 <span id="cb23-151"><a href="#cb23-151" aria-hidden="true" tabindex="-1"></a>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
 <span id="cb23-152"><a href="#cb23-152" aria-hidden="true" tabindex="-1"></a>incididunt ut labore et dolore magna aliqua.</span>
 <span id="cb23-153"><a href="#cb23-153" aria-hidden="true" tabindex="-1"></a></span>

@@ -147,7 +147,7 @@ tempor incididunt ut labore et dolore magna aliqua.
 
 ### Tiny Size Font Inline
 
-[`\tiny `{=latex}This test should be in tiny size.]{.tiny} Lorem ipsum
+[`\tiny `{=latex}This text should be in tiny size.]{.tiny} Lorem ipsum
 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua.
 

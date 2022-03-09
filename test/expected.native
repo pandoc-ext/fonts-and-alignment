@@ -1252,7 +1252,7 @@
         [ RawInline (Format "latex") "\\tiny "
         , Str "This"
         , Space
-        , Str "test"
+        , Str "text"
         , Space
         , Str "should"
         , Space
