@@ -1071,7 +1071,7 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb22-506"><a href="#cb22-506" aria-hidden="true" tabindex="-1"></a>occaecat cupidatat non proident</span>
 <span id="cb22-507"><a href="#cb22-507" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb22-508"><a href="#cb22-508" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-509"><a href="#cb22-509" aria-hidden="true" tabindex="-1"></a><span class="fu">## Layouts for Block Elements</span></span>
+<span id="cb22-509"><a href="#cb22-509" aria-hidden="true" tabindex="-1"></a><span class="fu">## Text Alignments for Block Elements</span></span>
 <span id="cb22-510"><a href="#cb22-510" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-511"><a href="#cb22-511" aria-hidden="true" tabindex="-1"></a><span class="fu">### Centered Block</span></span>
 <span id="cb22-512"><a href="#cb22-512" aria-hidden="true" tabindex="-1"></a></span>
@@ -1894,7 +1894,7 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb23-728"><a href="#cb23-728" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-729"><a href="#cb23-729" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb23-730"><a href="#cb23-730" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-731"><a href="#cb23-731" aria-hidden="true" tabindex="-1"></a><span class="fu">## Layouts for Block Elements</span></span>
+<span id="cb23-731"><a href="#cb23-731" aria-hidden="true" tabindex="-1"></a><span class="fu">## Text Alignments for Block Elements</span></span>
 <span id="cb23-732"><a href="#cb23-732" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-733"><a href="#cb23-733" aria-hidden="true" tabindex="-1"></a><span class="fu">### Centered Block</span></span>
 <span id="cb23-734"><a href="#cb23-734" aria-hidden="true" tabindex="-1"></a></span>
@@ -2082,8 +2082,8 @@ class="sourceCode lua"><code class="sourceCode lua"><span id="fonts-and-alignmen
 <span id="fonts-and-alignment.lua-50"><a href="#fonts-and-alignment.lua-50" aria-hidden="true" tabindex="-1"></a>  huge <span class="op">=</span> <span class="op">{</span> <span class="st">&#39;huge&#39;</span><span class="op">,</span> <span class="st">&#39;huge&#39;</span> <span class="op">},</span></span>
 <span id="fonts-and-alignment.lua-51"><a href="#fonts-and-alignment.lua-51" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
 <span id="fonts-and-alignment.lua-52"><a href="#fonts-and-alignment.lua-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="fonts-and-alignment.lua-53"><a href="#fonts-and-alignment.lua-53" aria-hidden="true" tabindex="-1"></a><span class="co">-- LaTeX layouts</span></span>
-<span id="fonts-and-alignment.lua-54"><a href="#fonts-and-alignment.lua-54" aria-hidden="true" tabindex="-1"></a><span class="cn">LATEX_LAYOUTS</span> <span class="op">=</span> <span class="op">{</span></span>
+<span id="fonts-and-alignment.lua-53"><a href="#fonts-and-alignment.lua-53" aria-hidden="true" tabindex="-1"></a><span class="co">-- LaTeX text alignments</span></span>
+<span id="fonts-and-alignment.lua-54"><a href="#fonts-and-alignment.lua-54" aria-hidden="true" tabindex="-1"></a><span class="cn">LATEX_TEXT_ALIGNMENTS</span> <span class="op">=</span> <span class="op">{</span></span>
 <span id="fonts-and-alignment.lua-55"><a href="#fonts-and-alignment.lua-55" aria-hidden="true" tabindex="-1"></a>  center <span class="op">=</span> <span class="op">{</span> <span class="kw">nil</span><span class="op">,</span> <span class="st">&#39;center&#39;</span> <span class="op">},</span></span>
 <span id="fonts-and-alignment.lua-56"><a href="#fonts-and-alignment.lua-56" aria-hidden="true" tabindex="-1"></a>  flushright <span class="op">=</span> <span class="op">{</span> <span class="kw">nil</span><span class="op">,</span> <span class="st">&#39;flushright&#39;</span> <span class="op">},</span></span>
 <span id="fonts-and-alignment.lua-57"><a href="#fonts-and-alignment.lua-57" aria-hidden="true" tabindex="-1"></a>  flushleft <span class="op">=</span> <span class="op">{</span> <span class="kw">nil</span><span class="op">,</span> <span class="st">&#39;flushleft&#39;</span> <span class="op">},</span></span>
@@ -2197,7 +2197,7 @@ class="sourceCode lua"><code class="sourceCode lua"><span id="fonts-and-alignmen
 <span id="fonts-and-alignment.lua-165"><a href="#fonts-and-alignment.lua-165" aria-hidden="true" tabindex="-1"></a><span class="co">-- Create the LaTeX commands for font types, font sizes and layouts</span></span>
 <span id="fonts-and-alignment.lua-166"><a href="#fonts-and-alignment.lua-166" aria-hidden="true" tabindex="-1"></a>create_latex_codes<span class="op">(</span><span class="cn">LATEX_FONT_TYPES</span><span class="op">,</span> <span class="kw">true</span><span class="op">)</span></span>
 <span id="fonts-and-alignment.lua-167"><a href="#fonts-and-alignment.lua-167" aria-hidden="true" tabindex="-1"></a>create_latex_codes<span class="op">(</span><span class="cn">LATEX_FONT_SIZES</span><span class="op">)</span></span>
-<span id="fonts-and-alignment.lua-168"><a href="#fonts-and-alignment.lua-168" aria-hidden="true" tabindex="-1"></a>create_latex_codes<span class="op">(</span><span class="cn">LATEX_LAYOUTS</span><span class="op">)</span></span>
+<span id="fonts-and-alignment.lua-168"><a href="#fonts-and-alignment.lua-168" aria-hidden="true" tabindex="-1"></a>create_latex_codes<span class="op">(</span><span class="cn">LATEX_TEXT_ALIGNMENTS</span><span class="op">)</span></span>
 <span id="fonts-and-alignment.lua-169"><a href="#fonts-and-alignment.lua-169" aria-hidden="true" tabindex="-1"></a></span>
 <span id="fonts-and-alignment.lua-170"><a href="#fonts-and-alignment.lua-170" aria-hidden="true" tabindex="-1"></a><span class="co">-- This function takes an element object and returns it with</span></span>
 <span id="fonts-and-alignment.lua-171"><a href="#fonts-and-alignment.lua-171" aria-hidden="true" tabindex="-1"></a><span class="co">-- the LaTeX codes applied based on the classes attached to the element</span></span>

@@ -224,20 +224,7 @@ To use this filter in your projects follow the steps below:
 
 1. Move the filter to a location recognized by Pandoc.
 
-1. Add the filter to your defaults file like so:
-
-    ```yaml
-    filters:
-      - fonts-and-alignment.lua
-    ```
-
-    or specify it as an option on the command line with:
-
-    ```bash
-    --lua-filter fonts-and-alignment.lua
-    ```
-
-1. To generate the PDF document, execute the following command:
+1. Generate the PDF document by executing the following command specifying the Lua filter using the `--lua-filter` option:
 
     ```bash
     pandoc --from markdown --to latex --lua-filter fonts-and-alignment.lua \

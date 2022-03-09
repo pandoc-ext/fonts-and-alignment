@@ -728,7 +728,7 @@ occaecat cupidatat non proident
 ```
 :::
 
-## Layouts for Block Elements
+## Text Alignments for Block Elements
 
 ### Centered Block
 

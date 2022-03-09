@@ -506,7 +506,7 @@ velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
 occaecat cupidatat non proident
 :::
 
-## Layouts for Block Elements
+## Text Alignments for Block Elements
 
 ### Centered Block
 

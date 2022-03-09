@@ -5968,8 +5968,10 @@
     ]
 , Header
     2
-    ( "layouts-for-block-elements" , [] , [] )
-    [ Str "Layouts"
+    ( "text-alignments-for-block-elements" , [] , [] )
+    [ Str "Text"
+    , Space
+    , Str "Alignments"
     , Space
     , Str "for"
     , Space

@@ -50,8 +50,8 @@ LATEX_FONT_SIZES = {
   huge = { 'huge', 'huge' },
 }
 
--- LaTeX layouts
-LATEX_LAYOUTS = {
+-- LaTeX text alignments
+LATEX_TEXT_ALIGNMENTS = {
   center = { nil, 'center' },
   flushright = { nil, 'flushright' },
   flushleft = { nil, 'flushleft' },
@@ -165,7 +165,7 @@ end
 -- Create the LaTeX commands for font types, font sizes and layouts
 create_latex_codes(LATEX_FONT_TYPES, true)
 create_latex_codes(LATEX_FONT_SIZES)
-create_latex_codes(LATEX_LAYOUTS)
+create_latex_codes(LATEX_TEXT_ALIGNMENTS)
 
 -- This function takes an element object and returns it with
 -- the LaTeX codes applied based on the classes attached to the element

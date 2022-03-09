@@ -32,7 +32,7 @@ a:hover {
 
 /* The styles below are for the classes defined in the fonts and alignment
  * Lua filter. Modify them as required to style the HTML document. */
-/* Font styles */
+/* Font Styles */
 .bold,
 .bf {
   font-weight: 700;
@@ -88,7 +88,7 @@ a:hover {
   text-transform: uppercase;
 }
 
-/* Font sizes relative to a 16px/12pt document */
+/* Font Sizes relative to a 16px/12pt document */
 .tiny {
   font-size: 0.5rem;
 }
@@ -125,7 +125,7 @@ a:hover {
   font-size: 2.0733333333rem;
 }
 
-/* Layouts */
+/* Text Alignments */
 div.center, div.centering {
   text-align: center;
 }
