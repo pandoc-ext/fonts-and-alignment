@@ -71,7 +71,7 @@ The `\emph` command has been added purely for completeness and we encourage user
 
 The light font series `\lfseries` has been omitted, as there is no standardization on the LaTeX command to specify light fonts at present.
 
-__N.B. Please make sure that your font has support for the styles you wish to use in your document. Otherwise LaTeX will substitute the font with its default font giving you unexpected results.__
+**N.B. Please make sure that your font has support for the styles you wish to use in your document. Otherwise LaTeX will substitute the font with its default font giving you unexpected results.**
 
 The following _font sizes_ have also been defined for inline and block elements:
 
@@ -133,7 +133,7 @@ On the command line you may use the `--metadata` option to enable `ulem_styles` 
 --metadata ulem_styles
 ```
 
-__N.B. with the exception of the marked out style `\xout`, the ulem styles are available by default for use with HTML documents, if you use the CSS or SASS files provided in this repository.__
+**N.B. with the exception of the marked out style `\xout`, the ulem styles are available by default for use with HTML documents, if you use the CSS or SASS files provided in this repository.**
 
 Styling Inline Elements
 -----------------------------------------------------------------
@@ -232,6 +232,13 @@ To use this filter in your projects follow the steps below:
     ```
 
     Replace the placeholders above with your output and input files.
+
+    If you are using a defaults file you can also specify the filter as shown below and avoid specitying it on the command line:
+
+    ```yaml
+    filters:
+      - fonts-and-alignment.lua
+    ```
 
 1. To generate the HTML document you would first download the CSS file like so:
 
