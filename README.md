@@ -47,20 +47,20 @@ The filter defines several classes for styling fonts and text alignment.
 
 The following classes have been defined for the various _font styles_ that are supported:
 
-| Class       | Short Hand | Inline LaTeX   | Block LaTeX                         | Description               |
-|-------------|------------|----------------|-------------------------------------|---------------------------|
-| `bold`      | `bf`       | `\textbf{...}` | `\begin{bfseries}...\end{bfseries}` | Bold font series/weight.|
-| `emphasis`  | `em`       | `\emph{...}` | `\begin{em}...\end{em}`               | Emphasis font.       |
-| `italic`    | `it`       | `\textit{...}` | `\begin{itshape}...\end{itshape}`   | Italic font shape.        |
-| `lower`     | N/A        | `\lowercase{...}` | N/A                              | Lowercase font;  not available for blocks.         |
-| `medium`    | `md`       | `\textmd{...}` | `\begin{mdseries}...\end{mdseries}` | Medium font series.       |
-| `monospace` | `tt`       | `\texttt{...}` | `\begin{ttfamily}...\end{ttfamily}` | Monospace font family.       |
-| `normalfont`| `nf`       | `\textnormal{...}` | `\begin{normalfont}...\end{normalfont}`   | Normal font.  |
-| `sans`      | `sf`       | `\textsf{...}` | `\begin{sffamily}...\end{sffamily}` | Sans-serif font family.       |
-| `serif`     | `rm`       | `\textrm{...}` | `\begin{rmfamily}...\end{rmfamily}` | Serif font family.       |
-| `upper`     | N/A       | `\uppercase{...}` | N/A | Uppercase font; not available for blocks.
-| `upright`   | `up`       | `\textup{...}` | `\begin{upshape}...\end{upshape}`   | Upright font shape.
-| `smallcaps` | `sc`       | `\textsc{...}` | `\begin{scshape}...\end{scshape}`   | Small capitals font shape. |
+| CSS Class   | Short Hand | Inline LaTeX       | Block LaTeX                             | Description                |
+|-------------|------------|--------------------|-----------------------------------------|----------------------------|
+| `bold`      | `bf`       | `\textbf{...}`     | `\begin{bfseries}...\end{bfseries}`     | Bold font series/weight.   |
+| `emphasis`  | `em`       | `\emph{...}`       | `\begin{em}...\end{em}`                 | Emphasis font.             |
+| `italic`    | `it`       | `\textit{...}`     | `\begin{itshape}...\end{itshape}`       | Italic font shape.         |
+| `lower`     | None       | `\lowercase{...}`  | Not available for blocks.               | Lowercase font.            |
+| `medium`    | `md`       | `\textmd{...}`     | `\begin{mdseries}...\end{mdseries}`     | Medium font series.        |
+| `monospace` | `tt`       | `\texttt{...}`     | `\begin{ttfamily}...\end{ttfamily}`     | Monospace font family.     |
+| `normalfont`| `nf`       | `\textnormal{...}` | `\begin{normalfont}...\end{normalfont}` | Normal font.               |
+| `sans`      | `sf`       | `\textsf{...}`     | `\begin{sffamily}...\end{sffamily}`     | Sans-serif font family.    |
+| `serif`     | `rm`       | `\textrm{...}`     | `\begin{rmfamily}...\end{rmfamily}`     | Serif font family.         |
+| `upper`     | None       | `\uppercase{...}`  | Not available for blocks.               | Uppercase font             |
+| `upright`   | `up`       | `\textup{...}`     | `\begin{upshape}...\end{upshape}`       | Upright font shape.        |
+| `smallcaps` | `sc`       | `\textsc{...}`     | `\begin{scshape}...\end{scshape}`       | Small capitals font shape. |
 
 The `\emph` command has been added purely for completeness and we encourage users to use Pandoc Markdown's built in support for emphasis whenever possible.
 
@@ -86,26 +86,26 @@ The `\Huge` LaTeX size has been omitted as it does not produce any significant i
 
 The following _text-alignments_ are defined for block elements exclusively:
 
-| Class         | LaTeX code                                | Description                                                                 |
-|---------------|-------------------------------------------|-----------------------------------------------------------------------------|
-| `center`      | `\begin{center}...\end{center}`           | Center a block of text,                                    |
-| `flushright`  | `\begin{flushright}...\end{flushright}`   | Right justify a block of text.                               |
-| `flushleft`   | `\begin{flushleft}...\end{flushleft}`     | Left justify a block of text.                                |
+| CSS Class     | LaTeX code                                | Description                                                                        |
+|---------------|-------------------------------------------|------------------------------------------------------------------------------------|
+| `center`      | `\begin{center}...\end{center}`           | Center a block of text,                                                            |
+| `flushright`  | `\begin{flushright}...\end{flushright}`   | Right justify a block of text.                                                     |
+| `flushleft`   | `\begin{flushleft}...\end{flushleft}`     | Left justify a block of text.                                                      |
 | `centering`   | `\begin{centering}...\end{centering}`     | Center a block of text with user-defined line breaks using backslash (`\`).        |
 | `raggedleft`  | `\begin{raggedleft}...\end{raggedleft}`   | Right justify a block of text with user-defined line breaks using backslash (`\`). |
 | `raggedright` | `\begin{raggedright}...\end{raggedright}` | Left justify a block of text with user-defined line breaks using backslash (`\`).  |
 
-While not widely used, _additional font styles_ such as underlining, strikeout etc., may be required from time to time. Pandoc already directly supports strikeout, for example. For the sake of completeness the following additional font styles, provided by the `ulem` LaTeX package, are available only for inline elements:
+While not widely used, _additional font styles_ such as underlining, strikeout etc., may be required from time to time. Pandoc already supports strikeout but For the sake of completeness the following additional font styles -- provided by the `ulem` LaTeX package -- are available only for inline elements:
 
-| Class       | Short Hand | LaTeX code        | Description                                    |
-|-------------|------------|-------------------|------------------------------------------------|
-| `dashuline` | `dau`      | `\dashuline{...}` | Dashed underline.                              |
-| `dotuline`  | `dou`      | `\dotuline{...}`  | Dotted underline like.                         |
-| `uline`     | `u`        | `\uline{...}`     | Underline.                                     |
-| `uuline`    | `uu`       | `\uuline{...}`    | Double underline.                              |
-| `uwave`     | `uw`       | `\uwave{...}`     | Wavy underline.                                |
-| `sout`      | `so`       | `\sout{...}`      | Stricken out line.                             |
-| `xout`      | `xo`       | `\xout{...}`      | Marked over line; not available for HTML.     |
+| CSS Class                | Short Hand | LaTeX code        | Description            |
+|--------------------------|------------|-------------------|------------------------|
+| `dashuline`              | `dau`      | `\dashuline{...}` | Dashed underline.      |
+| `dotuline`               | `dou`      | `\dotuline{...}`  | Dotted underline like. |
+| `uline`                  | `u`        | `\uline{...}`     | Underline.             |
+| `uuline`                 | `uu`       | `\uuline{...}`    | Double underline.      |
+| `uwave`                  | `uw`       | `\uwave{...}`     | Wavy underline.        |
+| `sout`                   | `so`       | `\sout{...}`      | Stricken out line.     |
+| Not available for HTML.  | None       | `\xout{...}`      | Marked over line.      |
 
 The `ulem` LaTeX package is not invoked by default and must be explicitly specified as a metadata attribute, in your defaults file, source document, or on the command line. In a defaults file you may specify the `ulem_styles` attribute using the `metadata` field like so:
 
