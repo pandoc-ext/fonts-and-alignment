@@ -1,22 +1,17 @@
 Fonts and Alignment
 ==============================================================================
 
-[![GitHub build status][CI badge]][CI workflow]
-
 _Fonts and Alignment_ is a Lua filter for styling fonts and aligning text in Pandoc-generated LaTeX documents.
 
 The filter defines a number of classes, that when specified, correspond to LaTeX commands, which in turn provide the requisite styling.
 
-You may preview a specimen PDF document that uses these styles [here](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.pdf).
+You may preview a specimen PDF document that uses these styles [here](https://github.com/pandoc-ext/fonts-and-alignment/blob/main/specimens/specimen.pdf).
 
-The _same_ classes may be used when generating HTML, but that requires the support of a CSS stylesheet to define the necessary styles. To aid this, a [specimen CSS file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.css) has been provided. Copy and modify it according to your preferences.
+The _same_ classes may be used when generating HTML, but that requires the support of a CSS stylesheet to define the necessary styles. To aid this, a [specimen CSS file](https://github.com/pandoc-ext/fonts-and-alignment/blob/main/specimens/specimen.css) has been provided. Copy and modify it according to your preferences.
 
-For those who prefer [Sass](https://sass-lang.com/) a [specimen Sass file](https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.sass) has also been provided to generate CSS. Again copy and modify it as required.
+For those who prefer [Sass](https://sass-lang.com/) a [specimen Sass file](https://github.com/pandoc-ext/fonts-and-alignment/blob/main/specimens/specimen.sass) has also been provided to generate CSS. Again copy and modify it as required.
 
 The corresponding specimen HTML document is available [here](https://htmlpreview.github.io/?https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.html).
-
-[CI badge]: https://img.shields.io/github/workflow/status/nandac/fonts-and-alignment/CI?logo=github
-[CI workflow]: https://github.com/nandac/fonts-and-alignment/actions/workflows/ci.yaml
 
 Prerequisites
 -----------------------------------------------------------------
@@ -219,7 +214,7 @@ To use this filter in your projects follow the steps below:
 1. Download the filter from the repository:
 
     ```bash
-    wget https://raw.githubusercontent.com/nandac/fonts-and-alignment/main/fonts-and-alignment.lua
+    wget https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.lua
     ```
 
 1. Move the filter to a location recognized by Pandoc.
@@ -233,7 +228,7 @@ To use this filter in your projects follow the steps below:
 
     Replace the placeholders above with your output and input files.
 
-    If you are using a defaults file you can also specify the filter as shown below and avoid specitying it on the command line:
+    If you are using a defaults file you can also specify the filter as shown below and avoid specifying it on the command line:
 
     ```yaml
     filters:
@@ -243,7 +238,7 @@ To use this filter in your projects follow the steps below:
 1. To generate the HTML document you would first download the CSS file like so:
 
     ```bash
-    wget https://raw.githubusercontent.com/nandac/fonts-and-alignment/main/specimens/specimen.css
+    wget https://github.com/pandoc-ext/fonts-and-alignment/blob/main/specimens/specimen.css
     ```
 
 1. Then execute the following command:
