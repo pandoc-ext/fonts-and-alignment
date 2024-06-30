@@ -517,27 +517,27 @@
     3
     ( "serif-font-inline" , [] , [] )
     [ Str "Serif" , Space , Str "Font" , Space , Str "Inline" ]
-, Para
-    [ Span
-        ( "" , [ "serif" ] , [] )
-        [ RawInline (Format "latex") "\\textrm{"
-        , Str "This"
+, Div
+    ( "" , [ "sans" ] , [] )
+    [ RawBlock (Format "latex") "\\begin{sffamily}"
+    , Para
+        [ Span
+            ( "" , [ "serif" ] , [] )
+            [ RawInline (Format "latex") "\\textrm{"
+            , Str "This"
+            , Space
+            , Str "text"
+            , Space
+            , Str "should"
+            , Space
+            , Str "be"
+            , Space
+            , Str "in"
+            , Space
+            , Str "serif."
+            , RawInline (Format "latex") "}"
+            ]
         , Space
-        , Str "text"
-        , Space
-        , Str "should"
-        , Space
-        , Str "be"
-        , Space
-        , Str "in"
-        , Space
-        , Str "serif."
-        , RawInline (Format "latex") "}"
-        ]
-    , Space
-    , Span
-        ( "" , [ "sans" ] , [] )
-        [ RawInline (Format "latex") "\\textsf{"
         , Str "Lorem"
         , Space
         , Str "ipsum"
@@ -574,10 +574,9 @@
         , Space
         , Str "magna"
         , Space
-        , Str "aliqua"
-        , RawInline (Format "latex") "}"
+        , Str "aliqua."
         ]
-    , Str "."
+    , RawBlock (Format "latex") "\\end{sffamily}"
     ]
 , Header
     3
