@@ -1,5 +1,6 @@
 /* Noto Sans, Noto Serif and Fira Mono fonts from Google change as needed */
-@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 /* The below styles are not defined in fonts and alignment filter
  * but are kept here to ease the readability of the rendered HTML content */
 body {
@@ -11,7 +12,39 @@ body {
   width: 60%;
 }
 
-span.bold, span.emphasis, span.italic, span.lower, span.medium, span.monospace, span.normalfont, span.sans, span.serif, span.slanted, span.smallcaps, span.upper, span.upright, span.bf, span.em, span.it, span.md, span.tt, span.nf, span.sf, span.rm, span.sl, span.sc, span.up, span.tiny, span.xxsmall, span.xsmall, span.small, span.normal, span.large, span.xlarge, span.xxlarge, span.huge {
+span.bold,
+span.emphasis,
+span.italic,
+span.lower,
+span.medium,
+span.monospace,
+span.normalfont,
+span.sans,
+span.serif,
+span.slanted,
+span.smallcaps,
+span.upper,
+span.upright,
+span.bf,
+span.em,
+span.it,
+span.md,
+span.tt,
+span.nf,
+span.sf,
+span.rm,
+span.sl,
+span.sc,
+span.up,
+span.tiny,
+span.xxsmall,
+span.xsmall,
+span.small,
+span.normal,
+span.large,
+span.xlarge,
+span.xxlarge,
+span.huge {
   color: maroon;
 }
 
@@ -126,32 +159,48 @@ a:hover {
 }
 
 /* Text Alignments */
-div.center, div.centering {
+div.center,
+div.centering {
   text-align: center;
 }
-div.flushright, div.raggedleft {
+
+div.flushright,
+div.raggedleft {
   text-align: right;
 }
-div.flushleft, div.raggedright {
+
+div.flushleft,
+div.raggedright {
   text-align: left;
 }
 
 /* Underline Styles */
-span.dashuline, span.dau {
+span.dashuline,
+span.dau {
   text-decoration: underline dashed;
 }
-span.dotuline, span.dou {
+
+span.dotuline,
+span.dou {
   text-decoration: underline dotted;
 }
-span.uline, span.u {
+
+span.uline,
+span.u {
   text-decoration: underline;
 }
-span.uuline, span.uu {
+
+span.uuline,
+span.uu {
   text-decoration: underline double;
 }
-span.uwave, span.uw {
+
+span.uwave,
+span.uw {
   text-decoration: underline wavy;
 }
-span.sout, span.so {
+
+span.sout,
+span.so {
   text-decoration: line-through;
 }

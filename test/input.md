@@ -1,7 +1,7 @@
 ---
 title: Fonts and Alignment Lua Filter Sample Outputs
 author: Nandakumar Chandrasekhar
-date: 2022-02-22
+date: 2024-06-30
 papersize: A4
 geometry:
   - margin=25mm
@@ -68,9 +68,9 @@ et dolore magna aliqua.
 
 ### Serif Font Inline
 
-[This text should be in serif.]{.serif} Lorem ipsum dolor sit amet,
+[This text should be in serif.]{.serif} [Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua.
+et dolore magna aliqua]{.sans}.
 
 ### Slanted Font Inline
 
@@ -180,7 +180,7 @@ incididunt ut labore et dolore magna aliqua.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
 
-### Monospace, Extra Small Text and Bold for Inline
+### Extra Small Text and Bold for Inline
 
 [This text should be in monospace, extra small size and bold.]{.tt
 .xsmall .bf} Lorem ipsum dolor sit amet, consectetur adipiscing elit,

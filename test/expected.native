@@ -535,43 +535,49 @@
         , RawInline (Format "latex") "}"
         ]
     , Space
-    , Str "Lorem"
-    , Space
-    , Str "ipsum"
-    , Space
-    , Str "dolor"
-    , Space
-    , Str "sit"
-    , Space
-    , Str "amet,"
-    , SoftBreak
-    , Str "consectetur"
-    , Space
-    , Str "adipiscing"
-    , Space
-    , Str "elit,"
-    , Space
-    , Str "sed"
-    , Space
-    , Str "do"
-    , Space
-    , Str "eiusmod"
-    , Space
-    , Str "tempor"
-    , Space
-    , Str "incididunt"
-    , Space
-    , Str "ut"
-    , Space
-    , Str "labore"
-    , SoftBreak
-    , Str "et"
-    , Space
-    , Str "dolore"
-    , Space
-    , Str "magna"
-    , Space
-    , Str "aliqua."
+    , Span
+        ( "" , [ "sans" ] , [] )
+        [ RawInline (Format "latex") "\\textsf{"
+        , Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , SoftBreak
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , SoftBreak
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua"
+        , RawInline (Format "latex") "}"
+        ]
+    , Str "."
     ]
 , Header
     3
@@ -1969,13 +1975,8 @@
     ]
 , Header
     3
-    ( "monospace-extra-small-text-and-bold-for-inline"
-    , []
-    , []
-    )
-    [ Str "Monospace,"
-    , Space
-    , Str "Extra"
+    ( "extra-small-text-and-bold-for-inline" , [] , [] )
+    [ Str "Extra"
     , Space
     , Str "Small"
     , Space
@@ -2162,8 +2163,7 @@
 , Para
     [ Span
         ( "" , [ "dashuline" ] , [] )
-        [ RawInline (Format "latex") "\\dashuline{"
-        , Str "This"
+        [ Str "This"
         , Space
         , Str "text"
         , Space
@@ -2174,7 +2174,6 @@
         , Str "dashed"
         , Space
         , Str "underlined."
-        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
@@ -2227,8 +2226,7 @@
 , Para
     [ Span
         ( "" , [ "dotuline" ] , [] )
-        [ RawInline (Format "latex") "\\dotuline{"
-        , Str "This"
+        [ Str "This"
         , Space
         , Str "text"
         , Space
@@ -2239,7 +2237,6 @@
         , Str "dotted"
         , Space
         , Str "underlined."
-        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
@@ -2287,8 +2284,7 @@
 , Para
     [ Span
         ( "" , [ "uline" ] , [] )
-        [ RawInline (Format "latex") "\\uline{"
-        , Str "This"
+        [ Str "This"
         , Space
         , Str "text"
         , Space
@@ -2297,7 +2293,6 @@
         , Str "be"
         , Space
         , Str "underlined."
-        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
@@ -2350,8 +2345,7 @@
 , Para
     [ Span
         ( "" , [ "uuline" ] , [] )
-        [ RawInline (Format "latex") "\\uuline{"
-        , Str "This"
+        [ Str "This"
         , Space
         , Str "text"
         , Space
@@ -2362,7 +2356,6 @@
         , Str "double"
         , Space
         , Str "underlined."
-        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
@@ -2415,8 +2408,7 @@
 , Para
     [ Span
         ( "" , [ "uwave" ] , [] )
-        [ RawInline (Format "latex") "\\uwave{"
-        , Str "This"
+        [ Str "This"
         , Space
         , Str "text"
         , Space
@@ -2427,7 +2419,6 @@
         , Str "wavy"
         , Space
         , Str "underlined."
-        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
@@ -2475,8 +2466,7 @@
 , Para
     [ Span
         ( "" , [ "sout" ] , [] )
-        [ RawInline (Format "latex") "\\sout{"
-        , Str "This"
+        [ Str "This"
         , Space
         , Str "text"
         , Space
@@ -2487,7 +2477,6 @@
         , Str "stricken"
         , Space
         , Str "out."
-        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
@@ -2548,8 +2537,7 @@
 , Para
     [ Span
         ( "" , [ "xout" ] , [] )
-        [ RawInline (Format "latex") "\\xout{"
-        , Str "This"
+        [ Str "This"
         , Space
         , Str "text"
         , Space
@@ -2560,7 +2548,6 @@
         , Str "marked"
         , Space
         , Str "over."
-        , RawInline (Format "latex") "}"
         ]
     , Space
     , Str "Lorem"
