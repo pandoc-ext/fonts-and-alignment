@@ -11,7 +11,7 @@ The _same_ classes may be used when generating HTML, but that requires the suppo
 
 For those who prefer [Sass](https://sass-lang.com/) a [specimen Sass file](https://github.com/pandoc-ext/fonts-and-alignment/blob/main/specimens/specimen.sass) has also been provided to generate CSS. Again copy and modify it as required.
 
-The corresponding specimen HTML document is available [here](https://htmlpreview.github.io/?https://github.com/nandac/fonts-and-alignment/blob/main/specimens/specimen.html).
+The corresponding specimen HTML document is available [here](https://htmlpreview.github.io/?https://github.com/pandoc-ext/fonts-and-alignment/blob/main/specimens/specimen.html).
 
 Prerequisites
 -----------------------------------------------------------------
