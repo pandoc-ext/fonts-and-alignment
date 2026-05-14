@@ -1,0 +1,16 @@
+to: native
+standalone: true
+
+filters:
+  - type: lua
+    path: fonts-and-alignment.lua
+
+pdf-engine: lualatex
+
+# These variables control the LaTeX/PDF output natively
+# and are picked up by your Lua filter for the HTML CSS injection.
+variables:
+  fontsize: 12pt
+  mainfont: Noto Serif
+  sansfont: Noto Sans
+  monofont: Fira Mono

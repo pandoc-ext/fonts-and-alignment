@@ -1,0 +1,214 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "author"
+            , MetaInlines
+                [ Str "Nandakumar" , Space , Str "Chandrasekhar" ]
+            )
+          , ( "date"
+            , MetaInlines
+                [ Str "15" , Space , Str "May" , Space , Str "2026" ]
+            )
+          , ( "geometry"
+            , MetaList [ MetaInlines [ Str "margin=25mm" ] ]
+            )
+          , ( "linestretch" , MetaInlines [ Str "1.25" ] )
+          , ( "papersize" , MetaInlines [ Str "A4" ] )
+          , ( "title"
+            , MetaInlines
+                [ Str "Underlining"
+                , Space
+                , Str "Inline"
+                , Space
+                , Str "Elements"
+                ]
+            )
+          ]
+    }
+  [ Header
+      2
+      ( "standard-underline" , [] , [] )
+      [ Str "Standard" , Space , Str "Underline" ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-uline" ] , [] )
+          [ Underline
+              [ Str "The"
+              , Space
+              , Str "quick"
+              , Space
+              , Str "brown"
+              , Space
+              , Str "fox"
+              , Space
+              , Str "jumps"
+              , Space
+              , Str "over"
+              , Space
+              , Str "the"
+              , Space
+              , Str "lazy"
+              , Space
+              , Str "dog."
+              ]
+          ]
+      ]
+  , Header
+      2
+      ( "double-underline" , [] , [] )
+      [ Str "Double" , Space , Str "Underline" ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-uline-double" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "wavy-underline" , [] , [] )
+      [ Str "Wavy" , Space , Str "Underline" ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-uline-wave" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "dashed-underline" , [] , [] )
+      [ Str "Dashed" , Space , Str "Underline" ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-uline-dashed" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "dotted-underline" , [] , [] )
+      [ Str "Dotted" , Space , Str "Underline" ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-uline-dotted" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header 2 ( "strikeout" , [] , [] ) [ Str "Strikeout" ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-strikeout" ] , [] )
+          [ Strikeout
+              [ Str "The"
+              , Space
+              , Str "quick"
+              , Space
+              , Str "brown"
+              , Space
+              , Str "fox"
+              , Space
+              , Str "jumps"
+              , Space
+              , Str "over"
+              , Space
+              , Str "the"
+              , Space
+              , Str "lazy"
+              , Space
+              , Str "dog."
+              ]
+          ]
+      ]
+  , Header
+      2
+      ( "marked-out" , [] , [] )
+      [ Str "Marked" , Space , Str "Out" ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-markout" ] , [] )
+          [ Strikeout
+              [ Str "The"
+              , Space
+              , Str "quick"
+              , Space
+              , Str "brown"
+              , Space
+              , Str "fox"
+              , Space
+              , Str "jumps"
+              , Space
+              , Str "over"
+              , Space
+              , Str "the"
+              , Space
+              , Str "lazy"
+              , Space
+              , Str "dog."
+              ]
+          ]
+      ]
+  ]

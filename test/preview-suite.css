@@ -1,0 +1,36 @@
+/**
+ * Pandoc Fonts and Alignment Specimen Stylesheet
+ *
+ * This companion stylesheet provides development-specific environment configurations
+ * and external font assets strictly for building visual test specimens. It isolates
+ * remote dependencies from the core production CSS framework.
+ */
+
+/* ==========================================================================
+   External Assets & Web Font Deliveries
+   ========================================================================== */
+/* These remote assets are fetched strictly to provide visual parity for testing
+   the standard LaTeX font families (.serif, .sans, and .tt) during compilation. */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Fira+Mono&display=swap');
+
+/* ==========================================================================
+   Explicit Font Mapping for Testing Environment
+   ========================================================================== */
+/* Since the core CSS handles font properties over default fallback mappings,
+   we override the variables right at the root level so our compiled utility
+   classes can read them immediately. */
+:root {
+  --pfa-mainfont: 'Noto Serif', serif;
+  --pfa-sansfont: 'Noto Sans', sans-serif;
+  --pfa-monofont: 'Fira Mono', monospace;
+}
+
+/* Force global body elements in the specimen browser to inherit the main font */
+/* Centers the compiled specimen output and constraints its layout width to
+   simulate standard print document margins on modern desktop displays. */
+body {
+  font-family: 'Noto Serif', serif;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}

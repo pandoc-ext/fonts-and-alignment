@@ -1,5 +1,7 @@
-Fonts and Alignment
+Fonts and Alignment Filter
 ==============================================================================
+
+[![GitHub build status][CI badge]][CI workflow]
 
 _Fonts and Alignment_ is a Lua filter for styling fonts and aligning text in Pandoc-generated LaTeX documents.
 
@@ -36,6 +38,33 @@ sansfont: <sans-serif-font>
 monofont: <monospace-font>
 ---
 
+```
+
+HTML fragements custom CSS
+
+```html
+/* my-custom-fonts.css */
+
+/* 1. Import the fonts directly from Google */
+/* Added 'Open Sans' for the sans-serif replacement */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Fira+Code&display=swap');
+
+/* 2. Override the global body and serif classes */
+body,
+.serif, .rm, .pfa-font-serif,
+.normalfont, .nf, .pfa-font-normal {
+  font-family: 'Merriweather', serif !important;
+}
+
+/* 3. Override the sans-serif classes */
+.sans, .sf, .pfa-font-sans {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+/* 4. Override the monospace classes */
+.monospace, .tt, .pfa-font-mono {
+  font-family: 'Fira Code', monospace !important;
+}
 ```
 
 Replace the placeholders above with your choices.

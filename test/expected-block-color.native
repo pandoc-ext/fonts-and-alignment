@@ -1,0 +1,951 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "author"
+            , MetaInlines
+                [ Str "Nandakumar" , Space , Str "Chandrasekhar" ]
+            )
+          , ( "date"
+            , MetaInlines
+                [ Str "15" , Space , Str "May" , Space , Str "2026" ]
+            )
+          , ( "geometry"
+            , MetaList [ MetaInlines [ Str "margin=25mm" ] ]
+            )
+          , ( "linestretch" , MetaInlines [ Str "1.25" ] )
+          , ( "papersize" , MetaInlines [ Str "A4" ] )
+          , ( "title"
+            , MetaInlines
+                [ Str "Coloring"
+                , Space
+                , Str "Blocks"
+                , Space
+                , Str "of"
+                , Space
+                , Str "Text"
+                ]
+            )
+          ]
+    }
+  [ Header
+      2
+      ( "named-color-csssvg" , [] , [] )
+      [ Str "Named"
+      , Space
+      , Str "Color"
+      , Space
+      , Str "(CSS/SVG)"
+      ]
+  , Div
+      ( "" , [] , [ ( "style" , "color: #C71585;" ) ] )
+      [ Para
+          [ Str "Lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit."
+          , Space
+          , Str "Sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
+          , Space
+          , Str "Ut"
+          , Space
+          , Str "enim"
+          , Space
+          , Str "ad"
+          , Space
+          , Str "minim"
+          , Space
+          , Str "veniam,"
+          , Space
+          , Str "quis"
+          , Space
+          , Str "nostrud"
+          , Space
+          , Str "exercitation"
+          , Space
+          , Str "ullamco"
+          , Space
+          , Str "laboris"
+          , Space
+          , Str "nisi"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "aliquip"
+          , Space
+          , Str "ex"
+          , Space
+          , Str "ea"
+          , Space
+          , Str "commodo"
+          , Space
+          , Str "consequat."
+          ]
+      , Para
+          [ Str "Duis"
+          , Space
+          , Str "aute"
+          , Space
+          , Str "irure"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "in"
+          , Space
+          , Str "reprehenderit"
+          , Space
+          , Str "in"
+          , Space
+          , Str "voluptate"
+          , Space
+          , Str "velit"
+          , Space
+          , Str "esse"
+          , Space
+          , Str "cillum"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "eu"
+          , Space
+          , Str "fugiat"
+          , Space
+          , Str "nulla"
+          , Space
+          , Str "pariatur."
+          , Space
+          , Str "Excepteur"
+          , Space
+          , Str "sint"
+          , Space
+          , Str "occaecat"
+          , Space
+          , Str "cupidatat"
+          , Space
+          , Str "non"
+          , Space
+          , Str "proident,"
+          , Space
+          , Str "sunt"
+          , Space
+          , Str "in"
+          , Space
+          , Str "culpa"
+          , Space
+          , Str "qui"
+          , Space
+          , Str "officia"
+          , Space
+          , Str "deserunt"
+          , Space
+          , Str "mollit"
+          , Space
+          , Str "anim"
+          , Space
+          , Str "id"
+          , Space
+          , Str "est"
+          , Space
+          , Str "laborum."
+          ]
+      ]
+  , Header
+      2
+      ( "named-color-spaces" , [] , [] )
+      [ Str "Named"
+      , Space
+      , Str "Color"
+      , Space
+      , Str "(Spaces)"
+      ]
+  , Div
+      ( "" , [] , [ ( "style" , "color: #C71585;" ) ] )
+      [ Para
+          [ Str "Lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit."
+          , Space
+          , Str "Sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
+          , Space
+          , Str "Ut"
+          , Space
+          , Str "enim"
+          , Space
+          , Str "ad"
+          , Space
+          , Str "minim"
+          , Space
+          , Str "veniam,"
+          , Space
+          , Str "quis"
+          , Space
+          , Str "nostrud"
+          , Space
+          , Str "exercitation"
+          , Space
+          , Str "ullamco"
+          , Space
+          , Str "laboris"
+          , Space
+          , Str "nisi"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "aliquip"
+          , Space
+          , Str "ex"
+          , Space
+          , Str "ea"
+          , Space
+          , Str "commodo"
+          , Space
+          , Str "consequat."
+          ]
+      , Para
+          [ Str "Duis"
+          , Space
+          , Str "aute"
+          , Space
+          , Str "irure"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "in"
+          , Space
+          , Str "reprehenderit"
+          , Space
+          , Str "in"
+          , Space
+          , Str "voluptate"
+          , Space
+          , Str "velit"
+          , Space
+          , Str "esse"
+          , Space
+          , Str "cillum"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "eu"
+          , Space
+          , Str "fugiat"
+          , Space
+          , Str "nulla"
+          , Space
+          , Str "pariatur."
+          , Space
+          , Str "Excepteur"
+          , Space
+          , Str "sint"
+          , Space
+          , Str "occaecat"
+          , Space
+          , Str "cupidatat"
+          , Space
+          , Str "non"
+          , Space
+          , Str "proident,"
+          , Space
+          , Str "sunt"
+          , Space
+          , Str "in"
+          , Space
+          , Str "culpa"
+          , Space
+          , Str "qui"
+          , Space
+          , Str "officia"
+          , Space
+          , Str "deserunt"
+          , Space
+          , Str "mollit"
+          , Space
+          , Str "anim"
+          , Space
+          , Str "id"
+          , Space
+          , Str "est"
+          , Space
+          , Str "laborum."
+          ]
+      ]
+  , Header
+      2
+      ( "named-color-underscores" , [] , [] )
+      [ Str "Named"
+      , Space
+      , Str "Color"
+      , Space
+      , Str "(Underscores)"
+      ]
+  , Div
+      ( "" , [] , [ ( "style" , "color: #C71585;" ) ] )
+      [ Para
+          [ Str "Lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit."
+          , Space
+          , Str "Sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
+          , Space
+          , Str "Ut"
+          , Space
+          , Str "enim"
+          , Space
+          , Str "ad"
+          , Space
+          , Str "minim"
+          , Space
+          , Str "veniam,"
+          , Space
+          , Str "quis"
+          , Space
+          , Str "nostrud"
+          , Space
+          , Str "exercitation"
+          , Space
+          , Str "ullamco"
+          , Space
+          , Str "laboris"
+          , Space
+          , Str "nisi"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "aliquip"
+          , Space
+          , Str "ex"
+          , Space
+          , Str "ea"
+          , Space
+          , Str "commodo"
+          , Space
+          , Str "consequat."
+          ]
+      , Para
+          [ Str "Duis"
+          , Space
+          , Str "aute"
+          , Space
+          , Str "irure"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "in"
+          , Space
+          , Str "reprehenderit"
+          , Space
+          , Str "in"
+          , Space
+          , Str "voluptate"
+          , Space
+          , Str "velit"
+          , Space
+          , Str "esse"
+          , Space
+          , Str "cillum"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "eu"
+          , Space
+          , Str "fugiat"
+          , Space
+          , Str "nulla"
+          , Space
+          , Str "pariatur."
+          , Space
+          , Str "Excepteur"
+          , Space
+          , Str "sint"
+          , Space
+          , Str "occaecat"
+          , Space
+          , Str "cupidatat"
+          , Space
+          , Str "non"
+          , Space
+          , Str "proident,"
+          , Space
+          , Str "sunt"
+          , Space
+          , Str "in"
+          , Space
+          , Str "culpa"
+          , Space
+          , Str "qui"
+          , Space
+          , Str "officia"
+          , Space
+          , Str "deserunt"
+          , Space
+          , Str "mollit"
+          , Space
+          , Str "anim"
+          , Space
+          , Str "id"
+          , Space
+          , Str "est"
+          , Space
+          , Str "laborum."
+          ]
+      ]
+  , Header
+      2
+      ( "hex-color-shorthand" , [] , [] )
+      [ Str "Hex"
+      , Space
+      , Str "Color"
+      , Space
+      , Str "(Shorthand)"
+      ]
+  , Div
+      ( "" , [] , [ ( "style" , "color: #FF0000;" ) ] )
+      [ Para
+          [ Str "Lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit."
+          , Space
+          , Str "Sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
+          , Space
+          , Str "Ut"
+          , Space
+          , Str "enim"
+          , Space
+          , Str "ad"
+          , Space
+          , Str "minim"
+          , Space
+          , Str "veniam,"
+          , Space
+          , Str "quis"
+          , Space
+          , Str "nostrud"
+          , Space
+          , Str "exercitation"
+          , Space
+          , Str "ullamco"
+          , Space
+          , Str "laboris"
+          , Space
+          , Str "nisi"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "aliquip"
+          , Space
+          , Str "ex"
+          , Space
+          , Str "ea"
+          , Space
+          , Str "commodo"
+          , Space
+          , Str "consequat."
+          ]
+      , Para
+          [ Str "Duis"
+          , Space
+          , Str "aute"
+          , Space
+          , Str "irure"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "in"
+          , Space
+          , Str "reprehenderit"
+          , Space
+          , Str "in"
+          , Space
+          , Str "voluptate"
+          , Space
+          , Str "velit"
+          , Space
+          , Str "esse"
+          , Space
+          , Str "cillum"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "eu"
+          , Space
+          , Str "fugiat"
+          , Space
+          , Str "nulla"
+          , Space
+          , Str "pariatur."
+          , Space
+          , Str "Excepteur"
+          , Space
+          , Str "sint"
+          , Space
+          , Str "occaecat"
+          , Space
+          , Str "cupidatat"
+          , Space
+          , Str "non"
+          , Space
+          , Str "proident,"
+          , Space
+          , Str "sunt"
+          , Space
+          , Str "in"
+          , Space
+          , Str "culpa"
+          , Space
+          , Str "qui"
+          , Space
+          , Str "officia"
+          , Space
+          , Str "deserunt"
+          , Space
+          , Str "mollit"
+          , Space
+          , Str "anim"
+          , Space
+          , Str "id"
+          , Space
+          , Str "est"
+          , Space
+          , Str "laborum."
+          ]
+      ]
+  , Header
+      2
+      ( "hex-color-typst-eastern-hash" , [] , [] )
+      [ Str "Hex"
+      , Space
+      , Str "Color"
+      , Space
+      , Str "(Typst"
+      , Space
+      , Str "Eastern"
+      , Space
+      , Str "Hash)"
+      ]
+  , Div
+      ( "" , [] , [ ( "style" , "color: #239DAD;" ) ] )
+      [ Para
+          [ Str "Lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit."
+          , Space
+          , Str "Sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
+          , Space
+          , Str "Ut"
+          , Space
+          , Str "enim"
+          , Space
+          , Str "ad"
+          , Space
+          , Str "minim"
+          , Space
+          , Str "veniam,"
+          , Space
+          , Str "quis"
+          , Space
+          , Str "nostrud"
+          , Space
+          , Str "exercitation"
+          , Space
+          , Str "ullamco"
+          , Space
+          , Str "laboris"
+          , Space
+          , Str "nisi"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "aliquip"
+          , Space
+          , Str "ex"
+          , Space
+          , Str "ea"
+          , Space
+          , Str "commodo"
+          , Space
+          , Str "consequat."
+          ]
+      , Para
+          [ Str "Duis"
+          , Space
+          , Str "aute"
+          , Space
+          , Str "irure"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "in"
+          , Space
+          , Str "reprehenderit"
+          , Space
+          , Str "in"
+          , Space
+          , Str "voluptate"
+          , Space
+          , Str "velit"
+          , Space
+          , Str "esse"
+          , Space
+          , Str "cillum"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "eu"
+          , Space
+          , Str "fugiat"
+          , Space
+          , Str "nulla"
+          , Space
+          , Str "pariatur."
+          , Space
+          , Str "Excepteur"
+          , Space
+          , Str "sint"
+          , Space
+          , Str "occaecat"
+          , Space
+          , Str "cupidatat"
+          , Space
+          , Str "non"
+          , Space
+          , Str "proident,"
+          , Space
+          , Str "sunt"
+          , Space
+          , Str "in"
+          , Space
+          , Str "culpa"
+          , Space
+          , Str "qui"
+          , Space
+          , Str "officia"
+          , Space
+          , Str "deserunt"
+          , Space
+          , Str "mollit"
+          , Space
+          , Str "anim"
+          , Space
+          , Str "id"
+          , Space
+          , Str "est"
+          , Space
+          , Str "laborum."
+          ]
+      ]
+  , Header
+      2
+      ( "hex-color-midnightblue-no-hash" , [] , [] )
+      [ Str "Hex"
+      , Space
+      , Str "Color"
+      , Space
+      , Str "(MidnightBlue"
+      , Space
+      , Str "No"
+      , Space
+      , Str "Hash)"
+      ]
+  , Div
+      ( "" , [] , [ ( "style" , "color: #191970;" ) ] )
+      [ Para
+          [ Str "Lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit."
+          , Space
+          , Str "Sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
+          , Space
+          , Str "Ut"
+          , Space
+          , Str "enim"
+          , Space
+          , Str "ad"
+          , Space
+          , Str "minim"
+          , Space
+          , Str "veniam,"
+          , Space
+          , Str "quis"
+          , Space
+          , Str "nostrud"
+          , Space
+          , Str "exercitation"
+          , Space
+          , Str "ullamco"
+          , Space
+          , Str "laboris"
+          , Space
+          , Str "nisi"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "aliquip"
+          , Space
+          , Str "ex"
+          , Space
+          , Str "ea"
+          , Space
+          , Str "commodo"
+          , Space
+          , Str "consequat."
+          ]
+      , Para
+          [ Str "Duis"
+          , Space
+          , Str "aute"
+          , Space
+          , Str "irure"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "in"
+          , Space
+          , Str "reprehenderit"
+          , Space
+          , Str "in"
+          , Space
+          , Str "voluptate"
+          , Space
+          , Str "velit"
+          , Space
+          , Str "esse"
+          , Space
+          , Str "cillum"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "eu"
+          , Space
+          , Str "fugiat"
+          , Space
+          , Str "nulla"
+          , Space
+          , Str "pariatur."
+          , Space
+          , Str "Excepteur"
+          , Space
+          , Str "sint"
+          , Space
+          , Str "occaecat"
+          , Space
+          , Str "cupidatat"
+          , Space
+          , Str "non"
+          , Space
+          , Str "proident,"
+          , Space
+          , Str "sunt"
+          , Space
+          , Str "in"
+          , Space
+          , Str "culpa"
+          , Space
+          , Str "qui"
+          , Space
+          , Str "officia"
+          , Space
+          , Str "deserunt"
+          , Space
+          , Str "mollit"
+          , Space
+          , Str "anim"
+          , Space
+          , Str "id"
+          , Space
+          , Str "est"
+          , Space
+          , Str "laborum."
+          ]
+      ]
+  ]

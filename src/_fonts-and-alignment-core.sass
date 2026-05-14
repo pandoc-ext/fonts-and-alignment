@@ -1,0 +1,126 @@
+/**
+ * Pandoc Fonts and Alignment - Core Engine Mixin
+ * Do not compile this file directly.
+ */
+
+/* ==========================================================================
+   Base Configuration & Typography Calculations
+   ========================================================================== */
+$pfa-mainfont: serif !default
+$pfa-sansfont: sans-serif !default
+$pfa-monofont: monospace !default
+
+@mixin pfa-engine($pfa-unit: 1rem)
+  $pfa-xxxsmall: calc((#{$pfa-unit} / 12) * 6)
+  $pfa-xxsmall:  calc((#{$pfa-unit} / 12) * 8)
+  $pfa-xsmall:   calc((#{$pfa-unit} / 12) * 10)
+  $pfa-small:    calc((#{$pfa-unit} / 12) * 10.95)
+  $pfa-normal:   calc((#{$pfa-unit} / 12) * 12)
+  $pfa-large:    calc((#{$pfa-unit} / 12) * 14.4)
+  $pfa-xlarge:   calc((#{$pfa-unit} / 12) * 17.28)
+  $pfa-xxlarge:  calc((#{$pfa-unit} / 12) * 20.74)
+  $pfa-huge:     calc((#{$pfa-unit} / 12) * 24.88)
+
+  /* Font Weights, Styles, and Families */
+  .bold, .bf, .pfa-font-bold
+    font-weight: 700
+
+  .emphasis, .italic, .it, .slanted, .sl, .pfa-font-emphasis, .pfa-font-italic, .pfa-font-slanted
+    font-style: italic
+
+  .lower, .pfa-lowercase
+    text-transform: lowercase
+
+  .medium, .md, .pfa-font-medium
+    font-weight: 500
+
+  .normalfont, .nf, .upright, .up, .pfa-font-normal, .pfa-font-upright
+    font-family: $pfa-mainfont
+    font-style: normal
+    font-weight: 400
+
+  .monospace, .tt, .pfa-font-mono
+    font-family: $pfa-monofont
+
+  .sans, .sf, .pfa-font-sans
+    font-family: $pfa-sansfont
+
+  .serif, .rm, .pfa-font-serif
+    font-family: $pfa-mainfont
+
+  .smallcaps, .sc, .pfa-font-smallcaps
+    font-variant: small-caps
+
+  .upper, .pfa-uppercase
+    text-transform: uppercase
+
+  /* Typography Sizing Utilities */
+  .pfa-text-3xs
+    font-size: $pfa-xxxsmall !important
+    display: inline-block
+  .pfa-text-2xs
+    font-size: $pfa-xxsmall !important
+    display: inline-block
+  .xsmall, .pfa-text-xs
+    font-size: $pfa-xsmall !important
+    display: inline-block
+  .small, .pfa-text-sm
+    font-size: $pfa-small !important
+    display: inline-block
+  .normal, .pfa-text-normal
+    font-size: $pfa-normal !important
+    display: inline-block
+  .large, .pfa-text-lg
+    font-size: $pfa-large !important
+    display: inline-block
+    line-height: 1.2
+  .xlarge, .pfa-text-xl
+    font-size: $pfa-xlarge !important
+    display: inline-block
+    line-height: 1.15
+  .xxlarge, .pfa-text-2xl
+    font-size: $pfa-xxlarge !important
+    display: inline-block
+    line-height: 1.1
+  .huge, .pfa-text-3xl
+    font-size: $pfa-huge !important
+    display: inline-block
+    line-height: 1.05
+
+  /* Alignments */
+  .center, .centering, .pfa-text-center, .pfa-align-center
+    text-align: center
+  .flushright, .raggedleft, .pfa-text-right, .pfa-align-right
+    text-align: right
+  .flushleft, .raggedright, .pfa-text-left, .pfa-align-left
+    text-align: left
+
+  .pfa-block-center
+    display: table
+    margin-left: auto
+    margin-right: auto
+    text-align: left
+  .pfa-block-left
+    display: table
+    margin-left: 0
+    margin-right: auto
+    text-align: left
+  .pfa-block-right
+    display: table
+    margin-left: auto
+    margin-right: 0
+    text-align: left
+
+  /* Inline Text Decorations (ulem package equivalents) */
+  span.dashuline, span.dau, span.pfa-text-uline-dashed
+    text-decoration: underline dashed
+  span.dotuline, span.dou, span.pfa-text-uline-dotted
+    text-decoration: underline dotted
+  span.uline, span.u, span.pfa-text-uline
+    text-decoration: underline
+  span.uuline, span.uu, span.pfa-text-uline-double
+    text-decoration: underline double
+  span.uwave, span.uw, span.pfa-text-uline-wave
+    text-decoration: underline wavy
+  span.sout, span.so, span.pfa-text-strikeout, span.xout, span.xo, span.pfa-text-markout
+    text-decoration: line-through

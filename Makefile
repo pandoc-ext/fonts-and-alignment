@@ -1,96 +1,172 @@
-# Name of the filter file, *with* `.lua` file extension.
-FILTER_FILE := $(wildcard *.lua)
-# Name of the filter, *without* `.lua` file extension
-FILTER_NAME = $(patsubst %.lua,%,$(FILTER_FILE))
+# ==============================================================================
+# Configuration & Variables
+# ==============================================================================
+
+# Distribution Extension Folder Path
+EXT_DIR := _extensions/fonts-and-alignment
+
+# Location of the core filter engine inside the extension
+FILTER_DIST := $(EXT_DIR)/fonts-and-alignment.lua
+
+# Root-level filter shortcut for Pandoc/Quarto execution
+FILTER_FILE := fonts-and-alignment.lua
+
+# Generated Core Distribution CSS Files
+CSS_EM  := $(EXT_DIR)/fonts-and-alignment-em.css
+CSS_REM := $(EXT_DIR)/fonts-and-alignment-rem.css
+DIST_CSS_FILES := $(CSS_EM) $(CSS_REM)
+
+# Private Development SASS Source Files
+SASS_SRC_DIR := src
+SASS_CORE    := $(SASS_SRC_DIR)/_fonts-and-alignment-core.sass
+SASS_EM_SRC  := $(SASS_SRC_DIR)/fonts-and-alignment-em.sass
+SASS_REM_SRC := $(SASS_SRC_DIR)/fonts-and-alignment-rem.sass
 
 # Allow to use a different pandoc binary, e.g. when testing.
 PANDOC ?= pandoc
 # Allow to adjust the diff command if necessary
 DIFF = diff
 
-SPECIMEN_SASS = specimen.sass
-SPECIMEN_CSS = specimen.css
-SPECIMEN_HTML = specimen.html
-SPECIMEN_PDF = specimen.pdf
+# Current version, i.e., the latest tag. Used to version the quarto extension.
+VERSION = $(shell git tag --sort=-version:refname --merged | head -n1 | \
+                         sed -e 's/^v//' | tr -d "\n")
+ifeq "$(VERSION)" ""
+VERSION = 0.0.0
+endif
+
+# ==============================================================================
+# Dynamic Test Detection
+# ==============================================================================
+# 1. Find all specific test YAMLs (ignoring the base test.yaml)
+TEST_YAMLS := $(filter-out test/test.yaml, $(wildcard test/test-*.yaml))
+# 2. Extract just the name parts (e.g., "inline-font-sizes")
+TEST_NAMES := $(patsubst test/test-%.yaml,%,$(TEST_YAMLS))
+# 3. Grab all markdown files in the test directory to use as dependencies
+TEST_INPUTS := $(wildcard test/*.md)
 
 .PHONY: all
-all: clean docs specimens test/expected.native
+all: clean filter-symlink css docs previews test
 
-# Test that running the filter on the sample input document yields
-# the expected output.
-#
-# The automatic variable `$<` refers to the first dependency
-# (i.e., the filter file).
-test: $(FILTER_FILE) test/input.md
-	$(PANDOC) --lua-filter=$< --to=native test/input.md \
-		--metadata=ulem_styles | \
-		$(DIFF) test/expected.native -
 
-# Ensure that the `test` target is run each time it's called.
+# ==============================================================================
+# Environment Setup (Ensures Root-level Filter Symlink Exists for Pandoc)
+# ==============================================================================
+$(FILTER_FILE): $(FILTER_DIST)
+	ln -sf $(FILTER_DIST) $@
+
+.PHONY: filter-symlink
+filter-symlink: $(FILTER_FILE)
+
+
+# ==============================================================================
+# CSS Transformation (Compiles SASS from src/ straight to extension distribution)
+# ==============================================================================
+$(CSS_EM): $(SASS_EM_SRC) $(SASS_CORE)
+	@mkdir -p $(EXT_DIR)
+	sass --no-source-map $< $@
+
+$(CSS_REM): $(SASS_REM_SRC) $(SASS_CORE)
+	@mkdir -p $(EXT_DIR)
+	sass --no-source-map $< $@
+
+.PHONY: css
+css: $(DIST_CSS_FILES)
+
+
+# ==============================================================================
+# Testing Rules (AST Generation & Diffing)
+# ==============================================================================
 .PHONY: test
+test: $(FILTER_FILE) $(addprefix test-,$(TEST_NAMES))
 
-# Re-generate the expected output. This file **must not** be a
-# dependency of the `test` target, as that would cause it to be
-# regenerated on each run, making the test pointless.
-test/expected.native: $(FILTER_FILE) test/input.md
-	$(PANDOC) --lua-filter=$< --to=native --output=$@ \
-		--metadata=ulem_styles \
-		test/input.md
+test-%: $(FILTER_FILE) test/test.yaml test/test-%.yaml $(TEST_INPUTS)
+	$(PANDOC) --defaults test/test.yaml --defaults test/test-$*.yaml | \
+		$(DIFF) test/expected-$*.native -
 
-#
-# Generate specimen documents
-#
-.PHONY: specimens
-specimens: specimens/${SPECIMEN_CSS} specimens/${SPECIMEN_HTML} specimens/${SPECIMEN_PDF}
+.PHONY: update-expected
+update-expected: $(FILTER_FILE) $(addprefix update-,$(TEST_NAMES))
 
-specimens/specimen.css: specimens/${SPECIMEN_SASS}
-	sass --no-source-map specimens/${SPECIMEN_SASS} specimens/${SPECIMEN_CSS}
+update-%: $(FILTER_FILE) test/test.yaml test/test-%.yaml $(TEST_INPUTS)
+	$(PANDOC) \
+		--defaults=test/test.yaml \
+		--defaults=test/test-$*.yaml \
+		--output=test/expected-$*.native
 
-specimens/specimen.html: $(FILTER_FILE) test/input.md
-	$(PANDOC) --lua-filter=$< --to=html5 --standalone \
-		--metadata=ulem_styles \
-		--css=${SPECIMEN_CSS} --output=$@ test/input.md
 
-specimens/specimen.pdf: $(FILTER_FILE) test/input.md
-	$(PANDOC) --lua-filter=$< --to=latex --standalone --pdf-engine=lualatex \
-		--metadata=ulem_styles \
-		--output=$@ test/input.md
+# ==============================================================================
+# Visual Previews Generation (Tests layout and typography configurations)
+# ==============================================================================
+PREVIEW_OUT := previews
 
-#
-# Docs
-#
+PREVIEW_HTMLS := $(addprefix $(PREVIEW_OUT)/, $(addsuffix .html, $(TEST_NAMES)))
+PREVIEW_PDFS  := $(addprefix $(PREVIEW_OUT)/, $(addsuffix .pdf, $(TEST_NAMES)))
+
+.PHONY: previews
+previews: $(FILTER_FILE) $(DIST_CSS_FILES) $(PREVIEW_HTMLS) $(PREVIEW_PDFS)
+
+$(PREVIEW_OUT)/%.html: test/test.yaml test/test-%.yaml $(TEST_INPUTS) $(FILTER_FILE) $(DIST_CSS_FILES) | $(PREVIEW_OUT)
+	$(PANDOC) \
+		--defaults=test/test.yaml \
+		--defaults=test/test-$*.yaml \
+		--to=html \
+		--css=../$(CSS_REM) \
+		--css=../test/preview-suite.css \
+		--output=$@
+
+$(PREVIEW_OUT)/%.pdf: test/test.yaml test/test-%.yaml $(TEST_INPUTS) $(FILTER_FILE) | $(PREVIEW_OUT)
+	$(PANDOC) \
+		--defaults=test/test.yaml \
+		--defaults=test/test-$*.yaml \
+		--to=pdf \
+		--output=$@
+
+$(PREVIEW_OUT):
+	mkdir -p $(PREVIEW_OUT)
+
+
+# ==============================================================================
+# Documentation
+# ==============================================================================
 .PHONY: docs
-docs: docs/index.html docs/$(FILTER_FILE)
+docs: docs/index.html docs/fonts-and-alignment.lua
 
 docs/index.html: README.md test/input.md $(FILTER_FILE) .tools/docs.lua \
-		docs/output.md docs/style.css
+        docs/output.md docs/style.css
 	@mkdir -p docs
 	pandoc \
-	    --standalone \
-	    --lua-filter=.tools/docs.lua \
-	    --metadata=sample-file:test/input.md \
-	    --metadata=result-file:docs/output.md \
-	    --metadata=code-file:$(FILTER_FILE) \
-	    --css=style.css \
-	    --toc \
-	    --output=$@ $<
+		--standalone \
+		--lua-filter=.tools/docs.lua \
+		--metadata=sample-file:test/input.md \
+		--metadata=result-file:docs/output.md \
+		--metadata=code-file:$(FILTER_FILE) \
+		--css=style.css \
+		--toc \
+		--output=$@ $<
 
 docs/style.css:
 	curl \
-	    --output $@ \
-	    'https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.css'
+		--output $@ \
+		'https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.css'
 
 docs/output.md: $(FILTER_FILE) test/input.md
 	$(PANDOC) \
-	    --output=$@ \
-	    --lua-filter=$< \
-	    --to=markdown \
-	    --standalone \
-	    test/input.md
+		--output=$@ \
+		--lua-filter=$< \
+		--to=markdown \
+		--standalone \
+		test/input.md
 
-docs/$(FILTER_FILE): $(FILTER_FILE)
-	(cd docs && ln -sf ../$< $<)
+docs/fonts-and-alignment.lua: $(FILTER_DIST)
+	@mkdir -p docs
+	ln -sf ../$(FILTER_DIST) $@
 
+
+# ==============================================================================
+# Housekeeping
+# ==============================================================================
 .PHONY: clean
 clean:
-	rm -f docs/output.md docs/index.html docs/style.css specimens/${SPECIMEN_CSS} specimens/${SPECIMEN_HTML} specimens/${SPECIMEN_PDF}
+	rm -f docs/output.md docs/index.html docs/style.css docs/fonts-and-alignment.lua
+	rm -rf $(PREVIEW_OUT)
+	rm -f $(DIST_CSS_FILES)
+	rm -f $(FILTER_FILE)

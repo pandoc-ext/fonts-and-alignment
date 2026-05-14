@@ -1,0 +1,295 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "author"
+            , MetaInlines
+                [ Str "Nandakumar" , Space , Str "Chandrasekhar" ]
+            )
+          , ( "date"
+            , MetaInlines
+                [ Str "15" , Space , Str "May" , Space , Str "2026" ]
+            )
+          , ( "geometry"
+            , MetaList [ MetaInlines [ Str "margin=25mm" ] ]
+            )
+          , ( "linestretch" , MetaInlines [ Str "1.25" ] )
+          , ( "papersize" , MetaInlines [ Str "A4" ] )
+          , ( "title"
+            , MetaInlines
+                [ Str "Sizing"
+                , Space
+                , Str "Fonts"
+                , Space
+                , Str "Inline"
+                ]
+            )
+          ]
+    }
+  [ Header
+      2
+      ( "extra-extra-extra-small-3xs" , [] , [] )
+      [ Str "Extra"
+      , Space
+      , Str "Extra"
+      , Space
+      , Str "Extra"
+      , Space
+      , Str "Small"
+      , Space
+      , Str "(3xs)"
+      ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-3xs" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "extra-extra-small-2xs" , [] , [] )
+      [ Str "Extra"
+      , Space
+      , Str "Extra"
+      , Space
+      , Str "Small"
+      , Space
+      , Str "(2xs)"
+      ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-2xs" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "extra-small-xs" , [] , [] )
+      [ Str "Extra" , Space , Str "Small" , Space , Str "(xs)" ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-xs" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "small-sm" , [] , [] )
+      [ Str "Small" , Space , Str "(sm)" ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-sm" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "normal-normal" , [] , [] )
+      [ Str "Normal" , Space , Str "(normal)" ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-normal" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "large-lg" , [] , [] )
+      [ Str "Large" , Space , Str "(lg)" ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-lg" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "extra-large-xl" , [] , [] )
+      [ Str "Extra" , Space , Str "Large" , Space , Str "(xl)" ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-xl" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "extra-extra-large-2xl" , [] , [] )
+      [ Str "Extra"
+      , Space
+      , Str "Extra"
+      , Space
+      , Str "Large"
+      , Space
+      , Str "(2xl)"
+      ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-2xl" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "extra-extra-extra-large-3xl" , [] , [] )
+      [ Str "Extra"
+      , Space
+      , Str "Extra"
+      , Space
+      , Str "Extra"
+      , Space
+      , Str "Large"
+      , Space
+      , Str "(3xl)"
+      ]
+  , Para
+      [ Span
+          ( "" , [ "pfa-text-3xl" ] , [] )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  ]
