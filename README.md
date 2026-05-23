@@ -1,289 +1,352 @@
-Fonts and Alignment Filter
-==============================================================================
+# Fonts and Alignment Filter
 
-_Fonts and Alignment_ is a Lua filter for styling fonts and aligning text in Pandoc-generated LaTeX documents.
+_Fonts and Alignment_ is a Pandoc Lua filter that brings rich typographic
+control to Markdown source — font sizing, weight, shape, family, decoration,
+color, casing, and block alignment — using a single namespaced class system
+(`pfa-*`) that produces faithful output in **both LaTeX/PDF and HTML/CSS**.
 
-The filter defines a number of classes, that when specified, correspond to LaTeX commands, which in turn provide the requisite styling.
+Write once in Markdown and let the filter inject the correct LaTeX commands
+for PDF output while emitting plain Pandoc Spans and Divs for HTML, which a
+companion CSS stylesheet styles with the same class names.
 
-You may preview a specimen PDF document that uses these styles [here](https://github.com/pandoc-ext/fonts-and-alignment/blob/main/specimens/specimen.pdf).
+A full visual specimen lives at [`test/input.md`](test/input.md), which the
+build pipeline renders to both [HTML](artifacts/input.html) and [PDF](artifacts/input.pdf).
 
-The _same_ classes may be used when generating HTML, but that requires the support of a CSS stylesheet to define the necessary styles. To aid this, a [specimen CSS file](https://github.com/pandoc-ext/fonts-and-alignment/blob/main/specimens/specimen.css) has been provided. Copy and modify it according to your preferences.
+## Feature Highlights
 
-For those who prefer [Sass](https://sass-lang.com/) a [specimen Sass file](https://github.com/pandoc-ext/fonts-and-alignment/blob/main/specimens/specimen.sass) has also been provided to generate CSS. Again copy and modify it as required.
+- **Nine-step font sizing scale** — `pfa-text-3xs` through `pfa-text-3xl`,
+  plus `pfa-text-normal` for explicit reset.
+- **Full typographic palette** — weights (`bold`, `medium`), shapes (`italic`,
+  `slanted`, `upright`), families (`serif`, `sans`, `mono`, `smallcaps`),
+  and emphasis.
+- **Text decorations** — single, double, dashed, dotted, and wavy underlines,
+  plus strikeout and marked-out variants (auto-loads `ulem` only when used).
+- **Color resolution** — `pfa-color` attribute accepts CSS3 named colors,
+  3- or 6-digit hex codes, and is case- and whitespace-insensitive
+  (`"Medium Violet Red"`, `medium-violet-red`, and `mediumvioletred`
+  all resolve to the same color).
+- **Text casing** — `pfa-uppercase` and `pfa-lowercase` rewrite the underlying
+  AST text nodes so the transformation survives copy-paste.
+- **Block alignment** — column-style `pfa-text-*` for paragraph alignment,
+  line-break-honoring `pfa-align-*` for poetry and addresses, and
+  shrink-to-fit `pfa-block-*` boxes that wrap tightly around their content.
+- **Inline overrides inside colored blocks** — block-level colors inherit
+  downward; nested spans may override.
+- **Legacy aliases** — every short form from the original filter
+  (`bold`, `bf`, `xxlarge`, `flushright`, `uwave`, …) still works so
+  existing documents continue to compile unchanged, **but they are
+  deprecated and will be removed in a future release**. Migrate new
+  work to the `pfa-*` namespace.
 
-The corresponding specimen HTML document is available [here](https://htmlpreview.github.io/?https://github.com/pandoc-ext/fonts-and-alignment/blob/main/specimens/specimen.html).
+## Installation
 
-Prerequisites
------------------------------------------------------------------
+### As a Quarto / Pandoc Extension
 
-Before starting to use this filter, we recommend that you specify the fonts you wish to use **either** in a [Pandoc defaults file](https://pandoc.org/MANUAL.html#defaults-files) like so:
+The filter ships ready-to-use under
+[`_extensions/fonts-and-alignment/`](_extensions/fonts-and-alignment/),
+along with two pre-compiled CSS files for HTML output:
+
+- `fonts-and-alignment-rem.css` — sizes scale relative to the document root
+- `fonts-and-alignment-em.css`  — sizes scale relative to the parent element
+
+Drop the extension into your project's `_extensions/` directory (Quarto
+users), or copy the `.lua` and one `.css` file into your project tree.
+
+### Standalone
+
+Download the filter and CSS directly:
+
+```bash
+curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.lua
+curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/_extensions/fonts-and-alignment/fonts-and-alignment-rem.css
+```
+
+## Prerequisites
+
+Configure the fonts used by the filter — either via a Pandoc defaults file:
 
 ```yaml
 variables:
-  fontsize: <font-size>
-  mainfont: <serif-font>
-  sansfont: <sans-serif-font>
-  monofont: <monospace-font>
+  fontsize: 12pt
+  mainfont: Noto Serif
+  sansfont: Noto Sans
+  monofont: Fira Mono
 ```
 
-**or** in a YAML block at the beginning of your source document:
+or in the YAML frontmatter of your source document:
 
 ```yaml
 ---
-fontsize: <font-size>
-mainfont: <serif-font>
-sansfont: <sans-serif-font>
-monofont: <monospace-font>
----
-
-```
-
-HTML fragements custom CSS
-
-```html
-/* my-custom-fonts.css */
-
-/* 1. Import the fonts directly from Google */
-/* Added 'Open Sans' for the sans-serif replacement */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Fira+Code&display=swap');
-
-/* 2. Override the global body and serif classes */
-body,
-.serif, .rm, .pfa-font-serif,
-.normalfont, .nf, .pfa-font-normal {
-  font-family: 'Merriweather', serif !important;
-}
-
-/* 3. Override the sans-serif classes */
-.sans, .sf, .pfa-font-sans {
-  font-family: 'Open Sans', sans-serif !important;
-}
-
-/* 4. Override the monospace classes */
-.monospace, .tt, .pfa-font-mono {
-  font-family: 'Fira Code', monospace !important;
-}
-```
-
-Replace the placeholders above with your choices.
-
-Classes Defined in the Filter
------------------------------------------------------------------
-
-The filter defines several classes for styling fonts and text alignment.
-
-The following classes have been defined for the various _font styles_ that are supported:
-
-| CSS Class   | Short Hand | Inline LaTeX       | Block LaTeX                             | Description                |
-|-------------|------------|--------------------|-----------------------------------------|----------------------------|
-| `bold`      | `bf`       | `\textbf{...}`     | `\begin{bfseries}...\end{bfseries}`     | Bold font series/weight.   |
-| `emphasis`  | `em`       | `\emph{...}`       | `\begin{em}...\end{em}`                 | Emphasis font.             |
-| `italic`    | `it`       | `\textit{...}`     | `\begin{itshape}...\end{itshape}`       | Italic font shape.         |
-| `lower`     | None       | `\lowercase{...}`  | Not available for blocks.               | Lowercase font.            |
-| `medium`    | `md`       | `\textmd{...}`     | `\begin{mdseries}...\end{mdseries}`     | Medium font series.        |
-| `monospace` | `tt`       | `\texttt{...}`     | `\begin{ttfamily}...\end{ttfamily}`     | Monospace font family.     |
-| `normalfont`| `nf`       | `\textnormal{...}` | `\begin{normalfont}...\end{normalfont}` | Normal font.               |
-| `sans`      | `sf`       | `\textsf{...}`     | `\begin{sffamily}...\end{sffamily}`     | Sans-serif font family.    |
-| `serif`     | `rm`       | `\textrm{...}`     | `\begin{rmfamily}...\end{rmfamily}`     | Serif font family.         |
-| `upper`     | None       | `\uppercase{...}`  | Not available for blocks.               | Uppercase font             |
-| `upright`   | `up`       | `\textup{...}`     | `\begin{upshape}...\end{upshape}`       | Upright font shape.        |
-| `smallcaps` | `sc`       | `\textsc{...}`     | `\begin{scshape}...\end{scshape}`       | Small capitals font shape. |
-
-The `\emph` command has been added purely for completeness and we encourage users to use Pandoc Markdown's built in support for emphasis whenever possible.
-
-The light font series `\lfseries` has been omitted, as there is no standardization on the LaTeX command to specify light fonts at present.
-
-**N.B. Please make sure that your font has support for the styles you wish to use in your document. Otherwise LaTeX will substitute the font with its default font giving you unexpected results.**
-
-The following _font sizes_ have also been defined for inline and block elements:
-
-| Class     | LaTeX code          | Description                                        |
-|-----------|---------------------|----------------------------------------------------|
-| `tiny`    | `\tiny ...`         | Tiny font. 6pt for a 12pt document.                |
-| `xxsmall` | `\scriptsize ...`   | Extra extra small font. 8pt for a 12pt document.   |
-| `xsmall`  | `\footnotesize ...` | Extra small font. 10pt for a 12pt document.        |
-| `small`   | `\small ...`        | Small font. 10.95pt for a 12pt document.           |
-| `normal`  | `\normal ...`       | Normal font. 12pt for a 12pt document.             |
-| `large`   | `\large ...`        | Large font. 14.4pt for a 12pt document.            |
-| `xlarge`  | `\Large ...`        | Extra large font. 17.28 for a 12pt document.       |
-| `xxlarge` | `\LARGE ...`        | Extra extra large font. 20.74 for a 12pt document. |
-| `huge`    | `\huge ...`         | Huge font. 24.88 for a 12pt document.              |
-
-The `\Huge` LaTeX size has been omitted as it does not produce any significant increase in size, compared to `\huge` for 12pt documents.
-
-The following _text-alignments_ are defined for block elements exclusively:
-
-| CSS Class     | LaTeX code                                | Description                                                                        |
-|---------------|-------------------------------------------|------------------------------------------------------------------------------------|
-| `center`      | `\begin{center}...\end{center}`           | Center a block of text,                                                            |
-| `flushright`  | `\begin{flushright}...\end{flushright}`   | Right justify a block of text.                                                     |
-| `flushleft`   | `\begin{flushleft}...\end{flushleft}`     | Left justify a block of text.                                                      |
-| `centering`   | `\begin{centering}...\end{centering}`     | Center a block of text with user-defined line breaks using backslash (`\`).        |
-| `raggedleft`  | `\begin{raggedleft}...\end{raggedleft}`   | Right justify a block of text with user-defined line breaks using backslash (`\`). |
-| `raggedright` | `\begin{raggedright}...\end{raggedright}` | Left justify a block of text with user-defined line breaks using backslash (`\`).  |
-
-While not widely used, _additional font styles_ such as underlining, strikeout etc., may be required from time to time. Pandoc already supports strikeout but For the sake of completeness the following additional font styles -- provided by the `ulem` LaTeX package -- are available only for inline elements:
-
-| CSS Class                | Short Hand | LaTeX code        | Description            |
-|--------------------------|------------|-------------------|------------------------|
-| `dashuline`              | `dau`      | `\dashuline{...}` | Dashed underline.      |
-| `dotuline`               | `dou`      | `\dotuline{...}`  | Dotted underline like. |
-| `uline`                  | `u`        | `\uline{...}`     | Underline.             |
-| `uuline`                 | `uu`       | `\uuline{...}`    | Double underline.      |
-| `uwave`                  | `uw`       | `\uwave{...}`     | Wavy underline.        |
-| `sout`                   | `so`       | `\sout{...}`      | Stricken out line.     |
-| Not available for HTML.  | None       | `\xout{...}`      | Marked over line.      |
-
-The `ulem` LaTeX package is not invoked by default and must be explicitly specified as a metadata attribute, in your defaults file, source document, or on the command line. In a defaults file you may specify the `ulem_styles` attribute using the `metadata` field like so:
-
-```yaml
-metadata:
-  ulem_styles: true
-```
-
-Similarly, in a source document you may define this requirement in a YAML block as shown:
-
-```yaml
----
-ulem_styles: true
+fontsize: 12pt
+mainfont: Noto Serif
+sansfont: Noto Sans
+monofont: Fira Mono
 ---
 ```
 
-On the command line you may use the `--metadata` option to enable `ulem_styles` as follows:
+For HTML output use one of the bundled CSS files and add the following three font variables in your own stylesheet:
+
+```css
+:root {
+  --pfa-mainfont: 'Merriweather', serif;
+  --pfa-sansfont: 'Open Sans',    sans-serif;
+  --pfa-monofont: 'Fira Code',    monospace;
+}
+```
+
+## Quick Start
+
+### Inline elements (Spans)
+
+Wrap the text in square brackets and attach the class(es) in braces:
+
+```markdown
+[some text]{.pfa-font-bold}
+[some text]{.pfa-font-italic .pfa-text-lg}
+[some text]{.pfa-text-uline pfa-color="forestgreen"}
+```
+
+### Block elements (fenced Divs)
+
+Open the block with `:::` plus a class (curly braces only required when
+combining more than one class or adding attributes):
+
+```markdown
+::: pfa-text-center
+A single centered paragraph.
+:::
+
+::: {.pfa-font-sans .pfa-font-bold pfa-color="midnightblue"}
+A bold sans-serif paragraph in midnight blue.
+:::
+```
+
+## Class Reference
+
+### Font Sizing
+
+Nine sizing hooks, applicable as both inline spans and block-level Divs.
+
+| Class             | LaTeX Equivalent    | Description                         |
+|-------------------|---------------------|-------------------------------------|
+| `pfa-text-3xs`    | `\tiny`             | Tiny                                |
+| `pfa-text-2xs`    | `\scriptsize`       | Script size                         |
+| `pfa-text-xs`     | `\footnotesize`     | Footnote size                       |
+| `pfa-text-sm`     | `\small`            | Small                               |
+| `pfa-text-normal` | `\normalsize`       | Document body size (explicit reset) |
+| `pfa-text-lg`     | `\large`            | Large                               |
+| `pfa-text-xl`     | `\Large`            | Extra large                         |
+| `pfa-text-2xl`    | `\LARGE`            | Extra-extra large                   |
+| `pfa-text-3xl`    | `\huge`             | Huge                                |
+
+### Font Weight, Shape, and Family
+
+| Class                | LaTeX (inline / block)                                   | Description               |
+|----------------------|----------------------------------------------------------|---------------------------|
+| `pfa-font-bold`      | `\textbf{…}` / `\begin{bfseries}…\end{bfseries}`         | Bold weight               |
+| `pfa-font-medium`    | `\textmd{…}` / `\begin{mdseries}…\end{mdseries}`         | Medium weight             |
+| `pfa-font-italic`    | `\textit{…}` / `\begin{itshape}…\end{itshape}`           | Italic shape              |
+| `pfa-font-slanted`   | `\textsl{…}` / `\begin{slshape}…\end{slshape}`           | Slanted shape             |
+| `pfa-font-upright`   | `\textup{…}` / `\begin{upshape}…\end{upshape}`           | Upright shape             |
+| `pfa-font-emphasis`  | `\emph{…}` / `\begin{em}…\end{em}`                       | Emphasis (toggles italic) |
+| `pfa-font-serif`     | `\textrm{…}` / `\begin{rmfamily}…\end{rmfamily}`         | Serif family              |
+| `pfa-font-sans`      | `\textsf{…}` / `\begin{sffamily}…\end{sffamily}`         | Sans family               |
+| `pfa-font-mono`      | `\texttt{…}` / `\begin{ttfamily}…\end{ttfamily}`         | Mono family               |
+| `pfa-font-smallcaps` | `\textsc{…}` / `\begin{scshape}…\end{scshape}`           | Small caps                |
+| `pfa-font-normal`    | `\textnormal{…}` / `\begin{normalfont}…\end{normalfont}` | Normal reset              |
+
+> Make sure your selected fonts actually carry the requested shapes/weights.
+> LaTeX will silently substitute a default if they are missing.
+
+### Text Decorations (inline only)
+
+Routed through the `ulem` LaTeX package — auto-loaded by the filter only when
+one of these classes is detected in the document.
+
+| Class                    | LaTeX           | Description             |
+|--------------------------|-----------------|-------------------------|
+| `pfa-text-uline`         | `\uline{…}`     | Underline               |
+| `pfa-text-uline-double`  | `\uuline{…}`    | Double underline        |
+| `pfa-text-uline-dashed`  | `\dashuline{…}` | Dashed underline        |
+| `pfa-text-uline-dotted`  | `\dotuline{…}`  | Dotted underline        |
+| `pfa-text-uline-wave`    | `\uwave{…}`     | Wavy underline          |
+| `pfa-text-strikeout`     | `\sout{…}`      | Strikeout               |
+| `pfa-text-markout`       | `\xout{…}`      | Marked out (LaTeX only) |
+
+### Text Casing
+
+Both work for inline spans and Div blocks. The transformation operates on
+the AST text node, so the resulting case survives copy-paste from the
+rendered document.
+
+| Class           | Description            |
+|-----------------|------------------------|
+| `pfa-uppercase` | Uppercase every letter |
+| `pfa-lowercase` | Lowercase every letter |
+
+### Color
+
+A single attribute, `pfa-color`, accepts:
+
+- Any of the 147 CSS3 named colors (case- and whitespace-insensitive —
+  `"Medium Violet Red"`, `medium-violet-red`, and `MEDIUMVIOLETRED`
+  all resolve identically)
+- Three-digit hex shorthand (`#333`)
+- Six-digit full hex (`#2E8B57`)
+
+```markdown
+[crimson sample]{pfa-color="crimson"}
+[hex sample]{pfa-color="#2E8B57"}
+
+::: {pfa-color="darkslategray"}
+The whole paragraph inherits dark slate gray.
+[This span overrides to tomato.]{pfa-color="tomato"}
+The remainder reverts to the parent color.
+:::
+```
+
+### Block Alignment
+
+Three flavors, each targeting a different use case:
+
+| Class              | Behavior                                          |
+|--------------------|---------------------------------------------------|
+| `pfa-text-left`    | Standard left alignment (right edge ragged)       |
+| `pfa-text-center`  | Standard centered alignment                       |
+| `pfa-text-right`   | Standard right alignment (left edge ragged)       |
+| `pfa-align-left`   | Left-aligned, honoring explicit line breaks (`\`) |
+| `pfa-align-center` | Centered, honoring explicit line breaks           |
+| `pfa-align-right`  | Right-aligned, honoring explicit line breaks      |
+| `pfa-block-left`   | Shrink-to-fit box, left-anchored to the margin    |
+| `pfa-block-center` | Shrink-to-fit box, centered in the text column    |
+| `pfa-block-right`  | Shrink-to-fit box, right-anchored to the margin   |
+
+The `pfa-align-*` family preserves explicit `\` line breaks — ideal for
+poetry, formal addresses, and titles. The `pfa-block-*` family wraps the
+content in an isolated bounding box (LaTeX `varwidth`) that shrinks to its
+content before being positioned in the document flow.
+
+```markdown
+::: pfa-align-center
+First centered line\
+Second centered line\
+Third centered line
+:::
+
+::: {.pfa-block-right}
+**Right-Anchored Shrink Block**
+Wraps tightly around its content.
+:::
+```
+
+## Combining Classes
+
+Classes compose freely. Stack any combination of sizing, family, weight,
+decoration, color, and alignment on a single element:
+
+```markdown
+[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-lg pfa-color="red"}
+
+::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-lg pfa-color="midnightblue"}
+A centered, bold, sans-serif, large, midnight-blue block.
+:::
+```
+
+## Usage
+
+### PDF (LaTeX)
 
 ```bash
---metadata ulem_styles
+pandoc \
+  --lua-filter=fonts-and-alignment.lua \
+  --pdf-engine=lualatex \
+  --output=document.pdf \
+  document.md
 ```
 
-**N.B. with the exception of the marked out style `\xout`, the ulem styles are available by default for use with HTML documents, if you use the CSS or SASS files provided in this repository.**
+Or via a defaults file:
 
-Styling Inline Elements
------------------------------------------------------------------
+```yaml
+filters:
+  - fonts-and-alignment.lua
 
-To style an inline element in your document use the syntax below:
-
-```markdown
-[<inline-text>]{.<class-name>}
+pdf-engine: lualatex
 ```
 
-For example to change the font weight for some inline text into bold you would do:
+### HTML
 
-```markdown
-[My bold text]{.bold}
+```bash
+pandoc \
+  --lua-filter=fonts-and-alignment.lua \
+  --css=fonts-and-alignment-rem.css \
+  --standalone \
+  --output=document.html \
+  document.md
 ```
 
-or
+## Legacy Aliases
 
-```markdown
-[My bold text]{.bf}
-```
+**Deprecated — retained strictly for backward compatibility.** New
+documents should use the explicit `pfa-*` namespace to prevent collisions
+with global CSS frameworks.
 
-It is also possible to style [inline links](https://pandoc.org/MANUAL.html#inline-links) using the following syntax:
+### Font Weight, Shape, and Family Aliases
 
-```markdown
-[My link](https://my-link.com){.monospace}
-```
+| Legacy Alias | Short | Modern Class           |
+|--------------|-------|------------------------|
+| `bold`       | `bf`  | `pfa-font-bold`        |
+| `emphasis`   | `em`  | `pfa-font-emphasis`    |
+| `italic`     | `it`  | `pfa-font-italic`      |
+| `medium`     | `md`  | `pfa-font-medium`      |
+| `monospace`  | `tt`  | `pfa-font-mono`        |
+| `normalfont` | `nf`  | `pfa-font-normal`      |
+| `sans`       | `sf`  | `pfa-font-sans`        |
+| `serif`      | `rm`  | `pfa-font-serif`       |
+| `slanted`    | `sl`  | `pfa-font-slanted`     |
+| `smallcaps`  | `sc`  | `pfa-font-smallcaps`   |
+| `upright`    | `up`  | `pfa-font-upright`     |
 
-or
+### Font Size Aliases
 
-```markdown
-[My link](https://my-link.com){.tt}
-```
+| Legacy Alias | Modern Class       |
+|--------------|--------------------|
+| `xsmall`     | `pfa-text-xs`      |
+| `small`      | `pfa-text-sm`      |
+| `normal`     | `pfa-text-normal`  |
+| `large`      | `pfa-text-lg`      |
+| `xlarge`     | `pfa-text-xl`      |
+| `xxlarge`    | `pfa-text-2xl`     |
+| `huge`       | `pfa-text-3xl`     |
 
-To specify more than one style, list them one after the other as shown below:
+### Alignment Aliases
 
-```markdown
-[My bold and italic text]{.bold .italic}
-```
+| Legacy Alias  | Modern Class       |
+|---------------|--------------------|
+| `center`      | `pfa-text-center`  |
+| `flushleft`   | `pfa-text-left`    |
+| `flushright`  | `pfa-text-right`   |
+| `centering`   | `pfa-align-center` |
+| `raggedleft`  | `pfa-align-right`  |
+| `raggedright` | `pfa-align-left`   |
 
-or
+### Underline and Strikeout Aliases
 
-```markdown
-[My bold and italic text]{.bf .it}
-```
+| Legacy Alias | Short | Modern Class            |
+|--------------|-------|-------------------------|
+| `uline`      | `u`   | `pfa-text-uline`        |
+| `uuline`     | `uu`  | `pfa-text-uline-double` |
+| `dashuline`  | `dau` | `pfa-text-uline-dashed` |
+| `dotuline`   | `dou` | `pfa-text-uline-dotted` |
+| `uwave`      | `uw`  | `pfa-text-uline-wave`   |
+| `sout`       | `so`  | `pfa-text-strikeout`    |
+| `xout`       | `xo`  | `pfa-text-markout`      |
 
-Refer to the [Pandoc documentation](https://pandoc.org/MANUAL.html#extension-bracketed_spans) for more information on styling inline elements.
+## Acknowledgements
 
-Styling Block elements
------------------------------------------------------------------
+Special thanks to [Albert Krewinkel](https://github.com/tarleb) and
+[Benct Philip Jonsson](https://github.com/bpj) for their valuable feedback
+and suggestions during the development of this filter.
 
-To style a block element use the following syntax below:
+## License
 
-```markdown
-::: <class-name>
-<block-of-text>
-:::
-```
-
-Therefore, to center a block of text you would do:
-
-```markdown
-::: center # Curly brackets are not required when specifying only a single class
-This is some text that is centered.
-:::
-```
-
-You may also combine styles like so:
-
-```markdown
-::: {.center .bold} # Curly brackets and period (.) are required when specifying more than one class
-This is some text that is centered and in bold font.
-:::
-```
-
-Refer to the [Pandoc documentation](https://pandoc.org/MANUAL.html#extension-fenced_divs) for more information on styling block elements.
-
-Usage
-------------------------------------------------------------------
-
-To use this filter in your projects follow the steps below:
-
-1. Download the filter from the repository:
-
-    ```bash
-    wget https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.lua
-    ```
-
-1. Move the filter to a location recognized by Pandoc.
-
-1. Generate the PDF document by executing the following command specifying the Lua filter using the `--lua-filter` option:
-
-    ```bash
-    pandoc --from markdown --to latex --lua-filter fonts-and-alignment.lua \
-    --pdf-engine lualatex --output <output.pdf> <input.md>
-    ```
-
-    Replace the placeholders above with your output and input files.
-
-    If you are using a defaults file you can also specify the filter as shown below and avoid specifying it on the command line:
-
-    ```yaml
-    filters:
-      - fonts-and-alignment.lua
-    ```
-
-1. To generate the HTML document you would first download the CSS file like so:
-
-    ```bash
-    wget https://github.com/pandoc-ext/fonts-and-alignment/blob/main/specimens/specimen.css
-    ```
-
-1. Then execute the following command:
-
-    ```bash
-    pandoc --from markdown --to html5 --lua-filter fonts-and-alignment.lua \
-    --css <path/to/file/specimen.css> --output <output.html> <input.md>
-    ```
-
-    Again, take care to replace the placeholders above with your output, input and CSS files.
-
-Acknowledgements
-------------------------------------------------------------------
-
-Special thanks to [Albert Krewinkel](https://github.com/tarleb) and [Benct Philip Jonsson](https://github.com/bpj) for their valuable feedback and suggestions during the development of this filter.
-
-License
-------------------------------------------------------------------
-
-This pandoc Lua filter is published under the MIT license, see
-file `LICENSE` for details.
+MIT — see [`LICENSE`](LICENSE) for the full text.
