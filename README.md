@@ -341,6 +341,45 @@ with global CSS frameworks.
 | `sout`       | `so`  | `pfa-text-strikeout`    |
 | `xout`       | `xo`  | `pfa-text-markout`      |
 
+## Troubleshooting
+
+### Colors don't appear in PDF output
+
+The filter emits `\textcolor{…}{…}` and `\color{…}` commands, which
+require the `xcolor` package. Most modern Pandoc templates load it
+automatically, but if your template doesn't, add it to your YAML:
+
+```yaml
+header-includes:
+  - \usepackage[dvipsnames,svgnames]{xcolor}
+```
+
+### `pfa-block-*` alignment breaks the PDF build
+
+Block alignment relies on the `varwidth` LaTeX package, which the filter
+auto-injects only when a `pfa-block-*` class is detected. If your TeX
+distribution is minimal, install it explicitly — on TeX Live this is
+`tlmgr install varwidth`.
+
+### Underline variants (wavy / dashed / dotted) don't render in HTML
+
+Plain `pfa-text-uline` and `pfa-text-strikeout` produce native Pandoc
+AST nodes and work in every output format. The decorated variants
+(`pfa-text-uline-wave`, `-dashed`, `-dotted`, `-double`) are routed
+through the `ulem` LaTeX package and only render in LaTeX/PDF output.
+In HTML, equivalent styles are applied via the bundled CSS — make sure
+`fonts-and-alignment-rem.css` (or `-em.css`) is linked.
+
+### Font sizes don't scale as expected
+
+Pick the right CSS variant for your context:
+
+- **`fonts-and-alignment-rem.css`** — sizes scale relative to the root
+  `<html>` font size. Use when you want a single, document-wide scale.
+- **`fonts-and-alignment-em.css`** — sizes scale relative to the
+  parent element. Use when you want nested elements to compound (a
+  small inside a small renders smaller still).
+
 ## Acknowledgements
 
 Special thanks to [Albert Krewinkel](https://github.com/tarleb) and

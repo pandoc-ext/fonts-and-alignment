@@ -280,6 +280,20 @@ for class, codes in pairs(latex_ulem_styles) do
   latex_cmd_for_tags.Span[class] = { '\\' .. codes[1] .. '{', '}' }
 end
 
+-- Set of every recognized pfa-* class across all handlers (font/size/align/ulem
+-- dictionaries plus the casing classes handled separately). Used to detect
+-- typos and emit a warning rather than silently dropping them.
+local known_pfa_classes = {
+  ['pfa-uppercase'] = true,
+  ['pfa-lowercase'] = true,
+}
+for _, dict in ipairs({ latex_font_types, latex_font_sizes,
+                        latex_text_alignments, latex_ulem_styles }) do
+  for class_name in pairs(dict) do
+    if class_name:match('^pfa%-') then known_pfa_classes[class_name] = true end
+  end
+end
+
 
 -- ==============================================================================
 -- SECTION 3: CORE LOGIC HANDLERS
@@ -382,6 +396,9 @@ local function apply_standard_classes(elem, tag, raw, is_latex)
         elem.content:insert(1, raw('latex', code[1]))
         if code[2] then elem.content:insert(raw('latex', code[2])) end
       end
+    elseif class_name:match('^pfa%-') and not known_pfa_classes[class_name] then
+      io.stderr:write('[fonts-and-alignment] Warning: Unrecognized class "'
+        .. class_name .. '" on <' .. tag .. '>\n')
     end
   end
   return elem

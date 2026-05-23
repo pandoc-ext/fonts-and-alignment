@@ -24,7 +24,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - name: Install Sass
+        run: npm install -g sass
+
+      - name: Build CSS
+        run: make css
 
       - name: Test
         run: |

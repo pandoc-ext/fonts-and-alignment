@@ -6,9 +6,9 @@
 /* ==========================================================================
    Base Configuration & Typography Calculations
    ========================================================================== */
-$pfa-mainfont: serif !default
-$pfa-sansfont: sans-serif !default
-$pfa-monofont: monospace !default
+$pfa-mainfont: var(--pfa-mainfont, serif) !default
+$pfa-sansfont: var(--pfa-sansfont, sans-serif) !default
+$pfa-monofont: var(--pfa-monofont, monospace) !default
 
 @mixin pfa-engine($pfa-unit: 1rem)
   $pfa-xxxsmall: calc((#{$pfa-unit} / 12) * 6)
