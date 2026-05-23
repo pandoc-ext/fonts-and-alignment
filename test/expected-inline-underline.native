@@ -4,35 +4,68 @@ Pandoc
         fromList
           [ ( "author"
             , MetaInlines
-                [ Str "Nandakumar" , Space , Str "Chandrasekhar" ]
+                [ Str
+                    "Nandakumar"
+                , Space
+                , Str
+                    "Chandrasekhar"
+                ]
             )
           , ( "date"
             , MetaInlines
-                [ Str "15" , Space , Str "May" , Space , Str "2026" ]
+                [ Str "15"
+                , Space
+                , Str "May"
+                , Space
+                , Str "2026"
+                ]
             )
           , ( "geometry"
-            , MetaList [ MetaInlines [ Str "margin=25mm" ] ]
+            , MetaList
+                [ MetaInlines
+                    [ Str
+                        "margin=25mm"
+                    ]
+                ]
             )
-          , ( "linestretch" , MetaInlines [ Str "1.25" ] )
-          , ( "papersize" , MetaInlines [ Str "A4" ] )
+          , ( "linestretch"
+            , MetaInlines
+                [ Str "1.25" ]
+            )
+          , ( "papersize"
+            , MetaInlines
+                [ Str "A4" ]
+            )
           , ( "title"
             , MetaInlines
-                [ Str "Underlining"
+                [ Str
+                    "Underlining"
                 , Space
                 , Str "Inline"
                 , Space
-                , Str "Elements"
+                , Str
+                    "Elements"
                 ]
             )
           ]
     }
   [ Header
       2
-      ( "standard-underline" , [] , [] )
-      [ Str "Standard" , Space , Str "Underline" ]
+      ( "standard-underline"
+      , []
+      , []
+      )
+      [ Str "Standard"
+      , Space
+      , Str "Underline"
+      ]
   , Para
       [ Span
-          ( "" , [ "pfa-text-uline" ] , [] )
+          ( ""
+          , [ "pfa-text-uline"
+            ]
+          , []
+          )
           [ Underline
               [ Str "The"
               , Space
@@ -56,11 +89,21 @@ Pandoc
       ]
   , Header
       2
-      ( "double-underline" , [] , [] )
-      [ Str "Double" , Space , Str "Underline" ]
+      ( "double-underline"
+      , []
+      , []
+      )
+      [ Str "Double"
+      , Space
+      , Str "Underline"
+      ]
   , Para
       [ Span
-          ( "" , [ "pfa-text-uline-double" ] , [] )
+          ( ""
+          , [ "pfa-text-uline-double"
+            ]
+          , []
+          )
           [ Str "The"
           , Space
           , Str "quick"
@@ -82,11 +125,21 @@ Pandoc
       ]
   , Header
       2
-      ( "wavy-underline" , [] , [] )
-      [ Str "Wavy" , Space , Str "Underline" ]
+      ( "wavy-underline"
+      , []
+      , []
+      )
+      [ Str "Wavy"
+      , Space
+      , Str "Underline"
+      ]
   , Para
       [ Span
-          ( "" , [ "pfa-text-uline-wave" ] , [] )
+          ( ""
+          , [ "pfa-text-uline-wave"
+            ]
+          , []
+          )
           [ Str "The"
           , Space
           , Str "quick"
@@ -108,11 +161,21 @@ Pandoc
       ]
   , Header
       2
-      ( "dashed-underline" , [] , [] )
-      [ Str "Dashed" , Space , Str "Underline" ]
+      ( "dashed-underline"
+      , []
+      , []
+      )
+      [ Str "Dashed"
+      , Space
+      , Str "Underline"
+      ]
   , Para
       [ Span
-          ( "" , [ "pfa-text-uline-dashed" ] , [] )
+          ( ""
+          , [ "pfa-text-uline-dashed"
+            ]
+          , []
+          )
           [ Str "The"
           , Space
           , Str "quick"
@@ -134,11 +197,21 @@ Pandoc
       ]
   , Header
       2
-      ( "dotted-underline" , [] , [] )
-      [ Str "Dotted" , Space , Str "Underline" ]
+      ( "dotted-underline"
+      , []
+      , []
+      )
+      [ Str "Dotted"
+      , Space
+      , Str "Underline"
+      ]
   , Para
       [ Span
-          ( "" , [ "pfa-text-uline-dotted" ] , [] )
+          ( ""
+          , [ "pfa-text-uline-dotted"
+            ]
+          , []
+          )
           [ Str "The"
           , Space
           , Str "quick"
@@ -158,10 +231,20 @@ Pandoc
           , Str "dog."
           ]
       ]
-  , Header 2 ( "strikeout" , [] , [] ) [ Str "Strikeout" ]
+  , Header
+      2
+      ( "strikeout"
+      , []
+      , []
+      )
+      [ Str "Strikeout" ]
   , Para
       [ Span
-          ( "" , [ "pfa-text-strikeout" ] , [] )
+          ( ""
+          , [ "pfa-text-strikeout"
+            ]
+          , []
+          )
           [ Strikeout
               [ Str "The"
               , Space
@@ -185,11 +268,21 @@ Pandoc
       ]
   , Header
       2
-      ( "marked-out" , [] , [] )
-      [ Str "Marked" , Space , Str "Out" ]
+      ( "marked-out"
+      , []
+      , []
+      )
+      [ Str "Marked"
+      , Space
+      , Str "Out"
+      ]
   , Para
       [ Span
-          ( "" , [ "pfa-text-markout" ] , [] )
+          ( ""
+          , [ "pfa-text-markout"
+            ]
+          , []
+          )
           [ Strikeout
               [ Str "The"
               , Space

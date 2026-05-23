@@ -13,55 +13,177 @@ if type(pandoc_lib) ~= 'table' then
   error('Expected variable pandoc to be a table')
 end
 
-local utils = assert(pandoc.utils, 'Cannot find the pandoc.utils library')
 local List = assert(pandoc.List, 'Cannot find the pandoc.List class')
 
 -- ==============================================================================
 -- STATE FLAGS
 -- ==============================================================================
+-- These flags track whether specific LaTeX packages are required for the current
+-- document. They are globally scoped for the file but must be reset per-document
+-- via the `Pandoc` lifecycle hook to prevent state-leakage in batch compilations.
 local uses_pfa_blocks  = false
 local uses_ulem_styles = false
+
 
 -- ==============================================================================
 -- SECTION 1: DATA DICTIONARIES (Optimized & Normalised)
 -- ==============================================================================
+
+-- Standard CSS3 Color Keyword Map
+-- Maps named web colors to standard 6-character Hexadecimal codes (without the #)
+-- for unified injection across both HTML styles and LaTeX [HTML]{} blocks.
 local css_colors = {
-  aliceblue='F0F8FF', antiquewhite='FAEBD7', aqua='00FFFF', aquamarine='7FFFD4',
-  azure='F0FFFF', beige='F5F5DC', bisque='FFE4C4', black='000000', blanchedalmond='FFEBCD',
-  blue='0000FF', blueviolet='8A2BE2', brown='A52A2A', burlywood='DEB887', cadetblue='5F9EA0',
-  chartreuse='7FFF00', chocolate='D2691E', coral='FF7F50', cornflowerblue='6495ED',
-  cornsilk='FFF8DC', crimson='DC143C', cyan='00FFFF', darkblue='00008B', darkcyan='008B8B',
-  darkgoldenrod='B8860B', darkgray='A9A9A9', darkgreen='006400', darkgrey='A9A9A9',
-  darkkhaki='BDB76B', darkmagenta='8B008B', darkolivegreen='556B2F', darkorange='FF8C00',
-  darkorchid='9932CC', darkred='8B0000', darksalmon='E9967A', darkseagreen='8FBC8F',
-  darkslateblue='483D8B', darkslategray='2F4F4F', darkslategrey='2F4F4F', darkturquoise='00CED1',
-  darkviolet='9400D3', deeppink='FF1493', deepskyblue='00BFFF', dimgray='696969',
-  dimgrey='696969', dodgerblue='1E90FF', firebrick='B22222', floralwhite='FFFAF0',
-  forestgreen='228B22', fuchsia='FF00FF', gainsboro='DCDCDC', ghostwhite='F8F8FF',
-  gold='FFD700', goldenrod='DAA520', gray='808080', green='008000', greenyellow='ADFF2F',
-  grey='808080', honeydew='F0FFF0', hotpink='FF69B4', indianred='CD5C5C', indigo='4B0082',
-  ivory='FFFFF0', khaki='F0E68C', lavender='E6E6FA', lavenderblush='FFF0F5', lawngreen='7CFC00',
-  lemonchiffon='FFFACD', lightblue='ADD8E6', lightcoral='F08080', lightcyan='E0FFFF',
-  lightgoldenrodyellow='FAFAD2', lightgray='D3D3D3', lightgreen='90EE90', lightgrey='D3D3D3',
-  lightpink='FFB6C1', lightsalmon='FFA07A', lightseagreen='20B2AA', lightskyblue='87CEFA',
-  lightslategray='778899', lightslategrey='778899', lightsteelblue='B0C4DE', lightyellow='FFFFE0',
-  lime='00FF00', limegreen='32CD32', linen='FAF0E6', magenta='FF00FF', maroon='800000',
-  mediumaquamarine='66CDAA', mediumblue='0000CD', mediumorchid='BA55D3', mediumpurple='9370DB',
-  mediumseagreen='3CB371', mediumslateblue='7B68EE', mediumspringgreen='00FA9A',
-  mediumturquoise='48D1CC', mediumvioletred='C71585', midnightblue='191970', mintcream='F5FFFA',
-  mistyrose='FFE4E1', moccasin='FFE4B5', navajowhite='FFDEAD', navy='000080', oldlace='FDF5E6',
-  olive='808000', olivedrab='6B8E23', orange='FFA500', orangered='FF4500', orchid='DA70D6',
-  palegoldenrod='EEE8AA', palegreen='98FB98', paleturquoise='AFEEEE', palevioletred='DB7093',
-  papayawhip='FFEFD5', peachpuff='FFDAB9', peru='CD853F', pink='FFC0CB', plum='DDA0DD',
-  powderblue='B0E0E6', purple='800080', rebeccapurple='663399', red='FF0000', rosybrown='BC8F8F',
-  royalblue='4169E1', saddlebrown='8B4513', salmon='FA8072', sandybrown='F4A460',
-  seagreen='2E8B57', seashell='FFF5EE', sienna='A0522D', silver='C0C0C0', skyblue='87CEEB',
-  slateblue='6A5ACD', slategray='708090', slategrey='708090', snow='FFFAFA', springgreen='00FF7F',
-  steelblue='4682B4', tan='D2B48C', teal='008080', thistle='D8BFD8', tomato='FF6347',
-  turquoise='40E0D0', violet='EE82EE', wheat='F5DEB3', white='FFFFFF', whitesmoke='F5F5F5',
-  yellow='FFFF00', yellowgreen='9ACD32'
+  aliceblue            = 'F0F8FF',
+  antiquewhite         = 'FAEBD7',
+  aqua                 = '00FFFF',
+  aquamarine           = '7FFFD4',
+  azure                = 'F0FFFF',
+  beige                = 'F5F5DC',
+  bisque               = 'FFE4C4',
+  black                = '000000',
+  blanchedalmond       = 'FFEBCD',
+  blue                 = '0000FF',
+  blueviolet           = '8A2BE2',
+  brown                = 'A52A2A',
+  burlywood            = 'DEB887',
+  cadetblue            = '5F9EA0',
+  chartreuse           = '7FFF00',
+  chocolate            = 'D2691E',
+  coral                = 'FF7F50',
+  cornflowerblue       = '6495ED',
+  cornsilk             = 'FFF8DC',
+  crimson              = 'DC143C',
+  cyan                 = '00FFFF',
+  darkblue             = '00008B',
+  darkcyan             = '008B8B',
+  darkgoldenrod        = 'B8860B',
+  darkgray             = 'A9A9A9',
+  darkgreen            = '006400',
+  darkgrey             = 'A9A9A9',
+  darkkhaki            = 'BDB76B',
+  darkmagenta          = '8B008B',
+  darkolivegreen       = '556B2F',
+  darkorange           = 'FF8C00',
+  darkorchid           = '9932CC',
+  darkred              = '8B0000',
+  darksalmon           = 'E9967A',
+  darkseagreen         = '8FBC8F',
+  darkslateblue        = '483D8B',
+  darkslategray        = '2F4F4F',
+  darkslategrey        = '2F4F4F',
+  darkturquoise        = '00CED1',
+  darkviolet           = '9400D3',
+  deeppink             = 'FF1493',
+  deepskyblue          = '00BFFF',
+  dimgray              = '696969',
+  dimgrey              = '696969',
+  dodgerblue           = '1E90FF',
+  firebrick            = 'B22222',
+  floralwhite          = 'FFFAF0',
+  forestgreen          = '228B22',
+  fuchsia              = 'FF00FF',
+  gainsboro            = 'DCDCDC',
+  ghostwhite           = 'F8F8FF',
+  gold                 = 'FFD700',
+  goldenrod            = 'DAA520',
+  gray                 = '808080',
+  green                = '008000',
+  greenyellow          = 'ADFF2F',
+  grey                 = '808080',
+  honeydew             = 'F0FFF0',
+  hotpink              = 'FF69B4',
+  indianred            = 'CD5C5C',
+  indigo               = '4B0082',
+  ivory                = 'FFFFF0',
+  khaki                = 'F0E68C',
+  lavender             = 'E6E6FA',
+  lavenderblush        = 'FFF0F5',
+  lawngreen            = '7CFC00',
+  lemonchiffon         = 'FFFACD',
+  lightblue            = 'ADD8E6',
+  lightcoral           = 'F08080',
+  lightcyan            = 'E0FFFF',
+  lightgoldenrodyellow = 'FAFAD2',
+  lightgray            = 'D3D3D3',
+  lightgreen           = '90EE90',
+  lightgrey            = 'D3D3D3',
+  lightpink            = 'FFB6C1',
+  lightsalmon          = 'FFA07A',
+  lightseagreen        = '20B2AA',
+  lightskyblue         = '87CEFA',
+  lightslategray       = '778899',
+  lightslategrey       = '778899',
+  lightsteelblue       = 'B0C4DE',
+  lightyellow          = 'FFFFE0',
+  lime                 = '00FF00',
+  limegreen            = '32CD32',
+  linen                = 'FAF0E6',
+  magenta              = 'FF00FF',
+  maroon               = '800000',
+  mediumaquamarine     = '66CDAA',
+  mediumblue           = '0000CD',
+  mediumorchid         = 'BA55D3',
+  mediumpurple         = '9370DB',
+  mediumseagreen       = '3CB371',
+  mediumslateblue      = '7B68EE',
+  mediumspringgreen    = '00FA9A',
+  mediumturquoise      = '48D1CC',
+  mediumvioletred      = 'C71585',
+  midnightblue         = '191970',
+  mintcream            = 'F5FFFA',
+  mistyrose            = 'FFE4E1',
+  moccasin             = 'FFE4B5',
+  navajowhite          = 'FFDEAD',
+  navy                 = '000080',
+  oldlace              = 'FDF5E6',
+  olive                = '808000',
+  olivedrab            = '6B8E23',
+  orange               = 'FFA500',
+  orangered            = 'FF4500',
+  orchid               = 'DA70D6',
+  palegoldenrod        = 'EEE8AA',
+  palegreen            = '98FB98',
+  paleturquoise        = 'AFEEEE',
+  palevioletred        = 'DB7093',
+  papayawhip           = 'FFEFD5',
+  peachpuff            = 'FFDAB9',
+  peru                 = 'CD853F',
+  pink                 = 'FFC0CB',
+  plum                 = 'DDA0DD',
+  powderblue           = 'B0E0E6',
+  purple               = '800080',
+  rebeccapurple        = '663399',
+  red                  = 'FF0000',
+  rosybrown            = 'BC8F8F',
+  royalblue            = '4169E1',
+  saddlebrown          = '8B4513',
+  salmon               = 'FA8072',
+  sandybrown           = 'F4A460',
+  seagreen             = '2E8B57',
+  seashell             = 'FFF5EE',
+  sienna               = 'A0522D',
+  silver               = 'C0C0C0',
+  skyblue              = '87CEEB',
+  slateblue            = '6A5ACD',
+  slategray            = '708090',
+  slategrey            = '708090',
+  snow                 = 'FFFAFA',
+  springgreen          = '00FF7F',
+  steelblue            = '4682B4',
+  tan                  = 'D2B48C',
+  teal                 = '008080',
+  thistle              = 'D8BFD8',
+  tomato               = 'FF6347',
+  turquoise            = '40E0D0',
+  violet               = 'EE82EE',
+  wheat                = 'F5DEB3',
+  white                = 'FFFFFF',
+  whitesmoke           = 'F5F5F5',
+  yellow               = 'FFFF00',
+  yellowgreen          = '9ACD32'
 }
 
+-- Mappings for Typography Styles { 'Span Command', 'Div Command' }
 local latex_font_types = {
   ['pfa-font-bold']      = { 'textbf',     'bfseries'   },
   ['pfa-font-emphasis']  = { 'emph',       'em'         },
@@ -76,6 +198,7 @@ local latex_font_types = {
   ['pfa-font-upright']   = { 'textup',     'upshape'    }
 }
 
+-- Mappings for Font Sizes { 'Span Command', 'Div Command' }
 local latex_font_sizes = {
   ['pfa-text-3xs']    = { 'tiny',         'tiny'         },
   ['pfa-text-2xs']    = { 'scriptsize',   'scriptsize'   },
@@ -88,6 +211,8 @@ local latex_font_sizes = {
   ['pfa-text-3xl']    = { 'huge',         'huge'         }
 }
 
+-- Mappings for Alignments { 'Span Command', 'Div Command' }
+-- Note: Span alignments are mostly nil since text alignment applies to block elements.
 local latex_text_alignments = {
   ['pfa-text-center']  = { nil, 'center'           },
   ['pfa-text-left']    = { nil, 'flushleft'        },
@@ -100,6 +225,7 @@ local latex_text_alignments = {
   ['pfa-block-right']  = { nil, 'pfa-block-right'  }
 }
 
+-- Mappings for Text Decoration (Requires 'ulem' package)
 local latex_ulem_styles = {
   ['pfa-text-uline']        = { 'uline',     'uline'     },
   ['pfa-text-uline-double'] = { 'uuline',    'uuline'    },
@@ -110,7 +236,9 @@ local latex_ulem_styles = {
   ['pfa-text-markout']      = { 'sout',      'sout'      }
 }
 
--- Dynamic Runtime Mapping for Legacy Aliases (Reduces boilerplate dictionary bloat)
+-- Dynamic Runtime Mapping for Legacy Aliases
+-- Translates user-friendly legacy classes into modern namespaced classes
+-- without creating bloated dictionary duplicates.
 local function map_aliases(target_table, alias_map)
   for legacy, modern in pairs(alias_map) do
     target_table[legacy] = target_table[modern]
@@ -122,12 +250,14 @@ map_aliases(latex_font_sizes, { xsmall='pfa-text-xs', small='pfa-text-sm', norma
 map_aliases(latex_text_alignments, { center='pfa-text-center', flushright='pfa-text-right', flushleft='pfa-text-left', centering='pfa-align-center', raggedleft='pfa-align-right', raggedright='pfa-align-left' })
 map_aliases(latex_ulem_styles, { uline='pfa-text-uline', u='pfa-text-uline', uuline='pfa-text-uline-double', uu='pfa-text-uline-double', dashuline='pfa-text-uline-dashed', dau='pfa-text-uline-dashed', dotuline='pfa-text-uline-dotted', dou='pfa-text-uline-dotted', uwave='pfa-text-uline-wave', uw='pfa-text-uline-wave', sout='pfa-text-strikeout', so='pfa-text-strikeout', xout='pfa-text-markout', xo='pfa-text-markout' })
 
+
 -- ==============================================================================
 -- SECTION 2: INITIALIZATION & COMMAND BUILDERS
 -- ==============================================================================
 local raw_code_function = { Span = pandoc.RawInline, Div = pandoc.RawBlock }
 local latex_cmd_for_tags = { Span = {}, Div = {} }
 
+-- Translates the configuration dictionaries into actionable LaTeX syntax strings
 local function create_latex_codes(styles_list, span_end_code, div_is_env)
   for class, latex_codes in pairs(styles_list) do
     if next(latex_codes) then
@@ -150,14 +280,21 @@ for class, codes in pairs(latex_ulem_styles) do
   latex_cmd_for_tags.Span[class] = { '\\' .. codes[1] .. '{', '}' }
 end
 
+
 -- ==============================================================================
 -- SECTION 3: CORE LOGIC HANDLERS
 -- ==============================================================================
 
+-- Safely resolves user-provided color strings. Protects against CSS/LaTeX
+-- injection attacks by validating inputs against a strict whitelist.
 local function resolve_color(input)
+  if not input then return nil, false end
+
+  -- 1. Dictionary Check: Try mapping a standard CSS color string
   local clean_name = input:lower():gsub('[^%w]', '')
   if css_colors[clean_name] then return css_colors[clean_name], true end
 
+  -- 2. Hex Check: Map and format valid 3 or 6 digit hex codes
   local raw_hex = input:gsub('^#', '')
   if raw_hex:match('^[0-9a-fA-F]+$') then
     if #raw_hex == 6 then return raw_hex:upper(), true
@@ -166,9 +303,18 @@ local function resolve_color(input)
       return (r .. r .. g .. g .. b .. b):upper(), true
     end
   end
-  return input, false
+
+  -- 3. Strict Pattern Validation: Only allow safe alphanumeric LaTeX package colors
+  if input:match('^[a-zA-Z0-9%-]+$') then
+    return input, false
+  end
+
+  -- 4. Malicious or malformed string caught - strip it and alert developer
+  io.stderr:write('[fonts-and-alignment] Warning: Stripped invalid color pattern: "' .. input .. '"\n')
+  return nil, false
 end
 
+-- Processes uppercase and lowercase transformations
 local function apply_text_casing(elem, tag)
   local transform_func
   if elem.classes:includes('pfa-uppercase') then
@@ -183,14 +329,21 @@ local function apply_text_casing(elem, tag)
   return elem
 end
 
+-- Intercepts the pfa-color attribute, translates it, and removes the attribute
+-- to prevent native Pandoc handling collisions.
 local function apply_color(elem, tag, raw, is_latex)
   local color_attr = elem.attributes['pfa-color']
   if not color_attr then return elem end
 
   local resolved_val, is_hex = resolve_color(color_attr)
-  elem.attributes['style'] = (elem.attributes['style'] or '') .. 'color: ' .. (is_hex and '#' or '') .. resolved_val .. ';'
-  elem.attributes['pfa-color'] = nil
+  elem.attributes['pfa-color'] = nil -- Always clear the raw attribute
 
+  if not resolved_val then return elem end -- Exit early if validation failed
+
+  -- Apply generic CSS style for HTML targets
+  elem.attributes['style'] = (elem.attributes['style'] or '') .. 'color: ' .. (is_hex and '#' or '') .. resolved_val .. ';'
+
+  -- Apply specific xcolor formatting for LaTeX targets
   if is_latex then
     local fmt = is_hex and '[HTML]{' or '{'
     local begin_code = (tag == 'Span') and ('\\textcolor' .. fmt .. resolved_val .. '}{') or ('{\\color' .. fmt .. resolved_val .. '} ')
@@ -200,21 +353,25 @@ local function apply_color(elem, tag, raw, is_latex)
   return elem
 end
 
+-- Translates all verified framework classes into format-specific structures
 local function apply_standard_classes(elem, tag, raw, is_latex)
   local code_for_class = latex_cmd_for_tags[tag]
 
   for i = #elem.classes, 1, -1 do
     local class_name = elem.classes[i]
 
+    -- Set global injection flags if required functionality is detected
     if class_name:match('^pfa%-block%-') then uses_pfa_blocks = true end
     if latex_ulem_styles[class_name] then uses_ulem_styles = true end
 
     if code_for_class[class_name] then
       if latex_ulem_styles[class_name] then
         local ulem_code = latex_ulem_styles[class_name][1]
+        -- Handle strikeout and underline directly through Pandoc native elements when possible
         if ulem_code == 'sout' then elem.content = List({ pandoc.Strikeout(elem.content) })
         elseif ulem_code == 'uline' then elem.content = List({ pandoc.Underline(elem.content) })
         elseif is_latex then
+          -- Fall back to raw injection for advanced styles like wavy or dashed lines
           local new_content = List({ pandoc.RawInline('latex', '\\' .. ulem_code .. '{') })
           new_content:extend(elem.content)
           new_content:insert(pandoc.RawInline('latex', '}'))
@@ -230,9 +387,12 @@ local function apply_standard_classes(elem, tag, raw, is_latex)
   return elem
 end
 
+
 -- ==============================================================================
 -- SECTION 4: MAIN EXECUTORS
 -- ==============================================================================
+
+-- Primary execution loop passed to Pandoc tree parsing
 local function handler(elem)
   local tag = elem.tag
   local raw = raw_code_function[tag]
@@ -244,6 +404,7 @@ local function handler(elem)
   return elem
 end
 
+-- Handles automatic LaTeX package injection only if the features were used
 local function meta_injector(meta)
   local is_latex = FORMAT:match('latex') or FORMAT:match('beamer')
   if not is_latex then return meta end
@@ -267,7 +428,18 @@ local function meta_injector(meta)
   return meta
 end
 
+
 return {
-  { Div = handler, Span = handler }, -- Safely dropped Link interception
+  -- 1. Lifecycle hook: Guarantee a clean state reset on every new document execution
+  -- This prevents a `true` state from leaking into subsequent documents during batch renders.
+  {
+    Pandoc = function(doc)
+      uses_pfa_blocks = false
+      uses_ulem_styles = false
+    end
+  },
+  -- 2. Core element processing layer
+  { Div = handler, Span = handler },
+  -- 3. Document header finalization
   { Meta = meta_injector }
 }

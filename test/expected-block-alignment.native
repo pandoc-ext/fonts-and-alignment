@@ -4,28 +4,63 @@ Pandoc
         fromList
           [ ( "author"
             , MetaInlines
-                [ Str "Nandakumar" , Space , Str "Chandrasekhar" ]
+                [ Str
+                    "Nandakumar"
+                , Space
+                , Str
+                    "Chandrasekhar"
+                ]
             )
           , ( "date"
             , MetaInlines
-                [ Str "15" , Space , Str "May" , Space , Str "2026" ]
+                [ Str "15"
+                , Space
+                , Str "May"
+                , Space
+                , Str "2026"
+                ]
             )
           , ( "geometry"
-            , MetaList [ MetaInlines [ Str "margin=25mm" ] ]
+            , MetaList
+                [ MetaInlines
+                    [ Str
+                        "margin=25mm"
+                    ]
+                ]
             )
-          , ( "linestretch" , MetaInlines [ Str "1.25" ] )
-          , ( "papersize" , MetaInlines [ Str "A4" ] )
+          , ( "linestretch"
+            , MetaInlines
+                [ Str "1.25" ]
+            )
+          , ( "papersize"
+            , MetaInlines
+                [ Str "A4" ]
+            )
           , ( "title"
-            , MetaInlines [ Str "Aligning" , Space , Str "Blocks" ]
+            , MetaInlines
+                [ Str
+                    "Aligning"
+                , Space
+                , Str "Blocks"
+                ]
             )
           ]
     }
   [ Header
       2
-      ( "center-aligned" , [] , [] )
-      [ Str "Center" , Space , Str "Aligned" ]
+      ( "center-aligned"
+      , []
+      , []
+      )
+      [ Str "Center"
+      , Space
+      , Str "Aligned"
+      ]
   , Div
-      ( "" , [ "pfa-block-center" ] , [] )
+      ( ""
+      , [ "pfa-block-center" ]
+      , []
+      )
       [ Para
           [ Str "adipiscing"
           , Space
@@ -97,7 +132,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -156,10 +192,19 @@ Pandoc
       ]
   , Header
       2
-      ( "left-aligned" , [] , [] )
-      [ Str "Left" , Space , Str "Aligned" ]
+      ( "left-aligned"
+      , []
+      , []
+      )
+      [ Str "Left"
+      , Space
+      , Str "Aligned"
+      ]
   , Div
-      ( "" , [ "pfa-block-left" ] , [] )
+      ( ""
+      , [ "pfa-block-left" ]
+      , []
+      )
       [ Para
           [ Str "adipiscing"
           , Space
@@ -231,7 +276,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -290,10 +336,19 @@ Pandoc
       ]
   , Header
       2
-      ( "right-aligned" , [] , [] )
-      [ Str "Right" , Space , Str "Aligned" ]
+      ( "right-aligned"
+      , []
+      , []
+      )
+      [ Str "Right"
+      , Space
+      , Str "Aligned"
+      ]
   , Div
-      ( "" , [ "pfa-block-right" ] , [] )
+      ( ""
+      , [ "pfa-block-right" ]
+      , []
+      )
       [ Para
           [ Str "adipiscing"
           , Space
@@ -365,7 +420,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space

@@ -4,20 +4,42 @@ Pandoc
         fromList
           [ ( "author"
             , MetaInlines
-                [ Str "Nandakumar" , Space , Str "Chandrasekhar" ]
+                [ Str
+                    "Nandakumar"
+                , Space
+                , Str
+                    "Chandrasekhar"
+                ]
             )
           , ( "date"
             , MetaInlines
-                [ Str "15" , Space , Str "May" , Space , Str "2026" ]
+                [ Str "15"
+                , Space
+                , Str "May"
+                , Space
+                , Str "2026"
+                ]
             )
           , ( "geometry"
-            , MetaList [ MetaInlines [ Str "margin=25mm" ] ]
+            , MetaList
+                [ MetaInlines
+                    [ Str
+                        "margin=25mm"
+                    ]
+                ]
             )
-          , ( "linestretch" , MetaInlines [ Str "1.25" ] )
-          , ( "papersize" , MetaInlines [ Str "A4" ] )
+          , ( "linestretch"
+            , MetaInlines
+                [ Str "1.25" ]
+            )
+          , ( "papersize"
+            , MetaInlines
+                [ Str "A4" ]
+            )
           , ( "title"
             , MetaInlines
-                [ Str "Styling"
+                [ Str
+                    "Styling"
                 , Space
                 , Str "Fonts"
                 , Space
@@ -26,79 +48,17 @@ Pandoc
             )
           ]
     }
-  [ Header 2 ( "bold" , [] , [] ) [ Str "Bold" ]
+  [ Header
+      2
+      ( "bold" , [] , [] )
+      [ Str "Bold" ]
   , Para
       [ Span
-          ( "" , [ "pfa-font-bold" ] , [] )
-          [ Str "The"
-          , Space
-          , Str "quick"
-          , Space
-          , Str "brown"
-          , Space
-          , Str "fox"
-          , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
-          ]
-      ]
-  , Header 2 ( "emphasis" , [] , [] ) [ Str "Emphasis" ]
-  , Para
-      [ Span
-          ( "" , [ "pfa-font-emphasis" ] , [] )
-          [ Str "The"
-          , Space
-          , Str "quick"
-          , Space
-          , Str "brown"
-          , Space
-          , Str "fox"
-          , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
-          ]
-      ]
-  , Header 2 ( "italic" , [] , [] ) [ Str "Italic" ]
-  , Para
-      [ Span
-          ( "" , [ "pfa-font-italic" ] , [] )
-          [ Str "The"
-          , Space
-          , Str "quick"
-          , Space
-          , Str "brown"
-          , Space
-          , Str "fox"
-          , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
-          ]
-      ]
-  , Header 2 ( "slanted" , [] , [] ) [ Str "Slanted" ]
-  , Para
-      [ Span
-          ( "" , [ "pfa-font-slanted" ] , [] )
+          ( ""
+          , [ "pfa-font-bold"
+            ]
+          , []
+          )
           [ Str "The"
           , Space
           , Str "quick"
@@ -120,11 +80,15 @@ Pandoc
       ]
   , Header
       2
-      ( "small-capitals" , [] , [] )
-      [ Str "Small" , Space , Str "Capitals" ]
+      ( "emphasis" , [] , [] )
+      [ Str "Emphasis" ]
   , Para
       [ Span
-          ( "" , [ "pfa-font-smallcaps" ] , [] )
+          ( ""
+          , [ "pfa-font-emphasis"
+            ]
+          , []
+          )
           [ Str "The"
           , Space
           , Str "quick"
@@ -144,10 +108,17 @@ Pandoc
           , Str "dog."
           ]
       ]
-  , Header 2 ( "monospace" , [] , [] ) [ Str "Monospace" ]
+  , Header
+      2
+      ( "italic" , [] , [] )
+      [ Str "Italic" ]
   , Para
       [ Span
-          ( "" , [ "pfa-font-mono" ] , [] )
+          ( ""
+          , [ "pfa-font-italic"
+            ]
+          , []
+          )
           [ Str "The"
           , Space
           , Str "quick"
@@ -167,10 +138,17 @@ Pandoc
           , Str "dog."
           ]
       ]
-  , Header 2 ( "sans-serif" , [] , [] ) [ Str "Sans-serif" ]
+  , Header
+      2
+      ( "slanted" , [] , [] )
+      [ Str "Slanted" ]
   , Para
       [ Span
-          ( "" , [ "pfa-font-sans" ] , [] )
+          ( ""
+          , [ "pfa-font-slanted"
+            ]
+          , []
+          )
           [ Str "The"
           , Space
           , Str "quick"
@@ -190,10 +168,23 @@ Pandoc
           , Str "dog."
           ]
       ]
-  , Header 2 ( "serif" , [] , [] ) [ Str "Serif" ]
+  , Header
+      2
+      ( "small-capitals"
+      , []
+      , []
+      )
+      [ Str "Small"
+      , Space
+      , Str "Capitals"
+      ]
   , Para
       [ Span
-          ( "" , [ "pfa-font-serif" ] , [] )
+          ( ""
+          , [ "pfa-font-smallcaps"
+            ]
+          , []
+          )
           [ Str "The"
           , Space
           , Str "quick"
@@ -213,10 +204,20 @@ Pandoc
           , Str "dog."
           ]
       ]
-  , Header 2 ( "upright" , [] , [] ) [ Str "Upright" ]
+  , Header
+      2
+      ( "monospace"
+      , []
+      , []
+      )
+      [ Str "Monospace" ]
   , Para
       [ Span
-          ( "" , [ "pfa-font-upright" ] , [] )
+          ( ""
+          , [ "pfa-font-mono"
+            ]
+          , []
+          )
           [ Str "The"
           , Space
           , Str "quick"
@@ -236,10 +237,20 @@ Pandoc
           , Str "dog."
           ]
       ]
-  , Header 2 ( "medium" , [] , [] ) [ Str "Medium" ]
+  , Header
+      2
+      ( "sans-serif"
+      , []
+      , []
+      )
+      [ Str "Sans-serif" ]
   , Para
       [ Span
-          ( "" , [ "pfa-font-medium" ] , [] )
+          ( ""
+          , [ "pfa-font-sans"
+            ]
+          , []
+          )
           [ Str "The"
           , Space
           , Str "quick"
@@ -259,10 +270,17 @@ Pandoc
           , Str "dog."
           ]
       ]
-  , Header 2 ( "normal" , [] , [] ) [ Str "Normal" ]
+  , Header
+      2
+      ( "serif" , [] , [] )
+      [ Str "Serif" ]
   , Para
       [ Span
-          ( "" , [ "pfa-font-normal" ] , [] )
+          ( ""
+          , [ "pfa-font-serif"
+            ]
+          , []
+          )
           [ Str "The"
           , Space
           , Str "quick"
@@ -282,10 +300,110 @@ Pandoc
           , Str "dog."
           ]
       ]
-  , Header 2 ( "lowercase" , [] , [] ) [ Str "Lowercase" ]
+  , Header
+      2
+      ( "upright" , [] , [] )
+      [ Str "Upright" ]
   , Para
       [ Span
-          ( "" , [ "pfa-lowercase" ] , [] )
+          ( ""
+          , [ "pfa-font-upright"
+            ]
+          , []
+          )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "medium" , [] , [] )
+      [ Str "Medium" ]
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-medium"
+            ]
+          , []
+          )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "normal" , [] , [] )
+      [ Str "Normal" ]
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-normal"
+            ]
+          , []
+          )
+          [ Str "The"
+          , Space
+          , Str "quick"
+          , Space
+          , Str "brown"
+          , Space
+          , Str "fox"
+          , Space
+          , Str "jumps"
+          , Space
+          , Str "over"
+          , Space
+          , Str "the"
+          , Space
+          , Str "lazy"
+          , Space
+          , Str "dog."
+          ]
+      ]
+  , Header
+      2
+      ( "lowercase"
+      , []
+      , []
+      )
+      [ Str "Lowercase" ]
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-lowercase"
+            ]
+          , []
+          )
           [ Str "the"
           , Space
           , Str "quick"
@@ -305,10 +423,20 @@ Pandoc
           , Str "dog."
           ]
       ]
-  , Header 2 ( "uppercase" , [] , [] ) [ Str "Uppercase" ]
+  , Header
+      2
+      ( "uppercase"
+      , []
+      , []
+      )
+      [ Str "Uppercase" ]
   , Para
       [ Span
-          ( "" , [ "pfa-uppercase" ] , [] )
+          ( ""
+          , [ "pfa-uppercase"
+            ]
+          , []
+          )
           [ Str "THE"
           , Space
           , Str "QUICK"

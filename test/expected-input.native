@@ -1,0 +1,5886 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "author"
+            , MetaInlines
+                [ Str
+                    "Nandakumar"
+                , Space
+                , Str
+                    "Chandrasekhar"
+                ]
+            )
+          , ( "date"
+            , MetaInlines
+                [ Str
+                    "2026-05-22"
+                ]
+            )
+          , ( "geometry"
+            , MetaList
+                [ MetaInlines
+                    [ Str
+                        "margin=25mm"
+                    ]
+                ]
+            )
+          , ( "header-includes"
+            , MetaList
+                [ MetaBlocks
+                    [ RawBlock
+                        (Format
+                           "latex")
+                        "\\usepackage{fvextra}\n\\fvset{breaklines=true,breakanywhere=true}"
+                    ]
+                ]
+            )
+          , ( "linestretch"
+            , MetaInlines
+                [ Str "1.25" ]
+            )
+          , ( "papersize"
+            , MetaInlines
+                [ Str "A4" ]
+            )
+          , ( "title"
+            , MetaInlines
+                [ Str "Fonts"
+                , Space
+                , Str "and"
+                , Space
+                , Str
+                    "Alignment"
+                , Space
+                , Str "Filter"
+                , Space
+                , Str
+                    "Demonstration"
+                ]
+            )
+          ]
+    }
+  [ Para
+      [ Str "This"
+      , Space
+      , Str "document"
+      , Space
+      , Str "demonstrates"
+      , Space
+      , Str "every"
+      , Space
+      , Str "feature"
+      , Space
+      , Str "provided"
+      , Space
+      , Str "by"
+      , Space
+      , Str "the"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          "fonts-and-alignment"
+      , Space
+      , Str "Lua"
+      , Space
+      , Str "filter."
+      , Space
+      , Str "The"
+      , Space
+      , Str "syntax"
+      , Space
+      , Str "shown"
+      , Space
+      , Str "in"
+      , Space
+      , Str "the"
+      , Space
+      , Str "code"
+      , Space
+      , Str "blocks"
+      , Space
+      , Str "directly"
+      , Space
+      , Str "produces"
+      , Space
+      , Str "the"
+      , Space
+      , Str "output"
+      , Space
+      , Str "below"
+      , Space
+      , Str "them,"
+      , Space
+      , Str "and"
+      , Space
+      , Str "the"
+      , Space
+      , Str "same"
+      , Space
+      , Str "Markdown"
+      , Space
+      , Str "source"
+      , Space
+      , Str "produces"
+      , Space
+      , Str "faithful"
+      , Space
+      , Str "output"
+      , Space
+      , Str "in"
+      , Space
+      , Str "both"
+      , Space
+      , Str "LaTeX/PDF"
+      , Space
+      , Str "and"
+      , Space
+      , Str "HTML."
+      ]
+  , Header
+      2
+      ( "font-sizing-scale-inline"
+      , []
+      , []
+      )
+      [ Str "1."
+      , Space
+      , Str "Font"
+      , Space
+      , Str "Sizing"
+      , Space
+      , Str "Scale"
+      , Space
+      , Str "(Inline)"
+      ]
+  , Para
+      [ Str "Nine"
+      , Space
+      , Str "sizing"
+      , Space
+      , Str "hooks"
+      , Space
+      , Str "scale"
+      , Space
+      , Str "relative"
+      , Space
+      , Str "to"
+      , Space
+      , Str "the"
+      , Space
+      , Str "document\8217s"
+      , Space
+      , Str "base"
+      , Space
+      , Str "font"
+      , Space
+      , Str "size."
+      ]
+  , Table
+      ( "" , [] , [] )
+      (Caption Nothing [])
+      [ ( AlignLeft
+        , ColWidth
+            0.2222222222222222
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.5555555555555556
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.2222222222222222
+        )
+      ]
+      (TableHead
+         ( "" , [] , [] )
+         [ Row
+             ( "" , [] , [] )
+             [ Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Size"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Syntax"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Output"
+                     ]
+                 ]
+             ]
+         ])
+      [ TableBody
+          ( "" , [] , [] )
+          (RowHeadColumns 0)
+          []
+          [ Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "tiny"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-3xs}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-3xs"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "scriptsize"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-2xs}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-2xs"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "footnotesize"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-xs}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-xs"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "small"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-sm}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-sm"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "normal"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-normal}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-normal"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "large"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-lg}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-lg"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Large"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-xl}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-xl"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "LARGE"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-2xl}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-2xl"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "huge"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-3xl}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-3xl"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          ]
+      ]
+      (TableFoot
+         ( "" , [] , [] ) [])
+  , Header
+      2
+      ( "font-sizing-scale-block"
+      , []
+      , []
+      )
+      [ Str "2."
+      , Space
+      , Str "Font"
+      , Space
+      , Str "Sizing"
+      , Space
+      , Str "Scale"
+      , Space
+      , Str "(Block)"
+      ]
+  , Para
+      [ Str "The"
+      , Space
+      , Str "same"
+      , Space
+      , Str "sizing"
+      , Space
+      , Str "classes"
+      , Space
+      , Str "apply"
+      , Space
+      , Str "to"
+      , Space
+      , Str "fenced"
+      , Space
+      , Str "div"
+      , Space
+      , Str "blocks."
+      , Space
+      , Str "This"
+      , Space
+      , Str "is"
+      , Space
+      , Str "useful"
+      , Space
+      , Str "for"
+      , Space
+      , Str "sidebars,"
+      , Space
+      , Str "captions,"
+      , Space
+      , Str "or"
+      , Space
+      , Str "callouts."
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-sm\nThis entire paragraph renders at the `small` size. Block-level sizing ensures the content consistently shrinks or grows as a unified component.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-text-sm" ]
+      , []
+      )
+      [ Para
+          [ Str "This"
+          , Space
+          , Str "entire"
+          , Space
+          , Str "paragraph"
+          , Space
+          , Str "renders"
+          , Space
+          , Str "at"
+          , Space
+          , Str "the"
+          , Space
+          , Code
+              ( "" , [] , [] )
+              "small"
+          , Space
+          , Str "size."
+          , Space
+          , Str "Block-level"
+          , Space
+          , Str "sizing"
+          , Space
+          , Str "ensures"
+          , Space
+          , Str "the"
+          , Space
+          , Str "content"
+          , Space
+          , Str "consistently"
+          , Space
+          , Str "shrinks"
+          , Space
+          , Str "or"
+          , Space
+          , Str "grows"
+          , Space
+          , Str "as"
+          , Space
+          , Str "a"
+          , Space
+          , Str "unified"
+          , Space
+          , Str "component."
+          ]
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-lg\nThis entire paragraph renders at the `large` size \8212 well suited for pull quotes or emphasized opening text.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-text-lg" ]
+      , []
+      )
+      [ Para
+          [ Str "This"
+          , Space
+          , Str "entire"
+          , Space
+          , Str "paragraph"
+          , Space
+          , Str "renders"
+          , Space
+          , Str "at"
+          , Space
+          , Str "the"
+          , Space
+          , Code
+              ( "" , [] , [] )
+              "large"
+          , Space
+          , Str "size"
+          , Space
+          , Str "\8212"
+          , Space
+          , Str "well"
+          , Space
+          , Str "suited"
+          , Space
+          , Str "for"
+          , Space
+          , Str "pull"
+          , Space
+          , Str "quotes"
+          , Space
+          , Str "or"
+          , Space
+          , Str "emphasized"
+          , Space
+          , Str "opening"
+          , Space
+          , Str "text."
+          ]
+      ]
+  , Header
+      2
+      ( "font-weights-shapes-and-families-inline"
+      , []
+      , []
+      )
+      [ Str "3."
+      , Space
+      , Str "Font"
+      , Space
+      , Str "Weights,"
+      , Space
+      , Str "Shapes,"
+      , Space
+      , Str "and"
+      , Space
+      , Str "Families"
+      , Space
+      , Str "(Inline)"
+      ]
+  , Para
+      [ Str "Every"
+      , Space
+      , Str "supported"
+      , Space
+      , Str "typographic"
+      , Space
+      , Str "style"
+      , Space
+      , Str "is"
+      , Space
+      , Str "available"
+      , Space
+      , Str "as"
+      , Space
+      , Str "an"
+      , Space
+      , Str "inline"
+      , Space
+      , Str "span"
+      , Space
+      , Str "constraint."
+      ]
+  , Table
+      ( "" , [] , [] )
+      (Caption Nothing [])
+      [ ( AlignLeft
+        , ColWidth
+            0.21052631578947367
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.5789473684210527
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.21052631578947367
+        )
+      ]
+      (TableHead
+         ( "" , [] , [] )
+         [ Row
+             ( "" , [] , [] )
+             [ Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Style"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Syntax"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Output"
+                     ]
+                 ]
+             ]
+         ])
+      [ TableBody
+          ( "" , [] , [] )
+          (RowHeadColumns 0)
+          []
+          [ Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Bold"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-bold}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-bold"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Medium"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-medium}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-medium"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Italic"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-italic}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-italic"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Slanted"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-slanted}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-slanted"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Upright"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-upright}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-upright"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Emphasis"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-emphasis}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-emphasis"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Serif"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-serif}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-serif"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Sans-Serif"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-sans}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-sans"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Monospace"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-mono}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-mono"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Small"
+                      , Space
+                      , Str
+                          "Caps"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-smallcaps}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-smallcaps"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Normal"
+                      , Space
+                      , Str
+                          "Reset"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-normal}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-normal"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          ]
+      ]
+      (TableFoot
+         ( "" , [] , [] ) [])
+  , Header
+      2
+      ( "font-weights-shapes-and-families-block"
+      , []
+      , []
+      )
+      [ Str "4."
+      , Space
+      , Str "Font"
+      , Space
+      , Str "Weights,"
+      , Space
+      , Str "Shapes,"
+      , Space
+      , Str "and"
+      , Space
+      , Str "Families"
+      , Space
+      , Str "(Block)"
+      ]
+  , Para
+      [ Str "The"
+      , Space
+      , Str "same"
+      , Space
+      , Str "classes"
+      , Space
+      , Str "work"
+      , Space
+      , Str "at"
+      , Space
+      , Str "the"
+      , Space
+      , Str "block"
+      , Space
+      , Str "level,"
+      , Space
+      , Str "applying"
+      , Space
+      , Str "the"
+      , Space
+      , Str "typographic"
+      , Space
+      , Str "voice"
+      , Space
+      , Str "across"
+      , Space
+      , Str "all"
+      , Space
+      , Str "internal"
+      , Space
+      , Str "sentences"
+      , Space
+      , Str "without"
+      , Space
+      , Str "requiring"
+      , Space
+      , Str "inline"
+      , Space
+      , Str "markers."
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-font-sans\nThis paragraph is rendered using the document's sans-serif family. Block-scoped family switches are convenient for code blocks or structural sections.\n:::\n\n\n::: pfa-font-sans\nThis paragraph is rendered using the document's sans-serif family. Block-scoped family switches are convenient for code blocks or structural sections.\n:::\n\n```markdown\n::: pfa-font-smallcaps\nSection headings or short callouts can be rendered entirely in small caps using the block form.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-font-smallcaps"
+        ]
+      , []
+      )
+      [ Para
+          [ Str "Section"
+          , Space
+          , Str "headings"
+          , Space
+          , Str "or"
+          , Space
+          , Str "short"
+          , Space
+          , Str "callouts"
+          , Space
+          , Str "can"
+          , Space
+          , Str "be"
+          , Space
+          , Str "rendered"
+          , Space
+          , Str "entirely"
+          , Space
+          , Str "in"
+          , Space
+          , Str "small"
+          , Space
+          , Str "caps"
+          , Space
+          , Str "using"
+          , Space
+          , Str "the"
+          , Space
+          , Str "block"
+          , Space
+          , Str "form."
+          ]
+      ]
+  , Header
+      2
+      ( "text-casing-transformations"
+      , []
+      , []
+      )
+      [ Str "5."
+      , Space
+      , Str "Text"
+      , Space
+      , Str "Casing"
+      , Space
+      , Str "Transformations"
+      ]
+  , Para
+      [ Str "Casing"
+      , Space
+      , Str "classes"
+      , Space
+      , Str "rewrite"
+      , Space
+      , Str "the"
+      , Space
+      , Str "underlying"
+      , Space
+      , Str "Abstract"
+      , Space
+      , Str "Syntax"
+      , Space
+      , Str "Tree"
+      , Space
+      , Str "(AST)"
+      , Space
+      , Str "text"
+      , Space
+      , Str "nodes"
+      , Space
+      , Str "rather"
+      , Space
+      , Str "than"
+      , Space
+      , Str "applying"
+      , Space
+      , Str "CSS"
+      , Space
+      , Str "formatting,"
+      , Space
+      , Str "meaning"
+      , Space
+      , Str "the"
+      , Space
+      , Str "transformation"
+      , Space
+      , Str "survives"
+      , Space
+      , Str "raw"
+      , Space
+      , Str "copy-paste"
+      , Space
+      , Str "operations."
+      ]
+  , Header
+      3
+      ( "inline-casing"
+      , []
+      , []
+      )
+      [ Str "Inline"
+      , Space
+      , Str "Casing"
+      ]
+  , Table
+      ( "" , [] , [] )
+      (Caption Nothing [])
+      [ ( AlignLeft
+        , ColWidth 0.18
+        )
+      , ( AlignLeft
+        , ColWidth 0.58
+        )
+      , ( AlignLeft
+        , ColWidth 0.24
+        )
+      ]
+      (TableHead
+         ( "" , [] , [] )
+         [ Row
+             ( "" , [] , [] )
+             [ Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Casing"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Syntax"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Output"
+                     ]
+                 ]
+             ]
+         ])
+      [ TableBody
+          ( "" , [] , [] )
+          (RowHeadColumns 0)
+          []
+          [ Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Uppercase"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[coerced]{.pfa-uppercase}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-uppercase"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "COERCED"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Lowercase"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[COERCED]{.pfa-lowercase}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-lowercase"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "coerced"
+                          ]
+                      ]
+                  ]
+              ]
+          ]
+      ]
+      (TableFoot
+         ( "" , [] , [] ) [])
+  , Header
+      3
+      ( "block-casing"
+      , []
+      , []
+      )
+      [ Str "Block"
+      , Space
+      , Str "Casing"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-uppercase\nthis block is uniformly uppercased, even across paragraph boundaries.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-uppercase" ]
+      , []
+      )
+      [ Para
+          [ Str "THIS"
+          , Space
+          , Str "BLOCK"
+          , Space
+          , Str "IS"
+          , Space
+          , Str "UNIFORMLY"
+          , Space
+          , Str "UPPERCASED,"
+          , Space
+          , Str "EVEN"
+          , Space
+          , Str "ACROSS"
+          , Space
+          , Str "PARAGRAPH"
+          , Space
+          , Str "BOUNDARIES."
+          ]
+      ]
+  , Header
+      2
+      ( "inline-text-decorations"
+      , []
+      , []
+      )
+      [ Str "6."
+      , Space
+      , Str "Inline"
+      , Space
+      , Str "Text"
+      , Space
+      , Str "Decorations"
+      ]
+  , Para
+      [ Str "Underline"
+      , Space
+      , Str "and"
+      , Space
+      , Str "strikeout"
+      , Space
+      , Str "variants"
+      , Space
+      , Str "are"
+      , Space
+      , Str "routed"
+      , Space
+      , Str "through"
+      , Space
+      , Str "the"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          "ulem"
+      , Space
+      , Str "LaTeX"
+      , Space
+      , Str "package"
+      , Space
+      , Str "and"
+      , Space
+      , Str "mapped"
+      , Space
+      , Str "to"
+      , Space
+      , Str "matching"
+      , Space
+      , Str "standard"
+      , Space
+      , Str "CSS."
+      ]
+  , Table
+      ( "" , [] , [] )
+      (Caption Nothing [])
+      [ ( AlignLeft
+        , ColWidth 0.25
+        )
+      , ( AlignLeft
+        , ColWidth 0.5625
+        )
+      , ( AlignLeft
+        , ColWidth 0.1875
+        )
+      ]
+      (TableHead
+         ( "" , [] , [] )
+         [ Row
+             ( "" , [] , [] )
+             [ Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Decoration"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Syntax"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Output"
+                     ]
+                 ]
+             ]
+         ])
+      [ TableBody
+          ( "" , [] , [] )
+          (RowHeadColumns 0)
+          []
+          [ Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Single"
+                      , Space
+                      , Str
+                          "Underline"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-uline}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-uline"
+                            ]
+                          , []
+                          )
+                          [ Underline
+                              [ Str
+                                  "Sample"
+                              ]
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Double"
+                      , Space
+                      , Str
+                          "Underline"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-uline-double}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-uline-double"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Dashed"
+                      , Space
+                      , Str
+                          "Underline"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-uline-dashed}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-uline-dashed"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Dotted"
+                      , Space
+                      , Str
+                          "Underline"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-uline-dotted}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-uline-dotted"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Wavy"
+                      , Space
+                      , Str
+                          "Underline"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-uline-wave}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-uline-wave"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Strikeout"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-strikeout}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-strikeout"
+                            ]
+                          , []
+                          )
+                          [ Strikeout
+                              [ Str
+                                  "Sample"
+                              ]
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Marked"
+                      , Space
+                      , Str
+                          "Out"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-markout}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-markout"
+                            ]
+                          , []
+                          )
+                          [ Strikeout
+                              [ Str
+                                  "Sample"
+                              ]
+                          ]
+                      ]
+                  ]
+              ]
+          ]
+      ]
+      (TableFoot
+         ( "" , [] , [] ) [])
+  , Header
+      2
+      ( "color-resolution"
+      , []
+      , []
+      )
+      [ Str "7."
+      , Space
+      , Str "Color"
+      , Space
+      , Str "Resolution"
+      ]
+  , Para
+      [ Str "The"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          "pfa-color"
+      , Space
+      , Str "attribute"
+      , Space
+      , Str "natively"
+      , Space
+      , Str "parses"
+      , Space
+      , Str "standard"
+      , Space
+      , Str "CSS3"
+      , Space
+      , Str "named"
+      , Space
+      , Str "colors,"
+      , Space
+      , Str "six-digit"
+      , Space
+      , Str "hex"
+      , Space
+      , Str "codes,"
+      , Space
+      , Str "and"
+      , Space
+      , Str "three-digit"
+      , Space
+      , Str "hex"
+      , Space
+      , Str "shorthands."
+      ]
+  , Table
+      ( "" , [] , [] )
+      (Caption Nothing [])
+      [ ( AlignLeft
+        , ColWidth
+            0.22413793103448276
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.5689655172413793
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.20689655172413793
+        )
+      ]
+      (TableHead
+         ( "" , [] , [] )
+         [ Row
+             ( "" , [] , [] )
+             [ Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Input"
+                     , Space
+                     , Str
+                         "Type"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Syntax"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Output"
+                     ]
+                 ]
+             ]
+         ])
+      [ TableBody
+          ( "" , [] , [] )
+          (RowHeadColumns 0)
+          []
+          [ Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "CSS"
+                      , Space
+                      , Str
+                          "Named"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{pfa-color=\"crimson\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , []
+                          , [ ( "style"
+                              , "color: #DC143C;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Hex"
+                      , Space
+                      , Str
+                          "Shorthand"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{pfa-color=\"#333\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , []
+                          , [ ( "style"
+                              , "color: #333333;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Hex"
+                      , Space
+                      , Str
+                          "Full"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{pfa-color=\"#2E8B57\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , []
+                          , [ ( "style"
+                              , "color: #2E8B57;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          ]
+      ]
+      (TableFoot
+         ( "" , [] , [] ) [])
+  , Header
+      3
+      ( "flexible-spelling-of-named-colors"
+      , []
+      , []
+      )
+      [ Str "Flexible"
+      , Space
+      , Str "Spelling"
+      , Space
+      , Str "of"
+      , Space
+      , Str "Named"
+      , Space
+      , Str "Colors"
+      ]
+  , Para
+      [ Str "The"
+      , Space
+      , Str "engine"
+      , Space
+      , Str "sanitizes"
+      , Space
+      , Str "inputs"
+      , Space
+      , Str "automatically."
+      , Space
+      , Str "It"
+      , Space
+      , Str "is"
+      , Space
+      , Str "case-insensitive"
+      , Space
+      , Str "and"
+      , Space
+      , Str "ignores"
+      , Space
+      , Str "spaces,"
+      , Space
+      , Str "hyphens,"
+      , Space
+      , Str "and"
+      , Space
+      , Str "underscores."
+      , Space
+      , Str "All"
+      , Space
+      , Str "syntaxes"
+      , Space
+      , Str "below"
+      , Space
+      , Str "successfully"
+      , Space
+      , Str "map"
+      , Space
+      , Str "to"
+      , Space
+      , Str "the"
+      , Space
+      , Str "standard"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          "mediumvioletred"
+      , Str "."
+      ]
+  , Table
+      ( "" , [] , [] )
+      (Caption Nothing [])
+      [ ( AlignLeft
+        , ColWidth 0.15625
+        )
+      , ( AlignLeft
+        , ColWidth 0.65625
+        )
+      , ( AlignLeft
+        , ColWidth 0.1875
+        )
+      ]
+      (TableHead
+         ( "" , [] , [] )
+         [ Row
+             ( "" , [] , [] )
+             [ Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Variant"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Syntax"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Output"
+                     ]
+                 ]
+             ]
+         ])
+      [ TableBody
+          ( "" , [] , [] )
+          (RowHeadColumns 0)
+          []
+          [ Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Lowercase"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Color]{pfa-color=\"mediumvioletred\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , []
+                          , [ ( "style"
+                              , "color: #C71585;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Color"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Title"
+                      , Space
+                      , Str
+                          "Case"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Color]{pfa-color=\"MediumVioletRed\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , []
+                          , [ ( "style"
+                              , "color: #C71585;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Color"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Spaces"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Color]{pfa-color=\"Medium Violet Red\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , []
+                          , [ ( "style"
+                              , "color: #C71585;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Color"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Hyphens"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Color]{pfa-color=\"medium-violet-red\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , []
+                          , [ ( "style"
+                              , "color: #C71585;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Color"
+                          ]
+                      ]
+                  ]
+              ]
+          ]
+      ]
+      (TableFoot
+         ( "" , [] , [] ) [])
+  , Header
+      3
+      ( "block-level-color-constraints-with-inline-overrides"
+      , []
+      , []
+      )
+      [ Str "Block-Level"
+      , Space
+      , Str "Color"
+      , Space
+      , Str "Constraints"
+      , Space
+      , Str "with"
+      , Space
+      , Str "Inline"
+      , Space
+      , Str "Overrides"
+      ]
+  , Para
+      [ Str "Colors"
+      , Space
+      , Str "applied"
+      , Space
+      , Str "to"
+      , Space
+      , Str "a"
+      , Space
+      , Str "block"
+      , Space
+      , Str "automatically"
+      , Space
+      , Str "inherit"
+      , Space
+      , Str "downward,"
+      , Space
+      , Str "but"
+      , Space
+      , Str "nested"
+      , Space
+      , Str "spans"
+      , Space
+      , Str "can"
+      , Space
+      , Str "explicitly"
+      , Space
+      , Str "override"
+      , Space
+      , Str "the"
+      , Space
+      , Str "parent"
+      , Space
+      , Str "value."
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: {pfa-color=\"darkslategray\"}\nThe parent block carries a default color of dark slate gray. [This inline span overrides the color to tomato red.]{pfa-color=\"tomato\"} The surrounding text continues in the parent color until the block closes.\n:::"
+  , Div
+      ( ""
+      , []
+      , [ ( "style"
+          , "color: #2F4F4F;"
+          )
+        ]
+      )
+      [ Para
+          [ Str "The"
+          , Space
+          , Str "parent"
+          , Space
+          , Str "block"
+          , Space
+          , Str "carries"
+          , Space
+          , Str "a"
+          , Space
+          , Str "default"
+          , Space
+          , Str "color"
+          , Space
+          , Str "of"
+          , Space
+          , Str "dark"
+          , Space
+          , Str "slate"
+          , Space
+          , Str "gray."
+          , Space
+          , Span
+              ( ""
+              , []
+              , [ ( "style"
+                  , "color: #FF6347;"
+                  )
+                ]
+              )
+              [ Str "This"
+              , Space
+              , Str "inline"
+              , Space
+              , Str "span"
+              , Space
+              , Str
+                  "overrides"
+              , Space
+              , Str "the"
+              , Space
+              , Str "color"
+              , Space
+              , Str "to"
+              , Space
+              , Str "tomato"
+              , Space
+              , Str "red."
+              ]
+          , Space
+          , Str "The"
+          , Space
+          , Str "surrounding"
+          , Space
+          , Str "text"
+          , Space
+          , Str "continues"
+          , Space
+          , Str "in"
+          , Space
+          , Str "the"
+          , Space
+          , Str "parent"
+          , Space
+          , Str "color"
+          , Space
+          , Str "until"
+          , Space
+          , Str "the"
+          , Space
+          , Str "block"
+          , Space
+          , Str "closes."
+          ]
+      ]
+  , Header
+      2
+      ( "text-alignment-within-blocks"
+      , []
+      , []
+      )
+      [ Str "8."
+      , Space
+      , Str "Text"
+      , Space
+      , Str "Alignment"
+      , Space
+      , Str "within"
+      , Space
+      , Str "Blocks"
+      ]
+  , Para
+      [ Str "The"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          ".pfa-text-*"
+      , Space
+      , Str "utility"
+      , Space
+      , Str "wraps"
+      , Space
+      , Str "blocks"
+      , Space
+      , Str "in"
+      , Space
+      , Str "standard"
+      , Space
+      , Str "directional"
+      , Space
+      , Str "text"
+      , Space
+      , Str "environments."
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-left\nThis block is left-aligned. The remaining width on the right is left ragged.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-text-left" ]
+      , []
+      )
+      [ Para
+          [ Str "This"
+          , Space
+          , Str "block"
+          , Space
+          , Str "is"
+          , Space
+          , Str
+              "left-aligned."
+          , Space
+          , Str "The"
+          , Space
+          , Str "remaining"
+          , Space
+          , Str "width"
+          , Space
+          , Str "on"
+          , Space
+          , Str "the"
+          , Space
+          , Str "right"
+          , Space
+          , Str "is"
+          , Space
+          , Str "left"
+          , Space
+          , Str "ragged."
+          ]
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-center\nThis block is centered horizontally within the text column.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-text-center" ]
+      , []
+      )
+      [ Para
+          [ Str "This"
+          , Space
+          , Str "block"
+          , Space
+          , Str "is"
+          , Space
+          , Str "centered"
+          , Space
+          , Str "horizontally"
+          , Space
+          , Str "within"
+          , Space
+          , Str "the"
+          , Space
+          , Str "text"
+          , Space
+          , Str "column."
+          ]
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-right\nThis block is right-aligned, flush against the right margin.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-text-right" ]
+      , []
+      )
+      [ Para
+          [ Str "This"
+          , Space
+          , Str "block"
+          , Space
+          , Str "is"
+          , Space
+          , Str
+              "right-aligned,"
+          , Space
+          , Str "flush"
+          , Space
+          , Str "against"
+          , Space
+          , Str "the"
+          , Space
+          , Str "right"
+          , Space
+          , Str "margin."
+          ]
+      ]
+  , Header
+      2
+      ( "ragged-alignment-line-break-honoring"
+      , []
+      , []
+      )
+      [ Str "9."
+      , Space
+      , Str "Ragged"
+      , Space
+      , Str "Alignment"
+      , Space
+      , Str "(Line-Break"
+      , Space
+      , Str "Honoring)"
+      ]
+  , Para
+      [ Str "The"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          ".pfa-align-*"
+      , Space
+      , Str "utility"
+      , Space
+      , Str "preserves"
+      , Space
+      , Str "and"
+      , Space
+      , Str "honors"
+      , Space
+      , Str "explicit"
+      , Space
+      , Str "line"
+      , Space
+      , Str "breaks"
+      , Space
+      , Str "(via"
+      , Space
+      , Str "backslash"
+      , Space
+      , Str "escapes),"
+      , Space
+      , Str "making"
+      , Space
+      , Str "it"
+      , Space
+      , Str "ideal"
+      , Space
+      , Str "for"
+      , Space
+      , Str "poetry,"
+      , Space
+      , Str "formal"
+      , Space
+      , Str "addresses,"
+      , Space
+      , Str "and"
+      , Space
+      , Str "titles."
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-align-center\nFirst centered line\\\nSecond centered line\\\nThird centered line\n:::"
+  , Div
+      ( ""
+      , [ "pfa-align-center" ]
+      , []
+      )
+      [ Para
+          [ Str "First"
+          , Space
+          , Str "centered"
+          , Space
+          , Str "line"
+          , LineBreak
+          , Str "Second"
+          , Space
+          , Str "centered"
+          , Space
+          , Str "line"
+          , LineBreak
+          , Str "Third"
+          , Space
+          , Str "centered"
+          , Space
+          , Str "line"
+          ]
+      ]
+  , Header
+      2
+      ( "shrink-to-fit-block-alignment"
+      , []
+      , []
+      )
+      [ Str "10."
+      , Space
+      , Str "Shrink-to-Fit"
+      , Space
+      , Str "Block"
+      , Space
+      , Str "Alignment"
+      ]
+  , Para
+      [ Str "The"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          ".pfa-block-*"
+      , Space
+      , Str "utility"
+      , Space
+      , Str "creates"
+      , Space
+      , Str "an"
+      , Space
+      , Str "isolated"
+      , Space
+      , Str "bounding"
+      , Space
+      , Str "box"
+      , Space
+      , Str "that"
+      , Space
+      , Str "shrinks"
+      , Space
+      , Str "dynamically"
+      , Space
+      , Str "to"
+      , Space
+      , Str "match"
+      , Space
+      , Str "its"
+      , Space
+      , Str "internal"
+      , Space
+      , Str "content"
+      , Space
+      , Str "before"
+      , Space
+      , Str "positioning"
+      , Space
+      , Str "itself"
+      , Space
+      , Str "in"
+      , Space
+      , Str "the"
+      , Space
+      , Str "document"
+      , Space
+      , Str "flow."
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: {.pfa-block-left}\n**Left-Aligned Shrink Block**\nWraps tightly around its content.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-block-left" ]
+      , []
+      )
+      [ Para
+          [ Strong
+              [ Str
+                  "Left-Aligned"
+              , Space
+              , Str "Shrink"
+              , Space
+              , Str "Block"
+              ]
+          , SoftBreak
+          , Str "Wraps"
+          , Space
+          , Str "tightly"
+          , Space
+          , Str "around"
+          , Space
+          , Str "its"
+          , Space
+          , Str "content."
+          ]
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: {.pfa-block-center}\n**Centered Shrink Block**\nWraps tightly around its content.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-block-center" ]
+      , []
+      )
+      [ Para
+          [ Strong
+              [ Str "Centered"
+              , Space
+              , Str "Shrink"
+              , Space
+              , Str "Block"
+              ]
+          , SoftBreak
+          , Str "Wraps"
+          , Space
+          , Str "tightly"
+          , Space
+          , Str "around"
+          , Space
+          , Str "its"
+          , Space
+          , Str "content."
+          ]
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: {.pfa-block-right}\n**Right-Aligned Shrink Block**\nWraps tightly around its content.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-block-right" ]
+      , []
+      )
+      [ Para
+          [ Strong
+              [ Str
+                  "Right-Aligned"
+              , Space
+              , Str "Shrink"
+              , Space
+              , Str "Block"
+              ]
+          , SoftBreak
+          , Str "Wraps"
+          , Space
+          , Str "tightly"
+          , Space
+          , Str "around"
+          , Space
+          , Str "its"
+          , Space
+          , Str "content."
+          ]
+      ]
+  , Header
+      2
+      ( "combining-multiple-classes"
+      , []
+      , []
+      )
+      [ Str "11."
+      , Space
+      , Str "Combining"
+      , Space
+      , Str "Multiple"
+      , Space
+      , Str "Classes"
+      ]
+  , Para
+      [ Str "Classes"
+      , Space
+      , Str "compose"
+      , Space
+      , Str "seamlessly."
+      , Space
+      , Str "Sizing,"
+      , Space
+      , Str "family,"
+      , Space
+      , Str "weight,"
+      , Space
+      , Str "color,"
+      , Space
+      , Str "and"
+      , Space
+      , Str "decoration"
+      , Space
+      , Str "definitions"
+      , Space
+      , Str "can"
+      , Space
+      , Str "stack"
+      , Space
+      , Str "safely"
+      , Space
+      , Str "on"
+      , Space
+      , Str "any"
+      , Space
+      , Str "single"
+      , Space
+      , Str "element."
+      ]
+  , Header
+      3
+      ( "inline-composition"
+      , []
+      , []
+      )
+      [ Str "Inline"
+      , Space
+      , Str "Composition"
+      ]
+  , Table
+      ( "" , [] , [] )
+      (Caption Nothing [])
+      [ ( AlignLeft
+        , ColWidth
+            0.27722772277227725
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.6039603960396039
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.1188118811881188
+        )
+      ]
+      (TableHead
+         ( "" , [] , [] )
+         [ Row
+             ( "" , [] , [] )
+             [ Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Style"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Syntax"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Output"
+                     ]
+                 ]
+             ]
+         ])
+      [ TableBody
+          ( "" , [] , [] )
+          (RowHeadColumns 0)
+          []
+          [ Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Bold"
+                      , Space
+                      , Str
+                          "Sans"
+                      , Space
+                      , Str
+                          "Display"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-lg pfa-color=\"red\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-bold"
+                            , "pfa-font-sans"
+                            , "pfa-text-lg"
+                            ]
+                          , [ ( "style"
+                              , "color: #FF0000;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Italic"
+                      , Space
+                      , Str
+                          "Mono"
+                      , Space
+                      , Str
+                          "Caption"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-sm}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-font-italic"
+                            , "pfa-font-mono"
+                            , "pfa-text-sm"
+                            ]
+                          , []
+                          )
+                          [ Str
+                              "Sample"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Smallcaps"
+                      , Space
+                      , Str
+                          "Underline"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Sample]{.pfa-text-uline .pfa-font-smallcaps pfa-color=\"forestgreen\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , [ "pfa-text-uline"
+                            , "pfa-font-smallcaps"
+                            ]
+                          , [ ( "style"
+                              , "color: #228B22;"
+                              )
+                            ]
+                          )
+                          [ Underline
+                              [ Str
+                                  "Sample"
+                              ]
+                          ]
+                      ]
+                  ]
+              ]
+          ]
+      ]
+      (TableFoot
+         ( "" , [] , [] ) [])
+  , Header
+      3
+      ( "block-composition"
+      , []
+      , []
+      )
+      [ Str "Block"
+      , Space
+      , Str "Composition"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-lg pfa-color=\"midnightblue\"}\nA centered, bold, sans-serif, large, midnight-blue block \8212 assembled from five utilities.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-text-center"
+        , "pfa-font-sans"
+        , "pfa-font-bold"
+        , "pfa-text-lg"
+        ]
+      , [ ( "style"
+          , "color: #191970;"
+          )
+        ]
+      )
+      [ Para
+          [ Str "A"
+          , Space
+          , Str "centered,"
+          , Space
+          , Str "bold,"
+          , Space
+          , Str "sans-serif,"
+          , Space
+          , Str "large,"
+          , Space
+          , Str
+              "midnight-blue"
+          , Space
+          , Str "block"
+          , Space
+          , Str "\8212"
+          , Space
+          , Str "assembled"
+          , Space
+          , Str "from"
+          , Space
+          , Str "five"
+          , Space
+          , Str "utilities."
+          ]
+      ]
+  , Header
+      2
+      ( "legacy-short-hand-aliases-deprecated"
+      , []
+      , []
+      )
+      [ Str "12."
+      , Space
+      , Str "Legacy"
+      , Space
+      , Str "Short-Hand"
+      , Space
+      , Str "Aliases"
+      , Space
+      , Str "(Deprecated)"
+      ]
+  , Para
+      [ Strong
+          [ Str "Deprecated"
+          , Space
+          , Str "\8212"
+          , Space
+          , Str "retained"
+          , Space
+          , Str "strictly"
+          , Space
+          , Str "for"
+          , Space
+          , Str "backward"
+          , Space
+          , Str
+              "compatibility."
+          ]
+      , Space
+      , Str "New"
+      , Space
+      , Str "documents"
+      , Space
+      , Str "should"
+      , Space
+      , Str "use"
+      , Space
+      , Str "the"
+      , Space
+      , Str "explicit"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          "pfa-*"
+      , Space
+      , Str "namespaces"
+      , Space
+      , Str "above"
+      , Space
+      , Str "to"
+      , Space
+      , Str "prevent"
+      , Space
+      , Str "global"
+      , Space
+      , Str "framework"
+      , Space
+      , Str "collisions."
+      ]
+  , Header
+      3
+      ( "font-weight-shape-and-family-aliases"
+      , []
+      , []
+      )
+      [ Str "12.1"
+      , Space
+      , Str "Font"
+      , Space
+      , Str "Weight,"
+      , Space
+      , Str "Shape,"
+      , Space
+      , Str "and"
+      , Space
+      , Str "Family"
+      , Space
+      , Str "Aliases"
+      ]
+  , Table
+      ( "" , [] , [] )
+      (Caption Nothing [])
+      [ ( AlignLeft
+        , ColWidth
+            0.2926829268292683
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.17073170731707318
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.5365853658536586
+        )
+      ]
+      (TableHead
+         ( "" , [] , [] )
+         [ Row
+             ( "" , [] , [] )
+             [ Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Legacy"
+                     , Space
+                     , Str
+                         "Alias"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Short"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Modern"
+                     , Space
+                     , Str
+                         "Class"
+                     ]
+                 ]
+             ]
+         ])
+      [ TableBody
+          ( "" , [] , [] )
+          (RowHeadColumns 0)
+          []
+          [ Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "bold"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "bf"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-font-bold"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "emphasis"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "em"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-font-emphasis"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "italic"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "it"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-font-italic"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "medium"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "md"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-font-medium"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "monospace"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "tt"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-font-mono"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "normalfont"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "nf"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-font-normal"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "sans"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "sf"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-font-sans"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "serif"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "rm"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-font-serif"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "slanted"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "sl"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-font-slanted"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "smallcaps"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "sc"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-font-smallcaps"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "upright"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "up"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-font-upright"
+                      ]
+                  ]
+              ]
+          ]
+      ]
+      (TableFoot
+         ( "" , [] , [] ) [])
+  , Header
+      3
+      ( "font-size-aliases"
+      , []
+      , []
+      )
+      [ Str "12.2"
+      , Space
+      , Str "Font"
+      , Space
+      , Str "Size"
+      , Space
+      , Str "Aliases"
+      ]
+  , Table
+      ( "" , [] , [] )
+      (Caption Nothing [])
+      [ ( AlignLeft
+        , ColWidth
+            0.3870967741935484
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.6129032258064516
+        )
+      ]
+      (TableHead
+         ( "" , [] , [] )
+         [ Row
+             ( "" , [] , [] )
+             [ Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Legacy"
+                     , Space
+                     , Str
+                         "Alias"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Modern"
+                     , Space
+                     , Str
+                         "Class"
+                     ]
+                 ]
+             ]
+         ])
+      [ TableBody
+          ( "" , [] , [] )
+          (RowHeadColumns 0)
+          []
+          [ Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "xsmall"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-xs"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "small"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-sm"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "normal"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-normal"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "large"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-lg"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "xlarge"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-xl"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "xxlarge"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-2xl"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "huge"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-3xl"
+                      ]
+                  ]
+              ]
+          ]
+      ]
+      (TableFoot
+         ( "" , [] , [] ) [])
+  , Header
+      3
+      ( "alignment-aliases"
+      , []
+      , []
+      )
+      [ Str "12.3"
+      , Space
+      , Str "Alignment"
+      , Space
+      , Str "Aliases"
+      ]
+  , Table
+      ( "" , [] , [] )
+      (Caption Nothing [])
+      [ ( AlignLeft
+        , ColWidth
+            0.3939393939393939
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.6060606060606061
+        )
+      ]
+      (TableHead
+         ( "" , [] , [] )
+         [ Row
+             ( "" , [] , [] )
+             [ Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Legacy"
+                     , Space
+                     , Str
+                         "Alias"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Modern"
+                     , Space
+                     , Str
+                         "Class"
+                     ]
+                 ]
+             ]
+         ])
+      [ TableBody
+          ( "" , [] , [] )
+          (RowHeadColumns 0)
+          []
+          [ Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "center"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-center"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "flushleft"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-left"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "flushright"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-right"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "centering"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-align-center"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "raggedleft"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-align-right"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "raggedright"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-align-left"
+                      ]
+                  ]
+              ]
+          ]
+      ]
+      (TableFoot
+         ( "" , [] , [] ) [])
+  , Header
+      3
+      ( "underline-and-strikeout-aliases"
+      , []
+      , []
+      )
+      [ Str "12.4"
+      , Space
+      , Str "Underline"
+      , Space
+      , Str "and"
+      , Space
+      , Str "Strikeout"
+      , Space
+      , Str "Aliases"
+      ]
+  , Table
+      ( "" , [] , [] )
+      (Caption Nothing [])
+      [ ( AlignLeft
+        , ColWidth
+            0.2727272727272727
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.1590909090909091
+        )
+      , ( AlignLeft
+        , ColWidth
+            0.5681818181818182
+        )
+      ]
+      (TableHead
+         ( "" , [] , [] )
+         [ Row
+             ( "" , [] , [] )
+             [ Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Legacy"
+                     , Space
+                     , Str
+                         "Alias"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Short"
+                     ]
+                 ]
+             , Cell
+                 ( ""
+                 , []
+                 , []
+                 )
+                 AlignDefault
+                 (RowSpan 1)
+                 (ColSpan 1)
+                 [ Plain
+                     [ Str
+                         "Modern"
+                     , Space
+                     , Str
+                         "Class"
+                     ]
+                 ]
+             ]
+         ])
+      [ TableBody
+          ( "" , [] , [] )
+          (RowHeadColumns 0)
+          []
+          [ Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "uline"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "u"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-uline"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "uuline"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "uu"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-uline-double"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "dashuline"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "dau"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-uline-dashed"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "dotuline"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "dou"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-uline-dotted"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "uwave"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "uw"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-uline-wave"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "sout"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "so"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-strikeout"
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "xout"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "xo"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "pfa-text-markout"
+                      ]
+                  ]
+              ]
+          ]
+      ]
+      (TableFoot
+         ( "" , [] , [] ) [])
+  ]

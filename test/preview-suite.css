@@ -34,3 +34,18 @@ body {
   margin-right: auto;
   width: 60%;
 }
+
+header#title-block-header {
+   text-align: center;;
+}
+
+/* ==========================================================================
+   Table Column Gutter
+   ========================================================================== */
+/* 1em horizontal padding on each cell yields ~2em of visual space between
+   adjacent column content edges. */
+table th,
+table td {
+  padding-left: 1em;
+  padding-right: 1em;
+}

@@ -4,20 +4,42 @@ Pandoc
         fromList
           [ ( "author"
             , MetaInlines
-                [ Str "Nandakumar" , Space , Str "Chandrasekhar" ]
+                [ Str
+                    "Nandakumar"
+                , Space
+                , Str
+                    "Chandrasekhar"
+                ]
             )
           , ( "date"
             , MetaInlines
-                [ Str "15" , Space , Str "May" , Space , Str "2026" ]
+                [ Str "15"
+                , Space
+                , Str "May"
+                , Space
+                , Str "2026"
+                ]
             )
           , ( "geometry"
-            , MetaList [ MetaInlines [ Str "margin=25mm" ] ]
+            , MetaList
+                [ MetaInlines
+                    [ Str
+                        "margin=25mm"
+                    ]
+                ]
             )
-          , ( "linestretch" , MetaInlines [ Str "1.25" ] )
-          , ( "papersize" , MetaInlines [ Str "A4" ] )
+          , ( "linestretch"
+            , MetaInlines
+                [ Str "1.25" ]
+            )
+          , ( "papersize"
+            , MetaInlines
+                [ Str "A4" ]
+            )
           , ( "title"
             , MetaInlines
-                [ Str "Combining"
+                [ Str
+                    "Combining"
                 , Space
                 , Str "Block"
                 , Space
@@ -25,14 +47,18 @@ Pandoc
                 , Space
                 , Str "and"
                 , Space
-                , Str "Nesting"
+                , Str
+                    "Nesting"
                 ]
             )
           ]
     }
   [ Header
       2
-      ( "sans-serif-with-small-font" , [] , [] )
+      ( "sans-serif-with-small-font"
+      , []
+      , []
+      )
       [ Str "Sans-serif"
       , Space
       , Str "with"
@@ -42,7 +68,12 @@ Pandoc
       , Str "font"
       ]
   , Div
-      ( "" , [ "pfa-font-sans" , "pfa-text-sm" ] , [] )
+      ( ""
+      , [ "pfa-font-sans"
+        , "pfa-text-sm"
+        ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -103,7 +134,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -162,7 +194,10 @@ Pandoc
       ]
   , Header
       3
-      ( "colored-with-bold-and-large-font" , [] , [] )
+      ( "colored-with-bold-and-large-font"
+      , []
+      , []
+      )
       [ Str "Colored"
       , Space
       , Str "with"
@@ -177,8 +212,13 @@ Pandoc
       ]
   , Div
       ( ""
-      , [ "pfa-font-bold" , "pfa-text-lg" ]
-      , [ ( "style" , "color: #C71585;" ) ]
+      , [ "pfa-font-bold"
+        , "pfa-text-lg"
+        ]
+      , [ ( "style"
+          , "color: #C71585;"
+          )
+        ]
       )
       [ Para
           [ Str "Lorem"
@@ -264,7 +304,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -345,8 +386,14 @@ Pandoc
       ]
   , Div
       ( ""
-      , [ "pfa-text-right" , "pfa-font-sans" , "pfa-font-italic" ]
-      , [ ( "style" , "color: #228B22;" ) ]
+      , [ "pfa-text-right"
+        , "pfa-font-sans"
+        , "pfa-font-italic"
+        ]
+      , [ ( "style"
+          , "color: #228B22;"
+          )
+        ]
       )
       [ Para
           [ Str "Lorem"
@@ -432,7 +479,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -512,7 +560,13 @@ Pandoc
       , Str "override"
       ]
   , Div
-      ( "" , [] , [ ( "style" , "color: #2E8B57;" ) ] )
+      ( ""
+      , []
+      , [ ( "style"
+          , "color: #2E8B57;"
+          )
+        ]
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -589,8 +643,12 @@ Pandoc
       , Para
           [ Span
               ( ""
-              , [ "pfa-font-bold" ]
-              , [ ( "style" , "color: #FF0000;" ) ]
+              , [ "pfa-font-bold"
+                ]
+              , [ ( "style"
+                  , "color: #FF0000;"
+                  )
+                ]
               )
               [ Str "Duis"
               , Space
@@ -602,11 +660,13 @@ Pandoc
               , Space
               , Str "in"
               , Space
-              , Str "reprehenderit"
+              , Str
+                  "reprehenderit"
               , Space
               , Str "in"
               , Space
-              , Str "voluptate"
+              , Str
+                  "voluptate"
               , Space
               , Str "velit"
               , Space
@@ -622,7 +682,8 @@ Pandoc
               , Space
               , Str "nulla"
               , Space
-              , Str "pariatur."
+              , Str
+                  "pariatur."
               ]
           , Space
           , Str "Excepteur"

@@ -4,20 +4,42 @@ Pandoc
         fromList
           [ ( "author"
             , MetaInlines
-                [ Str "Nandakumar" , Space , Str "Chandrasekhar" ]
+                [ Str
+                    "Nandakumar"
+                , Space
+                , Str
+                    "Chandrasekhar"
+                ]
             )
           , ( "date"
             , MetaInlines
-                [ Str "15" , Space , Str "May" , Space , Str "2026s" ]
+                [ Str "15"
+                , Space
+                , Str "May"
+                , Space
+                , Str "2026s"
+                ]
             )
           , ( "geometry"
-            , MetaList [ MetaInlines [ Str "margin=25mm" ] ]
+            , MetaList
+                [ MetaInlines
+                    [ Str
+                        "margin=25mm"
+                    ]
+                ]
             )
-          , ( "linestretch" , MetaInlines [ Str "1.25" ] )
-          , ( "papersize" , MetaInlines [ Str "A4" ] )
+          , ( "linestretch"
+            , MetaInlines
+                [ Str "1.25" ]
+            )
+          , ( "papersize"
+            , MetaInlines
+                [ Str "A4" ]
+            )
           , ( "title"
             , MetaInlines
-                [ Str "Styling"
+                [ Str
+                    "Styling"
                 , Space
                 , Str "Fonts"
                 , Space
@@ -28,9 +50,15 @@ Pandoc
             )
           ]
     }
-  [ Header 2 ( "bold" , [] , [] ) [ Str "Bold" ]
+  [ Header
+      2
+      ( "bold" , [] , [] )
+      [ Str "Bold" ]
   , Div
-      ( "" , [ "pfa-font-bold" ] , [] )
+      ( ""
+      , [ "pfa-font-bold" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -115,439 +143,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
-          ]
-      ]
-  , Header 2 ( "emphasis" , [] , [] ) [ Str "Emphasis" ]
-  , Div
-      ( "" , [ "pfa-font-emphasis" ] , [] )
-      [ Para
-          [ Str "Lorem"
-          , Space
-          , Str "ipsum"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "sit"
-          , Space
-          , Str "amet,"
-          , Space
-          , Str "consectetur"
-          , Space
-          , Str "adipiscing"
-          , Space
-          , Str "elit."
-          , Space
-          , Str "Sed"
-          , Space
-          , Str "do"
-          , Space
-          , Str "eiusmod"
-          , Space
-          , Str "tempor"
-          , Space
-          , Str "incididunt"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "labore"
-          , Space
-          , Str "et"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "magna"
-          , Space
-          , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , Space
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , Space
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , Space
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
-          ]
-      ]
-  , Header 2 ( "italic" , [] , [] ) [ Str "Italic" ]
-  , Div
-      ( "" , [ "pfa-font-italic" ] , [] )
-      [ Para
-          [ Str "Lorem"
-          , Space
-          , Str "ipsum"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "sit"
-          , Space
-          , Str "amet,"
-          , Space
-          , Str "consectetur"
-          , Space
-          , Str "adipiscing"
-          , Space
-          , Str "elit."
-          , Space
-          , Str "Sed"
-          , Space
-          , Str "do"
-          , Space
-          , Str "eiusmod"
-          , Space
-          , Str "tempor"
-          , Space
-          , Str "incididunt"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "labore"
-          , Space
-          , Str "et"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "magna"
-          , Space
-          , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , Space
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , Space
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , Space
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
-          ]
-      ]
-  , Header 2 ( "slanted" , [] , [] ) [ Str "Slanted" ]
-  , Div
-      ( "" , [ "pfa-font-slanted" ] , [] )
-      [ Para
-          [ Str "Lorem"
-          , Space
-          , Str "ipsum"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "sit"
-          , Space
-          , Str "amet,"
-          , Space
-          , Str "consectetur"
-          , Space
-          , Str "adipiscing"
-          , Space
-          , Str "elit."
-          , Space
-          , Str "Sed"
-          , Space
-          , Str "do"
-          , Space
-          , Str "eiusmod"
-          , Space
-          , Str "tempor"
-          , Space
-          , Str "incididunt"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "labore"
-          , Space
-          , Str "et"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "magna"
-          , Space
-          , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , Space
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , Space
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , Space
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -606,10 +203,14 @@ Pandoc
       ]
   , Header
       2
-      ( "small-capitals" , [] , [] )
-      [ Str "Small" , Space , Str "Capitals" ]
+      ( "emphasis" , [] , [] )
+      [ Str "Emphasis" ]
   , Div
-      ( "" , [ "pfa-font-smallcaps" ] , [] )
+      ( ""
+      , [ "pfa-font-emphasis"
+        ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -694,7 +295,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -751,9 +353,15 @@ Pandoc
           , Str "laborum."
           ]
       ]
-  , Header 2 ( "monospace" , [] , [] ) [ Str "Monospace" ]
+  , Header
+      2
+      ( "italic" , [] , [] )
+      [ Str "Italic" ]
   , Div
-      ( "" , [ "pfa-font-mono" ] , [] )
+      ( ""
+      , [ "pfa-font-italic" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -838,7 +446,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -895,9 +504,15 @@ Pandoc
           , Str "laborum."
           ]
       ]
-  , Header 2 ( "sans-serif" , [] , [] ) [ Str "Sans-serif" ]
+  , Header
+      2
+      ( "slanted" , [] , [] )
+      [ Str "Slanted" ]
   , Div
-      ( "" , [ "pfa-font-sans" ] , [] )
+      ( ""
+      , [ "pfa-font-slanted" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -982,7 +597,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -1039,9 +655,22 @@ Pandoc
           , Str "laborum."
           ]
       ]
-  , Header 2 ( "serif" , [] , [] ) [ Str "Serif" ]
+  , Header
+      2
+      ( "small-capitals"
+      , []
+      , []
+      )
+      [ Str "Small"
+      , Space
+      , Str "Capitals"
+      ]
   , Div
-      ( "" , [ "pfa-font-serif" ] , [] )
+      ( ""
+      , [ "pfa-font-smallcaps"
+        ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -1126,7 +755,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -1183,9 +813,18 @@ Pandoc
           , Str "laborum."
           ]
       ]
-  , Header 2 ( "upright" , [] , [] ) [ Str "Upright" ]
+  , Header
+      2
+      ( "monospace"
+      , []
+      , []
+      )
+      [ Str "Monospace" ]
   , Div
-      ( "" , [ "pfa-font-upright" ] , [] )
+      ( ""
+      , [ "pfa-font-mono" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -1270,7 +909,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -1327,9 +967,18 @@ Pandoc
           , Str "laborum."
           ]
       ]
-  , Header 2 ( "medium" , [] , [] ) [ Str "Medium" ]
+  , Header
+      2
+      ( "sans-serif"
+      , []
+      , []
+      )
+      [ Str "Sans-serif" ]
   , Div
-      ( "" , [ "pfa-font-medium" ] , [] )
+      ( ""
+      , [ "pfa-font-sans" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -1414,7 +1063,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -1471,9 +1121,15 @@ Pandoc
           , Str "laborum."
           ]
       ]
-  , Header 2 ( "normal" , [] , [] ) [ Str "Normal" ]
+  , Header
+      2
+      ( "serif" , [] , [] )
+      [ Str "Serif" ]
   , Div
-      ( "" , [ "pfa-font-normal" ] , [] )
+      ( ""
+      , [ "pfa-font-serif" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -1558,7 +1214,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -1615,9 +1272,471 @@ Pandoc
           , Str "laborum."
           ]
       ]
-  , Header 2 ( "lowercase" , [] , [] ) [ Str "Lowercase" ]
+  , Header
+      2
+      ( "upright" , [] , [] )
+      [ Str "Upright" ]
   , Div
-      ( "" , [ "pfa-lowercase" ] , [] )
+      ( ""
+      , [ "pfa-font-upright" ]
+      , []
+      )
+      [ Para
+          [ Str "Lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit."
+          , Space
+          , Str "Sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
+          , Space
+          , Str "Ut"
+          , Space
+          , Str "enim"
+          , Space
+          , Str "ad"
+          , Space
+          , Str "minim"
+          , Space
+          , Str "veniam,"
+          , Space
+          , Str "quis"
+          , Space
+          , Str "nostrud"
+          , Space
+          , Str "exercitation"
+          , Space
+          , Str "ullamco"
+          , Space
+          , Str "laboris"
+          , Space
+          , Str "nisi"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "aliquip"
+          , Space
+          , Str "ex"
+          , Space
+          , Str "ea"
+          , Space
+          , Str "commodo"
+          , Space
+          , Str "consequat."
+          ]
+      , Para
+          [ Str "Duis"
+          , Space
+          , Str "aute"
+          , Space
+          , Str "irure"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "in"
+          , Space
+          , Str
+              "reprehenderit"
+          , Space
+          , Str "in"
+          , Space
+          , Str "voluptate"
+          , Space
+          , Str "velit"
+          , Space
+          , Str "esse"
+          , Space
+          , Str "cillum"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "eu"
+          , Space
+          , Str "fugiat"
+          , Space
+          , Str "nulla"
+          , Space
+          , Str "pariatur."
+          , Space
+          , Str "Excepteur"
+          , Space
+          , Str "sint"
+          , Space
+          , Str "occaecat"
+          , Space
+          , Str "cupidatat"
+          , Space
+          , Str "non"
+          , Space
+          , Str "proident,"
+          , Space
+          , Str "sunt"
+          , Space
+          , Str "in"
+          , Space
+          , Str "culpa"
+          , Space
+          , Str "qui"
+          , Space
+          , Str "officia"
+          , Space
+          , Str "deserunt"
+          , Space
+          , Str "mollit"
+          , Space
+          , Str "anim"
+          , Space
+          , Str "id"
+          , Space
+          , Str "est"
+          , Space
+          , Str "laborum."
+          ]
+      ]
+  , Header
+      2
+      ( "medium" , [] , [] )
+      [ Str "Medium" ]
+  , Div
+      ( ""
+      , [ "pfa-font-medium" ]
+      , []
+      )
+      [ Para
+          [ Str "Lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit."
+          , Space
+          , Str "Sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
+          , Space
+          , Str "Ut"
+          , Space
+          , Str "enim"
+          , Space
+          , Str "ad"
+          , Space
+          , Str "minim"
+          , Space
+          , Str "veniam,"
+          , Space
+          , Str "quis"
+          , Space
+          , Str "nostrud"
+          , Space
+          , Str "exercitation"
+          , Space
+          , Str "ullamco"
+          , Space
+          , Str "laboris"
+          , Space
+          , Str "nisi"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "aliquip"
+          , Space
+          , Str "ex"
+          , Space
+          , Str "ea"
+          , Space
+          , Str "commodo"
+          , Space
+          , Str "consequat."
+          ]
+      , Para
+          [ Str "Duis"
+          , Space
+          , Str "aute"
+          , Space
+          , Str "irure"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "in"
+          , Space
+          , Str
+              "reprehenderit"
+          , Space
+          , Str "in"
+          , Space
+          , Str "voluptate"
+          , Space
+          , Str "velit"
+          , Space
+          , Str "esse"
+          , Space
+          , Str "cillum"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "eu"
+          , Space
+          , Str "fugiat"
+          , Space
+          , Str "nulla"
+          , Space
+          , Str "pariatur."
+          , Space
+          , Str "Excepteur"
+          , Space
+          , Str "sint"
+          , Space
+          , Str "occaecat"
+          , Space
+          , Str "cupidatat"
+          , Space
+          , Str "non"
+          , Space
+          , Str "proident,"
+          , Space
+          , Str "sunt"
+          , Space
+          , Str "in"
+          , Space
+          , Str "culpa"
+          , Space
+          , Str "qui"
+          , Space
+          , Str "officia"
+          , Space
+          , Str "deserunt"
+          , Space
+          , Str "mollit"
+          , Space
+          , Str "anim"
+          , Space
+          , Str "id"
+          , Space
+          , Str "est"
+          , Space
+          , Str "laborum."
+          ]
+      ]
+  , Header
+      2
+      ( "normal" , [] , [] )
+      [ Str "Normal" ]
+  , Div
+      ( ""
+      , [ "pfa-font-normal" ]
+      , []
+      )
+      [ Para
+          [ Str "Lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit."
+          , Space
+          , Str "Sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
+          , Space
+          , Str "Ut"
+          , Space
+          , Str "enim"
+          , Space
+          , Str "ad"
+          , Space
+          , Str "minim"
+          , Space
+          , Str "veniam,"
+          , Space
+          , Str "quis"
+          , Space
+          , Str "nostrud"
+          , Space
+          , Str "exercitation"
+          , Space
+          , Str "ullamco"
+          , Space
+          , Str "laboris"
+          , Space
+          , Str "nisi"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "aliquip"
+          , Space
+          , Str "ex"
+          , Space
+          , Str "ea"
+          , Space
+          , Str "commodo"
+          , Space
+          , Str "consequat."
+          ]
+      , Para
+          [ Str "Duis"
+          , Space
+          , Str "aute"
+          , Space
+          , Str "irure"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "in"
+          , Space
+          , Str
+              "reprehenderit"
+          , Space
+          , Str "in"
+          , Space
+          , Str "voluptate"
+          , Space
+          , Str "velit"
+          , Space
+          , Str "esse"
+          , Space
+          , Str "cillum"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "eu"
+          , Space
+          , Str "fugiat"
+          , Space
+          , Str "nulla"
+          , Space
+          , Str "pariatur."
+          , Space
+          , Str "Excepteur"
+          , Space
+          , Str "sint"
+          , Space
+          , Str "occaecat"
+          , Space
+          , Str "cupidatat"
+          , Space
+          , Str "non"
+          , Space
+          , Str "proident,"
+          , Space
+          , Str "sunt"
+          , Space
+          , Str "in"
+          , Space
+          , Str "culpa"
+          , Space
+          , Str "qui"
+          , Space
+          , Str "officia"
+          , Space
+          , Str "deserunt"
+          , Space
+          , Str "mollit"
+          , Space
+          , Str "anim"
+          , Space
+          , Str "id"
+          , Space
+          , Str "est"
+          , Space
+          , Str "laborum."
+          ]
+      ]
+  , Header
+      2
+      ( "lowercase"
+      , []
+      , []
+      )
+      [ Str "Lowercase" ]
+  , Div
+      ( ""
+      , [ "pfa-lowercase" ]
+      , []
+      )
       [ Para
           [ Str "lorem"
           , Space
@@ -1702,7 +1821,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -1759,9 +1879,18 @@ Pandoc
           , Str "laborum."
           ]
       ]
-  , Header 2 ( "uppercase" , [] , [] ) [ Str "Uppercase" ]
+  , Header
+      2
+      ( "uppercase"
+      , []
+      , []
+      )
+      [ Str "Uppercase" ]
   , Div
-      ( "" , [ "pfa-uppercase" ] , [] )
+      ( ""
+      , [ "pfa-uppercase" ]
+      , []
+      )
       [ Para
           [ Str "LOREM"
           , Space
@@ -1846,7 +1975,8 @@ Pandoc
           , Space
           , Str "IN"
           , Space
-          , Str "REPREHENDERIT"
+          , Str
+              "REPREHENDERIT"
           , Space
           , Str "IN"
           , Space

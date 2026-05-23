@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Nandakumar Chandrasekhar" />
+  <meta name="dcterms.date" content="2026-05-22" />
+  <title>Fonts and Alignment Filter Demonstration</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #cccccc; background-color: #303030; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ffcfaf; } /* Alert */
+    code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+    code span.at { } /* Attribute */
+    code span.bn { color: #dca3a3; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #f0dfaf; } /* ControlFlow */
+    code span.ch { color: #dca3a3; } /* Char */
+    code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+    code span.co { color: #7f9f7f; } /* Comment */
+    code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+    code span.do { color: #7f9f7f; } /* Documentation */
+    code span.dt { color: #dfdfbf; } /* DataType */
+    code span.dv { color: #dcdccc; } /* DecVal */
+    code span.er { color: #c3bf9f; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #c0bed1; } /* Float */
+    code span.fu { color: #efef8f; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+    code span.kw { color: #f0dfaf; } /* Keyword */
+    code span.op { color: #f0efd0; } /* Operator */
+    code span.ot { color: #efef8f; } /* Other */
+    code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+    code span.sc { color: #dca3a3; } /* SpecialChar */
+    code span.ss { color: #cc9393; } /* SpecialString */
+    code span.st { color: #cc9393; } /* String */
+    code span.va { } /* Variable */
+    code span.vs { color: #cc9393; } /* VerbatimString */
+    code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../_extensions/fonts-and-alignment/fonts-and-alignment-rem.css" />
+  <link rel="stylesheet" href="../test/preview-suite.css" />
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Fonts and
+Alignment Filter
+Demonstration</h1>
+<p class="author">Nandakumar
+Chandrasekhar</p>
+<p class="date">2026-05-22</p>
+</header>
+<p>This document demonstrates
+every feature provided by the
+<code>fonts-and-alignment</code>
+Lua filter. The syntax shown
+in the code blocks directly
+produces the output below
+them, and the same Markdown
+source produces faithful
+output in both LaTeX/PDF and
+HTML.</p>
+<h2
+id="font-sizing-scale-inline">1.
+Font Sizing Scale
+(Inline)</h2>
+<p>Nine sizing hooks scale
+relative to the document’s
+base font size.</p>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 55%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Size</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">tiny</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-3xs}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-3xs">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">scriptsize</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-2xs}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-2xs">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">footnotesize</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-xs}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-xs">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">small</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-sm}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-sm">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">normal</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-normal}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-normal">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">large</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-lg}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-lg">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Large</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-xl}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-xl">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">LARGE</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-2xl}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-2xl">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">huge</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-3xl}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-3xl">Sample</span></td>
+</tr>
+</tbody>
+</table>
+<h2
+id="font-sizing-scale-block">2.
+Font Sizing Scale (Block)</h2>
+<p>The same sizing classes
+apply to fenced div blocks.
+This is useful for sidebars,
+captions, or callouts.</p>
+<div class="sourceCode"
+id="cb1"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>::: pfa-text-sm</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>This entire paragraph renders at the <span class="in">`small`</span> size. Block-level sizing ensures the content consistently shrinks or grows as a unified component.</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-text-sm">
+<p>This entire paragraph
+renders at the
+<code>small</code> size.
+Block-level sizing ensures the
+content consistently shrinks
+or grows as a unified
+component.</p>
+</div>
+<div class="sourceCode"
+id="cb2"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>::: pfa-text-lg</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>This entire paragraph renders at the <span class="in">`large`</span> size — well suited for pull quotes or emphasized opening text.</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-text-lg">
+<p>This entire paragraph
+renders at the
+<code>large</code> size — well
+suited for pull quotes or
+emphasized opening text.</p>
+</div>
+<h2
+id="font-weights-shapes-and-families-inline">3.
+Font Weights, Shapes, and
+Families (Inline)</h2>
+<p>Every supported typographic
+style is available as an
+inline span constraint.</p>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 57%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Style</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">Bold</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-bold}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-bold">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Medium</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-medium}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-medium">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Italic</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-italic}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-italic">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Slanted</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-slanted}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-slanted">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Upright</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-upright}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-upright">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Emphasis</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-emphasis}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-emphasis">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Serif</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-serif}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-serif">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Sans-Serif</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-sans}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-sans">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Monospace</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-mono}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-mono">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Small
+Caps</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-smallcaps}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-smallcaps">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Normal
+Reset</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-normal}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-normal">Sample</span></td>
+</tr>
+</tbody>
+</table>
+<h2
+id="font-weights-shapes-and-families-block">4.
+Font Weights, Shapes, and
+Families (Block)</h2>
+<p>The same classes work at
+the block level, applying the
+typographic voice across all
+internal sentences without
+requiring inline markers.</p>
+<div class="sourceCode"
+id="cb3"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: pfa-font-sans</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>This paragraph is rendered using the document&#39;s sans-serif family. Block-scoped family switches are convenient for code blocks or structural sections.</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>::: pfa-font-sans</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>This paragraph is rendered using the document&#39;s sans-serif family. Block-scoped family switches are convenient for code blocks or structural sections.</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>::: pfa-font-smallcaps</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>Section headings or short callouts can be rendered entirely in small caps using the block form.</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div
+class="pfa-font-smallcaps">
+<p>Section headings or short
+callouts can be rendered
+entirely in small caps using
+the block form.</p>
+</div>
+<h2
+id="text-casing-transformations">5.
+Text Casing
+Transformations</h2>
+<p>Casing classes rewrite the
+underlying Abstract Syntax
+Tree (AST) text nodes rather
+than applying CSS formatting,
+meaning the transformation
+survives raw copy-paste
+operations.</p>
+<h3 id="inline-casing">Inline
+Casing</h3>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 57%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Casing</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">Uppercase</td>
+<td
+style="text-align: left;"><code>[coerced]{.pfa-uppercase}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-uppercase">COERCED</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Lowercase</td>
+<td
+style="text-align: left;"><code>[COERCED]{.pfa-lowercase}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-lowercase">coerced</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="block-casing">Block
+Casing</h3>
+<div class="sourceCode"
+id="cb4"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>::: pfa-uppercase</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>this block is uniformly uppercased, even across paragraph boundaries.</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-uppercase">
+<p>THIS BLOCK IS UNIFORMLY
+UPPERCASED, EVEN ACROSS
+PARAGRAPH BOUNDARIES.</p>
+</div>
+<h2
+id="inline-text-decorations">6.
+Inline Text Decorations</h2>
+<p>Underline and strikeout
+variants are routed through
+the <code>ulem</code> LaTeX
+package and mapped to matching
+standard CSS.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 56%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Decoration</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">Single
+Underline</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-uline}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-uline"><u>Sample</u></span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Double
+Underline</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-uline-double}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-uline-double">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Dashed
+Underline</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-uline-dashed}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-uline-dashed">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Dotted
+Underline</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-uline-dotted}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-uline-dotted">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Wavy
+Underline</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-uline-wave}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-uline-wave">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Strikeout</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-strikeout}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-strikeout"><del>Sample</del></span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Marked
+Out</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-markout}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-markout"><del>Sample</del></span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="color-resolution">7.
+Color Resolution</h2>
+<p>The <code>pfa-color</code>
+attribute natively parses
+standard CSS3 named colors,
+six-digit hex codes, and
+three-digit hex
+shorthands.</p>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 56%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Input
+Type</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">CSS
+Named</td>
+<td
+style="text-align: left;"><code>[Sample]{pfa-color="crimson"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #DC143C;">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Hex
+Shorthand</td>
+<td
+style="text-align: left;"><code>[Sample]{pfa-color="#333"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #333333;">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Hex
+Full</td>
+<td
+style="text-align: left;"><code>[Sample]{pfa-color="#2E8B57"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #2E8B57;">Sample</span></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="flexible-spelling-of-named-colors">Flexible
+Spelling of Named Colors</h3>
+<p>The engine sanitizes inputs
+automatically. It is
+case-insensitive and ignores
+spaces, hyphens, and
+underscores. All syntaxes
+below successfully map to the
+standard
+<code>mediumvioletred</code>.</p>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 65%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Variant</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">Lowercase</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-color="mediumvioletred"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Title
+Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-color="MediumVioletRed"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Spaces</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-color="Medium Violet Red"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Hyphens</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-color="medium-violet-red"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="block-level-color-constraints-with-inline-overrides">Block-Level
+Color Constraints with Inline
+Overrides</h3>
+<p>Colors applied to a block
+automatically inherit
+downward, but nested spans can
+explicitly override the parent
+value.</p>
+<div class="sourceCode"
+id="cb5"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>::: {pfa-color=&quot;darkslategray&quot;}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>The parent block carries a default color of dark slate gray. <span class="co">[</span><span class="ot">This inline span overrides the color to tomato red.</span><span class="co">]</span>{pfa-color=&quot;tomato&quot;} The surrounding text continues in the parent color until the block closes.</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div style="color: #2F4F4F;">
+<p>The parent block carries a
+default color of dark slate
+gray. <span
+style="color: #FF6347;">This
+inline span overrides the
+color to tomato red.</span>
+The surrounding text continues
+in the parent color until the
+block closes.</p>
+</div>
+<h2
+id="text-alignment-within-blocks">8.
+Text Alignment within
+Blocks</h2>
+<p>The
+<code>.pfa-text-*</code>
+utility wraps blocks in
+standard directional text
+environments.</p>
+<div class="sourceCode"
+id="cb6"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>::: pfa-text-left</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>This block is left-aligned. The remaining width on the right is left ragged.</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-text-left">
+<p>This block is left-aligned.
+The remaining width on the
+right is left ragged.</p>
+</div>
+<div class="sourceCode"
+id="cb7"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>::: pfa-text-center</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>This block is centered horizontally within the text column.</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-text-center">
+<p>This block is centered
+horizontally within the text
+column.</p>
+</div>
+<div class="sourceCode"
+id="cb8"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>::: pfa-text-right</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>This block is right-aligned, flush against the right margin.</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-text-right">
+<p>This block is
+right-aligned, flush against
+the right margin.</p>
+</div>
+<h2
+id="ragged-alignment-line-break-honoring">9.
+Ragged Alignment (Line-Break
+Honoring)</h2>
+<p>The
+<code>.pfa-align-*</code>
+utility preserves and honors
+explicit line breaks (via
+backslash escapes), making it
+ideal for poetry, formal
+addresses, and titles.</p>
+<div class="sourceCode"
+id="cb9"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>::: pfa-align-center</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>First centered line\</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Second centered line\</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>Third centered line</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-align-center">
+<p>First centered line<br />
+Second centered line<br />
+Third centered line</p>
+</div>
+<h2
+id="shrink-to-fit-block-alignment">10.
+Shrink-to-Fit Block
+Alignment</h2>
+<p>The
+<code>.pfa-block-*</code>
+utility creates an isolated
+bounding box that shrinks
+dynamically to match its
+internal content before
+positioning itself in the
+document flow.</p>
+<div class="sourceCode"
+id="cb10"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-left}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>**Left-Aligned Shrink Block**</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>Wraps tightly around its content.</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-block-left">
+<p><strong>Left-Aligned Shrink
+Block</strong> Wraps tightly
+around its content.</p>
+</div>
+<div class="sourceCode"
+id="cb11"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-center}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>**Centered Shrink Block**</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Wraps tightly around its content.</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-block-center">
+<p><strong>Centered Shrink
+Block</strong> Wraps tightly
+around its content.</p>
+</div>
+<div class="sourceCode"
+id="cb12"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-right}</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>**Right-Aligned Shrink Block**</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>Wraps tightly around its content.</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-block-right">
+<p><strong>Right-Aligned
+Shrink Block</strong> Wraps
+tightly around its
+content.</p>
+</div>
+<h2
+id="combining-multiple-classes">11.
+Combining Multiple
+Classes</h2>
+<p>Classes compose seamlessly.
+Sizing, family, weight, color,
+and decoration definitions can
+stack safely on any single
+element.</p>
+<h3
+id="inline-composition">Inline
+Composition</h3>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 60%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Style</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">Bold
+Sans Display</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-lg pfa-color="red"}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-bold pfa-font-sans pfa-text-lg"
+style="color: #FF0000;">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Italic
+Mono Caption</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-sm}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-font-italic pfa-font-mono pfa-text-sm">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Smallcaps
+Underline</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-text-uline .pfa-font-smallcaps pfa-color="forestgreen"}</code></td>
+<td
+style="text-align: left;"><span
+class="pfa-text-uline pfa-font-smallcaps"
+style="color: #228B22;"><u>Sample</u></span></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="block-composition">Block
+Composition</h3>
+<div class="sourceCode"
+id="cb13"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-lg pfa-color=&quot;midnightblue&quot;}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue block — assembled from five utilities.</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div
+class="pfa-text-center pfa-font-sans pfa-font-bold pfa-text-lg"
+style="color: #191970;">
+<p>A centered, bold,
+sans-serif, large,
+midnight-blue block —
+assembled from five
+utilities.</p>
+</div>
+<h2
+id="legacy-short-hand-aliases-deprecated">12.
+Legacy Short-Hand Aliases
+(Deprecated)</h2>
+<p><strong>Deprecated —
+retained strictly for backward
+compatibility.</strong> New
+documents should use the
+explicit <code>pfa-*</code>
+namespaces above to prevent
+global framework
+collisions.</p>
+<h3
+id="font-weight-shape-and-family-aliases">12.1
+Font Weight, Shape, and Family
+Aliases</h3>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 17%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Legacy
+Alias</th>
+<th
+style="text-align: left;">Short</th>
+<th
+style="text-align: left;">Modern
+Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>bold</code></td>
+<td
+style="text-align: left;"><code>bf</code></td>
+<td
+style="text-align: left;"><code>pfa-font-bold</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>emphasis</code></td>
+<td
+style="text-align: left;"><code>em</code></td>
+<td
+style="text-align: left;"><code>pfa-font-emphasis</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>italic</code></td>
+<td
+style="text-align: left;"><code>it</code></td>
+<td
+style="text-align: left;"><code>pfa-font-italic</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>medium</code></td>
+<td
+style="text-align: left;"><code>md</code></td>
+<td
+style="text-align: left;"><code>pfa-font-medium</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>monospace</code></td>
+<td
+style="text-align: left;"><code>tt</code></td>
+<td
+style="text-align: left;"><code>pfa-font-mono</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>normalfont</code></td>
+<td
+style="text-align: left;"><code>nf</code></td>
+<td
+style="text-align: left;"><code>pfa-font-normal</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>sans</code></td>
+<td
+style="text-align: left;"><code>sf</code></td>
+<td
+style="text-align: left;"><code>pfa-font-sans</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>serif</code></td>
+<td
+style="text-align: left;"><code>rm</code></td>
+<td
+style="text-align: left;"><code>pfa-font-serif</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>slanted</code></td>
+<td
+style="text-align: left;"><code>sl</code></td>
+<td
+style="text-align: left;"><code>pfa-font-slanted</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>smallcaps</code></td>
+<td
+style="text-align: left;"><code>sc</code></td>
+<td
+style="text-align: left;"><code>pfa-font-smallcaps</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>upright</code></td>
+<td
+style="text-align: left;"><code>up</code></td>
+<td
+style="text-align: left;"><code>pfa-font-upright</code></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="font-size-aliases">12.2
+Font Size Aliases</h3>
+<table>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Legacy
+Alias</th>
+<th
+style="text-align: left;">Modern
+Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>xsmall</code></td>
+<td
+style="text-align: left;"><code>pfa-text-xs</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>small</code></td>
+<td
+style="text-align: left;"><code>pfa-text-sm</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>normal</code></td>
+<td
+style="text-align: left;"><code>pfa-text-normal</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>large</code></td>
+<td
+style="text-align: left;"><code>pfa-text-lg</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>xlarge</code></td>
+<td
+style="text-align: left;"><code>pfa-text-xl</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>xxlarge</code></td>
+<td
+style="text-align: left;"><code>pfa-text-2xl</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>huge</code></td>
+<td
+style="text-align: left;"><code>pfa-text-3xl</code></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="alignment-aliases">12.3
+Alignment Aliases</h3>
+<table>
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Legacy
+Alias</th>
+<th
+style="text-align: left;">Modern
+Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>center</code></td>
+<td
+style="text-align: left;"><code>pfa-text-center</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>flushleft</code></td>
+<td
+style="text-align: left;"><code>pfa-text-left</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>flushright</code></td>
+<td
+style="text-align: left;"><code>pfa-text-right</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>centering</code></td>
+<td
+style="text-align: left;"><code>pfa-align-center</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>raggedleft</code></td>
+<td
+style="text-align: left;"><code>pfa-align-right</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>raggedright</code></td>
+<td
+style="text-align: left;"><code>pfa-align-left</code></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="underline-and-strikeout-aliases">12.4
+Underline and Strikeout
+Aliases</h3>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 15%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Legacy
+Alias</th>
+<th
+style="text-align: left;">Short</th>
+<th
+style="text-align: left;">Modern
+Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>uline</code></td>
+<td
+style="text-align: left;"><code>u</code></td>
+<td
+style="text-align: left;"><code>pfa-text-uline</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>uuline</code></td>
+<td
+style="text-align: left;"><code>uu</code></td>
+<td
+style="text-align: left;"><code>pfa-text-uline-double</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>dashuline</code></td>
+<td
+style="text-align: left;"><code>dau</code></td>
+<td
+style="text-align: left;"><code>pfa-text-uline-dashed</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>dotuline</code></td>
+<td
+style="text-align: left;"><code>dou</code></td>
+<td
+style="text-align: left;"><code>pfa-text-uline-dotted</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>uwave</code></td>
+<td
+style="text-align: left;"><code>uw</code></td>
+<td
+style="text-align: left;"><code>pfa-text-uline-wave</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>sout</code></td>
+<td
+style="text-align: left;"><code>so</code></td>
+<td
+style="text-align: left;"><code>pfa-text-strikeout</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>xout</code></td>
+<td
+style="text-align: left;"><code>xo</code></td>
+<td
+style="text-align: left;"><code>pfa-text-markout</code></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

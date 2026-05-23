@@ -4,17 +4,38 @@ Pandoc
         fromList
           [ ( "author"
             , MetaInlines
-                [ Str "Nandakumar" , Space , Str "Chandrasekhar" ]
+                [ Str
+                    "Nandakumar"
+                , Space
+                , Str
+                    "Chandrasekhar"
+                ]
             )
           , ( "date"
             , MetaInlines
-                [ Str "15" , Space , Str "May" , Space , Str "2026" ]
+                [ Str "15"
+                , Space
+                , Str "May"
+                , Space
+                , Str "2026"
+                ]
             )
           , ( "geometry"
-            , MetaList [ MetaInlines [ Str "margin=25mm" ] ]
+            , MetaList
+                [ MetaInlines
+                    [ Str
+                        "margin=25mm"
+                    ]
+                ]
             )
-          , ( "linestretch" , MetaInlines [ Str "1.25" ] )
-          , ( "papersize" , MetaInlines [ Str "A4" ] )
+          , ( "linestretch"
+            , MetaInlines
+                [ Str "1.25" ]
+            )
+          , ( "papersize"
+            , MetaInlines
+                [ Str "A4" ]
+            )
           , ( "title"
             , MetaInlines
                 [ Str "Sizing"
@@ -30,7 +51,10 @@ Pandoc
     }
   [ Header
       2
-      ( "extra-extra-extra-small-3xs" , [] , [] )
+      ( "extra-extra-extra-small-3xs"
+      , []
+      , []
+      )
       [ Str "Extra"
       , Space
       , Str "Extra"
@@ -42,7 +66,10 @@ Pandoc
       , Str "(3xs)"
       ]
   , Div
-      ( "" , [ "pfa-text-3xs" ] , [] )
+      ( ""
+      , [ "pfa-text-3xs" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -127,7 +154,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -186,7 +214,10 @@ Pandoc
       ]
   , Header
       2
-      ( "extra-extra-small-2xs" , [] , [] )
+      ( "extra-extra-small-2xs"
+      , []
+      , []
+      )
       [ Str "Extra"
       , Space
       , Str "Extra"
@@ -196,7 +227,10 @@ Pandoc
       , Str "(2xs)"
       ]
   , Div
-      ( "" , [ "pfa-text-2xs" ] , [] )
+      ( ""
+      , [ "pfa-text-2xs" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -281,7 +315,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -340,10 +375,21 @@ Pandoc
       ]
   , Header
       2
-      ( "extra-small-xs" , [] , [] )
-      [ Str "Extra" , Space , Str "Small" , Space , Str "(xs)" ]
+      ( "extra-small-xs"
+      , []
+      , []
+      )
+      [ Str "Extra"
+      , Space
+      , Str "Small"
+      , Space
+      , Str "(xs)"
+      ]
   , Div
-      ( "" , [ "pfa-text-xs" ] , [] )
+      ( ""
+      , [ "pfa-text-xs" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -428,7 +474,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -488,9 +535,15 @@ Pandoc
   , Header
       2
       ( "small-sm" , [] , [] )
-      [ Str "Small" , Space , Str "(sm)" ]
+      [ Str "Small"
+      , Space
+      , Str "(sm)"
+      ]
   , Div
-      ( "" , [ "pfa-text-sm" ] , [] )
+      ( ""
+      , [ "pfa-text-sm" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -575,7 +628,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -634,10 +688,19 @@ Pandoc
       ]
   , Header
       2
-      ( "normal-normmal" , [] , [] )
-      [ Str "Normal" , Space , Str "(normmal)" ]
+      ( "normal-normmal"
+      , []
+      , []
+      )
+      [ Str "Normal"
+      , Space
+      , Str "(normmal)"
+      ]
   , Div
-      ( "" , [ "pfa-text-normal" ] , [] )
+      ( ""
+      , [ "pfa-text-normal" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -722,7 +785,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -782,9 +846,15 @@ Pandoc
   , Header
       2
       ( "large-lg" , [] , [] )
-      [ Str "Large" , Space , Str "(lg)" ]
+      [ Str "Large"
+      , Space
+      , Str "(lg)"
+      ]
   , Div
-      ( "" , [ "pfa-text-lg" ] , [] )
+      ( ""
+      , [ "pfa-text-lg" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -869,7 +939,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -928,10 +999,21 @@ Pandoc
       ]
   , Header
       2
-      ( "extra-large-xl" , [] , [] )
-      [ Str "Extra" , Space , Str "Large" , Space , Str "(xl)" ]
+      ( "extra-large-xl"
+      , []
+      , []
+      )
+      [ Str "Extra"
+      , Space
+      , Str "Large"
+      , Space
+      , Str "(xl)"
+      ]
   , Div
-      ( "" , [ "pfa-text-xl" ] , [] )
+      ( ""
+      , [ "pfa-text-xl" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -1016,7 +1098,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -1075,7 +1158,10 @@ Pandoc
       ]
   , Header
       2
-      ( "extra-extra-large-2xl" , [] , [] )
+      ( "extra-extra-large-2xl"
+      , []
+      , []
+      )
       [ Str "Extra"
       , Space
       , Str "Extra"
@@ -1085,7 +1171,10 @@ Pandoc
       , Str "(2xl)"
       ]
   , Div
-      ( "" , [ "pfa-text-2xl" ] , [] )
+      ( ""
+      , [ "pfa-text-2xl" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -1170,7 +1259,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -1229,7 +1319,10 @@ Pandoc
       ]
   , Header
       2
-      ( "extra-extra-extra-large-3xl" , [] , [] )
+      ( "extra-extra-extra-large-3xl"
+      , []
+      , []
+      )
       [ Str "Extra"
       , Space
       , Str "Extra"
@@ -1241,7 +1334,10 @@ Pandoc
       , Str "(3xl)"
       ]
   , Div
-      ( "" , [ "pfa-text-3xl" ] , [] )
+      ( ""
+      , [ "pfa-text-3xl" ]
+      , []
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -1326,7 +1422,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space

@@ -55,51 +55,38 @@
 /* Typography Sizing Utilities */
 .pfa-text-3xs {
   font-size: calc(1em / 12 * 6) !important;
-  display: inline-block;
 }
 
 .pfa-text-2xs {
   font-size: calc(1em / 12 * 8) !important;
-  display: inline-block;
 }
 
 .xsmall, .pfa-text-xs {
   font-size: calc(1em / 12 * 10) !important;
-  display: inline-block;
 }
 
 .small, .pfa-text-sm {
   font-size: calc(1em / 12 * 10.95) !important;
-  display: inline-block;
 }
 
 .normal, .pfa-text-normal {
   font-size: calc(1em / 12 * 12) !important;
-  display: inline-block;
 }
 
 .large, .pfa-text-lg {
   font-size: calc(1em / 12 * 14.4) !important;
-  display: inline-block;
-  line-height: 1.2;
 }
 
 .xlarge, .pfa-text-xl {
   font-size: calc(1em / 12 * 17.28) !important;
-  display: inline-block;
-  line-height: 1.15;
 }
 
 .xxlarge, .pfa-text-2xl {
   font-size: calc(1em / 12 * 20.74) !important;
-  display: inline-block;
-  line-height: 1.1;
 }
 
 .huge, .pfa-text-3xl {
   font-size: calc(1em / 12 * 24.88) !important;
-  display: inline-block;
-  line-height: 1.05;
 }
 
 /* Alignments */

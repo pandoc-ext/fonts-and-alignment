@@ -4,20 +4,42 @@ Pandoc
         fromList
           [ ( "author"
             , MetaInlines
-                [ Str "Nandakumar" , Space , Str "Chandrasekhar" ]
+                [ Str
+                    "Nandakumar"
+                , Space
+                , Str
+                    "Chandrasekhar"
+                ]
             )
           , ( "date"
             , MetaInlines
-                [ Str "15" , Space , Str "May" , Space , Str "2026" ]
+                [ Str "15"
+                , Space
+                , Str "May"
+                , Space
+                , Str "2026"
+                ]
             )
           , ( "geometry"
-            , MetaList [ MetaInlines [ Str "margin=25mm" ] ]
+            , MetaList
+                [ MetaInlines
+                    [ Str
+                        "margin=25mm"
+                    ]
+                ]
             )
-          , ( "linestretch" , MetaInlines [ Str "1.25" ] )
-          , ( "papersize" , MetaInlines [ Str "A4" ] )
+          , ( "linestretch"
+            , MetaInlines
+                [ Str "1.25" ]
+            )
+          , ( "papersize"
+            , MetaInlines
+                [ Str "A4" ]
+            )
           , ( "title"
             , MetaInlines
-                [ Str "Coloring"
+                [ Str
+                    "Coloring"
                 , Space
                 , Str "Blocks"
                 , Space
@@ -30,7 +52,10 @@ Pandoc
     }
   [ Header
       2
-      ( "named-color-csssvg" , [] , [] )
+      ( "named-color-csssvg"
+      , []
+      , []
+      )
       [ Str "Named"
       , Space
       , Str "Color"
@@ -38,7 +63,13 @@ Pandoc
       , Str "(CSS/SVG)"
       ]
   , Div
-      ( "" , [] , [ ( "style" , "color: #C71585;" ) ] )
+      ( ""
+      , []
+      , [ ( "style"
+          , "color: #C71585;"
+          )
+        ]
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -123,7 +154,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -182,7 +214,10 @@ Pandoc
       ]
   , Header
       2
-      ( "named-color-spaces" , [] , [] )
+      ( "named-color-spaces"
+      , []
+      , []
+      )
       [ Str "Named"
       , Space
       , Str "Color"
@@ -190,7 +225,13 @@ Pandoc
       , Str "(Spaces)"
       ]
   , Div
-      ( "" , [] , [ ( "style" , "color: #C71585;" ) ] )
+      ( ""
+      , []
+      , [ ( "style"
+          , "color: #C71585;"
+          )
+        ]
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -275,7 +316,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -334,7 +376,10 @@ Pandoc
       ]
   , Header
       2
-      ( "named-color-underscores" , [] , [] )
+      ( "named-color-underscores"
+      , []
+      , []
+      )
       [ Str "Named"
       , Space
       , Str "Color"
@@ -342,7 +387,13 @@ Pandoc
       , Str "(Underscores)"
       ]
   , Div
-      ( "" , [] , [ ( "style" , "color: #C71585;" ) ] )
+      ( ""
+      , []
+      , [ ( "style"
+          , "color: #C71585;"
+          )
+        ]
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -427,7 +478,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -486,7 +538,10 @@ Pandoc
       ]
   , Header
       2
-      ( "hex-color-shorthand" , [] , [] )
+      ( "hex-color-shorthand"
+      , []
+      , []
+      )
       [ Str "Hex"
       , Space
       , Str "Color"
@@ -494,7 +549,13 @@ Pandoc
       , Str "(Shorthand)"
       ]
   , Div
-      ( "" , [] , [ ( "style" , "color: #FF0000;" ) ] )
+      ( ""
+      , []
+      , [ ( "style"
+          , "color: #FF0000;"
+          )
+        ]
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -579,7 +640,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -638,7 +700,10 @@ Pandoc
       ]
   , Header
       2
-      ( "hex-color-typst-eastern-hash" , [] , [] )
+      ( "hex-color-typst-eastern-hash"
+      , []
+      , []
+      )
       [ Str "Hex"
       , Space
       , Str "Color"
@@ -650,7 +715,13 @@ Pandoc
       , Str "Hash)"
       ]
   , Div
-      ( "" , [] , [ ( "style" , "color: #239DAD;" ) ] )
+      ( ""
+      , []
+      , [ ( "style"
+          , "color: #239DAD;"
+          )
+        ]
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -735,7 +806,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space
@@ -794,7 +866,10 @@ Pandoc
       ]
   , Header
       2
-      ( "hex-color-midnightblue-no-hash" , [] , [] )
+      ( "hex-color-midnightblue-no-hash"
+      , []
+      , []
+      )
       [ Str "Hex"
       , Space
       , Str "Color"
@@ -806,7 +881,13 @@ Pandoc
       , Str "Hash)"
       ]
   , Div
-      ( "" , [] , [ ( "style" , "color: #191970;" ) ] )
+      ( ""
+      , []
+      , [ ( "style"
+          , "color: #191970;"
+          )
+        ]
+      )
       [ Para
           [ Str "Lorem"
           , Space
@@ -891,7 +972,8 @@ Pandoc
           , Space
           , Str "in"
           , Space
-          , Str "reprehenderit"
+          , Str
+              "reprehenderit"
           , Space
           , Str "in"
           , Space

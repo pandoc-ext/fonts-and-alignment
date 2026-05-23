@@ -1,8 +1,6 @@
 Fonts and Alignment Filter
 ==============================================================================
 
-[![GitHub build status][CI badge]][CI workflow]
-
 _Fonts and Alignment_ is a Lua filter for styling fonts and aligning text in Pandoc-generated LaTeX documents.
 
 The filter defines a number of classes, that when specified, correspond to LaTeX commands, which in turn provide the requisite styling.

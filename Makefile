@@ -34,6 +34,9 @@ ifeq "$(VERSION)" ""
 VERSION = 0.0.0
 endif
 
+# Default behavior when running `make` with no target
+.DEFAULT_GOAL := help
+
 # ==============================================================================
 # Dynamic Test Detection
 # ==============================================================================
@@ -44,18 +47,36 @@ TEST_NAMES := $(patsubst test/test-%.yaml,%,$(TEST_YAMLS))
 # 3. Grab all markdown files in the test directory to use as dependencies
 TEST_INPUTS := $(wildcard test/*.md)
 
-.PHONY: all
-all: clean filter-symlink css docs previews test
+
+# ==============================================================================
+# Help Menu (Self-Documenting Target)
+# ==============================================================================
+.PHONY: help
+help: ## Show this help menu
+	@echo "Pandoc Fonts & Alignment Extension Build System"
+	@echo "==============================================="
+	@echo "Usage: make [target]"
+	@echo ""
+	@echo "Targets:"
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 
 # ==============================================================================
-# Environment Setup (Ensures Root-level Filter Symlink Exists for Pandoc)
+# Master Pipeline
+# ==============================================================================
+.PHONY: all
+all: clean filter-proxy css docs previews test ## Run the complete clean, build, test, and docs pipeline
+
+
+# ==============================================================================
+# Environment Setup (Cross-Platform Root-level Filter Proxy)
 # ==============================================================================
 $(FILTER_FILE): $(FILTER_DIST)
-	ln -sf $(FILTER_DIST) $@
+	@echo "--- Auto-generated proxy for cross-platform compatibility" > $@
+	@echo "return dofile('$(FILTER_DIST)')" >> $@
 
-.PHONY: filter-symlink
-filter-symlink: $(FILTER_FILE)
+.PHONY: filter-proxy
+filter-proxy: $(FILTER_FILE) ## Generate the cross-platform root-level filter proxy
 
 
 # ==============================================================================
@@ -70,21 +91,21 @@ $(CSS_REM): $(SASS_REM_SRC) $(SASS_CORE)
 	sass --no-source-map $< $@
 
 .PHONY: css
-css: $(DIST_CSS_FILES)
+css: $(DIST_CSS_FILES) ## Compile SASS sources into distribution CSS files
 
 
 # ==============================================================================
 # Testing Rules (AST Generation & Diffing)
 # ==============================================================================
 .PHONY: test
-test: $(FILTER_FILE) $(addprefix test-,$(TEST_NAMES))
+test: $(FILTER_FILE) $(addprefix test-,$(TEST_NAMES)) ## Run AST tests and diff against expected outputs
 
 test-%: $(FILTER_FILE) test/test.yaml test/test-%.yaml $(TEST_INPUTS)
 	$(PANDOC) --defaults test/test.yaml --defaults test/test-$*.yaml | \
 		$(DIFF) test/expected-$*.native -
 
 .PHONY: update-expected
-update-expected: $(FILTER_FILE) $(addprefix update-,$(TEST_NAMES))
+update-expected: $(FILTER_FILE) $(addprefix update-,$(TEST_NAMES)) ## Overwrite expected AST test outputs
 
 update-%: $(FILTER_FILE) test/test.yaml test/test-%.yaml $(TEST_INPUTS)
 	$(PANDOC) \
@@ -94,41 +115,43 @@ update-%: $(FILTER_FILE) test/test.yaml test/test-%.yaml $(TEST_INPUTS)
 
 
 # ==============================================================================
-# Visual Previews Generation (Tests layout and typography configurations)
+# Visual Previews Generation (Decoupled from phony job name)
 # ==============================================================================
-PREVIEW_OUT := previews
+PREVIEWS_DIR := artifacts
 
-PREVIEW_HTMLS := $(addprefix $(PREVIEW_OUT)/, $(addsuffix .html, $(TEST_NAMES)))
-PREVIEW_PDFS  := $(addprefix $(PREVIEW_OUT)/, $(addsuffix .pdf, $(TEST_NAMES)))
+PREVIEW_HTMLS := $(addprefix $(PREVIEWS_DIR)/, $(addsuffix .html, $(TEST_NAMES)))
+PREVIEW_PDFS  := $(addprefix $(PREVIEWS_DIR)/, $(addsuffix .pdf, $(TEST_NAMES)))
 
 .PHONY: previews
-previews: $(FILTER_FILE) $(DIST_CSS_FILES) $(PREVIEW_HTMLS) $(PREVIEW_PDFS)
+previews: $(FILTER_FILE) $(DIST_CSS_FILES) $(PREVIEW_HTMLS) $(PREVIEW_PDFS) ## Build visual HTML/PDF layout previews
 
-$(PREVIEW_OUT)/%.html: test/test.yaml test/test-%.yaml $(TEST_INPUTS) $(FILTER_FILE) $(DIST_CSS_FILES) | $(PREVIEW_OUT)
+$(PREVIEWS_DIR)/%.html: test/test.yaml test/test-%.yaml $(TEST_INPUTS) $(FILTER_FILE) $(DIST_CSS_FILES) | $(PREVIEWS_DIR)
 	$(PANDOC) \
 		--defaults=test/test.yaml \
 		--defaults=test/test-$*.yaml \
 		--to=html \
+		--syntax-highlighting=zenburn \
 		--css=../$(CSS_REM) \
 		--css=../test/preview-suite.css \
 		--output=$@
 
-$(PREVIEW_OUT)/%.pdf: test/test.yaml test/test-%.yaml $(TEST_INPUTS) $(FILTER_FILE) | $(PREVIEW_OUT)
+$(PREVIEWS_DIR)/%.pdf: test/test.yaml test/test-%.yaml $(TEST_INPUTS) $(FILTER_FILE) | $(PREVIEWS_DIR)
 	$(PANDOC) \
 		--defaults=test/test.yaml \
 		--defaults=test/test-$*.yaml \
 		--to=pdf \
+		--syntax-highlighting=zenburn \
 		--output=$@
 
-$(PREVIEW_OUT):
-	mkdir -p $(PREVIEW_OUT)
+$(PREVIEWS_DIR):
+	mkdir -p $(PREVIEWS_DIR)
 
 
 # ==============================================================================
 # Documentation
 # ==============================================================================
 .PHONY: docs
-docs: docs/index.html docs/fonts-and-alignment.lua
+docs: docs/index.html docs/fonts-and-alignment.lua ## Build the standalone documentation site
 
 docs/index.html: README.md test/input.md $(FILTER_FILE) .tools/docs.lua \
         docs/output.md docs/style.css
@@ -156,17 +179,17 @@ docs/output.md: $(FILTER_FILE) test/input.md
 		--standalone \
 		test/input.md
 
-docs/fonts-and-alignment.lua: $(FILTER_DIST)
+docs/fonts-and-alignment.lua: $(FILTER_FILE)
 	@mkdir -p docs
-	ln -sf ../$(FILTER_DIST) $@
+	cp $(FILTER_FILE) $@
 
 
 # ==============================================================================
 # Housekeeping
 # ==============================================================================
 .PHONY: clean
-clean:
+clean: ## Remove all built artifacts, CSS distributions, and temporary files
 	rm -f docs/output.md docs/index.html docs/style.css docs/fonts-and-alignment.lua
-	rm -rf $(PREVIEW_OUT)
+	rm -rf $(PREVIEWS_DIR)
 	rm -f $(DIST_CSS_FILES)
 	rm -f $(FILTER_FILE)
