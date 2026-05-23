@@ -16,4 +16,4 @@ variables:
   sansfont: Noto Sans
   monofont: Fira Mono
   monofontoptions:
-    - Scale=0.8
+    - Scale=0.9
