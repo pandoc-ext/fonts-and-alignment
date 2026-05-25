@@ -3,38 +3,12 @@ Pandoc
     { unMeta =
         fromList
           [ ( "author"
-            , MetaInlines
-                [ Str
-                    "Nandakumar"
-                , Space
-                , Str
-                    "Chandrasekhar"
-                ]
+            , MetaString
+                "Nandakumar Chandrasekhar"
             )
           , ( "date"
-            , MetaInlines
-                [ Str "15"
-                , Space
-                , Str "May"
-                , Space
-                , Str "2026"
-                ]
-            )
-          , ( "geometry"
-            , MetaList
-                [ MetaInlines
-                    [ Str
-                        "margin=25mm"
-                    ]
-                ]
-            )
-          , ( "linestretch"
-            , MetaInlines
-                [ Str "1.25" ]
-            )
-          , ( "papersize"
-            , MetaInlines
-                [ Str "A4" ]
+            , MetaString
+                "2026-05-25"
             )
           , ( "title"
             , MetaInlines
@@ -59,6 +33,12 @@ Pandoc
       , Space
       , Str "Underline"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-uline}"
   , Para
       [ Span
           ( ""
@@ -67,23 +47,15 @@ Pandoc
           , []
           )
           [ Underline
-              [ Str "The"
+              [ Str "Grumpy"
               , Space
-              , Str "quick"
+              , Str "wizards"
               , Space
-              , Str "brown"
+              , Str "make"
               , Space
-              , Str "fox"
+              , Str "toxic"
               , Space
-              , Str "jumps"
-              , Space
-              , Str "over"
-              , Space
-              , Str "the"
-              , Space
-              , Str "lazy"
-              , Space
-              , Str "dog."
+              , Str "brew."
               ]
           ]
       ]
@@ -97,6 +69,12 @@ Pandoc
       , Space
       , Str "Underline"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-uline-double}"
   , Para
       [ Span
           ( ""
@@ -104,59 +82,15 @@ Pandoc
             ]
           , []
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
-          ]
-      ]
-  , Header
-      2
-      ( "wavy-underline"
-      , []
-      , []
-      )
-      [ Str "Wavy"
-      , Space
-      , Str "Underline"
-      ]
-  , Para
-      [ Span
-          ( ""
-          , [ "pfa-text-uline-wave"
-            ]
-          , []
-          )
-          [ Str "The"
-          , Space
-          , Str "quick"
-          , Space
-          , Str "brown"
-          , Space
-          , Str "fox"
-          , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   , Header
@@ -169,6 +103,12 @@ Pandoc
       , Space
       , Str "Underline"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-uline-dashed}"
   , Para
       [ Span
           ( ""
@@ -176,23 +116,15 @@ Pandoc
             ]
           , []
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   , Header
@@ -205,6 +137,12 @@ Pandoc
       , Space
       , Str "Underline"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-uline-dotted}"
   , Para
       [ Span
           ( ""
@@ -212,23 +150,49 @@ Pandoc
             ]
           , []
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "wavy-underline"
+      , []
+      , []
+      )
+      [ Str "Wavy"
+      , Space
+      , Str "Underline"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-uline-wave}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-text-uline-wave"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
           , Space
-          , Str "over"
+          , Str "wizards"
           , Space
-          , Str "the"
+          , Str "make"
           , Space
-          , Str "lazy"
+          , Str "toxic"
           , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   , Header
@@ -238,6 +202,12 @@ Pandoc
       , []
       )
       [ Str "Strikeout" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-strikeout}"
   , Para
       [ Span
           ( ""
@@ -246,23 +216,15 @@ Pandoc
           , []
           )
           [ Strikeout
-              [ Str "The"
+              [ Str "Grumpy"
               , Space
-              , Str "quick"
+              , Str "wizards"
               , Space
-              , Str "brown"
+              , Str "make"
               , Space
-              , Str "fox"
+              , Str "toxic"
               , Space
-              , Str "jumps"
-              , Space
-              , Str "over"
-              , Space
-              , Str "the"
-              , Space
-              , Str "lazy"
-              , Space
-              , Str "dog."
+              , Str "brew."
               ]
           ]
       ]
@@ -276,6 +238,12 @@ Pandoc
       , Space
       , Str "Out"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-markout}"
   , Para
       [ Span
           ( ""
@@ -284,23 +252,15 @@ Pandoc
           , []
           )
           [ Strikeout
-              [ Str "The"
+              [ Str "Grumpy"
               , Space
-              , Str "quick"
+              , Str "wizards"
               , Space
-              , Str "brown"
+              , Str "make"
               , Space
-              , Str "fox"
+              , Str "toxic"
               , Space
-              , Str "jumps"
-              , Space
-              , Str "over"
-              , Space
-              , Str "the"
-              , Space
-              , Str "lazy"
-              , Space
-              , Str "dog."
+              , Str "brew."
               ]
           ]
       ]

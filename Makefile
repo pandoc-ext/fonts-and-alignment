@@ -122,25 +122,33 @@ PREVIEWS_DIR := artifacts
 PREVIEW_HTMLS := $(addprefix $(PREVIEWS_DIR)/, $(addsuffix .html, $(TEST_NAMES)))
 PREVIEW_PDFS  := $(addprefix $(PREVIEWS_DIR)/, $(addsuffix .pdf, $(TEST_NAMES)))
 
+SYNTAX_HIGHLIGHTING := tango
+
 .PHONY: previews
 previews: $(FILTER_FILE) $(DIST_CSS_FILES) $(PREVIEW_HTMLS) $(PREVIEW_PDFS) ## Build visual HTML/PDF layout previews
 
-$(PREVIEWS_DIR)/%.html: test/test.yaml test/test-%.yaml $(TEST_INPUTS) $(FILTER_FILE) $(DIST_CSS_FILES) | $(PREVIEWS_DIR)
+$(PREVIEWS_DIR)/%.html: test/test.yaml test/test-%.yaml test/preview-framing.lua $(TEST_INPUTS) $(FILTER_FILE) $(DIST_CSS_FILES) | $(PREVIEWS_DIR)
 	$(PANDOC) \
+		--lua-filter=test/preview-framing.lua \
 		--defaults=test/test.yaml \
 		--defaults=test/test-$*.yaml \
 		--to=html \
-		--syntax-highlighting=zenburn \
+		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
+		--number-sections \
+		--shift-heading-level-by=-1 \
 		--css=../$(CSS_REM) \
 		--css=../test/preview-suite.css \
 		--output=$@
 
-$(PREVIEWS_DIR)/%.pdf: test/test.yaml test/test-%.yaml $(TEST_INPUTS) $(FILTER_FILE) | $(PREVIEWS_DIR)
+$(PREVIEWS_DIR)/%.pdf: test/test.yaml test/test-%.yaml test/preview-framing.lua $(TEST_INPUTS) $(FILTER_FILE) | $(PREVIEWS_DIR)
 	$(PANDOC) \
+		--lua-filter=test/preview-framing.lua \
 		--defaults=test/test.yaml \
 		--defaults=test/test-$*.yaml \
 		--to=pdf \
-		--syntax-highlighting=zenburn \
+		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
+		--number-sections \
+		--shift-heading-level-by=-1 \
 		--output=$@
 
 $(PREVIEWS_DIR):

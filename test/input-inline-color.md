@@ -1,33 +1,51 @@
 ---
 title: Coloring Inline Text
-date: 16 May 2026
-author: Nandakumar Chandrasekhar
-papersize: A4
-geometry:
-  - margin=25mm
-linestretch: 1.25
 ---
 
 ## Named Color (CSS/SVG)
 
-[The quick brown fox jumps over the lazy dog.]{pfa-color="mediumvioletred"}
+```markdown
+[Grumpy wizards make toxic brew.]{pfa-font-color="mediumvioletred"}
+```
 
-## Named Color (Spaces)
-
-[The quick brown fox jumps over the lazy dog.]{pfa-color="medium violet red"}
-
-## Named Color (Underscores)
-
-[The quick brown fox jumps over the lazy dog.]{pfa-color="MEDIUM_VIOLET_RED"}
-
-## Hex Color (Shorthand)
-
-[The quick brown fox jumps over the lazy dog.]{pfa-color="#F00"}
+[Grumpy wizards make toxic brew.]{pfa-font-color="mediumvioletred"}
 
 ## Hex Color (Typst Eastern Hash)
 
-[The quick brown fox jumps over the lazy dog.]{pfa-color="#239dad"}
+```markdown
+[Grumpy wizards make toxic brew.]{pfa-font-color="#239dad"}
+```
+
+[Grumpy wizards make toxic brew.]{pfa-font-color="#239dad"}
+
+## Hex Color (Shorthand)
+
+```markdown
+[Grumpy wizards make toxic brew.]{pfa-font-color="#F00"}
+```
+
+[Grumpy wizards make toxic brew.]{pfa-font-color="#F00"}
+
+## Named Color (Spaces)
+
+```markdown
+[Grumpy wizards make toxic brew.]{pfa-font-color="medium violet red"}
+```
+
+[Grumpy wizards make toxic brew.]{pfa-font-color="medium violet red"}
+
+## Named Color (Underscores)
+
+```markdown
+[Grumpy wizards make toxic brew.]{pfa-font-color="MEDIUM_VIOLET_RED"}
+```
+
+[Grumpy wizards make toxic brew.]{pfa-font-color="MEDIUM_VIOLET_RED"}
 
 ## Hex Color (MidnightBlue No Hash)
 
-[The quick brown fox jumps over the lazy dog.]{pfa-color="191970"}
+```markdown
+[Grumpy wizards make toxic brew.]{pfa-font-color="191970"}
+```
+
+[Grumpy wizards make toxic brew.]{pfa-font-color="191970"}

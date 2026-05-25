@@ -203,9 +203,9 @@ local latex_font_sizes = {
   ['pfa-text-3xs']    = { 'tiny',         'tiny'         },
   ['pfa-text-2xs']    = { 'scriptsize',   'scriptsize'   },
   ['pfa-text-xs']     = { 'footnotesize', 'footnotesize' },
-  ['pfa-text-sm']     = { 'small',        'small'        },
+  ['pfa-text-s']      = { 'small',        'small'        },
   ['pfa-text-normal'] = { 'normalsize',   'normalsize'   },
-  ['pfa-text-lg']     = { 'large',        'large'        },
+  ['pfa-text-l']      = { 'large',        'large'        },
   ['pfa-text-xl']     = { 'Large',        'Large'        },
   ['pfa-text-2xl']    = { 'LARGE',        'LARGE'        },
   ['pfa-text-3xl']    = { 'huge',         'huge'         }
@@ -246,7 +246,7 @@ local function map_aliases(target_table, alias_map)
 end
 
 map_aliases(latex_font_types, { bold='pfa-font-bold', bf='pfa-font-bold', emphasis='pfa-font-emphasis', em='pfa-font-emphasis', italic='pfa-font-italic', it='pfa-font-italic', medium='pfa-font-medium', md='pfa-font-medium', monospace='pfa-font-mono', tt='pfa-font-mono', normalfont='pfa-font-normal', nf='pfa-font-normal', sans='pfa-font-sans', sf='pfa-font-sans', serif='pfa-font-serif', rm='pfa-font-serif', slanted='pfa-font-slanted', sl='pfa-font-slanted', smallcaps='pfa-font-smallcaps', sc='pfa-font-smallcaps', upright='pfa-font-upright', up='pfa-font-upright' })
-map_aliases(latex_font_sizes, { xsmall='pfa-text-xs', small='pfa-text-sm', normal='pfa-text-normal', large='pfa-text-lg', xlarge='pfa-text-xl', xxlarge='pfa-text-2xl', huge='pfa-text-3xl' })
+map_aliases(latex_font_sizes, { xsmall='pfa-text-xs', small='pfa-text-s', normal='pfa-text-normal', large='pfa-text-l', xlarge='pfa-text-xl', xxlarge='pfa-text-2xl', huge='pfa-text-3xl' })
 map_aliases(latex_text_alignments, { center='pfa-text-center', flushright='pfa-text-right', flushleft='pfa-text-left', centering='pfa-align-center', raggedleft='pfa-align-right', raggedright='pfa-align-left' })
 map_aliases(latex_ulem_styles, { uline='pfa-text-uline', u='pfa-text-uline', uuline='pfa-text-uline-double', uu='pfa-text-uline-double', dashuline='pfa-text-uline-dashed', dau='pfa-text-uline-dashed', dotuline='pfa-text-uline-dotted', dou='pfa-text-uline-dotted', uwave='pfa-text-uline-wave', uw='pfa-text-uline-wave', sout='pfa-text-strikeout', so='pfa-text-strikeout', xout='pfa-text-markout', xo='pfa-text-markout' })
 
@@ -343,14 +343,14 @@ local function apply_text_casing(elem, tag)
   return elem
 end
 
--- Intercepts the pfa-color attribute, translates it, and removes the attribute
+-- Intercepts the pfa-font-color attribute, translates it, and removes the attribute
 -- to prevent native Pandoc handling collisions.
 local function apply_color(elem, tag, raw, is_latex)
-  local color_attr = elem.attributes['pfa-color']
+  local color_attr = elem.attributes['pfa-font-color']
   if not color_attr then return elem end
 
   local resolved_val, is_hex = resolve_color(color_attr)
-  elem.attributes['pfa-color'] = nil -- Always clear the raw attribute
+  elem.attributes['pfa-font-color'] = nil -- Always clear the raw attribute
 
   if not resolved_val then return elem end -- Exit early if validation failed
 
@@ -416,8 +416,10 @@ local function handler(elem)
   local is_latex = FORMAT:match('latex') or FORMAT:match('beamer')
 
   elem = apply_text_casing(elem, tag)
-  elem = apply_color(elem, tag, raw, is_latex)
   elem = apply_standard_classes(elem, tag, raw, is_latex)
+  -- Color must run last so \textcolor{...} wraps \uline / \sout / \uwave;
+  -- otherwise the ulem decoration paints in the surrounding (default) color.
+  elem = apply_color(elem, tag, raw, is_latex)
   return elem
 end
 

@@ -3,38 +3,12 @@ Pandoc
     { unMeta =
         fromList
           [ ( "author"
-            , MetaInlines
-                [ Str
-                    "Nandakumar"
-                , Space
-                , Str
-                    "Chandrasekhar"
-                ]
+            , MetaString
+                "Nandakumar Chandrasekhar"
             )
           , ( "date"
-            , MetaInlines
-                [ Str "16"
-                , Space
-                , Str "May"
-                , Space
-                , Str "2026"
-                ]
-            )
-          , ( "geometry"
-            , MetaList
-                [ MetaInlines
-                    [ Str
-                        "margin=25mm"
-                    ]
-                ]
-            )
-          , ( "linestretch"
-            , MetaInlines
-                [ Str "1.25" ]
-            )
-          , ( "papersize"
-            , MetaInlines
-                [ Str "A4" ]
+            , MetaString
+                "2026-05-25"
             )
           , ( "title"
             , MetaInlines
@@ -60,6 +34,12 @@ Pandoc
       , Space
       , Str "(CSS/SVG)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{pfa-font-color=\"mediumvioletred\"}"
   , Para
       [ Span
           ( ""
@@ -69,143 +49,15 @@ Pandoc
               )
             ]
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
-          ]
-      ]
-  , Header
-      2
-      ( "named-color-spaces"
-      , []
-      , []
-      )
-      [ Str "Named"
-      , Space
-      , Str "Color"
-      , Space
-      , Str "(Spaces)"
-      ]
-  , Para
-      [ Span
-          ( ""
-          , []
-          , [ ( "style"
-              , "color: #C71585;"
-              )
-            ]
-          )
-          [ Str "The"
-          , Space
-          , Str "quick"
-          , Space
-          , Str "brown"
-          , Space
-          , Str "fox"
-          , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
-          ]
-      ]
-  , Header
-      2
-      ( "named-color-underscores"
-      , []
-      , []
-      )
-      [ Str "Named"
-      , Space
-      , Str "Color"
-      , Space
-      , Str "(Underscores)"
-      ]
-  , Para
-      [ Span
-          ( ""
-          , []
-          , [ ( "style"
-              , "color: #C71585;"
-              )
-            ]
-          )
-          [ Str "The"
-          , Space
-          , Str "quick"
-          , Space
-          , Str "brown"
-          , Space
-          , Str "fox"
-          , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
-          ]
-      ]
-  , Header
-      2
-      ( "hex-color-shorthand"
-      , []
-      , []
-      )
-      [ Str "Hex"
-      , Space
-      , Str "Color"
-      , Space
-      , Str "(Shorthand)"
-      ]
-  , Para
-      [ Span
-          ( ""
-          , []
-          , [ ( "style"
-              , "color: #FF0000;"
-              )
-            ]
-          )
-          [ Str "The"
-          , Space
-          , Str "quick"
-          , Space
-          , Str "brown"
-          , Space
-          , Str "fox"
-          , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   , Header
@@ -224,6 +76,12 @@ Pandoc
       , Space
       , Str "Hash)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{pfa-font-color=\"#239dad\"}"
   , Para
       [ Span
           ( ""
@@ -233,23 +91,129 @@ Pandoc
               )
             ]
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "hex-color-shorthand"
+      , []
+      , []
+      )
+      [ Str "Hex"
+      , Space
+      , Str "Color"
+      , Space
+      , Str "(Shorthand)"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{pfa-font-color=\"#F00\"}"
+  , Para
+      [ Span
+          ( ""
+          , []
+          , [ ( "style"
+              , "color: #FF0000;"
+              )
+            ]
+          )
+          [ Str "Grumpy"
           , Space
-          , Str "over"
+          , Str "wizards"
           , Space
-          , Str "the"
+          , Str "make"
           , Space
-          , Str "lazy"
+          , Str "toxic"
           , Space
-          , Str "dog."
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "named-color-spaces"
+      , []
+      , []
+      )
+      [ Str "Named"
+      , Space
+      , Str "Color"
+      , Space
+      , Str "(Spaces)"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{pfa-font-color=\"medium violet red\"}"
+  , Para
+      [ Span
+          ( ""
+          , []
+          , [ ( "style"
+              , "color: #C71585;"
+              )
+            ]
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "named-color-underscores"
+      , []
+      , []
+      )
+      [ Str "Named"
+      , Space
+      , Str "Color"
+      , Space
+      , Str "(Underscores)"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{pfa-font-color=\"MEDIUM_VIOLET_RED\"}"
+  , Para
+      [ Span
+          ( ""
+          , []
+          , [ ( "style"
+              , "color: #C71585;"
+              )
+            ]
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
           ]
       ]
   , Header
@@ -268,6 +232,12 @@ Pandoc
       , Space
       , Str "Hash)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{pfa-font-color=\"191970\"}"
   , Para
       [ Span
           ( ""
@@ -277,23 +247,15 @@ Pandoc
               )
             ]
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   ]

@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Nandakumar Chandrasekhar" />
-  <meta name="dcterms.date" content="2026-05-15" />
+  <meta name="dcterms.date" content="2026-05-25" />
   <title>Styling Fonts Inline</title>
   <style>
     /* Default styles provided by pandoc.
@@ -25,6 +25,70 @@
       vertical-align: middle;
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {  background-color: #f8f8f8; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ef2929; } /* Alert */
+    code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #204a87; } /* Attribute */
+    code span.bn { color: #0000cf; } /* BaseN */
+    code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4e9a06; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #8f5902; font-style: italic; } /* Comment */
+    code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+    code span.dt { color: #204a87; } /* DataType */
+    code span.dv { color: #0000cf; } /* DecVal */
+    code span.er { color: #a40000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #0000cf; } /* Float */
+    code span.fu { color: #204a87; font-weight: bold; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+    code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+    code span.ot { color: #8f5902; } /* Other */
+    code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+    code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+    code span.ss { color: #4e9a06; } /* SpecialString */
+    code span.st { color: #4e9a06; } /* String */
+    code span.va { color: #000000; } /* Variable */
+    code span.vs { color: #4e9a06; } /* VerbatimString */
+    code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../_extensions/fonts-and-alignment/fonts-and-alignment-rem.css" />
   <link rel="stylesheet" href="../test/preview-suite.css" />
@@ -35,79 +99,150 @@
 Fonts Inline</h1>
 <p class="author">Nandakumar
 Chandrasekhar</p>
-<p class="date">15 May
-2026</p>
+<p class="date">2026-05-25</p>
 </header>
-<h2 id="bold">Bold</h2>
+<h1 data-number="1"
+id="bold"><span
+class="header-section-number">1</span>
+Bold</h1>
+<div class="sourceCode"
+id="cb1"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Grumpy wizards make toxic brew.</span><span class="co">]</span>{.pfa-font-bold}</span></code></pre></div>
 <p><span
-class="pfa-font-bold">The
-quick brown fox jumps over the
-lazy dog.</span></p>
-<h2
-id="emphasis">Emphasis</h2>
+class="pfa-font-bold">Grumpy
+wizards make toxic
+brew.</span></p>
+<h1 data-number="2"
+id="medium"><span
+class="header-section-number">2</span>
+Medium</h1>
+<div class="sourceCode"
+id="cb2"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Grumpy wizards make toxic brew.</span><span class="co">]</span>{.pfa-font-medium}</span></code></pre></div>
 <p><span
-class="pfa-font-emphasis">The
-quick brown fox jumps over the
-lazy dog.</span></p>
-<h2 id="italic">Italic</h2>
+class="pfa-font-medium">Grumpy
+wizards make toxic
+brew.</span></p>
+<h1 data-number="3"
+id="italic"><span
+class="header-section-number">3</span>
+Italic</h1>
+<div class="sourceCode"
+id="cb3"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Grumpy wizards make toxic brew.</span><span class="co">]</span>{.pfa-font-italic}</span></code></pre></div>
 <p><span
-class="pfa-font-italic">The
-quick brown fox jumps over the
-lazy dog.</span></p>
-<h2 id="slanted">Slanted</h2>
+class="pfa-font-italic">Grumpy
+wizards make toxic
+brew.</span></p>
+<h1 data-number="4"
+id="slanted"><span
+class="header-section-number">4</span>
+Slanted</h1>
+<div class="sourceCode"
+id="cb4"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Grumpy wizards make toxic brew.</span><span class="co">]</span>{.pfa-font-slanted}</span></code></pre></div>
 <p><span
-class="pfa-font-slanted">The
-quick brown fox jumps over the
-lazy dog.</span></p>
-<h2 id="small-capitals">Small
-Capitals</h2>
+class="pfa-font-slanted">Grumpy
+wizards make toxic
+brew.</span></p>
+<h1 data-number="5"
+id="upright"><span
+class="header-section-number">5</span>
+Upright</h1>
+<div class="sourceCode"
+id="cb5"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Grumpy wizards make toxic brew.</span><span class="co">]</span>{.pfa-font-upright}</span></code></pre></div>
 <p><span
-class="pfa-font-smallcaps">The
-quick brown fox jumps over the
-lazy dog.</span></p>
-<h2
-id="monospace">Monospace</h2>
+class="pfa-font-upright">Grumpy
+wizards make toxic
+brew.</span></p>
+<h1 data-number="6"
+id="emphasis"><span
+class="header-section-number">6</span>
+Emphasis</h1>
+<div class="sourceCode"
+id="cb6"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Grumpy wizards make toxic brew.</span><span class="co">]</span>{.pfa-font-emphasis}</span></code></pre></div>
 <p><span
-class="pfa-font-mono">The
-quick brown fox jumps over the
-lazy dog.</span></p>
-<h2
-id="sans-serif">Sans-serif</h2>
+class="pfa-font-emphasis">Grumpy
+wizards make toxic
+brew.</span></p>
+<h1 data-number="7"
+id="serif"><span
+class="header-section-number">7</span>
+Serif</h1>
+<div class="sourceCode"
+id="cb7"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Grumpy wizards make toxic brew.</span><span class="co">]</span>{.pfa-font-serif}</span></code></pre></div>
 <p><span
-class="pfa-font-sans">The
-quick brown fox jumps over the
-lazy dog.</span></p>
-<h2 id="serif">Serif</h2>
+class="pfa-font-serif">Grumpy
+wizards make toxic
+brew.</span></p>
+<h1 data-number="8"
+id="sans-serif"><span
+class="header-section-number">8</span>
+Sans-serif</h1>
+<div class="sourceCode"
+id="cb8"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Grumpy wizards make toxic brew.</span><span class="co">]</span>{.pfa-font-sans}</span></code></pre></div>
 <p><span
-class="pfa-font-serif">The
-quick brown fox jumps over the
-lazy dog.</span></p>
-<h2 id="upright">Upright</h2>
+class="pfa-font-sans">Grumpy
+wizards make toxic
+brew.</span></p>
+<h1 data-number="9"
+id="monospace"><span
+class="header-section-number">9</span>
+Monospace</h1>
+<div class="sourceCode"
+id="cb9"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Grumpy wizards make toxic brew.</span><span class="co">]</span>{.pfa-font-mono}</span></code></pre></div>
 <p><span
-class="pfa-font-upright">The
-quick brown fox jumps over the
-lazy dog.</span></p>
-<h2 id="medium">Medium</h2>
+class="pfa-font-mono">Grumpy
+wizards make toxic
+brew.</span></p>
+<h1 data-number="10"
+id="small-capitals"><span
+class="header-section-number">10</span>
+Small Capitals</h1>
+<div class="sourceCode"
+id="cb10"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Grumpy wizards make toxic brew.</span><span class="co">]</span>{.pfa-font-smallcaps}</span></code></pre></div>
 <p><span
-class="pfa-font-medium">The
-quick brown fox jumps over the
-lazy dog.</span></p>
-<h2 id="normal">Normal</h2>
+class="pfa-font-smallcaps">Grumpy
+wizards make toxic
+brew.</span></p>
+<h1 data-number="11"
+id="normal"><span
+class="header-section-number">11</span>
+Normal</h1>
+<div class="sourceCode"
+id="cb11"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Grumpy wizards make toxic brew.</span><span class="co">]</span>{.pfa-font-normal}</span></code></pre></div>
 <p><span
-class="pfa-font-normal">The
-quick brown fox jumps over the
-lazy dog.</span></p>
-<h2
-id="lowercase">Lowercase</h2>
+class="pfa-font-normal">Grumpy
+wizards make toxic
+brew.</span></p>
+<h1 data-number="12"
+id="uppercase"><span
+class="header-section-number">12</span>
+Uppercase</h1>
+<div class="sourceCode"
+id="cb12"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">grumpy wizards make toxic brew.</span><span class="co">]</span>{.pfa-uppercase}</span></code></pre></div>
 <p><span
-class="pfa-lowercase">the
-quick brown fox jumps over the
-lazy dog.</span></p>
-<h2
-id="uppercase">Uppercase</h2>
+class="pfa-uppercase">GRUMPY
+WIZARDS MAKE TOXIC
+BREW.</span></p>
+<h1 data-number="13"
+id="lowercase"><span
+class="header-section-number">13</span>
+Lowercase</h1>
+<div class="sourceCode"
+id="cb13"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">GRUMPY WIZARDS MAKE TOXIC BREW.</span><span class="co">]</span>{.pfa-lowercase}</span></code></pre></div>
 <p><span
-class="pfa-uppercase">THE
-QUICK BROWN FOX JUMPS OVER THE
-LAZY DOG.</span></p>
+class="pfa-lowercase">grumpy
+wizards make toxic
+brew.</span></p>
 </body>
 </html>

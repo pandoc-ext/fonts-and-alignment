@@ -1,37 +1,59 @@
 ---
 title: Underlining Inline Elements
-date: 15 May 2026
-author: Nandakumar Chandrasekhar
-papersize: A4
-geometry:
-  - margin=25mm
-linestretch: 1.25
 ---
 
 ## Standard Underline
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-uline}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-uline}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-uline}
 
 ## Double Underline
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-uline-double}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-uline-double}
+```
 
-## Wavy Underline
-
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-uline-wave}
+[Grumpy wizards make toxic brew.]{.pfa-text-uline-double}
 
 ## Dashed Underline
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-uline-dashed}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-uline-dashed}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-uline-dashed}
 
 ## Dotted Underline
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-uline-dotted}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-uline-dotted}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-uline-dotted}
+
+## Wavy Underline
+
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-uline-wave}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-uline-wave}
 
 ## Strikeout
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-strikeout}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-strikeout}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-strikeout}
 
 ## Marked Out
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-markout}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-markout}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-markout}

@@ -3,38 +3,12 @@ Pandoc
     { unMeta =
         fromList
           [ ( "author"
-            , MetaInlines
-                [ Str
-                    "Nandakumar"
-                , Space
-                , Str
-                    "Chandrasekhar"
-                ]
+            , MetaString
+                "Nandakumar Chandrasekhar"
             )
           , ( "date"
-            , MetaInlines
-                [ Str "15"
-                , Space
-                , Str "May"
-                , Space
-                , Str "2026"
-                ]
-            )
-          , ( "geometry"
-            , MetaList
-                [ MetaInlines
-                    [ Str
-                        "margin=25mm"
-                    ]
-                ]
-            )
-          , ( "linestretch"
-            , MetaInlines
-                [ Str "1.25" ]
-            )
-          , ( "papersize"
-            , MetaInlines
-                [ Str "A4" ]
+            , MetaString
+                "2026-05-25"
             )
           , ( "title"
             , MetaInlines
@@ -65,6 +39,12 @@ Pandoc
       , Space
       , Str "(3xs)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-3xs\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-3xs" ]
@@ -85,9 +65,9 @@ Pandoc
           , Space
           , Str "adipiscing"
           , Space
-          , Str "elit."
+          , Str "elit,"
           , Space
-          , Str "Sed"
+          , Str "sed"
           , Space
           , Str "do"
           , Space
@@ -108,108 +88,6 @@ Pandoc
           , Str "magna"
           , Space
           , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , Space
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , Space
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , Space
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
           ]
       ]
   , Header
@@ -226,6 +104,12 @@ Pandoc
       , Space
       , Str "(2xs)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-2xs\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-2xs" ]
@@ -246,9 +130,9 @@ Pandoc
           , Space
           , Str "adipiscing"
           , Space
-          , Str "elit."
+          , Str "elit,"
           , Space
-          , Str "Sed"
+          , Str "sed"
           , Space
           , Str "do"
           , Space
@@ -269,108 +153,6 @@ Pandoc
           , Str "magna"
           , Space
           , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , Space
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , Space
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , Space
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
           ]
       ]
   , Header
@@ -385,6 +167,12 @@ Pandoc
       , Space
       , Str "(xs)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-xs\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-xs" ]
@@ -405,9 +193,9 @@ Pandoc
           , Space
           , Str "adipiscing"
           , Space
-          , Str "elit."
+          , Str "elit,"
           , Space
-          , Str "Sed"
+          , Str "sed"
           , Space
           , Str "do"
           , Space
@@ -428,120 +216,24 @@ Pandoc
           , Str "magna"
           , Space
           , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , Space
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , Space
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , Space
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
           ]
       ]
   , Header
       2
-      ( "small-sm" , [] , [] )
+      ( "small-s" , [] , [] )
       [ Str "Small"
       , Space
-      , Str "(sm)"
+      , Str "(s)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-s\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
-      , [ "pfa-text-sm" ]
+      , [ "pfa-text-s" ]
       , []
       )
       [ Para
@@ -559,9 +251,9 @@ Pandoc
           , Space
           , Str "adipiscing"
           , Space
-          , Str "elit."
+          , Str "elit,"
           , Space
-          , Str "Sed"
+          , Str "sed"
           , Space
           , Str "do"
           , Space
@@ -582,120 +274,24 @@ Pandoc
           , Str "magna"
           , Space
           , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , Space
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , Space
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , Space
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
           ]
       ]
   , Header
       2
-      ( "normal-normmal"
+      ( "normal-normal"
       , []
       , []
       )
       [ Str "Normal"
       , Space
-      , Str "(normmal)"
+      , Str "(normal)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-normal\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-normal" ]
@@ -716,9 +312,9 @@ Pandoc
           , Space
           , Str "adipiscing"
           , Space
-          , Str "elit."
+          , Str "elit,"
           , Space
-          , Str "Sed"
+          , Str "sed"
           , Space
           , Str "do"
           , Space
@@ -739,120 +335,24 @@ Pandoc
           , Str "magna"
           , Space
           , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , Space
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , Space
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , Space
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
           ]
       ]
   , Header
       2
-      ( "large-lg" , [] , [] )
+      ( "large-l" , [] , [] )
       [ Str "Large"
       , Space
-      , Str "(lg)"
+      , Str "(l)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-l\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
-      , [ "pfa-text-lg" ]
+      , [ "pfa-text-l" ]
       , []
       )
       [ Para
@@ -870,9 +370,9 @@ Pandoc
           , Space
           , Str "adipiscing"
           , Space
-          , Str "elit."
+          , Str "elit,"
           , Space
-          , Str "Sed"
+          , Str "sed"
           , Space
           , Str "do"
           , Space
@@ -893,108 +393,6 @@ Pandoc
           , Str "magna"
           , Space
           , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , Space
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , Space
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , Space
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
           ]
       ]
   , Header
@@ -1009,6 +407,12 @@ Pandoc
       , Space
       , Str "(xl)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-xl\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-xl" ]
@@ -1029,9 +433,9 @@ Pandoc
           , Space
           , Str "adipiscing"
           , Space
-          , Str "elit."
+          , Str "elit,"
           , Space
-          , Str "Sed"
+          , Str "sed"
           , Space
           , Str "do"
           , Space
@@ -1052,108 +456,6 @@ Pandoc
           , Str "magna"
           , Space
           , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , Space
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , Space
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , Space
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
           ]
       ]
   , Header
@@ -1170,6 +472,12 @@ Pandoc
       , Space
       , Str "(2xl)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-2xl\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-2xl" ]
@@ -1190,9 +498,9 @@ Pandoc
           , Space
           , Str "adipiscing"
           , Space
-          , Str "elit."
+          , Str "elit,"
           , Space
-          , Str "Sed"
+          , Str "sed"
           , Space
           , Str "do"
           , Space
@@ -1213,108 +521,6 @@ Pandoc
           , Str "magna"
           , Space
           , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , Space
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , Space
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , Space
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
           ]
       ]
   , Header
@@ -1333,6 +539,12 @@ Pandoc
       , Space
       , Str "(3xl)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-3xl\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-3xl" ]
@@ -1353,9 +565,9 @@ Pandoc
           , Space
           , Str "adipiscing"
           , Space
-          , Str "elit."
+          , Str "elit,"
           , Space
-          , Str "Sed"
+          , Str "sed"
           , Space
           , Str "do"
           , Space
@@ -1376,108 +588,6 @@ Pandoc
           , Str "magna"
           , Space
           , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , Space
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , Space
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , Space
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
           ]
       ]
   ]

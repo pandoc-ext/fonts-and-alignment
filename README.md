@@ -21,7 +21,7 @@ build pipeline renders to both [HTML](artifacts/input.html) and [PDF](artifacts/
   and emphasis.
 - **Text decorations** — single, double, dashed, dotted, and wavy underlines,
   plus strikeout and marked-out variants (auto-loads `ulem` only when used).
-- **Color resolution** — `pfa-color` attribute accepts CSS3 named colors,
+- **Color resolution** — `pfa-font-color` attribute accepts CSS3 named colors,
   3- or 6-digit hex codes, and is case- and whitespace-insensitive
   (`"Medium Violet Red"`, `medium-violet-red`, and `mediumvioletred`
   all resolve to the same color).
@@ -102,8 +102,8 @@ Wrap the text in square brackets and attach the class(es) in braces:
 
 ```markdown
 [some text]{.pfa-font-bold}
-[some text]{.pfa-font-italic .pfa-text-lg}
-[some text]{.pfa-text-uline pfa-color="forestgreen"}
+[some text]{.pfa-font-italic .pfa-text-l}
+[some text]{.pfa-text-uline pfa-font-color="forestgreen"}
 ```
 
 ### Block elements (fenced Divs)
@@ -116,7 +116,7 @@ combining more than one class or adding attributes):
 A single centered paragraph.
 :::
 
-::: {.pfa-font-sans .pfa-font-bold pfa-color="midnightblue"}
+::: {.pfa-font-sans .pfa-font-bold pfa-font-color="midnightblue"}
 A bold sans-serif paragraph in midnight blue.
 :::
 ```
@@ -132,28 +132,28 @@ Nine sizing hooks, applicable as both inline spans and block-level Divs.
 | `pfa-text-3xs`    | `\tiny`             | Tiny                                |
 | `pfa-text-2xs`    | `\scriptsize`       | Script size                         |
 | `pfa-text-xs`     | `\footnotesize`     | Footnote size                       |
-| `pfa-text-sm`     | `\small`            | Small                               |
+| `pfa-text-s`     | `\small`            | Small                               |
 | `pfa-text-normal` | `\normalsize`       | Document body size (explicit reset) |
-| `pfa-text-lg`     | `\large`            | Large                               |
+| `pfa-text-l`     | `\large`            | Large                               |
 | `pfa-text-xl`     | `\Large`            | Extra large                         |
 | `pfa-text-2xl`    | `\LARGE`            | Extra-extra large                   |
 | `pfa-text-3xl`    | `\huge`             | Huge                                |
 
 ### Font Weight, Shape, and Family
 
-| Class                | LaTeX (inline / block)                                   | Description               |
-|----------------------|----------------------------------------------------------|---------------------------|
-| `pfa-font-bold`      | `\textbf{…}` / `\begin{bfseries}…\end{bfseries}`         | Bold weight               |
-| `pfa-font-medium`    | `\textmd{…}` / `\begin{mdseries}…\end{mdseries}`         | Medium weight             |
-| `pfa-font-italic`    | `\textit{…}` / `\begin{itshape}…\end{itshape}`           | Italic shape              |
-| `pfa-font-slanted`   | `\textsl{…}` / `\begin{slshape}…\end{slshape}`           | Slanted shape             |
-| `pfa-font-upright`   | `\textup{…}` / `\begin{upshape}…\end{upshape}`           | Upright shape             |
-| `pfa-font-emphasis`  | `\emph{…}` / `\begin{em}…\end{em}`                       | Emphasis (toggles italic) |
-| `pfa-font-serif`     | `\textrm{…}` / `\begin{rmfamily}…\end{rmfamily}`         | Serif family              |
-| `pfa-font-sans`      | `\textsf{…}` / `\begin{sffamily}…\end{sffamily}`         | Sans family               |
-| `pfa-font-mono`      | `\texttt{…}` / `\begin{ttfamily}…\end{ttfamily}`         | Mono family               |
-| `pfa-font-smallcaps` | `\textsc{…}` / `\begin{scshape}…\end{scshape}`           | Small caps                |
-| `pfa-font-normal`    | `\textnormal{…}` / `\begin{normalfont}…\end{normalfont}` | Normal reset              |
+| Class                | LaTeX (inline / block)               | Description               |
+|----------------------|--------------------------------------|---------------------------|
+| `pfa-font-bold`      | `\textbf{…}` / `{\bfseries …}`       | Bold weight               |
+| `pfa-font-medium`    | `\textmd{…}` / `{\mdseries …}`       | Medium weight             |
+| `pfa-font-italic`    | `\textit{…}` / `{\itshape …}`        | Italic shape              |
+| `pfa-font-slanted`   | `\textsl{…}` / `{\slshape …}`        | Slanted shape             |
+| `pfa-font-upright`   | `\textup{…}` / `{\upshape …}`        | Upright shape             |
+| `pfa-font-emphasis`  | `\emph{…}` / `{\em …}`               | Emphasis (toggles italic) |
+| `pfa-font-serif`     | `\textrm{…}` / `{\rmfamily …}`       | Serif family              |
+| `pfa-font-sans`      | `\textsf{…}` / `{\sffamily …}`       | Sans family               |
+| `pfa-font-mono`      | `\texttt{…}` / `{\ttfamily …}`       | Mono family               |
+| `pfa-font-smallcaps` | `\textsc{…}` / `{\scshape …}`        | Small caps                |
+| `pfa-font-normal`    | `\textnormal{…}` / `{\normalfont …}` | Normal reset              |
 
 > Make sure your selected fonts actually carry the requested shapes/weights.
 > LaTeX will silently substitute a default if they are missing.
@@ -186,7 +186,7 @@ rendered document.
 
 ### Color
 
-A single attribute, `pfa-color`, accepts:
+A single attribute, `pfa-font-color`, accepts:
 
 - Any of the 147 CSS3 named colors (case- and whitespace-insensitive —
   `"Medium Violet Red"`, `medium-violet-red`, and `MEDIUMVIOLETRED`
@@ -195,12 +195,12 @@ A single attribute, `pfa-color`, accepts:
 - Six-digit full hex (`#2E8B57`)
 
 ```markdown
-[crimson sample]{pfa-color="crimson"}
-[hex sample]{pfa-color="#2E8B57"}
+[crimson sample]{pfa-font-color="crimson"}
+[hex sample]{pfa-font-color="#2E8B57"}
 
-::: {pfa-color="darkslategray"}
+::: {pfa-font-color="darkslategray"}
 The whole paragraph inherits dark slate gray.
-[This span overrides to tomato.]{pfa-color="tomato"}
+[This span overrides to tomato.]{pfa-font-color="tomato"}
 The remainder reverts to the parent color.
 :::
 ```
@@ -226,6 +226,16 @@ poetry, formal addresses, and titles. The `pfa-block-*` family wraps the
 content in an isolated bounding box (LaTeX `varwidth`) that shrinks to its
 content before being positioned in the document flow.
 
+In PDF, the `pfa-text-*` and `pfa-align-*` families also differ in
+vertical spacing: `pfa-text-*` maps to the
+`center`/`flushleft`/`flushright` _environments_ which insert `\topsep`
+above and below the block, while `pfa-align-*` maps to the
+`\centering`/`\raggedright`/`\raggedleft` _declarations_ which flow
+inline without adding space. HTML applies only `text-align` to both
+families, so they render identically there. Use `pfa-text-*` when the
+block stands alone as its own visual unit, and `pfa-align-*` when the
+alignment is part of the surrounding flow.
+
 ```markdown
 ::: pfa-align-center
 First centered line\
@@ -245,12 +255,19 @@ Classes compose freely. Stack any combination of sizing, family, weight,
 decoration, color, and alignment on a single element:
 
 ```markdown
-[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-lg pfa-color="red"}
+[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}
 
-::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-lg pfa-color="midnightblue"}
+[Sample]{.pfa-text-uline .pfa-font-smallcaps pfa-font-color="forestgreen"}
+
+::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color="midnightblue"}
 A centered, bold, sans-serif, large, midnight-blue block.
 :::
 ```
+
+When `pfa-font-color` is combined with `pfa-text-uline` (or its dashed,
+dotted, wavy, double, strikeout, and markout siblings), the decoration line
+inherits the requested color — `\textcolor{…}{\uline{…}}` in LaTeX, and the
+default `text-decoration-color: currentColor` in CSS.
 
 ## Usage
 
@@ -286,9 +303,7 @@ pandoc \
 
 ## Legacy Aliases
 
-**Deprecated — retained strictly for backward compatibility.** New
-documents should use the explicit `pfa-*` namespace to prevent collisions
-with global CSS frameworks.
+**Deprecated — retained strictly for backward compatibility and will be removed in the next major release.** New documents should use the explicit `pfa-*` namespace to prevent collisions with global CSS frameworks.
 
 ### Font Weight, Shape, and Family Aliases
 
@@ -311,9 +326,9 @@ with global CSS frameworks.
 | Legacy Alias | Modern Class       |
 |--------------|--------------------|
 | `xsmall`     | `pfa-text-xs`      |
-| `small`      | `pfa-text-sm`      |
+| `small`      | `pfa-text-s`      |
 | `normal`     | `pfa-text-normal`  |
-| `large`      | `pfa-text-lg`      |
+| `large`      | `pfa-text-l`      |
 | `xlarge`     | `pfa-text-xl`      |
 | `xxlarge`    | `pfa-text-2xl`     |
 | `huge`       | `pfa-text-3xl`     |
@@ -360,6 +375,16 @@ Block alignment relies on the `varwidth` LaTeX package, which the filter
 auto-injects only when a `pfa-block-*` class is detected. If your TeX
 distribution is minimal, install it explicitly — on TeX Live this is
 `tlmgr install varwidth`.
+
+### Colored underlines render in black in PDF
+
+If `pfa-text-uline` (or any of its decorated variants) is combined with
+`pfa-font-color` and the line still renders in black despite the text
+being colored, you're on a pre-fix revision of the filter. Pull the
+current version — color application now wraps the ulem decoration
+(`\textcolor{…}{\uline{…}}`) so the decoration falls inside the color
+scope. HTML already inherits correctly via the CSS default
+`text-decoration-color: currentColor`.
 
 ### Underline variants (wavy / dashed / dotted) don't render in HTML
 

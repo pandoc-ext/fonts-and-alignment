@@ -3,38 +3,12 @@ Pandoc
     { unMeta =
         fromList
           [ ( "author"
-            , MetaInlines
-                [ Str
-                    "Nandakumar"
-                , Space
-                , Str
-                    "Chandrasekhar"
-                ]
+            , MetaString
+                "Nandakumar Chandrasekhar"
             )
           , ( "date"
-            , MetaInlines
-                [ Str "15"
-                , Space
-                , Str "May"
-                , Space
-                , Str "2026"
-                ]
-            )
-          , ( "geometry"
-            , MetaList
-                [ MetaInlines
-                    [ Str
-                        "margin=25mm"
-                    ]
-                ]
-            )
-          , ( "linestretch"
-            , MetaInlines
-                [ Str "1.25" ]
-            )
-          , ( "papersize"
-            , MetaInlines
-                [ Str "A4" ]
+            , MetaString
+                "2026-05-25"
             )
           , ( "title"
             , MetaInlines
@@ -63,29 +37,27 @@ Pandoc
       , Space
       , Str "(3xs)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-3xs}"
   , Para
       [ Span
           ( ""
           , [ "pfa-text-3xs" ]
           , []
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   , Header
@@ -102,29 +74,27 @@ Pandoc
       , Space
       , Str "(2xs)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-2xs}"
   , Para
       [ Span
           ( ""
           , [ "pfa-text-2xs" ]
           , []
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   , Header
@@ -139,61 +109,57 @@ Pandoc
       , Space
       , Str "(xs)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-xs}"
   , Para
       [ Span
           ( ""
           , [ "pfa-text-xs" ]
           , []
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   , Header
       2
-      ( "small-sm" , [] , [] )
+      ( "small-s" , [] , [] )
       [ Str "Small"
       , Space
-      , Str "(sm)"
+      , Str "(s)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-s}"
   , Para
       [ Span
           ( ""
-          , [ "pfa-text-sm" ]
+          , [ "pfa-text-s" ]
           , []
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   , Header
@@ -206,6 +172,12 @@ Pandoc
       , Space
       , Str "(normal)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-normal}"
   , Para
       [ Span
           ( ""
@@ -213,55 +185,45 @@ Pandoc
             ]
           , []
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   , Header
       2
-      ( "large-lg" , [] , [] )
+      ( "large-l" , [] , [] )
       [ Str "Large"
       , Space
-      , Str "(lg)"
+      , Str "(l)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-l}"
   , Para
       [ Span
           ( ""
-          , [ "pfa-text-lg" ]
+          , [ "pfa-text-l" ]
           , []
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   , Header
@@ -276,29 +238,27 @@ Pandoc
       , Space
       , Str "(xl)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-xl}"
   , Para
       [ Span
           ( ""
           , [ "pfa-text-xl" ]
           , []
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   , Header
@@ -315,29 +275,27 @@ Pandoc
       , Space
       , Str "(2xl)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-2xl}"
   , Para
       [ Span
           ( ""
           , [ "pfa-text-2xl" ]
           , []
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   , Header
@@ -356,29 +314,27 @@ Pandoc
       , Space
       , Str "(3xl)"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-3xl}"
   , Para
       [ Span
           ( ""
           , [ "pfa-text-3xl" ]
           , []
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
+          , Str "brew."
           ]
       ]
   ]

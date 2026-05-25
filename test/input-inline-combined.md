@@ -1,21 +1,27 @@
 ---
 title: Combining Inline Styles
-date: 15 May 2026
-author: Nandakumar Chandrasekhar
-papersize: A4
-geometry:
-  - margin=25mm
-linestretch: 1.25
 ---
 
-## Small Capitals, Bold, and Italic
+## Bold Sans Display
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-smallcaps .pfa-font-bold .pfa-font-italic}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}
+```
 
-## Extra Small, Bold, and Monospace
+[Grumpy wizards make toxic brew.]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-xs .pfa-font-bold .pfa-font-mono}
+## Italic Mono Caption
 
-## Sans-serif, Italic, and Colored
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-italic .pfa-font-mono .pfa-text-s}
+```
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-sans .pfa-font-italic pfa-color="dodgerblue"}
+[Grumpy wizards make toxic brew.]{.pfa-font-italic .pfa-font-mono .pfa-text-s}
+
+## Smallcaps Underline
+
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-uline .pfa-font-smallcaps pfa-font-color="forestgreen"}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-uline .pfa-font-smallcaps pfa-font-color="forestgreen"}

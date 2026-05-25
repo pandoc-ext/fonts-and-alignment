@@ -1,61 +1,107 @@
 ---
 title: Styling Fonts Inline
-date: 15 May 2026
-author: Nandakumar Chandrasekhar
-papersize: A4
-geometry:
-  - margin=25mm
-linestretch: 1.25
 ---
 
 ## Bold
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-bold}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-bold}
+```
 
-## Emphasis
-
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-emphasis}
-
-## Italic
-
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-italic}
-
-## Slanted
-
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-slanted}
-
-## Small Capitals
-
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-smallcaps}
-
-## Monospace
-
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-mono}
-
-## Sans-serif
-
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-sans}
-
-## Serif
-
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-serif}
-
-## Upright
-
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-upright}
+[Grumpy wizards make toxic brew.]{.pfa-font-bold}
 
 ## Medium
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-medium}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-medium}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-font-medium}
+
+## Italic
+
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-italic}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-font-italic}
+
+## Slanted
+
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-slanted}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-font-slanted}
+
+## Upright
+
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-upright}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-font-upright}
+
+## Emphasis
+
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-emphasis}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-font-emphasis}
+
+## Serif
+
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-serif}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-font-serif}
+
+## Sans-serif
+
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-sans}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-font-sans}
+
+## Monospace
+
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-mono}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-font-mono}
+
+## Small Capitals
+
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-smallcaps}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-font-smallcaps}
 
 ## Normal
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-font-normal}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-font-normal}
+```
 
-## Lowercase
-
-[THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.]{.pfa-lowercase}
+[Grumpy wizards make toxic brew.]{.pfa-font-normal}
 
 ## Uppercase
 
-[the quick brown fox jumps over the lazy dog.]{.pfa-uppercase}
+```markdown
+[grumpy wizards make toxic brew.]{.pfa-uppercase}
+```
+
+[grumpy wizards make toxic brew.]{.pfa-uppercase}
+
+## Lowercase
+
+```markdown
+[GRUMPY WIZARDS MAKE TOXIC BREW.]{.pfa-lowercase}
+```
+
+[GRUMPY WIZARDS MAKE TOXIC BREW.]{.pfa-lowercase}

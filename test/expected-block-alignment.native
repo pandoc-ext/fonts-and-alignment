@@ -3,38 +3,12 @@ Pandoc
     { unMeta =
         fromList
           [ ( "author"
-            , MetaInlines
-                [ Str
-                    "Nandakumar"
-                , Space
-                , Str
-                    "Chandrasekhar"
-                ]
+            , MetaString
+                "Nandakumar Chandrasekhar"
             )
           , ( "date"
-            , MetaInlines
-                [ Str "15"
-                , Space
-                , Str "May"
-                , Space
-                , Str "2026"
-                ]
-            )
-          , ( "geometry"
-            , MetaList
-                [ MetaInlines
-                    [ Str
-                        "margin=25mm"
-                    ]
-                ]
-            )
-          , ( "linestretch"
-            , MetaInlines
-                [ Str "1.25" ]
-            )
-          , ( "papersize"
-            , MetaInlines
-                [ Str "A4" ]
+            , MetaString
+                "2026-05-25"
             )
           , ( "title"
             , MetaInlines
@@ -48,17 +22,23 @@ Pandoc
     }
   [ Header
       2
-      ( "center-aligned"
+      ( "left-aligned"
       , []
       , []
       )
-      [ Str "Center"
+      [ Str "Left"
       , Space
       , Str "Aligned"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-block-left\nadipiscing elit, sed do eiusmod \\\ntempor incididunt ut labore et dolore \\\nmagna aliqua. Ut enim ad minim \\\nveniam, quis nostrud exercitation ullamco \\\nlaboris nisi ut aliquip ex ea \\\ncommodo consequat. Duis aute irure \\\ndolor in reprehenderit in voluptate \\\nvelit esse cillum dolore eu fugiat \\\nnulla pariatur. Excepteur sint \\\noccaecat cupidatat non proident, \\\nsunt in culpa qui officia deserunt \\\nmollit anim id est laborum.\n:::"
   , Div
       ( ""
-      , [ "pfa-block-center" ]
+      , [ "pfa-block-left" ]
       , []
       )
       [ Para
@@ -192,17 +172,23 @@ Pandoc
       ]
   , Header
       2
-      ( "left-aligned"
+      ( "center-aligned"
       , []
       , []
       )
-      [ Str "Left"
+      [ Str "Center"
       , Space
       , Str "Aligned"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-block-center\nadipiscing elit, sed do eiusmod \\\ntempor incididunt ut labore et dolore \\\nmagna aliqua. Ut enim ad minim \\\nveniam, quis nostrud exercitation ullamco \\\nlaboris nisi ut aliquip ex ea \\\ncommodo consequat. Duis aute irure \\\ndolor in reprehenderit in voluptate \\\nvelit esse cillum dolore eu fugiat \\\nnulla pariatur. Excepteur sint \\\noccaecat cupidatat non proident, \\\nsunt in culpa qui officia deserunt \\\nmollit anim id est laborum.\n:::"
   , Div
       ( ""
-      , [ "pfa-block-left" ]
+      , [ "pfa-block-center" ]
       , []
       )
       [ Para
@@ -344,6 +330,12 @@ Pandoc
       , Space
       , Str "Aligned"
       ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-block-right\nadipiscing elit, sed do eiusmod \\\ntempor incididunt ut labore et dolore \\\nmagna aliqua. Ut enim ad minim \\\nveniam, quis nostrud exercitation ullamco \\\nlaboris nisi ut aliquip ex ea \\\ncommodo consequat. Duis aute irure \\\ndolor in reprehenderit in voluptate \\\nvelit esse cillum dolore eu fugiat \\\nnulla pariatur. Excepteur sint \\\noccaecat cupidatat non proident, \\\nsunt in culpa qui officia deserunt \\\nmollit anim id est laborum.\n:::"
   , Div
       ( ""
       , [ "pfa-block-right" ]

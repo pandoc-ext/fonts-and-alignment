@@ -3,38 +3,12 @@ Pandoc
     { unMeta =
         fromList
           [ ( "author"
-            , MetaInlines
-                [ Str
-                    "Nandakumar"
-                , Space
-                , Str
-                    "Chandrasekhar"
-                ]
+            , MetaString
+                "Nandakumar Chandrasekhar"
             )
           , ( "date"
-            , MetaInlines
-                [ Str "15"
-                , Space
-                , Str "May"
-                , Space
-                , Str "2026"
-                ]
-            )
-          , ( "geometry"
-            , MetaList
-                [ MetaInlines
-                    [ Str
-                        "margin=25mm"
-                    ]
-                ]
-            )
-          , ( "linestretch"
-            , MetaInlines
-                [ Str "1.25" ]
-            )
-          , ( "papersize"
-            , MetaInlines
-                [ Str "A4" ]
+            , MetaString
+                "2026-05-25"
             )
           , ( "title"
             , MetaInlines
@@ -50,134 +24,121 @@ Pandoc
     }
   [ Header
       2
-      ( "small-capitals-bold-and-italic"
+      ( "bold-sans-display"
       , []
       , []
       )
-      [ Str "Small"
+      [ Str "Bold"
       , Space
-      , Str "Capitals,"
+      , Str "Sans"
       , Space
-      , Str "Bold,"
-      , Space
-      , Str "and"
-      , Space
-      , Str "Italic"
+      , Str "Display"
       ]
-  , Para
-      [ Span
-          ( ""
-          , [ "pfa-font-smallcaps"
-            , "pfa-font-bold"
-            , "pfa-font-italic"
-            ]
-          , []
-          )
-          [ Str "The"
-          , Space
-          , Str "quick"
-          , Space
-          , Str "brown"
-          , Space
-          , Str "fox"
-          , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
-          ]
-      ]
-  , Header
-      2
-      ( "extra-small-bold-and-monospace"
-      , []
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
       , []
       )
-      [ Str "Extra"
-      , Space
-      , Str "Small,"
-      , Space
-      , Str "Bold,"
-      , Space
-      , Str "and"
-      , Space
-      , Str "Monospace"
-      ]
+      "[Grumpy wizards make toxic brew.]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color=\"red\"}"
   , Para
       [ Span
           ( ""
-          , [ "pfa-text-xs"
-            , "pfa-font-bold"
-            , "pfa-font-mono"
-            ]
-          , []
-          )
-          [ Str "The"
-          , Space
-          , Str "quick"
-          , Space
-          , Str "brown"
-          , Space
-          , Str "fox"
-          , Space
-          , Str "jumps"
-          , Space
-          , Str "over"
-          , Space
-          , Str "the"
-          , Space
-          , Str "lazy"
-          , Space
-          , Str "dog."
-          ]
-      ]
-  , Header
-      2
-      ( "sans-serif-italic-and-colored"
-      , []
-      , []
-      )
-      [ Str "Sans-serif,"
-      , Space
-      , Str "Italic,"
-      , Space
-      , Str "and"
-      , Space
-      , Str "Colored"
-      ]
-  , Para
-      [ Span
-          ( ""
-          , [ "pfa-font-sans"
-            , "pfa-font-italic"
+          , [ "pfa-font-bold"
+            , "pfa-font-sans"
+            , "pfa-text-l"
             ]
           , [ ( "style"
-              , "color: #1E90FF;"
+              , "color: #FF0000;"
               )
             ]
           )
-          [ Str "The"
+          [ Str "Grumpy"
           , Space
-          , Str "quick"
+          , Str "wizards"
           , Space
-          , Str "brown"
+          , Str "make"
           , Space
-          , Str "fox"
+          , Str "toxic"
           , Space
-          , Str "jumps"
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "italic-mono-caption"
+      , []
+      , []
+      )
+      [ Str "Italic"
+      , Space
+      , Str "Mono"
+      , Space
+      , Str "Caption"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-italic .pfa-font-mono .pfa-text-s}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-italic"
+            , "pfa-font-mono"
+            , "pfa-text-s"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
           , Space
-          , Str "over"
+          , Str "wizards"
           , Space
-          , Str "the"
+          , Str "make"
           , Space
-          , Str "lazy"
+          , Str "toxic"
           , Space
-          , Str "dog."
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "smallcaps-underline"
+      , []
+      , []
+      )
+      [ Str "Smallcaps"
+      , Space
+      , Str "Underline"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-uline .pfa-font-smallcaps pfa-font-color=\"forestgreen\"}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-text-uline"
+            , "pfa-font-smallcaps"
+            ]
+          , [ ( "style"
+              , "color: #228B22;"
+              )
+            ]
+          )
+          [ Underline
+              [ Str "Grumpy"
+              , Space
+              , Str "wizards"
+              , Space
+              , Str "make"
+              , Space
+              , Str "toxic"
+              , Space
+              , Str "brew."
+              ]
           ]
       ]
   ]

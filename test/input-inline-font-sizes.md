@@ -1,45 +1,75 @@
 ---
 title: Sizing Fonts Inline
-date: 15 May 2026
-author: Nandakumar Chandrasekhar
-papersize: A4
-geometry:
-  - margin=25mm
-linestretch: 1.25
 ---
 
 ## Extra Extra Extra Small (3xs)
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-3xs}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-3xs}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-3xs}
 
 ## Extra Extra Small (2xs)
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-2xs}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-2xs}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-2xs}
 
 ## Extra Small (xs)
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-xs}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-xs}
+```
 
-## Small (sm)
+[Grumpy wizards make toxic brew.]{.pfa-text-xs}
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-sm}
+## Small (s)
+
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-s}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-s}
 
 ## Normal (normal)
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-normal}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-normal}
+```
 
-## Large (lg)
+[Grumpy wizards make toxic brew.]{.pfa-text-normal}
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-lg}
+## Large (l)
+
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-l}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-l}
 
 ## Extra Large (xl)
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-xl}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-xl}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-xl}
 
 ## Extra Extra Large (2xl)
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-2xl}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-2xl}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-2xl}
 
 ## Extra Extra Extra Large (3xl)
 
-[The quick brown fox jumps over the lazy dog.]{.pfa-text-3xl}
+```markdown
+[Grumpy wizards make toxic brew.]{.pfa-text-3xl}
+```
+
+[Grumpy wizards make toxic brew.]{.pfa-text-3xl}

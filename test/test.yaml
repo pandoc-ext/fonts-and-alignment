@@ -15,5 +15,13 @@ variables:
   mainfont: Noto Serif
   sansfont: Noto Sans
   monofont: Fira Mono
+  papersize: A4
+  geometry:
+    - margin=20mm
+  linestretch: 1.25
   monofontoptions:
     - Scale=0.9
+
+metadata:
+  author: Nandakumar Chandrasekhar
+  date: 2026-05-25

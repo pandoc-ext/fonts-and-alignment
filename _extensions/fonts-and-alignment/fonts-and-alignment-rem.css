@@ -65,7 +65,7 @@
   font-size: calc(1rem / 12 * 10) !important;
 }
 
-.small, .pfa-text-sm {
+.small, .pfa-text-s {
   font-size: calc(1rem / 12 * 10.95) !important;
 }
 
@@ -73,7 +73,7 @@
   font-size: calc(1rem / 12 * 12) !important;
 }
 
-.large, .pfa-text-lg {
+.large, .pfa-text-l {
   font-size: calc(1rem / 12 * 14.4) !important;
 }
 
