@@ -44,7 +44,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-3xs\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+      "::: {.pfa-text-3xs}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-3xs" ]
@@ -109,7 +109,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-2xs\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+      "::: {.pfa-text-2xs}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-2xs" ]
@@ -172,7 +172,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-xs\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+      "::: {.pfa-text-xs}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-xs" ]
@@ -230,7 +230,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-s\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+      "::: {.pfa-text-s}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-s" ]
@@ -291,7 +291,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-normal\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+      "::: {.pfa-text-normal}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-normal" ]
@@ -349,7 +349,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-l\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+      "::: {.pfa-text-l}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-l" ]
@@ -412,7 +412,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-xl\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+      "::: {.pfa-text-xl}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-xl" ]
@@ -477,7 +477,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-2xl\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+      "::: {.pfa-text-2xl}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-2xl" ]
@@ -544,7 +544,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-3xl\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+      "::: {.pfa-text-3xl}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-3xl" ]

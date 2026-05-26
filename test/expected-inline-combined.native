@@ -24,15 +24,13 @@ Pandoc
     }
   [ Header
       2
-      ( "bold-sans-display"
+      ( "bold-sans-serif"
       , []
       , []
       )
       [ Str "Bold"
       , Space
-      , Str "Sans"
-      , Space
-      , Str "Display"
+      , Str "Sans-serif"
       ]
   , CodeBlock
       ( ""
@@ -65,15 +63,13 @@ Pandoc
       ]
   , Header
       2
-      ( "italic-mono-caption"
+      ( "italic-mono"
       , []
       , []
       )
       [ Str "Italic"
       , Space
       , Str "Mono"
-      , Space
-      , Str "Caption"
       ]
   , CodeBlock
       ( ""
@@ -103,13 +99,17 @@ Pandoc
       ]
   , Header
       2
-      ( "smallcaps-underline"
+      ( "smallcaps-underline-and-colored"
       , []
       , []
       )
-      [ Str "Smallcaps"
+      [ Str "Smallcaps,"
       , Space
       , Str "Underline"
+      , Space
+      , Str "and"
+      , Space
+      , Str "Colored"
       ]
   , CodeBlock
       ( ""

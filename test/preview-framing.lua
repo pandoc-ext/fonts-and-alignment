@@ -12,6 +12,13 @@ local function has_pfa_signal(elem)
   return false
 end
 
+local function has_pfa_block_class(elem)
+  for _, cls in ipairs(elem.classes) do
+    if cls:match('^pfa%-block%-') then return true end
+  end
+  return false
+end
+
 -- Block-level wrappers
 local TCOLORBOX_OPEN = '\\begin{tcolorbox}[enhanced,colback=previewbg,colframe=previewframe,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt]'
 local TCOLORBOX_CLOSE = '\\end{tcolorbox}'
@@ -40,6 +47,29 @@ local LATEX_PREAMBLE = [[
 % Wrap the Shaded environment in a minipage
 \BeforeBeginEnvironment{Shaded}{\par\noindent\begin{minipage}{\linewidth}}
 \AfterEndEnvironment{Shaded}{\end{minipage}\par\medskip}
+
+% Shrink-to-fit framed pfa-block-* boxes: capture multi-paragraph content into
+% a savebox via varwidth, then frame it with \tcbox (macro form, genuinely
+% shrink-to-fit). HTML achieves the same via display:table + auto margins.
+\usepackage{varwidth}
+\newsavebox{\pfablockbox}
+\AtEndPreamble{%
+  \ifcsdef{pfa-block-center}{%
+    \renewenvironment{pfa-block-center}
+      {\begin{lrbox}{\pfablockbox}\begin{varwidth}{\textwidth}}
+      {\end{varwidth}\end{lrbox}\begin{center}\tcbox[enhanced,colback=previewbg,colframe=previewframe,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt]{\usebox{\pfablockbox}}\end{center}}%
+  }{}%
+  \ifcsdef{pfa-block-left}{%
+    \renewenvironment{pfa-block-left}
+      {\begin{lrbox}{\pfablockbox}\begin{varwidth}{\textwidth}}
+      {\end{varwidth}\end{lrbox}\begin{flushleft}\tcbox[enhanced,colback=previewbg,colframe=previewframe,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt]{\usebox{\pfablockbox}}\end{flushleft}}%
+  }{}%
+  \ifcsdef{pfa-block-right}{%
+    \renewenvironment{pfa-block-right}
+      {\begin{lrbox}{\pfablockbox}\begin{varwidth}{\textwidth}}
+      {\end{varwidth}\end{lrbox}\begin{flushright}\tcbox[enhanced,colback=previewbg,colframe=previewframe,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt]{\usebox{\pfablockbox}}\end{flushright}}%
+  }{}%
+}
 ]]
 
 --------------------------------------------------------------------------------
@@ -76,6 +106,10 @@ local TagContextPass = {
 local ApplyFramesPass = {
   Div = function(elem)
     if not has_pfa_signal(elem) then return nil end
+    -- pfa-block-* divs use shrink-to-fit varwidth + flushleft/center/flushright.
+    -- A full-width tcolorbox around them hides the alignment effect entirely,
+    -- so leave them unframed in the preview.
+    if has_pfa_block_class(elem) then return nil end
 
     if FORMAT:match('latex') then
       return {

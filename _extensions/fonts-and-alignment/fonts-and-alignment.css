@@ -1,6 +1,6 @@
 /**
- * * Pandoc Fonts and Alignment Stylesheet (EM Sizing)
- * * Scales typography dynamically relative to immediate parent containers.
+ * * Pandoc Fonts and Alignment Stylesheet (REM Sizing)
+ * * Scales typography predictably relative to the web page root.
  * */
 /**
  * * Pandoc Fonts and Alignment - Core Engine Mixin
@@ -54,39 +54,39 @@
 
 /* Typography Sizing Utilities */
 .pfa-text-3xs {
-  font-size: calc(1em / 12 * 6) !important;
+  font-size: calc(1rem / 12 * 6) !important;
 }
 
 .pfa-text-2xs {
-  font-size: calc(1em / 12 * 8) !important;
+  font-size: calc(1rem / 12 * 8) !important;
 }
 
 .xsmall, .pfa-text-xs {
-  font-size: calc(1em / 12 * 10) !important;
+  font-size: calc(1rem / 12 * 10) !important;
 }
 
 .small, .pfa-text-s {
-  font-size: calc(1em / 12 * 10.95) !important;
+  font-size: calc(1rem / 12 * 10.95) !important;
 }
 
 .normal, .pfa-text-normal {
-  font-size: calc(1em / 12 * 12) !important;
+  font-size: calc(1rem / 12 * 12) !important;
 }
 
 .large, .pfa-text-l {
-  font-size: calc(1em / 12 * 14.4) !important;
+  font-size: calc(1rem / 12 * 14.4) !important;
 }
 
 .xlarge, .pfa-text-xl {
-  font-size: calc(1em / 12 * 17.28) !important;
+  font-size: calc(1rem / 12 * 17.28) !important;
 }
 
 .xxlarge, .pfa-text-2xl {
-  font-size: calc(1em / 12 * 20.74) !important;
+  font-size: calc(1rem / 12 * 20.74) !important;
 }
 
 .huge, .pfa-text-3xl {
-  font-size: calc(1em / 12 * 24.88) !important;
+  font-size: calc(1rem / 12 * 24.88) !important;
 }
 
 /* Alignments */
@@ -106,21 +106,18 @@
   display: table;
   margin-left: auto;
   margin-right: auto;
-  text-align: left;
 }
 
 .pfa-block-left {
   display: table;
   margin-left: 0;
   margin-right: auto;
-  text-align: left;
 }
 
 .pfa-block-right {
   display: table;
   margin-left: auto;
   margin-right: 0;
-  text-align: left;
 }
 
 /* Inline Text Decorations (ulem package equivalents) */
@@ -144,6 +141,6 @@ span.uwave, span.uw, span.pfa-text-uline-wave {
   text-decoration: underline wavy;
 }
 
-span.sout, span.so, span.pfa-text-strikeout, span.xout, span.xo, span.pfa-text-markout {
+span.sout, span.so, span.pfa-text-strikeout {
   text-decoration: line-through;
 }

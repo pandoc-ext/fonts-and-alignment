@@ -344,37 +344,6 @@ Pandoc
       ]
   , Header
       2
-      ( "uppercase"
-      , []
-      , []
-      )
-      [ Str "Uppercase" ]
-  , CodeBlock
-      ( ""
-      , [ "markdown" ]
-      , []
-      )
-      "[grumpy wizards make toxic brew.]{.pfa-uppercase}"
-  , Para
-      [ Span
-          ( ""
-          , [ "pfa-uppercase"
-            ]
-          , []
-          )
-          [ Str "GRUMPY"
-          , Space
-          , Str "WIZARDS"
-          , Space
-          , Str "MAKE"
-          , Space
-          , Str "TOXIC"
-          , Space
-          , Str "BREW."
-          ]
-      ]
-  , Header
-      2
       ( "lowercase"
       , []
       , []
@@ -402,6 +371,37 @@ Pandoc
           , Str "toxic"
           , Space
           , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "uppercase"
+      , []
+      , []
+      )
+      [ Str "Uppercase" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[grumpy wizards make toxic brew.]{.pfa-uppercase}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-uppercase"
+            ]
+          , []
+          )
+          [ Str "GRUMPY"
+          , Space
+          , Str "WIZARDS"
+          , Space
+          , Str "MAKE"
+          , Space
+          , Str "TOXIC"
+          , Space
+          , Str "BREW."
           ]
       ]
   ]

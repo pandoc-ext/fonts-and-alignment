@@ -39,7 +39,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-left\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n:::"
+      "::: {.pfa-text-left}\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n:::"
   , Div
       ( ""
       , [ "pfa-text-left" ]
@@ -118,74 +118,6 @@ Pandoc
           , Space
           , Str "consequat."
           ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
-          ]
       ]
   , Header
       2
@@ -202,7 +134,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-center\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n:::"
+      "::: {.pfa-text-center}\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n:::"
   , Div
       ( ""
       , [ "pfa-text-center" ]
@@ -281,74 +213,6 @@ Pandoc
           , Space
           , Str "consequat."
           ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
-          ]
       ]
   , Header
       2
@@ -365,7 +229,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-right\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n:::"
+      "::: {.pfa-text-right}\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n:::"
   , Div
       ( ""
       , [ "pfa-text-right" ]
@@ -443,74 +307,6 @@ Pandoc
           , Str "commodo"
           , Space
           , Str "consequat."
-          ]
-      , Para
-          [ Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , Space
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , Space
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , Space
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , Space
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , Space
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , Space
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
           ]
       ]
   ]

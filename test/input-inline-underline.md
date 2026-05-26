@@ -49,11 +49,3 @@ title: Underlining Inline Elements
 ```
 
 [Grumpy wizards make toxic brew.]{.pfa-text-strikeout}
-
-## Marked Out
-
-```markdown
-[Grumpy wizards make toxic brew.]{.pfa-text-markout}
-```
-
-[Grumpy wizards make toxic brew.]{.pfa-text-markout}

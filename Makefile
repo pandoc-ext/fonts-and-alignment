@@ -12,15 +12,15 @@ FILTER_DIST := $(EXT_DIR)/fonts-and-alignment.lua
 FILTER_FILE := fonts-and-alignment.lua
 
 # Generated Core Distribution CSS Files
-CSS_EM  := $(EXT_DIR)/fonts-and-alignment-em.css
-CSS_REM := $(EXT_DIR)/fonts-and-alignment-rem.css
+CSS_EM  := ../fonts-and-alignment-em.css
+CSS_REM := $(EXT_DIR)/fonts-and-alignment.css
 DIST_CSS_FILES := $(CSS_EM) $(CSS_REM)
 
 # Private Development SASS Source Files
 SASS_SRC_DIR := src
 SASS_CORE    := $(SASS_SRC_DIR)/_fonts-and-alignment-core.sass
 SASS_EM_SRC  := $(SASS_SRC_DIR)/fonts-and-alignment-em.sass
-SASS_REM_SRC := $(SASS_SRC_DIR)/fonts-and-alignment-rem.sass
+SASS_REM_SRC := $(SASS_SRC_DIR)/fonts-and-alignment.sass
 
 # Allow to use a different pandoc binary, e.g. when testing.
 PANDOC ?= pandoc

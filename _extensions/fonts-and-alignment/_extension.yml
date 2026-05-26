@@ -2,8 +2,10 @@ title: fonts-and-alignment
 author: Nandakumar Chandrasekhar
 version: 1.0.2
 contributes:
-  filters:
-    - fonts-and-alignment.lua
-  css:
-    - fonts-and-alignment-rem.css
-    - fonts-and-alignment-em.css
+  format:
+    pdf:
+      filters:
+        - fonts-and-alignment.lua
+    html:
+      css:
+        - fonts-and-alignment.css

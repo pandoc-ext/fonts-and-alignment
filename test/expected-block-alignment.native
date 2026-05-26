@@ -13,461 +13,150 @@ Pandoc
           , ( "title"
             , MetaInlines
                 [ Str
-                    "Aligning"
+                    "Block-Level"
                 , Space
-                , Str "Blocks"
+                , Str
+                    "Alignment"
                 ]
             )
           ]
     }
   [ Header
       2
-      ( "left-aligned"
+      ( "left-aligned-block"
       , []
       , []
       )
-      [ Str "Left"
+      [ Str "Left-Aligned"
       , Space
-      , Str "Aligned"
+      , Str "Block"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-block-left\nadipiscing elit, sed do eiusmod \\\ntempor incididunt ut labore et dolore \\\nmagna aliqua. Ut enim ad minim \\\nveniam, quis nostrud exercitation ullamco \\\nlaboris nisi ut aliquip ex ea \\\ncommodo consequat. Duis aute irure \\\ndolor in reprehenderit in voluptate \\\nvelit esse cillum dolore eu fugiat \\\nnulla pariatur. Excepteur sint \\\noccaecat cupidatat non proident, \\\nsunt in culpa qui officia deserunt \\\nmollit anim id est laborum.\n:::"
+      "::: {.pfa-block-left}\nThe entire block is _left-aligned_ \\\nwhile maintaining internal text alignment.\n:::"
   , Div
       ( ""
       , [ "pfa-block-left" ]
       , []
       )
       [ Para
-          [ Str "adipiscing"
+          [ Str "The"
           , Space
-          , Str "elit,"
+          , Str "entire"
           , Space
-          , Str "sed"
+          , Str "block"
           , Space
-          , Str "do"
+          , Str "is"
           , Space
-          , Str "eiusmod"
+          , Emph
+              [ Str
+                  "left-aligned"
+              ]
           , LineBreak
-          , Str "tempor"
+          , Str "while"
           , Space
-          , Str "incididunt"
+          , Str "maintaining"
           , Space
-          , Str "ut"
+          , Str "internal"
           , Space
-          , Str "labore"
+          , Str "text"
           , Space
-          , Str "et"
-          , Space
-          , Str "dolore"
-          , LineBreak
-          , Str "magna"
-          , Space
-          , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , LineBreak
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , LineBreak
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , LineBreak
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          , Space
-          , Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , LineBreak
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , LineBreak
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , LineBreak
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , LineBreak
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , LineBreak
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , LineBreak
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
+          , Str "alignment."
           ]
       ]
   , Header
       2
-      ( "center-aligned"
+      ( "center-aligned-block"
       , []
       , []
       )
-      [ Str "Center"
+      [ Str "Center-Aligned"
       , Space
-      , Str "Aligned"
+      , Str "Block"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-block-center\nadipiscing elit, sed do eiusmod \\\ntempor incididunt ut labore et dolore \\\nmagna aliqua. Ut enim ad minim \\\nveniam, quis nostrud exercitation ullamco \\\nlaboris nisi ut aliquip ex ea \\\ncommodo consequat. Duis aute irure \\\ndolor in reprehenderit in voluptate \\\nvelit esse cillum dolore eu fugiat \\\nnulla pariatur. Excepteur sint \\\noccaecat cupidatat non proident, \\\nsunt in culpa qui officia deserunt \\\nmollit anim id est laborum.\n:::"
+      "::: {.pfa-block-center}\nThe entire block is _center-aligned_ \\\nwhile maintaining internal text alignment.\n:::"
   , Div
       ( ""
       , [ "pfa-block-center" ]
       , []
       )
       [ Para
-          [ Str "adipiscing"
+          [ Str "The"
           , Space
-          , Str "elit,"
+          , Str "entire"
           , Space
-          , Str "sed"
+          , Str "block"
           , Space
-          , Str "do"
+          , Str "is"
           , Space
-          , Str "eiusmod"
+          , Emph
+              [ Str
+                  "center-aligned"
+              ]
           , LineBreak
-          , Str "tempor"
+          , Str "while"
           , Space
-          , Str "incididunt"
+          , Str "maintaining"
           , Space
-          , Str "ut"
+          , Str "internal"
           , Space
-          , Str "labore"
+          , Str "text"
           , Space
-          , Str "et"
-          , Space
-          , Str "dolore"
-          , LineBreak
-          , Str "magna"
-          , Space
-          , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , LineBreak
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , LineBreak
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , LineBreak
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          , Space
-          , Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , LineBreak
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , LineBreak
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , LineBreak
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , LineBreak
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , LineBreak
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , LineBreak
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
+          , Str "alignment."
           ]
       ]
   , Header
       2
-      ( "right-aligned"
+      ( "right-aligned-block"
       , []
       , []
       )
-      [ Str "Right"
+      [ Str "Right-Aligned"
       , Space
-      , Str "Aligned"
+      , Str "Block"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-block-right\nadipiscing elit, sed do eiusmod \\\ntempor incididunt ut labore et dolore \\\nmagna aliqua. Ut enim ad minim \\\nveniam, quis nostrud exercitation ullamco \\\nlaboris nisi ut aliquip ex ea \\\ncommodo consequat. Duis aute irure \\\ndolor in reprehenderit in voluptate \\\nvelit esse cillum dolore eu fugiat \\\nnulla pariatur. Excepteur sint \\\noccaecat cupidatat non proident, \\\nsunt in culpa qui officia deserunt \\\nmollit anim id est laborum.\n:::"
+      "::: {.pfa-block-right}\nThe entire block is _right-aligned_ \\\nwhile maintaining internal text alignment.\n:::"
   , Div
       ( ""
       , [ "pfa-block-right" ]
       , []
       )
       [ Para
-          [ Str "adipiscing"
+          [ Str "The"
           , Space
-          , Str "elit,"
+          , Str "entire"
           , Space
-          , Str "sed"
+          , Str "block"
           , Space
-          , Str "do"
+          , Str "is"
           , Space
-          , Str "eiusmod"
+          , Emph
+              [ Str
+                  "right-aligned"
+              ]
           , LineBreak
-          , Str "tempor"
+          , Str "while"
           , Space
-          , Str "incididunt"
+          , Str "maintaining"
           , Space
-          , Str "ut"
+          , Str "internal"
           , Space
-          , Str "labore"
+          , Str "text"
           , Space
-          , Str "et"
-          , Space
-          , Str "dolore"
-          , LineBreak
-          , Str "magna"
-          , Space
-          , Str "aliqua."
-          , Space
-          , Str "Ut"
-          , Space
-          , Str "enim"
-          , Space
-          , Str "ad"
-          , Space
-          , Str "minim"
-          , LineBreak
-          , Str "veniam,"
-          , Space
-          , Str "quis"
-          , Space
-          , Str "nostrud"
-          , Space
-          , Str "exercitation"
-          , Space
-          , Str "ullamco"
-          , LineBreak
-          , Str "laboris"
-          , Space
-          , Str "nisi"
-          , Space
-          , Str "ut"
-          , Space
-          , Str "aliquip"
-          , Space
-          , Str "ex"
-          , Space
-          , Str "ea"
-          , LineBreak
-          , Str "commodo"
-          , Space
-          , Str "consequat."
-          , Space
-          , Str "Duis"
-          , Space
-          , Str "aute"
-          , Space
-          , Str "irure"
-          , LineBreak
-          , Str "dolor"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "reprehenderit"
-          , Space
-          , Str "in"
-          , Space
-          , Str "voluptate"
-          , LineBreak
-          , Str "velit"
-          , Space
-          , Str "esse"
-          , Space
-          , Str "cillum"
-          , Space
-          , Str "dolore"
-          , Space
-          , Str "eu"
-          , Space
-          , Str "fugiat"
-          , LineBreak
-          , Str "nulla"
-          , Space
-          , Str "pariatur."
-          , Space
-          , Str "Excepteur"
-          , Space
-          , Str "sint"
-          , LineBreak
-          , Str "occaecat"
-          , Space
-          , Str "cupidatat"
-          , Space
-          , Str "non"
-          , Space
-          , Str "proident,"
-          , LineBreak
-          , Str "sunt"
-          , Space
-          , Str "in"
-          , Space
-          , Str "culpa"
-          , Space
-          , Str "qui"
-          , Space
-          , Str "officia"
-          , Space
-          , Str "deserunt"
-          , LineBreak
-          , Str "mollit"
-          , Space
-          , Str "anim"
-          , Space
-          , Str "id"
-          , Space
-          , Str "est"
-          , Space
-          , Str "laborum."
+          , Str "alignment."
           ]
       ]
   ]

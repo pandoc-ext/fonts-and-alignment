@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Nandakumar Chandrasekhar" />
   <meta name="dcterms.date" content="2026-05-25" />
-  <title>Fonts and Alignment Filter Demonstration</title>
+  <title>input</title>
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -90,14 +90,17 @@
     code span.vs { color: #4e9a06; } /* VerbatimString */
     code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../_extensions/fonts-and-alignment/fonts-and-alignment-rem.css" />
+  <link rel="stylesheet" href="../_extensions/fonts-and-alignment/fonts-and-alignment.css" />
   <link rel="stylesheet" href="../test/preview-suite.css" />
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Fonts and
-Alignment Filter
-Demonstration</h1>
+<h1 class="title"><div
+class="line-block">Demonstration
+of<br />
+Fonts and Alignment
+Filter<br />
+for Pandoc</div></h1>
 <p class="author">Nandakumar
 Chandrasekhar</p>
 <p class="date">2026-05-25</p>
@@ -105,17 +108,48 @@ Chandrasekhar</p>
 <p>This document showcases
 every feature provided by the
 <code>fonts-and-alignment</code>
-Lua filter. Each code block
+Lua filter for Pandoc. Each
+<code>code block</code>
 demonstrates the exact
 Markdown syntax used to
 produce the rendered output
 that follows, with consistent
-and faithful results across
-both LaTeX/PDF and HTML
-formats.</p>
+results for both the LaTeX/PDF
+and HTML formats.</p>
 <h1 data-number="1"
-id="inline-font-sizing-scale"><span
+id="inline-and-block-invocations"><span
 class="header-section-number">1</span>
+Inline and Block
+Invocations</h1>
+<p>The filter may be used
+<em>inline</em> or in
+<em>block</em> mode as shown
+in the two invocations below.
+Inline styling is used to
+style small portions of text,
+while block styling is used to
+style large blocks of text.
+This accords with Pandoc’s
+syntax convention.</p>
+<div class="sourceCode"
+id="cb1"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This font is extra extra large.</span><span class="co">]</span>{.pfa-text-2xl}</span></code></pre></div>
+<p><span
+class="pfa-text-2xl">This font
+is extra extra
+large.</span></p>
+<div class="sourceCode"
+id="cb2"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-2xl}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>This font is extra extra large.</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-text-2xl">
+<p>This font is extra extra
+large.</p>
+</div>
+<h1 data-number="2"
+id="inline-font-sizing-scale"><span
+class="header-section-number">2</span>
 Inline Font Sizing Scale</h1>
 <p>Nine sizing hooks are
 provided to scale text
@@ -123,9 +157,9 @@ elements relative to the
 document’s base font size.</p>
 <table>
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 42%" />
-<col style="width: 40%" />
+<col style="width: 19%" />
+<col style="width: 49%" />
+<col style="width: 31%" />
 </colgroup>
 <thead>
 <tr>
@@ -221,83 +255,83 @@ class="pfa-text-3xl">Sample</span></td>
 </tr>
 </tbody>
 </table>
-<h1 data-number="2"
+<h1 data-number="3"
 id="block-font-sizing-scale"><span
-class="header-section-number">2</span>
+class="header-section-number">3</span>
 Block Font Sizing Scale</h1>
 <p>The same sizing classes can
 be applied globally to fenced
-div blocks.</p>
-<h2 data-number="2.1"
-id="small-font-size"><span
-class="header-section-number">2.1</span>
-Small Font Size</h2>
-<div class="sourceCode"
-id="cb1"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>::: pfa-text-s</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>This entire paragraph renders at the _small_ font size. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-text-s">
-<p>This entire paragraph
-renders at the <em>small</em>
-font size. Lorem ipsum dolor
-sit amet, consectetur
-adipiscing elit, sed do
-eiusmod tempor incididunt ut
-labore et dolore magna
-aliqua.</p>
-</div>
-<h2 data-number="2.2"
-id="normal-font-size"><span
-class="header-section-number">2.2</span>
-Normal Font Size</h2>
-<div class="sourceCode"
-id="cb2"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>::: pfa-text-normal</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>This entire paragraph renders at the _normal_ font size. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-text-normal">
-<p>This entire paragraph
-renders at the <em>normal</em>
-font size. Lorem ipsum dolor
-sit amet, consectetur
-adipiscing elit, sed do
-eiusmod tempor incididunt ut
-labore et dolore magna
-aliqua.</p>
-</div>
-<h2 data-number="2.3"
-id="large-font-size"><span
-class="header-section-number">2.3</span>
-Large Font Size</h2>
+div blocks.<a href="#fn1"
+class="footnote-ref"
+id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<h2 data-number="3.1"
+id="extra-small-font-size"><span
+class="header-section-number">3.1</span>
+Extra Small Font Size</h2>
 <div class="sourceCode"
 id="cb3"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: pfa-text-l</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>This entire paragraph renders at the _large_ font size. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-xs}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This paragraph renders at the _extra small_ font size</span><span class="co">]</span>{pfa-font-color=&quot;blue&quot;} <span class="co">[</span><span class="ot">compared to the normal font size.</span><span class="co">]</span>{.pfa-text-normal pfa-font-color=&quot;red&quot;}</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-text-l">
-<p>This entire paragraph
-renders at the <em>large</em>
-font size. Lorem ipsum dolor
-sit amet, consectetur
-adipiscing elit, sed do
-eiusmod tempor incididunt ut
-labore et dolore magna
-aliqua.</p>
+<div class="pfa-text-xs">
+<p><span
+style="color: #0000FF;">This
+paragraph renders at the
+<em>extra small</em> font
+size</span> <span
+class="pfa-text-normal"
+style="color: #FF0000;">compared
+to the normal font
+size.</span></p>
 </div>
-<h1 data-number="3"
+<h2 data-number="3.2"
+id="normal-font-size"><span
+class="header-section-number">3.2</span>
+Normal Font Size</h2>
+<div class="sourceCode"
+id="cb4"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-normal}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders at the _normal_ font size.</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-text-normal">
+<p>This paragraph renders at
+the <em>normal</em> font
+size.</p>
+</div>
+<h2 data-number="3.3"
+id="large-font-size"><span
+class="header-section-number">3.3</span>
+Large Font Size</h2>
+<div class="sourceCode"
+id="cb5"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-l}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This paragraph renders at the _large_ font size</span><span class="co">]</span>{pfa-font-color=&quot;blue&quot;} <span class="co">[</span><span class="ot">compared to the normal font size.</span><span class="co">]</span>{.pfa-text-normal pfa-font-color=&quot;red&quot;}</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-text-l">
+<p><span
+style="color: #0000FF;">This
+paragraph renders at the
+<em>large</em> font
+size</span> <span
+class="pfa-text-normal"
+style="color: #FF0000;">compared
+to the normal font
+size.</span></p>
+</div>
+<h1 data-number="4"
 id="font-weights-shapes-and-families-inline"><span
-class="header-section-number">3</span>
+class="header-section-number">4</span>
 Font Weights, Shapes, and
 Families (Inline)</h1>
 <p>Every supported typographic
 style is available as an
-inline span constraint.</p>
+inline span.</p>
 <table>
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 43%" />
-<col style="width: 40%" />
+<col style="width: 23%" />
+<col style="width: 64%" />
+<col style="width: 11%" />
 </colgroup>
 <thead>
 <tr>
@@ -413,9 +447,9 @@ class="pfa-font-normal">Sample</span></td>
 </tr>
 </tbody>
 </table>
-<h1 data-number="4"
+<h1 data-number="5"
 id="font-weights-shapes-and-families-block"><span
-class="header-section-number">4</span>
+class="header-section-number">5</span>
 Font Weights, Shapes, and
 Families (Block)</h1>
 <p>The same classes can also
@@ -423,67 +457,52 @@ be applied at the block level,
 allowing the specified
 typographic style to affect
 all enclosed sentences.</p>
-<h2 data-number="4.1"
+<h2 data-number="5.1"
 id="bold-weight"><span
-class="header-section-number">4.1</span>
+class="header-section-number">5.1</span>
 Bold Weight</h2>
 <div class="sourceCode"
-id="cb4"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>::: pfa-font-bold</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>This entire paragraph renders using the _bold_ font weight. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb6"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-font-bold}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders using the _bold_ font weight.</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-font-bold">
-<p>This entire paragraph
-renders using the
-<em>bold</em> font weight.
-Lorem ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor
-incididunt ut labore et dolore
-magna aliqua.</p>
+<p>This paragraph renders
+using the <em>bold</em> font
+weight.</p>
 </div>
-<h2 data-number="4.2"
+<h2 data-number="5.2"
 id="sans-serif-family"><span
-class="header-section-number">4.2</span>
+class="header-section-number">5.2</span>
 Sans-Serif Family</h2>
 <div class="sourceCode"
-id="cb5"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>::: pfa-font-sans</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>This entire paragraph renders using the _sans-serif_ font family. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb7"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-font-sans}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders using the _sans-serif_ font family.</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-font-sans">
-<p>This entire paragraph
-renders using the
-<em>sans-serif</em> font
-family. Lorem ipsum dolor sit
-amet, consectetur adipiscing
-elit, sed do eiusmod tempor
-incididunt ut labore et dolore
-magna aliqua.</p>
+<p>This paragraph renders
+using the <em>sans-serif</em>
+font family.</p>
 </div>
-<h2 data-number="4.3"
+<h2 data-number="5.3"
 id="small-caps-shape"><span
-class="header-section-number">4.3</span>
+class="header-section-number">5.3</span>
 Small Caps Shape</h2>
 <div class="sourceCode"
-id="cb6"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>::: pfa-font-smallcaps</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>This entire paragraph renders using the _small caps_ font shape. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb8"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-font-smallcaps}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders using the _small caps_ font shape.</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div
 class="pfa-font-smallcaps">
-<p>This entire paragraph
-renders using the <em>small
-caps</em> font shape. Lorem
-ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor
-incididunt ut labore et dolore
-magna aliqua.</p>
+<p>This paragraph renders
+using the <em>small caps</em>
+font shape.</p>
 </div>
-<h1 data-number="5"
+<h1 data-number="6"
 id="text-casing-transformations"><span
-class="header-section-number">5</span>
+class="header-section-number">6</span>
 Text Casing
 Transformations</h1>
 <p>Unlike standard web
@@ -497,15 +516,15 @@ lowercase styling remains
 intact even if you copy and
 paste the text into another
 application.</p>
-<h2 data-number="5.1"
+<h2 data-number="6.1"
 id="inline-casing"><span
-class="header-section-number">5.1</span>
+class="header-section-number">6.1</span>
 Inline Casing</h2>
 <table>
 <colgroup>
+<col style="width: 20%" />
+<col style="width: 65%" />
 <col style="width: 13%" />
-<col style="width: 44%" />
-<col style="width: 41%" />
 </colgroup>
 <thead>
 <tr>
@@ -538,51 +557,41 @@ class="pfa-lowercase">coerced</span></td>
 </tr>
 </tbody>
 </table>
-<h2 data-number="5.2"
+<h2 data-number="6.2"
 id="block-casing"><span
-class="header-section-number">5.2</span>
+class="header-section-number">6.2</span>
 Block Casing</h2>
-<h3 data-number="5.2.1"
+<h3 data-number="6.2.1"
 id="lowercase"><span
-class="header-section-number">5.2.1</span>
+class="header-section-number">6.2.1</span>
 Lowercase</h3>
 <div class="sourceCode"
-id="cb7"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>::: pfa-lowercase</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>THIS ENTIRE PARAGRAPH IS TRANSFORMED TO _LOWERCASE_. LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb9"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-lowercase}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>THIS PARAGRAPH IS TRANSFORMED TO _LOWERCASE_.</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-lowercase">
-<p>this entire paragraph is
+<p>this paragraph is
 transformed to
-<em>lowercase</em>. lorem
-ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor
-incididunt ut labore et dolore
-magna aliqua.</p>
+<em>lowercase</em>.</p>
 </div>
-<h3 data-number="5.2.2"
+<h3 data-number="6.2.2"
 id="uppercase"><span
-class="header-section-number">5.2.2</span>
+class="header-section-number">6.2.2</span>
 Uppercase</h3>
 <div class="sourceCode"
-id="cb8"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>::: pfa-uppercase</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>this entire paragraph is transformed to _uppercase_. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb10"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-uppercase}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>this paragraph is transformed to _uppercase_.</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-uppercase">
-<p>THIS ENTIRE PARAGRAPH IS
+<p>THIS PARAGRAPH IS
 TRANSFORMED TO
-<em>UPPERCASE</em>. LOREM
-IPSUM DOLOR SIT AMET,
-CONSECTETUR ADIPISCING ELIT,
-SED DO EIUSMOD TEMPOR
-INCIDIDUNT UT LABORE ET DOLORE
-MAGNA ALIQUA.</p>
+<em>UPPERCASE</em>.</p>
 </div>
-<h1 data-number="6"
+<h1 data-number="7"
 id="inline-text-decorations"><span
-class="header-section-number">6</span>
+class="header-section-number">7</span>
 Inline Text Decorations</h1>
 <p>Underline and strikeout
 variants are implemented
@@ -596,9 +605,9 @@ are supported only for inline
 elements.</p>
 <table>
 <colgroup>
-<col style="width: 27%" />
-<col style="width: 62%" />
-<col style="width: 10%" />
+<col style="width: 26%" />
+<col style="width: 61%" />
+<col style="width: 11%" />
 </colgroup>
 <thead>
 <tr>
@@ -670,38 +679,11 @@ style="text-align: left;"><code>[Sample]{.pfa-text-strikeout}</code></td>
 style="text-align: left;"><span
 class="pfa-text-strikeout"><del>Sample</del></span></td>
 </tr>
-<tr>
-<td
-style="text-align: left;">Marked
-Out</td>
-<td
-style="text-align: left;"><code>[Sample]{.pfa-text-markout}</code></td>
-<td
-style="text-align: left;"><span
-class="pfa-text-markout"><del>Sample</del></span></td>
-</tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> The
-<code>.pfa-text-strikeout</code>
-and
-<code>.pfa-text-markout</code>
-classes are both rendered as a
-standard horizontal strikeout.
-Although LaTeX (via the
-<code>ulem</code> package)
-provides multiple
-text-deletion styles, the
-“markout” variant is not
-supported in HTML/CSS. To
-ensure consistent rendering
-across both LaTeX and HTML
-outputs, the filter
-standardizes both classes to
-the same strikeout style.</p>
-<h1 data-number="7"
+<h1 data-number="8"
 id="color-resolution"><span
-class="header-section-number">7</span>
+class="header-section-number">8</span>
 Color Resolution</h1>
 <p>The
 <code>pfa-font-color</code>
@@ -751,10 +733,10 @@ style="color: #2E8B57;">Sample</span></td>
 <tr>
 <td
 style="text-align: left;">Hex
-Shorthand<a href="#fn1"
+Shorthand<a href="#fn2"
 class="footnote-ref"
-id="fnref1"
-role="doc-noteref"><sup>1</sup></a></td>
+id="fnref2"
+role="doc-noteref"><sup>2</sup></a></td>
 <td
 style="text-align: left;"><code>[Sample]{pfa-font-color="#666"}</code></td>
 <td
@@ -769,9 +751,9 @@ utility is an attribute, not a
 class, and should not be
 prefixed with a period
 (.).</p>
-<h2 data-number="7.1"
+<h2 data-number="8.1"
 id="flexible-spelling-of-named-colors"><span
-class="header-section-number">7.1</span>
+class="header-section-number">8.1</span>
 Flexible Spelling of Named
 Colors</h2>
 <p>The rendering engine
@@ -891,9 +873,9 @@ style="color: #C71585;">Color</span></td>
 </tr>
 </tbody>
 </table>
-<h2 data-number="7.2"
+<h2 data-number="8.2"
 id="block-level-color-constraints-with-inline-overrides"><span
-class="header-section-number">7.2</span>
+class="header-section-number">8.2</span>
 Block-Level Color Constraints
 with Inline Overrides</h2>
 <p>Colors applied to a block
@@ -903,11 +885,11 @@ though nested spans can
 explicitly override parent
 values.</p>
 <div class="sourceCode"
-id="cb9"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;#666&quot;}</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>The parent block carries a default color of dark slate gray. <span class="co">[</span><span class="ot">This inline span overrides the color to tomato red.</span><span class="co">]</span>{pfa-font-color=&quot;tomato&quot;} The surrounding text continues in the parent color until the block closes.</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div style="color: #666666;">
+id="cb11"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;dark slate grey&quot;}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>The parent block carries a default color of dark slate gray. <span class="co">[</span><span class="ot">This inline span overrides the color to tomato red.</span><span class="co">]</span>{pfa-font-color=&quot;tomato&quot;} The surrounding text continues in the parent color until the block closes.</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div style="color: #2F4F4F;">
 <p>The parent block carries a
 default color of dark slate
 gray. <span
@@ -918,9 +900,9 @@ The surrounding text continues
 in the parent color until the
 block closes.</p>
 </div>
-<h1 data-number="8"
+<h1 data-number="9"
 id="text-alignment-within-blocks"><span
-class="header-section-number">8</span>
+class="header-section-number">9</span>
 Text Alignment within
 Blocks</h1>
 <p>The
@@ -928,63 +910,48 @@ Blocks</h1>
 utility wraps blocks in
 standard text
 environments.</p>
-<h2 data-number="8.1"
+<h2 data-number="9.1"
 id="left-aligned-text"><span
-class="header-section-number">8.1</span>
+class="header-section-number">9.1</span>
 Left-Aligned Text</h2>
 <div class="sourceCode"
-id="cb10"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>::: pfa-text-left</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>This block of text is _left-aligned_. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb12"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-left}</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>This block of text is _left-aligned_.</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-text-left">
 <p>This block of text is
-<em>left-aligned</em>. Lorem
-ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor
-incididunt ut labore et dolore
-magna aliqua.</p>
+<em>left-aligned</em>.</p>
 </div>
-<h2 data-number="8.2"
+<h2 data-number="9.2"
 id="centered-text"><span
-class="header-section-number">8.2</span>
+class="header-section-number">9.2</span>
 Centered Text</h2>
 <div class="sourceCode"
-id="cb11"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>::: pfa-text-center</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>This block of text is _centered_. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb13"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-center}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>This block of text is _centered_.</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-text-center">
 <p>This block of text is
-<em>centered</em>. Lorem ipsum
-dolor sit amet, consectetur
-adipiscing elit, sed do
-eiusmod tempor incididunt ut
-labore et dolore magna
-aliqua.</p>
+<em>centered</em>.</p>
 </div>
-<h2 data-number="8.3"
+<h2 data-number="9.3"
 id="right-aligned-text"><span
-class="header-section-number">8.3</span>
+class="header-section-number">9.3</span>
 Right-Aligned Text</h2>
 <div class="sourceCode"
-id="cb12"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>::: pfa-text-right</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>This block of text is _right-aligned_. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb14"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-right}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>This block of text is _right-aligned_.</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-text-right">
 <p>This block of text is
-<em>right-aligned</em>. Lorem
-ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor
-incididunt ut labore et dolore
-magna aliqua.</p>
+<em>right-aligned</em>.</p>
 </div>
-<h1 data-number="9"
+<h1 data-number="10"
 id="ragged-alignment"><span
-class="header-section-number">9</span>
+class="header-section-number">10</span>
 Ragged Alignment</h1>
 <p>The
 <code>.pfa-align-*</code>
@@ -1034,79 +1001,67 @@ surrounding paragraph streams
 (e.g., a line-broken signature
 block, verse stanzas, or
 captioned figures).</p>
-<h2 data-number="9.1"
-id="left-aligned-ragged-text"><span
-class="header-section-number">9.1</span>
-Left-Aligned Ragged Text</h2>
-<div class="sourceCode"
-id="cb13"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>::: pfa-align-left</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>This block of ragged text is _left-aligned_ while honoring explicit line breaks.\</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit,\</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-align-left">
-<p>This block of ragged text
-is <em>left-aligned</em> while
-honoring explicit line
-breaks.<br />
-Lorem ipsum dolor sit amet,
-consectetur adipiscing
-elit,<br />
-sed do eiusmod tempor
-incididunt ut labore et dolore
-magna aliqua.</p>
-</div>
-<h2 data-number="9.2"
-id="center-aligned-ragged-text"><span
-class="header-section-number">9.2</span>
-Center-Aligned Ragged
+<h2 data-number="10.1"
+id="left-aligned-ragged-right-text"><span
+class="header-section-number">10.1</span>
+Left-Aligned Ragged Right
 Text</h2>
 <div class="sourceCode"
-id="cb14"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>::: pfa-align-center</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>This block of ragged text is _centered_ while honoring explicit line breaks.\</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit,\</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-align-center">
-<p>This block of ragged text
-is <em>centered</em> while
-honoring explicit line
-breaks.<br />
-Lorem ipsum dolor sit amet,
-consectetur adipiscing
-elit,<br />
-sed do eiusmod tempor
-incididunt ut labore et dolore
-magna aliqua.</p>
-</div>
-<h2 data-number="9.3"
-id="right-aligned-ragged-text"><span
-class="header-section-number">9.3</span>
-Right-Aligned Ragged Text</h2>
-<div class="sourceCode"
 id="cb15"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>::: pfa-align-right</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>This block of ragged text is _right-aligned_ while honoring explicit line breaks.\</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit,\</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>This block of ragged text \</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>is _left-aligned_ \</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>while honoring explicit line breaks.</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-align-right">
-<p>This block of ragged text
-is <em>right-aligned</em>
+<div class="pfa-align-left">
+<p>This block of ragged
+text<br />
+is <em>left-aligned</em><br />
 while honoring explicit line
-breaks.<br />
-Lorem ipsum dolor sit amet,
-consectetur adipiscing
-elit,<br />
-sed do eiusmod tempor
-incididunt ut labore et dolore
-magna aliqua.</p>
+breaks.</p>
 </div>
-<h1 data-number="10"
+<h2 data-number="10.2"
+id="center-aligned-ragged-both-text"><span
+class="header-section-number">10.2</span>
+Center-Aligned Ragged Both
+Text</h2>
+<div class="sourceCode"
+id="cb16"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>This block of ragged text \</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>is _centered_ \</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>while honoring explicit line breaks.</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-align-center">
+<p>This block of ragged
+text<br />
+is <em>centered</em><br />
+while honoring explicit line
+breaks.</p>
+</div>
+<h2 data-number="10.3"
+id="right-aligned-ragged-left-text"><span
+class="header-section-number">10.3</span>
+Right-Aligned Ragged Left
+Text</h2>
+<div class="sourceCode"
+id="cb17"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>This block of ragged text \</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>is _right-aligned_ \</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>while honoring explicit line breaks.</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-align-right">
+<p>This block of ragged
+text<br />
+is
+<em>right-aligned</em><br />
+while honoring explicit line
+breaks.</p>
+</div>
+<h1 data-number="11"
 id="block-level-alignment"><span
-class="header-section-number">10</span>
+class="header-section-number">11</span>
 Block-Level Alignment</h1>
 <p>The
 <code>.pfa-block-*</code>
@@ -1116,81 +1071,57 @@ cohesive unit while preserving
 the internal alignment
 settings of the text within
 it.</p>
-<h2 data-number="10.1"
-id="left-aligned-block-container"><span
-class="header-section-number">10.1</span>
-Left-Aligned Block
-Container</h2>
-<div class="sourceCode"
-id="cb16"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-left}</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>The entire block container is _left-aligned_ while maintaining internal text structure.\</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit,\</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-block-left">
-<p>The entire block container
-is <em>left-aligned</em> while
-maintaining internal text
-structure.<br />
-Lorem ipsum dolor sit amet,
-consectetur adipiscing
-elit,<br />
-sed do eiusmod tempor
-incididunt ut labore et dolore
-magna aliqua.</p>
-</div>
-<h2 data-number="10.2"
-id="center-aligned-block-container"><span
-class="header-section-number">10.2</span>
-Center-Aligned Block
-Container</h2>
-<div class="sourceCode"
-id="cb17"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-center}</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>The entire block container is _center-aligned_ while maintaining internal text structure.\</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit,\</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-block-center">
-<p>The entire block container
-is <em>center-aligned</em>
-while maintaining internal
-text structure.<br />
-Lorem ipsum dolor sit amet,
-consectetur adipiscing
-elit,<br />
-sed do eiusmod tempor
-incididunt ut labore et dolore
-magna aliqua.</p>
-</div>
-<h2 data-number="10.3"
-id="right-aligned-block-container"><span
-class="header-section-number">10.3</span>
-Right-Aligned Block
-Container</h2>
+<h2 data-number="11.1"
+id="left-aligned-block"><span
+class="header-section-number">11.1</span>
+Left-Aligned Block</h2>
 <div class="sourceCode"
 id="cb18"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-right}</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>The entire block container is _right-aligned_ while maintaining internal text structure.\</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit,\</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-block-right">
-<p>The entire block container
-is <em>right-aligned</em>
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-left}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>The entire block is _left-aligned_ \</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>while maintaining internal text alignment.</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-block-left">
+<p>The entire block is
+<em>left-aligned</em><br />
 while maintaining internal
-text structure.<br />
-Lorem ipsum dolor sit amet,
-consectetur adipiscing
-elit,<br />
-sed do eiusmod tempor
-incididunt ut labore et dolore
-magna aliqua.</p>
+text alignment.</p>
 </div>
-<h1 data-number="11"
+<h2 data-number="11.2"
+id="center-aligned-block"><span
+class="header-section-number">11.2</span>
+Center-Aligned Block</h2>
+<div class="sourceCode"
+id="cb19"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-center}</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>The entire block is _center-aligned_ \</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>while maintaining internal text alignment.</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-block-center">
+<p>The entire block is
+<em>center-aligned</em><br />
+while maintaining internal
+text alignment.</p>
+</div>
+<h2 data-number="11.3"
+id="right-aligned-block"><span
+class="header-section-number">11.3</span>
+Right-Aligned Block</h2>
+<div class="sourceCode"
+id="cb20"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-right}</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>The entire block is _right-aligned_ \</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>while maintaining internal text alignment.</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-block-right">
+<p>The entire block is
+<em>right-aligned</em><br />
+while maintaining internal
+text alignment.</p>
+</div>
+<h1 data-number="12"
 id="combining-multiple-classes"><span
-class="header-section-number">11</span>
+class="header-section-number">12</span>
 Combining Multiple
 Classes</h1>
 <p>Classes can be stacked
@@ -1199,15 +1130,21 @@ weight, color, and decoration
 definitions compose safely on
 both inline elements and
 structural blocks.</p>
-<h2 data-number="11.1"
+<p>Individual styles are
+space-separated and enclosed
+in braces <code>{}</code>, for
+inline and block composition
+in accordance with Pandoc’s
+syntax rules.</p>
+<h2 data-number="12.1"
 id="inline-composition"><span
-class="header-section-number">11.1</span>
+class="header-section-number">12.1</span>
 Inline Composition</h2>
 <table>
 <colgroup>
-<col style="width: 12%" />
-<col style="width: 44%" />
-<col style="width: 43%" />
+<col style="width: 23%" />
+<col style="width: 64%" />
+<col style="width: 11%" />
 </colgroup>
 <thead>
 <tr>
@@ -1223,7 +1160,7 @@ style="text-align: left;">Output</th>
 <tr>
 <td
 style="text-align: left;">Bold
-Sans Display</td>
+Sans-serif</td>
 <td
 style="text-align: left;"><code>[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}</code></td>
 <td
@@ -1234,7 +1171,7 @@ style="color: #FF0000;">Sample</span></td>
 <tr>
 <td
 style="text-align: left;">Italic
-Mono Caption</td>
+Mono</td>
 <td
 style="text-align: left;"><code>[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}</code></td>
 <td
@@ -1243,26 +1180,27 @@ class="pfa-font-italic pfa-font-mono pfa-text-s">Sample</span></td>
 </tr>
 <tr>
 <td
-style="text-align: left;">Smallcaps
-Underline</td>
+style="text-align: left;">Small
+Caps, Underlined and
+Colored</td>
 <td
-style="text-align: left;"><code>[Sample]{.pfa-text-uline .pfa-font-smallcaps pfa-font-color="forestgreen"}</code></td>
+style="text-align: left;"><code>[Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color="forestgreen"}</code></td>
 <td
 style="text-align: left;"><span
-class="pfa-text-uline pfa-font-smallcaps"
+class="pfa-font-smallcaps pfa-text-uline"
 style="color: #228B22;"><u>Sample</u></span></td>
 </tr>
 </tbody>
 </table>
-<h2 data-number="11.2"
+<h2 data-number="12.2"
 id="block-composition"><span
-class="header-section-number">11.2</span>
+class="header-section-number">12.2</span>
 Block Composition</h2>
 <div class="sourceCode"
-id="cb19"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color=&quot;midnightblue&quot;}</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue block assembled from five different features of the filter.</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb21"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color=&quot;midnightblue&quot;}</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue block assembled from five different features of the filter.</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div
 class="pfa-text-center pfa-font-sans pfa-font-bold pfa-text-l"
 style="color: #191970;">
@@ -1272,9 +1210,9 @@ midnight-blue block assembled
 from five different features
 of the filter.</p>
 </div>
-<h1 data-number="12"
+<h1 data-number="13"
 id="legacy-short-hand-aliases-deprecated"><span
-class="header-section-number">12</span>
+class="header-section-number">13</span>
 Legacy Short-Hand Aliases
 (Deprecated)</h1>
 <p><strong>Warning:</strong>
@@ -1286,9 +1224,9 @@ the next major release. New
 documents should use the
 <code>.pfa-*</code> namespaces
 going forward.</p>
-<h2 data-number="12.1"
+<h2 data-number="13.1"
 id="font-weight-shape-and-family-aliases"><span
-class="header-section-number">12.1</span>
+class="header-section-number">13.1</span>
 Font Weight, Shape, and Family
 Aliases</h2>
 <table style="width:100%;">
@@ -1400,9 +1338,9 @@ style="text-align: left;"><code>.pfa-font-upright</code></td>
 </tr>
 </tbody>
 </table>
-<h2 data-number="12.2"
+<h2 data-number="13.2"
 id="font-size-aliases"><span
-class="header-section-number">12.2</span>
+class="header-section-number">13.2</span>
 Font Size Aliases</h2>
 <table>
 <colgroup>
@@ -1464,9 +1402,9 @@ style="text-align: left;"><code>.pfa-text-3xl</code></td>
 </tr>
 </tbody>
 </table>
-<h2 data-number="12.3"
+<h2 data-number="13.3"
 id="alignment-aliases"><span
-class="header-section-number">12.3</span>
+class="header-section-number">13.3</span>
 Alignment Aliases</h2>
 <table>
 <colgroup>
@@ -1522,9 +1460,9 @@ style="text-align: left;"><code>.pfa-align-left</code></td>
 </tr>
 </tbody>
 </table>
-<h2 data-number="12.4"
+<h2 data-number="13.4"
 id="underline-and-strikeout-aliases"><span
-class="header-section-number">12.4</span>
+class="header-section-number">13.4</span>
 Underline and Strikeout
 Aliases</h2>
 <table>
@@ -1600,7 +1538,8 @@ style="text-align: left;"><code>.xout</code></td>
 <td
 style="text-align: left;"><code>.xo</code></td>
 <td
-style="text-align: left;"><code>.pfa-text-markout</code></td>
+style="text-align: left;">Removed
+in version 1.0.3</td>
 </tr>
 </tbody>
 </table>
@@ -1609,7 +1548,16 @@ class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Three-digit
+<li id="fn1"><p>As explained
+later,
+<code>pfa-font-color</code> is
+an attribute and should not be
+prefixed with a period
+<code>(.)</code>.<a
+href="#fnref1"
+class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Three-digit
 shorthand expands by doubling
 each digit (e.g.,
 <code>#666</code> becomes
@@ -1621,7 +1569,7 @@ channel uses a repeated
 character; a full hex code
 like <code>#2E8B57</code>
 cannot be shortened.<a
-href="#fnref1"
+href="#fnref2"
 class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 </ol>

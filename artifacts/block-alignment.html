@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Nandakumar Chandrasekhar" />
   <meta name="dcterms.date" content="2026-05-25" />
-  <title>Aligning Blocks</title>
+  <title>Block-Level Alignment</title>
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -90,154 +90,64 @@
     code span.vs { color: #4e9a06; } /* VerbatimString */
     code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../_extensions/fonts-and-alignment/fonts-and-alignment-rem.css" />
+  <link rel="stylesheet" href="../_extensions/fonts-and-alignment/fonts-and-alignment.css" />
   <link rel="stylesheet" href="../test/preview-suite.css" />
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Aligning
-Blocks</h1>
+<h1 class="title">Block-Level
+Alignment</h1>
 <p class="author">Nandakumar
 Chandrasekhar</p>
 <p class="date">2026-05-25</p>
 </header>
 <h1 data-number="1"
-id="left-aligned"><span
+id="left-aligned-block"><span
 class="header-section-number">1</span>
-Left Aligned</h1>
+Left-Aligned Block</h1>
 <div class="sourceCode"
 id="cb1"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>::: pfa-block-left</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>adipiscing elit, sed do eiusmod \</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore \</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>magna aliqua. Ut enim ad minim \</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>veniam, quis nostrud exercitation ullamco \</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>laboris nisi ut aliquip ex ea \</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>commodo consequat. Duis aute irure \</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>dolor in reprehenderit in voluptate \</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>velit esse cillum dolore eu fugiat \</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>nulla pariatur. Excepteur sint \</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>occaecat cupidatat non proident, \</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>sunt in culpa qui officia deserunt \</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>mollit anim id est laborum.</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-left}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>The entire block is _left-aligned_ \</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>while maintaining internal text alignment.</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-block-left">
-<p>adipiscing elit, sed do
-eiusmod<br />
-tempor incididunt ut labore et
-dolore<br />
-magna aliqua. Ut enim ad
-minim<br />
-veniam, quis nostrud
-exercitation ullamco<br />
-laboris nisi ut aliquip ex
-ea<br />
-commodo consequat. Duis aute
-irure<br />
-dolor in reprehenderit in
-voluptate<br />
-velit esse cillum dolore eu
-fugiat<br />
-nulla pariatur. Excepteur
-sint<br />
-occaecat cupidatat non
-proident,<br />
-sunt in culpa qui officia
-deserunt<br />
-mollit anim id est
-laborum.</p>
+<p>The entire block is
+<em>left-aligned</em><br />
+while maintaining internal
+text alignment.</p>
 </div>
 <h1 data-number="2"
-id="center-aligned"><span
+id="center-aligned-block"><span
 class="header-section-number">2</span>
-Center Aligned</h1>
+Center-Aligned Block</h1>
 <div class="sourceCode"
 id="cb2"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>::: pfa-block-center</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>adipiscing elit, sed do eiusmod \</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore \</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>magna aliqua. Ut enim ad minim \</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>veniam, quis nostrud exercitation ullamco \</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>laboris nisi ut aliquip ex ea \</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>commodo consequat. Duis aute irure \</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>dolor in reprehenderit in voluptate \</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>velit esse cillum dolore eu fugiat \</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>nulla pariatur. Excepteur sint \</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>occaecat cupidatat non proident, \</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>sunt in culpa qui officia deserunt \</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>mollit anim id est laborum.</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-center}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>The entire block is _center-aligned_ \</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>while maintaining internal text alignment.</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-block-center">
-<p>adipiscing elit, sed do
-eiusmod<br />
-tempor incididunt ut labore et
-dolore<br />
-magna aliqua. Ut enim ad
-minim<br />
-veniam, quis nostrud
-exercitation ullamco<br />
-laboris nisi ut aliquip ex
-ea<br />
-commodo consequat. Duis aute
-irure<br />
-dolor in reprehenderit in
-voluptate<br />
-velit esse cillum dolore eu
-fugiat<br />
-nulla pariatur. Excepteur
-sint<br />
-occaecat cupidatat non
-proident,<br />
-sunt in culpa qui officia
-deserunt<br />
-mollit anim id est
-laborum.</p>
+<p>The entire block is
+<em>center-aligned</em><br />
+while maintaining internal
+text alignment.</p>
 </div>
 <h1 data-number="3"
-id="right-aligned"><span
+id="right-aligned-block"><span
 class="header-section-number">3</span>
-Right Aligned</h1>
+Right-Aligned Block</h1>
 <div class="sourceCode"
 id="cb3"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: pfa-block-right</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>adipiscing elit, sed do eiusmod \</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tempor incididunt ut labore et dolore \</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>magna aliqua. Ut enim ad minim \</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>veniam, quis nostrud exercitation ullamco \</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>laboris nisi ut aliquip ex ea \</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>commodo consequat. Duis aute irure \</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>dolor in reprehenderit in voluptate \</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>velit esse cillum dolore eu fugiat \</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>nulla pariatur. Excepteur sint \</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>occaecat cupidatat non proident, \</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>sunt in culpa qui officia deserunt \</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>mollit anim id est laborum.</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-right}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>The entire block is _right-aligned_ \</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>while maintaining internal text alignment.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-block-right">
-<p>adipiscing elit, sed do
-eiusmod<br />
-tempor incididunt ut labore et
-dolore<br />
-magna aliqua. Ut enim ad
-minim<br />
-veniam, quis nostrud
-exercitation ullamco<br />
-laboris nisi ut aliquip ex
-ea<br />
-commodo consequat. Duis aute
-irure<br />
-dolor in reprehenderit in
-voluptate<br />
-velit esse cillum dolore eu
-fugiat<br />
-nulla pariatur. Excepteur
-sint<br />
-occaecat cupidatat non
-proident,<br />
-sunt in culpa qui officia
-deserunt<br />
-mollit anim id est
-laborum.</p>
+<p>The entire block is
+<em>right-aligned</em><br />
+while maintaining internal
+text alignment.</p>
 </div>
 </body>
 </html>

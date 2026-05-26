@@ -90,14 +90,6 @@ title: Styling Fonts Inline
 
 [Grumpy wizards make toxic brew.]{.pfa-font-normal}
 
-## Uppercase
-
-```markdown
-[grumpy wizards make toxic brew.]{.pfa-uppercase}
-```
-
-[grumpy wizards make toxic brew.]{.pfa-uppercase}
-
 ## Lowercase
 
 ```markdown
@@ -105,3 +97,11 @@ title: Styling Fonts Inline
 ```
 
 [GRUMPY WIZARDS MAKE TOXIC BREW.]{.pfa-lowercase}
+
+## Uppercase
+
+```markdown
+[grumpy wizards make toxic brew.]{.pfa-uppercase}
+```
+
+[grumpy wizards make toxic brew.]{.pfa-uppercase}

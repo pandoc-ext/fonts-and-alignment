@@ -71,13 +71,16 @@ table {
    Specimen Framing (HTML parity with the LaTeX tcolorbox in preview-framing.lua)
    ========================================================================== */
 /* Frame every block-level pfa-* div and color-only div produced by the filter. */
+/* Use margin-top/margin-bottom (not the `margin` shorthand) so we don't clobber */
+/* the horizontal auto-margins on .pfa-block-center / .pfa-block-left / .pfa-block-right. */
 div[class*="pfa-"],
 div[style*="color"] {
   background-color: #F8FAFC;
   border: 1px solid #94A3B8;
   border-radius: 4px;
   padding: 0.6em 0.9em;
-  margin: 0.6em 0;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
 }
 
 /* Frame every inline pfa-* span and color-only span. */

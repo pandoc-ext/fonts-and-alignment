@@ -1,105 +1,45 @@
 ---
-title: Aligning Blocks
+title: Block-Level Alignment
 ---
 
-## Left Aligned
+## Left-Aligned Block
 
 ```markdown
-::: pfa-block-left
-adipiscing elit, sed do eiusmod \
-tempor incididunt ut labore et dolore \
-magna aliqua. Ut enim ad minim \
-veniam, quis nostrud exercitation ullamco \
-laboris nisi ut aliquip ex ea \
-commodo consequat. Duis aute irure \
-dolor in reprehenderit in voluptate \
-velit esse cillum dolore eu fugiat \
-nulla pariatur. Excepteur sint \
-occaecat cupidatat non proident, \
-sunt in culpa qui officia deserunt \
-mollit anim id est laborum.
+::: {.pfa-block-left}
+The entire block is _left-aligned_ \
+while maintaining internal text alignment.
 :::
 ```
 
-::: pfa-block-left
-adipiscing elit, sed do eiusmod \
-tempor incididunt ut labore et dolore \
-magna aliqua. Ut enim ad minim \
-veniam, quis nostrud exercitation ullamco \
-laboris nisi ut aliquip ex ea \
-commodo consequat. Duis aute irure \
-dolor in reprehenderit in voluptate \
-velit esse cillum dolore eu fugiat \
-nulla pariatur. Excepteur sint \
-occaecat cupidatat non proident, \
-sunt in culpa qui officia deserunt \
-mollit anim id est laborum.
+::: {.pfa-block-left}
+The entire block is _left-aligned_ \
+while maintaining internal text alignment.
 :::
 
-## Center Aligned
+## Center-Aligned Block
 
 ```markdown
-::: pfa-block-center
-adipiscing elit, sed do eiusmod \
-tempor incididunt ut labore et dolore \
-magna aliqua. Ut enim ad minim \
-veniam, quis nostrud exercitation ullamco \
-laboris nisi ut aliquip ex ea \
-commodo consequat. Duis aute irure \
-dolor in reprehenderit in voluptate \
-velit esse cillum dolore eu fugiat \
-nulla pariatur. Excepteur sint \
-occaecat cupidatat non proident, \
-sunt in culpa qui officia deserunt \
-mollit anim id est laborum.
+::: {.pfa-block-center}
+The entire block is _center-aligned_ \
+while maintaining internal text alignment.
 :::
 ```
 
-::: pfa-block-center
-adipiscing elit, sed do eiusmod \
-tempor incididunt ut labore et dolore \
-magna aliqua. Ut enim ad minim \
-veniam, quis nostrud exercitation ullamco \
-laboris nisi ut aliquip ex ea \
-commodo consequat. Duis aute irure \
-dolor in reprehenderit in voluptate \
-velit esse cillum dolore eu fugiat \
-nulla pariatur. Excepteur sint \
-occaecat cupidatat non proident, \
-sunt in culpa qui officia deserunt \
-mollit anim id est laborum.
+::: {.pfa-block-center}
+The entire block is _center-aligned_ \
+while maintaining internal text alignment.
 :::
 
-## Right Aligned
+## Right-Aligned Block
 
 ```markdown
-::: pfa-block-right
-adipiscing elit, sed do eiusmod \
-tempor incididunt ut labore et dolore \
-magna aliqua. Ut enim ad minim \
-veniam, quis nostrud exercitation ullamco \
-laboris nisi ut aliquip ex ea \
-commodo consequat. Duis aute irure \
-dolor in reprehenderit in voluptate \
-velit esse cillum dolore eu fugiat \
-nulla pariatur. Excepteur sint \
-occaecat cupidatat non proident, \
-sunt in culpa qui officia deserunt \
-mollit anim id est laborum.
+::: {.pfa-block-right}
+The entire block is _right-aligned_ \
+while maintaining internal text alignment.
 :::
 ```
 
-::: pfa-block-right
-adipiscing elit, sed do eiusmod \
-tempor incididunt ut labore et dolore \
-magna aliqua. Ut enim ad minim \
-veniam, quis nostrud exercitation ullamco \
-laboris nisi ut aliquip ex ea \
-commodo consequat. Duis aute irure \
-dolor in reprehenderit in voluptate \
-velit esse cillum dolore eu fugiat \
-nulla pariatur. Excepteur sint \
-occaecat cupidatat non proident, \
-sunt in culpa qui officia deserunt \
-mollit anim id est laborum.
+::: {.pfa-block-right}
+The entire block is _right-aligned_ \
+while maintaining internal text alignment.
 :::

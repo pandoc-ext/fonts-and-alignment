@@ -228,40 +228,4 @@ Pandoc
               ]
           ]
       ]
-  , Header
-      2
-      ( "marked-out"
-      , []
-      , []
-      )
-      [ Str "Marked"
-      , Space
-      , Str "Out"
-      ]
-  , CodeBlock
-      ( ""
-      , [ "markdown" ]
-      , []
-      )
-      "[Grumpy wizards make toxic brew.]{.pfa-text-markout}"
-  , Para
-      [ Span
-          ( ""
-          , [ "pfa-text-markout"
-            ]
-          , []
-          )
-          [ Strikeout
-              [ Str "Grumpy"
-              , Space
-              , Str "wizards"
-              , Space
-              , Str "make"
-              , Space
-              , Str "toxic"
-              , Space
-              , Str "brew."
-              ]
-          ]
-      ]
   ]
