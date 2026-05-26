@@ -32,7 +32,7 @@ Pandoc
       , Space
       , Str "document"
       , Space
-      , Str "demonstrates"
+      , Str "showcases"
       , Space
       , Str "every"
       , Space
@@ -52,49 +52,49 @@ Pandoc
       , Space
       , Str "filter."
       , Space
-      , Str "The"
-      , Space
-      , Str "syntax"
-      , Space
-      , Str "shown"
-      , Space
-      , Str "in"
-      , Space
-      , Str "the"
+      , Str "Each"
       , Space
       , Str "code"
       , Space
-      , Str "blocks"
+      , Str "block"
       , Space
-      , Str "directly"
-      , Space
-      , Str "produces"
+      , Str "demonstrates"
       , Space
       , Str "the"
       , Space
-      , Str "output"
-      , Space
-      , Str "below"
-      , Space
-      , Str "them,"
-      , Space
-      , Str "and"
-      , Space
-      , Str "the"
-      , Space
-      , Str "same"
+      , Str "exact"
       , Space
       , Str "Markdown"
       , Space
-      , Str "source"
+      , Str "syntax"
       , Space
-      , Str "produces"
+      , Str "used"
       , Space
-      , Str "faithful"
+      , Str "to"
+      , Space
+      , Str "produce"
+      , Space
+      , Str "the"
+      , Space
+      , Str "rendered"
       , Space
       , Str "output"
       , Space
-      , Str "in"
+      , Str "that"
+      , Space
+      , Str "follows,"
+      , Space
+      , Str "with"
+      , Space
+      , Str "consistent"
+      , Space
+      , Str "and"
+      , Space
+      , Str "faithful"
+      , Space
+      , Str "results"
+      , Space
+      , Str "across"
       , Space
       , Str "both"
       , Space
@@ -102,21 +102,23 @@ Pandoc
       , Space
       , Str "and"
       , Space
-      , Str "HTML."
+      , Str "HTML"
+      , Space
+      , Str "formats."
       ]
   , Header
       2
-      ( "font-sizing-scale-inline"
+      ( "inline-font-sizing-scale"
       , []
       , []
       )
-      [ Str "Font"
+      [ Str "Inline"
+      , Space
+      , Str "Font"
       , Space
       , Str "Sizing"
       , Space
       , Str "Scale"
-      , Space
-      , Str "(Inline)"
       ]
   , Para
       [ Str "Nine"
@@ -125,7 +127,17 @@ Pandoc
       , Space
       , Str "hooks"
       , Space
+      , Str "are"
+      , Space
+      , Str "provided"
+      , Space
+      , Str "to"
+      , Space
       , Str "scale"
+      , Space
+      , Str "text"
+      , Space
+      , Str "elements"
       , Space
       , Str "relative"
       , Space
@@ -146,15 +158,14 @@ Pandoc
       (Caption Nothing [])
       [ ( AlignLeft
         , ColWidth
-            0.2222222222222222
+            0.17142857142857143
         )
       , ( AlignLeft
         , ColWidth
-            0.5555555555555556
+            0.42857142857142855
         )
       , ( AlignLeft
-        , ColWidth
-            0.2222222222222222
+        , ColWidth 0.4
         )
       ]
       (TableHead
@@ -689,17 +700,17 @@ Pandoc
          ( "" , [] , [] ) [])
   , Header
       2
-      ( "font-sizing-scale-block"
+      ( "block-font-sizing-scale"
       , []
       , []
       )
-      [ Str "Font"
+      [ Str "Block"
+      , Space
+      , Str "Font"
       , Space
       , Str "Sizing"
       , Space
       , Str "Scale"
-      , Space
-      , Str "(Block)"
       ]
   , Para
       [ Str "The"
@@ -710,7 +721,13 @@ Pandoc
       , Space
       , Str "classes"
       , Space
-      , Str "apply"
+      , Str "can"
+      , Space
+      , Str "be"
+      , Space
+      , Str "applied"
+      , Space
+      , Str "globally"
       , Space
       , Str "to"
       , Space
@@ -719,29 +736,25 @@ Pandoc
       , Str "div"
       , Space
       , Str "blocks."
+      ]
+  , Header
+      3
+      ( "small-font-size"
+      , []
+      , []
+      )
+      [ Str "Small"
       , Space
-      , Str "This"
+      , Str "Font"
       , Space
-      , Str "is"
-      , Space
-      , Str "useful"
-      , Space
-      , Str "for"
-      , Space
-      , Str "sidebars,"
-      , Space
-      , Str "captions,"
-      , Space
-      , Str "or"
-      , Space
-      , Str "callouts."
+      , Str "Size"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-s\nThis entire paragraph renders at the `small` size. Block-level sizing ensures the content consistently shrinks or grows as a unified component.\n:::"
+      "::: pfa-text-s\nThis entire paragraph renders at the _small_ font size. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-s" ]
@@ -760,45 +773,152 @@ Pandoc
           , Space
           , Str "the"
           , Space
-          , Code
-              ( "" , [] , [] )
-              "small"
+          , Emph
+              [ Str "small" ]
+          , Space
+          , Str "font"
           , Space
           , Str "size."
           , Space
-          , Str "Block-level"
+          , Str "Lorem"
           , Space
-          , Str "sizing"
+          , Str "ipsum"
           , Space
-          , Str "ensures"
+          , Str "dolor"
           , Space
-          , Str "the"
+          , Str "sit"
           , Space
-          , Str "content"
+          , Str "amet,"
           , Space
-          , Str "consistently"
+          , Str "consectetur"
           , Space
-          , Str "shrinks"
+          , Str "adipiscing"
           , Space
-          , Str "or"
+          , Str "elit,"
           , Space
-          , Str "grows"
+          , Str "sed"
           , Space
-          , Str "as"
+          , Str "do"
           , Space
-          , Str "a"
+          , Str "eiusmod"
           , Space
-          , Str "unified"
+          , Str "tempor"
           , Space
-          , Str "component."
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
           ]
+      ]
+  , Header
+      3
+      ( "normal-font-size"
+      , []
+      , []
+      )
+      [ Str "Normal"
+      , Space
+      , Str "Font"
+      , Space
+      , Str "Size"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-l\nThis entire paragraph renders at the `large` size \8212 well suited for pull quotes or emphasized opening text.\n:::"
+      "::: pfa-text-normal\nThis entire paragraph renders at the _normal_ font size. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-text-normal" ]
+      , []
+      )
+      [ Para
+          [ Str "This"
+          , Space
+          , Str "entire"
+          , Space
+          , Str "paragraph"
+          , Space
+          , Str "renders"
+          , Space
+          , Str "at"
+          , Space
+          , Str "the"
+          , Space
+          , Emph
+              [ Str "normal" ]
+          , Space
+          , Str "font"
+          , Space
+          , Str "size."
+          , Space
+          , Str "Lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit,"
+          , Space
+          , Str "sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
+          ]
+      ]
+  , Header
+      3
+      ( "large-font-size"
+      , []
+      , []
+      )
+      [ Str "Large"
+      , Space
+      , Str "Font"
+      , Space
+      , Str "Size"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-text-l\nThis entire paragraph renders at the _large_ font size. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-l" ]
@@ -817,31 +937,50 @@ Pandoc
           , Space
           , Str "the"
           , Space
-          , Code
-              ( "" , [] , [] )
-              "large"
+          , Emph
+              [ Str "large" ]
           , Space
-          , Str "size"
+          , Str "font"
           , Space
-          , Str "\8212"
+          , Str "size."
           , Space
-          , Str "well"
+          , Str "Lorem"
           , Space
-          , Str "suited"
+          , Str "ipsum"
           , Space
-          , Str "for"
+          , Str "dolor"
           , Space
-          , Str "pull"
+          , Str "sit"
           , Space
-          , Str "quotes"
+          , Str "amet,"
           , Space
-          , Str "or"
+          , Str "consectetur"
           , Space
-          , Str "emphasized"
+          , Str "adipiscing"
           , Space
-          , Str "opening"
+          , Str "elit,"
           , Space
-          , Str "text."
+          , Str "sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
           ]
       ]
   , Header
@@ -890,15 +1029,15 @@ Pandoc
       (Caption Nothing [])
       [ ( AlignLeft
         , ColWidth
-            0.21052631578947367
+            0.15789473684210525
         )
       , ( AlignLeft
         , ColWidth
-            0.5789473684210527
+            0.4342105263157895
         )
       , ( AlignLeft
         , ColWidth
-            0.21052631578947367
+            0.40789473684210525
         )
       ]
       (TableHead
@@ -1568,7 +1707,13 @@ Pandoc
       , Space
       , Str "classes"
       , Space
-      , Str "work"
+      , Str "can"
+      , Space
+      , Str "also"
+      , Space
+      , Str "be"
+      , Space
+      , Str "applied"
       , Space
       , Str "at"
       , Space
@@ -1578,36 +1723,122 @@ Pandoc
       , Space
       , Str "level,"
       , Space
-      , Str "applying"
+      , Str "allowing"
       , Space
       , Str "the"
       , Space
+      , Str "specified"
+      , Space
       , Str "typographic"
       , Space
-      , Str "voice"
+      , Str "style"
       , Space
-      , Str "across"
+      , Str "to"
+      , Space
+      , Str "affect"
       , Space
       , Str "all"
       , Space
-      , Str "internal"
+      , Str "enclosed"
       , Space
-      , Str "sentences"
+      , Str "sentences."
+      ]
+  , Header
+      3
+      ( "bold-weight"
+      , []
+      , []
+      )
+      [ Str "Bold"
       , Space
-      , Str "without"
-      , Space
-      , Str "requiring"
-      , Space
-      , Str "inline"
-      , Space
-      , Str "markers."
+      , Str "Weight"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-font-sans\nThis paragraph is rendered using the document's sans-serif family. Block-scoped family switches are convenient for code blocks or structural sections.\n:::"
+      "::: pfa-font-bold\nThis entire paragraph renders using the _bold_ font weight. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-font-bold" ]
+      , []
+      )
+      [ Para
+          [ Str "This"
+          , Space
+          , Str "entire"
+          , Space
+          , Str "paragraph"
+          , Space
+          , Str "renders"
+          , Space
+          , Str "using"
+          , Space
+          , Str "the"
+          , Space
+          , Emph
+              [ Str "bold" ]
+          , Space
+          , Str "font"
+          , Space
+          , Str "weight."
+          , Space
+          , Str "Lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit,"
+          , Space
+          , Str "sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
+          ]
+      ]
+  , Header
+      3
+      ( "sans-serif-family"
+      , []
+      , []
+      )
+      [ Str "Sans-Serif"
+      , Space
+      , Str "Family"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-font-sans\nThis entire paragraph renders using the _sans-serif_ font family. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-font-sans" ]
@@ -1616,52 +1847,82 @@ Pandoc
       [ Para
           [ Str "This"
           , Space
+          , Str "entire"
+          , Space
           , Str "paragraph"
           , Space
-          , Str "is"
-          , Space
-          , Str "rendered"
+          , Str "renders"
           , Space
           , Str "using"
           , Space
           , Str "the"
           , Space
-          , Str
-              "document\8217s"
+          , Emph
+              [ Str
+                  "sans-serif"
+              ]
           , Space
-          , Str "sans-serif"
+          , Str "font"
           , Space
           , Str "family."
           , Space
-          , Str "Block-scoped"
+          , Str "Lorem"
           , Space
-          , Str "family"
+          , Str "ipsum"
           , Space
-          , Str "switches"
+          , Str "dolor"
           , Space
-          , Str "are"
+          , Str "sit"
           , Space
-          , Str "convenient"
+          , Str "amet,"
           , Space
-          , Str "for"
+          , Str "consectetur"
           , Space
-          , Str "code"
+          , Str "adipiscing"
           , Space
-          , Str "blocks"
+          , Str "elit,"
           , Space
-          , Str "or"
+          , Str "sed"
           , Space
-          , Str "structural"
+          , Str "do"
           , Space
-          , Str "sections."
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
           ]
+      ]
+  , Header
+      3
+      ( "small-caps-shape"
+      , []
+      , []
+      )
+      [ Str "Small"
+      , Space
+      , Str "Caps"
+      , Space
+      , Str "Shape"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-font-smallcaps\nSection headings or short callouts can be rendered entirely in small caps using the block form.\n:::"
+      "::: pfa-font-smallcaps\nThis entire paragraph renders using the _small caps_ font shape. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-font-smallcaps"
@@ -1669,37 +1930,65 @@ Pandoc
       , []
       )
       [ Para
-          [ Str "Section"
+          [ Str "This"
           , Space
-          , Str "headings"
+          , Str "entire"
           , Space
-          , Str "or"
+          , Str "paragraph"
           , Space
-          , Str "short"
-          , Space
-          , Str "callouts"
-          , Space
-          , Str "can"
-          , Space
-          , Str "be"
-          , Space
-          , Str "rendered"
-          , Space
-          , Str "entirely"
-          , Space
-          , Str "in"
-          , Space
-          , Str "small"
-          , Space
-          , Str "caps"
+          , Str "renders"
           , Space
           , Str "using"
           , Space
           , Str "the"
           , Space
-          , Str "block"
+          , Emph
+              [ Str "small"
+              , Space
+              , Str "caps"
+              ]
           , Space
-          , Str "form."
+          , Str "font"
+          , Space
+          , Str "shape."
+          , Space
+          , Str "Lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit,"
+          , Space
+          , Str "sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
           ]
       ]
   , Header
@@ -1715,51 +2004,92 @@ Pandoc
       , Str "Transformations"
       ]
   , Para
-      [ Str "Casing"
+      [ Str "Unlike"
       , Space
-      , Str "classes"
+      , Str "standard"
       , Space
-      , Str "rewrite"
+      , Str "web"
       , Space
-      , Str "the"
+      , Str
+          "styling\8212which"
       , Space
-      , Str "underlying"
+      , Str "only"
       , Space
-      , Str "Abstract"
+      , Str "changes"
       , Space
-      , Str "Syntax"
-      , Space
-      , Str "Tree"
-      , Space
-      , Str "(AST)"
+      , Str "how"
       , Space
       , Str "text"
       , Space
-      , Str "nodes"
+      , Str "looks"
       , Space
-      , Str "rather"
-      , Space
-      , Str "than"
-      , Space
-      , Str "applying"
-      , Space
-      , Str "CSS"
-      , Space
-      , Str "formatting,"
-      , Space
-      , Str "meaning"
+      , Str "on"
       , Space
       , Str "the"
       , Space
-      , Str "transformation"
+      , Str "screen\8212these"
       , Space
-      , Str "survives"
+      , Str "casing"
       , Space
-      , Str "raw"
+      , Str "classes"
       , Space
-      , Str "copy-paste"
+      , Str "permanently"
       , Space
-      , Str "operations."
+      , Str "change"
+      , Space
+      , Str "the"
+      , Space
+      , Str "actual"
+      , Space
+      , Str "letters"
+      , Space
+      , Str "in"
+      , Space
+      , Str "your"
+      , Space
+      , Str "document."
+      , Space
+      , Str "This"
+      , Space
+      , Str "guarantees"
+      , Space
+      , Str "that"
+      , Space
+      , Str "your"
+      , Space
+      , Str "uppercase"
+      , Space
+      , Str "or"
+      , Space
+      , Str "lowercase"
+      , Space
+      , Str "styling"
+      , Space
+      , Str "remains"
+      , Space
+      , Str "intact"
+      , Space
+      , Str "even"
+      , Space
+      , Str "if"
+      , Space
+      , Str "you"
+      , Space
+      , Str "copy"
+      , Space
+      , Str "and"
+      , Space
+      , Str "paste"
+      , Space
+      , Str "the"
+      , Space
+      , Str "text"
+      , Space
+      , Str "into"
+      , Space
+      , Str "another"
+      , Space
+      , Str "application."
       ]
   , Header
       3
@@ -1775,13 +2105,16 @@ Pandoc
       ( "" , [] , [] )
       (Caption Nothing [])
       [ ( AlignLeft
-        , ColWidth 0.18
+        , ColWidth
+            0.13846153846153847
         )
       , ( AlignLeft
-        , ColWidth 0.58
+        , ColWidth
+            0.4461538461538462
         )
       , ( AlignLeft
-        , ColWidth 0.24
+        , ColWidth
+            0.4153846153846154
         )
       ]
       (TableHead
@@ -1953,12 +2286,95 @@ Pandoc
       , Space
       , Str "Casing"
       ]
+  , Header
+      4
+      ( "lowercase"
+      , []
+      , []
+      )
+      [ Str "Lowercase" ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-uppercase\nthis block is uniformly uppercased, even across paragraph boundaries.\n:::"
+      "::: pfa-lowercase\nTHIS ENTIRE PARAGRAPH IS TRANSFORMED TO _LOWERCASE_. LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-lowercase" ]
+      , []
+      )
+      [ Para
+          [ Str "this"
+          , Space
+          , Str "entire"
+          , Space
+          , Str "paragraph"
+          , Space
+          , Str "is"
+          , Space
+          , Str "transformed"
+          , Space
+          , Str "to"
+          , Space
+          , Emph
+              [ Str
+                  "lowercase"
+              ]
+          , Str "."
+          , Space
+          , Str "lorem"
+          , Space
+          , Str "ipsum"
+          , Space
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit,"
+          , Space
+          , Str "sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
+          ]
+      ]
+  , Header
+      4
+      ( "uppercase"
+      , []
+      , []
+      )
+      [ Str "Uppercase" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: pfa-uppercase\nthis entire paragraph is transformed to _uppercase_. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-uppercase" ]
@@ -1967,21 +2383,59 @@ Pandoc
       [ Para
           [ Str "THIS"
           , Space
-          , Str "BLOCK"
-          , Space
-          , Str "IS"
-          , Space
-          , Str "UNIFORMLY"
-          , Space
-          , Str "UPPERCASED,"
-          , Space
-          , Str "EVEN"
-          , Space
-          , Str "ACROSS"
+          , Str "ENTIRE"
           , Space
           , Str "PARAGRAPH"
           , Space
-          , Str "BOUNDARIES."
+          , Str "IS"
+          , Space
+          , Str "TRANSFORMED"
+          , Space
+          , Str "TO"
+          , Space
+          , Emph
+              [ Str
+                  "UPPERCASE"
+              ]
+          , Str "."
+          , Space
+          , Str "LOREM"
+          , Space
+          , Str "IPSUM"
+          , Space
+          , Str "DOLOR"
+          , Space
+          , Str "SIT"
+          , Space
+          , Str "AMET,"
+          , Space
+          , Str "CONSECTETUR"
+          , Space
+          , Str "ADIPISCING"
+          , Space
+          , Str "ELIT,"
+          , Space
+          , Str "SED"
+          , Space
+          , Str "DO"
+          , Space
+          , Str "EIUSMOD"
+          , Space
+          , Str "TEMPOR"
+          , Space
+          , Str "INCIDIDUNT"
+          , Space
+          , Str "UT"
+          , Space
+          , Str "LABORE"
+          , Space
+          , Str "ET"
+          , Space
+          , Str "DOLORE"
+          , Space
+          , Str "MAGNA"
+          , Space
+          , Str "ALIQUA."
           ]
       ]
   , Header
@@ -2007,7 +2461,7 @@ Pandoc
       , Space
       , Str "are"
       , Space
-      , Str "routed"
+      , Str "implemented"
       , Space
       , Str "through"
       , Space
@@ -2027,23 +2481,58 @@ Pandoc
       , Space
       , Str "to"
       , Space
-      , Str "matching"
+      , Str "their"
+      , Space
+      , Str "equivalent"
       , Space
       , Str "standard"
       , Space
-      , Str "CSS."
+      , Str "CSS"
+      , Space
+      , Str "properties,"
+      , Space
+      , Str "ensuring"
+      , Space
+      , Str "consistent"
+      , Space
+      , Str "rendering"
+      , Space
+      , Str "across"
+      , Space
+      , Str "output"
+      , Space
+      , Str "formats."
+      , Space
+      , Str "These"
+      , Space
+      , Str "styles"
+      , Space
+      , Str "are"
+      , Space
+      , Str "supported"
+      , Space
+      , Str "only"
+      , Space
+      , Str "for"
+      , Space
+      , Str "inline"
+      , Space
+      , Str "elements."
       ]
   , Table
       ( "" , [] , [] )
       (Caption Nothing [])
       [ ( AlignLeft
-        , ColWidth 0.25
+        , ColWidth
+            0.27586206896551724
         )
       , ( AlignLeft
-        , ColWidth 0.5625
+        , ColWidth
+            0.6206896551724138
         )
       , ( AlignLeft
-        , ColWidth 0.1875
+        , ColWidth
+            0.10344827586206896
         )
       ]
       (TableHead
@@ -2494,6 +2983,119 @@ Pandoc
       ]
       (TableFoot
          ( "" , [] , [] ) [])
+  , Para
+      [ Strong [ Str "Note:" ]
+      , Space
+      , Str "The"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          ".pfa-text-strikeout"
+      , Space
+      , Str "and"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          ".pfa-text-markout"
+      , Space
+      , Str "classes"
+      , Space
+      , Str "are"
+      , Space
+      , Str "both"
+      , Space
+      , Str "rendered"
+      , Space
+      , Str "as"
+      , Space
+      , Str "a"
+      , Space
+      , Str "standard"
+      , Space
+      , Str "horizontal"
+      , Space
+      , Str "strikeout."
+      , Space
+      , Str "Although"
+      , Space
+      , Str "LaTeX"
+      , Space
+      , Str "(via"
+      , Space
+      , Str "the"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          "ulem"
+      , Space
+      , Str "package)"
+      , Space
+      , Str "provides"
+      , Space
+      , Str "multiple"
+      , Space
+      , Str "text-deletion"
+      , Space
+      , Str "styles,"
+      , Space
+      , Str "the"
+      , Space
+      , Quoted
+          DoubleQuote
+          [ Str "markout" ]
+      , Space
+      , Str "variant"
+      , Space
+      , Str "is"
+      , Space
+      , Str "not"
+      , Space
+      , Str "supported"
+      , Space
+      , Str "in"
+      , Space
+      , Str "HTML/CSS."
+      , Space
+      , Str "To"
+      , Space
+      , Str "ensure"
+      , Space
+      , Str "consistent"
+      , Space
+      , Str "rendering"
+      , Space
+      , Str "across"
+      , Space
+      , Str "both"
+      , Space
+      , Str "LaTeX"
+      , Space
+      , Str "and"
+      , Space
+      , Str "HTML"
+      , Space
+      , Str "outputs,"
+      , Space
+      , Str "the"
+      , Space
+      , Str "filter"
+      , Space
+      , Str "standardizes"
+      , Space
+      , Str "both"
+      , Space
+      , Str "classes"
+      , Space
+      , Str "to"
+      , Space
+      , Str "the"
+      , Space
+      , Str "same"
+      , Space
+      , Str "strikeout"
+      , Space
+      , Str "style."
+      ]
   , Header
       2
       ( "color-resolution"
@@ -2527,7 +3129,7 @@ Pandoc
       , Space
       , Str "six-digit"
       , Space
-      , Str "hex"
+      , Str "hexadecimal"
       , Space
       , Str "codes,"
       , Space
@@ -2535,24 +3137,26 @@ Pandoc
       , Space
       , Str "three-digit"
       , Space
+      , Str "shorthand"
+      , Space
       , Str "hex"
       , Space
-      , Str "shorthands."
+      , Str "codes."
       ]
   , Table
       ( "" , [] , [] )
       (Caption Nothing [])
       [ ( AlignLeft
         , ColWidth
-            0.22413793103448276
+            0.23636363636363636
         )
       , ( AlignLeft
         , ColWidth
-            0.5689655172413793
+            0.6545454545454545
         )
       , ( AlignLeft
         , ColWidth
-            0.20689655172413793
+            0.10909090909090909
         )
       ]
       (TableHead
@@ -2739,6 +3343,138 @@ Pandoc
                       , Space
                       , Str
                           "Shorthand"
+                      , Note
+                          [ Para
+                              [ Str
+                                  "Three-digit"
+                              , Space
+                              , Str
+                                  "shorthand"
+                              , Space
+                              , Str
+                                  "expands"
+                              , Space
+                              , Str
+                                  "by"
+                              , Space
+                              , Str
+                                  "doubling"
+                              , Space
+                              , Str
+                                  "each"
+                              , Space
+                              , Str
+                                  "digit"
+                              , Space
+                              , Str
+                                  "(e.g.,"
+                              , Space
+                              , Code
+                                  ( ""
+                                  , []
+                                  , []
+                                  )
+                                  "#666"
+                              , Space
+                              , Str
+                                  "becomes"
+                              , Space
+                              , Code
+                                  ( ""
+                                  , []
+                                  , []
+                                  )
+                                  "#666666"
+                              , Str
+                                  ","
+                              , Space
+                              , Str
+                                  "and"
+                              , Space
+                              , Code
+                                  ( ""
+                                  , []
+                                  , []
+                                  )
+                                  "#F0A"
+                              , Space
+                              , Str
+                                  "becomes"
+                              , Space
+                              , Code
+                                  ( ""
+                                  , []
+                                  , []
+                                  )
+                                  "#FF00AA"
+                              , Str
+                                  ")."
+                              , Space
+                              , Str
+                                  "This"
+                              , Space
+                              , Str
+                                  "only"
+                              , Space
+                              , Str
+                                  "works"
+                              , Space
+                              , Str
+                                  "if"
+                              , Space
+                              , Str
+                                  "each"
+                              , Space
+                              , Str
+                                  "color"
+                              , Space
+                              , Str
+                                  "channel"
+                              , Space
+                              , Str
+                                  "uses"
+                              , Space
+                              , Str
+                                  "a"
+                              , Space
+                              , Str
+                                  "repeated"
+                              , Space
+                              , Str
+                                  "character;"
+                              , Space
+                              , Str
+                                  "a"
+                              , Space
+                              , Str
+                                  "full"
+                              , Space
+                              , Str
+                                  "hex"
+                              , Space
+                              , Str
+                                  "code"
+                              , Space
+                              , Str
+                                  "like"
+                              , Space
+                              , Code
+                                  ( ""
+                                  , []
+                                  , []
+                                  )
+                                  "#2E8B57"
+                              , Space
+                              , Str
+                                  "cannot"
+                              , Space
+                              , Str
+                                  "be"
+                              , Space
+                              , Str
+                                  "shortened."
+                              ]
+                          ]
                       ]
                   ]
               , Cell
@@ -2785,6 +3521,47 @@ Pandoc
       ]
       (TableFoot
          ( "" , [] , [] ) [])
+  , Para
+      [ Strong [ Str "Note:" ]
+      , Space
+      , Str "The"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          "pfa-font-color"
+      , Space
+      , Str "utility"
+      , Space
+      , Str "is"
+      , Space
+      , Str "an"
+      , Space
+      , Str "attribute,"
+      , Space
+      , Str "not"
+      , Space
+      , Str "a"
+      , Space
+      , Str "class,"
+      , Space
+      , Str "and"
+      , Space
+      , Str "should"
+      , Space
+      , Str "not"
+      , Space
+      , Str "be"
+      , Space
+      , Str "prefixed"
+      , Space
+      , Str "with"
+      , Space
+      , Str "a"
+      , Space
+      , Str "period"
+      , Space
+      , Str "(.)."
+      ]
   , Header
       3
       ( "flexible-spelling-of-named-colors"
@@ -2804,15 +3581,19 @@ Pandoc
   , Para
       [ Str "The"
       , Space
+      , Str "rendering"
+      , Space
       , Str "engine"
+      , Space
+      , Str "automatically"
       , Space
       , Str "sanitizes"
       , Space
-      , Str "inputs"
+      , Str "color"
       , Space
-      , Str "automatically."
+      , Str "inputs."
       , Space
-      , Str "It"
+      , Str "Parsing"
       , Space
       , Str "is"
       , Space
@@ -2832,7 +3613,11 @@ Pandoc
       , Space
       , Str "All"
       , Space
-      , Str "syntaxes"
+      , Str "syntax"
+      , Space
+      , Str "variations"
+      , Space
+      , Str "shown"
       , Space
       , Str "below"
       , Space
@@ -2846,6 +3631,10 @@ Pandoc
       , Space
       , Str "standard"
       , Space
+      , Str "CSS3"
+      , Space
+      , Str "color"
+      , Space
       , Code
           ( "" , [] , [] )
           "mediumvioletred"
@@ -2855,13 +3644,16 @@ Pandoc
       ( "" , [] , [] )
       (Caption Nothing [])
       [ ( AlignLeft
-        , ColWidth 0.15625
+        , ColWidth
+            0.2631578947368421
         )
       , ( AlignLeft
-        , ColWidth 0.65625
+        , ColWidth
+            0.5921052631578947
         )
       , ( AlignLeft
-        , ColWidth 0.1875
+        , ColWidth
+            0.14473684210526316
         )
       ]
       (TableHead
@@ -2878,7 +3670,10 @@ Pandoc
                  (ColSpan 1)
                  [ Plain
                      [ Str
-                         "Variant"
+                         "Naming"
+                     , Space
+                     , Str
+                         "Convention"
                      ]
                  ]
              , Cell
@@ -2980,7 +3775,294 @@ Pandoc
                   (ColSpan 1)
                   [ Plain
                       [ Str
+                          "Spaces"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Color]{pfa-font-color=\"Medium Violet Red\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , []
+                          , [ ( "style"
+                              , "color: #C71585;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Color"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
                           "Title"
+                      , Space
+                      , Str
+                          "Case"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Color]{pfa-font-color=\"Medium Violet Red\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , []
+                          , [ ( "style"
+                              , "color: #C71585;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Color"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Kebab"
+                      , Space
+                      , Str
+                          "Case"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Color]{pfa-font-color=\"medium-violet-red\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , []
+                          , [ ( "style"
+                              , "color: #C71585;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Color"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Snake"
+                      , Space
+                      , Str
+                          "Case"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Color]{pfa-font-color=\"medium_violet_red\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , []
+                          , [ ( "style"
+                              , "color: #C71585;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Color"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Camel"
+                      , Space
+                      , Str
+                          "Case"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Code
+                          ( ""
+                          , []
+                          , []
+                          )
+                          "[Color]{pfa-font-color=\"mediumVioletRed\"}"
+                      ]
+                  ]
+              , Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Span
+                          ( ""
+                          , []
+                          , [ ( "style"
+                              , "color: #C71585;"
+                              )
+                            ]
+                          )
+                          [ Str
+                              "Color"
+                          ]
+                      ]
+                  ]
+              ]
+          , Row
+              ( "" , [] , [] )
+              [ Cell
+                  ( ""
+                  , []
+                  , []
+                  )
+                  AlignDefault
+                  (RowSpan 1)
+                  (ColSpan 1)
+                  [ Plain
+                      [ Str
+                          "Pascal"
                       , Space
                       , Str
                           "Case"
@@ -3038,7 +4120,13 @@ Pandoc
                   (ColSpan 1)
                   [ Plain
                       [ Str
-                          "Spaces"
+                          "Screaming"
+                      , Space
+                      , Str
+                          "Snake"
+                      , Space
+                      , Str
+                          "Case"
                       ]
                   ]
               , Cell
@@ -3055,7 +4143,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "[Color]{pfa-font-color=\"Medium Violet Red\"}"
+                          "[Color]{pfa-font-color=\"MEDIUM_VIOLET_RED\"}"
                       ]
                   ]
               , Cell
@@ -3093,7 +4181,7 @@ Pandoc
                   (ColSpan 1)
                   [ Plain
                       [ Str
-                          "Hyphens"
+                          "Uppercase"
                       ]
                   ]
               , Cell
@@ -3110,7 +4198,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "[Color]{pfa-font-color=\"medium-violet-red\"}"
+                          "[Color]{pfa-font-color=\"MEDIUMVIOLETRED\"}"
                       ]
                   ]
               , Cell
@@ -3173,9 +4261,17 @@ Pandoc
       , Space
       , Str "inherit"
       , Space
-      , Str "downward,"
+      , Str "downward"
       , Space
-      , Str "but"
+      , Str "through"
+      , Space
+      , Str "the"
+      , Space
+      , Str "text"
+      , Space
+      , Str "hierarchy,"
+      , Space
+      , Str "though"
       , Space
       , Str "nested"
       , Space
@@ -3187,11 +4283,9 @@ Pandoc
       , Space
       , Str "override"
       , Space
-      , Str "the"
-      , Space
       , Str "parent"
       , Space
-      , Str "value."
+      , Str "values."
       ]
   , CodeBlock
       ( ""
@@ -3314,54 +4408,26 @@ Pandoc
       , Space
       , Str "standard"
       , Space
-      , Str "directional"
-      , Space
       , Str "text"
       , Space
       , Str "environments."
+      ]
+  , Header
+      3
+      ( "left-aligned-text"
+      , []
+      , []
+      )
+      [ Str "Left-Aligned"
       , Space
-      , Str "The"
-      , Space
-      , Str "blocks"
-      , Space
-      , Str "below"
-      , Space
-      , Str "are"
-      , Space
-      , Str "intentionally"
-      , Space
-      , Str "long"
-      , Space
-      , Str "so"
-      , Space
-      , Str "that"
-      , Space
-      , Str "the"
-      , Space
-      , Str "wrapped"
-      , Space
-      , Str "lines"
-      , Space
-      , Str "reveal"
-      , Space
-      , Str "the"
-      , Space
-      , Str "edge"
-      , Space
-      , Str "behavior"
-      , Space
-      , Str "of"
-      , Space
-      , Str "each"
-      , Space
-      , Str "alignment."
+      , Str "Text"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-left\nThis block is left-aligned. Words begin flush against the left margin and the right edge falls wherever the natural word boundaries land, producing the relaxed silhouette typically used for body prose in left-to-right scripts.\n:::"
+      "::: pfa-text-left\nThis block of text is _left-aligned_. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-left" ]
@@ -3372,79 +4438,73 @@ Pandoc
           , Space
           , Str "block"
           , Space
+          , Str "of"
+          , Space
+          , Str "text"
+          , Space
           , Str "is"
           , Space
-          , Str
-              "left-aligned."
+          , Emph
+              [ Str
+                  "left-aligned"
+              ]
+          , Str "."
           , Space
-          , Str "Words"
+          , Str "Lorem"
           , Space
-          , Str "begin"
+          , Str "ipsum"
           , Space
-          , Str "flush"
+          , Str "dolor"
           , Space
-          , Str "against"
+          , Str "sit"
           , Space
-          , Str "the"
+          , Str "amet,"
           , Space
-          , Str "left"
+          , Str "consectetur"
           , Space
-          , Str "margin"
+          , Str "adipiscing"
           , Space
-          , Str "and"
+          , Str "elit,"
           , Space
-          , Str "the"
+          , Str "sed"
           , Space
-          , Str "right"
+          , Str "do"
           , Space
-          , Str "edge"
+          , Str "eiusmod"
           , Space
-          , Str "falls"
+          , Str "tempor"
           , Space
-          , Str "wherever"
+          , Str "incididunt"
           , Space
-          , Str "the"
+          , Str "ut"
           , Space
-          , Str "natural"
+          , Str "labore"
           , Space
-          , Str "word"
+          , Str "et"
           , Space
-          , Str "boundaries"
+          , Str "dolore"
           , Space
-          , Str "land,"
+          , Str "magna"
           , Space
-          , Str "producing"
-          , Space
-          , Str "the"
-          , Space
-          , Str "relaxed"
-          , Space
-          , Str "silhouette"
-          , Space
-          , Str "typically"
-          , Space
-          , Str "used"
-          , Space
-          , Str "for"
-          , Space
-          , Str "body"
-          , Space
-          , Str "prose"
-          , Space
-          , Str "in"
-          , Space
-          , Str
-              "left-to-right"
-          , Space
-          , Str "scripts."
+          , Str "aliqua."
           ]
+      ]
+  , Header
+      3
+      ( "centered-text"
+      , []
+      , []
+      )
+      [ Str "Centered"
+      , Space
+      , Str "Text"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-center\nThis block is centered horizontally within the text column. Centered prose is best reserved for short callouts, pull quotes, dedications, or titlecards \8212 sustained reading at this alignment is difficult because the eye cannot anchor on a consistent margin.\n:::"
+      "::: pfa-text-center\nThis block of text is _centered_. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-center" ]
@@ -3455,87 +4515,72 @@ Pandoc
           , Space
           , Str "block"
           , Space
-          , Str "is"
-          , Space
-          , Str "centered"
-          , Space
-          , Str "horizontally"
-          , Space
-          , Str "within"
-          , Space
-          , Str "the"
+          , Str "of"
           , Space
           , Str "text"
           , Space
-          , Str "column."
-          , Space
-          , Str "Centered"
-          , Space
-          , Str "prose"
-          , Space
           , Str "is"
           , Space
-          , Str "best"
+          , Emph
+              [ Str "centered"
+              ]
+          , Str "."
           , Space
-          , Str "reserved"
+          , Str "Lorem"
           , Space
-          , Str "for"
+          , Str "ipsum"
           , Space
-          , Str "short"
+          , Str "dolor"
           , Space
-          , Str "callouts,"
+          , Str "sit"
           , Space
-          , Str "pull"
+          , Str "amet,"
           , Space
-          , Str "quotes,"
+          , Str "consectetur"
           , Space
-          , Str "dedications,"
+          , Str "adipiscing"
           , Space
-          , Str "or"
+          , Str "elit,"
           , Space
-          , Str "titlecards"
+          , Str "sed"
           , Space
-          , Str "\8212"
+          , Str "do"
           , Space
-          , Str "sustained"
+          , Str "eiusmod"
           , Space
-          , Str "reading"
+          , Str "tempor"
           , Space
-          , Str "at"
+          , Str "incididunt"
           , Space
-          , Str "this"
+          , Str "ut"
           , Space
-          , Str "alignment"
+          , Str "labore"
           , Space
-          , Str "is"
+          , Str "et"
           , Space
-          , Str "difficult"
+          , Str "dolore"
           , Space
-          , Str "because"
+          , Str "magna"
           , Space
-          , Str "the"
-          , Space
-          , Str "eye"
-          , Space
-          , Str "cannot"
-          , Space
-          , Str "anchor"
-          , Space
-          , Str "on"
-          , Space
-          , Str "a"
-          , Space
-          , Str "consistent"
-          , Space
-          , Str "margin."
+          , Str "aliqua."
           ]
+      ]
+  , Header
+      3
+      ( "right-aligned-text"
+      , []
+      , []
+      )
+      [ Str "Right-Aligned"
+      , Space
+      , Str "Text"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-text-right\nThis block is right-aligned. The right edge stays flush against the column boundary while words spill back toward the left, an effect suited to sidenotes, attributions, and short captions placed against a column edge.\n:::"
+      "::: pfa-text-right\nThis block of text is _right-aligned_. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-text-right" ]
@@ -3546,86 +4591,66 @@ Pandoc
           , Space
           , Str "block"
           , Space
+          , Str "of"
+          , Space
+          , Str "text"
+          , Space
           , Str "is"
           , Space
-          , Str
-              "right-aligned."
+          , Emph
+              [ Str
+                  "right-aligned"
+              ]
+          , Str "."
           , Space
-          , Str "The"
+          , Str "Lorem"
           , Space
-          , Str "right"
+          , Str "ipsum"
           , Space
-          , Str "edge"
+          , Str "dolor"
           , Space
-          , Str "stays"
+          , Str "sit"
           , Space
-          , Str "flush"
+          , Str "amet,"
           , Space
-          , Str "against"
+          , Str "consectetur"
           , Space
-          , Str "the"
+          , Str "adipiscing"
           , Space
-          , Str "column"
+          , Str "elit,"
           , Space
-          , Str "boundary"
+          , Str "sed"
           , Space
-          , Str "while"
+          , Str "do"
           , Space
-          , Str "words"
+          , Str "eiusmod"
           , Space
-          , Str "spill"
+          , Str "tempor"
           , Space
-          , Str "back"
+          , Str "incididunt"
           , Space
-          , Str "toward"
+          , Str "ut"
           , Space
-          , Str "the"
+          , Str "labore"
           , Space
-          , Str "left,"
+          , Str "et"
           , Space
-          , Str "an"
+          , Str "dolore"
           , Space
-          , Str "effect"
+          , Str "magna"
           , Space
-          , Str "suited"
-          , Space
-          , Str "to"
-          , Space
-          , Str "sidenotes,"
-          , Space
-          , Str
-              "attributions,"
-          , Space
-          , Str "and"
-          , Space
-          , Str "short"
-          , Space
-          , Str "captions"
-          , Space
-          , Str "placed"
-          , Space
-          , Str "against"
-          , Space
-          , Str "a"
-          , Space
-          , Str "column"
-          , Space
-          , Str "edge."
+          , Str "aliqua."
           ]
       ]
   , Header
       2
-      ( "ragged-alignment-line-break-honoring"
+      ( "ragged-alignment"
       , []
       , []
       )
       [ Str "Ragged"
       , Space
       , Str "Alignment"
-      , Space
-      , Str "(Line-Break"
-      , Space
-      , Str "Honoring)"
       ]
   , Para
       [ Str "The"
@@ -3652,37 +4677,28 @@ Pandoc
       , Space
       , Str "backslash"
       , Space
-      , Str "escapes),"
+      , Str "escapes)."
+      ]
+  , Para
+      [ Str "In"
       , Space
-      , Str "making"
+      , Str "PDF"
       , Space
-      , Str "it"
-      , Space
-      , Str "ideal"
-      , Space
-      , Str "for"
-      , Space
-      , Str "poetry,"
-      , Space
-      , Str "formal"
-      , Space
-      , Str "addresses,"
-      , Space
-      , Str "and"
-      , Space
-      , Str "titles."
-      , Space
-      , Str "In"
-      , Space
-      , Str "PDF,"
+      , Str "engines,"
       , Space
       , Str "the"
       , Space
-      , Str "two"
+      , Code
+          ( "" , [] , [] )
+          ".pfa-text-*"
       , Space
-      , Str "families"
+      , Str "and"
       , Space
-      , Str "also"
+      , Code
+          ( "" , [] , [] )
+          ".pfa-align-*"
+      , Space
+      , Str "utilities"
       , Space
       , Str "differ"
       , Space
@@ -3691,80 +4707,121 @@ Pandoc
       , Str "vertical"
       , Space
       , Str "spacing:"
-      , Space
-      , Code
-          ( "" , [] , [] )
-          ".pfa-text-*"
-      , Space
-      , Str "mirrors"
-      , Space
-      , Str "LaTeX\8217s"
-      , Space
-      , Code
-          ( "" , [] , [] )
-          "center"
-      , Str "/"
-      , Code
-          ( "" , [] , [] )
-          "flushleft"
-      , Str "/"
-      , Code
-          ( "" , [] , [] )
-          "flushright"
-      , Space
-      , Str "environments"
-      , Space
-      , Str "and"
-      , Space
-      , Str "introduces"
-      , Space
-      , Str "vertical"
-      , Space
-      , Str "separation"
-      , Space
-      , Str "around"
-      , Space
-      , Str "the"
-      , Space
-      , Str "block,"
-      , Space
-      , Str "while"
-      , Space
-      , Code
-          ( "" , [] , [] )
-          ".pfa-align-*"
-      , Space
-      , Str "mirrors"
-      , Space
-      , Str "the"
-      , Space
-      , Code
-          ( "" , [] , [] )
-          "\\centering"
-      , Str "/"
-      , Code
-          ( "" , [] , [] )
-          "\\raggedright"
-      , Str "/"
-      , Code
-          ( "" , [] , [] )
-          "\\raggedleft"
-      , Space
-      , Str "declarations"
-      , Space
-      , Str "and"
-      , Space
-      , Str "flows"
-      , Space
-      , Str "inline"
-      , Space
-      , Str "with"
-      , Space
-      , Str "the"
-      , Space
-      , Str "surrounding"
-      , Space
-      , Str "content."
+      ]
+  , BulletList
+      [ [ Plain
+            [ Code
+                ( ""
+                , []
+                , []
+                )
+                ".pfa-text-*"
+            , Space
+            , Str "mirrors"
+            , Space
+            , Str
+                "LaTeX\8217s"
+            , Space
+            , Str "structural"
+            , Space
+            , Code
+                ( ""
+                , []
+                , []
+                )
+                "center"
+            , Str ","
+            , Space
+            , Code
+                ( ""
+                , []
+                , []
+                )
+                "flushleft"
+            , Space
+            , Str "and"
+            , Space
+            , Code
+                ( ""
+                , []
+                , []
+                )
+                "flushright"
+            , Space
+            , Str
+                "environments,"
+            , Space
+            , Str
+                "introducing"
+            , Space
+            , Str "distinct"
+            , Space
+            , Str "vertical"
+            , Space
+            , Str "margins"
+            , Space
+            , Str "around"
+            , Space
+            , Str "the"
+            , Space
+            , Str "block."
+            ]
+        ]
+      , [ Plain
+            [ Code
+                ( ""
+                , []
+                , []
+                )
+                ".pfa-align-*"
+            , Space
+            , Str "mirrors"
+            , Space
+            , Str "inline"
+            , Space
+            , Code
+                ( ""
+                , []
+                , []
+                )
+                "\\centering"
+            , Str ","
+            , Space
+            , Code
+                ( ""
+                , []
+                , []
+                )
+                "\\raggedright"
+            , Space
+            , Str "and"
+            , Space
+            , Code
+                ( ""
+                , []
+                , []
+                )
+                "\\raggedleft"
+            , Space
+            , Str
+                "declarations,"
+            , Space
+            , Str "flowing"
+            , Space
+            , Str
+                "contextually"
+            , Space
+            , Str "with"
+            , Space
+            , Str
+                "surrounding"
+            , Space
+            , Str "content."
+            ]
+        ]
+      ]
+  , Para
+      [ Str "Because"
       , Space
       , Str "HTML"
       , Space
@@ -3776,23 +4833,33 @@ Pandoc
           ( "" , [] , [] )
           "text-align"
       , Space
-      , Str "to"
+      , Str "properties"
+      , Space
+      , Str "uniformly"
+      , Space
+      , Str "across"
       , Space
       , Str "both"
       , Space
       , Str "families,"
       , Space
-      , Str "so"
+      , Str "this"
       , Space
-      , Str "the"
+      , Str "structural"
       , Space
-      , Str "vertical-spacing"
+      , Str "spacing"
       , Space
       , Str "distinction"
       , Space
-      , Str "is"
+      , Str "applies"
       , Space
-      , Str "PDF-only."
+      , Str "only"
+      , Space
+      , Str "to"
+      , Space
+      , Str "PDF"
+      , Space
+      , Str "documents."
       ]
   , Para
       [ Str "Choose"
@@ -3809,19 +4876,33 @@ Pandoc
       , Space
       , Str "block"
       , Space
-      , Str "is"
+      , Str "operates"
       , Space
-      , Str "its"
+      , Str "as"
       , Space
-      , Str "own"
+      , Str "an"
+      , Space
+      , Str "isolated"
       , Space
       , Str "visual"
       , Space
       , Str "unit"
       , Space
-      , Str "(a"
+      , Str "(e.g.,"
       , Space
-      , Str "callout,"
+      , Str "a"
+      , Space
+      , Str "callout"
+      , Space
+      , Str "banner,"
+      , Space
+      , Str "a"
+      , Space
+      , Str "standalone"
+      , Space
+      , Str "announcement,"
+      , Space
+      , Str "or"
       , Space
       , Str "a"
       , Space
@@ -3829,15 +4910,9 @@ Pandoc
       , Space
       , Str "pull"
       , Space
-      , Str "quote,"
+      , Str "quote)."
       , Space
-      , Str "a"
-      , Space
-      , Str "standalone"
-      , Space
-      , Str "announcement)"
-      , Space
-      , Str "and"
+      , Str "Choose"
       , Space
       , Code
           ( "" , [] , [] )
@@ -3845,136 +4920,311 @@ Pandoc
       , Space
       , Str "when"
       , Space
-      , Str "the"
-      , Space
       , Str "alignment"
       , Space
-      , Str "is"
+      , Str "rules"
       , Space
-      , Str "part"
+      , Str "should"
       , Space
-      , Str "of"
+      , Str "integrate"
       , Space
-      , Str "the"
+      , Str "natively"
+      , Space
+      , Str "into"
       , Space
       , Str "surrounding"
       , Space
       , Str "paragraph"
       , Space
-      , Str "flow"
+      , Str "streams"
       , Space
-      , Str "(a"
+      , Str "(e.g.,"
+      , Space
+      , Str "a"
       , Space
       , Str "line-broken"
       , Space
-      , Str "signature,"
+      , Str "signature"
       , Space
-      , Str "a"
+      , Str "block,"
       , Space
       , Str "verse"
       , Space
-      , Str "stanza,"
+      , Str "stanzas,"
       , Space
-      , Str "a"
+      , Str "or"
       , Space
       , Str "captioned"
       , Space
-      , Str "figure)."
+      , Str "figures)."
+      ]
+  , Header
+      3
+      ( "left-aligned-ragged-text"
+      , []
+      , []
+      )
+      [ Str "Left-Aligned"
+      , Space
+      , Str "Ragged"
+      , Space
+      , Str "Text"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-align-left\nFirst left-aligned line\\\nSecond left-aligned line\\\nThird left-aligned line\n:::"
+      "::: pfa-align-left\nThis block of ragged text is _left-aligned_ while honoring explicit line breaks.\\\nLorem ipsum dolor sit amet, consectetur adipiscing elit,\\\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-align-left" ]
       , []
       )
       [ Para
-          [ Str "First"
+          [ Str "This"
           , Space
-          , Str "left-aligned"
+          , Str "block"
+          , Space
+          , Str "of"
+          , Space
+          , Str "ragged"
+          , Space
+          , Str "text"
+          , Space
+          , Str "is"
+          , Space
+          , Emph
+              [ Str
+                  "left-aligned"
+              ]
+          , Space
+          , Str "while"
+          , Space
+          , Str "honoring"
+          , Space
+          , Str "explicit"
           , Space
           , Str "line"
+          , Space
+          , Str "breaks."
           , LineBreak
-          , Str "Second"
+          , Str "Lorem"
           , Space
-          , Str "left-aligned"
+          , Str "ipsum"
           , Space
-          , Str "line"
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit,"
           , LineBreak
-          , Str "Third"
+          , Str "sed"
           , Space
-          , Str "left-aligned"
+          , Str "do"
           , Space
-          , Str "line"
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
           ]
+      ]
+  , Header
+      3
+      ( "center-aligned-ragged-text"
+      , []
+      , []
+      )
+      [ Str "Center-Aligned"
+      , Space
+      , Str "Ragged"
+      , Space
+      , Str "Text"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-align-center\nFirst centered line\\\nSecond centered line\\\nThird centered line\n:::"
+      "::: pfa-align-center\nThis block of ragged text is _centered_ while honoring explicit line breaks.\\\nLorem ipsum dolor sit amet, consectetur adipiscing elit,\\\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-align-center" ]
       , []
       )
       [ Para
-          [ Str "First"
+          [ Str "This"
           , Space
-          , Str "centered"
+          , Str "block"
+          , Space
+          , Str "of"
+          , Space
+          , Str "ragged"
+          , Space
+          , Str "text"
+          , Space
+          , Str "is"
+          , Space
+          , Emph
+              [ Str "centered"
+              ]
+          , Space
+          , Str "while"
+          , Space
+          , Str "honoring"
+          , Space
+          , Str "explicit"
           , Space
           , Str "line"
+          , Space
+          , Str "breaks."
           , LineBreak
-          , Str "Second"
+          , Str "Lorem"
           , Space
-          , Str "centered"
+          , Str "ipsum"
           , Space
-          , Str "line"
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit,"
           , LineBreak
-          , Str "Third"
+          , Str "sed"
           , Space
-          , Str "centered"
+          , Str "do"
           , Space
-          , Str "line"
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
           ]
+      ]
+  , Header
+      3
+      ( "right-aligned-ragged-text"
+      , []
+      , []
+      )
+      [ Str "Right-Aligned"
+      , Space
+      , Str "Ragged"
+      , Space
+      , Str "Text"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: pfa-align-right\nFirst right-aligned line\\\nSecond right-aligned line\\\nThird right-aligned line\n:::"
+      "::: pfa-align-right\nThis block of ragged text is _right-aligned_ while honoring explicit line breaks.\\\nLorem ipsum dolor sit amet, consectetur adipiscing elit,\\\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-align-right" ]
       , []
       )
       [ Para
-          [ Str "First"
+          [ Str "This"
           , Space
-          , Str
-              "right-aligned"
+          , Str "block"
+          , Space
+          , Str "of"
+          , Space
+          , Str "ragged"
+          , Space
+          , Str "text"
+          , Space
+          , Str "is"
+          , Space
+          , Emph
+              [ Str
+                  "right-aligned"
+              ]
+          , Space
+          , Str "while"
+          , Space
+          , Str "honoring"
+          , Space
+          , Str "explicit"
           , Space
           , Str "line"
+          , Space
+          , Str "breaks."
           , LineBreak
-          , Str "Second"
+          , Str "Lorem"
           , Space
-          , Str
-              "right-aligned"
+          , Str "ipsum"
           , Space
-          , Str "line"
+          , Str "dolor"
+          , Space
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit,"
           , LineBreak
-          , Str "Third"
+          , Str "sed"
           , Space
-          , Str
-              "right-aligned"
+          , Str "do"
           , Space
-          , Str "line"
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
           ]
       ]
   , Header
@@ -3996,39 +5246,37 @@ Pandoc
       , Space
       , Str "utility"
       , Space
-      , Str "wraps"
-      , Space
-      , Str "content"
-      , Space
-      , Str "in"
+      , Str "positions"
       , Space
       , Str "an"
       , Space
-      , Str "isolated"
+      , Str "entire"
       , Space
-      , Str "bounding"
+      , Str "block"
       , Space
-      , Str "box"
+      , Str "container"
       , Space
-      , Str "and"
+      , Str "as"
       , Space
-      , Str "anchors"
+      , Str "a"
       , Space
-      , Str "the"
+      , Str "single"
       , Space
-      , Str "box"
+      , Str "cohesive"
       , Space
-      , Str "to"
+      , Str "unit"
       , Space
-      , Str "the"
+      , Str "while"
       , Space
-      , Str "left"
-      , Space
-      , Str "margin,"
+      , Str "preserving"
       , Space
       , Str "the"
       , Space
-      , Str "center"
+      , Str "internal"
+      , Space
+      , Str "alignment"
+      , Space
+      , Str "settings"
       , Space
       , Str "of"
       , Space
@@ -4036,288 +5284,272 @@ Pandoc
       , Space
       , Str "text"
       , Space
-      , Str "column,"
+      , Str "within"
       , Space
-      , Str "or"
+      , Str "it."
+      ]
+  , Header
+      3
+      ( "left-aligned-block-container"
+      , []
+      , []
+      )
+      [ Str "Left-Aligned"
       , Space
-      , Str "the"
+      , Str "Block"
       , Space
-      , Str "right"
-      , Space
-      , Str "margin."
-      , Space
-      , Str "The"
-      , Space
-      , Str "box"
-      , Space
-      , Str "width"
-      , Space
-      , Str "is"
-      , Space
-      , Str "set"
-      , Space
-      , Str "by"
-      , Space
-      , Str "the"
-      , Space
-      , Str "widest"
-      , Space
-      , Str "single"
-      , Space
-      , Str "line"
-      , Space
-      , Str "inside"
-      , Space
-      , Str "the"
-      , Space
-      , Str "block,"
-      , Space
-      , Str "so"
-      , Space
-      , Str "explicit"
-      , Space
-      , Str "line"
-      , Space
-      , Str "breaks"
-      , Space
-      , Str "("
-      , Code
-          ( "" , [] , [] )
-          "\\"
-      , Str ")"
-      , Space
-      , Str "shape"
-      , Space
-      , Str "both"
-      , Space
-      , Str "the"
-      , Space
-      , Str "silhouette"
-      , Space
-      , Str "and"
-      , Space
-      , Str "the"
-      , Space
-      , Str "horizontal"
-      , Space
-      , Str "footprint"
-      , Space
-      , Str "of"
-      , Space
-      , Str "the"
-      , Space
-      , Str "panel."
+      , Str "Container"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: {.pfa-block-left}\nA self-contained advisory hugging the left margin of the column.\\\nThe bounding box is set by the widest line of internal content.\\\nSurrounding paragraphs continue without being pushed sideways.\n:::"
+      "::: {.pfa-block-left}\nThe entire block container is _left-aligned_ while maintaining internal text structure.\\\nLorem ipsum dolor sit amet, consectetur adipiscing elit,\\\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-block-left" ]
       , []
       )
       [ Para
-          [ Str "A"
+          [ Str "The"
           , Space
-          , Str
-              "self-contained"
+          , Str "entire"
           , Space
-          , Str "advisory"
+          , Str "block"
           , Space
-          , Str "hugging"
-          , Space
-          , Str "the"
-          , Space
-          , Str "left"
-          , Space
-          , Str "margin"
-          , Space
-          , Str "of"
-          , Space
-          , Str "the"
-          , Space
-          , Str "column."
-          , LineBreak
-          , Str "The"
-          , Space
-          , Str "bounding"
-          , Space
-          , Str "box"
+          , Str "container"
           , Space
           , Str "is"
           , Space
-          , Str "set"
+          , Emph
+              [ Str
+                  "left-aligned"
+              ]
           , Space
-          , Str "by"
+          , Str "while"
           , Space
-          , Str "the"
-          , Space
-          , Str "widest"
-          , Space
-          , Str "line"
-          , Space
-          , Str "of"
+          , Str "maintaining"
           , Space
           , Str "internal"
           , Space
-          , Str "content."
+          , Str "text"
+          , Space
+          , Str "structure."
           , LineBreak
-          , Str "Surrounding"
+          , Str "Lorem"
           , Space
-          , Str "paragraphs"
+          , Str "ipsum"
           , Space
-          , Str "continue"
+          , Str "dolor"
           , Space
-          , Str "without"
+          , Str "sit"
           , Space
-          , Str "being"
+          , Str "amet,"
           , Space
-          , Str "pushed"
+          , Str "consectetur"
           , Space
-          , Str "sideways."
+          , Str "adipiscing"
+          , Space
+          , Str "elit,"
+          , LineBreak
+          , Str "sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
           ]
+      ]
+  , Header
+      3
+      ( "center-aligned-block-container"
+      , []
+      , []
+      )
+      [ Str "Center-Aligned"
+      , Space
+      , Str "Block"
+      , Space
+      , Str "Container"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: {.pfa-block-center}\nUseful for callouts, banners, or section dividers that should\\\ncatch the reader's eye without committing to the full column.\\\nThe panel centers itself relative to the surrounding text.\n:::"
+      "::: {.pfa-block-center}\nThe entire block container is _center-aligned_ while maintaining internal text structure.\\\nLorem ipsum dolor sit amet, consectetur adipiscing elit,\\\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-block-center" ]
       , []
       )
       [ Para
-          [ Str "Useful"
+          [ Str "The"
           , Space
-          , Str "for"
+          , Str "entire"
           , Space
-          , Str "callouts,"
+          , Str "block"
           , Space
-          , Str "banners,"
+          , Str "container"
           , Space
-          , Str "or"
+          , Str "is"
           , Space
-          , Str "section"
+          , Emph
+              [ Str
+                  "center-aligned"
+              ]
           , Space
-          , Str "dividers"
+          , Str "while"
           , Space
-          , Str "that"
+          , Str "maintaining"
           , Space
-          , Str "should"
+          , Str "internal"
+          , Space
+          , Str "text"
+          , Space
+          , Str "structure."
           , LineBreak
-          , Str "catch"
+          , Str "Lorem"
           , Space
-          , Str "the"
+          , Str "ipsum"
           , Space
-          , Str "reader\8217s"
+          , Str "dolor"
           , Space
-          , Str "eye"
+          , Str "sit"
           , Space
-          , Str "without"
+          , Str "amet,"
           , Space
-          , Str "committing"
+          , Str "consectetur"
           , Space
-          , Str "to"
+          , Str "adipiscing"
           , Space
-          , Str "the"
-          , Space
-          , Str "full"
-          , Space
-          , Str "column."
+          , Str "elit,"
           , LineBreak
-          , Str "The"
+          , Str "sed"
           , Space
-          , Str "panel"
+          , Str "do"
           , Space
-          , Str "centers"
+          , Str "eiusmod"
           , Space
-          , Str "itself"
+          , Str "tempor"
           , Space
-          , Str "relative"
+          , Str "incididunt"
           , Space
-          , Str "to"
+          , Str "ut"
           , Space
-          , Str "the"
+          , Str "labore"
           , Space
-          , Str "surrounding"
+          , Str "et"
           , Space
-          , Str "text."
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
           ]
+      ]
+  , Header
+      3
+      ( "right-aligned-block-container"
+      , []
+      , []
+      )
+      [ Str "Right-Aligned"
+      , Space
+      , Str "Block"
+      , Space
+      , Str "Container"
       ]
   , CodeBlock
       ( ""
       , [ "markdown" ]
       , []
       )
-      "::: {.pfa-block-right}\nAnchored against the right margin like a marginal sidenote.\\\nIdeal for attributions, version stamps, or supplementary notes\\\nthat should sit beside the main text rather than within it.\n:::"
+      "::: {.pfa-block-right}\nThe entire block container is _right-aligned_ while maintaining internal text structure.\\\nLorem ipsum dolor sit amet, consectetur adipiscing elit,\\\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
   , Div
       ( ""
       , [ "pfa-block-right" ]
       , []
       )
       [ Para
-          [ Str "Anchored"
+          [ Str "The"
           , Space
-          , Str "against"
+          , Str "entire"
           , Space
-          , Str "the"
+          , Str "block"
           , Space
-          , Str "right"
+          , Str "container"
           , Space
-          , Str "margin"
+          , Str "is"
           , Space
-          , Str "like"
+          , Emph
+              [ Str
+                  "right-aligned"
+              ]
           , Space
-          , Str "a"
+          , Str "while"
           , Space
-          , Str "marginal"
+          , Str "maintaining"
           , Space
-          , Str "sidenote."
-          , LineBreak
-          , Str "Ideal"
-          , Space
-          , Str "for"
-          , Space
-          , Str
-              "attributions,"
-          , Space
-          , Str "version"
-          , Space
-          , Str "stamps,"
-          , Space
-          , Str "or"
-          , Space
-          , Str
-              "supplementary"
-          , Space
-          , Str "notes"
-          , LineBreak
-          , Str "that"
-          , Space
-          , Str "should"
-          , Space
-          , Str "sit"
-          , Space
-          , Str "beside"
-          , Space
-          , Str "the"
-          , Space
-          , Str "main"
+          , Str "internal"
           , Space
           , Str "text"
           , Space
-          , Str "rather"
+          , Str "structure."
+          , LineBreak
+          , Str "Lorem"
           , Space
-          , Str "than"
+          , Str "ipsum"
           , Space
-          , Str "within"
+          , Str "dolor"
           , Space
-          , Str "it."
+          , Str "sit"
+          , Space
+          , Str "amet,"
+          , Space
+          , Str "consectetur"
+          , Space
+          , Str "adipiscing"
+          , Space
+          , Str "elit,"
+          , LineBreak
+          , Str "sed"
+          , Space
+          , Str "do"
+          , Space
+          , Str "eiusmod"
+          , Space
+          , Str "tempor"
+          , Space
+          , Str "incididunt"
+          , Space
+          , Str "ut"
+          , Space
+          , Str "labore"
+          , Space
+          , Str "et"
+          , Space
+          , Str "dolore"
+          , Space
+          , Str "magna"
+          , Space
+          , Str "aliqua."
           ]
       ]
   , Header
@@ -4335,7 +5567,11 @@ Pandoc
   , Para
       [ Str "Classes"
       , Space
-      , Str "compose"
+      , Str "can"
+      , Space
+      , Str "be"
+      , Space
+      , Str "stacked"
       , Space
       , Str "seamlessly."
       , Space
@@ -4353,19 +5589,23 @@ Pandoc
       , Space
       , Str "definitions"
       , Space
-      , Str "can"
-      , Space
-      , Str "stack"
+      , Str "compose"
       , Space
       , Str "safely"
       , Space
       , Str "on"
       , Space
-      , Str "any"
+      , Str "both"
       , Space
-      , Str "single"
+      , Str "inline"
       , Space
-      , Str "element."
+      , Str "elements"
+      , Space
+      , Str "and"
+      , Space
+      , Str "structural"
+      , Space
+      , Str "blocks."
       ]
   , Header
       3
@@ -4382,15 +5622,15 @@ Pandoc
       (Caption Nothing [])
       [ ( AlignLeft
         , ColWidth
-            0.27722772277227725
+            0.12048192771084337
         )
       , ( AlignLeft
         , ColWidth
-            0.6039603960396039
+            0.4457831325301205
         )
       , ( AlignLeft
         , ColWidth
-            0.1188118811881188
+            0.43373493975903615
         )
       ]
       (TableHead
@@ -4648,7 +5888,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color=\"midnightblue\"}\nA centered, bold, sans-serif, large, midnight-blue block assembled from five utilities.\n:::"
+      "::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color=\"midnightblue\"}\nA centered, bold, sans-serif, large, midnight-blue block assembled from five different features of the filter.\n:::"
   , Div
       ( ""
       , [ "pfa-text-center"
@@ -4683,7 +5923,15 @@ Pandoc
           , Space
           , Str "five"
           , Space
-          , Str "utilities."
+          , Str "different"
+          , Space
+          , Str "features"
+          , Space
+          , Str "of"
+          , Space
+          , Str "the"
+          , Space
+          , Str "filter."
           ]
       ]
   , Header
@@ -4702,39 +5950,49 @@ Pandoc
       ]
   , Para
       [ Strong
-          [ Str "Deprecated"
-          , Space
-          , Str "\8212"
-          , Space
-          , Str "retained"
-          , Space
-          , Str "strictly"
-          , Space
-          , Str "for"
-          , Space
-          , Str "backward"
-          , Space
-          , Str
-              "compatibility"
-          , Space
-          , Str "and"
-          , Space
-          , Str "will"
-          , Space
-          , Str "be"
-          , Space
-          , Str "removed"
-          , Space
-          , Str "in"
-          , Space
-          , Str "the"
-          , Space
-          , Str "next"
-          , Space
-          , Str "major"
-          , Space
-          , Str "release."
-          ]
+          [ Str "Warning:" ]
+      , Space
+      , Str "Legacy"
+      , Space
+      , Str "aliases"
+      , Space
+      , Str "are"
+      , Space
+      , Str "deprecated."
+      , Space
+      , Str "They"
+      , Space
+      , Str "are"
+      , Space
+      , Str "retained"
+      , Space
+      , Str "strictly"
+      , Space
+      , Str "for"
+      , Space
+      , Str "backward"
+      , Space
+      , Str "compatibility"
+      , Space
+      , Str "and"
+      , Space
+      , Str "will"
+      , Space
+      , Str "be"
+      , Space
+      , Str "entirely"
+      , Space
+      , Str "removed"
+      , Space
+      , Str "in"
+      , Space
+      , Str "the"
+      , Space
+      , Str "next"
+      , Space
+      , Str "major"
+      , Space
+      , Str "release."
       , Space
       , Str "New"
       , Space
@@ -4746,25 +6004,15 @@ Pandoc
       , Space
       , Str "the"
       , Space
-      , Str "explicit"
-      , Space
       , Code
           ( "" , [] , [] )
-          "pfa-*"
+          ".pfa-*"
       , Space
       , Str "namespaces"
       , Space
-      , Str "above"
+      , Str "going"
       , Space
-      , Str "to"
-      , Space
-      , Str "prevent"
-      , Space
-      , Str "global"
-      , Space
-      , Str "framework"
-      , Space
-      , Str "collisions."
+      , Str "forward."
       ]
   , Header
       3
@@ -4789,15 +6037,15 @@ Pandoc
       (Caption Nothing [])
       [ ( AlignLeft
         , ColWidth
-            0.2926829268292683
+            0.2857142857142857
         )
       , ( AlignLeft
         , ColWidth
-            0.17073170731707318
+            0.23809523809523808
         )
       , ( AlignLeft
         , ColWidth
-            0.5365853658536586
+            0.47619047619047616
         )
       ]
       (TableHead
@@ -4817,7 +6065,7 @@ Pandoc
                          "Legacy"
                      , Space
                      , Str
-                         "Alias"
+                         "Classes"
                      ]
                  ]
              , Cell
@@ -4830,7 +6078,7 @@ Pandoc
                  (ColSpan 1)
                  [ Plain
                      [ Str
-                         "Short"
+                         "Short-Hand"
                      ]
                  ]
              , Cell
@@ -4843,10 +6091,10 @@ Pandoc
                  (ColSpan 1)
                  [ Plain
                      [ Str
-                         "Modern"
+                         "New"
                      , Space
                      , Str
-                         "Class"
+                         "Classes"
                      ]
                  ]
              ]
@@ -4871,7 +6119,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "bold"
+                          ".bold"
                       ]
                   ]
               , Cell
@@ -4888,7 +6136,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "bf"
+                          ".bf"
                       ]
                   ]
               , Cell
@@ -4905,7 +6153,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-font-bold"
+                          ".pfa-font-bold"
                       ]
                   ]
               ]
@@ -4925,7 +6173,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "emphasis"
+                          ".emphasis"
                       ]
                   ]
               , Cell
@@ -4942,7 +6190,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "em"
+                          ".em"
                       ]
                   ]
               , Cell
@@ -4959,7 +6207,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-font-emphasis"
+                          ".pfa-font-emphasis"
                       ]
                   ]
               ]
@@ -4979,7 +6227,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "italic"
+                          ".italic"
                       ]
                   ]
               , Cell
@@ -4996,7 +6244,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "it"
+                          ".it"
                       ]
                   ]
               , Cell
@@ -5013,7 +6261,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-font-italic"
+                          ".pfa-font-italic"
                       ]
                   ]
               ]
@@ -5033,7 +6281,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "medium"
+                          ".medium"
                       ]
                   ]
               , Cell
@@ -5050,7 +6298,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "md"
+                          ".md"
                       ]
                   ]
               , Cell
@@ -5067,7 +6315,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-font-medium"
+                          ".pfa-font-medium"
                       ]
                   ]
               ]
@@ -5087,7 +6335,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "monospace"
+                          ".monospace"
                       ]
                   ]
               , Cell
@@ -5104,7 +6352,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "tt"
+                          ".tt"
                       ]
                   ]
               , Cell
@@ -5121,7 +6369,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-font-mono"
+                          ".pfa-font-mono"
                       ]
                   ]
               ]
@@ -5141,7 +6389,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "normalfont"
+                          ".normalfont"
                       ]
                   ]
               , Cell
@@ -5158,7 +6406,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "nf"
+                          ".nf"
                       ]
                   ]
               , Cell
@@ -5175,7 +6423,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-font-normal"
+                          ".pfa-font-normal"
                       ]
                   ]
               ]
@@ -5195,7 +6443,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "sans"
+                          ".sans"
                       ]
                   ]
               , Cell
@@ -5212,7 +6460,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "sf"
+                          ".sf"
                       ]
                   ]
               , Cell
@@ -5229,7 +6477,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-font-sans"
+                          ".pfa-font-sans"
                       ]
                   ]
               ]
@@ -5249,7 +6497,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "serif"
+                          ".serif"
                       ]
                   ]
               , Cell
@@ -5266,7 +6514,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "rm"
+                          ".rm"
                       ]
                   ]
               , Cell
@@ -5283,7 +6531,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-font-serif"
+                          ".pfa-font-serif"
                       ]
                   ]
               ]
@@ -5303,7 +6551,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "slanted"
+                          ".slanted"
                       ]
                   ]
               , Cell
@@ -5320,7 +6568,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "sl"
+                          ".sl"
                       ]
                   ]
               , Cell
@@ -5337,7 +6585,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-font-slanted"
+                          ".pfa-font-slanted"
                       ]
                   ]
               ]
@@ -5357,7 +6605,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "smallcaps"
+                          ".smallcaps"
                       ]
                   ]
               , Cell
@@ -5374,7 +6622,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "sc"
+                          ".sc"
                       ]
                   ]
               , Cell
@@ -5391,7 +6639,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-font-smallcaps"
+                          ".pfa-font-smallcaps"
                       ]
                   ]
               ]
@@ -5411,7 +6659,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "upright"
+                          ".upright"
                       ]
                   ]
               , Cell
@@ -5428,7 +6676,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "up"
+                          ".up"
                       ]
                   ]
               , Cell
@@ -5445,7 +6693,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-font-upright"
+                          ".pfa-font-upright"
                       ]
                   ]
               ]
@@ -5470,11 +6718,11 @@ Pandoc
       (Caption Nothing [])
       [ ( AlignLeft
         , ColWidth
-            0.3870967741935484
+            0.41379310344827586
         )
       , ( AlignLeft
         , ColWidth
-            0.6129032258064516
+            0.5862068965517241
         )
       ]
       (TableHead
@@ -5494,7 +6742,7 @@ Pandoc
                          "Legacy"
                      , Space
                      , Str
-                         "Alias"
+                         "Classes"
                      ]
                  ]
              , Cell
@@ -5510,7 +6758,7 @@ Pandoc
                          "Modern"
                      , Space
                      , Str
-                         "Class"
+                         "Classes"
                      ]
                  ]
              ]
@@ -5535,7 +6783,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "xsmall"
+                          ".xsmall"
                       ]
                   ]
               , Cell
@@ -5552,7 +6800,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-xs"
+                          ".pfa-text-xs"
                       ]
                   ]
               ]
@@ -5572,7 +6820,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "small"
+                          ".small"
                       ]
                   ]
               , Cell
@@ -5589,7 +6837,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-s"
+                          ".pfa-text-s"
                       ]
                   ]
               ]
@@ -5609,7 +6857,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "normal"
+                          ".normal"
                       ]
                   ]
               , Cell
@@ -5626,7 +6874,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-normal"
+                          ".pfa-text-normal"
                       ]
                   ]
               ]
@@ -5646,7 +6894,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "large"
+                          ".large"
                       ]
                   ]
               , Cell
@@ -5663,7 +6911,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-l"
+                          ".pfa-text-l"
                       ]
                   ]
               ]
@@ -5683,7 +6931,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "xlarge"
+                          ".xlarge"
                       ]
                   ]
               , Cell
@@ -5700,7 +6948,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-xl"
+                          ".pfa-text-xl"
                       ]
                   ]
               ]
@@ -5720,7 +6968,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "xxlarge"
+                          ".xxlarge"
                       ]
                   ]
               , Cell
@@ -5737,7 +6985,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-2xl"
+                          ".pfa-text-2xl"
                       ]
                   ]
               ]
@@ -5757,7 +7005,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "huge"
+                          ".huge"
                       ]
                   ]
               , Cell
@@ -5774,7 +7022,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-3xl"
+                          ".pfa-text-3xl"
                       ]
                   ]
               ]
@@ -5796,12 +7044,10 @@ Pandoc
       ( "" , [] , [] )
       (Caption Nothing [])
       [ ( AlignLeft
-        , ColWidth
-            0.3939393939393939
+        , ColWidth 0.40625
         )
       , ( AlignLeft
-        , ColWidth
-            0.6060606060606061
+        , ColWidth 0.59375
         )
       ]
       (TableHead
@@ -5821,7 +7067,7 @@ Pandoc
                          "Legacy"
                      , Space
                      , Str
-                         "Alias"
+                         "Classes"
                      ]
                  ]
              , Cell
@@ -5834,10 +7080,10 @@ Pandoc
                  (ColSpan 1)
                  [ Plain
                      [ Str
-                         "Modern"
+                         "New"
                      , Space
                      , Str
-                         "Class"
+                         "Classes"
                      ]
                  ]
              ]
@@ -5862,7 +7108,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "center"
+                          ".center"
                       ]
                   ]
               , Cell
@@ -5879,7 +7125,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-center"
+                          ".pfa-text-center"
                       ]
                   ]
               ]
@@ -5899,7 +7145,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "flushleft"
+                          ".flushleft"
                       ]
                   ]
               , Cell
@@ -5916,7 +7162,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-left"
+                          ".pfa-text-left"
                       ]
                   ]
               ]
@@ -5936,7 +7182,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "flushright"
+                          ".flushright"
                       ]
                   ]
               , Cell
@@ -5953,7 +7199,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-right"
+                          ".pfa-text-right"
                       ]
                   ]
               ]
@@ -5973,7 +7219,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "centering"
+                          ".centering"
                       ]
                   ]
               , Cell
@@ -5990,7 +7236,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-align-center"
+                          ".pfa-align-center"
                       ]
                   ]
               ]
@@ -6010,7 +7256,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "raggedleft"
+                          ".raggedleft"
                       ]
                   ]
               , Cell
@@ -6027,7 +7273,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-align-right"
+                          ".pfa-align-right"
                       ]
                   ]
               ]
@@ -6047,7 +7293,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "raggedright"
+                          ".raggedright"
                       ]
                   ]
               , Cell
@@ -6064,7 +7310,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-align-left"
+                          ".pfa-align-left"
                       ]
                   ]
               ]
@@ -6091,15 +7337,15 @@ Pandoc
       (Caption Nothing [])
       [ ( AlignLeft
         , ColWidth
-            0.2727272727272727
+            0.26666666666666666
         )
       , ( AlignLeft
         , ColWidth
-            0.1590909090909091
+            0.2222222222222222
         )
       , ( AlignLeft
         , ColWidth
-            0.5681818181818182
+            0.5111111111111111
         )
       ]
       (TableHead
@@ -6119,7 +7365,7 @@ Pandoc
                          "Legacy"
                      , Space
                      , Str
-                         "Alias"
+                         "Classes"
                      ]
                  ]
              , Cell
@@ -6132,7 +7378,7 @@ Pandoc
                  (ColSpan 1)
                  [ Plain
                      [ Str
-                         "Short"
+                         "Short-Hand"
                      ]
                  ]
              , Cell
@@ -6145,10 +7391,10 @@ Pandoc
                  (ColSpan 1)
                  [ Plain
                      [ Str
-                         "Modern"
+                         "New"
                      , Space
                      , Str
-                         "Class"
+                         "Classes"
                      ]
                  ]
              ]
@@ -6173,7 +7419,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "uline"
+                          ".uline"
                       ]
                   ]
               , Cell
@@ -6190,7 +7436,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "u"
+                          ".u"
                       ]
                   ]
               , Cell
@@ -6207,7 +7453,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-uline"
+                          ".pfa-text-uline"
                       ]
                   ]
               ]
@@ -6227,7 +7473,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "uuline"
+                          ".uuline"
                       ]
                   ]
               , Cell
@@ -6244,7 +7490,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "uu"
+                          ".uu"
                       ]
                   ]
               , Cell
@@ -6261,7 +7507,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-uline-double"
+                          ".pfa-text-uline-double"
                       ]
                   ]
               ]
@@ -6281,7 +7527,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "dashuline"
+                          ".dashuline"
                       ]
                   ]
               , Cell
@@ -6298,7 +7544,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "dau"
+                          ".dau"
                       ]
                   ]
               , Cell
@@ -6315,7 +7561,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-uline-dashed"
+                          ".pfa-text-uline-dashed"
                       ]
                   ]
               ]
@@ -6335,7 +7581,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "dotuline"
+                          ".dotuline"
                       ]
                   ]
               , Cell
@@ -6352,7 +7598,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "dou"
+                          ".dou"
                       ]
                   ]
               , Cell
@@ -6369,7 +7615,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-uline-dotted"
+                          ".pfa-text-uline-dotted"
                       ]
                   ]
               ]
@@ -6389,7 +7635,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "uwave"
+                          ".uwave"
                       ]
                   ]
               , Cell
@@ -6406,7 +7652,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "uw"
+                          ".uw"
                       ]
                   ]
               , Cell
@@ -6423,7 +7669,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-uline-wave"
+                          ".pfa-text-uline-wave"
                       ]
                   ]
               ]
@@ -6443,7 +7689,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "sout"
+                          ".sout"
                       ]
                   ]
               , Cell
@@ -6460,7 +7706,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "so"
+                          ".so"
                       ]
                   ]
               , Cell
@@ -6477,7 +7723,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-strikeout"
+                          ".pfa-text-strikeout"
                       ]
                   ]
               ]
@@ -6497,7 +7743,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "xout"
+                          ".xout"
                       ]
                   ]
               , Cell
@@ -6514,7 +7760,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "xo"
+                          ".xo"
                       ]
                   ]
               , Cell
@@ -6531,7 +7777,7 @@ Pandoc
                           , []
                           , []
                           )
-                          "pfa-text-markout"
+                          ".pfa-text-markout"
                       ]
                   ]
               ]

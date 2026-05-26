@@ -2,63 +2,82 @@
 title: Fonts and Alignment Filter Demonstration
 ---
 
-This document demonstrates every feature provided by the
-`fonts-and-alignment` Lua filter. The syntax shown in the code blocks
-directly produces the output below them, and the same Markdown source
-produces faithful output in both LaTeX/PDF and HTML.
+This document showcases every feature provided by the
+`fonts-and-alignment` Lua filter. Each code block demonstrates the exact
+Markdown syntax used to produce the rendered output that follows, with
+consistent and faithful results across both LaTeX/PDF and HTML formats.
 
-## Font Sizing Scale (Inline)
+## Inline Font Sizing Scale
 
-Nine sizing hooks scale relative to the document's base font size.
+Nine sizing hooks are provided to scale text elements relative to the
+document's base font size.
 
-  ------------------------------------------------------------------------------------
-  Size            Syntax                                  Output
-  --------------- --------------------------------------- ----------------------------
-  tiny            `[Sample]{.pfa-text-3xs}`               [Sample]{.pfa-text-3xs}
+  --------------------------------------------------------------------------
+  Size           Syntax                         Output
+  -------------- ------------------------------ ----------------------------
+  tiny           `[Sample]{.pfa-text-3xs}`      [Sample]{.pfa-text-3xs}
 
-  scriptsize      `[Sample]{.pfa-text-2xs}`               [Sample]{.pfa-text-2xs}
+  scriptsize     `[Sample]{.pfa-text-2xs}`      [Sample]{.pfa-text-2xs}
 
-  footnotesize    `[Sample]{.pfa-text-xs}`                [Sample]{.pfa-text-xs}
+  footnotesize   `[Sample]{.pfa-text-xs}`       [Sample]{.pfa-text-xs}
 
-  small           `[Sample]{.pfa-text-s}`                 [Sample]{.pfa-text-s}
+  small          `[Sample]{.pfa-text-s}`        [Sample]{.pfa-text-s}
 
-  normal          `[Sample]{.pfa-text-normal}`            [Sample]{.pfa-text-normal}
+  normal         `[Sample]{.pfa-text-normal}`   [Sample]{.pfa-text-normal}
 
-  large           `[Sample]{.pfa-text-l}`                 [Sample]{.pfa-text-l}
+  large          `[Sample]{.pfa-text-l}`        [Sample]{.pfa-text-l}
 
-  Large           `[Sample]{.pfa-text-xl}`                [Sample]{.pfa-text-xl}
+  Large          `[Sample]{.pfa-text-xl}`       [Sample]{.pfa-text-xl}
 
-  LARGE           `[Sample]{.pfa-text-2xl}`               [Sample]{.pfa-text-2xl}
+  LARGE          `[Sample]{.pfa-text-2xl}`      [Sample]{.pfa-text-2xl}
 
-  huge            `[Sample]{.pfa-text-3xl}`               [Sample]{.pfa-text-3xl}
-  ------------------------------------------------------------------------------------
+  huge           `[Sample]{.pfa-text-3xl}`      [Sample]{.pfa-text-3xl}
+  --------------------------------------------------------------------------
 
-## Font Sizing Scale (Block)
+## Block Font Sizing Scale
 
-The same sizing classes apply to fenced div blocks. This is useful for
-sidebars, captions, or callouts.
+The same sizing classes can be applied globally to fenced div blocks.
+
+### Small Font Size
 
 ``` markdown
 ::: pfa-text-s
-This entire paragraph renders at the `small` size. Block-level sizing ensures the content consistently shrinks or grows as a unified component.
+This entire paragraph renders at the _small_ font size. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-text-s
-This entire paragraph renders at the `small` size. Block-level sizing
-ensures the content consistently shrinks or grows as a unified
-component.
+This entire paragraph renders at the *small* font size. Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
 :::
+
+### Normal Font Size
+
+``` markdown
+::: pfa-text-normal
+This entire paragraph renders at the _normal_ font size. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+:::
+```
+
+::: pfa-text-normal
+This entire paragraph renders at the *normal* font size. Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+:::
+
+### Large Font Size
 
 ``` markdown
 ::: pfa-text-l
-This entire paragraph renders at the `large` size — well suited for pull quotes or emphasized opening text.
+This entire paragraph renders at the _large_ font size. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-text-l
-This entire paragraph renders at the `large` size --- well suited for
-pull quotes or emphasized opening text.
+This entire paragraph renders at the *large* font size. Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
 :::
 
 ## Font Weights, Shapes, and Families (Inline)
@@ -66,148 +85,214 @@ pull quotes or emphasized opening text.
 Every supported typographic style is available as an inline span
 constraint.
 
-  ----------------------------------------------------------------------------------------
-  Style          Syntax                                    Output
-  -------------- ----------------------------------------- -------------------------------
-  Bold           `[Sample]{.pfa-font-bold}`                [Sample]{.pfa-font-bold}
+  ------------------------------------------------------------------------------
+  Style        Syntax                            Output
+  ------------ --------------------------------- -------------------------------
+  Bold         `[Sample]{.pfa-font-bold}`        [Sample]{.pfa-font-bold}
 
-  Medium         `[Sample]{.pfa-font-medium}`              [Sample]{.pfa-font-medium}
+  Medium       `[Sample]{.pfa-font-medium}`      [Sample]{.pfa-font-medium}
 
-  Italic         `[Sample]{.pfa-font-italic}`              [Sample]{.pfa-font-italic}
+  Italic       `[Sample]{.pfa-font-italic}`      [Sample]{.pfa-font-italic}
 
-  Slanted        `[Sample]{.pfa-font-slanted}`             [Sample]{.pfa-font-slanted}
+  Slanted      `[Sample]{.pfa-font-slanted}`     [Sample]{.pfa-font-slanted}
 
-  Upright        `[Sample]{.pfa-font-upright}`             [Sample]{.pfa-font-upright}
+  Upright      `[Sample]{.pfa-font-upright}`     [Sample]{.pfa-font-upright}
 
-  Emphasis       `[Sample]{.pfa-font-emphasis}`            [Sample]{.pfa-font-emphasis}
+  Emphasis     `[Sample]{.pfa-font-emphasis}`    [Sample]{.pfa-font-emphasis}
 
-  Serif          `[Sample]{.pfa-font-serif}`               [Sample]{.pfa-font-serif}
+  Serif        `[Sample]{.pfa-font-serif}`       [Sample]{.pfa-font-serif}
 
-  Sans-Serif     `[Sample]{.pfa-font-sans}`                [Sample]{.pfa-font-sans}
+  Sans-Serif   `[Sample]{.pfa-font-sans}`        [Sample]{.pfa-font-sans}
 
-  Monospace      `[Sample]{.pfa-font-mono}`                [Sample]{.pfa-font-mono}
+  Monospace    `[Sample]{.pfa-font-mono}`        [Sample]{.pfa-font-mono}
 
-  Small Caps     `[Sample]{.pfa-font-smallcaps}`           [Sample]{.pfa-font-smallcaps}
+  Small Caps   `[Sample]{.pfa-font-smallcaps}`   [Sample]{.pfa-font-smallcaps}
 
-  Normal Reset   `[Sample]{.pfa-font-normal}`              [Sample]{.pfa-font-normal}
-  ----------------------------------------------------------------------------------------
+  Normal Reset `[Sample]{.pfa-font-normal}`      [Sample]{.pfa-font-normal}
+  ------------------------------------------------------------------------------
 
 ## Font Weights, Shapes, and Families (Block)
 
-The same classes work at the block level, applying the typographic voice
-across all internal sentences without requiring inline markers.
+The same classes can also be applied at the block level, allowing the
+specified typographic style to affect all enclosed sentences.
+
+### Bold Weight
+
+``` markdown
+::: pfa-font-bold
+This entire paragraph renders using the _bold_ font weight. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+:::
+```
+
+::: pfa-font-bold
+This entire paragraph renders using the *bold* font weight. Lorem ipsum
+dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+:::
+
+### Sans-Serif Family
 
 ``` markdown
 ::: pfa-font-sans
-This paragraph is rendered using the document's sans-serif family. Block-scoped family switches are convenient for code blocks or structural sections.
+This entire paragraph renders using the _sans-serif_ font family. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-font-sans
-This paragraph is rendered using the document's sans-serif family.
-Block-scoped family switches are convenient for code blocks or
-structural sections.
+This entire paragraph renders using the *sans-serif* font family. Lorem
+ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
 :::
+
+### Small Caps Shape
 
 ``` markdown
 ::: pfa-font-smallcaps
-Section headings or short callouts can be rendered entirely in small caps using the block form.
+This entire paragraph renders using the _small caps_ font shape. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-font-smallcaps
-Section headings or short callouts can be rendered entirely in small
-caps using the block form.
+This entire paragraph renders using the *small caps* font shape. Lorem
+ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
 :::
 
 ## Text Casing Transformations
 
-Casing classes rewrite the underlying Abstract Syntax Tree (AST) text
-nodes rather than applying CSS formatting, meaning the transformation
-survives raw copy-paste operations.
+Unlike standard web styling---which only changes how text looks on the
+screen---these casing classes permanently change the actual letters in
+your document. This guarantees that your uppercase or lowercase styling
+remains intact even if you copy and paste the text into another
+application.
 
 ### Inline Casing
 
-  ----------------------------------------------------------------------------------
-  Casing       Syntax                                    Output
-  ------------ ----------------------------------------- ---------------------------
-  Uppercase    `[coerced]{.pfa-uppercase}`               [COERCED]{.pfa-uppercase}
+  -------------------------------------------------------------------------
+  Casing      Syntax                          Output
+  ----------- ------------------------------- -----------------------------
+  Uppercase   `[coerced]{.pfa-uppercase}`     [COERCED]{.pfa-uppercase}
 
-  Lowercase    `[COERCED]{.pfa-lowercase}`               [coerced]{.pfa-lowercase}
-  ----------------------------------------------------------------------------------
+  Lowercase   `[COERCED]{.pfa-lowercase}`     [coerced]{.pfa-lowercase}
+  -------------------------------------------------------------------------
 
 ### Block Casing
 
+#### Lowercase
+
+``` markdown
+::: pfa-lowercase
+THIS ENTIRE PARAGRAPH IS TRANSFORMED TO _LOWERCASE_. LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.
+:::
+```
+
+::: pfa-lowercase
+this entire paragraph is transformed to *lowercase*. lorem ipsum dolor
+sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.
+:::
+
+#### Uppercase
+
 ``` markdown
 ::: pfa-uppercase
-this block is uniformly uppercased, even across paragraph boundaries.
+this entire paragraph is transformed to _uppercase_. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-uppercase
-THIS BLOCK IS UNIFORMLY UPPERCASED, EVEN ACROSS PARAGRAPH BOUNDARIES.
+THIS ENTIRE PARAGRAPH IS TRANSFORMED TO *UPPERCASE*. LOREM IPSUM DOLOR
+SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT
+UT LABORE ET DOLORE MAGNA ALIQUA.
 :::
 
 ## Inline Text Decorations
 
-Underline and strikeout variants are routed through the `ulem` LaTeX
-package and mapped to matching standard CSS.
+Underline and strikeout variants are implemented through the `ulem`
+LaTeX package and mapped to their equivalent standard CSS properties,
+ensuring consistent rendering across output formats. These styles are
+supported only for inline elements.
 
-  ---------------------------------------------------------------------------------------------------
-  Decoration        Syntax                                  Output
-  ----------------- --------------------------------------- -----------------------------------------
-  Single Underline  `[Sample]{.pfa-text-uline}`             [[Sample]{.underline}]{.pfa-text-uline}
+  ----------------------------------------------------------------------------------------------------------
+  Decoration          Syntax                                       Output
+  ------------------- -------------------------------------------- -----------------------------------------
+  Single Underline    `[Sample]{.pfa-text-uline}`                  [[Sample]{.underline}]{.pfa-text-uline}
 
-  Double Underline  `[Sample]{.pfa-text-uline-double}`      [Sample]{.pfa-text-uline-double}
+  Double Underline    `[Sample]{.pfa-text-uline-double}`           [Sample]{.pfa-text-uline-double}
 
-  Dashed Underline  `[Sample]{.pfa-text-uline-dashed}`      [Sample]{.pfa-text-uline-dashed}
+  Dashed Underline    `[Sample]{.pfa-text-uline-dashed}`           [Sample]{.pfa-text-uline-dashed}
 
-  Dotted Underline  `[Sample]{.pfa-text-uline-dotted}`      [Sample]{.pfa-text-uline-dotted}
+  Dotted Underline    `[Sample]{.pfa-text-uline-dotted}`           [Sample]{.pfa-text-uline-dotted}
 
-  Wavy Underline    `[Sample]{.pfa-text-uline-wave}`        [Sample]{.pfa-text-uline-wave}
+  Wavy Underline      `[Sample]{.pfa-text-uline-wave}`             [Sample]{.pfa-text-uline-wave}
 
-  Strikeout         `[Sample]{.pfa-text-strikeout}`         [~~Sample~~]{.pfa-text-strikeout}
+  Strikeout           `[Sample]{.pfa-text-strikeout}`              [~~Sample~~]{.pfa-text-strikeout}
 
-  Marked Out        `[Sample]{.pfa-text-markout}`           [~~Sample~~]{.pfa-text-markout}
-  ---------------------------------------------------------------------------------------------------
+  Marked Out          `[Sample]{.pfa-text-markout}`                [~~Sample~~]{.pfa-text-markout}
+  ----------------------------------------------------------------------------------------------------------
+
+**Note:** The `.pfa-text-strikeout` and `.pfa-text-markout` classes are
+both rendered as a standard horizontal strikeout. Although LaTeX (via
+the `ulem` package) provides multiple text-deletion styles, the
+"markout" variant is not supported in HTML/CSS. To ensure consistent
+rendering across both LaTeX and HTML outputs, the filter standardizes
+both classes to the same strikeout style.
 
 ## Color Resolution
 
 The `pfa-font-color` attribute natively parses standard CSS3 named
-colors, six-digit hex codes, and three-digit hex shorthands.
+colors, six-digit hexadecimal codes, and three-digit shorthand hex
+codes.
 
-  --------------------------------------------------------------------------------------------
-  Input Type      Syntax                                   Output
-  --------------- ---------------------------------------- -----------------------------------
-  CSS Named       `[Sample]{pfa-font-color="crimson"}`     [Sample]{style="color: #DC143C;"}
+  ---------------------------------------------------------------------------------------------------
+  Input Type       Syntax                                         Output
+  ---------------- ---------------------------------------------- -----------------------------------
+  CSS Named        `[Sample]{pfa-font-color="crimson"}`           [Sample]{style="color: #DC143C;"}
 
-  Hex Full        `[Sample]{pfa-font-color="#2E8B57"}`     [Sample]{style="color: #2E8B57;"}
+  Hex Full         `[Sample]{pfa-font-color="#2E8B57"}`           [Sample]{style="color: #2E8B57;"}
 
-  Hex Shorthand   `[Sample]{pfa-font-color="#666"}`        [Sample]{style="color: #666666;"}
-  --------------------------------------------------------------------------------------------
+  Hex              `[Sample]{pfa-font-color="#666"}`              [Sample]{style="color: #666666;"}
+  Shorthand[^1]                                                   
+  ---------------------------------------------------------------------------------------------------
+
+**Note:** The `pfa-font-color` utility is an attribute, not a class, and
+should not be prefixed with a period (.).
 
 ### Flexible Spelling of Named Colors
 
-The engine sanitizes inputs automatically. It is case-insensitive and
-ignores spaces, hyphens, and underscores. All syntaxes below
-successfully map to the standard `mediumvioletred`.
+The rendering engine automatically sanitizes color inputs. Parsing is
+case-insensitive and ignores spaces, hyphens, and underscores. All
+syntax variations shown below successfully map to the standard CSS3
+color `mediumvioletred`.
 
-  ----------------------------------------------------------------------------------------------
-  Variant     Syntax                                          Output
-  ----------- ----------------------------------------------- ----------------------------------
-  Lowercase   `[Color]{pfa-font-color="mediumvioletred"}`     [Color]{style="color: #C71585;"}
+  -----------------------------------------------------------------------------------------------------
+  Naming Convention  Syntax                                          Output
+  ------------------ ----------------------------------------------- ----------------------------------
+  Lowercase          `[Color]{pfa-font-color="mediumvioletred"}`     [Color]{style="color: #C71585;"}
 
-  Title Case  `[Color]{pfa-font-color="MediumVioletRed"}`     [Color]{style="color: #C71585;"}
+  Spaces             `[Color]{pfa-font-color="Medium Violet Red"}`   [Color]{style="color: #C71585;"}
 
-  Spaces      `[Color]{pfa-font-color="Medium Violet Red"}`   [Color]{style="color: #C71585;"}
+  Title Case         `[Color]{pfa-font-color="Medium Violet Red"}`   [Color]{style="color: #C71585;"}
 
-  Hyphens     `[Color]{pfa-font-color="medium-violet-red"}`   [Color]{style="color: #C71585;"}
-  ----------------------------------------------------------------------------------------------
+  Kebab Case         `[Color]{pfa-font-color="medium-violet-red"}`   [Color]{style="color: #C71585;"}
+
+  Snake Case         `[Color]{pfa-font-color="medium_violet_red"}`   [Color]{style="color: #C71585;"}
+
+  Camel Case         `[Color]{pfa-font-color="mediumVioletRed"}`     [Color]{style="color: #C71585;"}
+
+  Pascal Case        `[Color]{pfa-font-color="MediumVioletRed"}`     [Color]{style="color: #C71585;"}
+
+  Screaming Snake    `[Color]{pfa-font-color="MEDIUM_VIOLET_RED"}`   [Color]{style="color: #C71585;"}
+  Case                                                               
+
+  Uppercase          `[Color]{pfa-font-color="MEDIUMVIOLETRED"}`     [Color]{style="color: #C71585;"}
+  -----------------------------------------------------------------------------------------------------
 
 ### Block-Level Color Constraints with Inline Overrides
 
-Colors applied to a block automatically inherit downward, but nested
-spans can explicitly override the parent value.
+Colors applied to a block automatically inherit downward through the
+text hierarchy, though nested spans can explicitly override parent
+values.
 
 ``` markdown
 ::: {pfa-font-color="#666"}
@@ -224,246 +309,277 @@ closes.
 
 ## Text Alignment within Blocks
 
-The `.pfa-text-*` utility wraps blocks in standard directional text
-environments. The blocks below are intentionally long so that the
-wrapped lines reveal the edge behavior of each alignment.
+The `.pfa-text-*` utility wraps blocks in standard text environments.
+
+### Left-Aligned Text
 
 ``` markdown
 ::: pfa-text-left
-This block is left-aligned. Words begin flush against the left margin and the right edge falls wherever the natural word boundaries land, producing the relaxed silhouette typically used for body prose in left-to-right scripts.
+This block of text is _left-aligned_. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-text-left
-This block is left-aligned. Words begin flush against the left margin
-and the right edge falls wherever the natural word boundaries land,
-producing the relaxed silhouette typically used for body prose in
-left-to-right scripts.
+This block of text is *left-aligned*. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
 :::
+
+### Centered Text
 
 ``` markdown
 ::: pfa-text-center
-This block is centered horizontally within the text column. Centered prose is best reserved for short callouts, pull quotes, dedications, or titlecards — sustained reading at this alignment is difficult because the eye cannot anchor on a consistent margin.
+This block of text is _centered_. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-text-center
-This block is centered horizontally within the text column. Centered
-prose is best reserved for short callouts, pull quotes, dedications, or
-titlecards --- sustained reading at this alignment is difficult because
-the eye cannot anchor on a consistent margin.
+This block of text is *centered*. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
 :::
+
+### Right-Aligned Text
 
 ``` markdown
 ::: pfa-text-right
-This block is right-aligned. The right edge stays flush against the column boundary while words spill back toward the left, an effect suited to sidenotes, attributions, and short captions placed against a column edge.
+This block of text is _right-aligned_. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-text-right
-This block is right-aligned. The right edge stays flush against the
-column boundary while words spill back toward the left, an effect suited
-to sidenotes, attributions, and short captions placed against a column
-edge.
+This block of text is *right-aligned*. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
 :::
 
-## Ragged Alignment (Line-Break Honoring)
+## Ragged Alignment
 
 The `.pfa-align-*` utility preserves and honors explicit line breaks
-(via backslash escapes), making it ideal for poetry, formal addresses,
-and titles. In PDF, the two families also differ in vertical spacing:
-`.pfa-text-*` mirrors LaTeX's `center`/`flushleft`/`flushright`
-environments and introduces vertical separation around the block, while
-`.pfa-align-*` mirrors the `\centering`/`\raggedright`/`\raggedleft`
-declarations and flows inline with the surrounding content. HTML applies
-only `text-align` to both families, so the vertical-spacing distinction
-is PDF-only.
+(via backslash escapes).
 
-Choose `.pfa-text-*` when the aligned block is its own visual unit (a
-callout, a centered pull quote, a standalone announcement) and
-`.pfa-align-*` when the alignment is part of the surrounding paragraph
-flow (a line-broken signature, a verse stanza, a captioned figure).
+In PDF engines, the `.pfa-text-*` and `.pfa-align-*` utilities differ in
+vertical spacing:
+
+- `.pfa-text-*` mirrors LaTeX's structural `center`, `flushleft` and
+  `flushright` environments, introducing distinct vertical margins
+  around the block.
+- `.pfa-align-*` mirrors inline `\centering`, `\raggedright` and
+  `\raggedleft` declarations, flowing contextually with surrounding
+  content.
+
+Because HTML applies only `text-align` properties uniformly across both
+families, this structural spacing distinction applies only to PDF
+documents.
+
+Choose `.pfa-text-*` when the aligned block operates as an isolated
+visual unit (e.g., a callout banner, a standalone announcement, or a
+centered pull quote). Choose `.pfa-align-*` when alignment rules should
+integrate natively into surrounding paragraph streams (e.g., a
+line-broken signature block, verse stanzas, or captioned figures).
+
+### Left-Aligned Ragged Text
 
 ``` markdown
 ::: pfa-align-left
-First left-aligned line\
-Second left-aligned line\
-Third left-aligned line
+This block of ragged text is _left-aligned_ while honoring explicit line breaks.\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-align-left
-First left-aligned line\
-Second left-aligned line\
-Third left-aligned line
+This block of ragged text is *left-aligned* while honoring explicit line
+breaks.\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
+
+### Center-Aligned Ragged Text
 
 ``` markdown
 ::: pfa-align-center
-First centered line\
-Second centered line\
-Third centered line
+This block of ragged text is _centered_ while honoring explicit line breaks.\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-align-center
-First centered line\
-Second centered line\
-Third centered line
+This block of ragged text is *centered* while honoring explicit line
+breaks.\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
+
+### Right-Aligned Ragged Text
 
 ``` markdown
 ::: pfa-align-right
-First right-aligned line\
-Second right-aligned line\
-Third right-aligned line
+This block of ragged text is _right-aligned_ while honoring explicit line breaks.\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-align-right
-First right-aligned line\
-Second right-aligned line\
-Third right-aligned line
+This block of ragged text is *right-aligned* while honoring explicit
+line breaks.\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 
 ## Block-Level Alignment
 
-The `.pfa-block-*` utility wraps content in an isolated bounding box and
-anchors the box to the left margin, the center of the text column, or
-the right margin. The box width is set by the widest single line inside
-the block, so explicit line breaks (`\`) shape both the silhouette and
-the horizontal footprint of the panel.
+The `.pfa-block-*` utility positions an entire block container as a
+single cohesive unit while preserving the internal alignment settings of
+the text within it.
+
+### Left-Aligned Block Container
 
 ``` markdown
 ::: {.pfa-block-left}
-A self-contained advisory hugging the left margin of the column.\
-The bounding box is set by the widest line of internal content.\
-Surrounding paragraphs continue without being pushed sideways.
+The entire block container is _left-aligned_ while maintaining internal text structure.\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-block-left
-A self-contained advisory hugging the left margin of the column.\
-The bounding box is set by the widest line of internal content.\
-Surrounding paragraphs continue without being pushed sideways.
+The entire block container is *left-aligned* while maintaining internal
+text structure.\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
+
+### Center-Aligned Block Container
 
 ``` markdown
 ::: {.pfa-block-center}
-Useful for callouts, banners, or section dividers that should\
-catch the reader's eye without committing to the full column.\
-The panel centers itself relative to the surrounding text.
+The entire block container is _center-aligned_ while maintaining internal text structure.\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-block-center
-Useful for callouts, banners, or section dividers that should\
-catch the reader's eye without committing to the full column.\
-The panel centers itself relative to the surrounding text.
+The entire block container is *center-aligned* while maintaining
+internal text structure.\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
+
+### Right-Aligned Block Container
 
 ``` markdown
 ::: {.pfa-block-right}
-Anchored against the right margin like a marginal sidenote.\
-Ideal for attributions, version stamps, or supplementary notes\
-that should sit beside the main text rather than within it.
+The entire block container is _right-aligned_ while maintaining internal text structure.\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
 ::: pfa-block-right
-Anchored against the right margin like a marginal sidenote.\
-Ideal for attributions, version stamps, or supplementary notes\
-that should sit beside the main text rather than within it.
+The entire block container is *right-aligned* while maintaining internal
+text structure.\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 
 ## Combining Multiple Classes
 
-Classes compose seamlessly. Sizing, family, weight, color, and
-decoration definitions can stack safely on any single element.
+Classes can be stacked seamlessly. Sizing, family, weight, color, and
+decoration definitions compose safely on both inline elements and
+structural blocks.
 
 ### Inline Composition
 
-  -------------------------------------------------------------------------------------------------------------------------------------------
-  Style               Syntax                                                                         Output
-  ------------------- ------------------------------------------------------------------------------ ----------------------------------------
-  Bold Sans Display   `[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}`     [Sample]{.pfa-font-bold .pfa-font-sans
-                                                                                                     .pfa-text-l style="color: #FF0000;"}
+  -----------------------------------------------------------------------------------------------------------------------------------
+  Style       Syntax                                                                         Output
+  ----------- ------------------------------------------------------------------------------ ----------------------------------------
+  Bold Sans   `[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}`     [Sample]{.pfa-font-bold .pfa-font-sans
+  Display                                                                                    .pfa-text-l style="color: #FF0000;"}
 
-  Italic Mono Caption `[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}`                        [Sample]{.pfa-font-italic .pfa-font-mono
-                                                                                                     .pfa-text-s}
+  Italic Mono `[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}`                        [Sample]{.pfa-font-italic .pfa-font-mono
+  Caption                                                                                    .pfa-text-s}
 
-  Smallcaps Underline `[Sample]{.pfa-text-uline .pfa-font-smallcaps pfa-font-color="forestgreen"}`   [[Sample]{.underline}]{.pfa-text-uline
-                                                                                                     .pfa-font-smallcaps
-                                                                                                     style="color: #228B22;"}
-  -------------------------------------------------------------------------------------------------------------------------------------------
+  Smallcaps   `[Sample]{.pfa-text-uline .pfa-font-smallcaps pfa-font-color="forestgreen"}`   [[Sample]{.underline}]{.pfa-text-uline
+  Underline                                                                                  .pfa-font-smallcaps
+                                                                                             style="color: #228B22;"}
+  -----------------------------------------------------------------------------------------------------------------------------------
 
 ### Block Composition
 
 ``` markdown
 ::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color="midnightblue"}
-A centered, bold, sans-serif, large, midnight-blue block assembled from five utilities.
+A centered, bold, sans-serif, large, midnight-blue block assembled from five different features of the filter.
 :::
 ```
 
 ::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-l style="color: #191970;"}
 A centered, bold, sans-serif, large, midnight-blue block assembled from
-five utilities.
+five different features of the filter.
 :::
 
 ## Legacy Short-Hand Aliases (Deprecated)
 
-**Deprecated --- retained strictly for backward compatibility and will
-be removed in the next major release.** New documents should use the
-explicit `pfa-*` namespaces above to prevent global framework
-collisions.
+**Warning:** Legacy aliases are deprecated. They are retained strictly
+for backward compatibility and will be entirely removed in the next
+major release. New documents should use the `.pfa-*` namespaces going
+forward.
 
 ### Font Weight, Shape, and Family Aliases
 
-  Legacy Alias   Short   Modern Class
-  -------------- ------- ----------------------
-  `bold`         `bf`    `pfa-font-bold`
-  `emphasis`     `em`    `pfa-font-emphasis`
-  `italic`       `it`    `pfa-font-italic`
-  `medium`       `md`    `pfa-font-medium`
-  `monospace`    `tt`    `pfa-font-mono`
-  `normalfont`   `nf`    `pfa-font-normal`
-  `sans`         `sf`    `pfa-font-sans`
-  `serif`        `rm`    `pfa-font-serif`
-  `slanted`      `sl`    `pfa-font-slanted`
-  `smallcaps`    `sc`    `pfa-font-smallcaps`
-  `upright`      `up`    `pfa-font-upright`
+  Legacy Classes   Short-Hand   New Classes
+  ---------------- ------------ -----------------------
+  `.bold`          `.bf`        `.pfa-font-bold`
+  `.emphasis`      `.em`        `.pfa-font-emphasis`
+  `.italic`        `.it`        `.pfa-font-italic`
+  `.medium`        `.md`        `.pfa-font-medium`
+  `.monospace`     `.tt`        `.pfa-font-mono`
+  `.normalfont`    `.nf`        `.pfa-font-normal`
+  `.sans`          `.sf`        `.pfa-font-sans`
+  `.serif`         `.rm`        `.pfa-font-serif`
+  `.slanted`       `.sl`        `.pfa-font-slanted`
+  `.smallcaps`     `.sc`        `.pfa-font-smallcaps`
+  `.upright`       `.up`        `.pfa-font-upright`
 
 ### Font Size Aliases
 
-  Legacy Alias   Modern Class
-  -------------- -------------------
-  `xsmall`       `pfa-text-xs`
-  `small`        `pfa-text-s`
-  `normal`       `pfa-text-normal`
-  `large`        `pfa-text-l`
-  `xlarge`       `pfa-text-xl`
-  `xxlarge`      `pfa-text-2xl`
-  `huge`         `pfa-text-3xl`
+  Legacy Classes   Modern Classes
+  ---------------- --------------------
+  `.xsmall`        `.pfa-text-xs`
+  `.small`         `.pfa-text-s`
+  `.normal`        `.pfa-text-normal`
+  `.large`         `.pfa-text-l`
+  `.xlarge`        `.pfa-text-xl`
+  `.xxlarge`       `.pfa-text-2xl`
+  `.huge`          `.pfa-text-3xl`
 
 ### Alignment Aliases
 
-  Legacy Alias    Modern Class
-  --------------- --------------------
-  `center`        `pfa-text-center`
-  `flushleft`     `pfa-text-left`
-  `flushright`    `pfa-text-right`
-  `centering`     `pfa-align-center`
-  `raggedleft`    `pfa-align-right`
-  `raggedright`   `pfa-align-left`
+  Legacy Classes   New Classes
+  ---------------- ---------------------
+  `.center`        `.pfa-text-center`
+  `.flushleft`     `.pfa-text-left`
+  `.flushright`    `.pfa-text-right`
+  `.centering`     `.pfa-align-center`
+  `.raggedleft`    `.pfa-align-right`
+  `.raggedright`   `.pfa-align-left`
 
 ### Underline and Strikeout Aliases
 
-  Legacy Alias   Short   Modern Class
-  -------------- ------- -------------------------
-  `uline`        `u`     `pfa-text-uline`
-  `uuline`       `uu`    `pfa-text-uline-double`
-  `dashuline`    `dau`   `pfa-text-uline-dashed`
-  `dotuline`     `dou`   `pfa-text-uline-dotted`
-  `uwave`        `uw`    `pfa-text-uline-wave`
-  `sout`         `so`    `pfa-text-strikeout`
-  `xout`         `xo`    `pfa-text-markout`
+  Legacy Classes   Short-Hand   New Classes
+  ---------------- ------------ --------------------------
+  `.uline`         `.u`         `.pfa-text-uline`
+  `.uuline`        `.uu`        `.pfa-text-uline-double`
+  `.dashuline`     `.dau`       `.pfa-text-uline-dashed`
+  `.dotuline`      `.dou`       `.pfa-text-uline-dotted`
+  `.uwave`         `.uw`        `.pfa-text-uline-wave`
+  `.sout`          `.so`        `.pfa-text-strikeout`
+  `.xout`          `.xo`        `.pfa-text-markout`
+
+[^1]: Three-digit shorthand expands by doubling each digit (e.g., `#666`
+    becomes `#666666`, and `#F0A` becomes `#FF00AA`). This only works if
+    each color channel uses a repeated character; a full hex code like
+    `#2E8B57` cannot be shortened.
