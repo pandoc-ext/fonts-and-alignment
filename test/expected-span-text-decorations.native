@@ -1,0 +1,235 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "author"
+            , MetaString
+                "Nandakumar Chandrasekhar"
+            )
+          , ( "date"
+            , MetaString
+                "2026-05-25"
+            )
+          , ( "title"
+            , MetaInlines
+                [ Str "Text"
+                , Space
+                , Str
+                    "Decorations"
+                , Space
+                , Str "for"
+                , Space
+                , Str
+                    "Bracketed"
+                , Space
+                , Str "Spans"
+                ]
+            )
+          ]
+    }
+  [ Header
+      2
+      ( "standard-underline"
+      , []
+      , []
+      )
+      [ Str "Standard"
+      , Space
+      , Str "Underline"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-uline}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-text-uline"
+            ]
+          , []
+          )
+          [ Underline
+              [ Str "Grumpy"
+              , Space
+              , Str "wizards"
+              , Space
+              , Str "make"
+              , Space
+              , Str "toxic"
+              , Space
+              , Str "brew."
+              ]
+          ]
+      ]
+  , Header
+      2
+      ( "double-underline"
+      , []
+      , []
+      )
+      [ Str "Double"
+      , Space
+      , Str "Underline"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-uline-double}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-text-uline-double"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "dashed-underline"
+      , []
+      , []
+      )
+      [ Str "Dashed"
+      , Space
+      , Str "Underline"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-uline-dashed}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-text-uline-dashed"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "dotted-underline"
+      , []
+      , []
+      )
+      [ Str "Dotted"
+      , Space
+      , Str "Underline"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-uline-dotted}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-text-uline-dotted"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "wavy-underline"
+      , []
+      , []
+      )
+      [ Str "Wavy"
+      , Space
+      , Str "Underline"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-uline-wave}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-text-uline-wave"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "strikeout"
+      , []
+      , []
+      )
+      [ Str "Strikeout" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-strikeout}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-text-strikeout"
+            ]
+          , []
+          )
+          [ Strikeout
+              [ Str "Grumpy"
+              , Space
+              , Str "wizards"
+              , Space
+              , Str "make"
+              , Space
+              , Str "toxic"
+              , Space
+              , Str "brew."
+              ]
+          ]
+      ]
+  ]

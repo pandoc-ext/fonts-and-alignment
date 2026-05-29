@@ -112,7 +112,7 @@ Open the block with `:::` plus a class (curly braces only required when
 combining more than one class or adding attributes):
 
 ```markdown
-::: pfa-text-center
+::: pfa-align-center
 A single centered paragraph.
 :::
 
@@ -171,7 +171,6 @@ one of these classes is detected in the document.
 | `pfa-text-uline-dotted`  | `\dotuline{…}`  | Dotted underline        |
 | `pfa-text-uline-wave`    | `\uwave{…}`     | Wavy underline          |
 | `pfa-text-strikeout`     | `\sout{…}`      | Strikeout               |
-| `pfa-text-markout`       | `\xout{…}`      | Marked out (LaTeX only) |
 
 ### Text Casing
 
@@ -207,13 +206,10 @@ The remainder reverts to the parent color.
 
 ### Block Alignment
 
-Three flavors, each targeting a different use case:
+Two flavors, each targeting a different use case:
 
 | Class              | Behavior                                          |
 |--------------------|---------------------------------------------------|
-| `pfa-text-left`    | Standard left alignment (right edge ragged)       |
-| `pfa-text-center`  | Standard centered alignment                       |
-| `pfa-text-right`   | Standard right alignment (left edge ragged)       |
 | `pfa-align-left`   | Left-aligned, honoring explicit line breaks (`\`) |
 | `pfa-align-center` | Centered, honoring explicit line breaks           |
 | `pfa-align-right`  | Right-aligned, honoring explicit line breaks      |
@@ -221,20 +217,11 @@ Three flavors, each targeting a different use case:
 | `pfa-block-center` | Shrink-to-fit box, centered in the text column    |
 | `pfa-block-right`  | Shrink-to-fit box, right-anchored to the margin   |
 
-The `pfa-align-*` family preserves explicit `\` line breaks — ideal for
-poetry, formal addresses, and titles. The `pfa-block-*` family wraps the
-content in an isolated bounding box (LaTeX `varwidth`) that shrinks to its
-content before being positioned in the document flow.
-
-In PDF, the `pfa-text-*` and `pfa-align-*` families also differ in
-vertical spacing: `pfa-text-*` maps to the
-`center`/`flushleft`/`flushright` _environments_ which insert `\topsep`
-above and below the block, while `pfa-align-*` maps to the
-`\centering`/`\raggedright`/`\raggedleft` _declarations_ which flow
-inline without adding space. HTML applies only `text-align` to both
-families, so they render identically there. Use `pfa-text-*` when the
-block stands alone as its own visual unit, and `pfa-align-*` when the
-alignment is part of the surrounding flow.
+The `pfa-align-*` family sets the text alignment of a block and preserves
+explicit `\` line breaks — ideal for poetry, formal addresses, and titles.
+The `pfa-block-*` family wraps the content in an isolated bounding box
+(LaTeX `varwidth`) that shrinks to its content before being positioned in
+the document flow.
 
 ```markdown
 ::: pfa-align-center
@@ -259,13 +246,13 @@ decoration, color, and alignment on a single element:
 
 [Sample]{.pfa-text-uline .pfa-font-smallcaps pfa-font-color="forestgreen"}
 
-::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color="midnightblue"}
+::: {.pfa-align-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color="midnightblue"}
 A centered, bold, sans-serif, large, midnight-blue block.
 :::
 ```
 
 When `pfa-font-color` is combined with `pfa-text-uline` (or its dashed,
-dotted, wavy, double, strikeout, and markout siblings), the decoration line
+dotted, wavy, double, and strikeout siblings), the decoration line
 inherits the requested color — `\textcolor{…}{\uline{…}}` in LaTeX, and the
 default `text-decoration-color: currentColor` in CSS.
 
@@ -335,14 +322,14 @@ pandoc \
 
 ### Alignment Aliases
 
-| Legacy Alias  | Modern Class       |
-|---------------|--------------------|
-| `center`      | `pfa-text-center`  |
-| `flushleft`   | `pfa-text-left`    |
-| `flushright`  | `pfa-text-right`   |
-| `centering`   | `pfa-align-center` |
-| `raggedleft`  | `pfa-align-right`  |
-| `raggedright` | `pfa-align-left`   |
+| Legacy Alias  | Modern Class             |
+|---------------|--------------------------|
+| `center`      | Removed in version 1.0.3 |
+| `flushleft`   | Removed in version 1.0.3 |
+| `flushright`  | Removed in version 1.0.3 |
+| `centering`   | `pfa-align-center`       |
+| `raggedleft`  | `pfa-align-right`        |
+| `raggedright` | `pfa-align-left`         |
 
 ### Underline and Strikeout Aliases
 
@@ -353,8 +340,8 @@ pandoc \
 | `dashuline`  | `dau` | `pfa-text-uline-dashed` |
 | `dotuline`   | `dou` | `pfa-text-uline-dotted` |
 | `uwave`      | `uw`  | `pfa-text-uline-wave`   |
-| `sout`       | `so`  | `pfa-text-strikeout`    |
-| `xout`       | `xo`  | `pfa-text-markout`      |
+| `sout`       | `so`  | `pfa-text-strikeout`     |
+| `xout`       | `xo`  | Removed in version 1.0.3 |
 
 ## Troubleshooting
 

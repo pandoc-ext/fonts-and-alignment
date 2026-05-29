@@ -90,15 +90,15 @@
 }
 
 /* Alignments */
-.center, .centering, .pfa-text-center, .pfa-align-center {
+.pfa-align-center {
   text-align: center;
 }
 
-.flushright, .raggedleft, .pfa-text-right, .pfa-align-right {
+.pfa-align-right {
   text-align: right;
 }
 
-.flushleft, .raggedright, .pfa-text-left, .pfa-align-left {
+.pfa-align-left {
   text-align: left;
 }
 

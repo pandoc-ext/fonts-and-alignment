@@ -105,32 +105,58 @@ for Pandoc</div></h1>
 Chandrasekhar</p>
 <p class="date">2026-05-25</p>
 </header>
-<p>This document showcases
+<p>This document demonstrates
 every feature provided by the
 <code>fonts-and-alignment</code>
 Lua filter for Pandoc. Each
-<code>code block</code>
-demonstrates the exact
+code block shows the exact
 Markdown syntax used to
-produce the rendered output
-that follows, with consistent
-results for both the LaTeX/PDF
-and HTML formats.</p>
+generate the rendered output
+that follows, ensuring
+consistent results across both
+LaTeX/PDF and HTML formats.<a
+href="#fn1"
+class="footnote-ref"
+id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<p>The filter relies on
+Pandoc’s
+<code>fenced_divs</code> and
+<code>bracketed_spans</code>
+extensions, which are
+typically enabled by default.
+In the uncommon event that
+these extensions are disabled,
+the Lua filter will be unable
+to interpret the corresponding
+divs and spans correctly,
+causing them to appear as raw
+text in the rendered
+output.</p>
 <h1 data-number="1"
-id="inline-and-block-invocations"><span
+id="bracketed-spans-and-fenced-divs-invocations"><span
 class="header-section-number">1</span>
-Inline and Block
-Invocations</h1>
-<p>The filter may be used
-<em>inline</em> or in
-<em>block</em> mode as shown
-in the two invocations below.
-Inline styling is used to
-style small portions of text,
-while block styling is used to
-style large blocks of text.
-This accords with Pandoc’s
-syntax convention.</p>
+Bracketed Spans and Fenced
+Divs Invocations</h1>
+<p>The filter may be used with
+Pandoc’s
+<code>bracketed_spans</code>
+and <code>fenced_divs</code>
+syntax extensions, as
+demonstrated below. Bracketed
+Spans are intended for styling
+smaller inline portions of
+text, while Fenced Divs are
+used for styling larger blocks
+of content. This follows
+Pandoc’s standard syntax
+conventions. For more
+information on this syntax,
+please refer to the official
+Pandoc documentation: <a
+href="https://pandoc.org/demo/example33/8.18-divs-and-spans.html">Divs
+and Spans — Pandoc User’s
+Guide</a></p>
 <div class="sourceCode"
 id="cb1"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This font is extra extra large.</span><span class="co">]</span>{.pfa-text-2xl}</span></code></pre></div>
@@ -148,13 +174,16 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><
 large.</p>
 </div>
 <h1 data-number="2"
-id="inline-font-sizing-scale"><span
+id="font-sizing-in-bracketed-spans"><span
 class="header-section-number">2</span>
-Inline Font Sizing Scale</h1>
-<p>Nine sizing hooks are
-provided to scale text
-elements relative to the
-document’s base font size.</p>
+Font Sizing in Bracketed
+Spans</h1>
+<p>The filter provides nine
+predefined sizing hooks that
+allow text within Bracketed
+Spans to be scaled relative to
+the document’s base font
+size.</p>
 <table>
 <colgroup>
 <col style="width: 19%" />
@@ -256,15 +285,15 @@ class="pfa-text-3xl">Sample</span></td>
 </tbody>
 </table>
 <h1 data-number="3"
-id="block-font-sizing-scale"><span
+id="font-sizing-in-fenced-divs"><span
 class="header-section-number">3</span>
-Block Font Sizing Scale</h1>
+Font Sizing in Fenced
+Divs</h1>
 <p>The same sizing classes can
-be applied globally to fenced
-div blocks.<a href="#fn1"
-class="footnote-ref"
-id="fnref1"
-role="doc-noteref"><sup>1</sup></a></p>
+also be applied to Fenced
+Divs, allowing an entire block
+of text to be rendered at a
+specific font size.</p>
 <h2 data-number="3.1"
 id="extra-small-font-size"><span
 class="header-section-number">3.1</span>
@@ -272,18 +301,12 @@ Extra Small Font Size</h2>
 <div class="sourceCode"
 id="cb3"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-xs}</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This paragraph renders at the _extra small_ font size</span><span class="co">]</span>{pfa-font-color=&quot;blue&quot;} <span class="co">[</span><span class="ot">compared to the normal font size.</span><span class="co">]</span>{.pfa-text-normal pfa-font-color=&quot;red&quot;}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders at the _extra small_ font size.</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-text-xs">
-<p><span
-style="color: #0000FF;">This
-paragraph renders at the
-<em>extra small</em> font
-size</span> <span
-class="pfa-text-normal"
-style="color: #FF0000;">compared
-to the normal font
-size.</span></p>
+<p>This paragraph renders at
+the <em>extra small</em> font
+size.</p>
 </div>
 <h2 data-number="3.2"
 id="normal-font-size"><span
@@ -306,27 +329,24 @@ Large Font Size</h2>
 <div class="sourceCode"
 id="cb5"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-l}</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This paragraph renders at the _large_ font size</span><span class="co">]</span>{pfa-font-color=&quot;blue&quot;} <span class="co">[</span><span class="ot">compared to the normal font size.</span><span class="co">]</span>{.pfa-text-normal pfa-font-color=&quot;red&quot;}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders at the _large_ font size.</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-text-l">
-<p><span
-style="color: #0000FF;">This
-paragraph renders at the
-<em>large</em> font
-size</span> <span
-class="pfa-text-normal"
-style="color: #FF0000;">compared
-to the normal font
-size.</span></p>
+<p>This paragraph renders at
+the <em>large</em> font
+size.</p>
 </div>
 <h1 data-number="4"
-id="font-weights-shapes-and-families-inline"><span
+id="font-weights-shapes-and-families-in-bracketed-spans"><span
 class="header-section-number">4</span>
 Font Weights, Shapes, and
-Families (Inline)</h1>
-<p>Every supported typographic
-style is available as an
-inline span.</p>
+Families in Bracketed
+Spans</h1>
+<p>The following typographic
+styles can be applied to
+Bracketed Spans to control
+weight, style, and
+typeface.</p>
 <table>
 <colgroup>
 <col style="width: 23%" />
@@ -437,8 +457,7 @@ class="pfa-font-smallcaps">Sample</span></td>
 </tr>
 <tr>
 <td
-style="text-align: left;">Normal
-Reset</td>
+style="text-align: left;">Normal</td>
 <td
 style="text-align: left;"><code>[Sample]{.pfa-font-normal}</code></td>
 <td
@@ -448,15 +467,15 @@ class="pfa-font-normal">Sample</span></td>
 </tbody>
 </table>
 <h1 data-number="5"
-id="font-weights-shapes-and-families-block"><span
+id="font-weights-shapes-and-families-in-fenced-divs"><span
 class="header-section-number">5</span>
 Font Weights, Shapes, and
-Families (Block)</h1>
-<p>The same classes can also
-be applied at the block level,
-allowing the specified
-typographic style to affect
-all enclosed sentences.</p>
+Families in Fenced Divs</h1>
+<p>These same typographic
+classes can also be applied to
+Fenced Divs, allowing an
+entire block of text to adopt
+a particular visual style.</p>
 <h2 data-number="5.1"
 id="bold-weight"><span
 class="header-section-number">5.1</span>
@@ -464,12 +483,11 @@ Bold Weight</h2>
 <div class="sourceCode"
 id="cb6"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-font-bold}</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders using the _bold_ font weight.</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders in bold type.</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-font-bold">
-<p>This paragraph renders
-using the <em>bold</em> font
-weight.</p>
+<p>This paragraph renders in
+bold type.</p>
 </div>
 <h2 data-number="5.2"
 id="sans-serif-family"><span
@@ -478,48 +496,53 @@ Sans-Serif Family</h2>
 <div class="sourceCode"
 id="cb7"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-font-sans}</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders using the _sans-serif_ font family.</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>This paragraph uses a sans-serif typeface.</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-font-sans">
-<p>This paragraph renders
-using the <em>sans-serif</em>
-font family.</p>
+<p>This paragraph uses a
+sans-serif typeface.</p>
 </div>
 <h2 data-number="5.3"
-id="small-caps-shape"><span
+id="small-caps"><span
 class="header-section-number">5.3</span>
-Small Caps Shape</h2>
+Small Caps</h2>
 <div class="sourceCode"
 id="cb8"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-font-smallcaps}</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders using the _small caps_ font shape.</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>This paragraph is rendered in small caps.</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div
 class="pfa-font-smallcaps">
-<p>This paragraph renders
-using the <em>small caps</em>
-font shape.</p>
+<p>This paragraph is rendered
+in small caps.</p>
 </div>
 <h1 data-number="6"
 id="text-casing-transformations"><span
 class="header-section-number">6</span>
 Text Casing
 Transformations</h1>
-<p>Unlike standard web
-styling—which only changes how
-text looks on the screen—these
-casing classes permanently
-change the actual letters in
-your document. This guarantees
-that your uppercase or
-lowercase styling remains
-intact even if you copy and
-paste the text into another
-application.</p>
+<p>Unlike purely visual
+styling in HTML/CSS—where <a
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform"><code>text-transform</code></a>
+only changes how text is
+rendered—these casing
+transformations operate at the
+<a
+href="https://pandoc.org/MANUAL.html#abstract-syntax-tree">Pandoc
+Abstract Syntax Tree (AST)</a>
+level and modify the actual
+document content. This ensures
+that uppercase and lowercase
+conversions are preserved
+consistently across all output
+formats and remain intact when
+copied into other
+applications.</p>
 <h2 data-number="6.1"
-id="inline-casing"><span
+id="casing-tranformations-in-bracketed-spans"><span
 class="header-section-number">6.1</span>
-Inline Casing</h2>
+Casing Tranformations in
+Bracketed Spans</h2>
 <table>
 <colgroup>
 <col style="width: 20%" />
@@ -558,9 +581,10 @@ class="pfa-lowercase">coerced</span></td>
 </tbody>
 </table>
 <h2 data-number="6.2"
-id="block-casing"><span
+id="casing-transformations-in-fenced-divs"><span
 class="header-section-number">6.2</span>
-Block Casing</h2>
+Casing Transformations in
+Fenced Divs</h2>
 <h3 data-number="6.2.1"
 id="lowercase"><span
 class="header-section-number">6.2.1</span>
@@ -568,12 +592,11 @@ Lowercase</h3>
 <div class="sourceCode"
 id="cb9"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-lowercase}</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>THIS PARAGRAPH IS TRANSFORMED TO _LOWERCASE_.</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>THIS PARAGRAPH IS TRANSFORMED TO LOWERCASE.</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-lowercase">
 <p>this paragraph is
-transformed to
-<em>lowercase</em>.</p>
+transformed to lowercase.</p>
 </div>
 <h3 data-number="6.2.2"
 id="uppercase"><span
@@ -582,27 +605,34 @@ Uppercase</h3>
 <div class="sourceCode"
 id="cb10"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-uppercase}</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>this paragraph is transformed to _uppercase_.</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>this paragraph is transformed to uppercase.</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-uppercase">
 <p>THIS PARAGRAPH IS
-TRANSFORMED TO
-<em>UPPERCASE</em>.</p>
+TRANSFORMED TO UPPERCASE.</p>
 </div>
 <h1 data-number="7"
-id="inline-text-decorations"><span
+id="text-decorations-for-bracketed-spans"><span
 class="header-section-number">7</span>
-Inline Text Decorations</h1>
-<p>Underline and strikeout
-variants are implemented
-through the <code>ulem</code>
-LaTeX package and mapped to
-their equivalent standard CSS
-properties, ensuring
-consistent rendering across
-output formats. These styles
-are supported only for inline
-elements.</p>
+Text Decorations for Bracketed
+Spans</h1>
+<p>Text decoration styles are
+implemented using the LaTeX
+<code>ulem</code> package,
+which is automatically
+included via a
+<code>header-include</code>
+whenever any of the
+corresponding classes are
+detected in the document.
+These styles are also mapped
+to equivalent CSS properties
+to ensure consistent rendering
+across LaTeX/PDF and HTML
+outputs. These decorations
+apply only to
+<strong>Bracketed
+Spans</strong>.</p>
 <table>
 <colgroup>
 <col style="width: 26%" />
@@ -681,17 +711,219 @@ class="pfa-text-strikeout"><del>Sample</del></span></td>
 </tr>
 </tbody>
 </table>
+<p><strong>Note:</strong> The
+<code>\xout{...}</code>
+marked-out text style has been
+removed from this version of
+the package due to lack of
+consistent cross-format
+support in HTML/CSS and
+limited usage in modern
+document workflows.</p>
 <h1 data-number="8"
-id="color-resolution"><span
+id="colors"><span
 class="header-section-number">8</span>
-Color Resolution</h1>
+Colors</h1>
+<p>This section describes how
+to apply color to text using
+the
+<code>pfa-font-color</code>
+attribute in both Bracketed
+Spans and Fenced Divs.</p>
+<h2 data-number="8.1"
+id="flexible-color-terminology"><span
+class="header-section-number">8.1</span>
+Flexible Color
+Terminology</h2>
 <p>The
 <code>pfa-font-color</code>
-attribute natively parses
-standard CSS3 named colors,
-six-digit hexadecimal codes,
-and three-digit shorthand hex
-codes.</p>
+attribute supports CSS3 named
+colors, full hexadecimal
+values, and three-digit
+shorthand hexadecimal values.
+For CSS3 named colors, the
+filter parses and normalizes
+the name to support different
+naming conventions.</p>
+<p>All naming conventions
+below resolve to the CSS3
+color
+<code>mediumvioletred</code>.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 59%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Naming
+Convention</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">Lowercase</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-font-color="mediumvioletred"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Spaces</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-font-color="Medium Violet Red"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Title
+Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-font-color="Medium Violet Red"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Kebab
+Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-font-color="medium-violet-red"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Snake
+Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-font-color="medium_violet_red"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Camel
+Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-font-color="mediumVioletRed"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Pascal
+Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-font-color="MediumVioletRed"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Screaming
+Snake Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-font-color="MEDIUM_VIOLET_RED"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Uppercase</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-font-color="MEDIUMVIOLETRED"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="8.2"
+id="colors-in-bracketed-spans"><span
+class="header-section-number">8.2</span>
+Colors in Bracketed Spans</h2>
 <table>
 <colgroup>
 <col style="width: 23%" />
@@ -712,7 +944,7 @@ style="text-align: left;">Output</th>
 <tbody>
 <tr>
 <td
-style="text-align: left;">CSS
+style="text-align: left;">CSS3
 Named</td>
 <td
 style="text-align: left;"><code>[Sample]{pfa-font-color="crimson"}</code></td>
@@ -745,405 +977,235 @@ style="color: #666666;">Sample</span></td>
 </tr>
 </tbody>
 </table>
+<h2 data-number="8.3"
+id="colors-in-fenced-divs"><span
+class="header-section-number">8.3</span>
+Colors in Fenced Divs</h2>
+<p>When applied to a fenced
+Div, the
+<code>pfa-font-color</code>
+attribute defines the default
+text color for the entire
+block. All enclosed content
+inherits this color unless
+explicitly overridden by a
+Bracketed Span.</p>
+<div class="sourceCode"
+id="cb11"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;DarkSlateGrey&quot;}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>The fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div style="color: #2F4F4F;">
+<p>The fenced Div defines
+<em>DarkSlateGrey</em> as the
+default text color for this
+block.</p>
+</div>
+<div class="sourceCode"
+id="cb12"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;DarkSlateGrey&quot;}</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>The fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This Bracketed Span overrides the inherited color to _tomato_.</span><span class="co">]</span>{pfa-font-color=&quot;tomato&quot;}</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>The remaining text continues using _DarkSlateGrey_ for the remainder of the Div.</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div style="color: #2F4F4F;">
+<p>The fenced Div defines
+<em>DarkSlateGrey</em> as the
+default text color for this
+block.</p>
+<p><span
+style="color: #FF6347;">This
+Bracketed Span overrides the
+inherited color to
+<em>tomato</em>.</span></p>
+<p>The remaining text
+continues using
+<em>DarkSlateGrey</em> for the
+remainder of the Div.</p>
+</div>
 <p><strong>Note:</strong> The
 <code>pfa-font-color</code>
 utility is an attribute, not a
 class, and should not be
 prefixed with a period
-(.).</p>
-<h2 data-number="8.1"
-id="flexible-spelling-of-named-colors"><span
-class="header-section-number">8.1</span>
-Flexible Spelling of Named
-Colors</h2>
-<p>The rendering engine
-automatically sanitizes color
-inputs. Parsing is
-case-insensitive and ignores
-spaces, hyphens, and
-underscores. All syntax
-variations shown below
-successfully map to the
-standard CSS3 color
-<code>mediumvioletred</code>.</p>
-<table style="width:100%;">
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 59%" />
-<col style="width: 14%" />
-</colgroup>
-<thead>
-<tr>
-<th
-style="text-align: left;">Naming
-Convention</th>
-<th
-style="text-align: left;">Syntax</th>
-<th
-style="text-align: left;">Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td
-style="text-align: left;">Lowercase</td>
-<td
-style="text-align: left;"><code>[Color]{pfa-font-color="mediumvioletred"}</code></td>
-<td
-style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
-</tr>
-<tr>
-<td
-style="text-align: left;">Spaces</td>
-<td
-style="text-align: left;"><code>[Color]{pfa-font-color="Medium Violet Red"}</code></td>
-<td
-style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
-</tr>
-<tr>
-<td
-style="text-align: left;">Title
-Case</td>
-<td
-style="text-align: left;"><code>[Color]{pfa-font-color="Medium Violet Red"}</code></td>
-<td
-style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
-</tr>
-<tr>
-<td
-style="text-align: left;">Kebab
-Case</td>
-<td
-style="text-align: left;"><code>[Color]{pfa-font-color="medium-violet-red"}</code></td>
-<td
-style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
-</tr>
-<tr>
-<td
-style="text-align: left;">Snake
-Case</td>
-<td
-style="text-align: left;"><code>[Color]{pfa-font-color="medium_violet_red"}</code></td>
-<td
-style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
-</tr>
-<tr>
-<td
-style="text-align: left;">Camel
-Case</td>
-<td
-style="text-align: left;"><code>[Color]{pfa-font-color="mediumVioletRed"}</code></td>
-<td
-style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
-</tr>
-<tr>
-<td
-style="text-align: left;">Pascal
-Case</td>
-<td
-style="text-align: left;"><code>[Color]{pfa-font-color="MediumVioletRed"}</code></td>
-<td
-style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
-</tr>
-<tr>
-<td
-style="text-align: left;">Screaming
-Snake Case</td>
-<td
-style="text-align: left;"><code>[Color]{pfa-font-color="MEDIUM_VIOLET_RED"}</code></td>
-<td
-style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
-</tr>
-<tr>
-<td
-style="text-align: left;">Uppercase</td>
-<td
-style="text-align: left;"><code>[Color]{pfa-font-color="MEDIUMVIOLETRED"}</code></td>
-<td
-style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
-</tr>
-</tbody>
-</table>
-<h2 data-number="8.2"
-id="block-level-color-constraints-with-inline-overrides"><span
-class="header-section-number">8.2</span>
-Block-Level Color Constraints
-with Inline Overrides</h2>
-<p>Colors applied to a block
-automatically inherit downward
-through the text hierarchy,
-though nested spans can
-explicitly override parent
-values.</p>
-<div class="sourceCode"
-id="cb11"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;dark slate grey&quot;}</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>The parent block carries a default color of dark slate gray. <span class="co">[</span><span class="ot">This inline span overrides the color to tomato red.</span><span class="co">]</span>{pfa-font-color=&quot;tomato&quot;} The surrounding text continues in the parent color until the block closes.</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div style="color: #2F4F4F;">
-<p>The parent block carries a
-default color of dark slate
-gray. <span
-style="color: #FF6347;">This
-inline span overrides the
-color to tomato red.</span>
-The surrounding text continues
-in the parent color until the
-block closes.</p>
-</div>
+(<code>.</code>).</p>
 <h1 data-number="9"
-id="text-alignment-within-blocks"><span
+id="text-alignment-within-fenced-divs"><span
 class="header-section-number">9</span>
-Text Alignment within
-Blocks</h1>
+Text Alignment within Fenced
+Divs</h1>
 <p>The
-<code>.pfa-text-*</code>
-utility wraps blocks in
-standard text
-environments.</p>
+<code>.pfa-align-*</code>
+classes may be used to align
+text within a fenced Div.
+These classes map to LaTeX
+alignment commands
+(<code>\raggedright</code>,
+<code>\centering</code>, and
+<code>\raggedleft</code>) in
+PDF output while producing
+equivalent behavior in
+HTML.</p>
+<p>These classes also preserve
+explicit line breaks
+introduced with the backslash
+(<code>\</code>) character,
+which is useful for poetry,
+lyrics, and other text where
+line structure must be
+preserved.</p>
 <h2 data-number="9.1"
 id="left-aligned-text"><span
 class="header-section-number">9.1</span>
-Left-Aligned Text</h2>
+Left-aligned Text</h2>
 <div class="sourceCode"
-id="cb12"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-left}</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>This block of text is _left-aligned_.</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-text-left">
+id="cb13"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>This block of text is _left-aligned_.</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-align-left">
 <p>This block of text is
 <em>left-aligned</em>.</p>
 </div>
 <h2 data-number="9.2"
-id="centered-text"><span
+id="center-aligned-text"><span
 class="header-section-number">9.2</span>
-Centered Text</h2>
+Center-aligned Text</h2>
 <div class="sourceCode"
-id="cb13"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-center}</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>This block of text is _centered_.</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-text-center">
+id="cb14"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>This block of text is _center-aligned_.</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-align-center">
 <p>This block of text is
-<em>centered</em>.</p>
+<em>center-aligned</em>.</p>
 </div>
 <h2 data-number="9.3"
 id="right-aligned-text"><span
 class="header-section-number">9.3</span>
-Right-Aligned Text</h2>
+Right-aligned Text</h2>
 <div class="sourceCode"
-id="cb14"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-right}</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>This block of text is _right-aligned_.</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-text-right">
+id="cb15"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>This block of text is _right-aligned_.</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="pfa-align-right">
 <p>This block of text is
 <em>right-aligned</em>.</p>
 </div>
-<h1 data-number="10"
-id="ragged-alignment"><span
-class="header-section-number">10</span>
-Ragged Alignment</h1>
-<p>The
-<code>.pfa-align-*</code>
-utility preserves and honors
-explicit line breaks (via
-backslash escapes).</p>
-<p>In PDF engines, the
-<code>.pfa-text-*</code> and
-<code>.pfa-align-*</code>
-utilities differ in vertical
-spacing:</p>
-<ul>
-<li><code>.pfa-text-*</code>
-mirrors LaTeX’s structural
-<code>center</code>,
-<code>flushleft</code> and
-<code>flushright</code>
-environments, introducing
-distinct vertical margins
-around the block.</li>
-<li><code>.pfa-align-*</code>
-mirrors inline
-<code>\centering</code>,
-<code>\raggedright</code> and
-<code>\raggedleft</code>
-declarations, flowing
-contextually with surrounding
-content.</li>
-</ul>
-<p>Because HTML applies only
-<code>text-align</code>
-properties uniformly across
-both families, this structural
-spacing distinction applies
-only to PDF documents.</p>
-<p>Choose
-<code>.pfa-text-*</code> when
-the aligned block operates as
-an isolated visual unit (e.g.,
-a callout banner, a standalone
-announcement, or a centered
-pull quote). Choose
-<code>.pfa-align-*</code> when
-alignment rules should
-integrate natively into
-surrounding paragraph streams
-(e.g., a line-broken signature
-block, verse stanzas, or
-captioned figures).</p>
-<h2 data-number="10.1"
-id="left-aligned-ragged-right-text"><span
-class="header-section-number">10.1</span>
-Left-Aligned Ragged Right
-Text</h2>
-<div class="sourceCode"
-id="cb15"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>This block of ragged text \</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>is _left-aligned_ \</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>while honoring explicit line breaks.</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-align-left">
-<p>This block of ragged
-text<br />
-is <em>left-aligned</em><br />
-while honoring explicit line
-breaks.</p>
-</div>
-<h2 data-number="10.2"
-id="center-aligned-ragged-both-text"><span
-class="header-section-number">10.2</span>
-Center-Aligned Ragged Both
-Text</h2>
+<h2 data-number="9.4"
+id="explicit-line-break-preservation"><span
+class="header-section-number">9.4</span>
+Explicit Line Break
+Preservation</h2>
+<p>The alignment classes
+preserve explicit line breaks
+introduced with the backslash
+(<code>\</code>)
+character.</p>
 <div class="sourceCode"
 id="cb16"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>This block of ragged text \</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>is _centered_ \</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>while honoring explicit line breaks.</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>This block of text \</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>is _center-aligned_ \</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-align-center">
-<p>This block of ragged
-text<br />
-is <em>centered</em><br />
-while honoring explicit line
-breaks.</p>
-</div>
-<h2 data-number="10.3"
-id="right-aligned-ragged-left-text"><span
-class="header-section-number">10.3</span>
-Right-Aligned Ragged Left
-Text</h2>
-<div class="sourceCode"
-id="cb17"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>This block of ragged text \</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>is _right-aligned_ \</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>while honoring explicit line breaks.</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div class="pfa-align-right">
-<p>This block of ragged
-text<br />
+<p>This block of text<br />
 is
-<em>right-aligned</em><br />
-while honoring explicit line
+<em>center-aligned</em><br />
+while preserving explicit line
 breaks.</p>
 </div>
-<h1 data-number="11"
+<h1 data-number="10"
 id="block-level-alignment"><span
-class="header-section-number">11</span>
+class="header-section-number">10</span>
 Block-Level Alignment</h1>
 <p>The
 <code>.pfa-block-*</code>
-utility positions an entire
-block container as a single
-cohesive unit while preserving
-the internal alignment
-settings of the text within
+utilities control the
+horizontal positioning of a
+fenced Div as a whole, without
+affecting the internal text
+alignment of its contents.
+This allows the block itself
+to be positioned independently
+of how text is arranged within
 it.</p>
-<h2 data-number="11.1"
+<h2 data-number="10.1"
 id="left-aligned-block"><span
-class="header-section-number">11.1</span>
+class="header-section-number">10.1</span>
 Left-Aligned Block</h2>
 <div class="sourceCode"
-id="cb18"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-left}</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>The entire block is _left-aligned_ \</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>while maintaining internal text alignment.</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb17"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-left}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>The entire block is _left-aligned_.</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-block-left">
 <p>The entire block is
-<em>left-aligned</em><br />
-while maintaining internal
-text alignment.</p>
+<em>left-aligned</em>.</p>
 </div>
-<h2 data-number="11.2"
+<h2 data-number="10.2"
 id="center-aligned-block"><span
-class="header-section-number">11.2</span>
+class="header-section-number">10.2</span>
 Center-Aligned Block</h2>
 <div class="sourceCode"
-id="cb19"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-center}</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>The entire block is _center-aligned_ \</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>while maintaining internal text alignment.</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb18"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-center}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>The entire block is _center-aligned_.</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-block-center">
 <p>The entire block is
-<em>center-aligned</em><br />
-while maintaining internal
-text alignment.</p>
+<em>center-aligned</em>.</p>
 </div>
-<h2 data-number="11.3"
+<h2 data-number="10.3"
 id="right-aligned-block"><span
-class="header-section-number">11.3</span>
+class="header-section-number">10.3</span>
 Right-Aligned Block</h2>
 <div class="sourceCode"
-id="cb20"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-right}</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>The entire block is _right-aligned_ \</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>while maintaining internal text alignment.</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb19"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-right}</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>The entire block is _right-aligned_.</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-block-right">
 <p>The entire block is
-<em>right-aligned</em><br />
-while maintaining internal
-text alignment.</p>
+<em>right-aligned</em>.</p>
 </div>
-<h1 data-number="12"
+<h1 data-number="11"
 id="combining-multiple-classes"><span
-class="header-section-number">12</span>
+class="header-section-number">11</span>
 Combining Multiple
 Classes</h1>
-<p>Classes can be stacked
-seamlessly. Sizing, family,
-weight, color, and decoration
-definitions compose safely on
-both inline elements and
-structural blocks.</p>
-<p>Individual styles are
-space-separated and enclosed
-in braces <code>{}</code>, for
-inline and block composition
-in accordance with Pandoc’s
-syntax rules.</p>
-<h2 data-number="12.1"
-id="inline-composition"><span
-class="header-section-number">12.1</span>
-Inline Composition</h2>
+<p>Multiple typographic
+utilities can be combined
+within the same element. Font,
+size, color, alignment, and
+decoration classes are
+designed to compose
+independently and can be
+applied together to both
+Bracketed Spans and Fenced
+Divs.</p>
+<p>Class names are
+space-separated within
+<code>{}</code> following
+Pandoc attribute syntax. In
+addition to classes, key-value
+attributes such as
+<code>pfa-font-color</code>
+may be included alongside
+class definitions.</p>
+<h2 data-number="11.1"
+id="bracketed-span-composition"><span
+class="header-section-number">11.1</span>
+Bracketed Span
+Composition</h2>
 <table>
 <colgroup>
-<col style="width: 23%" />
-<col style="width: 64%" />
+<col style="width: 25%" />
+<col style="width: 62%" />
 <col style="width: 11%" />
 </colgroup>
 <thead>
@@ -1170,8 +1232,16 @@ style="color: #FF0000;">Sample</span></td>
 </tr>
 <tr>
 <td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+</tr>
+<tr>
+<td
 style="text-align: left;">Italic
-Mono</td>
+Monospace</td>
 <td
 style="text-align: left;"><code>[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}</code></td>
 <td
@@ -1180,9 +1250,16 @@ class="pfa-font-italic pfa-font-mono pfa-text-s">Sample</span></td>
 </tr>
 <tr>
 <td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+<td
+style="text-align: left;"></td>
+</tr>
+<tr>
+<td
 style="text-align: left;">Small
-Caps, Underlined and
-Colored</td>
+Caps, Underlined, Colored</td>
 <td
 style="text-align: left;"><code>[Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color="forestgreen"}</code></td>
 <td
@@ -1192,27 +1269,36 @@ style="color: #228B22;"><u>Sample</u></span></td>
 </tr>
 </tbody>
 </table>
-<h2 data-number="12.2"
-id="block-composition"><span
-class="header-section-number">12.2</span>
-Block Composition</h2>
+<h2 data-number="11.2"
+id="fenced-div-composition"><span
+class="header-section-number">11.2</span>
+Fenced Div Composition</h2>
+<p>Multiple utilities can also
+be applied to Fenced Divs to
+control alignment, typography,
+and color simultaneously. The
+resulting block inherits all
+specified styles while
+preserving Pandoc’s standard
+attribute behavior.</p>
 <div class="sourceCode"
-id="cb21"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color=&quot;midnightblue&quot;}</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue block assembled from five different features of the filter.</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb20"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color=&quot;midnightblue&quot;}</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div
-class="pfa-text-center pfa-font-sans pfa-font-bold pfa-text-l"
+class="pfa-align-center pfa-font-sans pfa-font-bold pfa-text-l"
 style="color: #191970;">
 <p>A centered, bold,
 sans-serif, large,
-midnight-blue block assembled
-from five different features
-of the filter.</p>
+midnight-blue Fenced Div
+demonstrating multiple
+combined utilities from the
+filter.</p>
 </div>
-<h1 data-number="13"
+<h1 data-number="12"
 id="legacy-short-hand-aliases-deprecated"><span
-class="header-section-number">13</span>
+class="header-section-number">12</span>
 Legacy Short-Hand Aliases
 (Deprecated)</h1>
 <p><strong>Warning:</strong>
@@ -1224,9 +1310,9 @@ the next major release. New
 documents should use the
 <code>.pfa-*</code> namespaces
 going forward.</p>
-<h2 data-number="13.1"
+<h2 data-number="12.1"
 id="font-weight-shape-and-family-aliases"><span
-class="header-section-number">13.1</span>
+class="header-section-number">12.1</span>
 Font Weight, Shape, and Family
 Aliases</h2>
 <table style="width:100%;">
@@ -1338,9 +1424,9 @@ style="text-align: left;"><code>.pfa-font-upright</code></td>
 </tr>
 </tbody>
 </table>
-<h2 data-number="13.2"
+<h2 data-number="12.2"
 id="font-size-aliases"><span
-class="header-section-number">13.2</span>
+class="header-section-number">12.2</span>
 Font Size Aliases</h2>
 <table>
 <colgroup>
@@ -1402,9 +1488,9 @@ style="text-align: left;"><code>.pfa-text-3xl</code></td>
 </tr>
 </tbody>
 </table>
-<h2 data-number="13.3"
+<h2 data-number="12.3"
 id="alignment-aliases"><span
-class="header-section-number">13.3</span>
+class="header-section-number">12.3</span>
 Alignment Aliases</h2>
 <table>
 <colgroup>
@@ -1426,19 +1512,22 @@ Classes</th>
 <td
 style="text-align: left;"><code>.center</code></td>
 <td
-style="text-align: left;"><code>.pfa-text-center</code></td>
+style="text-align: left;">Removed
+in version 1.0.3</td>
 </tr>
 <tr>
 <td
 style="text-align: left;"><code>.flushleft</code></td>
 <td
-style="text-align: left;"><code>.pfa-text-left</code></td>
+style="text-align: left;">Removed
+in version 1.0.3</td>
 </tr>
 <tr>
 <td
 style="text-align: left;"><code>.flushright</code></td>
 <td
-style="text-align: left;"><code>.pfa-text-right</code></td>
+style="text-align: left;">Removed
+in version 1.0.3</td>
 </tr>
 <tr>
 <td
@@ -1460,9 +1549,9 @@ style="text-align: left;"><code>.pfa-align-left</code></td>
 </tr>
 </tbody>
 </table>
-<h2 data-number="13.4"
+<h2 data-number="12.4"
 id="underline-and-strikeout-aliases"><span
-class="header-section-number">13.4</span>
+class="header-section-number">12.4</span>
 Underline and Strikeout
 Aliases</h2>
 <table>
@@ -1548,28 +1637,30 @@ class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>As explained
-later,
-<code>pfa-font-color</code> is
-an attribute and should not be
-prefixed with a period
-<code>(.)</code>.<a
-href="#fnref1"
+<li id="fn1"><p>To enable
+equivalent styling in HTML
+output, include the
+<code>fonts-and-alignment.css</code>
+stylesheet distributed with
+this filter.<a href="#fnref1"
 class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Three-digit
-shorthand expands by doubling
-each digit (e.g.,
+shorthand expands by repeating
+each hexadecimal digit per RGB
+channel (e.g.,
 <code>#666</code> becomes
-<code>#666666</code>, and
+<code>#666666</code>,
 <code>#F0A</code> becomes
 <code>#FF00AA</code>). This
-only works if each color
-channel uses a repeated
-character; a full hex code
-like <code>#2E8B57</code>
-cannot be shortened.<a
-href="#fnref2"
+only applies when each channel
+consists of a single repeated
+hexadecimal digit. Full
+hexadecimal values without
+per-channel repetition (e.g.,
+<code>#2E8B57</code>) are not
+eligible for shorthand
+expansion.<a href="#fnref2"
 class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 </ol>

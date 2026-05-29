@@ -21,6 +21,10 @@ variables:
   linestretch: 1.25
   monofontoptions:
     - Scale=0.9
+  colorlinks: true
+  linkcolor: blue
+  urlcolor: blue
+  citecolor: blue
 
 metadata:
   author: Nandakumar Chandrasekhar

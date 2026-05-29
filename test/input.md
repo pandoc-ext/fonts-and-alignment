@@ -5,11 +5,13 @@ title: |
   | for Pandoc
 ---
 
-This document showcases every feature provided by the `fonts-and-alignment` Lua filter for Pandoc. Each `code block` demonstrates the exact Markdown syntax used to produce the rendered output that follows, with consistent results for both the LaTeX/PDF and HTML formats.
+This document demonstrates every feature provided by the `fonts-and-alignment` Lua filter for Pandoc. Each code block shows the exact Markdown syntax used to generate the rendered output that follows, ensuring consistent results across both LaTeX/PDF and HTML formats.^[To enable equivalent styling in HTML output, include the `fonts-and-alignment.css` stylesheet distributed with this filter.]
 
-## Inline and Block Invocations
+The filter relies on Pandoc’s `fenced_divs` and `bracketed_spans` extensions, which are typically enabled by default. In the uncommon event that these extensions are disabled, the Lua filter will be unable to interpret the corresponding divs and spans correctly, causing them to appear as raw text in the rendered output.
 
-The filter may be used _inline_ or in _block_ mode as shown in the two invocations below. Inline styling is used to style small portions of text, while block styling is used to style large blocks of text. This accords with Pandoc's syntax convention.
+## Bracketed Spans and Fenced Divs Invocations
+
+The filter may be used with Pandoc’s `bracketed_spans` and `fenced_divs` syntax extensions, as demonstrated below. Bracketed Spans are intended for styling smaller inline portions of text, while Fenced Divs are used for styling larger blocks of content. This follows Pandoc’s standard syntax conventions. For more information on this syntax, please refer to the official Pandoc documentation: [Divs and Spans — Pandoc User’s Guide](https://pandoc.org/demo/example33/8.18-divs-and-spans.html)
 
 ```markdown
 [This font is extra extra large.]{.pfa-text-2xl}
@@ -27,9 +29,9 @@ This font is extra extra large.
 This font is extra extra large.
 :::
 
-## Inline Font Sizing Scale
+## Font Sizing in Bracketed Spans
 
-Nine sizing hooks are provided to scale text elements relative to the document’s base font size.
+The filter provides nine predefined sizing hooks that allow text within Bracketed Spans to be scaled relative to the document’s base font size.
 
 | Size         | Syntax                         | Output              |
 | :----------- | :----------------------------- | :------------------ |
@@ -43,20 +45,20 @@ Nine sizing hooks are provided to scale text elements relative to the document�
 | LARGE        | `[Sample]{.pfa-text-2xl}`      | [Sample]{.pfa-text-2xl} |
 | huge         | `[Sample]{.pfa-text-3xl}`      | [Sample]{.pfa-text-3xl} |
 
-## Block Font Sizing Scale
+## Font Sizing in Fenced Divs
 
-The same sizing classes can be applied globally to fenced div blocks.^[As explained later, `pfa-font-color` is an attribute and should not be prefixed with a period `(.)`.]
+The same sizing classes can also be applied to Fenced Divs, allowing an entire block of text to be rendered at a specific font size.
 
 ### Extra Small Font Size
 
 ```markdown
 ::: {.pfa-text-xs}
-[This paragraph renders at the _extra small_ font size]{pfa-font-color="blue"} [compared to the normal font size.]{.pfa-text-normal pfa-font-color="red"}
+This paragraph renders at the _extra small_ font size.
 :::
 ```
 
 ::: {.pfa-text-xs}
-[This paragraph renders at the _extra small_ font size]{pfa-font-color="blue"} [compared to the normal font size.]{.pfa-text-normal pfa-font-color="red"}
+This paragraph renders at the _extra small_ font size.
 :::
 
 ### Normal Font Size
@@ -75,17 +77,17 @@ This paragraph renders at the _normal_ font size.
 
 ```markdown
 ::: {.pfa-text-l}
-[This paragraph renders at the _large_ font size]{pfa-font-color="blue"} [compared to the normal font size.]{.pfa-text-normal pfa-font-color="red"}
+This paragraph renders at the _large_ font size.
 :::
 ```
 
 ::: {.pfa-text-l}
-[This paragraph renders at the _large_ font size]{pfa-font-color="blue"} [compared to the normal font size.]{.pfa-text-normal pfa-font-color="red"}
+This paragraph renders at the _large_ font size.
 :::
 
-## Font Weights, Shapes, and Families (Inline)
+## Font Weights, Shapes, and Families in Bracketed Spans
 
-Every supported typographic style is available as an inline span.
+The following typographic styles can be applied to Bracketed Spans to control weight, style, and typeface.
 
 | Style        | Syntax                            | Output |
 | :----------- | :-------------------------------- | :----- |
@@ -99,88 +101,88 @@ Every supported typographic style is available as an inline span.
 | Sans-Serif   | `[Sample]{.pfa-font-sans}`        | [Sample]{.pfa-font-sans} |
 | Monospace    | `[Sample]{.pfa-font-mono}`        | [Sample]{.pfa-font-mono} |
 | Small Caps   | `[Sample]{.pfa-font-smallcaps}`   | [Sample]{.pfa-font-smallcaps} |
-| Normal Reset | `[Sample]{.pfa-font-normal}`      | [Sample]{.pfa-font-normal} |
+| Normal       | `[Sample]{.pfa-font-normal}`      | [Sample]{.pfa-font-normal} |
 
-## Font Weights, Shapes, and Families (Block)
+## Font Weights, Shapes, and Families in Fenced Divs
 
-The same classes can also be applied at the block level, allowing the specified typographic style to affect all enclosed sentences.
+These same typographic classes can also be applied to Fenced Divs, allowing an entire block of text to adopt a particular visual style.
 
 ### Bold Weight
 
 ```markdown
 ::: {.pfa-font-bold}
-This paragraph renders using the _bold_ font weight.
+This paragraph renders in bold type.
 :::
 ```
 
 ::: {.pfa-font-bold}
-This paragraph renders using the _bold_ font weight.
+This paragraph renders in bold type.
 :::
 
 ### Sans-Serif Family
 
 ```markdown
 ::: {.pfa-font-sans}
-This paragraph renders using the _sans-serif_ font family.
+This paragraph uses a sans-serif typeface.
 :::
 ```
 
 ::: {.pfa-font-sans}
-This paragraph renders using the _sans-serif_ font family.
+This paragraph uses a sans-serif typeface.
 :::
 
-### Small Caps Shape
+### Small Caps
 
 ```markdown
 ::: {.pfa-font-smallcaps}
-This paragraph renders using the _small caps_ font shape.
+This paragraph is rendered in small caps.
 :::
 ```
 
 ::: {.pfa-font-smallcaps}
-This paragraph renders using the _small caps_ font shape.
+This paragraph is rendered in small caps.
 :::
 
 ## Text Casing Transformations
 
-Unlike standard web styling—which only changes how text looks on the screen—these casing classes permanently change the actual letters in your document. This guarantees that your uppercase or lowercase styling remains intact even if you copy and paste the text into another application.
+Unlike purely visual styling in HTML/CSS—where [`text-transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform) only changes how text is rendered—these casing transformations operate at the [Pandoc Abstract Syntax Tree (AST)](https://pandoc.org/MANUAL.html#abstract-syntax-tree) level and modify the actual document content. This ensures that uppercase and lowercase conversions are preserved consistently across all output formats and remain intact when copied into other applications.
 
-### Inline Casing
+### Casing Tranformations in Bracketed Spans
 
 | Casing    | Syntax                        | Output |
 | :-------- | :---------------------------- | :----- |
 | Uppercase | `[coerced]{.pfa-uppercase}`   | [coerced]{.pfa-uppercase} |
 | Lowercase | `[COERCED]{.pfa-lowercase}`   | [COERCED]{.pfa-lowercase} |
 
-### Block Casing
+### Casing Transformations in Fenced Divs
 
 #### Lowercase
 
 ```markdown
 ::: {.pfa-lowercase}
-THIS PARAGRAPH IS TRANSFORMED TO _LOWERCASE_.
+THIS PARAGRAPH IS TRANSFORMED TO LOWERCASE.
 :::
 ```
 
 ::: {.pfa-lowercase}
-THIS PARAGRAPH IS TRANSFORMED TO _LOWERCASE_.
+THIS PARAGRAPH IS TRANSFORMED TO LOWERCASE.
 :::
 
 #### Uppercase
 
 ```markdown
 ::: {.pfa-uppercase}
-this paragraph is transformed to _uppercase_.
+this paragraph is transformed to uppercase.
 :::
 ```
 
 ::: {.pfa-uppercase}
-this paragraph is transformed to _uppercase_.
+this paragraph is transformed to uppercase.
 :::
 
-## Inline Text Decorations
+## Text Decorations for Bracketed Spans
 
-Underline and strikeout variants are implemented through the `ulem` LaTeX package and mapped to their equivalent standard CSS properties, ensuring consistent rendering across output formats. These styles are supported only for inline elements.
+Text decoration styles are implemented using the LaTeX `ulem` package, which is automatically included via a `header-include` whenever any of the corresponding classes are detected in the document. These styles are also mapped to equivalent CSS properties to ensure consistent rendering across LaTeX/PDF and HTML outputs. These decorations apply only to **Bracketed Spans**.
 
 | Decoration       | Syntax                               | Output |
 | :--------------- | :------------------------------------ | :------ |
@@ -191,219 +193,208 @@ Underline and strikeout variants are implemented through the `ulem` LaTeX packag
 | Wavy Underline   | `[Sample]{.pfa-text-uline-wave}`     | [Sample]{.pfa-text-uline-wave} |
 | Strikeout        | `[Sample]{.pfa-text-strikeout}`      | [Sample]{.pfa-text-strikeout} |
 
-## Color Resolution
+**Note:** The `\xout{...}` marked-out text style has been removed from this version of the package due to lack of consistent cross-format support in HTML/CSS and limited usage in modern document workflows.
 
-The `pfa-font-color` attribute natively parses standard CSS3 named colors, six-digit hexadecimal codes, and three-digit shorthand hex codes.
+## Colors
 
-| Input Type    | Syntax                               | Output |
-| :------------ | :----------------------------------- | :----- |
-| CSS Named     | `[Sample]{pfa-font-color="crimson"}` | [Sample]{pfa-font-color="crimson"} |
-| Hex Full      | `[Sample]{pfa-font-color="#2E8B57"}` | [Sample]{pfa-font-color="#2E8B57"} |
-| Hex Shorthand^[Three-digit shorthand expands by doubling each digit (e.g., `#666` becomes `#666666`, and `#F0A` becomes `#FF00AA`). This only works if each color channel uses a repeated character; a full hex code like `#2E8B57` cannot be shortened.] | `[Sample]{pfa-font-color="#666"}` | [Sample]{pfa-font-color="#666"} |
+This section describes how to apply color to text using the `pfa-font-color` attribute in both Bracketed Spans and Fenced Divs.
 
-**Note:** The `pfa-font-color` utility is an attribute, not a class, and should not be prefixed with a period (.).
+### Flexible Color Terminology
 
-### Flexible Spelling of Named Colors
+The `pfa-font-color` attribute supports CSS3 named colors, full hexadecimal values, and three-digit shorthand hexadecimal values. For CSS3 named colors, the filter parses and normalizes the name to support different naming conventions.
 
-The rendering engine automatically sanitizes color inputs. Parsing is case-insensitive and ignores spaces, hyphens, and underscores. All syntax variations shown below successfully map to the standard CSS3 color `mediumvioletred`.
+All naming conventions below resolve to the CSS3 color `mediumvioletred`.
 
 | Naming Convention    | Syntax                                        | Output |
 | :------------------- | :-------------------------------------------- | :---------- |
 | Lowercase            | `[Color]{pfa-font-color="mediumvioletred"}`   | [Color]{pfa-font-color="mediumvioletred"} |
-| Spaces               | `[Color]{pfa-font-color="Medium Violet Red"}` | [Color]{pfa-font-color="medium violet red"} |
+| | |
+| Spaces               | `[Color]{pfa-font-color="Medium Violet Red"}` | [Color]{pfa-font-color="Medium Violet Red"} |
+| | |
 | Title Case           | `[Color]{pfa-font-color="Medium Violet Red"}` | [Color]{pfa-font-color="Medium Violet Red"} |
+| | |
 | Kebab Case           | `[Color]{pfa-font-color="medium-violet-red"}` | [Color]{pfa-font-color="medium-violet-red"} |
+| | |
 | Snake Case           | `[Color]{pfa-font-color="medium_violet_red"}` | [Color]{pfa-font-color="medium_violet_red"} |
+| | |
 | Camel Case           | `[Color]{pfa-font-color="mediumVioletRed"}`   | [Color]{pfa-font-color="mediumVioletRed"} |
+| | |
 | Pascal Case          | `[Color]{pfa-font-color="MediumVioletRed"}`   | [Color]{pfa-font-color="MediumVioletRed"} |
+| | |
 | Screaming Snake Case | `[Color]{pfa-font-color="MEDIUM_VIOLET_RED"}` | [Color]{pfa-font-color="MEDIUM_VIOLET_RED"} |
+| | |
 | Uppercase            | `[Color]{pfa-font-color="MEDIUMVIOLETRED"}`   | [Color]{pfa-font-color="MEDIUMVIOLETRED"} |
 
-### Block-Level Color Constraints with Inline Overrides
+### Colors in Bracketed Spans
 
-Colors applied to a block automatically inherit downward through the text hierarchy, though nested spans can explicitly override parent values.
+| Input Type    | Syntax                               | Output |
+| :------------ | :----------------------------------- | :----- |
+| CSS3 Named    | `[Sample]{pfa-font-color="crimson"}` | [Sample]{pfa-font-color="crimson"} |
+| Hex Full      | `[Sample]{pfa-font-color="#2E8B57"}` | [Sample]{pfa-font-color="#2E8B57"} |
+| Hex Shorthand^[Three-digit shorthand expands by repeating each hexadecimal digit per RGB channel (e.g., `#666` becomes `#666666`, `#F0A` becomes `#FF00AA`). This only applies when each channel consists of a single repeated hexadecimal digit. Full hexadecimal values without per-channel repetition (e.g., `#2E8B57`) are not eligible for shorthand expansion.] | `[Sample]{pfa-font-color="#666"}` | [Sample]{pfa-font-color="#666"} |
+
+### Colors in Fenced Divs
+
+When applied to a fenced Div, the `pfa-font-color` attribute defines the default text color for the entire block. All enclosed content inherits this color unless explicitly overridden by a Bracketed Span.
 
 ```markdown
-::: {pfa-font-color="dark slate grey"}
-The parent block carries a default color of dark slate gray. [This inline span overrides the color to tomato red.]{pfa-font-color="tomato"} The surrounding text continues in the parent color until the block closes.
+::: {pfa-font-color="DarkSlateGrey"}
+The fenced Div defines _DarkSlateGrey_ as the default text color for this block.
 :::
 ```
 
-::: {pfa-font-color="dark slate grey"}
-The parent block carries a default color of dark slate gray. [This inline span overrides the color to tomato red.]{pfa-font-color="tomato"} The surrounding text continues in the parent color until the block closes.
+::: {pfa-font-color="DarkSlateGrey"}
+The fenced Div defines _DarkSlateGrey_ as the default text color for this block.
 :::
 
-## Text Alignment within Blocks
+```markdown
+::: {pfa-font-color="DarkSlateGrey"}
+The fenced Div defines _DarkSlateGrey_ as the default text color for this block.
 
-The `.pfa-text-*` utility wraps blocks in standard text environments.
+[This Bracketed Span overrides the inherited color to _tomato_.]{pfa-font-color="tomato"}
 
-### Left-Aligned Text
+The remaining text continues using _DarkSlateGrey_ for the remainder of the Div.
+:::
+```
+
+::: {pfa-font-color="DarkSlateGrey"}
+The fenced Div defines _DarkSlateGrey_ as the default text color for this block.
+
+[This Bracketed Span overrides the inherited color to _tomato_.]{pfa-font-color="tomato"}
+
+The remaining text continues using _DarkSlateGrey_ for the remainder of the Div.
+:::
+
+**Note:** The `pfa-font-color` utility is an attribute, not a class, and should not be prefixed with a period (`.`).
+
+## Text Alignment within Fenced Divs
+
+The `.pfa-align-*` classes may be used to align text within a fenced Div. These classes map to LaTeX alignment commands (`\raggedright`, `\centering`, and `\raggedleft`) in PDF output while producing equivalent behavior in HTML.
+
+These classes also preserve explicit line breaks introduced with the backslash (`\`) character, which is useful for poetry, lyrics, and other text where line structure must be preserved.
+
+### Left-aligned Text
 
 ```markdown
-::: {.pfa-text-left}
+::: {.pfa-align-left}
 This block of text is _left-aligned_.
 :::
 ```
 
-::: {.pfa-text-left}
+::: {.pfa-align-left}
 This block of text is _left-aligned_.
 :::
 
-### Centered Text
-
-```markdown
-::: {.pfa-text-center}
-This block of text is _centered_.
-:::
-```
-
-::: {.pfa-text-center}
-This block of text is _centered_.
-:::
-
-### Right-Aligned Text
-
-```markdown
-::: {.pfa-text-right}
-This block of text is _right-aligned_.
-:::
-```
-
-::: {.pfa-text-right}
-This block of text is _right-aligned_.
-:::
-
-## Ragged Alignment
-
-The `.pfa-align-*` utility preserves and honors explicit line breaks (via backslash escapes).
-
-In PDF engines, the `.pfa-text-*` and `.pfa-align-*` utilities differ in vertical spacing:
-
-* `.pfa-text-*` mirrors LaTeX's structural `center`, `flushleft` and `flushright` environments, introducing distinct vertical margins around the block.
-* `.pfa-align-*` mirrors inline `\centering`, `\raggedright` and `\raggedleft` declarations, flowing contextually with surrounding content.
-
-Because HTML applies only `text-align` properties uniformly across both families, this structural spacing distinction applies only to PDF documents.
-
-Choose `.pfa-text-*` when the aligned block operates as an isolated visual unit (e.g., a callout banner, a standalone announcement, or a centered pull quote). Choose `.pfa-align-*` when alignment rules should integrate natively into surrounding paragraph streams (e.g., a line-broken signature block, verse stanzas, or captioned figures).
-
-### Left-Aligned Ragged Right Text
-
-```markdown
-::: {.pfa-align-left}
-This block of ragged text \
-is _left-aligned_ \
-while honoring explicit line breaks.
-:::
-```
-
-::: {.pfa-align-left}
-This block of ragged text \
-is _left-aligned_ \
-while honoring explicit line breaks.
-:::
-
-### Center-Aligned Ragged Both Text
+### Center-aligned Text
 
 ```markdown
 ::: {.pfa-align-center}
-This block of ragged text \
-is _centered_ \
-while honoring explicit line breaks.
+This block of text is _center-aligned_.
 :::
 ```
 
 ::: {.pfa-align-center}
-This block of ragged text \
-is _centered_ \
-while honoring explicit line breaks.
+This block of text is _center-aligned_.
 :::
 
-### Right-Aligned Ragged Left Text
+### Right-aligned Text
 
 ```markdown
 ::: {.pfa-align-right}
-This block of ragged text \
-is _right-aligned_ \
-while honoring explicit line breaks.
+This block of text is _right-aligned_.
 :::
 ```
 
 ::: {.pfa-align-right}
-This block of ragged text \
-is _right-aligned_ \
-while honoring explicit line breaks.
+This block of text is _right-aligned_.
+:::
+
+### Explicit Line Break Preservation
+
+The alignment classes preserve explicit line breaks introduced with the backslash (`\`) character.
+
+```markdown
+::: {.pfa-align-center}
+This block of text \
+is _center-aligned_ \
+while preserving explicit line breaks.
+:::
+```
+
+::: {.pfa-align-center}
+This block of text \
+is _center-aligned_ \
+while preserving explicit line breaks.
 :::
 
 ## Block-Level Alignment
 
-The `.pfa-block-*` utility positions an entire block container as a single cohesive unit while preserving the internal alignment settings of the text within it.
+The `.pfa-block-*` utilities control the horizontal positioning of a fenced Div as a whole, without affecting the internal text alignment of its contents. This allows the block itself to be positioned independently of how text is arranged within it.
 
 ### Left-Aligned Block
 
 ```markdown
 ::: {.pfa-block-left}
-The entire block is _left-aligned_ \
-while maintaining internal text alignment.
+The entire block is _left-aligned_.
 :::
 ```
 
 ::: {.pfa-block-left}
-The entire block is _left-aligned_ \
-while maintaining internal text alignment.
+The entire block is _left-aligned_.
 :::
 
 ### Center-Aligned Block
 
 ```markdown
 ::: {.pfa-block-center}
-The entire block is _center-aligned_ \
-while maintaining internal text alignment.
+The entire block is _center-aligned_.
 :::
 ```
 
 ::: {.pfa-block-center}
-The entire block is _center-aligned_ \
-while maintaining internal text alignment.
+The entire block is _center-aligned_.
 :::
 
 ### Right-Aligned Block
 
 ```markdown
 ::: {.pfa-block-right}
-The entire block is _right-aligned_ \
-while maintaining internal text alignment.
+The entire block is _right-aligned_.
 :::
 ```
 
 ::: {.pfa-block-right}
-The entire block is _right-aligned_ \
-while maintaining internal text alignment.
+The entire block is _right-aligned_.
 :::
 
 ## Combining Multiple Classes
 
-Classes can be stacked seamlessly. Sizing, family, weight, color, and decoration definitions compose safely on both inline elements and structural blocks.
+Multiple typographic utilities can be combined within the same element. Font, size, color, alignment, and decoration classes are designed to compose independently and can be applied together to both Bracketed Spans and Fenced Divs.
 
-Individual styles are space-separated and enclosed in braces `{}`, for inline and block composition in accordance with Pandoc's syntax rules.
+Class names are space-separated within `{}` following Pandoc attribute syntax. In addition to classes, key-value attributes such as `pfa-font-color` may be included alongside class definitions.
 
-### Inline Composition
+### Bracketed Span Composition
 
-| Style                       | Syntax                                                                       | Output         |
-| :-------------------------- | :--------------------------------------------------------------------------- | :------------- |
-| Bold Sans-serif             | `[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}`   | [Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"} |
-| Italic Mono                 | `[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}`                      | [Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s} |
-| Small Caps, Underlined and Colored         | `[Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color="forestgreen"}` | [Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color="forestgreen"} |
+| Style                               | Syntax                                                                       | Output |
+| :-------------------------- | :----------------------------------------------------------------- | :----------- |
+| Bold Sans-serif                     | `[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}`   | [Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"} |
+|  |  |
+| Italic Monospace                    | `[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}`                    | [Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s} |
+|  |  |
+| Small Caps, Underlined, Colored     | `[Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color="forestgreen"}` | [Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color="forestgreen"} |
 
-### Block Composition
+### Fenced Div Composition
+
+Multiple utilities can also be applied to Fenced Divs to control alignment, typography, and color simultaneously. The resulting block inherits all specified styles while preserving Pandoc’s standard attribute behavior.
 
 ```markdown
-::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color="midnightblue"}
-A centered, bold, sans-serif, large, midnight-blue block assembled from five different features of the filter.
+::: {.pfa-align-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color="midnightblue"}
+A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.
 :::
 ```
 
-::: {.pfa-text-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color="midnightblue"}
-A centered, bold, sans-serif, large, midnight-blue block assembled from five different features of the filter.
+::: {.pfa-align-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color="midnightblue"}
+A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.
 :::
 
 ## Legacy Short-Hand Aliases (Deprecated)
@@ -442,9 +433,9 @@ A centered, bold, sans-serif, large, midnight-blue block assembled from five dif
 
 | Legacy Classes  | New Classes       |
 | :------------ | :------------------ |
-| `.center`      | `.pfa-text-center`  |
-| `.flushleft`   | `.pfa-text-left`    |
-| `.flushright`  | `.pfa-text-right`   |
+| `.center`      | Removed in version 1.0.3 |
+| `.flushleft`   | Removed in version 1.0.3 |
+| `.flushright`  | Removed in version 1.0.3 |
 | `.centering`   | `.pfa-align-center` |
 | `.raggedleft`  | `.pfa-align-right`  |
 | `.raggedright` | `.pfa-align-left`   |

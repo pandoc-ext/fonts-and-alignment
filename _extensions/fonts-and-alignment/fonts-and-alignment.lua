@@ -214,9 +214,6 @@ local latex_font_sizes = {
 -- Mappings for Alignments { 'Span Command', 'Div Command' }
 -- Note: Span alignments are mostly nil since text alignment applies to block elements.
 local latex_text_alignments = {
-  ['pfa-text-center']  = { nil, 'center'           },
-  ['pfa-text-left']    = { nil, 'flushleft'        },
-  ['pfa-text-right']   = { nil, 'flushright'       },
   ['pfa-align-center'] = { nil, 'centering'        },
   ['pfa-align-left']   = { nil, 'raggedright'      },
   ['pfa-align-right']  = { nil, 'raggedleft'       },
@@ -246,7 +243,7 @@ end
 
 map_aliases(latex_font_types, { bold='pfa-font-bold', bf='pfa-font-bold', emphasis='pfa-font-emphasis', em='pfa-font-emphasis', italic='pfa-font-italic', it='pfa-font-italic', medium='pfa-font-medium', md='pfa-font-medium', monospace='pfa-font-mono', tt='pfa-font-mono', normalfont='pfa-font-normal', nf='pfa-font-normal', sans='pfa-font-sans', sf='pfa-font-sans', serif='pfa-font-serif', rm='pfa-font-serif', slanted='pfa-font-slanted', sl='pfa-font-slanted', smallcaps='pfa-font-smallcaps', sc='pfa-font-smallcaps', upright='pfa-font-upright', up='pfa-font-upright' })
 map_aliases(latex_font_sizes, { xsmall='pfa-text-xs', small='pfa-text-s', normal='pfa-text-normal', large='pfa-text-l', xlarge='pfa-text-xl', xxlarge='pfa-text-2xl', huge='pfa-text-3xl' })
-map_aliases(latex_text_alignments, { center='pfa-text-center', flushright='pfa-text-right', flushleft='pfa-text-left', centering='pfa-align-center', raggedleft='pfa-align-right', raggedright='pfa-align-left' })
+map_aliases(latex_text_alignments, { centering='pfa-align-center', raggedleft='pfa-align-right', raggedright='pfa-align-left' })
 map_aliases(latex_ulem_styles, { uline='pfa-text-uline', u='pfa-text-uline', uuline='pfa-text-uline-double', uu='pfa-text-uline-double', dashuline='pfa-text-uline-dashed', dau='pfa-text-uline-dashed', dotuline='pfa-text-uline-dotted', dou='pfa-text-uline-dotted', uwave='pfa-text-uline-wave', uw='pfa-text-uline-wave', sout='pfa-text-strikeout', so='pfa-text-strikeout' })
 
 

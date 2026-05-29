@@ -32,6 +32,15 @@ local LATEX_PREAMBLE = [[
 \usepackage{fvextra}
 \fvset{breaklines=true,breakanywhere=true}
 
+% Render section headings in Noto Serif SemiBold (body \textbf stays true bold).
+\usepackage{titlesec}
+\newfontfamily\pfaheadingfont{Noto Serif}[UprightFont={* SemiBold},ItalicFont={* SemiBold Italic}]
+\titleformat*{\section}{\Large\pfaheadingfont}
+\titleformat*{\subsection}{\large\pfaheadingfont}
+\titleformat*{\subsubsection}{\normalsize\pfaheadingfont}
+\titleformat*{\paragraph}{\normalsize\pfaheadingfont}
+\titleformat*{\subparagraph}{\normalsize\pfaheadingfont}
+
 % Demo specimen frame around each pfa-* div/span.
 \usepackage[most]{tcolorbox}
 \definecolor{previewframe}{HTML}{94A3B8}
@@ -42,7 +51,7 @@ local LATEX_PREAMBLE = [[
 \usepackage{colortbl}
 \usepackage{etoolbox}
 \definecolor{pfatablebg}{gray}{0.94}
-\AtBeginEnvironment{longtable}{\rowcolors{1}{pfatablebg}{pfatablebg}}
+\AtBeginEnvironment{longtable}{\rowcolors{2}{pfatablebg}{pfatablebg}}
 
 % Wrap the Shaded environment in a minipage
 \BeforeBeginEnvironment{Shaded}{\par\noindent\begin{minipage}{\linewidth}}

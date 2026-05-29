@@ -1,0 +1,358 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "author"
+            , MetaString
+                "Nandakumar Chandrasekhar"
+            )
+          , ( "date"
+            , MetaString
+                "2026-05-25"
+            )
+          , ( "title"
+            , MetaInlines
+                [ Str "Font"
+                , Space
+                , Str
+                    "Weights,"
+                , Space
+                , Str
+                    "Shapes,"
+                , Space
+                , Str "and"
+                , Space
+                , Str
+                    "Families"
+                , Space
+                , Str "in"
+                , Space
+                , Str
+                    "Bracketed"
+                , Space
+                , Str "Spans"
+                ]
+            )
+          ]
+    }
+  [ Header
+      2
+      ( "bold" , [] , [] )
+      [ Str "Bold" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-bold}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-bold"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "medium" , [] , [] )
+      [ Str "Medium" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-medium}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-medium"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "italic" , [] , [] )
+      [ Str "Italic" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-italic}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-italic"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "slanted" , [] , [] )
+      [ Str "Slanted" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-slanted}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-slanted"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "upright" , [] , [] )
+      [ Str "Upright" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-upright}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-upright"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "emphasis" , [] , [] )
+      [ Str "Emphasis" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-emphasis}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-emphasis"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "serif" , [] , [] )
+      [ Str "Serif" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-serif}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-serif"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "sans-serif"
+      , []
+      , []
+      )
+      [ Str "Sans-serif" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-sans}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-sans"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "monospace"
+      , []
+      , []
+      )
+      [ Str "Monospace" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-mono}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-mono"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "small-capitals"
+      , []
+      , []
+      )
+      [ Str "Small"
+      , Space
+      , Str "Capitals"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-smallcaps}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-smallcaps"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "normal" , [] , [] )
+      [ Str "Normal" ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-normal}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-normal"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  ]
