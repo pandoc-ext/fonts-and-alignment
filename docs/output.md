@@ -24,7 +24,7 @@ for styling smaller inline portions of text, while Fenced Divs are used
 for styling larger blocks of content. This follows Pandoc's standard
 syntax conventions. For more information on this syntax, please refer to
 the official Pandoc documentation: [Divs and Spans --- Pandoc User's
-Guide](https://pandoc.org/demo/example33/8.18-divs-and-spans.html)
+Guide](https://pandoc.org/demo/example33/8.18-divs-and-spans.html).
 
 ``` markdown
 [This font is extra extra large.]{.pfa-text-2xl}
@@ -193,15 +193,12 @@ modify the actual document content. This ensures that uppercase and
 lowercase conversions are preserved consistently across all output
 formats and remain intact when copied into other applications.
 
-### Casing Tranformations in Bracketed Spans
+### Casing Transformations in Bracketed Spans
 
-  -----------------------------------------------------------------------------------------
-  Casing         Syntax                                         Output
-  -------------- ---------------------------------------------- ---------------------------
-  Uppercase      `[coerced]{.pfa-uppercase}`                    [COERCED]{.pfa-uppercase}
-
-  Lowercase      `[COERCED]{.pfa-lowercase}`                    [coerced]{.pfa-lowercase}
-  -----------------------------------------------------------------------------------------
+  Casing      Syntax                       Output
+  ----------- ---------------------------- --------------------------
+  Uppercase   `[Sample]{.pfa-uppercase}`   [SAMPLE]{.pfa-uppercase}
+  Lowercase   `[SAMPLE]{.pfa-lowercase}`   [sample]{.pfa-lowercase}
 
 ### Casing Transformations in Fenced Divs
 
@@ -232,11 +229,11 @@ THIS PARAGRAPH IS TRANSFORMED TO UPPERCASE.
 ## Text Decorations for Bracketed Spans
 
 Text decoration styles are implemented using the LaTeX `ulem` package,
-which is automatically included via a `header-include` whenever any of
-the corresponding classes are detected in the document. These styles are
-also mapped to equivalent CSS properties to ensure consistent rendering
-across LaTeX/PDF and HTML outputs. These decorations apply only to
-**Bracketed Spans**.
+which is automatically included via the `header-includes` field whenever
+any of the corresponding classes are detected in the document. These
+styles are also mapped to equivalent CSS properties to ensure consistent
+rendering across LaTeX/PDF and HTML outputs. These decorations apply
+only to **Bracketed Spans**.
 
   --------------------------------------------------------------------------------------------------------
   Decoration         Syntax                                      Output
@@ -327,24 +324,24 @@ All naming conventions below resolve to the CSS3 color
 
 ### Colors in Fenced Divs
 
-When applied to a fenced Div, the `pfa-font-color` attribute defines the
+When applied to a Fenced Div, the `pfa-font-color` attribute defines the
 default text color for the entire block. All enclosed content inherits
 this color unless explicitly overridden by a Bracketed Span.
 
 ``` markdown
 ::: {pfa-font-color="DarkSlateGrey"}
-The fenced Div defines _DarkSlateGrey_ as the default text color for this block.
+The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.
 :::
 ```
 
 ::: {style="color: #2F4F4F;"}
-The fenced Div defines *DarkSlateGrey* as the default text color for
+The Fenced Div defines *DarkSlateGrey* as the default text color for
 this block.
 :::
 
 ``` markdown
 ::: {pfa-font-color="DarkSlateGrey"}
-The fenced Div defines _DarkSlateGrey_ as the default text color for this block.
+The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.
 
 [This Bracketed Span overrides the inherited color to _tomato_.]{pfa-font-color="tomato"}
 
@@ -353,7 +350,7 @@ The remaining text continues using _DarkSlateGrey_ for the remainder of the Div.
 ```
 
 ::: {style="color: #2F4F4F;"}
-The fenced Div defines *DarkSlateGrey* as the default text color for
+The Fenced Div defines *DarkSlateGrey* as the default text color for
 this block.
 
 [This Bracketed Span overrides the inherited color to
@@ -368,7 +365,7 @@ should not be prefixed with a period (`.`).
 
 ## Text Alignment within Fenced Divs
 
-The `.pfa-align-*` classes may be used to align text within a fenced
+The `.pfa-align-*` classes may be used to align text within a Fenced
 Div. These classes map to LaTeX alignment commands (`\raggedright`,
 `\centering`, and `\raggedleft`) in PDF output while producing
 equivalent behavior in HTML.
@@ -435,7 +432,7 @@ while preserving explicit line breaks.
 ## Block-Level Alignment
 
 The `.pfa-block-*` utilities control the horizontal positioning of a
-fenced Div as a whole, without affecting the internal text alignment of
+Fenced Div as a whole, without affecting the internal text alignment of
 its contents. This allows the block itself to be positioned
 independently of how text is arranged within it.
 
@@ -491,7 +488,7 @@ syntax. In addition to classes, key-value attributes such as
   ----------------------------------------------------------------------------------------------------------------------------------------------
   Style              Syntax                                                                         Output
   ------------------ ------------------------------------------------------------------------------ --------------------------------------------
-  Bold Sans-serif    `[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}`     [Sample]{.pfa-font-bold .pfa-font-sans
+  Bold Sans-Serif    `[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}`     [Sample]{.pfa-font-bold .pfa-font-sans
                                                                                                     .pfa-text-l style="color: #FF0000;"}
 
                                                                                                     
@@ -524,30 +521,14 @@ A centered, bold, sans-serif, large, midnight-blue Fenced Div
 demonstrating multiple combined utilities from the filter.
 :::
 
-## Legacy Short-Hand Aliases (Deprecated)
+## Legacy Aliases (Deprecated)
 
 **Warning:** Legacy aliases are deprecated. They are retained strictly
 for backward compatibility and will be entirely removed in the next
 major release. New documents should use the `.pfa-*` namespaces going
 forward.
 
-### Font Weight, Shape, and Family Aliases
-
-  Legacy Classes   Short-Hand   New Classes
-  ---------------- ------------ -----------------------
-  `.bold`          `.bf`        `.pfa-font-bold`
-  `.emphasis`      `.em`        `.pfa-font-emphasis`
-  `.italic`        `.it`        `.pfa-font-italic`
-  `.medium`        `.md`        `.pfa-font-medium`
-  `.monospace`     `.tt`        `.pfa-font-mono`
-  `.normalfont`    `.nf`        `.pfa-font-normal`
-  `.sans`          `.sf`        `.pfa-font-sans`
-  `.serif`         `.rm`        `.pfa-font-serif`
-  `.slanted`       `.sl`        `.pfa-font-slanted`
-  `.smallcaps`     `.sc`        `.pfa-font-smallcaps`
-  `.upright`       `.up`        `.pfa-font-upright`
-
-### Font Size Aliases
+### Font Sizing Aliases
 
   Legacy Classes   Modern Classes
   ---------------- --------------------
@@ -559,28 +540,52 @@ forward.
   `.xxlarge`       `.pfa-text-2xl`
   `.huge`          `.pfa-text-3xl`
 
+### Font Weight, Shape, and Family Aliases
+
+  Legacy Classes   Shorthand   Modern Classes
+  ---------------- ----------- -----------------------
+  `.bold`          `.bf`       `.pfa-font-bold`
+  `.emphasis`      `.em`       `.pfa-font-emphasis`
+  `.italic`        `.it`       `.pfa-font-italic`
+  `.medium`        `.md`       `.pfa-font-medium`
+  `.monospace`     `.tt`       `.pfa-font-mono`
+  `.normalfont`    `.nf`       `.pfa-font-normal`
+  `.sans`          `.sf`       `.pfa-font-sans`
+  `.serif`         `.rm`       `.pfa-font-serif`
+  `.slanted`       `.sl`       `.pfa-font-slanted`
+  `.smallcaps`     `.sc`       `.pfa-font-smallcaps`
+  `.upright`       `.up`       `.pfa-font-upright`
+
 ### Alignment Aliases
 
-  Legacy Classes   New Classes
-  ---------------- --------------------------
-  `.center`        Removed in version 1.0.3
-  `.flushleft`     Removed in version 1.0.3
-  `.flushright`    Removed in version 1.0.3
+  Legacy Classes   Modern Classes
+  ---------------- ---------------------
   `.centering`     `.pfa-align-center`
   `.raggedleft`    `.pfa-align-right`
   `.raggedright`   `.pfa-align-left`
 
-### Underline and Strikeout Aliases
+### Text Decoration Aliases
 
-  Legacy Classes   Short-Hand   New Classes
-  ---------------- ------------ --------------------------
-  `.uline`         `.u`         `.pfa-text-uline`
-  `.uuline`        `.uu`        `.pfa-text-uline-double`
-  `.dashuline`     `.dau`       `.pfa-text-uline-dashed`
-  `.dotuline`      `.dou`       `.pfa-text-uline-dotted`
-  `.uwave`         `.uw`        `.pfa-text-uline-wave`
-  `.sout`          `.so`        `.pfa-text-strikeout`
-  `.xout`          `.xo`        Removed in version 1.0.3
+  Legacy Classes   Shorthand   Modern Classes
+  ---------------- ----------- --------------------------
+  `.uline`         `.u`        `.pfa-text-uline`
+  `.uuline`        `.uu`       `.pfa-text-uline-double`
+  `.dashuline`     `.dau`      `.pfa-text-uline-dashed`
+  `.dotuline`      `.dou`      `.pfa-text-uline-dotted`
+  `.uwave`         `.uw`       `.pfa-text-uline-wave`
+  `.sout`          `.so`       `.pfa-text-strikeout`
+
+## Removed Classes
+
+The following legacy classes were removed in version 1.0.3 and are no
+longer recognized by the filter.
+
+  Removed Class   Shorthand   Removed In Version
+  --------------- ----------- --------------------
+  `.center`       ---         1.0.3
+  `.flushleft`    ---         1.0.3
+  `.flushright`   ---         1.0.3
+  `.xout`         `.xo`       1.0.3
 
 [^1]: To enable equivalent styling in HTML output, include the
     `fonts-and-alignment.css` stylesheet distributed with this filter.

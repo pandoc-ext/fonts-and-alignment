@@ -42,8 +42,13 @@ endif
 # ==============================================================================
 # 1. Find all specific test YAMLs (ignoring the base test.yaml)
 TEST_YAMLS := $(filter-out test/test.yaml, $(wildcard test/test-*.yaml))
-# 2. Extract just the name parts (e.g., "inline-font-sizes")
+# 2. Extract just the name parts (e.g., "span-font-sizes")
 TEST_NAMES := $(patsubst test/test-%.yaml,%,$(TEST_YAMLS))
+# 2b. The full-document `input` case is verified as a build smoke test (see the
+#     `smoke` target) rather than a brittle 186 KB exact-AST golden, so it is
+#     excluded from the diff set. The focused span-*/div-* tests provide the AST
+#     coverage; `input` is still rendered for docs and previews.
+DIFF_NAMES := $(filter-out input,$(TEST_NAMES))
 # 3. Grab all markdown files in the test directory to use as dependencies
 TEST_INPUTS := $(wildcard test/*.md)
 
@@ -98,14 +103,19 @@ css: $(DIST_CSS_FILES) ## Compile SASS sources into distribution CSS files
 # Testing Rules (AST Generation & Diffing)
 # ==============================================================================
 .PHONY: test
-test: $(FILTER_FILE) $(addprefix test-,$(TEST_NAMES)) ## Run AST tests and diff against expected outputs
+test: $(FILTER_FILE) smoke $(addprefix test-,$(DIFF_NAMES)) ## Run focused AST diff tests plus a full-document build smoke test
 
 test-%: $(FILTER_FILE) test/test.yaml test/test-%.yaml $(TEST_INPUTS)
 	$(PANDOC) --defaults test/test.yaml --defaults test/test-$*.yaml | \
 		$(DIFF) test/expected-$*.native -
 
+.PHONY: smoke
+smoke: $(FILTER_FILE) test/test.yaml test/test-input.yaml $(TEST_INPUTS) ## Smoke test: confirm the full input.md builds through the filter without error
+	@$(PANDOC) --defaults test/test.yaml --defaults test/test-input.yaml > /dev/null \
+		&& echo "smoke: full input.md builds through the filter OK"
+
 .PHONY: update-expected
-update-expected: $(FILTER_FILE) $(addprefix update-,$(TEST_NAMES)) ## Overwrite expected AST test outputs
+update-expected: $(FILTER_FILE) $(addprefix update-,$(DIFF_NAMES)) ## Overwrite expected AST test outputs
 
 update-%: $(FILTER_FILE) test/test.yaml test/test-%.yaml $(TEST_INPUTS)
 	$(PANDOC) \

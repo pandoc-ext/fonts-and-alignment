@@ -885,7 +885,7 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bracketed Spans and Fenced Divs Invocations</span></span>
 <span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>The filter may be used with Pandoc’s <span class="in">`bracketed_spans`</span> and <span class="in">`fenced_divs`</span> syntax extensions, as demonstrated below. Bracketed Spans are intended for styling smaller inline portions of text, while Fenced Divs are used for styling larger blocks of content. This follows Pandoc’s standard syntax conventions. For more information on this syntax, please refer to the official Pandoc documentation: <span class="co">[</span><span class="ot">Divs and Spans — Pandoc User’s Guide</span><span class="co">](https://pandoc.org/demo/example33/8.18-divs-and-spans.html)</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>The filter may be used with Pandoc’s <span class="in">`bracketed_spans`</span> and <span class="in">`fenced_divs`</span> syntax extensions, as demonstrated below. Bracketed Spans are intended for styling smaller inline portions of text, while Fenced Divs are used for styling larger blocks of content. This follows Pandoc’s standard syntax conventions. For more information on this syntax, please refer to the official Pandoc documentation: <span class="co">[</span><span class="ot">Divs and Spans — Pandoc User’s Guide</span><span class="co">](https://pandoc.org/demo/example33/8.18-divs-and-spans.html)</span>.</span>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
 <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This font is extra extra large.</span><span class="co">]</span>{.pfa-text-2xl}</span>
@@ -1021,12 +1021,12 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb14-147"><a href="#cb14-147" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-148"><a href="#cb14-148" aria-hidden="true" tabindex="-1"></a>Unlike purely visual styling in HTML/CSS—where <span class="co">[</span><span class="ot">`text-transform`</span><span class="co">](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform)</span> only changes how text is rendered—these casing transformations operate at the <span class="co">[</span><span class="ot">Pandoc Abstract Syntax Tree (AST)</span><span class="co">](https://pandoc.org/MANUAL.html#abstract-syntax-tree)</span> level and modify the actual document content. This ensures that uppercase and lowercase conversions are preserved consistently across all output formats and remain intact when copied into other applications.</span>
 <span id="cb14-149"><a href="#cb14-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-150"><a href="#cb14-150" aria-hidden="true" tabindex="-1"></a><span class="fu">### Casing Tranformations in Bracketed Spans</span></span>
+<span id="cb14-150"><a href="#cb14-150" aria-hidden="true" tabindex="-1"></a><span class="fu">### Casing Transformations in Bracketed Spans</span></span>
 <span id="cb14-151"><a href="#cb14-151" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-152"><a href="#cb14-152" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Casing    <span class="pp">|</span> Syntax                        <span class="pp">|</span> Output <span class="pp">|</span></span>
 <span id="cb14-153"><a href="#cb14-153" aria-hidden="true" tabindex="-1"></a><span class="pp">| :--------</span> <span class="pp">| :----------------------------</span> <span class="pp">| :-----</span> <span class="pp">|</span></span>
-<span id="cb14-154"><a href="#cb14-154" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Uppercase <span class="pp">|</span> <span class="in">`[coerced]{.pfa-uppercase}`</span>   <span class="pp">|</span> <span class="co">[</span><span class="ot">coerced</span><span class="co">]</span>{.pfa-uppercase} <span class="pp">|</span></span>
-<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lowercase <span class="pp">|</span> <span class="in">`[COERCED]{.pfa-lowercase}`</span>   <span class="pp">|</span> <span class="co">[</span><span class="ot">COERCED</span><span class="co">]</span>{.pfa-lowercase} <span class="pp">|</span></span>
+<span id="cb14-154"><a href="#cb14-154" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Uppercase <span class="pp">|</span> <span class="in">`[Sample]{.pfa-uppercase}`</span>   <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-uppercase} <span class="pp">|</span></span>
+<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lowercase <span class="pp">|</span> <span class="in">`[SAMPLE]{.pfa-lowercase}`</span>   <span class="pp">|</span> <span class="co">[</span><span class="ot">SAMPLE</span><span class="co">]</span>{.pfa-lowercase} <span class="pp">|</span></span>
 <span id="cb14-156"><a href="#cb14-156" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-157"><a href="#cb14-157" aria-hidden="true" tabindex="-1"></a><span class="fu">### Casing Transformations in Fenced Divs</span></span>
 <span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a></span>
@@ -1056,7 +1056,7 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb14-182"><a href="#cb14-182" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-183"><a href="#cb14-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## Text Decorations for Bracketed Spans</span></span>
 <span id="cb14-184"><a href="#cb14-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-185"><a href="#cb14-185" aria-hidden="true" tabindex="-1"></a>Text decoration styles are implemented using the LaTeX <span class="in">`ulem`</span> package, which is automatically included via a <span class="in">`header-include`</span> whenever any of the corresponding classes are detected in the document. These styles are also mapped to equivalent CSS properties to ensure consistent rendering across LaTeX/PDF and HTML outputs. These decorations apply only to **Bracketed Spans**.</span>
+<span id="cb14-185"><a href="#cb14-185" aria-hidden="true" tabindex="-1"></a>Text decoration styles are implemented using the LaTeX <span class="in">`ulem`</span> package, which is automatically included via the <span class="in">`header-includes`</span> field whenever any of the corresponding classes are detected in the document. These styles are also mapped to equivalent CSS properties to ensure consistent rendering across LaTeX/PDF and HTML outputs. These decorations apply only to **Bracketed Spans**.</span>
 <span id="cb14-186"><a href="#cb14-186" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-187"><a href="#cb14-187" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Decoration       <span class="pp">|</span> Syntax                               <span class="pp">|</span> Output <span class="pp">|</span></span>
 <span id="cb14-188"><a href="#cb14-188" aria-hidden="true" tabindex="-1"></a><span class="pp">| :---------------</span> <span class="pp">| :------------------------------------</span> <span class="pp">| :------</span> <span class="pp">|</span></span>
@@ -1109,21 +1109,21 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb14-235"><a href="#cb14-235" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-236"><a href="#cb14-236" aria-hidden="true" tabindex="-1"></a><span class="fu">### Colors in Fenced Divs</span></span>
 <span id="cb14-237"><a href="#cb14-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-238"><a href="#cb14-238" aria-hidden="true" tabindex="-1"></a>When applied to a fenced Div, the <span class="in">`pfa-font-color`</span> attribute defines the default text color for the entire block. All enclosed content inherits this color unless explicitly overridden by a Bracketed Span.</span>
+<span id="cb14-238"><a href="#cb14-238" aria-hidden="true" tabindex="-1"></a>When applied to a Fenced Div, the <span class="in">`pfa-font-color`</span> attribute defines the default text color for the entire block. All enclosed content inherits this color unless explicitly overridden by a Bracketed Span.</span>
 <span id="cb14-239"><a href="#cb14-239" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-240"><a href="#cb14-240" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
 <span id="cb14-241"><a href="#cb14-241" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;DarkSlateGrey&quot;}</span>
-<span id="cb14-242"><a href="#cb14-242" aria-hidden="true" tabindex="-1"></a>The fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
+<span id="cb14-242"><a href="#cb14-242" aria-hidden="true" tabindex="-1"></a>The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
 <span id="cb14-243"><a href="#cb14-243" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-244"><a href="#cb14-244" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb14-245"><a href="#cb14-245" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-246"><a href="#cb14-246" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;DarkSlateGrey&quot;}</span>
-<span id="cb14-247"><a href="#cb14-247" aria-hidden="true" tabindex="-1"></a>The fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
+<span id="cb14-247"><a href="#cb14-247" aria-hidden="true" tabindex="-1"></a>The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
 <span id="cb14-248"><a href="#cb14-248" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-249"><a href="#cb14-249" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-250"><a href="#cb14-250" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
 <span id="cb14-251"><a href="#cb14-251" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;DarkSlateGrey&quot;}</span>
-<span id="cb14-252"><a href="#cb14-252" aria-hidden="true" tabindex="-1"></a>The fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
+<span id="cb14-252"><a href="#cb14-252" aria-hidden="true" tabindex="-1"></a>The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
 <span id="cb14-253"><a href="#cb14-253" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-254"><a href="#cb14-254" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This Bracketed Span overrides the inherited color to _tomato_.</span><span class="co">]</span>{pfa-font-color=&quot;tomato&quot;}</span>
 <span id="cb14-255"><a href="#cb14-255" aria-hidden="true" tabindex="-1"></a></span>
@@ -1132,7 +1132,7 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb14-258"><a href="#cb14-258" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb14-259"><a href="#cb14-259" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-260"><a href="#cb14-260" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;DarkSlateGrey&quot;}</span>
-<span id="cb14-261"><a href="#cb14-261" aria-hidden="true" tabindex="-1"></a>The fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
+<span id="cb14-261"><a href="#cb14-261" aria-hidden="true" tabindex="-1"></a>The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
 <span id="cb14-262"><a href="#cb14-262" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-263"><a href="#cb14-263" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This Bracketed Span overrides the inherited color to _tomato_.</span><span class="co">]</span>{pfa-font-color=&quot;tomato&quot;}</span>
 <span id="cb14-264"><a href="#cb14-264" aria-hidden="true" tabindex="-1"></a></span>
@@ -1143,7 +1143,7 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb14-269"><a href="#cb14-269" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-270"><a href="#cb14-270" aria-hidden="true" tabindex="-1"></a><span class="fu">## Text Alignment within Fenced Divs</span></span>
 <span id="cb14-271"><a href="#cb14-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-272"><a href="#cb14-272" aria-hidden="true" tabindex="-1"></a>The <span class="in">`.pfa-align-*`</span> classes may be used to align text within a fenced Div. These classes map to LaTeX alignment commands (<span class="in">`\raggedright`</span>, <span class="in">`\centering`</span>, and <span class="in">`\raggedleft`</span>) in PDF output while producing equivalent behavior in HTML.</span>
+<span id="cb14-272"><a href="#cb14-272" aria-hidden="true" tabindex="-1"></a>The <span class="in">`.pfa-align-*`</span> classes may be used to align text within a Fenced Div. These classes map to LaTeX alignment commands (<span class="in">`\raggedright`</span>, <span class="in">`\centering`</span>, and <span class="in">`\raggedleft`</span>) in PDF output while producing equivalent behavior in HTML.</span>
 <span id="cb14-273"><a href="#cb14-273" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-274"><a href="#cb14-274" aria-hidden="true" tabindex="-1"></a>These classes also preserve explicit line breaks introduced with the backslash (<span class="in">`\`</span>) character, which is useful for poetry, lyrics, and other text where line structure must be preserved.</span>
 <span id="cb14-275"><a href="#cb14-275" aria-hidden="true" tabindex="-1"></a></span>
@@ -1203,7 +1203,7 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb14-329"><a href="#cb14-329" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-330"><a href="#cb14-330" aria-hidden="true" tabindex="-1"></a><span class="fu">## Block-Level Alignment</span></span>
 <span id="cb14-331"><a href="#cb14-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-332"><a href="#cb14-332" aria-hidden="true" tabindex="-1"></a>The <span class="in">`.pfa-block-*`</span> utilities control the horizontal positioning of a fenced Div as a whole, without affecting the internal text alignment of its contents. This allows the block itself to be positioned independently of how text is arranged within it.</span>
+<span id="cb14-332"><a href="#cb14-332" aria-hidden="true" tabindex="-1"></a>The <span class="in">`.pfa-block-*`</span> utilities control the horizontal positioning of a Fenced Div as a whole, without affecting the internal text alignment of its contents. This allows the block itself to be positioned independently of how text is arranged within it.</span>
 <span id="cb14-333"><a href="#cb14-333" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-334"><a href="#cb14-334" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left-Aligned Block</span></span>
 <span id="cb14-335"><a href="#cb14-335" aria-hidden="true" tabindex="-1"></a></span>
@@ -1251,7 +1251,7 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb14-377"><a href="#cb14-377" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-378"><a href="#cb14-378" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Style                               <span class="pp">|</span> Syntax                                                                       <span class="pp">|</span> Output <span class="pp">|</span></span>
 <span id="cb14-379"><a href="#cb14-379" aria-hidden="true" tabindex="-1"></a><span class="pp">| :--------------------------</span> <span class="pp">| :-----------------------------------------------------------------</span> <span class="pp">| :-----------</span> <span class="pp">|</span></span>
-<span id="cb14-380"><a href="#cb14-380" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Bold Sans-serif                     <span class="pp">|</span> <span class="in">`[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color=&quot;red&quot;}`</span>   <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color=&quot;red&quot;} <span class="pp">|</span></span>
+<span id="cb14-380"><a href="#cb14-380" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Bold Sans-Serif                     <span class="pp">|</span> <span class="in">`[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color=&quot;red&quot;}`</span>   <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color=&quot;red&quot;} <span class="pp">|</span></span>
 <span id="cb14-381"><a href="#cb14-381" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>  <span class="pp">|</span>  <span class="pp">|</span></span>
 <span id="cb14-382"><a href="#cb14-382" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Italic Monospace                    <span class="pp">|</span> <span class="in">`[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}`</span>                    <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-font-italic .pfa-font-mono .pfa-text-s} <span class="pp">|</span></span>
 <span id="cb14-383"><a href="#cb14-383" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>  <span class="pp">|</span>  <span class="pp">|</span></span>
@@ -1271,60 +1271,67 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb14-397"><a href="#cb14-397" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
 <span id="cb14-398"><a href="#cb14-398" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-399"><a href="#cb14-399" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-400"><a href="#cb14-400" aria-hidden="true" tabindex="-1"></a><span class="fu">## Legacy Short-Hand Aliases (Deprecated)</span></span>
+<span id="cb14-400"><a href="#cb14-400" aria-hidden="true" tabindex="-1"></a><span class="fu">## Legacy Aliases (Deprecated)</span></span>
 <span id="cb14-401"><a href="#cb14-401" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-402"><a href="#cb14-402" aria-hidden="true" tabindex="-1"></a>**Warning:** Legacy aliases are deprecated. They are retained strictly for backward compatibility and will be entirely removed in the next major release. New documents should use the <span class="in">`.pfa-*`</span> namespaces going forward.</span>
 <span id="cb14-403"><a href="#cb14-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-404"><a href="#cb14-404" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Weight, Shape, and Family Aliases</span></span>
+<span id="cb14-404"><a href="#cb14-404" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Sizing Aliases</span></span>
 <span id="cb14-405"><a href="#cb14-405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-406"><a href="#cb14-406" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Classes <span class="pp">|</span> Short-Hand <span class="pp">|</span> New Classes         <span class="pp">|</span></span>
-<span id="cb14-407"><a href="#cb14-407" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-----------</span> <span class="pp">| :---------</span> <span class="pp">| :-------------------</span> <span class="pp">|</span></span>
-<span id="cb14-408"><a href="#cb14-408" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.bold`</span>       <span class="pp">|</span> <span class="in">`.bf`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-bold`</span>      <span class="pp">|</span></span>
-<span id="cb14-409"><a href="#cb14-409" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.emphasis`</span>   <span class="pp">|</span> <span class="in">`.em`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-emphasis`</span>  <span class="pp">|</span></span>
-<span id="cb14-410"><a href="#cb14-410" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.italic`</span>     <span class="pp">|</span> <span class="in">`.it`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-italic`</span>    <span class="pp">|</span></span>
-<span id="cb14-411"><a href="#cb14-411" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.medium`</span>     <span class="pp">|</span> <span class="in">`.md`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-medium`</span>    <span class="pp">|</span></span>
-<span id="cb14-412"><a href="#cb14-412" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.monospace`</span>  <span class="pp">|</span> <span class="in">`.tt`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-mono`</span>      <span class="pp">|</span></span>
-<span id="cb14-413"><a href="#cb14-413" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.normalfont`</span> <span class="pp">|</span> <span class="in">`.nf`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-normal`</span>    <span class="pp">|</span></span>
-<span id="cb14-414"><a href="#cb14-414" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.sans`</span>       <span class="pp">|</span> <span class="in">`.sf`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-sans`</span>      <span class="pp">|</span></span>
-<span id="cb14-415"><a href="#cb14-415" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.serif`</span>      <span class="pp">|</span> <span class="in">`.rm`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-serif`</span>     <span class="pp">|</span></span>
-<span id="cb14-416"><a href="#cb14-416" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.slanted`</span>    <span class="pp">|</span> <span class="in">`.sl`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-slanted`</span>   <span class="pp">|</span></span>
-<span id="cb14-417"><a href="#cb14-417" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.smallcaps`</span>  <span class="pp">|</span> <span class="in">`.sc`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-smallcaps`</span> <span class="pp">|</span></span>
-<span id="cb14-418"><a href="#cb14-418" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.upright`</span>    <span class="pp">|</span> <span class="in">`.up`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-upright`</span>   <span class="pp">|</span></span>
-<span id="cb14-419"><a href="#cb14-419" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-420"><a href="#cb14-420" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Size Aliases</span></span>
-<span id="cb14-421"><a href="#cb14-421" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-422"><a href="#cb14-422" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Classes <span class="pp">|</span> Modern Classes      <span class="pp">|</span></span>
-<span id="cb14-423"><a href="#cb14-423" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-----------</span> <span class="pp">| :----------------</span> <span class="pp">|</span></span>
-<span id="cb14-424"><a href="#cb14-424" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.xsmall`</span>     <span class="pp">|</span> <span class="in">`.pfa-text-xs`</span>     <span class="pp">|</span></span>
-<span id="cb14-425"><a href="#cb14-425" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.small`</span>      <span class="pp">|</span> <span class="in">`.pfa-text-s`</span>      <span class="pp">|</span></span>
-<span id="cb14-426"><a href="#cb14-426" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.normal`</span>     <span class="pp">|</span> <span class="in">`.pfa-text-normal`</span> <span class="pp">|</span></span>
-<span id="cb14-427"><a href="#cb14-427" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.large`</span>      <span class="pp">|</span> <span class="in">`.pfa-text-l`</span>      <span class="pp">|</span></span>
-<span id="cb14-428"><a href="#cb14-428" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.xlarge`</span>     <span class="pp">|</span> <span class="in">`.pfa-text-xl`</span>     <span class="pp">|</span></span>
-<span id="cb14-429"><a href="#cb14-429" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.xxlarge`</span>    <span class="pp">|</span> <span class="in">`.pfa-text-2xl`</span>    <span class="pp">|</span></span>
-<span id="cb14-430"><a href="#cb14-430" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.huge`</span>       <span class="pp">|</span> <span class="in">`.pfa-text-3xl`</span>    <span class="pp">|</span></span>
+<span id="cb14-406"><a href="#cb14-406" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Classes <span class="pp">|</span> Modern Classes      <span class="pp">|</span></span>
+<span id="cb14-407"><a href="#cb14-407" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-----------</span> <span class="pp">| :----------------</span> <span class="pp">|</span></span>
+<span id="cb14-408"><a href="#cb14-408" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.xsmall`</span>     <span class="pp">|</span> <span class="in">`.pfa-text-xs`</span>     <span class="pp">|</span></span>
+<span id="cb14-409"><a href="#cb14-409" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.small`</span>      <span class="pp">|</span> <span class="in">`.pfa-text-s`</span>      <span class="pp">|</span></span>
+<span id="cb14-410"><a href="#cb14-410" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.normal`</span>     <span class="pp">|</span> <span class="in">`.pfa-text-normal`</span> <span class="pp">|</span></span>
+<span id="cb14-411"><a href="#cb14-411" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.large`</span>      <span class="pp">|</span> <span class="in">`.pfa-text-l`</span>      <span class="pp">|</span></span>
+<span id="cb14-412"><a href="#cb14-412" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.xlarge`</span>     <span class="pp">|</span> <span class="in">`.pfa-text-xl`</span>     <span class="pp">|</span></span>
+<span id="cb14-413"><a href="#cb14-413" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.xxlarge`</span>    <span class="pp">|</span> <span class="in">`.pfa-text-2xl`</span>    <span class="pp">|</span></span>
+<span id="cb14-414"><a href="#cb14-414" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.huge`</span>       <span class="pp">|</span> <span class="in">`.pfa-text-3xl`</span>    <span class="pp">|</span></span>
+<span id="cb14-415"><a href="#cb14-415" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-416"><a href="#cb14-416" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Weight, Shape, and Family Aliases</span></span>
+<span id="cb14-417"><a href="#cb14-417" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-418"><a href="#cb14-418" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Classes <span class="pp">|</span> Shorthand <span class="pp">|</span> Modern Classes         <span class="pp">|</span></span>
+<span id="cb14-419"><a href="#cb14-419" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-----------</span> <span class="pp">| :---------</span> <span class="pp">| :-------------------</span> <span class="pp">|</span></span>
+<span id="cb14-420"><a href="#cb14-420" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.bold`</span>       <span class="pp">|</span> <span class="in">`.bf`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-bold`</span>      <span class="pp">|</span></span>
+<span id="cb14-421"><a href="#cb14-421" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.emphasis`</span>   <span class="pp">|</span> <span class="in">`.em`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-emphasis`</span>  <span class="pp">|</span></span>
+<span id="cb14-422"><a href="#cb14-422" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.italic`</span>     <span class="pp">|</span> <span class="in">`.it`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-italic`</span>    <span class="pp">|</span></span>
+<span id="cb14-423"><a href="#cb14-423" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.medium`</span>     <span class="pp">|</span> <span class="in">`.md`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-medium`</span>    <span class="pp">|</span></span>
+<span id="cb14-424"><a href="#cb14-424" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.monospace`</span>  <span class="pp">|</span> <span class="in">`.tt`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-mono`</span>      <span class="pp">|</span></span>
+<span id="cb14-425"><a href="#cb14-425" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.normalfont`</span> <span class="pp">|</span> <span class="in">`.nf`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-normal`</span>    <span class="pp">|</span></span>
+<span id="cb14-426"><a href="#cb14-426" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.sans`</span>       <span class="pp">|</span> <span class="in">`.sf`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-sans`</span>      <span class="pp">|</span></span>
+<span id="cb14-427"><a href="#cb14-427" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.serif`</span>      <span class="pp">|</span> <span class="in">`.rm`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-serif`</span>     <span class="pp">|</span></span>
+<span id="cb14-428"><a href="#cb14-428" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.slanted`</span>    <span class="pp">|</span> <span class="in">`.sl`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-slanted`</span>   <span class="pp">|</span></span>
+<span id="cb14-429"><a href="#cb14-429" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.smallcaps`</span>  <span class="pp">|</span> <span class="in">`.sc`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-smallcaps`</span> <span class="pp">|</span></span>
+<span id="cb14-430"><a href="#cb14-430" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.upright`</span>    <span class="pp">|</span> <span class="in">`.up`</span>       <span class="pp">|</span> <span class="in">`.pfa-font-upright`</span>   <span class="pp">|</span></span>
 <span id="cb14-431"><a href="#cb14-431" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-432"><a href="#cb14-432" aria-hidden="true" tabindex="-1"></a><span class="fu">### Alignment Aliases</span></span>
 <span id="cb14-433"><a href="#cb14-433" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-434"><a href="#cb14-434" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Classes  <span class="pp">|</span> New Classes       <span class="pp">|</span></span>
+<span id="cb14-434"><a href="#cb14-434" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Classes  <span class="pp">|</span> Modern Classes       <span class="pp">|</span></span>
 <span id="cb14-435"><a href="#cb14-435" aria-hidden="true" tabindex="-1"></a><span class="pp">| :------------</span> <span class="pp">| :------------------</span> <span class="pp">|</span></span>
-<span id="cb14-436"><a href="#cb14-436" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.center`</span>      <span class="pp">|</span> Removed in version 1.0.3 <span class="pp">|</span></span>
-<span id="cb14-437"><a href="#cb14-437" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.flushleft`</span>   <span class="pp">|</span> Removed in version 1.0.3 <span class="pp">|</span></span>
-<span id="cb14-438"><a href="#cb14-438" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.flushright`</span>  <span class="pp">|</span> Removed in version 1.0.3 <span class="pp">|</span></span>
-<span id="cb14-439"><a href="#cb14-439" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.centering`</span>   <span class="pp">|</span> <span class="in">`.pfa-align-center`</span> <span class="pp">|</span></span>
-<span id="cb14-440"><a href="#cb14-440" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.raggedleft`</span>  <span class="pp">|</span> <span class="in">`.pfa-align-right`</span>  <span class="pp">|</span></span>
-<span id="cb14-441"><a href="#cb14-441" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.raggedright`</span> <span class="pp">|</span> <span class="in">`.pfa-align-left`</span>   <span class="pp">|</span></span>
-<span id="cb14-442"><a href="#cb14-442" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-443"><a href="#cb14-443" aria-hidden="true" tabindex="-1"></a><span class="fu">### Underline and Strikeout Aliases</span></span>
-<span id="cb14-444"><a href="#cb14-444" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-445"><a href="#cb14-445" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Classes <span class="pp">|</span> Short-Hand <span class="pp">|</span> New Classes            <span class="pp">|</span></span>
-<span id="cb14-446"><a href="#cb14-446" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-----------</span> <span class="pp">| :---------</span> <span class="pp">| :----------------------</span> <span class="pp">|</span></span>
-<span id="cb14-447"><a href="#cb14-447" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.uline`</span>      <span class="pp">|</span> <span class="in">`.u`</span>        <span class="pp">|</span> <span class="in">`.pfa-text-uline`</span>        <span class="pp">|</span></span>
-<span id="cb14-448"><a href="#cb14-448" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.uuline`</span>     <span class="pp">|</span> <span class="in">`.uu`</span>       <span class="pp">|</span> <span class="in">`.pfa-text-uline-double`</span> <span class="pp">|</span></span>
-<span id="cb14-449"><a href="#cb14-449" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.dashuline`</span>  <span class="pp">|</span> <span class="in">`.dau`</span>      <span class="pp">|</span> <span class="in">`.pfa-text-uline-dashed`</span> <span class="pp">|</span></span>
-<span id="cb14-450"><a href="#cb14-450" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.dotuline`</span>   <span class="pp">|</span> <span class="in">`.dou`</span>      <span class="pp">|</span> <span class="in">`.pfa-text-uline-dotted`</span> <span class="pp">|</span></span>
-<span id="cb14-451"><a href="#cb14-451" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.uwave`</span>      <span class="pp">|</span> <span class="in">`.uw`</span>       <span class="pp">|</span> <span class="in">`.pfa-text-uline-wave`</span>   <span class="pp">|</span></span>
-<span id="cb14-452"><a href="#cb14-452" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.sout`</span>       <span class="pp">|</span> <span class="in">`.so`</span>       <span class="pp">|</span> <span class="in">`.pfa-text-strikeout`</span>    <span class="pp">|</span></span>
-<span id="cb14-453"><a href="#cb14-453" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.xout`</span>       <span class="pp">|</span> <span class="in">`.xo`</span>       <span class="pp">|</span> Removed in version 1.0.3 <span class="pp">|</span></span></code></pre></div>
+<span id="cb14-436"><a href="#cb14-436" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.centering`</span>   <span class="pp">|</span> <span class="in">`.pfa-align-center`</span> <span class="pp">|</span></span>
+<span id="cb14-437"><a href="#cb14-437" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.raggedleft`</span>  <span class="pp">|</span> <span class="in">`.pfa-align-right`</span>  <span class="pp">|</span></span>
+<span id="cb14-438"><a href="#cb14-438" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.raggedright`</span> <span class="pp">|</span> <span class="in">`.pfa-align-left`</span>   <span class="pp">|</span></span>
+<span id="cb14-439"><a href="#cb14-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-440"><a href="#cb14-440" aria-hidden="true" tabindex="-1"></a><span class="fu">### Text Decoration Aliases</span></span>
+<span id="cb14-441"><a href="#cb14-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-442"><a href="#cb14-442" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Classes <span class="pp">|</span> Shorthand <span class="pp">|</span> Modern Classes            <span class="pp">|</span></span>
+<span id="cb14-443"><a href="#cb14-443" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-----------</span> <span class="pp">| :---------</span> <span class="pp">| :----------------------</span> <span class="pp">|</span></span>
+<span id="cb14-444"><a href="#cb14-444" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.uline`</span>      <span class="pp">|</span> <span class="in">`.u`</span>        <span class="pp">|</span> <span class="in">`.pfa-text-uline`</span>        <span class="pp">|</span></span>
+<span id="cb14-445"><a href="#cb14-445" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.uuline`</span>     <span class="pp">|</span> <span class="in">`.uu`</span>       <span class="pp">|</span> <span class="in">`.pfa-text-uline-double`</span> <span class="pp">|</span></span>
+<span id="cb14-446"><a href="#cb14-446" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.dashuline`</span>  <span class="pp">|</span> <span class="in">`.dau`</span>      <span class="pp">|</span> <span class="in">`.pfa-text-uline-dashed`</span> <span class="pp">|</span></span>
+<span id="cb14-447"><a href="#cb14-447" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.dotuline`</span>   <span class="pp">|</span> <span class="in">`.dou`</span>      <span class="pp">|</span> <span class="in">`.pfa-text-uline-dotted`</span> <span class="pp">|</span></span>
+<span id="cb14-448"><a href="#cb14-448" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.uwave`</span>      <span class="pp">|</span> <span class="in">`.uw`</span>       <span class="pp">|</span> <span class="in">`.pfa-text-uline-wave`</span>   <span class="pp">|</span></span>
+<span id="cb14-449"><a href="#cb14-449" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.sout`</span>       <span class="pp">|</span> <span class="in">`.so`</span>       <span class="pp">|</span> <span class="in">`.pfa-text-strikeout`</span>    <span class="pp">|</span></span>
+<span id="cb14-450"><a href="#cb14-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-451"><a href="#cb14-451" aria-hidden="true" tabindex="-1"></a><span class="fu">## Removed Classes</span></span>
+<span id="cb14-452"><a href="#cb14-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-453"><a href="#cb14-453" aria-hidden="true" tabindex="-1"></a>The following legacy classes were removed in version 1.0.3 and are no longer recognized by the filter.</span>
+<span id="cb14-454"><a href="#cb14-454" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-455"><a href="#cb14-455" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Removed Class <span class="pp">|</span> Shorthand <span class="pp">|</span> Removed In Version <span class="pp">|</span></span>
+<span id="cb14-456"><a href="#cb14-456" aria-hidden="true" tabindex="-1"></a><span class="pp">| :------------</span> <span class="pp">| :--------</span> <span class="pp">| :-----------------</span> <span class="pp">|</span></span>
+<span id="cb14-457"><a href="#cb14-457" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.center`</span>     <span class="pp">|</span> —         <span class="pp">|</span> 1.0.3              <span class="pp">|</span></span>
+<span id="cb14-458"><a href="#cb14-458" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.flushleft`</span>  <span class="pp">|</span> —         <span class="pp">|</span> 1.0.3              <span class="pp">|</span></span>
+<span id="cb14-459"><a href="#cb14-459" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.flushright`</span> <span class="pp">|</span> —         <span class="pp">|</span> 1.0.3              <span class="pp">|</span></span>
+<span id="cb14-460"><a href="#cb14-460" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.xout`</span>       <span class="pp">|</span> <span class="in">`.xo`</span>     <span class="pp">|</span> 1.0.3              <span class="pp">|</span></span></code></pre></div>
 <h3 id="output.md">output.md</h3>
 <div class="sourceCode" id="cb15"><pre
 class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
@@ -1353,7 +1360,7 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>for styling larger blocks of content. This follows Pandoc&#39;s standard</span>
 <span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>syntax conventions. For more information on this syntax, please refer to</span>
 <span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>the official Pandoc documentation: [Divs and Spans --- Pandoc User&#39;s</span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>Guide](https://pandoc.org/demo/example33/8.18-divs-and-spans.html)</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>Guide](https://pandoc.org/demo/example33/8.18-divs-and-spans.html).</span>
 <span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
 <span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This font is extra extra large.</span><span class="co">]</span>{.pfa-text-2xl}</span>
@@ -1522,404 +1529,409 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb15-193"><a href="#cb15-193" aria-hidden="true" tabindex="-1"></a>lowercase conversions are preserved consistently across all output</span>
 <span id="cb15-194"><a href="#cb15-194" aria-hidden="true" tabindex="-1"></a>formats and remain intact when copied into other applications.</span>
 <span id="cb15-195"><a href="#cb15-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-196"><a href="#cb15-196" aria-hidden="true" tabindex="-1"></a><span class="fu">### Casing Tranformations in Bracketed Spans</span></span>
+<span id="cb15-196"><a href="#cb15-196" aria-hidden="true" tabindex="-1"></a><span class="fu">### Casing Transformations in Bracketed Spans</span></span>
 <span id="cb15-197"><a href="#cb15-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-198"><a href="#cb15-198" aria-hidden="true" tabindex="-1"></a>  -----------------------------------------------------------------------------------------</span>
-<span id="cb15-199"><a href="#cb15-199" aria-hidden="true" tabindex="-1"></a>  Casing         Syntax                                         Output</span>
-<span id="cb15-200"><a href="#cb15-200" aria-hidden="true" tabindex="-1"></a>  -------------- ---------------------------------------------- ---------------------------</span>
-<span id="cb15-201"><a href="#cb15-201" aria-hidden="true" tabindex="-1"></a>  Uppercase      <span class="in">`[coerced]{.pfa-uppercase}`</span>                    <span class="co">[</span><span class="ot">COERCED</span><span class="co">]</span>{.pfa-uppercase}</span>
+<span id="cb15-198"><a href="#cb15-198" aria-hidden="true" tabindex="-1"></a>  Casing      Syntax                       Output</span>
+<span id="cb15-199"><a href="#cb15-199" aria-hidden="true" tabindex="-1"></a>  ----------- ---------------------------- --------------------------</span>
+<span id="cb15-200"><a href="#cb15-200" aria-hidden="true" tabindex="-1"></a>  Uppercase   <span class="in">`[Sample]{.pfa-uppercase}`</span>   <span class="co">[</span><span class="ot">SAMPLE</span><span class="co">]</span>{.pfa-uppercase}</span>
+<span id="cb15-201"><a href="#cb15-201" aria-hidden="true" tabindex="-1"></a>  Lowercase   <span class="in">`[SAMPLE]{.pfa-lowercase}`</span>   <span class="co">[</span><span class="ot">sample</span><span class="co">]</span>{.pfa-lowercase}</span>
 <span id="cb15-202"><a href="#cb15-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-203"><a href="#cb15-203" aria-hidden="true" tabindex="-1"></a>  Lowercase      <span class="in">`[COERCED]{.pfa-lowercase}`</span>                    <span class="co">[</span><span class="ot">coerced</span><span class="co">]</span>{.pfa-lowercase}</span>
-<span id="cb15-204"><a href="#cb15-204" aria-hidden="true" tabindex="-1"></a>  -----------------------------------------------------------------------------------------</span>
-<span id="cb15-205"><a href="#cb15-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-206"><a href="#cb15-206" aria-hidden="true" tabindex="-1"></a><span class="fu">### Casing Transformations in Fenced Divs</span></span>
-<span id="cb15-207"><a href="#cb15-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-208"><a href="#cb15-208" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Lowercase</span></span>
-<span id="cb15-209"><a href="#cb15-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-210"><a href="#cb15-210" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb15-211"><a href="#cb15-211" aria-hidden="true" tabindex="-1"></a>::: {.pfa-lowercase}</span>
-<span id="cb15-212"><a href="#cb15-212" aria-hidden="true" tabindex="-1"></a>THIS PARAGRAPH IS TRANSFORMED TO LOWERCASE.</span>
-<span id="cb15-213"><a href="#cb15-213" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-214"><a href="#cb15-214" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-215"><a href="#cb15-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-216"><a href="#cb15-216" aria-hidden="true" tabindex="-1"></a>::: pfa-lowercase</span>
-<span id="cb15-217"><a href="#cb15-217" aria-hidden="true" tabindex="-1"></a>this paragraph is transformed to lowercase.</span>
-<span id="cb15-218"><a href="#cb15-218" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-219"><a href="#cb15-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-220"><a href="#cb15-220" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Uppercase</span></span>
-<span id="cb15-221"><a href="#cb15-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-222"><a href="#cb15-222" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb15-223"><a href="#cb15-223" aria-hidden="true" tabindex="-1"></a>::: {.pfa-uppercase}</span>
-<span id="cb15-224"><a href="#cb15-224" aria-hidden="true" tabindex="-1"></a>this paragraph is transformed to uppercase.</span>
-<span id="cb15-225"><a href="#cb15-225" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-226"><a href="#cb15-226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-227"><a href="#cb15-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-228"><a href="#cb15-228" aria-hidden="true" tabindex="-1"></a>::: pfa-uppercase</span>
-<span id="cb15-229"><a href="#cb15-229" aria-hidden="true" tabindex="-1"></a>THIS PARAGRAPH IS TRANSFORMED TO UPPERCASE.</span>
-<span id="cb15-230"><a href="#cb15-230" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-231"><a href="#cb15-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-232"><a href="#cb15-232" aria-hidden="true" tabindex="-1"></a><span class="fu">## Text Decorations for Bracketed Spans</span></span>
-<span id="cb15-233"><a href="#cb15-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-234"><a href="#cb15-234" aria-hidden="true" tabindex="-1"></a>Text decoration styles are implemented using the LaTeX <span class="in">`ulem`</span> package,</span>
-<span id="cb15-235"><a href="#cb15-235" aria-hidden="true" tabindex="-1"></a>which is automatically included via a <span class="in">`header-include`</span> whenever any of</span>
-<span id="cb15-236"><a href="#cb15-236" aria-hidden="true" tabindex="-1"></a>the corresponding classes are detected in the document. These styles are</span>
-<span id="cb15-237"><a href="#cb15-237" aria-hidden="true" tabindex="-1"></a>also mapped to equivalent CSS properties to ensure consistent rendering</span>
-<span id="cb15-238"><a href="#cb15-238" aria-hidden="true" tabindex="-1"></a>across LaTeX/PDF and HTML outputs. These decorations apply only to</span>
-<span id="cb15-239"><a href="#cb15-239" aria-hidden="true" tabindex="-1"></a>**Bracketed Spans**.</span>
-<span id="cb15-240"><a href="#cb15-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-241"><a href="#cb15-241" aria-hidden="true" tabindex="-1"></a>  --------------------------------------------------------------------------------------------------------</span>
-<span id="cb15-242"><a href="#cb15-242" aria-hidden="true" tabindex="-1"></a>  Decoration         Syntax                                      Output</span>
-<span id="cb15-243"><a href="#cb15-243" aria-hidden="true" tabindex="-1"></a>  ------------------ ------------------------------------------- -----------------------------------------</span>
-<span id="cb15-244"><a href="#cb15-244" aria-hidden="true" tabindex="-1"></a>  Single Underline   <span class="in">`[Sample]{.pfa-text-uline}`</span>                 [<span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.underline}]{.pfa-text-uline}</span>
-<span id="cb15-245"><a href="#cb15-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-246"><a href="#cb15-246" aria-hidden="true" tabindex="-1"></a>  Double Underline   <span class="in">`[Sample]{.pfa-text-uline-double}`</span>          <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-text-uline-double}</span>
-<span id="cb15-247"><a href="#cb15-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-248"><a href="#cb15-248" aria-hidden="true" tabindex="-1"></a>  Dashed Underline   <span class="in">`[Sample]{.pfa-text-uline-dashed}`</span>          <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-text-uline-dashed}</span>
-<span id="cb15-249"><a href="#cb15-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-250"><a href="#cb15-250" aria-hidden="true" tabindex="-1"></a>  Dotted Underline   <span class="in">`[Sample]{.pfa-text-uline-dotted}`</span>          <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-text-uline-dotted}</span>
-<span id="cb15-251"><a href="#cb15-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-252"><a href="#cb15-252" aria-hidden="true" tabindex="-1"></a>  Wavy Underline     <span class="in">`[Sample]{.pfa-text-uline-wave}`</span>            <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-text-uline-wave}</span>
+<span id="cb15-203"><a href="#cb15-203" aria-hidden="true" tabindex="-1"></a><span class="fu">### Casing Transformations in Fenced Divs</span></span>
+<span id="cb15-204"><a href="#cb15-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-205"><a href="#cb15-205" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Lowercase</span></span>
+<span id="cb15-206"><a href="#cb15-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-207"><a href="#cb15-207" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-208"><a href="#cb15-208" aria-hidden="true" tabindex="-1"></a>::: {.pfa-lowercase}</span>
+<span id="cb15-209"><a href="#cb15-209" aria-hidden="true" tabindex="-1"></a>THIS PARAGRAPH IS TRANSFORMED TO LOWERCASE.</span>
+<span id="cb15-210"><a href="#cb15-210" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-211"><a href="#cb15-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-212"><a href="#cb15-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-213"><a href="#cb15-213" aria-hidden="true" tabindex="-1"></a>::: pfa-lowercase</span>
+<span id="cb15-214"><a href="#cb15-214" aria-hidden="true" tabindex="-1"></a>this paragraph is transformed to lowercase.</span>
+<span id="cb15-215"><a href="#cb15-215" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-216"><a href="#cb15-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-217"><a href="#cb15-217" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Uppercase</span></span>
+<span id="cb15-218"><a href="#cb15-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-219"><a href="#cb15-219" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-220"><a href="#cb15-220" aria-hidden="true" tabindex="-1"></a>::: {.pfa-uppercase}</span>
+<span id="cb15-221"><a href="#cb15-221" aria-hidden="true" tabindex="-1"></a>this paragraph is transformed to uppercase.</span>
+<span id="cb15-222"><a href="#cb15-222" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-223"><a href="#cb15-223" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-224"><a href="#cb15-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-225"><a href="#cb15-225" aria-hidden="true" tabindex="-1"></a>::: pfa-uppercase</span>
+<span id="cb15-226"><a href="#cb15-226" aria-hidden="true" tabindex="-1"></a>THIS PARAGRAPH IS TRANSFORMED TO UPPERCASE.</span>
+<span id="cb15-227"><a href="#cb15-227" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-228"><a href="#cb15-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-229"><a href="#cb15-229" aria-hidden="true" tabindex="-1"></a><span class="fu">## Text Decorations for Bracketed Spans</span></span>
+<span id="cb15-230"><a href="#cb15-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-231"><a href="#cb15-231" aria-hidden="true" tabindex="-1"></a>Text decoration styles are implemented using the LaTeX <span class="in">`ulem`</span> package,</span>
+<span id="cb15-232"><a href="#cb15-232" aria-hidden="true" tabindex="-1"></a>which is automatically included via the <span class="in">`header-includes`</span> field whenever</span>
+<span id="cb15-233"><a href="#cb15-233" aria-hidden="true" tabindex="-1"></a>any of the corresponding classes are detected in the document. These</span>
+<span id="cb15-234"><a href="#cb15-234" aria-hidden="true" tabindex="-1"></a>styles are also mapped to equivalent CSS properties to ensure consistent</span>
+<span id="cb15-235"><a href="#cb15-235" aria-hidden="true" tabindex="-1"></a>rendering across LaTeX/PDF and HTML outputs. These decorations apply</span>
+<span id="cb15-236"><a href="#cb15-236" aria-hidden="true" tabindex="-1"></a>only to **Bracketed Spans**.</span>
+<span id="cb15-237"><a href="#cb15-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-238"><a href="#cb15-238" aria-hidden="true" tabindex="-1"></a>  --------------------------------------------------------------------------------------------------------</span>
+<span id="cb15-239"><a href="#cb15-239" aria-hidden="true" tabindex="-1"></a>  Decoration         Syntax                                      Output</span>
+<span id="cb15-240"><a href="#cb15-240" aria-hidden="true" tabindex="-1"></a>  ------------------ ------------------------------------------- -----------------------------------------</span>
+<span id="cb15-241"><a href="#cb15-241" aria-hidden="true" tabindex="-1"></a>  Single Underline   <span class="in">`[Sample]{.pfa-text-uline}`</span>                 [<span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.underline}]{.pfa-text-uline}</span>
+<span id="cb15-242"><a href="#cb15-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-243"><a href="#cb15-243" aria-hidden="true" tabindex="-1"></a>  Double Underline   <span class="in">`[Sample]{.pfa-text-uline-double}`</span>          <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-text-uline-double}</span>
+<span id="cb15-244"><a href="#cb15-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-245"><a href="#cb15-245" aria-hidden="true" tabindex="-1"></a>  Dashed Underline   <span class="in">`[Sample]{.pfa-text-uline-dashed}`</span>          <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-text-uline-dashed}</span>
+<span id="cb15-246"><a href="#cb15-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-247"><a href="#cb15-247" aria-hidden="true" tabindex="-1"></a>  Dotted Underline   <span class="in">`[Sample]{.pfa-text-uline-dotted}`</span>          <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-text-uline-dotted}</span>
+<span id="cb15-248"><a href="#cb15-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-249"><a href="#cb15-249" aria-hidden="true" tabindex="-1"></a>  Wavy Underline     <span class="in">`[Sample]{.pfa-text-uline-wave}`</span>            <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-text-uline-wave}</span>
+<span id="cb15-250"><a href="#cb15-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-251"><a href="#cb15-251" aria-hidden="true" tabindex="-1"></a>  Strikeout          <span class="in">`[Sample]{.pfa-text-strikeout}`</span>             <span class="co">[</span><span class="ot">~~Sample~~</span><span class="co">]</span>{.pfa-text-strikeout}</span>
+<span id="cb15-252"><a href="#cb15-252" aria-hidden="true" tabindex="-1"></a>  --------------------------------------------------------------------------------------------------------</span>
 <span id="cb15-253"><a href="#cb15-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-254"><a href="#cb15-254" aria-hidden="true" tabindex="-1"></a>  Strikeout          <span class="in">`[Sample]{.pfa-text-strikeout}`</span>             <span class="co">[</span><span class="ot">~~Sample~~</span><span class="co">]</span>{.pfa-text-strikeout}</span>
-<span id="cb15-255"><a href="#cb15-255" aria-hidden="true" tabindex="-1"></a>  --------------------------------------------------------------------------------------------------------</span>
-<span id="cb15-256"><a href="#cb15-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-257"><a href="#cb15-257" aria-hidden="true" tabindex="-1"></a>**Note:** The <span class="in">`\xout{...}`</span> marked-out text style has been removed from</span>
-<span id="cb15-258"><a href="#cb15-258" aria-hidden="true" tabindex="-1"></a>this version of the package due to lack of consistent cross-format</span>
-<span id="cb15-259"><a href="#cb15-259" aria-hidden="true" tabindex="-1"></a>support in HTML/CSS and limited usage in modern document workflows.</span>
-<span id="cb15-260"><a href="#cb15-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-261"><a href="#cb15-261" aria-hidden="true" tabindex="-1"></a><span class="fu">## Colors</span></span>
+<span id="cb15-254"><a href="#cb15-254" aria-hidden="true" tabindex="-1"></a>**Note:** The <span class="in">`\xout{...}`</span> marked-out text style has been removed from</span>
+<span id="cb15-255"><a href="#cb15-255" aria-hidden="true" tabindex="-1"></a>this version of the package due to lack of consistent cross-format</span>
+<span id="cb15-256"><a href="#cb15-256" aria-hidden="true" tabindex="-1"></a>support in HTML/CSS and limited usage in modern document workflows.</span>
+<span id="cb15-257"><a href="#cb15-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-258"><a href="#cb15-258" aria-hidden="true" tabindex="-1"></a><span class="fu">## Colors</span></span>
+<span id="cb15-259"><a href="#cb15-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-260"><a href="#cb15-260" aria-hidden="true" tabindex="-1"></a>This section describes how to apply color to text using the</span>
+<span id="cb15-261"><a href="#cb15-261" aria-hidden="true" tabindex="-1"></a><span class="in">`pfa-font-color`</span> attribute in both Bracketed Spans and Fenced Divs.</span>
 <span id="cb15-262"><a href="#cb15-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-263"><a href="#cb15-263" aria-hidden="true" tabindex="-1"></a>This section describes how to apply color to text using the</span>
-<span id="cb15-264"><a href="#cb15-264" aria-hidden="true" tabindex="-1"></a><span class="in">`pfa-font-color`</span> attribute in both Bracketed Spans and Fenced Divs.</span>
-<span id="cb15-265"><a href="#cb15-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-266"><a href="#cb15-266" aria-hidden="true" tabindex="-1"></a><span class="fu">### Flexible Color Terminology</span></span>
-<span id="cb15-267"><a href="#cb15-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-268"><a href="#cb15-268" aria-hidden="true" tabindex="-1"></a>The <span class="in">`pfa-font-color`</span> attribute supports CSS3 named colors, full</span>
-<span id="cb15-269"><a href="#cb15-269" aria-hidden="true" tabindex="-1"></a>hexadecimal values, and three-digit shorthand hexadecimal values. For</span>
-<span id="cb15-270"><a href="#cb15-270" aria-hidden="true" tabindex="-1"></a>CSS3 named colors, the filter parses and normalizes the name to support</span>
-<span id="cb15-271"><a href="#cb15-271" aria-hidden="true" tabindex="-1"></a>different naming conventions.</span>
+<span id="cb15-263"><a href="#cb15-263" aria-hidden="true" tabindex="-1"></a><span class="fu">### Flexible Color Terminology</span></span>
+<span id="cb15-264"><a href="#cb15-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-265"><a href="#cb15-265" aria-hidden="true" tabindex="-1"></a>The <span class="in">`pfa-font-color`</span> attribute supports CSS3 named colors, full</span>
+<span id="cb15-266"><a href="#cb15-266" aria-hidden="true" tabindex="-1"></a>hexadecimal values, and three-digit shorthand hexadecimal values. For</span>
+<span id="cb15-267"><a href="#cb15-267" aria-hidden="true" tabindex="-1"></a>CSS3 named colors, the filter parses and normalizes the name to support</span>
+<span id="cb15-268"><a href="#cb15-268" aria-hidden="true" tabindex="-1"></a>different naming conventions.</span>
+<span id="cb15-269"><a href="#cb15-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-270"><a href="#cb15-270" aria-hidden="true" tabindex="-1"></a>All naming conventions below resolve to the CSS3 color</span>
+<span id="cb15-271"><a href="#cb15-271" aria-hidden="true" tabindex="-1"></a><span class="in">`mediumvioletred`</span>.</span>
 <span id="cb15-272"><a href="#cb15-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-273"><a href="#cb15-273" aria-hidden="true" tabindex="-1"></a>All naming conventions below resolve to the CSS3 color</span>
-<span id="cb15-274"><a href="#cb15-274" aria-hidden="true" tabindex="-1"></a><span class="in">`mediumvioletred`</span>.</span>
-<span id="cb15-275"><a href="#cb15-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-276"><a href="#cb15-276" aria-hidden="true" tabindex="-1"></a>  -----------------------------------------------------------------------------------------------------</span>
-<span id="cb15-277"><a href="#cb15-277" aria-hidden="true" tabindex="-1"></a>  Naming Convention  Syntax                                          Output</span>
-<span id="cb15-278"><a href="#cb15-278" aria-hidden="true" tabindex="-1"></a>  ------------------ ----------------------------------------------- ----------------------------------</span>
-<span id="cb15-279"><a href="#cb15-279" aria-hidden="true" tabindex="-1"></a>  Lowercase          <span class="in">`[Color]{pfa-font-color=&quot;mediumvioletred&quot;}`</span>     <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
-<span id="cb15-280"><a href="#cb15-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-281"><a href="#cb15-281" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
-<span id="cb15-282"><a href="#cb15-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-283"><a href="#cb15-283" aria-hidden="true" tabindex="-1"></a>  Spaces             <span class="in">`[Color]{pfa-font-color=&quot;Medium Violet Red&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
-<span id="cb15-284"><a href="#cb15-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-285"><a href="#cb15-285" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
-<span id="cb15-286"><a href="#cb15-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-287"><a href="#cb15-287" aria-hidden="true" tabindex="-1"></a>  Title Case         <span class="in">`[Color]{pfa-font-color=&quot;Medium Violet Red&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
-<span id="cb15-288"><a href="#cb15-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-289"><a href="#cb15-289" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
-<span id="cb15-290"><a href="#cb15-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-291"><a href="#cb15-291" aria-hidden="true" tabindex="-1"></a>  Kebab Case         <span class="in">`[Color]{pfa-font-color=&quot;medium-violet-red&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
-<span id="cb15-292"><a href="#cb15-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-293"><a href="#cb15-293" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
-<span id="cb15-294"><a href="#cb15-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-295"><a href="#cb15-295" aria-hidden="true" tabindex="-1"></a>  Snake Case         <span class="in">`[Color]{pfa-font-color=&quot;medium_violet_red&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
-<span id="cb15-296"><a href="#cb15-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-297"><a href="#cb15-297" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
-<span id="cb15-298"><a href="#cb15-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-299"><a href="#cb15-299" aria-hidden="true" tabindex="-1"></a>  Camel Case         <span class="in">`[Color]{pfa-font-color=&quot;mediumVioletRed&quot;}`</span>     <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
-<span id="cb15-300"><a href="#cb15-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-301"><a href="#cb15-301" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
-<span id="cb15-302"><a href="#cb15-302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-303"><a href="#cb15-303" aria-hidden="true" tabindex="-1"></a>  Pascal Case        <span class="in">`[Color]{pfa-font-color=&quot;MediumVioletRed&quot;}`</span>     <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
-<span id="cb15-304"><a href="#cb15-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-305"><a href="#cb15-305" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
+<span id="cb15-273"><a href="#cb15-273" aria-hidden="true" tabindex="-1"></a>  -----------------------------------------------------------------------------------------------------</span>
+<span id="cb15-274"><a href="#cb15-274" aria-hidden="true" tabindex="-1"></a>  Naming Convention  Syntax                                          Output</span>
+<span id="cb15-275"><a href="#cb15-275" aria-hidden="true" tabindex="-1"></a>  ------------------ ----------------------------------------------- ----------------------------------</span>
+<span id="cb15-276"><a href="#cb15-276" aria-hidden="true" tabindex="-1"></a>  Lowercase          <span class="in">`[Color]{pfa-font-color=&quot;mediumvioletred&quot;}`</span>     <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb15-277"><a href="#cb15-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-278"><a href="#cb15-278" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
+<span id="cb15-279"><a href="#cb15-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-280"><a href="#cb15-280" aria-hidden="true" tabindex="-1"></a>  Spaces             <span class="in">`[Color]{pfa-font-color=&quot;Medium Violet Red&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb15-281"><a href="#cb15-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-282"><a href="#cb15-282" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
+<span id="cb15-283"><a href="#cb15-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-284"><a href="#cb15-284" aria-hidden="true" tabindex="-1"></a>  Title Case         <span class="in">`[Color]{pfa-font-color=&quot;Medium Violet Red&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb15-285"><a href="#cb15-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-286"><a href="#cb15-286" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
+<span id="cb15-287"><a href="#cb15-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-288"><a href="#cb15-288" aria-hidden="true" tabindex="-1"></a>  Kebab Case         <span class="in">`[Color]{pfa-font-color=&quot;medium-violet-red&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb15-289"><a href="#cb15-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-290"><a href="#cb15-290" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
+<span id="cb15-291"><a href="#cb15-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-292"><a href="#cb15-292" aria-hidden="true" tabindex="-1"></a>  Snake Case         <span class="in">`[Color]{pfa-font-color=&quot;medium_violet_red&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb15-293"><a href="#cb15-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-294"><a href="#cb15-294" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
+<span id="cb15-295"><a href="#cb15-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-296"><a href="#cb15-296" aria-hidden="true" tabindex="-1"></a>  Camel Case         <span class="in">`[Color]{pfa-font-color=&quot;mediumVioletRed&quot;}`</span>     <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb15-297"><a href="#cb15-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-298"><a href="#cb15-298" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
+<span id="cb15-299"><a href="#cb15-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-300"><a href="#cb15-300" aria-hidden="true" tabindex="-1"></a>  Pascal Case        <span class="in">`[Color]{pfa-font-color=&quot;MediumVioletRed&quot;}`</span>     <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb15-301"><a href="#cb15-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-302"><a href="#cb15-302" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
+<span id="cb15-303"><a href="#cb15-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-304"><a href="#cb15-304" aria-hidden="true" tabindex="-1"></a>  Screaming Snake    <span class="in">`[Color]{pfa-font-color=&quot;MEDIUM_VIOLET_RED&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb15-305"><a href="#cb15-305" aria-hidden="true" tabindex="-1"></a>  Case                                                               </span>
 <span id="cb15-306"><a href="#cb15-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-307"><a href="#cb15-307" aria-hidden="true" tabindex="-1"></a>  Screaming Snake    <span class="in">`[Color]{pfa-font-color=&quot;MEDIUM_VIOLET_RED&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
-<span id="cb15-308"><a href="#cb15-308" aria-hidden="true" tabindex="-1"></a>  Case                                                               </span>
-<span id="cb15-309"><a href="#cb15-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-310"><a href="#cb15-310" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
+<span id="cb15-307"><a href="#cb15-307" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                     </span></span>
+<span id="cb15-308"><a href="#cb15-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-309"><a href="#cb15-309" aria-hidden="true" tabindex="-1"></a>  Uppercase          <span class="in">`[Color]{pfa-font-color=&quot;MEDIUMVIOLETRED&quot;}`</span>     <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb15-310"><a href="#cb15-310" aria-hidden="true" tabindex="-1"></a>  -----------------------------------------------------------------------------------------------------</span>
 <span id="cb15-311"><a href="#cb15-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-312"><a href="#cb15-312" aria-hidden="true" tabindex="-1"></a>  Uppercase          <span class="in">`[Color]{pfa-font-color=&quot;MEDIUMVIOLETRED&quot;}`</span>     <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
-<span id="cb15-313"><a href="#cb15-313" aria-hidden="true" tabindex="-1"></a>  -----------------------------------------------------------------------------------------------------</span>
-<span id="cb15-314"><a href="#cb15-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-315"><a href="#cb15-315" aria-hidden="true" tabindex="-1"></a><span class="fu">### Colors in Bracketed Spans</span></span>
-<span id="cb15-316"><a href="#cb15-316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-317"><a href="#cb15-317" aria-hidden="true" tabindex="-1"></a>  ---------------------------------------------------------------------------------------------------</span>
-<span id="cb15-318"><a href="#cb15-318" aria-hidden="true" tabindex="-1"></a>  Input Type       Syntax                                         Output</span>
-<span id="cb15-319"><a href="#cb15-319" aria-hidden="true" tabindex="-1"></a>  ---------------- ---------------------------------------------- -----------------------------------</span>
-<span id="cb15-320"><a href="#cb15-320" aria-hidden="true" tabindex="-1"></a>  CSS3 Named       <span class="in">`[Sample]{pfa-font-color=&quot;crimson&quot;}`</span>           <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #DC143C;&quot;}</span>
-<span id="cb15-321"><a href="#cb15-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-322"><a href="#cb15-322" aria-hidden="true" tabindex="-1"></a>  Hex Full         <span class="in">`[Sample]{pfa-font-color=&quot;#2E8B57&quot;}`</span>           <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #2E8B57;&quot;}</span>
-<span id="cb15-323"><a href="#cb15-323" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-324"><a href="#cb15-324" aria-hidden="true" tabindex="-1"></a>  Hex              <span class="in">`[Sample]{pfa-font-color=&quot;#666&quot;}`</span>              <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #666666;&quot;}</span>
-<span id="cb15-325"><a href="#cb15-325" aria-hidden="true" tabindex="-1"></a>  Shorthand<span class="ot">[^2]</span>                                                   </span>
-<span id="cb15-326"><a href="#cb15-326" aria-hidden="true" tabindex="-1"></a>  ---------------------------------------------------------------------------------------------------</span>
-<span id="cb15-327"><a href="#cb15-327" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-328"><a href="#cb15-328" aria-hidden="true" tabindex="-1"></a><span class="fu">### Colors in Fenced Divs</span></span>
-<span id="cb15-329"><a href="#cb15-329" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-330"><a href="#cb15-330" aria-hidden="true" tabindex="-1"></a>When applied to a fenced Div, the <span class="in">`pfa-font-color`</span> attribute defines the</span>
-<span id="cb15-331"><a href="#cb15-331" aria-hidden="true" tabindex="-1"></a>default text color for the entire block. All enclosed content inherits</span>
-<span id="cb15-332"><a href="#cb15-332" aria-hidden="true" tabindex="-1"></a>this color unless explicitly overridden by a Bracketed Span.</span>
-<span id="cb15-333"><a href="#cb15-333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-334"><a href="#cb15-334" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb15-335"><a href="#cb15-335" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;DarkSlateGrey&quot;}</span>
-<span id="cb15-336"><a href="#cb15-336" aria-hidden="true" tabindex="-1"></a>The fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
-<span id="cb15-337"><a href="#cb15-337" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-338"><a href="#cb15-338" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-339"><a href="#cb15-339" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-340"><a href="#cb15-340" aria-hidden="true" tabindex="-1"></a>::: {style=&quot;color: #2F4F4F;&quot;}</span>
-<span id="cb15-341"><a href="#cb15-341" aria-hidden="true" tabindex="-1"></a>The fenced Div defines *DarkSlateGrey* as the default text color for</span>
-<span id="cb15-342"><a href="#cb15-342" aria-hidden="true" tabindex="-1"></a>this block.</span>
-<span id="cb15-343"><a href="#cb15-343" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-344"><a href="#cb15-344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-345"><a href="#cb15-345" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb15-346"><a href="#cb15-346" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;DarkSlateGrey&quot;}</span>
-<span id="cb15-347"><a href="#cb15-347" aria-hidden="true" tabindex="-1"></a>The fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
-<span id="cb15-348"><a href="#cb15-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-349"><a href="#cb15-349" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This Bracketed Span overrides the inherited color to _tomato_.</span><span class="co">]</span>{pfa-font-color=&quot;tomato&quot;}</span>
-<span id="cb15-350"><a href="#cb15-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-351"><a href="#cb15-351" aria-hidden="true" tabindex="-1"></a>The remaining text continues using _DarkSlateGrey_ for the remainder of the Div.</span>
-<span id="cb15-352"><a href="#cb15-352" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-353"><a href="#cb15-353" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-354"><a href="#cb15-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-355"><a href="#cb15-355" aria-hidden="true" tabindex="-1"></a>::: {style=&quot;color: #2F4F4F;&quot;}</span>
-<span id="cb15-356"><a href="#cb15-356" aria-hidden="true" tabindex="-1"></a>The fenced Div defines *DarkSlateGrey* as the default text color for</span>
-<span id="cb15-357"><a href="#cb15-357" aria-hidden="true" tabindex="-1"></a>this block.</span>
+<span id="cb15-312"><a href="#cb15-312" aria-hidden="true" tabindex="-1"></a><span class="fu">### Colors in Bracketed Spans</span></span>
+<span id="cb15-313"><a href="#cb15-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-314"><a href="#cb15-314" aria-hidden="true" tabindex="-1"></a>  ---------------------------------------------------------------------------------------------------</span>
+<span id="cb15-315"><a href="#cb15-315" aria-hidden="true" tabindex="-1"></a>  Input Type       Syntax                                         Output</span>
+<span id="cb15-316"><a href="#cb15-316" aria-hidden="true" tabindex="-1"></a>  ---------------- ---------------------------------------------- -----------------------------------</span>
+<span id="cb15-317"><a href="#cb15-317" aria-hidden="true" tabindex="-1"></a>  CSS3 Named       <span class="in">`[Sample]{pfa-font-color=&quot;crimson&quot;}`</span>           <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #DC143C;&quot;}</span>
+<span id="cb15-318"><a href="#cb15-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-319"><a href="#cb15-319" aria-hidden="true" tabindex="-1"></a>  Hex Full         <span class="in">`[Sample]{pfa-font-color=&quot;#2E8B57&quot;}`</span>           <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #2E8B57;&quot;}</span>
+<span id="cb15-320"><a href="#cb15-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-321"><a href="#cb15-321" aria-hidden="true" tabindex="-1"></a>  Hex              <span class="in">`[Sample]{pfa-font-color=&quot;#666&quot;}`</span>              <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #666666;&quot;}</span>
+<span id="cb15-322"><a href="#cb15-322" aria-hidden="true" tabindex="-1"></a>  Shorthand<span class="ot">[^2]</span>                                                   </span>
+<span id="cb15-323"><a href="#cb15-323" aria-hidden="true" tabindex="-1"></a>  ---------------------------------------------------------------------------------------------------</span>
+<span id="cb15-324"><a href="#cb15-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-325"><a href="#cb15-325" aria-hidden="true" tabindex="-1"></a><span class="fu">### Colors in Fenced Divs</span></span>
+<span id="cb15-326"><a href="#cb15-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-327"><a href="#cb15-327" aria-hidden="true" tabindex="-1"></a>When applied to a Fenced Div, the <span class="in">`pfa-font-color`</span> attribute defines the</span>
+<span id="cb15-328"><a href="#cb15-328" aria-hidden="true" tabindex="-1"></a>default text color for the entire block. All enclosed content inherits</span>
+<span id="cb15-329"><a href="#cb15-329" aria-hidden="true" tabindex="-1"></a>this color unless explicitly overridden by a Bracketed Span.</span>
+<span id="cb15-330"><a href="#cb15-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-331"><a href="#cb15-331" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-332"><a href="#cb15-332" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;DarkSlateGrey&quot;}</span>
+<span id="cb15-333"><a href="#cb15-333" aria-hidden="true" tabindex="-1"></a>The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
+<span id="cb15-334"><a href="#cb15-334" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-335"><a href="#cb15-335" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-336"><a href="#cb15-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-337"><a href="#cb15-337" aria-hidden="true" tabindex="-1"></a>::: {style=&quot;color: #2F4F4F;&quot;}</span>
+<span id="cb15-338"><a href="#cb15-338" aria-hidden="true" tabindex="-1"></a>The Fenced Div defines *DarkSlateGrey* as the default text color for</span>
+<span id="cb15-339"><a href="#cb15-339" aria-hidden="true" tabindex="-1"></a>this block.</span>
+<span id="cb15-340"><a href="#cb15-340" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-341"><a href="#cb15-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-342"><a href="#cb15-342" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-343"><a href="#cb15-343" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;DarkSlateGrey&quot;}</span>
+<span id="cb15-344"><a href="#cb15-344" aria-hidden="true" tabindex="-1"></a>The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
+<span id="cb15-345"><a href="#cb15-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-346"><a href="#cb15-346" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This Bracketed Span overrides the inherited color to _tomato_.</span><span class="co">]</span>{pfa-font-color=&quot;tomato&quot;}</span>
+<span id="cb15-347"><a href="#cb15-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-348"><a href="#cb15-348" aria-hidden="true" tabindex="-1"></a>The remaining text continues using _DarkSlateGrey_ for the remainder of the Div.</span>
+<span id="cb15-349"><a href="#cb15-349" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-350"><a href="#cb15-350" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-351"><a href="#cb15-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-352"><a href="#cb15-352" aria-hidden="true" tabindex="-1"></a>::: {style=&quot;color: #2F4F4F;&quot;}</span>
+<span id="cb15-353"><a href="#cb15-353" aria-hidden="true" tabindex="-1"></a>The Fenced Div defines *DarkSlateGrey* as the default text color for</span>
+<span id="cb15-354"><a href="#cb15-354" aria-hidden="true" tabindex="-1"></a>this block.</span>
+<span id="cb15-355"><a href="#cb15-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-356"><a href="#cb15-356" aria-hidden="true" tabindex="-1"></a>[This Bracketed Span overrides the inherited color to</span>
+<span id="cb15-357"><a href="#cb15-357" aria-hidden="true" tabindex="-1"></a>*tomato*.]{style=&quot;color: #FF6347;&quot;}</span>
 <span id="cb15-358"><a href="#cb15-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-359"><a href="#cb15-359" aria-hidden="true" tabindex="-1"></a>[This Bracketed Span overrides the inherited color to</span>
-<span id="cb15-360"><a href="#cb15-360" aria-hidden="true" tabindex="-1"></a>*tomato*.]{style=&quot;color: #FF6347;&quot;}</span>
-<span id="cb15-361"><a href="#cb15-361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-362"><a href="#cb15-362" aria-hidden="true" tabindex="-1"></a>The remaining text continues using *DarkSlateGrey* for the remainder of</span>
-<span id="cb15-363"><a href="#cb15-363" aria-hidden="true" tabindex="-1"></a>the Div.</span>
-<span id="cb15-364"><a href="#cb15-364" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-359"><a href="#cb15-359" aria-hidden="true" tabindex="-1"></a>The remaining text continues using *DarkSlateGrey* for the remainder of</span>
+<span id="cb15-360"><a href="#cb15-360" aria-hidden="true" tabindex="-1"></a>the Div.</span>
+<span id="cb15-361"><a href="#cb15-361" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-362"><a href="#cb15-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-363"><a href="#cb15-363" aria-hidden="true" tabindex="-1"></a>**Note:** The <span class="in">`pfa-font-color`</span> utility is an attribute, not a class, and</span>
+<span id="cb15-364"><a href="#cb15-364" aria-hidden="true" tabindex="-1"></a>should not be prefixed with a period (<span class="in">`.`</span>).</span>
 <span id="cb15-365"><a href="#cb15-365" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-366"><a href="#cb15-366" aria-hidden="true" tabindex="-1"></a>**Note:** The <span class="in">`pfa-font-color`</span> utility is an attribute, not a class, and</span>
-<span id="cb15-367"><a href="#cb15-367" aria-hidden="true" tabindex="-1"></a>should not be prefixed with a period (<span class="in">`.`</span>).</span>
-<span id="cb15-368"><a href="#cb15-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-369"><a href="#cb15-369" aria-hidden="true" tabindex="-1"></a><span class="fu">## Text Alignment within Fenced Divs</span></span>
-<span id="cb15-370"><a href="#cb15-370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-371"><a href="#cb15-371" aria-hidden="true" tabindex="-1"></a>The <span class="in">`.pfa-align-*`</span> classes may be used to align text within a fenced</span>
-<span id="cb15-372"><a href="#cb15-372" aria-hidden="true" tabindex="-1"></a>Div. These classes map to LaTeX alignment commands (<span class="in">`\raggedright`</span>,</span>
-<span id="cb15-373"><a href="#cb15-373" aria-hidden="true" tabindex="-1"></a><span class="in">`\centering`</span>, and <span class="in">`\raggedleft`</span>) in PDF output while producing</span>
-<span id="cb15-374"><a href="#cb15-374" aria-hidden="true" tabindex="-1"></a>equivalent behavior in HTML.</span>
-<span id="cb15-375"><a href="#cb15-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-376"><a href="#cb15-376" aria-hidden="true" tabindex="-1"></a>These classes also preserve explicit line breaks introduced with the</span>
-<span id="cb15-377"><a href="#cb15-377" aria-hidden="true" tabindex="-1"></a>backslash (<span class="in">`\`</span>) character, which is useful for poetry, lyrics, and other</span>
-<span id="cb15-378"><a href="#cb15-378" aria-hidden="true" tabindex="-1"></a>text where line structure must be preserved.</span>
-<span id="cb15-379"><a href="#cb15-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-380"><a href="#cb15-380" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left-aligned Text</span></span>
-<span id="cb15-381"><a href="#cb15-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-382"><a href="#cb15-382" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb15-383"><a href="#cb15-383" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
-<span id="cb15-384"><a href="#cb15-384" aria-hidden="true" tabindex="-1"></a>This block of text is _left-aligned_.</span>
-<span id="cb15-385"><a href="#cb15-385" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-386"><a href="#cb15-386" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-387"><a href="#cb15-387" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-388"><a href="#cb15-388" aria-hidden="true" tabindex="-1"></a>::: pfa-align-left</span>
-<span id="cb15-389"><a href="#cb15-389" aria-hidden="true" tabindex="-1"></a>This block of text is *left-aligned*.</span>
-<span id="cb15-390"><a href="#cb15-390" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-391"><a href="#cb15-391" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-392"><a href="#cb15-392" aria-hidden="true" tabindex="-1"></a><span class="fu">### Center-aligned Text</span></span>
-<span id="cb15-393"><a href="#cb15-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-394"><a href="#cb15-394" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb15-395"><a href="#cb15-395" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
-<span id="cb15-396"><a href="#cb15-396" aria-hidden="true" tabindex="-1"></a>This block of text is _center-aligned_.</span>
-<span id="cb15-397"><a href="#cb15-397" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-398"><a href="#cb15-398" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-399"><a href="#cb15-399" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-400"><a href="#cb15-400" aria-hidden="true" tabindex="-1"></a>::: pfa-align-center</span>
-<span id="cb15-401"><a href="#cb15-401" aria-hidden="true" tabindex="-1"></a>This block of text is *center-aligned*.</span>
-<span id="cb15-402"><a href="#cb15-402" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-403"><a href="#cb15-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-404"><a href="#cb15-404" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right-aligned Text</span></span>
-<span id="cb15-405"><a href="#cb15-405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-406"><a href="#cb15-406" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb15-407"><a href="#cb15-407" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
-<span id="cb15-408"><a href="#cb15-408" aria-hidden="true" tabindex="-1"></a>This block of text is _right-aligned_.</span>
-<span id="cb15-409"><a href="#cb15-409" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-410"><a href="#cb15-410" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-411"><a href="#cb15-411" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-412"><a href="#cb15-412" aria-hidden="true" tabindex="-1"></a>::: pfa-align-right</span>
-<span id="cb15-413"><a href="#cb15-413" aria-hidden="true" tabindex="-1"></a>This block of text is *right-aligned*.</span>
-<span id="cb15-414"><a href="#cb15-414" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-415"><a href="#cb15-415" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-416"><a href="#cb15-416" aria-hidden="true" tabindex="-1"></a><span class="fu">### Explicit Line Break Preservation</span></span>
+<span id="cb15-366"><a href="#cb15-366" aria-hidden="true" tabindex="-1"></a><span class="fu">## Text Alignment within Fenced Divs</span></span>
+<span id="cb15-367"><a href="#cb15-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-368"><a href="#cb15-368" aria-hidden="true" tabindex="-1"></a>The <span class="in">`.pfa-align-*`</span> classes may be used to align text within a Fenced</span>
+<span id="cb15-369"><a href="#cb15-369" aria-hidden="true" tabindex="-1"></a>Div. These classes map to LaTeX alignment commands (<span class="in">`\raggedright`</span>,</span>
+<span id="cb15-370"><a href="#cb15-370" aria-hidden="true" tabindex="-1"></a><span class="in">`\centering`</span>, and <span class="in">`\raggedleft`</span>) in PDF output while producing</span>
+<span id="cb15-371"><a href="#cb15-371" aria-hidden="true" tabindex="-1"></a>equivalent behavior in HTML.</span>
+<span id="cb15-372"><a href="#cb15-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-373"><a href="#cb15-373" aria-hidden="true" tabindex="-1"></a>These classes also preserve explicit line breaks introduced with the</span>
+<span id="cb15-374"><a href="#cb15-374" aria-hidden="true" tabindex="-1"></a>backslash (<span class="in">`\`</span>) character, which is useful for poetry, lyrics, and other</span>
+<span id="cb15-375"><a href="#cb15-375" aria-hidden="true" tabindex="-1"></a>text where line structure must be preserved.</span>
+<span id="cb15-376"><a href="#cb15-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-377"><a href="#cb15-377" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left-aligned Text</span></span>
+<span id="cb15-378"><a href="#cb15-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-379"><a href="#cb15-379" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-380"><a href="#cb15-380" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
+<span id="cb15-381"><a href="#cb15-381" aria-hidden="true" tabindex="-1"></a>This block of text is _left-aligned_.</span>
+<span id="cb15-382"><a href="#cb15-382" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-383"><a href="#cb15-383" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-384"><a href="#cb15-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-385"><a href="#cb15-385" aria-hidden="true" tabindex="-1"></a>::: pfa-align-left</span>
+<span id="cb15-386"><a href="#cb15-386" aria-hidden="true" tabindex="-1"></a>This block of text is *left-aligned*.</span>
+<span id="cb15-387"><a href="#cb15-387" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-388"><a href="#cb15-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-389"><a href="#cb15-389" aria-hidden="true" tabindex="-1"></a><span class="fu">### Center-aligned Text</span></span>
+<span id="cb15-390"><a href="#cb15-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-391"><a href="#cb15-391" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-392"><a href="#cb15-392" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb15-393"><a href="#cb15-393" aria-hidden="true" tabindex="-1"></a>This block of text is _center-aligned_.</span>
+<span id="cb15-394"><a href="#cb15-394" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-395"><a href="#cb15-395" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-396"><a href="#cb15-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-397"><a href="#cb15-397" aria-hidden="true" tabindex="-1"></a>::: pfa-align-center</span>
+<span id="cb15-398"><a href="#cb15-398" aria-hidden="true" tabindex="-1"></a>This block of text is *center-aligned*.</span>
+<span id="cb15-399"><a href="#cb15-399" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-400"><a href="#cb15-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-401"><a href="#cb15-401" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right-aligned Text</span></span>
+<span id="cb15-402"><a href="#cb15-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-403"><a href="#cb15-403" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-404"><a href="#cb15-404" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
+<span id="cb15-405"><a href="#cb15-405" aria-hidden="true" tabindex="-1"></a>This block of text is _right-aligned_.</span>
+<span id="cb15-406"><a href="#cb15-406" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-407"><a href="#cb15-407" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-408"><a href="#cb15-408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-409"><a href="#cb15-409" aria-hidden="true" tabindex="-1"></a>::: pfa-align-right</span>
+<span id="cb15-410"><a href="#cb15-410" aria-hidden="true" tabindex="-1"></a>This block of text is *right-aligned*.</span>
+<span id="cb15-411"><a href="#cb15-411" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-412"><a href="#cb15-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-413"><a href="#cb15-413" aria-hidden="true" tabindex="-1"></a><span class="fu">### Explicit Line Break Preservation</span></span>
+<span id="cb15-414"><a href="#cb15-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-415"><a href="#cb15-415" aria-hidden="true" tabindex="-1"></a>The alignment classes preserve explicit line breaks introduced with the</span>
+<span id="cb15-416"><a href="#cb15-416" aria-hidden="true" tabindex="-1"></a>backslash (<span class="in">`\`</span>) character.</span>
 <span id="cb15-417"><a href="#cb15-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-418"><a href="#cb15-418" aria-hidden="true" tabindex="-1"></a>The alignment classes preserve explicit line breaks introduced with the</span>
-<span id="cb15-419"><a href="#cb15-419" aria-hidden="true" tabindex="-1"></a>backslash (<span class="in">`\`</span>) character.</span>
-<span id="cb15-420"><a href="#cb15-420" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-421"><a href="#cb15-421" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb15-422"><a href="#cb15-422" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
-<span id="cb15-423"><a href="#cb15-423" aria-hidden="true" tabindex="-1"></a>This block of text \</span>
-<span id="cb15-424"><a href="#cb15-424" aria-hidden="true" tabindex="-1"></a>is _center-aligned_ \</span>
-<span id="cb15-425"><a href="#cb15-425" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
-<span id="cb15-426"><a href="#cb15-426" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-427"><a href="#cb15-427" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-428"><a href="#cb15-428" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-429"><a href="#cb15-429" aria-hidden="true" tabindex="-1"></a>::: pfa-align-center</span>
-<span id="cb15-430"><a href="#cb15-430" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
-<span id="cb15-431"><a href="#cb15-431" aria-hidden="true" tabindex="-1"></a>is *center-aligned*\</span>
-<span id="cb15-432"><a href="#cb15-432" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
-<span id="cb15-433"><a href="#cb15-433" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-434"><a href="#cb15-434" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-435"><a href="#cb15-435" aria-hidden="true" tabindex="-1"></a><span class="fu">## Block-Level Alignment</span></span>
-<span id="cb15-436"><a href="#cb15-436" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-437"><a href="#cb15-437" aria-hidden="true" tabindex="-1"></a>The <span class="in">`.pfa-block-*`</span> utilities control the horizontal positioning of a</span>
-<span id="cb15-438"><a href="#cb15-438" aria-hidden="true" tabindex="-1"></a>fenced Div as a whole, without affecting the internal text alignment of</span>
-<span id="cb15-439"><a href="#cb15-439" aria-hidden="true" tabindex="-1"></a>its contents. This allows the block itself to be positioned</span>
-<span id="cb15-440"><a href="#cb15-440" aria-hidden="true" tabindex="-1"></a>independently of how text is arranged within it.</span>
-<span id="cb15-441"><a href="#cb15-441" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-442"><a href="#cb15-442" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left-Aligned Block</span></span>
-<span id="cb15-443"><a href="#cb15-443" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-444"><a href="#cb15-444" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb15-445"><a href="#cb15-445" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-left}</span>
-<span id="cb15-446"><a href="#cb15-446" aria-hidden="true" tabindex="-1"></a>The entire block is _left-aligned_.</span>
-<span id="cb15-447"><a href="#cb15-447" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-448"><a href="#cb15-448" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-449"><a href="#cb15-449" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-450"><a href="#cb15-450" aria-hidden="true" tabindex="-1"></a>::: pfa-block-left</span>
-<span id="cb15-451"><a href="#cb15-451" aria-hidden="true" tabindex="-1"></a>The entire block is *left-aligned*.</span>
-<span id="cb15-452"><a href="#cb15-452" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-453"><a href="#cb15-453" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-454"><a href="#cb15-454" aria-hidden="true" tabindex="-1"></a><span class="fu">### Center-Aligned Block</span></span>
-<span id="cb15-455"><a href="#cb15-455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-456"><a href="#cb15-456" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb15-457"><a href="#cb15-457" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-center}</span>
-<span id="cb15-458"><a href="#cb15-458" aria-hidden="true" tabindex="-1"></a>The entire block is _center-aligned_.</span>
-<span id="cb15-459"><a href="#cb15-459" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-460"><a href="#cb15-460" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-461"><a href="#cb15-461" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-462"><a href="#cb15-462" aria-hidden="true" tabindex="-1"></a>::: pfa-block-center</span>
-<span id="cb15-463"><a href="#cb15-463" aria-hidden="true" tabindex="-1"></a>The entire block is *center-aligned*.</span>
-<span id="cb15-464"><a href="#cb15-464" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-465"><a href="#cb15-465" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-466"><a href="#cb15-466" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right-Aligned Block</span></span>
-<span id="cb15-467"><a href="#cb15-467" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-468"><a href="#cb15-468" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb15-469"><a href="#cb15-469" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-right}</span>
-<span id="cb15-470"><a href="#cb15-470" aria-hidden="true" tabindex="-1"></a>The entire block is _right-aligned_.</span>
-<span id="cb15-471"><a href="#cb15-471" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-472"><a href="#cb15-472" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-473"><a href="#cb15-473" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-474"><a href="#cb15-474" aria-hidden="true" tabindex="-1"></a>::: pfa-block-right</span>
-<span id="cb15-475"><a href="#cb15-475" aria-hidden="true" tabindex="-1"></a>The entire block is *right-aligned*.</span>
-<span id="cb15-476"><a href="#cb15-476" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-477"><a href="#cb15-477" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-478"><a href="#cb15-478" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combining Multiple Classes</span></span>
-<span id="cb15-479"><a href="#cb15-479" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-480"><a href="#cb15-480" aria-hidden="true" tabindex="-1"></a>Multiple typographic utilities can be combined within the same element.</span>
-<span id="cb15-481"><a href="#cb15-481" aria-hidden="true" tabindex="-1"></a>Font, size, color, alignment, and decoration classes are designed to</span>
-<span id="cb15-482"><a href="#cb15-482" aria-hidden="true" tabindex="-1"></a>compose independently and can be applied together to both Bracketed</span>
-<span id="cb15-483"><a href="#cb15-483" aria-hidden="true" tabindex="-1"></a>Spans and Fenced Divs.</span>
-<span id="cb15-484"><a href="#cb15-484" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-485"><a href="#cb15-485" aria-hidden="true" tabindex="-1"></a>Class names are space-separated within <span class="in">`{}`</span> following Pandoc attribute</span>
-<span id="cb15-486"><a href="#cb15-486" aria-hidden="true" tabindex="-1"></a>syntax. In addition to classes, key-value attributes such as</span>
-<span id="cb15-487"><a href="#cb15-487" aria-hidden="true" tabindex="-1"></a><span class="in">`pfa-font-color`</span> may be included alongside class definitions.</span>
-<span id="cb15-488"><a href="#cb15-488" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-489"><a href="#cb15-489" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bracketed Span Composition</span></span>
-<span id="cb15-490"><a href="#cb15-490" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-491"><a href="#cb15-491" aria-hidden="true" tabindex="-1"></a>  ----------------------------------------------------------------------------------------------------------------------------------------------</span>
-<span id="cb15-492"><a href="#cb15-492" aria-hidden="true" tabindex="-1"></a>  Style              Syntax                                                                         Output</span>
-<span id="cb15-493"><a href="#cb15-493" aria-hidden="true" tabindex="-1"></a>  ------------------ ------------------------------------------------------------------------------ --------------------------------------------</span>
-<span id="cb15-494"><a href="#cb15-494" aria-hidden="true" tabindex="-1"></a>  Bold Sans-serif    <span class="in">`[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color=&quot;red&quot;}`</span>     <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-font-bold .pfa-font-sans</span>
-<span id="cb15-495"><a href="#cb15-495" aria-hidden="true" tabindex="-1"></a>                                                                                                    .pfa-text-l style=&quot;color: #FF0000;&quot;}</span>
-<span id="cb15-496"><a href="#cb15-496" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-497"><a href="#cb15-497" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                                                    </span></span>
+<span id="cb15-418"><a href="#cb15-418" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-419"><a href="#cb15-419" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb15-420"><a href="#cb15-420" aria-hidden="true" tabindex="-1"></a>This block of text \</span>
+<span id="cb15-421"><a href="#cb15-421" aria-hidden="true" tabindex="-1"></a>is _center-aligned_ \</span>
+<span id="cb15-422"><a href="#cb15-422" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
+<span id="cb15-423"><a href="#cb15-423" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-424"><a href="#cb15-424" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-425"><a href="#cb15-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-426"><a href="#cb15-426" aria-hidden="true" tabindex="-1"></a>::: pfa-align-center</span>
+<span id="cb15-427"><a href="#cb15-427" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
+<span id="cb15-428"><a href="#cb15-428" aria-hidden="true" tabindex="-1"></a>is *center-aligned*\</span>
+<span id="cb15-429"><a href="#cb15-429" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
+<span id="cb15-430"><a href="#cb15-430" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-431"><a href="#cb15-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-432"><a href="#cb15-432" aria-hidden="true" tabindex="-1"></a><span class="fu">## Block-Level Alignment</span></span>
+<span id="cb15-433"><a href="#cb15-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-434"><a href="#cb15-434" aria-hidden="true" tabindex="-1"></a>The <span class="in">`.pfa-block-*`</span> utilities control the horizontal positioning of a</span>
+<span id="cb15-435"><a href="#cb15-435" aria-hidden="true" tabindex="-1"></a>Fenced Div as a whole, without affecting the internal text alignment of</span>
+<span id="cb15-436"><a href="#cb15-436" aria-hidden="true" tabindex="-1"></a>its contents. This allows the block itself to be positioned</span>
+<span id="cb15-437"><a href="#cb15-437" aria-hidden="true" tabindex="-1"></a>independently of how text is arranged within it.</span>
+<span id="cb15-438"><a href="#cb15-438" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-439"><a href="#cb15-439" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left-Aligned Block</span></span>
+<span id="cb15-440"><a href="#cb15-440" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-441"><a href="#cb15-441" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-442"><a href="#cb15-442" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-left}</span>
+<span id="cb15-443"><a href="#cb15-443" aria-hidden="true" tabindex="-1"></a>The entire block is _left-aligned_.</span>
+<span id="cb15-444"><a href="#cb15-444" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-445"><a href="#cb15-445" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-446"><a href="#cb15-446" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-447"><a href="#cb15-447" aria-hidden="true" tabindex="-1"></a>::: pfa-block-left</span>
+<span id="cb15-448"><a href="#cb15-448" aria-hidden="true" tabindex="-1"></a>The entire block is *left-aligned*.</span>
+<span id="cb15-449"><a href="#cb15-449" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-450"><a href="#cb15-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-451"><a href="#cb15-451" aria-hidden="true" tabindex="-1"></a><span class="fu">### Center-Aligned Block</span></span>
+<span id="cb15-452"><a href="#cb15-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-453"><a href="#cb15-453" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-454"><a href="#cb15-454" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-center}</span>
+<span id="cb15-455"><a href="#cb15-455" aria-hidden="true" tabindex="-1"></a>The entire block is _center-aligned_.</span>
+<span id="cb15-456"><a href="#cb15-456" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-457"><a href="#cb15-457" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-458"><a href="#cb15-458" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-459"><a href="#cb15-459" aria-hidden="true" tabindex="-1"></a>::: pfa-block-center</span>
+<span id="cb15-460"><a href="#cb15-460" aria-hidden="true" tabindex="-1"></a>The entire block is *center-aligned*.</span>
+<span id="cb15-461"><a href="#cb15-461" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-462"><a href="#cb15-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-463"><a href="#cb15-463" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right-Aligned Block</span></span>
+<span id="cb15-464"><a href="#cb15-464" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-465"><a href="#cb15-465" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-466"><a href="#cb15-466" aria-hidden="true" tabindex="-1"></a>::: {.pfa-block-right}</span>
+<span id="cb15-467"><a href="#cb15-467" aria-hidden="true" tabindex="-1"></a>The entire block is _right-aligned_.</span>
+<span id="cb15-468"><a href="#cb15-468" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-469"><a href="#cb15-469" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-470"><a href="#cb15-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-471"><a href="#cb15-471" aria-hidden="true" tabindex="-1"></a>::: pfa-block-right</span>
+<span id="cb15-472"><a href="#cb15-472" aria-hidden="true" tabindex="-1"></a>The entire block is *right-aligned*.</span>
+<span id="cb15-473"><a href="#cb15-473" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-474"><a href="#cb15-474" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-475"><a href="#cb15-475" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combining Multiple Classes</span></span>
+<span id="cb15-476"><a href="#cb15-476" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-477"><a href="#cb15-477" aria-hidden="true" tabindex="-1"></a>Multiple typographic utilities can be combined within the same element.</span>
+<span id="cb15-478"><a href="#cb15-478" aria-hidden="true" tabindex="-1"></a>Font, size, color, alignment, and decoration classes are designed to</span>
+<span id="cb15-479"><a href="#cb15-479" aria-hidden="true" tabindex="-1"></a>compose independently and can be applied together to both Bracketed</span>
+<span id="cb15-480"><a href="#cb15-480" aria-hidden="true" tabindex="-1"></a>Spans and Fenced Divs.</span>
+<span id="cb15-481"><a href="#cb15-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-482"><a href="#cb15-482" aria-hidden="true" tabindex="-1"></a>Class names are space-separated within <span class="in">`{}`</span> following Pandoc attribute</span>
+<span id="cb15-483"><a href="#cb15-483" aria-hidden="true" tabindex="-1"></a>syntax. In addition to classes, key-value attributes such as</span>
+<span id="cb15-484"><a href="#cb15-484" aria-hidden="true" tabindex="-1"></a><span class="in">`pfa-font-color`</span> may be included alongside class definitions.</span>
+<span id="cb15-485"><a href="#cb15-485" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-486"><a href="#cb15-486" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bracketed Span Composition</span></span>
+<span id="cb15-487"><a href="#cb15-487" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-488"><a href="#cb15-488" aria-hidden="true" tabindex="-1"></a>  ----------------------------------------------------------------------------------------------------------------------------------------------</span>
+<span id="cb15-489"><a href="#cb15-489" aria-hidden="true" tabindex="-1"></a>  Style              Syntax                                                                         Output</span>
+<span id="cb15-490"><a href="#cb15-490" aria-hidden="true" tabindex="-1"></a>  ------------------ ------------------------------------------------------------------------------ --------------------------------------------</span>
+<span id="cb15-491"><a href="#cb15-491" aria-hidden="true" tabindex="-1"></a>  Bold Sans-Serif    <span class="in">`[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color=&quot;red&quot;}`</span>     <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-font-bold .pfa-font-sans</span>
+<span id="cb15-492"><a href="#cb15-492" aria-hidden="true" tabindex="-1"></a>                                                                                                    .pfa-text-l style=&quot;color: #FF0000;&quot;}</span>
+<span id="cb15-493"><a href="#cb15-493" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-494"><a href="#cb15-494" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                                                    </span></span>
+<span id="cb15-495"><a href="#cb15-495" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-496"><a href="#cb15-496" aria-hidden="true" tabindex="-1"></a>  Italic Monospace   <span class="in">`[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}`</span>                        <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-font-italic .pfa-font-mono</span>
+<span id="cb15-497"><a href="#cb15-497" aria-hidden="true" tabindex="-1"></a>                                                                                                    .pfa-text-s}</span>
 <span id="cb15-498"><a href="#cb15-498" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-499"><a href="#cb15-499" aria-hidden="true" tabindex="-1"></a>  Italic Monospace   <span class="in">`[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}`</span>                        <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-font-italic .pfa-font-mono</span>
-<span id="cb15-500"><a href="#cb15-500" aria-hidden="true" tabindex="-1"></a>                                                                                                    .pfa-text-s}</span>
-<span id="cb15-501"><a href="#cb15-501" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-502"><a href="#cb15-502" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                                                    </span></span>
-<span id="cb15-503"><a href="#cb15-503" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-504"><a href="#cb15-504" aria-hidden="true" tabindex="-1"></a>  Small Caps,        <span class="in">`[Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color=&quot;forestgreen&quot;}`</span>   [<span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.underline}]{.pfa-font-smallcaps</span>
-<span id="cb15-505"><a href="#cb15-505" aria-hidden="true" tabindex="-1"></a>  Underlined,                                                                                       .pfa-text-uline style=&quot;color: #228B22;&quot;}</span>
-<span id="cb15-506"><a href="#cb15-506" aria-hidden="true" tabindex="-1"></a>  Colored                                                                                           </span>
-<span id="cb15-507"><a href="#cb15-507" aria-hidden="true" tabindex="-1"></a>  ----------------------------------------------------------------------------------------------------------------------------------------------</span>
-<span id="cb15-508"><a href="#cb15-508" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-509"><a href="#cb15-509" aria-hidden="true" tabindex="-1"></a><span class="fu">### Fenced Div Composition</span></span>
-<span id="cb15-510"><a href="#cb15-510" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-511"><a href="#cb15-511" aria-hidden="true" tabindex="-1"></a>Multiple utilities can also be applied to Fenced Divs to control</span>
-<span id="cb15-512"><a href="#cb15-512" aria-hidden="true" tabindex="-1"></a>alignment, typography, and color simultaneously. The resulting block</span>
-<span id="cb15-513"><a href="#cb15-513" aria-hidden="true" tabindex="-1"></a>inherits all specified styles while preserving Pandoc&#39;s standard</span>
-<span id="cb15-514"><a href="#cb15-514" aria-hidden="true" tabindex="-1"></a>attribute behavior.</span>
-<span id="cb15-515"><a href="#cb15-515" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-516"><a href="#cb15-516" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb15-517"><a href="#cb15-517" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color=&quot;midnightblue&quot;}</span>
-<span id="cb15-518"><a href="#cb15-518" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
-<span id="cb15-519"><a href="#cb15-519" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-520"><a href="#cb15-520" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-521"><a href="#cb15-521" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-522"><a href="#cb15-522" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-font-sans .pfa-font-bold .pfa-text-l style=&quot;color: #191970;&quot;}</span>
-<span id="cb15-523"><a href="#cb15-523" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div</span>
-<span id="cb15-524"><a href="#cb15-524" aria-hidden="true" tabindex="-1"></a>demonstrating multiple combined utilities from the filter.</span>
-<span id="cb15-525"><a href="#cb15-525" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb15-526"><a href="#cb15-526" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-527"><a href="#cb15-527" aria-hidden="true" tabindex="-1"></a><span class="fu">## Legacy Short-Hand Aliases (Deprecated)</span></span>
-<span id="cb15-528"><a href="#cb15-528" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-529"><a href="#cb15-529" aria-hidden="true" tabindex="-1"></a>**Warning:** Legacy aliases are deprecated. They are retained strictly</span>
-<span id="cb15-530"><a href="#cb15-530" aria-hidden="true" tabindex="-1"></a>for backward compatibility and will be entirely removed in the next</span>
-<span id="cb15-531"><a href="#cb15-531" aria-hidden="true" tabindex="-1"></a>major release. New documents should use the <span class="in">`.pfa-*`</span> namespaces going</span>
-<span id="cb15-532"><a href="#cb15-532" aria-hidden="true" tabindex="-1"></a>forward.</span>
-<span id="cb15-533"><a href="#cb15-533" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-534"><a href="#cb15-534" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Weight, Shape, and Family Aliases</span></span>
-<span id="cb15-535"><a href="#cb15-535" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-536"><a href="#cb15-536" aria-hidden="true" tabindex="-1"></a>  Legacy Classes   Short-Hand   New Classes</span>
-<span id="cb15-537"><a href="#cb15-537" aria-hidden="true" tabindex="-1"></a>  ---------------- ------------ -----------------------</span>
-<span id="cb15-538"><a href="#cb15-538" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.bold`</span>          <span class="in">`.bf`</span>        <span class="in">`.pfa-font-bold`</span></span>
-<span id="cb15-539"><a href="#cb15-539" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.emphasis`</span>      <span class="in">`.em`</span>        <span class="in">`.pfa-font-emphasis`</span></span>
-<span id="cb15-540"><a href="#cb15-540" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.italic`</span>        <span class="in">`.it`</span>        <span class="in">`.pfa-font-italic`</span></span>
-<span id="cb15-541"><a href="#cb15-541" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.medium`</span>        <span class="in">`.md`</span>        <span class="in">`.pfa-font-medium`</span></span>
-<span id="cb15-542"><a href="#cb15-542" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.monospace`</span>     <span class="in">`.tt`</span>        <span class="in">`.pfa-font-mono`</span></span>
-<span id="cb15-543"><a href="#cb15-543" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.normalfont`</span>    <span class="in">`.nf`</span>        <span class="in">`.pfa-font-normal`</span></span>
-<span id="cb15-544"><a href="#cb15-544" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.sans`</span>          <span class="in">`.sf`</span>        <span class="in">`.pfa-font-sans`</span></span>
-<span id="cb15-545"><a href="#cb15-545" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.serif`</span>         <span class="in">`.rm`</span>        <span class="in">`.pfa-font-serif`</span></span>
-<span id="cb15-546"><a href="#cb15-546" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.slanted`</span>       <span class="in">`.sl`</span>        <span class="in">`.pfa-font-slanted`</span></span>
-<span id="cb15-547"><a href="#cb15-547" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.smallcaps`</span>     <span class="in">`.sc`</span>        <span class="in">`.pfa-font-smallcaps`</span></span>
-<span id="cb15-548"><a href="#cb15-548" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.upright`</span>       <span class="in">`.up`</span>        <span class="in">`.pfa-font-upright`</span></span>
-<span id="cb15-549"><a href="#cb15-549" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-550"><a href="#cb15-550" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Size Aliases</span></span>
-<span id="cb15-551"><a href="#cb15-551" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-552"><a href="#cb15-552" aria-hidden="true" tabindex="-1"></a>  Legacy Classes   Modern Classes</span>
-<span id="cb15-553"><a href="#cb15-553" aria-hidden="true" tabindex="-1"></a>  ---------------- --------------------</span>
-<span id="cb15-554"><a href="#cb15-554" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.xsmall`</span>        <span class="in">`.pfa-text-xs`</span></span>
-<span id="cb15-555"><a href="#cb15-555" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.small`</span>         <span class="in">`.pfa-text-s`</span></span>
-<span id="cb15-556"><a href="#cb15-556" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.normal`</span>        <span class="in">`.pfa-text-normal`</span></span>
-<span id="cb15-557"><a href="#cb15-557" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.large`</span>         <span class="in">`.pfa-text-l`</span></span>
-<span id="cb15-558"><a href="#cb15-558" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.xlarge`</span>        <span class="in">`.pfa-text-xl`</span></span>
-<span id="cb15-559"><a href="#cb15-559" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.xxlarge`</span>       <span class="in">`.pfa-text-2xl`</span></span>
-<span id="cb15-560"><a href="#cb15-560" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.huge`</span>          <span class="in">`.pfa-text-3xl`</span></span>
-<span id="cb15-561"><a href="#cb15-561" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-562"><a href="#cb15-562" aria-hidden="true" tabindex="-1"></a><span class="fu">### Alignment Aliases</span></span>
-<span id="cb15-563"><a href="#cb15-563" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-564"><a href="#cb15-564" aria-hidden="true" tabindex="-1"></a>  Legacy Classes   New Classes</span>
-<span id="cb15-565"><a href="#cb15-565" aria-hidden="true" tabindex="-1"></a>  ---------------- --------------------------</span>
-<span id="cb15-566"><a href="#cb15-566" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.center`</span>        Removed in version 1.0.3</span>
-<span id="cb15-567"><a href="#cb15-567" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.flushleft`</span>     Removed in version 1.0.3</span>
-<span id="cb15-568"><a href="#cb15-568" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.flushright`</span>    Removed in version 1.0.3</span>
-<span id="cb15-569"><a href="#cb15-569" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.centering`</span>     <span class="in">`.pfa-align-center`</span></span>
-<span id="cb15-570"><a href="#cb15-570" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.raggedleft`</span>    <span class="in">`.pfa-align-right`</span></span>
-<span id="cb15-571"><a href="#cb15-571" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.raggedright`</span>   <span class="in">`.pfa-align-left`</span></span>
-<span id="cb15-572"><a href="#cb15-572" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-573"><a href="#cb15-573" aria-hidden="true" tabindex="-1"></a><span class="fu">### Underline and Strikeout Aliases</span></span>
-<span id="cb15-574"><a href="#cb15-574" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-575"><a href="#cb15-575" aria-hidden="true" tabindex="-1"></a>  Legacy Classes   Short-Hand   New Classes</span>
-<span id="cb15-576"><a href="#cb15-576" aria-hidden="true" tabindex="-1"></a>  ---------------- ------------ --------------------------</span>
-<span id="cb15-577"><a href="#cb15-577" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.uline`</span>         <span class="in">`.u`</span>         <span class="in">`.pfa-text-uline`</span></span>
-<span id="cb15-578"><a href="#cb15-578" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.uuline`</span>        <span class="in">`.uu`</span>        <span class="in">`.pfa-text-uline-double`</span></span>
-<span id="cb15-579"><a href="#cb15-579" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.dashuline`</span>     <span class="in">`.dau`</span>       <span class="in">`.pfa-text-uline-dashed`</span></span>
-<span id="cb15-580"><a href="#cb15-580" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.dotuline`</span>      <span class="in">`.dou`</span>       <span class="in">`.pfa-text-uline-dotted`</span></span>
-<span id="cb15-581"><a href="#cb15-581" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.uwave`</span>         <span class="in">`.uw`</span>        <span class="in">`.pfa-text-uline-wave`</span></span>
-<span id="cb15-582"><a href="#cb15-582" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.sout`</span>          <span class="in">`.so`</span>        <span class="in">`.pfa-text-strikeout`</span></span>
-<span id="cb15-583"><a href="#cb15-583" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.xout`</span>          <span class="in">`.xo`</span>        Removed in version 1.0.3</span>
-<span id="cb15-584"><a href="#cb15-584" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-585"><a href="#cb15-585" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>To enable equivalent styling in HTML output, include the</span>
-<span id="cb15-586"><a href="#cb15-586" aria-hidden="true" tabindex="-1"></a>    <span class="in">`fonts-and-alignment.css`</span> stylesheet distributed with this filter.</span>
-<span id="cb15-587"><a href="#cb15-587" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-588"><a href="#cb15-588" aria-hidden="true" tabindex="-1"></a><span class="ot">[^2]: </span>Three-digit shorthand expands by repeating each hexadecimal digit</span>
-<span id="cb15-589"><a href="#cb15-589" aria-hidden="true" tabindex="-1"></a>    per RGB channel (e.g., <span class="in">`#666`</span> becomes <span class="in">`#666666`</span>, <span class="in">`#F0A`</span> becomes</span>
-<span id="cb15-590"><a href="#cb15-590" aria-hidden="true" tabindex="-1"></a>    <span class="in">`#FF00AA`</span>). This only applies when each channel consists of a single</span>
-<span id="cb15-591"><a href="#cb15-591" aria-hidden="true" tabindex="-1"></a>    repeated hexadecimal digit. Full hexadecimal values without</span>
-<span id="cb15-592"><a href="#cb15-592" aria-hidden="true" tabindex="-1"></a>    per-channel repetition (e.g., <span class="in">`#2E8B57`</span>) are not eligible for</span>
-<span id="cb15-593"><a href="#cb15-593" aria-hidden="true" tabindex="-1"></a>    shorthand expansion.</span></code></pre></div>
+<span id="cb15-499"><a href="#cb15-499" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                                                    </span></span>
+<span id="cb15-500"><a href="#cb15-500" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-501"><a href="#cb15-501" aria-hidden="true" tabindex="-1"></a>  Small Caps,        <span class="in">`[Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color=&quot;forestgreen&quot;}`</span>   [<span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.underline}]{.pfa-font-smallcaps</span>
+<span id="cb15-502"><a href="#cb15-502" aria-hidden="true" tabindex="-1"></a>  Underlined,                                                                                       .pfa-text-uline style=&quot;color: #228B22;&quot;}</span>
+<span id="cb15-503"><a href="#cb15-503" aria-hidden="true" tabindex="-1"></a>  Colored                                                                                           </span>
+<span id="cb15-504"><a href="#cb15-504" aria-hidden="true" tabindex="-1"></a>  ----------------------------------------------------------------------------------------------------------------------------------------------</span>
+<span id="cb15-505"><a href="#cb15-505" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-506"><a href="#cb15-506" aria-hidden="true" tabindex="-1"></a><span class="fu">### Fenced Div Composition</span></span>
+<span id="cb15-507"><a href="#cb15-507" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-508"><a href="#cb15-508" aria-hidden="true" tabindex="-1"></a>Multiple utilities can also be applied to Fenced Divs to control</span>
+<span id="cb15-509"><a href="#cb15-509" aria-hidden="true" tabindex="-1"></a>alignment, typography, and color simultaneously. The resulting block</span>
+<span id="cb15-510"><a href="#cb15-510" aria-hidden="true" tabindex="-1"></a>inherits all specified styles while preserving Pandoc&#39;s standard</span>
+<span id="cb15-511"><a href="#cb15-511" aria-hidden="true" tabindex="-1"></a>attribute behavior.</span>
+<span id="cb15-512"><a href="#cb15-512" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-513"><a href="#cb15-513" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb15-514"><a href="#cb15-514" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-font-sans .pfa-font-bold .pfa-text-l pfa-font-color=&quot;midnightblue&quot;}</span>
+<span id="cb15-515"><a href="#cb15-515" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
+<span id="cb15-516"><a href="#cb15-516" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-517"><a href="#cb15-517" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-518"><a href="#cb15-518" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-519"><a href="#cb15-519" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-font-sans .pfa-font-bold .pfa-text-l style=&quot;color: #191970;&quot;}</span>
+<span id="cb15-520"><a href="#cb15-520" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div</span>
+<span id="cb15-521"><a href="#cb15-521" aria-hidden="true" tabindex="-1"></a>demonstrating multiple combined utilities from the filter.</span>
+<span id="cb15-522"><a href="#cb15-522" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb15-523"><a href="#cb15-523" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-524"><a href="#cb15-524" aria-hidden="true" tabindex="-1"></a><span class="fu">## Legacy Aliases (Deprecated)</span></span>
+<span id="cb15-525"><a href="#cb15-525" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-526"><a href="#cb15-526" aria-hidden="true" tabindex="-1"></a>**Warning:** Legacy aliases are deprecated. They are retained strictly</span>
+<span id="cb15-527"><a href="#cb15-527" aria-hidden="true" tabindex="-1"></a>for backward compatibility and will be entirely removed in the next</span>
+<span id="cb15-528"><a href="#cb15-528" aria-hidden="true" tabindex="-1"></a>major release. New documents should use the <span class="in">`.pfa-*`</span> namespaces going</span>
+<span id="cb15-529"><a href="#cb15-529" aria-hidden="true" tabindex="-1"></a>forward.</span>
+<span id="cb15-530"><a href="#cb15-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-531"><a href="#cb15-531" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Sizing Aliases</span></span>
+<span id="cb15-532"><a href="#cb15-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-533"><a href="#cb15-533" aria-hidden="true" tabindex="-1"></a>  Legacy Classes   Modern Classes</span>
+<span id="cb15-534"><a href="#cb15-534" aria-hidden="true" tabindex="-1"></a>  ---------------- --------------------</span>
+<span id="cb15-535"><a href="#cb15-535" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.xsmall`</span>        <span class="in">`.pfa-text-xs`</span></span>
+<span id="cb15-536"><a href="#cb15-536" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.small`</span>         <span class="in">`.pfa-text-s`</span></span>
+<span id="cb15-537"><a href="#cb15-537" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.normal`</span>        <span class="in">`.pfa-text-normal`</span></span>
+<span id="cb15-538"><a href="#cb15-538" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.large`</span>         <span class="in">`.pfa-text-l`</span></span>
+<span id="cb15-539"><a href="#cb15-539" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.xlarge`</span>        <span class="in">`.pfa-text-xl`</span></span>
+<span id="cb15-540"><a href="#cb15-540" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.xxlarge`</span>       <span class="in">`.pfa-text-2xl`</span></span>
+<span id="cb15-541"><a href="#cb15-541" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.huge`</span>          <span class="in">`.pfa-text-3xl`</span></span>
+<span id="cb15-542"><a href="#cb15-542" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-543"><a href="#cb15-543" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Weight, Shape, and Family Aliases</span></span>
+<span id="cb15-544"><a href="#cb15-544" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-545"><a href="#cb15-545" aria-hidden="true" tabindex="-1"></a>  Legacy Classes   Shorthand   Modern Classes</span>
+<span id="cb15-546"><a href="#cb15-546" aria-hidden="true" tabindex="-1"></a>  ---------------- ----------- -----------------------</span>
+<span id="cb15-547"><a href="#cb15-547" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.bold`</span>          <span class="in">`.bf`</span>       <span class="in">`.pfa-font-bold`</span></span>
+<span id="cb15-548"><a href="#cb15-548" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.emphasis`</span>      <span class="in">`.em`</span>       <span class="in">`.pfa-font-emphasis`</span></span>
+<span id="cb15-549"><a href="#cb15-549" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.italic`</span>        <span class="in">`.it`</span>       <span class="in">`.pfa-font-italic`</span></span>
+<span id="cb15-550"><a href="#cb15-550" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.medium`</span>        <span class="in">`.md`</span>       <span class="in">`.pfa-font-medium`</span></span>
+<span id="cb15-551"><a href="#cb15-551" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.monospace`</span>     <span class="in">`.tt`</span>       <span class="in">`.pfa-font-mono`</span></span>
+<span id="cb15-552"><a href="#cb15-552" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.normalfont`</span>    <span class="in">`.nf`</span>       <span class="in">`.pfa-font-normal`</span></span>
+<span id="cb15-553"><a href="#cb15-553" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.sans`</span>          <span class="in">`.sf`</span>       <span class="in">`.pfa-font-sans`</span></span>
+<span id="cb15-554"><a href="#cb15-554" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.serif`</span>         <span class="in">`.rm`</span>       <span class="in">`.pfa-font-serif`</span></span>
+<span id="cb15-555"><a href="#cb15-555" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.slanted`</span>       <span class="in">`.sl`</span>       <span class="in">`.pfa-font-slanted`</span></span>
+<span id="cb15-556"><a href="#cb15-556" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.smallcaps`</span>     <span class="in">`.sc`</span>       <span class="in">`.pfa-font-smallcaps`</span></span>
+<span id="cb15-557"><a href="#cb15-557" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.upright`</span>       <span class="in">`.up`</span>       <span class="in">`.pfa-font-upright`</span></span>
+<span id="cb15-558"><a href="#cb15-558" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-559"><a href="#cb15-559" aria-hidden="true" tabindex="-1"></a><span class="fu">### Alignment Aliases</span></span>
+<span id="cb15-560"><a href="#cb15-560" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-561"><a href="#cb15-561" aria-hidden="true" tabindex="-1"></a>  Legacy Classes   Modern Classes</span>
+<span id="cb15-562"><a href="#cb15-562" aria-hidden="true" tabindex="-1"></a>  ---------------- ---------------------</span>
+<span id="cb15-563"><a href="#cb15-563" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.centering`</span>     <span class="in">`.pfa-align-center`</span></span>
+<span id="cb15-564"><a href="#cb15-564" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.raggedleft`</span>    <span class="in">`.pfa-align-right`</span></span>
+<span id="cb15-565"><a href="#cb15-565" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.raggedright`</span>   <span class="in">`.pfa-align-left`</span></span>
+<span id="cb15-566"><a href="#cb15-566" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-567"><a href="#cb15-567" aria-hidden="true" tabindex="-1"></a><span class="fu">### Text Decoration Aliases</span></span>
+<span id="cb15-568"><a href="#cb15-568" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-569"><a href="#cb15-569" aria-hidden="true" tabindex="-1"></a>  Legacy Classes   Shorthand   Modern Classes</span>
+<span id="cb15-570"><a href="#cb15-570" aria-hidden="true" tabindex="-1"></a>  ---------------- ----------- --------------------------</span>
+<span id="cb15-571"><a href="#cb15-571" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.uline`</span>         <span class="in">`.u`</span>        <span class="in">`.pfa-text-uline`</span></span>
+<span id="cb15-572"><a href="#cb15-572" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.uuline`</span>        <span class="in">`.uu`</span>       <span class="in">`.pfa-text-uline-double`</span></span>
+<span id="cb15-573"><a href="#cb15-573" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.dashuline`</span>     <span class="in">`.dau`</span>      <span class="in">`.pfa-text-uline-dashed`</span></span>
+<span id="cb15-574"><a href="#cb15-574" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.dotuline`</span>      <span class="in">`.dou`</span>      <span class="in">`.pfa-text-uline-dotted`</span></span>
+<span id="cb15-575"><a href="#cb15-575" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.uwave`</span>         <span class="in">`.uw`</span>       <span class="in">`.pfa-text-uline-wave`</span></span>
+<span id="cb15-576"><a href="#cb15-576" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.sout`</span>          <span class="in">`.so`</span>       <span class="in">`.pfa-text-strikeout`</span></span>
+<span id="cb15-577"><a href="#cb15-577" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-578"><a href="#cb15-578" aria-hidden="true" tabindex="-1"></a><span class="fu">## Removed Classes</span></span>
+<span id="cb15-579"><a href="#cb15-579" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-580"><a href="#cb15-580" aria-hidden="true" tabindex="-1"></a>The following legacy classes were removed in version 1.0.3 and are no</span>
+<span id="cb15-581"><a href="#cb15-581" aria-hidden="true" tabindex="-1"></a>longer recognized by the filter.</span>
+<span id="cb15-582"><a href="#cb15-582" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-583"><a href="#cb15-583" aria-hidden="true" tabindex="-1"></a>  Removed Class   Shorthand   Removed In Version</span>
+<span id="cb15-584"><a href="#cb15-584" aria-hidden="true" tabindex="-1"></a>  --------------- ----------- --------------------</span>
+<span id="cb15-585"><a href="#cb15-585" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.center`</span>       ---         1.0.3</span>
+<span id="cb15-586"><a href="#cb15-586" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.flushleft`</span>    ---         1.0.3</span>
+<span id="cb15-587"><a href="#cb15-587" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.flushright`</span>   ---         1.0.3</span>
+<span id="cb15-588"><a href="#cb15-588" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.xout`</span>         <span class="in">`.xo`</span>       1.0.3</span>
+<span id="cb15-589"><a href="#cb15-589" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-590"><a href="#cb15-590" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>To enable equivalent styling in HTML output, include the</span>
+<span id="cb15-591"><a href="#cb15-591" aria-hidden="true" tabindex="-1"></a>    <span class="in">`fonts-and-alignment.css`</span> stylesheet distributed with this filter.</span>
+<span id="cb15-592"><a href="#cb15-592" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-593"><a href="#cb15-593" aria-hidden="true" tabindex="-1"></a><span class="ot">[^2]: </span>Three-digit shorthand expands by repeating each hexadecimal digit</span>
+<span id="cb15-594"><a href="#cb15-594" aria-hidden="true" tabindex="-1"></a>    per RGB channel (e.g., <span class="in">`#666`</span> becomes <span class="in">`#666666`</span>, <span class="in">`#F0A`</span> becomes</span>
+<span id="cb15-595"><a href="#cb15-595" aria-hidden="true" tabindex="-1"></a>    <span class="in">`#FF00AA`</span>). This only applies when each channel consists of a single</span>
+<span id="cb15-596"><a href="#cb15-596" aria-hidden="true" tabindex="-1"></a>    repeated hexadecimal digit. Full hexadecimal values without</span>
+<span id="cb15-597"><a href="#cb15-597" aria-hidden="true" tabindex="-1"></a>    per-channel repetition (e.g., <span class="in">`#2E8B57`</span>) are not eligible for</span>
+<span id="cb15-598"><a href="#cb15-598" aria-hidden="true" tabindex="-1"></a>    shorthand expansion.</span></code></pre></div>
 <h2 id="Code">Code</h2>
 <p><a href="fonts-and-alignment.lua">fonts-and-alignment.lua</a></p>
 <div class="sourceCode" id="fonts-and-alignment.lua"><pre

@@ -156,7 +156,7 @@ please refer to the official
 Pandoc documentation: <a
 href="https://pandoc.org/demo/example33/8.18-divs-and-spans.html">Divs
 and Spans — Pandoc User’s
-Guide</a></p>
+Guide</a>.</p>
 <div class="sourceCode"
 id="cb1"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This font is extra extra large.</span><span class="co">]</span>{.pfa-text-2xl}</span></code></pre></div>
@@ -539,9 +539,9 @@ formats and remain intact when
 copied into other
 applications.</p>
 <h2 data-number="6.1"
-id="casing-tranformations-in-bracketed-spans"><span
+id="casing-transformations-in-bracketed-spans"><span
 class="header-section-number">6.1</span>
-Casing Tranformations in
+Casing Transformations in
 Bracketed Spans</h2>
 <table>
 <colgroup>
@@ -564,19 +564,19 @@ style="text-align: left;">Output</th>
 <td
 style="text-align: left;">Uppercase</td>
 <td
-style="text-align: left;"><code>[coerced]{.pfa-uppercase}</code></td>
+style="text-align: left;"><code>[Sample]{.pfa-uppercase}</code></td>
 <td
 style="text-align: left;"><span
-class="pfa-uppercase">COERCED</span></td>
+class="pfa-uppercase">SAMPLE</span></td>
 </tr>
 <tr>
 <td
 style="text-align: left;">Lowercase</td>
 <td
-style="text-align: left;"><code>[COERCED]{.pfa-lowercase}</code></td>
+style="text-align: left;"><code>[SAMPLE]{.pfa-lowercase}</code></td>
 <td
 style="text-align: left;"><span
-class="pfa-lowercase">coerced</span></td>
+class="pfa-lowercase">sample</span></td>
 </tr>
 </tbody>
 </table>
@@ -620,9 +620,9 @@ Spans</h1>
 implemented using the LaTeX
 <code>ulem</code> package,
 which is automatically
-included via a
-<code>header-include</code>
-whenever any of the
+included via the
+<code>header-includes</code>
+field whenever any of the
 corresponding classes are
 detected in the document.
 These styles are also mapped
@@ -981,7 +981,7 @@ style="color: #666666;">Sample</span></td>
 id="colors-in-fenced-divs"><span
 class="header-section-number">8.3</span>
 Colors in Fenced Divs</h2>
-<p>When applied to a fenced
+<p>When applied to a Fenced
 Div, the
 <code>pfa-font-color</code>
 attribute defines the default
@@ -993,10 +993,10 @@ Bracketed Span.</p>
 <div class="sourceCode"
 id="cb11"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;DarkSlateGrey&quot;}</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>The fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div style="color: #2F4F4F;">
-<p>The fenced Div defines
+<p>The Fenced Div defines
 <em>DarkSlateGrey</em> as the
 default text color for this
 block.</p>
@@ -1004,14 +1004,14 @@ block.</p>
 <div class="sourceCode"
 id="cb12"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>::: {pfa-font-color=&quot;DarkSlateGrey&quot;}</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>The fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This Bracketed Span overrides the inherited color to _tomato_.</span><span class="co">]</span>{pfa-font-color=&quot;tomato&quot;}</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>The remaining text continues using _DarkSlateGrey_ for the remainder of the Div.</span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div style="color: #2F4F4F;">
-<p>The fenced Div defines
+<p>The Fenced Div defines
 <em>DarkSlateGrey</em> as the
 default text color for this
 block.</p>
@@ -1039,7 +1039,7 @@ Divs</h1>
 <p>The
 <code>.pfa-align-*</code>
 classes may be used to align
-text within a fenced Div.
+text within a Fenced Div.
 These classes map to LaTeX
 alignment commands
 (<code>\raggedright</code>,
@@ -1127,7 +1127,7 @@ Block-Level Alignment</h1>
 <code>.pfa-block-*</code>
 utilities control the
 horizontal positioning of a
-fenced Div as a whole, without
+Fenced Div as a whole, without
 affecting the internal text
 alignment of its contents.
 This allows the block itself
@@ -1222,7 +1222,7 @@ style="text-align: left;">Output</th>
 <tr>
 <td
 style="text-align: left;">Bold
-Sans-serif</td>
+Sans-Serif</td>
 <td
 style="text-align: left;"><code>[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}</code></td>
 <td
@@ -1297,9 +1297,9 @@ combined utilities from the
 filter.</p>
 </div>
 <h1 data-number="12"
-id="legacy-short-hand-aliases-deprecated"><span
+id="legacy-aliases-deprecated"><span
 class="header-section-number">12</span>
-Legacy Short-Hand Aliases
+Legacy Aliases
 (Deprecated)</h1>
 <p><strong>Warning:</strong>
 Legacy aliases are deprecated.
@@ -1311,8 +1311,72 @@ documents should use the
 <code>.pfa-*</code> namespaces
 going forward.</p>
 <h2 data-number="12.1"
-id="font-weight-shape-and-family-aliases"><span
+id="font-sizing-aliases"><span
 class="header-section-number">12.1</span>
+Font Sizing Aliases</h2>
+<table>
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Legacy
+Classes</th>
+<th
+style="text-align: left;">Modern
+Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>.xsmall</code></td>
+<td
+style="text-align: left;"><code>.pfa-text-xs</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>.small</code></td>
+<td
+style="text-align: left;"><code>.pfa-text-s</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>.normal</code></td>
+<td
+style="text-align: left;"><code>.pfa-text-normal</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>.large</code></td>
+<td
+style="text-align: left;"><code>.pfa-text-l</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>.xlarge</code></td>
+<td
+style="text-align: left;"><code>.pfa-text-xl</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>.xxlarge</code></td>
+<td
+style="text-align: left;"><code>.pfa-text-2xl</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>.huge</code></td>
+<td
+style="text-align: left;"><code>.pfa-text-3xl</code></td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="12.2"
+id="font-weight-shape-and-family-aliases"><span
+class="header-section-number">12.2</span>
 Font Weight, Shape, and Family
 Aliases</h2>
 <table style="width:100%;">
@@ -1327,9 +1391,9 @@ Aliases</h2>
 style="text-align: left;">Legacy
 Classes</th>
 <th
-style="text-align: left;">Short-Hand</th>
+style="text-align: left;">Shorthand</th>
 <th
-style="text-align: left;">New
+style="text-align: left;">Modern
 Classes</th>
 </tr>
 </thead>
@@ -1424,70 +1488,6 @@ style="text-align: left;"><code>.pfa-font-upright</code></td>
 </tr>
 </tbody>
 </table>
-<h2 data-number="12.2"
-id="font-size-aliases"><span
-class="header-section-number">12.2</span>
-Font Size Aliases</h2>
-<table>
-<colgroup>
-<col style="width: 41%" />
-<col style="width: 58%" />
-</colgroup>
-<thead>
-<tr>
-<th
-style="text-align: left;">Legacy
-Classes</th>
-<th
-style="text-align: left;">Modern
-Classes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td
-style="text-align: left;"><code>.xsmall</code></td>
-<td
-style="text-align: left;"><code>.pfa-text-xs</code></td>
-</tr>
-<tr>
-<td
-style="text-align: left;"><code>.small</code></td>
-<td
-style="text-align: left;"><code>.pfa-text-s</code></td>
-</tr>
-<tr>
-<td
-style="text-align: left;"><code>.normal</code></td>
-<td
-style="text-align: left;"><code>.pfa-text-normal</code></td>
-</tr>
-<tr>
-<td
-style="text-align: left;"><code>.large</code></td>
-<td
-style="text-align: left;"><code>.pfa-text-l</code></td>
-</tr>
-<tr>
-<td
-style="text-align: left;"><code>.xlarge</code></td>
-<td
-style="text-align: left;"><code>.pfa-text-xl</code></td>
-</tr>
-<tr>
-<td
-style="text-align: left;"><code>.xxlarge</code></td>
-<td
-style="text-align: left;"><code>.pfa-text-2xl</code></td>
-</tr>
-<tr>
-<td
-style="text-align: left;"><code>.huge</code></td>
-<td
-style="text-align: left;"><code>.pfa-text-3xl</code></td>
-</tr>
-</tbody>
-</table>
 <h2 data-number="12.3"
 id="alignment-aliases"><span
 class="header-section-number">12.3</span>
@@ -1503,32 +1503,11 @@ Alignment Aliases</h2>
 style="text-align: left;">Legacy
 Classes</th>
 <th
-style="text-align: left;">New
+style="text-align: left;">Modern
 Classes</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td
-style="text-align: left;"><code>.center</code></td>
-<td
-style="text-align: left;">Removed
-in version 1.0.3</td>
-</tr>
-<tr>
-<td
-style="text-align: left;"><code>.flushleft</code></td>
-<td
-style="text-align: left;">Removed
-in version 1.0.3</td>
-</tr>
-<tr>
-<td
-style="text-align: left;"><code>.flushright</code></td>
-<td
-style="text-align: left;">Removed
-in version 1.0.3</td>
-</tr>
 <tr>
 <td
 style="text-align: left;"><code>.centering</code></td>
@@ -1550,10 +1529,9 @@ style="text-align: left;"><code>.pfa-align-left</code></td>
 </tbody>
 </table>
 <h2 data-number="12.4"
-id="underline-and-strikeout-aliases"><span
+id="text-decoration-aliases"><span
 class="header-section-number">12.4</span>
-Underline and Strikeout
-Aliases</h2>
+Text Decoration Aliases</h2>
 <table>
 <colgroup>
 <col style="width: 26%" />
@@ -1566,9 +1544,9 @@ Aliases</h2>
 style="text-align: left;">Legacy
 Classes</th>
 <th
-style="text-align: left;">Short-Hand</th>
+style="text-align: left;">Shorthand</th>
 <th
-style="text-align: left;">New
+style="text-align: left;">Modern
 Classes</th>
 </tr>
 </thead>
@@ -1621,14 +1599,67 @@ style="text-align: left;"><code>.so</code></td>
 <td
 style="text-align: left;"><code>.pfa-text-strikeout</code></td>
 </tr>
+</tbody>
+</table>
+<h1 data-number="13"
+id="removed-classes"><span
+class="header-section-number">13</span>
+Removed Classes</h1>
+<p>The following legacy
+classes were removed in
+version 1.0.3 and are no
+longer recognized by the
+filter.</p>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 22%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Removed
+Class</th>
+<th
+style="text-align: left;">Shorthand</th>
+<th
+style="text-align: left;">Removed
+In Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>.center</code></td>
+<td
+style="text-align: left;">—</td>
+<td
+style="text-align: left;">1.0.3</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>.flushleft</code></td>
+<td
+style="text-align: left;">—</td>
+<td
+style="text-align: left;">1.0.3</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>.flushright</code></td>
+<td
+style="text-align: left;">—</td>
+<td
+style="text-align: left;">1.0.3</td>
+</tr>
 <tr>
 <td
 style="text-align: left;"><code>.xout</code></td>
 <td
 style="text-align: left;"><code>.xo</code></td>
 <td
-style="text-align: left;">Removed
-in version 1.0.3</td>
+style="text-align: left;">1.0.3</td>
 </tr>
 </tbody>
 </table>
