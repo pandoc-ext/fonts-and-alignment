@@ -44,10 +44,9 @@ endif
 TEST_YAMLS := $(filter-out test/test.yaml, $(wildcard test/test-*.yaml))
 # 2. Extract just the name parts (e.g., "span-font-sizes")
 TEST_NAMES := $(patsubst test/test-%.yaml,%,$(TEST_YAMLS))
-# 2b. The full-document `input` case is verified as a build smoke test (see the
-#     `smoke` target) rather than a brittle 186 KB exact-AST golden, so it is
-#     excluded from the diff set. The focused span-*/div-* tests provide the AST
-#     coverage; `input` is still rendered for docs and previews.
+# 2b. `input` is the filter's full usage manual — rendered for the docs site and
+#     previews, not a test fixture — so it is excluded from the AST-diff set.
+#     The focused span-*/div-* tests provide the correctness coverage.
 DIFF_NAMES := $(filter-out input,$(TEST_NAMES))
 # 3. Grab all markdown files in the test directory to use as dependencies
 TEST_INPUTS := $(wildcard test/*.md)
@@ -103,16 +102,11 @@ css: $(DIST_CSS_FILES) ## Compile SASS sources into distribution CSS files
 # Testing Rules (AST Generation & Diffing)
 # ==============================================================================
 .PHONY: test
-test: $(FILTER_FILE) smoke $(addprefix test-,$(DIFF_NAMES)) ## Run focused AST diff tests plus a full-document build smoke test
+test: $(FILTER_FILE) $(addprefix test-,$(DIFF_NAMES)) ## Run the focused AST diff tests
 
 test-%: $(FILTER_FILE) test/test.yaml test/test-%.yaml $(TEST_INPUTS)
 	$(PANDOC) --defaults test/test.yaml --defaults test/test-$*.yaml | \
 		$(DIFF) test/expected-$*.native -
-
-.PHONY: smoke
-smoke: $(FILTER_FILE) test/test.yaml test/test-input.yaml $(TEST_INPUTS) ## Smoke test: confirm the full input.md builds through the filter without error
-	@$(PANDOC) --defaults test/test.yaml --defaults test/test-input.yaml > /dev/null \
-		&& echo "smoke: full input.md builds through the filter OK"
 
 .PHONY: update-expected
 update-expected: $(FILTER_FILE) $(addprefix update-,$(DIFF_NAMES)) ## Overwrite expected AST test outputs
@@ -169,7 +163,7 @@ $(PREVIEWS_DIR):
 # Documentation
 # ==============================================================================
 .PHONY: docs
-docs: docs/index.html docs/fonts-and-alignment.lua ## Build the standalone documentation site
+docs: docs/index.html docs/input.html docs/input.pdf docs/fonts-and-alignment.lua ## Build the standalone documentation site
 
 docs/index.html: README.md test/input.md $(FILTER_FILE) .tools/docs.lua \
         docs/output.md docs/style.css
@@ -197,6 +191,24 @@ docs/output.md: $(FILTER_FILE) test/input.md
 		--standalone \
 		test/input.md
 
+docs/input.html: test/input.md $(FILTER_FILE) $(DIST_CSS_FILES) test/preview-suite.css
+	$(PANDOC) \
+		--standalone \
+		--lua-filter=$(FILTER_FILE) \
+		--to=html \
+		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
+		--css=../$(CSS_REM) \
+		--css=../test/preview-suite.css \
+		--output=$@ $<
+
+docs/input.pdf: test/input.md $(FILTER_FILE) test/preview-framing.lua
+	$(PANDOC) \
+		--lua-filter=test/preview-framing.lua \
+		--lua-filter=$(FILTER_FILE) \
+		--to=pdf \
+		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
+		--output=$@ $<
+
 docs/fonts-and-alignment.lua: $(FILTER_FILE)
 	@mkdir -p docs
 	cp $(FILTER_FILE) $@
@@ -207,7 +219,7 @@ docs/fonts-and-alignment.lua: $(FILTER_FILE)
 # ==============================================================================
 .PHONY: clean
 clean: ## Remove all built artifacts, CSS distributions, and temporary files
-	rm -f docs/output.md docs/index.html docs/style.css docs/fonts-and-alignment.lua
+	rm -f docs/output.md docs/index.html docs/input.html docs/input.pdf docs/style.css docs/fonts-and-alignment.lua
 	rm -rf $(PREVIEWS_DIR)
 	rm -f $(DIST_CSS_FILES)
 	rm -f $(FILTER_FILE)

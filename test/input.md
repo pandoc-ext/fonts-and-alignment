@@ -208,21 +208,21 @@ All naming conventions below resolve to the CSS3 color `mediumvioletred`.
 | Naming Convention    | Syntax                                        | Output |
 | :------------------- | :-------------------------------------------- | :---------- |
 | Lowercase            | `[Color]{pfa-font-color="mediumvioletred"}`   | [Color]{pfa-font-color="mediumvioletred"} |
-| | |
+| | | |
 | Spaces               | `[Color]{pfa-font-color="Medium Violet Red"}` | [Color]{pfa-font-color="Medium Violet Red"} |
-| | |
+| | | |
 | Title Case           | `[Color]{pfa-font-color="Medium Violet Red"}` | [Color]{pfa-font-color="Medium Violet Red"} |
-| | |
+| | | |
 | Kebab Case           | `[Color]{pfa-font-color="medium-violet-red"}` | [Color]{pfa-font-color="medium-violet-red"} |
-| | |
+| | | |
 | Snake Case           | `[Color]{pfa-font-color="medium_violet_red"}` | [Color]{pfa-font-color="medium_violet_red"} |
-| | |
+| | | |
 | Camel Case           | `[Color]{pfa-font-color="mediumVioletRed"}`   | [Color]{pfa-font-color="mediumVioletRed"} |
-| | |
+| | | |
 | Pascal Case          | `[Color]{pfa-font-color="MediumVioletRed"}`   | [Color]{pfa-font-color="MediumVioletRed"} |
-| | |
+| | | |
 | Screaming Snake Case | `[Color]{pfa-font-color="MEDIUM_VIOLET_RED"}` | [Color]{pfa-font-color="MEDIUM_VIOLET_RED"} |
-| | |
+| | | |
 | Uppercase            | `[Color]{pfa-font-color="MEDIUMVIOLETRED"}`   | [Color]{pfa-font-color="MEDIUMVIOLETRED"} |
 
 ### Colors in Bracketed Spans
@@ -378,9 +378,9 @@ Class names are space-separated within `{}` following Pandoc attribute syntax. I
 | Style                               | Syntax                                                                       | Output |
 | :-------------------------- | :----------------------------------------------------------------- | :----------- |
 | Bold Sans-Serif                     | `[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}`   | [Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"} |
-|  |  |
+|  | | |
 | Italic Monospace                    | `[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}`                    | [Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s} |
-|  |  |
+|  | | |
 | Small Caps, Underlined, Colored     | `[Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color="forestgreen"}` | [Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color="forestgreen"} |
 
 ### Fenced Div Composition
