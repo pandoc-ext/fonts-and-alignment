@@ -201,10 +201,10 @@ docs/input.html: test/input.md $(FILTER_FILE) $(DIST_CSS_FILES) test/preview-sui
 		--css=../test/preview-suite.css \
 		--output=$@ $<
 
-docs/input.pdf: test/input.md $(FILTER_FILE) test/preview-framing.lua
+docs/input.pdf: test/input.md $(FILTER_FILE) test/preview-framing.lua test/test.yaml
 	$(PANDOC) \
 		--lua-filter=test/preview-framing.lua \
-		--lua-filter=$(FILTER_FILE) \
+		--defaults=test/test.yaml \
 		--to=pdf \
 		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
 		--output=$@ $<
