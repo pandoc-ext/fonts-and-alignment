@@ -12,15 +12,23 @@ FILTER_DIST := $(EXT_DIR)/fonts-and-alignment.lua
 FILTER_FILE := fonts-and-alignment.lua
 
 # Generated Core Distribution CSS Files
-CSS_EM  := ../fonts-and-alignment-em.css
-CSS_REM := $(EXT_DIR)/fonts-and-alignment.css
-DIST_CSS_FILES := $(CSS_EM) $(CSS_REM)
+CSS_EM       := ../fonts-and-alignment-em.css
+CSS_REM      := $(EXT_DIR)/fonts-and-alignment.css
+CSS_REM_10PT := $(EXT_DIR)/fonts-and-alignment-10pt.css
+CSS_REM_11PT := $(EXT_DIR)/fonts-and-alignment-11pt.css
+CSS_EM_10PT  := fonts-and-alignment-em-10pt.css
+CSS_EM_11PT  := fonts-and-alignment-em-11pt.css
+DIST_CSS_FILES := $(CSS_EM) $(CSS_REM) $(CSS_REM_10PT) $(CSS_REM_11PT) $(CSS_EM_10PT) $(CSS_EM_11PT)
 
 # Private Development SASS Source Files
-SASS_SRC_DIR := src
-SASS_CORE    := $(SASS_SRC_DIR)/_fonts-and-alignment-core.sass
-SASS_EM_SRC  := $(SASS_SRC_DIR)/fonts-and-alignment-em.sass
-SASS_REM_SRC := $(SASS_SRC_DIR)/fonts-and-alignment.sass
+SASS_SRC_DIR      := src
+SASS_CORE         := $(SASS_SRC_DIR)/_fonts-and-alignment-core.sass
+SASS_EM_SRC       := $(SASS_SRC_DIR)/fonts-and-alignment-em.sass
+SASS_REM_SRC      := $(SASS_SRC_DIR)/fonts-and-alignment.sass
+SASS_REM_10PT_SRC := $(SASS_SRC_DIR)/fonts-and-alignment-10pt.sass
+SASS_REM_11PT_SRC := $(SASS_SRC_DIR)/fonts-and-alignment-11pt.sass
+SASS_EM_10PT_SRC  := $(SASS_SRC_DIR)/fonts-and-alignment-em-10pt.sass
+SASS_EM_11PT_SRC  := $(SASS_SRC_DIR)/fonts-and-alignment-em-11pt.sass
 
 # Allow to use a different pandoc binary, e.g. when testing.
 PANDOC ?= pandoc
@@ -92,6 +100,20 @@ $(CSS_EM): $(SASS_EM_SRC) $(SASS_CORE)
 
 $(CSS_REM): $(SASS_REM_SRC) $(SASS_CORE)
 	@mkdir -p $(EXT_DIR)
+	sass --no-source-map $< $@
+
+$(CSS_REM_10PT): $(SASS_REM_10PT_SRC) $(SASS_CORE)
+	@mkdir -p $(EXT_DIR)
+	sass --no-source-map $< $@
+
+$(CSS_REM_11PT): $(SASS_REM_11PT_SRC) $(SASS_CORE)
+	@mkdir -p $(EXT_DIR)
+	sass --no-source-map $< $@
+
+$(CSS_EM_10PT): $(SASS_EM_10PT_SRC) $(SASS_CORE)
+	sass --no-source-map $< $@
+
+$(CSS_EM_11PT): $(SASS_EM_11PT_SRC) $(SASS_CORE)
 	sass --no-source-map $< $@
 
 .PHONY: css

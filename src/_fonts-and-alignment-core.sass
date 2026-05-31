@@ -10,16 +10,51 @@ $pfa-mainfont: var(--pfa-mainfont, serif) !default
 $pfa-sansfont: var(--pfa-sansfont, sans-serif) !default
 $pfa-monofont: var(--pfa-monofont, monospace) !default
 
-@mixin pfa-engine($pfa-unit: 1rem)
-  $pfa-xxxsmall: calc((#{$pfa-unit} / 12) * 6)
-  $pfa-xxsmall:  calc((#{$pfa-unit} / 12) * 8)
-  $pfa-xsmall:   calc((#{$pfa-unit} / 12) * 10)
-  $pfa-small:    calc((#{$pfa-unit} / 12) * 10.95)
-  $pfa-normal:   calc((#{$pfa-unit} / 12) * 12)
-  $pfa-large:    calc((#{$pfa-unit} / 12) * 14.4)
-  $pfa-xlarge:   calc((#{$pfa-unit} / 12) * 17.28)
-  $pfa-xxlarge:  calc((#{$pfa-unit} / 12) * 20.74)
-  $pfa-huge:     calc((#{$pfa-unit} / 12) * 24.88)
+@mixin pfa-engine($pfa-unit: 1rem, $pfa-base-pt: 12)
+  // Size variables are set by the $pfa-base-pt branch below.
+  // LaTeX pt values sourced from size10.clo, size11.clo, size12.clo.
+  $pfa-xxxsmall: null
+  $pfa-xxsmall:  null
+  $pfa-xsmall:   null
+  $pfa-small:    null
+  $pfa-normal:   null
+  $pfa-large:    null
+  $pfa-xlarge:   null
+  $pfa-xxlarge:  null
+  $pfa-huge:     null
+
+  @if $pfa-base-pt == 10
+    $pfa-xxxsmall: calc((#{$pfa-unit} / 10) * 5)
+    $pfa-xxsmall:  calc((#{$pfa-unit} / 10) * 7)
+    $pfa-xsmall:   calc((#{$pfa-unit} / 10) * 8)
+    $pfa-small:    calc((#{$pfa-unit} / 10) * 9)
+    $pfa-normal:   $pfa-unit
+    $pfa-large:    calc((#{$pfa-unit} / 10) * 12)
+    $pfa-xlarge:   calc((#{$pfa-unit} / 10) * 14.4)
+    $pfa-xxlarge:  calc((#{$pfa-unit} / 10) * 17.28)
+    $pfa-huge:     calc((#{$pfa-unit} / 10) * 20.74)
+  @else if $pfa-base-pt == 11
+    $pfa-xxxsmall: calc((#{$pfa-unit} / 10.95) * 6)
+    $pfa-xxsmall:  calc((#{$pfa-unit} / 10.95) * 8)
+    $pfa-xsmall:   calc((#{$pfa-unit} / 10.95) * 9)
+    $pfa-small:    calc((#{$pfa-unit} / 10.95) * 10)
+    $pfa-normal:   $pfa-unit
+    $pfa-large:    calc((#{$pfa-unit} / 10.95) * 12)
+    $pfa-xlarge:   calc((#{$pfa-unit} / 10.95) * 14.4)
+    $pfa-xxlarge:  calc((#{$pfa-unit} / 10.95) * 17.28)
+    $pfa-huge:     calc((#{$pfa-unit} / 10.95) * 20.74)
+  @else if $pfa-base-pt == 12
+    $pfa-xxxsmall: calc((#{$pfa-unit} / 12) * 6)
+    $pfa-xxsmall:  calc((#{$pfa-unit} / 12) * 8)
+    $pfa-xsmall:   calc((#{$pfa-unit} / 12) * 10)
+    $pfa-small:    calc((#{$pfa-unit} / 12) * 10.95)
+    $pfa-normal:   $pfa-unit
+    $pfa-large:    calc((#{$pfa-unit} / 12) * 14.4)
+    $pfa-xlarge:   calc((#{$pfa-unit} / 12) * 17.28)
+    $pfa-xxlarge:  calc((#{$pfa-unit} / 12) * 20.74)
+    $pfa-huge:     calc((#{$pfa-unit} / 12) * 24.88)
+  @else
+    @error "pfa-engine: $pfa-base-pt must be 10, 11, or 12. Got: #{$pfa-base-pt}"
 
   /* Font Weights, Styles, and Families */
   .bold, .bf, .pfa-font-bold

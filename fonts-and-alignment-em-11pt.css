@@ -1,6 +1,6 @@
 /**
- * * Pandoc Fonts and Alignment Stylesheet (REM Sizing)
- * * Scales typography predictably relative to the web page root.
+ * * Pandoc Fonts and Alignment Stylesheet (EM Sizing, 11pt LaTeX scale)
+ * * Use when your LaTeX document sets fontsize: 11pt.
  * */
 /**
  * * Pandoc Fonts and Alignment - Core Engine Mixin
@@ -54,39 +54,39 @@
 
 /* Typography Sizing Utilities */
 .pfa-text-3xs {
-  font-size: calc(1rem / 12 * 6) !important;
+  font-size: calc(1em / 10.95 * 6) !important;
 }
 
 .pfa-text-2xs {
-  font-size: calc(1rem / 12 * 8) !important;
+  font-size: calc(1em / 10.95 * 8) !important;
 }
 
 .xsmall, .pfa-text-xs {
-  font-size: calc(1rem / 12 * 10) !important;
+  font-size: calc(1em / 10.95 * 9) !important;
 }
 
 .small, .pfa-text-s {
-  font-size: calc(1rem / 12 * 10.95) !important;
+  font-size: calc(1em / 10.95 * 10) !important;
 }
 
 .normal, .pfa-text-normal {
-  font-size: 1rem !important;
+  font-size: 1em !important;
 }
 
 .large, .pfa-text-l {
-  font-size: calc(1rem / 12 * 14.4) !important;
+  font-size: calc(1em / 10.95 * 12) !important;
 }
 
 .xlarge, .pfa-text-xl {
-  font-size: calc(1rem / 12 * 17.28) !important;
+  font-size: calc(1em / 10.95 * 14.4) !important;
 }
 
 .xxlarge, .pfa-text-2xl {
-  font-size: calc(1rem / 12 * 20.74) !important;
+  font-size: calc(1em / 10.95 * 17.28) !important;
 }
 
 .huge, .pfa-text-3xl {
-  font-size: calc(1rem / 12 * 24.88) !important;
+  font-size: calc(1em / 10.95 * 20.74) !important;
 }
 
 /* Alignments */

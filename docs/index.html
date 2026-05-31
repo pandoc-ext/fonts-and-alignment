@@ -110,10 +110,11 @@ Extension</a></li>
 id="toc-prerequisites">Prerequisites</a></li>
 <li><a href="#quick-start" id="toc-quick-start">Quick Start</a>
 <ul>
-<li><a href="#inline-elements-spans"
-id="toc-inline-elements-spans">Inline elements (Spans)</a></li>
+<li><a href="#inline-elements-bracketed-spans"
+id="toc-inline-elements-bracketed-spans">Inline elements (Bracketed
+Spans)</a></li>
 <li><a href="#block-elements-fenced-divs"
-id="toc-block-elements-fenced-divs">Block elements (fenced
+id="toc-block-elements-fenced-divs">Block elements (Fenced
 Divs)</a></li>
 </ul></li>
 <li><a href="#class-reference" id="toc-class-reference">Class
@@ -123,9 +124,9 @@ Reference</a>
 <li><a href="#font-weight-shape-and-family"
 id="toc-font-weight-shape-and-family">Font Weight, Shape, and
 Family</a></li>
-<li><a href="#text-decorations-inline-only"
-id="toc-text-decorations-inline-only">Text Decorations (inline
-only)</a></li>
+<li><a href="#text-decorations-bracketed-spans-only"
+id="toc-text-decorations-bracketed-spans-only">Text Decorations
+(Bracketed Spans only)</a></li>
 <li><a href="#text-casing" id="toc-text-casing">Text Casing</a></li>
 <li><a href="#color" id="toc-color">Color</a></li>
 <li><a href="#block-alignment" id="toc-block-alignment">Block
@@ -151,6 +152,8 @@ Aliases</a></li>
 id="toc-underline-and-strikeout-aliases">Underline and Strikeout
 Aliases</a></li>
 </ul></li>
+<li><a href="#removed-classes" id="toc-removed-classes">Removed
+Classes</a></li>
 <li><a href="#troubleshooting"
 id="toc-troubleshooting">Troubleshooting</a>
 <ul>
@@ -182,52 +185,45 @@ id="toc-acknowledgements">Acknowledgements</a></li>
 </ul>
 </nav>
 <p><em>Fonts and Alignment</em> is a Pandoc Lua filter that brings rich
-typographic control to Markdown source — font sizing, weight, shape,
-family, decoration, color, casing, and block alignment — using a single
-namespaced class system (<code>pfa-*</code>) that produces faithful
-output in <strong>both LaTeX/PDF and HTML/CSS</strong>.</p>
+typographic control to Markdown source — font sizing, weights, shapes,
+families, text decorations, colors, casings, and alignment — using a
+single namespaced class system (<code>pfa-*</code>) that produces
+consistent outputs in <strong>both LaTeX/PDF and HTML/CSS</strong>.</p>
 <p>Write once in Markdown and let the filter inject the correct LaTeX
 commands for PDF output while emitting plain Pandoc Spans and Divs for
 HTML, which a companion CSS stylesheet styles with the same class
 names.</p>
-<p>A full visual specimen lives at <a
-href="test/input.md"><code>test/input.md</code></a>, which the build
-pipeline renders to both <a href="artifacts/input.html">HTML</a> and <a
-href="artifacts/input.pdf">PDF</a>.</p>
+<p>For full visual specimens view the <a href="docs/input.pdf">PDF</a>
+and <a href="docs/input.html">HTML</a> both of which demonstrate all the
+features of the filter.</p>
 <h2 id="feature-highlights">Feature Highlights</h2>
 <ul>
 <li><strong>Nine-step font sizing scale</strong> —
-<code>pfa-text-3xs</code> through <code>pfa-text-3xl</code>, plus
-<code>pfa-text-normal</code> for explicit reset.</li>
+<code>pfa-text-3xs</code> through <code>pfa-text-3xl</code>.</li>
 <li><strong>Full typographic palette</strong> — weights
 (<code>bold</code>, <code>medium</code>), shapes (<code>italic</code>,
 <code>slanted</code>, <code>upright</code>), families
 (<code>serif</code>, <code>sans</code>, <code>mono</code>,
-<code>smallcaps</code>), and emphasis.</li>
+<code>smallcaps</code>), and <code>emphasis</code>.</li>
 <li><strong>Text decorations</strong> — single, double, dashed, dotted,
-and wavy underlines, plus strikeout and marked-out variants (auto-loads
-<code>ulem</code> only when used).</li>
+wavy underlines and strikeout.</li>
 <li><strong>Color resolution</strong> — <code>pfa-font-color</code>
-attribute accepts CSS3 named colors, 3- or 6-digit hex codes, and is
-case- and whitespace-insensitive (<code>"Medium Violet Red"</code>,
-<code>medium-violet-red</code>, and <code>mediumvioletred</code> all
-resolve to the same color).</li>
+attribute accepts CSS3 named colors and 3- or 6-digit hex codes; color
+names are parsed permissively across all common naming conventions —
+<code>"Medium Violet Red"</code>, <code>medium-violet-red</code>,
+<code>medium_violet_red</code>, <code>mediumVioletRed</code>,
+<code>MediumVioletRed</code>, <code>MEDIUM_VIOLET_RED</code>, and
+<code>MEDIUMVIOLETRED</code> all resolve identically.</li>
 <li><strong>Text casing</strong> — <code>pfa-uppercase</code> and
 <code>pfa-lowercase</code> rewrite the underlying AST text nodes so the
 transformation survives copy-paste.</li>
-<li><strong>Block alignment</strong> — column-style
-<code>pfa-text-*</code> for paragraph alignment, line-break-honoring
-<code>pfa-align-*</code> for poetry and addresses, and shrink-to-fit
-<code>pfa-block-*</code> boxes that wrap tightly around their
-content.</li>
+<li><strong>Block alignment</strong> — <code>pfa-align-*</code> for text
+alignment within a block (preserving explicit line breaks — ideal for
+poetry, addresses, and titles), and <code>pfa-block-*</code> for
+controlling the horizontal positioning of a block as a whole without
+affecting its internal text alignment.</li>
 <li><strong>Inline overrides inside colored blocks</strong> —
 block-level colors inherit downward; nested spans may override.</li>
-<li><strong>Legacy aliases</strong> — every short form from the original
-filter (<code>bold</code>, <code>bf</code>, <code>xxlarge</code>,
-<code>flushright</code>, <code>uwave</code>, …) still works so existing
-documents continue to compile unchanged, <strong>but they are deprecated
-and will be removed in a future release</strong>. Migrate new work to
-the <code>pfa-*</code> namespace.</li>
 </ul>
 <h2 id="installation">Installation</h2>
 <h3 id="as-a-quarto-pandoc-extension">As a Quarto / Pandoc
@@ -266,23 +262,24 @@ class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sansfont</span><span class="kw">:</span><span class="at"> Noto Sans</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">monofont</span><span class="kw">:</span><span class="at"> Fira Mono</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>For HTML output use one of the bundled CSS files and add the
-following three font variables in your own stylesheet:</p>
+<p>For HTML output use the <code>fonts-and-alignment.css</code> CSS file
+to get access to the styles defined by this filter</p>
 <div class="sourceCode" id="cb4"><pre
 class="sourceCode css"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">:root</span> {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="va">--pfa-mainfont</span><span class="ch">:</span> <span class="st">&#39;Merriweather&#39;</span><span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="va">--pfa-sansfont</span><span class="ch">:</span> <span class="st">&#39;Open Sans&#39;</span><span class="op">,</span>    <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">--pfa-monofont</span><span class="ch">:</span> <span class="st">&#39;Fira Code&#39;</span><span class="op">,</span>    <span class="dv">monospace</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="va">--pfa-mainfont</span><span class="ch">:</span> <span class="st">&#39;Noto Serif&#39;</span><span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="va">--pfa-sansfont</span><span class="ch">:</span> <span class="st">&#39;Noto Sans&#39;</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="va">--pfa-monofont</span><span class="ch">:</span> <span class="st">&#39;Fira Mono&#39;</span><span class="op">,</span> <span class="dv">monospace</span><span class="op">;</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <h2 id="quick-start">Quick Start</h2>
-<h3 id="inline-elements-spans">Inline elements (Spans)</h3>
+<h3 id="inline-elements-bracketed-spans">Inline elements (Bracketed
+Spans)</h3>
 <p>Wrap the text in square brackets and attach the class(es) in
 braces:</p>
 <div class="sourceCode" id="cb5"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">some text</span><span class="co">]</span>{.pfa-font-bold}</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">some text</span><span class="co">]</span>{.pfa-font-italic .pfa-text-l}</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">some text</span><span class="co">]</span>{.pfa-text-uline pfa-font-color=&quot;forestgreen&quot;}</span></code></pre></div>
-<h3 id="block-elements-fenced-divs">Block elements (fenced Divs)</h3>
+<h3 id="block-elements-fenced-divs">Block elements (Fenced Divs)</h3>
 <p>Open the block with <code>:::</code> plus a class (curly braces only
 required when combining more than one class or adding attributes):</p>
 <div class="sourceCode" id="cb6"><pre
@@ -436,11 +433,12 @@ Family</h3>
 shapes/weights. LaTeX will silently substitute a default if they are
 missing.</p>
 </blockquote>
-<h3 id="text-decorations-inline-only">Text Decorations (inline
-only)</h3>
+<h3 id="text-decorations-bracketed-spans-only">Text Decorations
+(Bracketed Spans only)</h3>
 <p>Routed through the <code>ulem</code> LaTeX package — auto-loaded by
-the filter only when one of these classes is detected in the
-document.</p>
+the filter only when one of these classes is detected in the document.
+These styles are also mapped to equivalent CSS properties for consistent
+rendering in HTML output.</p>
 <table>
 <thead>
 <tr>
@@ -507,9 +505,13 @@ from the rendered document.</p>
 <h3 id="color">Color</h3>
 <p>A single attribute, <code>pfa-font-color</code>, accepts:</p>
 <ul>
-<li>Any of the 147 CSS3 named colors (case- and whitespace-insensitive —
-<code>"Medium Violet Red"</code>, <code>medium-violet-red</code>, and
-<code>MEDIUMVIOLETRED</code> all resolve identically)</li>
+<li>Any of the 147 CSS3 named colors — the name is parsed permissively;
+all of the following resolve identically to
+<code>mediumvioletred</code>: <code>mediumvioletred</code>,
+<code>Medium Violet Red</code>, <code>medium-violet-red</code>,
+<code>medium_violet_red</code>, <code>mediumVioletRed</code>,
+<code>MediumVioletRed</code>, <code>MEDIUM_VIOLET_RED</code>,
+<code>MEDIUMVIOLETRED</code></li>
 <li>Three-digit hex shorthand (<code>#333</code>)</li>
 <li>Six-digit full hex (<code>#2E8B57</code>)</li>
 </ul>
@@ -562,12 +564,13 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><
 </tr>
 </tbody>
 </table>
-<p>The <code>pfa-align-*</code> family sets the text alignment of a
+<p>The <code>pfa-align-*</code> family sets the text alignment within a
 block and preserves explicit <code>\</code> line breaks — ideal for
 poetry, formal addresses, and titles. The <code>pfa-block-*</code>
-family wraps the content in an isolated bounding box (LaTeX
-<code>varwidth</code>) that shrinks to its content before being
-positioned in the document flow.</p>
+family controls the horizontal positioning of a block as a whole without
+affecting its internal text alignment; each variant wraps the content in
+an isolated bounding box (LaTeX <code>varwidth</code>) that shrinks to
+its content before being positioned in the document flow.</p>
 <div class="sourceCode" id="cb8"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>::: pfa-align-center</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>First centered line\</span>
@@ -739,18 +742,6 @@ Family Aliases</h3>
 </thead>
 <tbody>
 <tr>
-<td><code>center</code></td>
-<td>Removed in version 1.0.3</td>
-</tr>
-<tr>
-<td><code>flushleft</code></td>
-<td>Removed in version 1.0.3</td>
-</tr>
-<tr>
-<td><code>flushright</code></td>
-<td>Removed in version 1.0.3</td>
-</tr>
-<tr>
 <td><code>centering</code></td>
 <td><code>pfa-align-center</code></td>
 </tr>
@@ -805,10 +796,39 @@ Aliases</h3>
 <td><code>so</code></td>
 <td><code>pfa-text-strikeout</code></td>
 </tr>
+</tbody>
+</table>
+<h2 id="removed-classes">Removed Classes</h2>
+<p>The following classes were removed in version 1.0.3 and are no longer
+recognized by the filter.</p>
+<table>
+<thead>
+<tr>
+<th>Removed Class</th>
+<th>Short</th>
+<th>Removed In</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>center</code></td>
+<td>—</td>
+<td>1.0.3</td>
+</tr>
+<tr>
+<td><code>flushleft</code></td>
+<td>—</td>
+<td>1.0.3</td>
+</tr>
+<tr>
+<td><code>flushright</code></td>
+<td>—</td>
+<td>1.0.3</td>
+</tr>
 <tr>
 <td><code>xout</code></td>
 <td><code>xo</code></td>
-<td>Removed in version 1.0.3</td>
+<td>1.0.3</td>
 </tr>
 </tbody>
 </table>

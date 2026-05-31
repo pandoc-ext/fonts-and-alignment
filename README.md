@@ -1,42 +1,36 @@
 # Fonts and Alignment Filter
 
 _Fonts and Alignment_ is a Pandoc Lua filter that brings rich typographic
-control to Markdown source — font sizing, weight, shape, family, decoration,
-color, casing, and block alignment — using a single namespaced class system
-(`pfa-*`) that produces faithful output in **both LaTeX/PDF and HTML/CSS**.
+control to Markdown source — font sizing, weights, shapes, families, text decorations,
+colors, casings, and alignment — using a single namespaced class system
+(`pfa-*`) that produces consistent outputs in **both LaTeX/PDF and HTML/CSS**.
 
 Write once in Markdown and let the filter inject the correct LaTeX commands
 for PDF output while emitting plain Pandoc Spans and Divs for HTML, which a
 companion CSS stylesheet styles with the same class names.
 
-A full visual specimen lives at [`test/input.md`](test/input.md), which the
-build pipeline renders to both [HTML](artifacts/input.html) and [PDF](artifacts/input.pdf).
+For full visual specimens view the [PDF](docs/input.pdf) and [HTML](docs/input.html) both of which demonstrate all the features of the filter.
 
 ## Feature Highlights
 
-- **Nine-step font sizing scale** — `pfa-text-3xs` through `pfa-text-3xl`,
-  plus `pfa-text-normal` for explicit reset.
+- **Nine-step font sizing scale** — `pfa-text-3xs` through `pfa-text-3xl`.
 - **Full typographic palette** — weights (`bold`, `medium`), shapes (`italic`,
   `slanted`, `upright`), families (`serif`, `sans`, `mono`, `smallcaps`),
-  and emphasis.
-- **Text decorations** — single, double, dashed, dotted, and wavy underlines,
-  plus strikeout and marked-out variants (auto-loads `ulem` only when used).
-- **Color resolution** — `pfa-font-color` attribute accepts CSS3 named colors,
-  3- or 6-digit hex codes, and is case- and whitespace-insensitive
-  (`"Medium Violet Red"`, `medium-violet-red`, and `mediumvioletred`
-  all resolve to the same color).
+  and `emphasis`.
+- **Text decorations** — single, double, dashed, dotted, wavy underlines and strikeout.
+- **Color resolution** — `pfa-font-color` attribute accepts CSS3 named colors
+  and 3- or 6-digit hex codes; color names are parsed permissively across all
+  common naming conventions — `"Medium Violet Red"`, `medium-violet-red`,
+  `medium_violet_red`, `mediumVioletRed`, `MediumVioletRed`,
+  `MEDIUM_VIOLET_RED`, and `MEDIUMVIOLETRED` all resolve identically.
 - **Text casing** — `pfa-uppercase` and `pfa-lowercase` rewrite the underlying
   AST text nodes so the transformation survives copy-paste.
-- **Block alignment** — column-style `pfa-text-*` for paragraph alignment,
-  line-break-honoring `pfa-align-*` for poetry and addresses, and
-  shrink-to-fit `pfa-block-*` boxes that wrap tightly around their content.
+- **Block alignment** — `pfa-align-*` for text alignment within a block
+  (preserving explicit line breaks — ideal for poetry, addresses, and titles),
+  and `pfa-block-*` for controlling the horizontal positioning of a block as a
+  whole without affecting its internal text alignment.
 - **Inline overrides inside colored blocks** — block-level colors inherit
   downward; nested spans may override.
-- **Legacy aliases** — every short form from the original filter
-  (`bold`, `bf`, `xxlarge`, `flushright`, `uwave`, …) still works so
-  existing documents continue to compile unchanged, **but they are
-  deprecated and will be removed in a future release**. Migrate new
-  work to the `pfa-*` namespace.
 
 ## Installation
 
@@ -84,19 +78,19 @@ monofont: Fira Mono
 ---
 ```
 
-For HTML output use one of the bundled CSS files and add the following three font variables in your own stylesheet:
+For HTML output use the `fonts-and-alignment.css` CSS file to get access to the styles defined by this filter
 
 ```css
 :root {
-  --pfa-mainfont: 'Merriweather', serif;
-  --pfa-sansfont: 'Open Sans',    sans-serif;
-  --pfa-monofont: 'Fira Code',    monospace;
+  --pfa-mainfont: 'Noto Serif', serif;
+  --pfa-sansfont: 'Noto Sans', sans-serif;
+  --pfa-monofont: 'Fira Mono', monospace;
 }
 ```
 
 ## Quick Start
 
-### Inline elements (Spans)
+### Inline elements (Bracketed Spans)
 
 Wrap the text in square brackets and attach the class(es) in braces:
 
@@ -106,7 +100,7 @@ Wrap the text in square brackets and attach the class(es) in braces:
 [some text]{.pfa-text-uline pfa-font-color="forestgreen"}
 ```
 
-### Block elements (fenced Divs)
+### Block elements (Fenced Divs)
 
 Open the block with `:::` plus a class (curly braces only required when
 combining more than one class or adding attributes):
@@ -158,10 +152,11 @@ Nine sizing hooks, applicable as both inline spans and block-level Divs.
 > Make sure your selected fonts actually carry the requested shapes/weights.
 > LaTeX will silently substitute a default if they are missing.
 
-### Text Decorations (inline only)
+### Text Decorations (Bracketed Spans only)
 
 Routed through the `ulem` LaTeX package — auto-loaded by the filter only when
-one of these classes is detected in the document.
+one of these classes is detected in the document. These styles are also mapped
+to equivalent CSS properties for consistent rendering in HTML output.
 
 | Class                    | LaTeX           | Description             |
 |--------------------------|-----------------|-------------------------|
@@ -187,9 +182,11 @@ rendered document.
 
 A single attribute, `pfa-font-color`, accepts:
 
-- Any of the 147 CSS3 named colors (case- and whitespace-insensitive —
-  `"Medium Violet Red"`, `medium-violet-red`, and `MEDIUMVIOLETRED`
-  all resolve identically)
+- Any of the 147 CSS3 named colors — the name is parsed permissively; all of
+  the following resolve identically to `mediumvioletred`:
+  `mediumvioletred`, `Medium Violet Red`, `medium-violet-red`,
+  `medium_violet_red`, `mediumVioletRed`, `MediumVioletRed`,
+  `MEDIUM_VIOLET_RED`, `MEDIUMVIOLETRED`
 - Three-digit hex shorthand (`#333`)
 - Six-digit full hex (`#2E8B57`)
 
@@ -217,11 +214,12 @@ Two flavors, each targeting a different use case:
 | `pfa-block-center` | Shrink-to-fit box, centered in the text column    |
 | `pfa-block-right`  | Shrink-to-fit box, right-anchored to the margin   |
 
-The `pfa-align-*` family sets the text alignment of a block and preserves
+The `pfa-align-*` family sets the text alignment within a block and preserves
 explicit `\` line breaks — ideal for poetry, formal addresses, and titles.
-The `pfa-block-*` family wraps the content in an isolated bounding box
-(LaTeX `varwidth`) that shrinks to its content before being positioned in
-the document flow.
+The `pfa-block-*` family controls the horizontal positioning of a block as a
+whole without affecting its internal text alignment; each variant wraps the
+content in an isolated bounding box (LaTeX `varwidth`) that shrinks to its
+content before being positioned in the document flow.
 
 ```markdown
 ::: pfa-align-center
@@ -322,14 +320,11 @@ pandoc \
 
 ### Alignment Aliases
 
-| Legacy Alias  | Modern Class             |
-|---------------|--------------------------|
-| `center`      | Removed in version 1.0.3 |
-| `flushleft`   | Removed in version 1.0.3 |
-| `flushright`  | Removed in version 1.0.3 |
-| `centering`   | `pfa-align-center`       |
-| `raggedleft`  | `pfa-align-right`        |
-| `raggedright` | `pfa-align-left`         |
+| Legacy Alias  | Modern Class       |
+|---------------|--------------------|
+| `centering`   | `pfa-align-center` |
+| `raggedleft`  | `pfa-align-right`  |
+| `raggedright` | `pfa-align-left`   |
 
 ### Underline and Strikeout Aliases
 
@@ -340,8 +335,18 @@ pandoc \
 | `dashuline`  | `dau` | `pfa-text-uline-dashed` |
 | `dotuline`   | `dou` | `pfa-text-uline-dotted` |
 | `uwave`      | `uw`  | `pfa-text-uline-wave`   |
-| `sout`       | `so`  | `pfa-text-strikeout`     |
-| `xout`       | `xo`  | Removed in version 1.0.3 |
+| `sout`       | `so`  | `pfa-text-strikeout`    |
+
+## Removed Classes
+
+The following classes were removed in version 1.0.3 and are no longer recognized by the filter.
+
+| Removed Class | Short | Removed In |
+|---------------|-------|------------|
+| `center`      | —     | 1.0.3      |
+| `flushleft`   | —     | 1.0.3      |
+| `flushright`  | —     | 1.0.3      |
+| `xout`        | `xo`  | 1.0.3      |
 
 ## Troubleshooting
 
