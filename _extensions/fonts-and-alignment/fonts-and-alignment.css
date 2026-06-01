@@ -1,20 +1,38 @@
 /**
- * * Pandoc Fonts and Alignment Stylesheet (REM Sizing)
- * * Scales typography predictably relative to the web page root.
- * */
-/**
- * * Pandoc Fonts and Alignment - Core Engine Mixin
- * * Do not compile this file directly.
- * */
+ * Pandoc Fonts and Alignment Stylesheet (REM Sizing)
+ *
+ * Scales typography predictably relative to the web page root font size.
+ * All size utilities multiply --pfa-body-size by a 1.2 modular scale factor.
+ */
+
 /* ==========================================================================
- * Base Configuration & Typography Calculations
+ * Base Configuration & Typography Variables
  * ========================================================================== */
-/* Font Weights, Styles, and Families */
+
+:root {
+  /*
+   * Base document font size — override in your own stylesheet:
+   *
+   *   :root { --pfa-body-size: 10pt; }
+   *   :root { --pfa-body-size: 18px; }
+   *   :root { --pfa-body-size: 1rem; }
+   */
+  --pfa-body-size: 1rem;
+}
+
+/* ==========================================================================
+ * Font Weights, Styles, and Families
+ * Aliases mirror common LaTeX font commands (\textbf, \textit, \textsf, …).
+ * ========================================================================== */
+
+/* \textbf{} */
 .bold, .bf, .pfa-font-bold {
   font-weight: 700;
 }
 
-.emphasis, .italic, .it, .slanted, .sl, .pfa-font-emphasis, .pfa-font-italic, .pfa-font-slanted {
+/* \emph{} / \textit{} / \textsl{} */
+.emphasis, .italic, .it, .slanted, .sl,
+.pfa-font-emphasis, .pfa-font-italic, .pfa-font-slanted {
   font-style: italic;
 }
 
@@ -22,28 +40,34 @@
   text-transform: lowercase;
 }
 
+/* medium weight (500), between normal and bold */
 .medium, .md, .pfa-font-medium {
   font-weight: 500;
 }
 
+/* \textrm{} / \upshape — resets to the main serif family */
 .normalfont, .nf, .upright, .up, .pfa-font-normal, .pfa-font-upright {
   font-family: var(--pfa-mainfont, serif);
   font-style: normal;
   font-weight: 400;
 }
 
+/* \texttt{} */
 .monospace, .tt, .pfa-font-mono {
   font-family: var(--pfa-monofont, monospace);
 }
 
+/* \textsf{} */
 .sans, .sf, .pfa-font-sans {
   font-family: var(--pfa-sansfont, sans-serif);
 }
 
+/* \textrm{} */
 .serif, .rm, .pfa-font-serif {
   font-family: var(--pfa-mainfont, serif);
 }
 
+/* \textsc{} */
 .smallcaps, .sc, .pfa-font-smallcaps {
   font-variant: small-caps;
 }
@@ -52,21 +76,29 @@
   text-transform: uppercase;
 }
 
-/* Typography Sizing Utilities */
+/* ==========================================================================
+ * Typography Sizing Utilities
+ *
+ * Steps follow a 1.2 modular scale anchored at --pfa-body-size (= 1×):
+ *
+ *   3xs   2xs   xs      s       normal  l     xl      2xl     3xl
+ *   0.50  0.67  0.83   0.91    1.00    1.20  1.44   1.728   2.074
+ * ========================================================================== */
+
 .pfa-text-3xs {
-  font-size: calc(1rem / 12 * 6) !important;
+  font-size: calc(var(--pfa-body-size) * 0.5) !important;
 }
 
 .pfa-text-2xs {
-  font-size: calc(1rem / 12 * 8) !important;
+  font-size: calc(var(--pfa-body-size) * 0.6667) !important;
 }
 
 .xsmall, .pfa-text-xs {
-  font-size: calc(1rem / 12 * 10) !important;
+  font-size: calc(var(--pfa-body-size) * 0.8333) !important;
 }
 
 .small, .pfa-text-s {
-  font-size: calc(1rem / 12 * 10.95) !important;
+  font-size: calc(var(--pfa-body-size) * 0.9125) !important;
 }
 
 .normal, .pfa-text-normal {
@@ -74,22 +106,26 @@
 }
 
 .large, .pfa-text-l {
-  font-size: calc(1rem / 12 * 14.4) !important;
+  font-size: calc(var(--pfa-body-size) * 1.2) !important;
 }
 
 .xlarge, .pfa-text-xl {
-  font-size: calc(1rem / 12 * 17.28) !important;
+  font-size: calc(var(--pfa-body-size) * 1.44) !important;
 }
 
 .xxlarge, .pfa-text-2xl {
-  font-size: calc(1rem / 12 * 20.74) !important;
+  font-size: calc(var(--pfa-body-size) * 1.728) !important;
 }
 
 .huge, .pfa-text-3xl {
-  font-size: calc(1rem / 12 * 24.88) !important;
+  font-size: calc(var(--pfa-body-size) * 2.0736) !important;
 }
 
-/* Alignments */
+/* ==========================================================================
+ * Alignment
+ * ========================================================================== */
+
+/* inline / text alignment */
 .pfa-align-center {
   text-align: center;
 }
@@ -102,6 +138,7 @@
   text-align: left;
 }
 
+/* block-level centering/positioning via display:table + auto margins */
 .pfa-block-center {
   display: table;
   margin-left: auto;
@@ -120,7 +157,10 @@
   margin-right: 0;
 }
 
-/* Inline Text Decorations (ulem package equivalents) */
+/* ==========================================================================
+ * Inline Text Decorations  (ulem package equivalents)
+ * ========================================================================== */
+
 span.dashuline, span.dau, span.pfa-text-uline-dashed {
   text-decoration: underline dashed;
 }
