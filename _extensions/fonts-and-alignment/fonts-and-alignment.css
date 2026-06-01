@@ -87,39 +87,39 @@
  * ========================================================================== */
 
 .pfa-text-3xs {
-  font-size: calc(var(--pfa-normal-size) * 0.5) !important;
+  font-size: calc(var(--pfa-normal-size) * 0.5);
 }
 
 .pfa-text-2xs {
-  font-size: calc(var(--pfa-normal-size) * 0.6667) !important;
+  font-size: calc(var(--pfa-normal-size) * 0.6667);
 }
 
 .xsmall, .pfa-text-xs {
-  font-size: calc(var(--pfa-normal-size) * 0.8333) !important;
+  font-size: calc(var(--pfa-normal-size) * 0.8333);
 }
 
 .small, .pfa-text-s {
-  font-size: calc(var(--pfa-normal-size) * 0.9125) !important;
+  font-size: calc(var(--pfa-normal-size) * 0.9125);
 }
 
 .normal, .pfa-text-normal {
-  font-size: var(--pfa-normal-size) !important;
+  font-size: var(--pfa-normal-size);
 }
 
 .large, .pfa-text-l {
-  font-size: calc(var(--pfa-normal-size) * 1.2) !important;
+  font-size: calc(var(--pfa-normal-size) * 1.2);
 }
 
 .xlarge, .pfa-text-xl {
-  font-size: calc(var(--pfa-normal-size) * 1.44) !important;
+  font-size: calc(var(--pfa-normal-size) * 1.44);
 }
 
 .xxlarge, .pfa-text-2xl {
-  font-size: calc(var(--pfa-normal-size) * 1.728) !important;
+  font-size: calc(var(--pfa-normal-size) * 1.728);
 }
 
 .huge, .pfa-text-3xl {
-  font-size: calc(var(--pfa-normal-size) * 2.0736) !important;
+  font-size: calc(var(--pfa-normal-size) * 2.0736);
 }
 
 /* ==========================================================================
