@@ -1,8 +1,9 @@
 /**
- * Pandoc Fonts and Alignment Stylesheet (REM Sizing)
+ * Pandoc Fonts and Alignment Stylesheet
  *
- * Scales typography predictably relative to the web page root font size.
- * All size utilities multiply --pfa-body-size by a 1.2 modular scale factor.
+ * Scales typography predictably relative to the configured base document size.
+ * All size utilities derive from --pfa-body-size using ratios based on the
+ * LaTeX 12pt size hierarchy.
  */
 
 /* ==========================================================================
@@ -17,7 +18,7 @@
    *   :root { --pfa-body-size: 18px; }
    *   :root { --pfa-body-size: 1rem; }
    */
-  --pfa-body-size: 1rem;
+  --pfa-normal-size: 1rem;
 }
 
 /* ==========================================================================
@@ -79,46 +80,46 @@
 /* ==========================================================================
  * Typography Sizing Utilities
  *
- * Steps follow a 1.2 modular scale anchored at --pfa-body-size (= 1×):
+ * Ratios are derived from the LaTeX 12pt size hierarchy:
  *
  *   3xs   2xs   xs      s       normal  l     xl      2xl     3xl
  *   0.50  0.67  0.83   0.91    1.00    1.20  1.44   1.728   2.074
  * ========================================================================== */
 
 .pfa-text-3xs {
-  font-size: calc(var(--pfa-body-size) * 0.5) !important;
+  font-size: calc(var(--pfa-normal-size) * 0.5) !important;
 }
 
 .pfa-text-2xs {
-  font-size: calc(var(--pfa-body-size) * 0.6667) !important;
+  font-size: calc(var(--pfa-normal-size) * 0.6667) !important;
 }
 
 .xsmall, .pfa-text-xs {
-  font-size: calc(var(--pfa-body-size) * 0.8333) !important;
+  font-size: calc(var(--pfa-normal-size) * 0.8333) !important;
 }
 
 .small, .pfa-text-s {
-  font-size: calc(var(--pfa-body-size) * 0.9125) !important;
+  font-size: calc(var(--pfa-normal-size) * 0.9125) !important;
 }
 
 .normal, .pfa-text-normal {
-  font-size: 1rem !important;
+  font-size: var(--pfa-normal-size) !important;
 }
 
 .large, .pfa-text-l {
-  font-size: calc(var(--pfa-body-size) * 1.2) !important;
+  font-size: calc(var(--pfa-normal-size) * 1.2) !important;
 }
 
 .xlarge, .pfa-text-xl {
-  font-size: calc(var(--pfa-body-size) * 1.44) !important;
+  font-size: calc(var(--pfa-normal-size) * 1.44) !important;
 }
 
 .xxlarge, .pfa-text-2xl {
-  font-size: calc(var(--pfa-body-size) * 1.728) !important;
+  font-size: calc(var(--pfa-normal-size) * 1.728) !important;
 }
 
 .huge, .pfa-text-3xl {
-  font-size: calc(var(--pfa-body-size) * 2.0736) !important;
+  font-size: calc(var(--pfa-normal-size) * 2.0736) !important;
 }
 
 /* ==========================================================================
@@ -138,7 +139,11 @@
   text-align: left;
 }
 
-/* block-level centering/positioning via display:table + auto margins */
+/*
+ * Shrink-wrap content width so auto margins can position the block.
+ * This mirrors the behavior of LaTeX alignment environments for content
+ * that should not expand to the full available width.
+ */
 .pfa-block-center {
   display: table;
   margin-left: auto;
@@ -158,7 +163,7 @@
 }
 
 /* ==========================================================================
- * Inline Text Decorations  (ulem package equivalents)
+ * Inline Text Decorations (ulem package equivalents)
  * ========================================================================== */
 
 span.dashuline, span.dau, span.pfa-text-uline-dashed {

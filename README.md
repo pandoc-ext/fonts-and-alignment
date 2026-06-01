@@ -38,10 +38,9 @@ For full visual specimens view the [PDF](docs/input.pdf) and [HTML](docs/input.h
 
 The filter ships ready-to-use under
 [`_extensions/fonts-and-alignment/`](_extensions/fonts-and-alignment/),
-along with two pre-compiled CSS files for HTML output:
+along with a pre-compiled CSS file for HTML output:
 
-- `fonts-and-alignment-rem.css` — sizes scale relative to the document root
-- `fonts-and-alignment-em.css`  — sizes scale relative to the parent element
+- `fonts-and-alignment.css` — sizes scale relative to the document root
 
 Drop the extension into your project's `_extensions/` directory (Quarto
 users), or copy the `.lua` and one `.css` file into your project tree.
@@ -57,7 +56,7 @@ curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/_e
 
 ## Prerequisites
 
-Configure the fonts used by the filter — either via a Pandoc defaults file:
+Configure the fonts used by the document either via a Pandoc defaults file:
 
 ```yaml
 variables:
@@ -78,14 +77,18 @@ monofont: Fira Mono
 ---
 ```
 
-For HTML output use the `fonts-and-alignment.css` CSS file to get access to the styles defined by this filter
+For HTML output use the following configuration in your CSS file:
 
 ```css
 :root {
+  --pdf-normal-size: 1rem;  /* This can be any unit of size (e.g. points, pixels or ems) */
   --pfa-mainfont: 'Noto Serif', serif;
   --pfa-sansfont: 'Noto Sans', sans-serif;
   --pfa-monofont: 'Fira Mono', monospace;
 }
+
+
+@import url("fonts-and-alignment.css");
 ```
 
 ## Quick Start
