@@ -450,11 +450,11 @@ A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating mult
 
 ## Removed Classes
 
-The following legacy classes were removed in version 1.0.3 and are no longer recognized by the filter.
+The following legacy classes were removed in version 1.0.3 and are no longer recognized by the filter. Existing documents should be updated to use the replacement classes shown below.
 
-| Removed Class | Shorthand | Removed In Version |
-| :------------ | :-------- | :----------------- |
-| `.center`     | —         | 1.0.3              |
-| `.flushleft`  | —         | 1.0.3              |
-| `.flushright` | —         | 1.0.3              |
-| `.xout`       | `.xo`     | 1.0.3              |
+| Removed Class | Shorthand | Removed In | Replacement |
+| :------------ | :-------- | :--------- | :---------- |
+| `.center`     | —         | 1.0.3      | `.pfa-align-center` |
+| `.flushleft`  | —         | 1.0.3      | `.pfa-align-left` |
+| `.flushright` | —         | 1.0.3      | `.pfa-align-right` |
+| `.xout`       | `.xo`     | 1.0.3      | No replacement |
