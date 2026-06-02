@@ -4,17 +4,6 @@ _Fonts and Alignment_ is a Pandoc Lua filter that brings rich typographic
 control to Markdown source documents using a unified namespaced class system
 (`pfa-*`).
 
-The filter provides:
-
-- Font sizing
-- Font weight and shape
-- Font families
-- Text decorations
-- Colors
-- Text casing
-- Text alignment
-- Fenced Div positioning
-
 For PDF output, the filter emits the appropriate LaTeX commands and
 environments.
 
@@ -34,7 +23,6 @@ extensions, which are enabled by default in modern Pandoc distributions.
 
 ## Feature Highlights
 
-- **Consistent PDF and HTML rendering** using a shared class vocabulary.
 - **Nine-step font sizing scale** — `pfa-text-3xs` through `pfa-text-3xl`.
 - **Font weights, shapes, and families** — bold, medium, italic, slanted, upright, emphasis, serif, sans, mono, small caps, and normal.
 - **Text decorations** — underline, double underline, dashed underline, dotted underline, wavy underline, and strikeout.
