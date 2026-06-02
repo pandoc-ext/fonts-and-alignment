@@ -179,17 +179,6 @@ id="toc-acknowledgements">Acknowledgements</a></li>
 <p><em>Fonts and Alignment</em> is a Pandoc Lua filter that brings rich
 typographic control to Markdown source documents using a unified
 namespaced class system (<code>pfa-*</code>).</p>
-<p>The filter provides:</p>
-<ul>
-<li>Font sizing</li>
-<li>Font weight and shape</li>
-<li>Font families</li>
-<li>Text decorations</li>
-<li>Colors</li>
-<li>Text casing</li>
-<li>Text alignment</li>
-<li>Fenced Div positioning</li>
-</ul>
 <p>For PDF output, the filter emits the appropriate LaTeX commands and
 environments.</p>
 <p>For HTML output, the filter preserves the same classes in the
@@ -209,8 +198,6 @@ examples.</p>
 modern Pandoc distributions.</p>
 <h2 id="feature-highlights">Feature Highlights</h2>
 <ul>
-<li><strong>Consistent PDF and HTML rendering</strong> using a shared
-class vocabulary.</li>
 <li><strong>Nine-step font sizing scale</strong> —
 <code>pfa-text-3xs</code> through <code>pfa-text-3xl</code>.</li>
 <li><strong>Font weights, shapes, and families</strong> — bold, medium,
@@ -1311,14 +1298,14 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb23-450"><a href="#cb23-450" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-451"><a href="#cb23-451" aria-hidden="true" tabindex="-1"></a><span class="fu">## Removed Classes</span></span>
 <span id="cb23-452"><a href="#cb23-452" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-453"><a href="#cb23-453" aria-hidden="true" tabindex="-1"></a>The following legacy classes were removed in version 1.0.3 and are no longer recognized by the filter. Existing documents should be updated to use the replacement classes shown below.</span>
+<span id="cb23-453"><a href="#cb23-453" aria-hidden="true" tabindex="-1"></a>The following legacy classes were removed in version 2.0.0 and are no longer recognized by the filter. Existing documents should be updated to use the replacement classes shown below.</span>
 <span id="cb23-454"><a href="#cb23-454" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-455"><a href="#cb23-455" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Removed Class <span class="pp">|</span> Shorthand <span class="pp">|</span> Removed In <span class="pp">|</span> Replacement <span class="pp">|</span></span>
 <span id="cb23-456"><a href="#cb23-456" aria-hidden="true" tabindex="-1"></a><span class="pp">| :------------</span> <span class="pp">| :--------</span> <span class="pp">| :---------</span> <span class="pp">| :----------</span> <span class="pp">|</span></span>
-<span id="cb23-457"><a href="#cb23-457" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.center`</span>     <span class="pp">|</span> —         <span class="pp">|</span> 1.0.3      <span class="pp">|</span> <span class="in">`.pfa-align-center`</span> <span class="pp">|</span></span>
-<span id="cb23-458"><a href="#cb23-458" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.flushleft`</span>  <span class="pp">|</span> —         <span class="pp">|</span> 1.0.3      <span class="pp">|</span> <span class="in">`.pfa-align-left`</span> <span class="pp">|</span></span>
-<span id="cb23-459"><a href="#cb23-459" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.flushright`</span> <span class="pp">|</span> —         <span class="pp">|</span> 1.0.3      <span class="pp">|</span> <span class="in">`.pfa-align-right`</span> <span class="pp">|</span></span>
-<span id="cb23-460"><a href="#cb23-460" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.xout`</span>       <span class="pp">|</span> <span class="in">`.xo`</span>     <span class="pp">|</span> 1.0.3      <span class="pp">|</span> No replacement <span class="pp">|</span></span></code></pre></div>
+<span id="cb23-457"><a href="#cb23-457" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.center`</span>     <span class="pp">|</span> —         <span class="pp">|</span> 2.0.0      <span class="pp">|</span> <span class="in">`.pfa-align-center`</span> <span class="pp">|</span></span>
+<span id="cb23-458"><a href="#cb23-458" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.flushleft`</span>  <span class="pp">|</span> —         <span class="pp">|</span> 2.0.0      <span class="pp">|</span> <span class="in">`.pfa-align-left`</span> <span class="pp">|</span></span>
+<span id="cb23-459"><a href="#cb23-459" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.flushright`</span> <span class="pp">|</span> —         <span class="pp">|</span> 2.0.0      <span class="pp">|</span> <span class="in">`.pfa-align-right`</span> <span class="pp">|</span></span>
+<span id="cb23-460"><a href="#cb23-460" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`.xout`</span>       <span class="pp">|</span> <span class="in">`.xo`</span>     <span class="pp">|</span> 2.0.0      <span class="pp">|</span> <span class="in">`.pfa-text-strikeout`</span> <span class="pp">|</span></span></code></pre></div>
 <h3 id="output.md">output.md</h3>
 <div class="sourceCode" id="cb24"><pre
 class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
@@ -1900,16 +1887,16 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb24-577"><a href="#cb24-577" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-578"><a href="#cb24-578" aria-hidden="true" tabindex="-1"></a><span class="fu">## Removed Classes</span></span>
 <span id="cb24-579"><a href="#cb24-579" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-580"><a href="#cb24-580" aria-hidden="true" tabindex="-1"></a>The following legacy classes were removed in version 1.0.3 and are no</span>
+<span id="cb24-580"><a href="#cb24-580" aria-hidden="true" tabindex="-1"></a>The following legacy classes were removed in version 2.0.0 and are no</span>
 <span id="cb24-581"><a href="#cb24-581" aria-hidden="true" tabindex="-1"></a>longer recognized by the filter. Existing documents should be updated to</span>
 <span id="cb24-582"><a href="#cb24-582" aria-hidden="true" tabindex="-1"></a>use the replacement classes shown below.</span>
 <span id="cb24-583"><a href="#cb24-583" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-584"><a href="#cb24-584" aria-hidden="true" tabindex="-1"></a>  Removed Class   Shorthand   Removed In   Replacement</span>
-<span id="cb24-585"><a href="#cb24-585" aria-hidden="true" tabindex="-1"></a>  --------------- ----------- ------------ ---------------------</span>
-<span id="cb24-586"><a href="#cb24-586" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.center`</span>       ---         1.0.3        <span class="in">`.pfa-align-center`</span></span>
-<span id="cb24-587"><a href="#cb24-587" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.flushleft`</span>    ---         1.0.3        <span class="in">`.pfa-align-left`</span></span>
-<span id="cb24-588"><a href="#cb24-588" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.flushright`</span>   ---         1.0.3        <span class="in">`.pfa-align-right`</span></span>
-<span id="cb24-589"><a href="#cb24-589" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.xout`</span>         <span class="in">`.xo`</span>       1.0.3        No replacement</span>
+<span id="cb24-585"><a href="#cb24-585" aria-hidden="true" tabindex="-1"></a>  --------------- ----------- ------------ -----------------------</span>
+<span id="cb24-586"><a href="#cb24-586" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.center`</span>       ---         2.0.0        <span class="in">`.pfa-align-center`</span></span>
+<span id="cb24-587"><a href="#cb24-587" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.flushleft`</span>    ---         2.0.0        <span class="in">`.pfa-align-left`</span></span>
+<span id="cb24-588"><a href="#cb24-588" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.flushright`</span>   ---         2.0.0        <span class="in">`.pfa-align-right`</span></span>
+<span id="cb24-589"><a href="#cb24-589" aria-hidden="true" tabindex="-1"></a>  <span class="in">`.xout`</span>         <span class="in">`.xo`</span>       2.0.0        <span class="in">`.pfa-text-strikeout`</span></span>
 <span id="cb24-590"><a href="#cb24-590" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-591"><a href="#cb24-591" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>To enable equivalent styling in HTML output, include the</span>
 <span id="cb24-592"><a href="#cb24-592" aria-hidden="true" tabindex="-1"></a>    <span class="in">`fonts-and-alignment.css`</span> stylesheet distributed with this filter.</span>

@@ -577,16 +577,16 @@ forward.
 
 ## Removed Classes
 
-The following legacy classes were removed in version 1.0.3 and are no
+The following legacy classes were removed in version 2.0.0 and are no
 longer recognized by the filter. Existing documents should be updated to
 use the replacement classes shown below.
 
   Removed Class   Shorthand   Removed In   Replacement
-  --------------- ----------- ------------ ---------------------
-  `.center`       ---         1.0.3        `.pfa-align-center`
-  `.flushleft`    ---         1.0.3        `.pfa-align-left`
-  `.flushright`   ---         1.0.3        `.pfa-align-right`
-  `.xout`         `.xo`       1.0.3        No replacement
+  --------------- ----------- ------------ -----------------------
+  `.center`       ---         2.0.0        `.pfa-align-center`
+  `.flushleft`    ---         2.0.0        `.pfa-align-left`
+  `.flushright`   ---         2.0.0        `.pfa-align-right`
+  `.xout`         `.xo`       2.0.0        `.pfa-text-strikeout`
 
 [^1]: To enable equivalent styling in HTML output, include the
     `fonts-and-alignment.css` stylesheet distributed with this filter.
