@@ -64,7 +64,6 @@ Initial public release of the `fonts-and-alignment` Pandoc Lua filter.
 - Legacy LaTeX-inspired shorthand aliases.
 - Documentation for Pandoc defaults file integration.
 
-[Unreleased]: https://github.com/pandoc-ext/fonts-and-alignment/compare/v2.0.0...HEAD
 [2.0.0]: https://github.com/pandoc-ext/fonts-and-alignment/compare/v1.0.2...v2.0.0
 [1.0.2]: https://github.com/pandoc-ext/fonts-and-alignment/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/pandoc-ext/fonts-and-alignment/compare/v1.0.0...v1.0.1
