@@ -34,14 +34,14 @@ extensions, which are enabled by default in modern Pandoc distributions.
 
 ## Feature Highlights
 
-- **Nine-step font sizing scale** — `pfa-text-3xs` through `pfa-text-3xl`
-- **Font weights and shapes** — bold, medium, italic, slanted, upright, and emphasis
-- **Font families** — serif, sans, mono, small caps, and normal
-- **Text decorations** — underline, double underline, dashed underline, dotted underline, wavy underline, and strikeout
-- **Flexible color support** — CSS3 named colors and hexadecimal colors with permissive color-name parsing
-- **Text casing transforms** — uppercase and lowercase transformations applied directly to AST text nodes
-- **Text alignment and Fenced Div positioning** — separate controls for text alignment and horizontal placement
-- **Consistent PDF and HTML rendering** using a shared class vocabulary
+- **Consistent PDF and HTML rendering** using a shared class vocabulary.
+- **Nine-step font sizing scale** — `pfa-text-3xs` through `pfa-text-3xl`.
+- **Font weights, shapes, and families** — bold, medium, italic, slanted, upright, emphasis, serif, sans, mono, small caps, and normal.
+- **Text decorations** — underline, double underline, dashed underline, dotted underline, wavy underline, and strikeout.
+- **Flexible color support** — CSS3 named colors and hexadecimal colors with permissive color-name parsing.
+- **Text casing transformations** — uppercase and lowercase conversions applied directly to Abstract Syntax Tree (AST) text nodes.
+- **Text alignment and Fenced Div positioning** — separate controls for text alignment and horizontal positioning.
+- **Consistent PDF and HTML rendering** — equivalent styling through a shared class vocabulary.
 
 ## Installation
 
