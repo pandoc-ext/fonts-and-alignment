@@ -212,7 +212,6 @@ local latex_font_sizes = {
 }
 
 -- Mappings for Alignments { 'Span Command', 'Div Command' }
--- Note: Span alignments are mostly nil since text alignment applies to block elements.
 local latex_text_alignments = {
   ['pfa-align-center'] = { nil, 'centering'        },
   ['pfa-align-left']   = { nil, 'raggedright'      },
@@ -233,8 +232,6 @@ local latex_ulem_styles = {
 }
 
 -- Dynamic Runtime Mapping for Legacy Aliases
--- Translates user-friendly legacy classes into modern namespaced classes
--- without creating bloated dictionary duplicates.
 local function map_aliases(target_table, alias_map)
   for legacy, modern in pairs(alias_map) do
     target_table[legacy] = target_table[modern]
@@ -276,9 +273,6 @@ for class, codes in pairs(latex_ulem_styles) do
   latex_cmd_for_tags.Span[class] = { '\\' .. codes[1] .. '{', '}' }
 end
 
--- Set of every recognized pfa-* class across all handlers (font/size/align/ulem
--- dictionaries plus the casing classes handled separately). Used to detect
--- typos and emit a warning rather than silently dropping them.
 local known_pfa_classes = {
   ['pfa-uppercase'] = true,
   ['pfa-lowercase'] = true,
@@ -295,35 +289,6 @@ end
 -- SECTION 3: CORE LOGIC HANDLERS
 -- ==============================================================================
 
--- Safely resolves user-provided color strings. Protects against CSS/LaTeX
--- injection attacks by validating inputs against a strict whitelist.
-local function resolve_color(input)
-  if not input then return nil, false end
-
-  -- 1. Dictionary Check: Try mapping a standard CSS color string
-  local clean_name = input:lower():gsub('[^%w]', '')
-  if css_colors[clean_name] then return css_colors[clean_name], true end
-
-  -- 2. Hex Check: Map and format valid 3 or 6 digit hex codes
-  local raw_hex = input:gsub('^#', '')
-  if raw_hex:match('^[0-9a-fA-F]+$') then
-    if #raw_hex == 6 then return raw_hex:upper(), true
-    elseif #raw_hex == 3 then
-      local r, g, b = raw_hex:sub(1,1), raw_hex:sub(2,2), raw_hex:sub(3,3)
-      return (r .. r .. g .. g .. b .. b):upper(), true
-    end
-  end
-
-  -- 3. Strict Pattern Validation: Only allow safe alphanumeric LaTeX package colors
-  if input:match('^[a-zA-Z0-9%-]+$') then
-    return input, false
-  end
-
-  -- 4. Malicious or malformed string caught - strip it and alert developer
-  io.stderr:write('[fonts-and-alignment] Warning: Stripped invalid color pattern: "' .. input .. '"\n')
-  return nil, false
-end
-
 -- Processes uppercase and lowercase transformations
 local function apply_text_casing(elem, tag)
   local transform_func
@@ -335,30 +300,6 @@ local function apply_text_casing(elem, tag)
 
   if transform_func then
     return (tag == 'Div') and pandoc.walk_block(elem, { Str = transform_func }) or pandoc.walk_inline(elem, { Str = transform_func })
-  end
-  return elem
-end
-
--- Intercepts the pfa-font-color attribute, translates it, and removes the attribute
--- to prevent native Pandoc handling collisions.
-local function apply_color(elem, tag, raw, is_latex)
-  local color_attr = elem.attributes['pfa-font-color']
-  if not color_attr then return elem end
-
-  local resolved_val, is_hex = resolve_color(color_attr)
-  elem.attributes['pfa-font-color'] = nil -- Always clear the raw attribute
-
-  if not resolved_val then return elem end -- Exit early if validation failed
-
-  -- Apply generic CSS style for HTML targets
-  elem.attributes['style'] = (elem.attributes['style'] or '') .. 'color: ' .. (is_hex and '#' or '') .. resolved_val .. ';'
-
-  -- Apply specific xcolor formatting for LaTeX targets
-  if is_latex then
-    local fmt = is_hex and '[HTML]{' or '{'
-    local begin_code = (tag == 'Span') and ('\\textcolor' .. fmt .. resolved_val .. '}{') or ('{\\color' .. fmt .. resolved_val .. '} ')
-    elem.content:insert(1, raw('latex', begin_code))
-    elem.content:insert(raw('latex', '}'))
   end
   return elem
 end
@@ -402,7 +343,108 @@ end
 
 
 -- ==============================================================================
--- SECTION 4: MAIN EXECUTORS
+-- SECTION 4: COLOR HANDLING
+-- ==============================================================================
+
+-- Helper to resolve a single color atom (handles dictionary normalization & hex logic)
+local function resolve_single_color(input)
+  -- 1. Dictionary Check
+  local clean_name = input:lower():gsub('[^%w]', '')
+  if css_colors[clean_name] then
+    local hex = css_colors[clean_name]
+    -- Returns: HTML value, LaTeX value, is_latex_hex flag
+    return '#' .. hex, hex, true
+  end
+
+  -- 2. Hex Check
+  local raw_hex = input:gsub('^#', '')
+  if raw_hex:match('^[0-9a-fA-F]+$') then
+    if #raw_hex == 6 then
+      return '#' .. raw_hex:upper(), raw_hex:upper(), true
+    elseif #raw_hex == 3 then
+      local r, g, b = raw_hex:sub(1,1), raw_hex:sub(2,2), raw_hex:sub(3,3)
+      local full_hex = (r .. r .. g .. g .. b .. b):upper()
+      return '#' .. full_hex, full_hex, true
+    end
+  end
+
+  -- 3. Strict Pattern Validation (Fallback for raw LaTeX named colors)
+  if input:match('^[a-zA-Z0-9%-]+$') then
+    return input, input, false
+  end
+
+  return nil, nil, false
+end
+
+-- Safely resolves user-provided color strings, natively handling xcolor mixing!
+local function resolve_color(input, is_latex)
+  if not input then return nil, false end
+
+  -- Detect xcolor mixing syntax (e.g., "maroon!30" or "red!50!black")
+  if input:find('!') then
+    local c1, pct, c2 = input:match('^([^!]+)!(%d+)!?([^!]*)$')
+    if c1 and pct then
+      -- LaTeX xcolor defaults to mixing with white if a second color isn't provided
+      c2 = (c2 == '' or not c2) and 'white' or c2
+
+      if is_latex then
+        -- Pass the raw mix string directly to LaTeX
+        return input, false
+      else
+        -- For HTML, resolve the individual components through the dictionary
+        local css_c1 = resolve_single_color(c1)
+        local css_c2 = resolve_single_color(c2)
+
+        if css_c1 and css_c2 then
+          -- Construct the native CSS translation
+          local mix_string = string.format("color-mix(in srgb, %s %s%%, %s)", css_c1, pct, css_c2)
+          return mix_string, false
+        end
+      end
+    end
+  end
+
+  -- Handle Standard Single Colors
+  local css_val, tex_val, is_hex = resolve_single_color(input)
+
+  if not css_val then
+    io.stderr:write('[fonts-and-alignment] Warning: Stripped invalid color pattern: "' .. input .. '"\n')
+    return nil, false
+  end
+
+  if is_latex then
+    return tex_val, is_hex
+  else
+    return css_val, false
+  end
+end
+
+-- Intercepts the pfa-font-color attribute, translates it, and removes the attribute
+local function apply_color(elem, tag, raw, is_latex)
+  local color_attr = elem.attributes['pfa-font-color']
+  if not color_attr then return elem end
+
+  local resolved_val, is_hex = resolve_color(color_attr, is_latex)
+  elem.attributes['pfa-font-color'] = nil -- Always clear the raw attribute
+
+  if not resolved_val then return elem end -- Exit early if validation failed
+
+  if is_latex then
+    -- Apply specific xcolor formatting for LaTeX targets
+    local fmt = is_hex and '[HTML]{' or '{'
+    local begin_code = (tag == 'Span') and ('\\textcolor' .. fmt .. resolved_val .. '}{') or ('{\\color' .. fmt .. resolved_val .. '} ')
+    elem.content:insert(1, raw('latex', begin_code))
+    elem.content:insert(raw('latex', '}'))
+  else
+    -- Apply generic CSS style for HTML targets
+    elem.attributes['style'] = (elem.attributes['style'] or '') .. 'color: ' .. resolved_val .. ';'
+  end
+  return elem
+end
+
+
+-- ==============================================================================
+-- SECTION 5: MAIN EXECUTORS
 -- ==============================================================================
 
 -- Primary execution loop passed to Pandoc tree parsing
@@ -414,7 +456,6 @@ local function handler(elem)
   elem = apply_text_casing(elem, tag)
   elem = apply_standard_classes(elem, tag, raw, is_latex)
   -- Color must run last so \textcolor{...} wraps \uline / \sout / \uwave;
-  -- otherwise the ulem decoration paints in the surrounding (default) color.
   elem = apply_color(elem, tag, raw, is_latex)
   return elem
 end
@@ -445,8 +486,7 @@ end
 
 
 return {
-  -- 1. Lifecycle hook: Guarantee a clean state reset on every new document execution
-  -- This prevents a `true` state from leaking into subsequent documents during batch renders.
+  -- 1. Lifecycle hook
   {
     Pandoc = function(doc)
       uses_pfa_blocks = false

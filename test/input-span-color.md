@@ -49,3 +49,27 @@ title: Colors in Bracketed Spans
 ```
 
 [Grumpy wizards make toxic brew.]{pfa-font-color="191970"}
+
+## Darkening Colors (LaTeX syntax required)
+
+```markdown
+[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!70!Black"}
+```
+
+[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!70!Black"}
+
+## Lightening Colors (LaTeX syntax required)
+
+```markdown
+[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!70!White"}
+```
+
+[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!70!White"}
+
+## Mixing Colors (LaTeX syntax required)
+
+```markdown
+[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!30!Green"}
+```
+
+[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!30!Green"}
