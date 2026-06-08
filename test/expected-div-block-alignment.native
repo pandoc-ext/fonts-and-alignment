@@ -1,0 +1,165 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "author"
+            , MetaString
+                "Nandakumar Chandrasekhar"
+            )
+          , ( "date"
+            , MetaString
+                "2026-05-25"
+            )
+          , ( "title"
+            , MetaInlines
+                [ Str
+                    "Aligning"
+                , Space
+                , Str "a"
+                , Space
+                , Str "Fenced"
+                , Space
+                , Str "Div"
+                ]
+            )
+          ]
+    }
+  [ Header
+      2
+      ( "left-aligned-block"
+      , []
+      , []
+      )
+      [ Str "Left-Aligned"
+      , Space
+      , Str "Block"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: {.pfa-block-left}\nThe entire block is _left-aligned_ \\\nwhile maintaining internal text alignment.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-block-left" ]
+      , []
+      )
+      [ Para
+          [ Str "The"
+          , Space
+          , Str "entire"
+          , Space
+          , Str "block"
+          , Space
+          , Str "is"
+          , Space
+          , Emph
+              [ Str
+                  "left-aligned"
+              ]
+          , LineBreak
+          , Str "while"
+          , Space
+          , Str "maintaining"
+          , Space
+          , Str "internal"
+          , Space
+          , Str "text"
+          , Space
+          , Str "alignment."
+          ]
+      ]
+  , Header
+      2
+      ( "center-aligned-block"
+      , []
+      , []
+      )
+      [ Str "Center-Aligned"
+      , Space
+      , Str "Block"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: {.pfa-block-center}\nThe entire block is _center-aligned_ \\\nwhile maintaining internal text alignment.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-block-center" ]
+      , []
+      )
+      [ Para
+          [ Str "The"
+          , Space
+          , Str "entire"
+          , Space
+          , Str "block"
+          , Space
+          , Str "is"
+          , Space
+          , Emph
+              [ Str
+                  "center-aligned"
+              ]
+          , LineBreak
+          , Str "while"
+          , Space
+          , Str "maintaining"
+          , Space
+          , Str "internal"
+          , Space
+          , Str "text"
+          , Space
+          , Str "alignment."
+          ]
+      ]
+  , Header
+      2
+      ( "right-aligned-block"
+      , []
+      , []
+      )
+      [ Str "Right-Aligned"
+      , Space
+      , Str "Block"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "::: {.pfa-block-right}\nThe entire block is _right-aligned_ \\\nwhile maintaining internal text alignment.\n:::"
+  , Div
+      ( ""
+      , [ "pfa-block-right" ]
+      , []
+      )
+      [ Para
+          [ Str "The"
+          , Space
+          , Str "entire"
+          , Space
+          , Str "block"
+          , Space
+          , Str "is"
+          , Space
+          , Emph
+              [ Str
+                  "right-aligned"
+              ]
+          , LineBreak
+          , Str "while"
+          , Space
+          , Str "maintaining"
+          , Space
+          , Str "internal"
+          , Space
+          , Str "text"
+          , Space
+          , Str "alignment."
+          ]
+      ]
+  ]

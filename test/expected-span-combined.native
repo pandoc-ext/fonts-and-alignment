@@ -1,0 +1,145 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "author"
+            , MetaString
+                "Nandakumar Chandrasekhar"
+            )
+          , ( "date"
+            , MetaString
+                "2026-05-25"
+            )
+          , ( "title"
+            , MetaInlines
+                [ Str
+                    "Bracketed"
+                , Space
+                , Str "Span"
+                , Space
+                , Str
+                    "Composition"
+                ]
+            )
+          ]
+    }
+  [ Header
+      2
+      ( "bold-sans-serif"
+      , []
+      , []
+      )
+      [ Str "Bold"
+      , Space
+      , Str "Sans-serif"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color=\"red\"}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-bold"
+            , "pfa-font-sans"
+            , "pfa-text-l"
+            ]
+          , [ ( "style"
+              , "color: #FF0000;"
+              )
+            ]
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "italic-mono"
+      , []
+      , []
+      )
+      [ Str "Italic"
+      , Space
+      , Str "Mono"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-font-italic .pfa-font-mono .pfa-text-s}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-font-italic"
+            , "pfa-font-mono"
+            , "pfa-text-s"
+            ]
+          , []
+          )
+          [ Str "Grumpy"
+          , Space
+          , Str "wizards"
+          , Space
+          , Str "make"
+          , Space
+          , Str "toxic"
+          , Space
+          , Str "brew."
+          ]
+      ]
+  , Header
+      2
+      ( "smallcaps-underline-and-colored"
+      , []
+      , []
+      )
+      [ Str "Smallcaps,"
+      , Space
+      , Str "Underline"
+      , Space
+      , Str "and"
+      , Space
+      , Str "Colored"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "markdown" ]
+      , []
+      )
+      "[Grumpy wizards make toxic brew.]{.pfa-text-uline .pfa-font-smallcaps pfa-font-color=\"forestgreen\"}"
+  , Para
+      [ Span
+          ( ""
+          , [ "pfa-text-uline"
+            , "pfa-font-smallcaps"
+            ]
+          , [ ( "style"
+              , "color: #228B22;"
+              )
+            ]
+          )
+          [ Underline
+              [ Str "Grumpy"
+              , Space
+              , Str "wizards"
+              , Space
+              , Str "make"
+              , Space
+              , Str "toxic"
+              , Space
+              , Str "brew."
+              ]
+          ]
+      ]
+  ]

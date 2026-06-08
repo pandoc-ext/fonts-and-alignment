@@ -1,0 +1,122 @@
+/**
+ * Pandoc Fonts and Alignment Specimen Stylesheet
+ *
+ * This companion stylesheet provides development-specific environment configurations
+ * and external font assets strictly for building visual test specimens. It isolates
+ * remote dependencies from the core production CSS framework.
+ */
+
+/* ==========================================================================
+   External Assets & Web Font Deliveries
+   ========================================================================== */
+/* These remote assets are fetched strictly to provide visual parity for testing
+   the standard LaTeX font families (.serif, .sans, and .tt) during compilation. */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Fira+Mono&display=swap');
+
+/* ==========================================================================
+   Explicit Font Mapping for Testing Environment
+   ========================================================================== */
+/* Since the core CSS handles font properties over default fallback mappings,
+   we override the variables right at the root level so our compiled utility
+   classes can read them immediately. */
+:root {
+  --pfa-mainfont: 'Noto Serif', serif;
+  --pfa-sansfont: 'Noto Sans', sans-serif;
+  --pfa-monofont: 'Fira Mono', monospace;
+}
+
+/* Force global body elements in the specimen browser to inherit the main font */
+/* Centers the compiled specimen output and constraints its layout width to
+   simulate standard print document margins on modern desktop displays. */
+body {
+  font-family: 'Noto Serif', serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90ch;
+  line-height: 1.5;
+}
+
+header#title-block-header {
+   text-align: center;;
+}
+
+/* ==========================================================================
+   Monospace Font Size
+   ========================================================================== */
+/* Browsers render monospace elements noticeably smaller than the surrounding
+   text by default; bump them up so code samples match the body text scale. */
+code, kbd, samp, pre {
+  font-size: 1.1em;
+}
+
+/* ==========================================================================
+   Heading Weight
+   ========================================================================== */
+/* Semibold (600) instead of browser-default bold (700) for h1/h2. Mirrors the
+   `\fontseries{sb}` redefinition in test/preview-framing.lua. */
+h1, h2 {
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Table Column Gutter
+   ========================================================================== */
+/* 1em horizontal padding on each cell yields ~2em of visual space between
+   adjacent column content edges. */
+table th,
+table td {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+/* ==========================================================================
+   Table Background
+   ========================================================================== */
+/* Light grey backdrop that stays readable against default body text. */
+table {
+  background-color: #f0f0f0;
+}
+
+/* ==========================================================================
+   Specimen Framing (HTML parity with the LaTeX tcolorbox in preview-framing.lua)
+   ========================================================================== */
+/* Frame every block-level pfa-* div and color-only div produced by the filter. */
+/* Use margin-top/margin-bottom (not the `margin` shorthand) so we don't clobber */
+/* the horizontal auto-margins on .pfa-block-center / .pfa-block-left / .pfa-block-right. */
+div[class*="pfa-"],
+div[style*="color"] {
+  background-color: #F8FAFC;
+  border: 1px solid #94A3B8;
+  border-radius: 4px;
+  padding: 0.6em 0.9em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+/* Frame every inline pfa-* span and color-only span. */
+span[class*="pfa-"],
+span[style*="color"] {
+  background-color: #F8FAFC;
+  border: 1px solid #94A3B8;
+  border-radius: 2px;
+  padding: 0.05em 0.25em;
+}
+
+/* Mirror the Lua filter: pfa spans inside table cells must not be framed. */
+table span[class*="pfa-"],
+table span[style*="color"] {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/* Mirror the Lua filter: a pfa-* element nested inside an already-framed
+   pfa-* block renders without its own frame. */
+div[class*="pfa-"] [class*="pfa-"],
+div[class*="pfa-"] [style*="color"],
+div[style*="color"] [class*="pfa-"],
+div[style*="color"] [style*="color"] {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
