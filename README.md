@@ -15,8 +15,8 @@ every feature provided by the filter. Each example shows both the source
 Markdown and the rendered output, making the specimens useful both as a
 feature showcase and as a library of copy-and-paste examples.
 
-- [PDF specimen](docs/input.pdf)
-- [HTML specimen](docs/input.html)
+- [PDF Specimen](docs/input.pdf)
+- [Live HTML Specimen (Rendered Preview)](https://htmlpreview.github.io/?https://github.com/pandoc-ext/fonts-and-alignment/blob/main/docs/input.html)
 
 The filter relies on Pandoc's `bracketed_spans` and `fenced_divs`
 extensions, which are enabled by default in modern Pandoc distributions.
@@ -248,11 +248,13 @@ Accepts CSS3 named colors and hexadecimal values. Solid color names are complete
 #### Color Mixing
 
 The filter natively supports LaTeX's `xcolor` percentage syntax. This translates to cross-format blending using `color-mix()` in HTML.
+
 - **Tinting (Mixing with White):** `BaseColor!Percentage`. The percentage dictates how much of the base color is kept. (e.g., `Maroon!30` results in 30% Maroon and 70% White).
 - **Shading (Mixing with Black):** `BaseColor!Percentage!black`. By using black as the second color, you darken the base color. (e.g., `MediumVioletRed!80!black` results in 80% MediumVioletRed and 20% black).
 - **Mixing Two Colors:** `BaseColor!Percentage!MixColor`. The percentage applies to the first color, and the remaining percentage applies to the second. (e.g., `RoyalBlue!50!ForestGreen` results in 50% RoyalBlue and 50% ForestGreen).
 
 **⚠️ Important Casing Rule:** Mixed colors are strictly case-sensitive. Base colors must be lowercase, while extended CSS3/SVG colors must be written in PascalCase to align directly with LaTeX requirements.
+
 - Base Colors: The [19 core LaTeX colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide) must be strictly lowercase.
 - Extended Web Colors: The [CSS3 / SVG named colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) must be strictly PascalCase.
 

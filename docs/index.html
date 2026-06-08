@@ -192,8 +192,10 @@ both the source Markdown and the rendered output, making the specimens
 useful both as a feature showcase and as a library of copy-and-paste
 examples.</p>
 <ul>
-<li><a href="docs/input.pdf">PDF specimen</a></li>
-<li><a href="docs/input.html">HTML specimen</a></li>
+<li><a href="docs/input.pdf">PDF Specimen</a></li>
+<li><a
+href="https://htmlpreview.github.io/?https://github.com/pandoc-ext/fonts-and-alignment/blob/main/docs/input.html">Live
+HTML Specimen (Rendered Preview)</a></li>
 </ul>
 <p>The filter relies on Pandoc’s <code>bracketed_spans</code> and
 <code>fenced_divs</code> extensions, which are enabled by default in
@@ -543,28 +545,35 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1">
 <h4 id="color-mixing">Color Mixing</h4>
 <p>The filter natively supports LaTeX’s <code>xcolor</code> percentage
 syntax. This translates to cross-format blending using
-<code>color-mix()</code> in HTML. - <strong>Tinting (Mixing with
-White):</strong> <code>BaseColor!Percentage</code>. The percentage
-dictates how much of the base color is kept. (e.g.,
-<code>Maroon!30</code> results in 30% Maroon and 70% White). -
-<strong>Shading (Mixing with Black):</strong>
+<code>color-mix()</code> in HTML.</p>
+<ul>
+<li><strong>Tinting (Mixing with White):</strong>
+<code>BaseColor!Percentage</code>. The percentage dictates how much of
+the base color is kept. (e.g., <code>Maroon!30</code> results in 30%
+Maroon and 70% White).</li>
+<li><strong>Shading (Mixing with Black):</strong>
 <code>BaseColor!Percentage!black</code>. By using black as the second
 color, you darken the base color. (e.g.,
 <code>MediumVioletRed!80!black</code> results in 80% MediumVioletRed and
-20% black). - <strong>Mixing Two Colors:</strong>
+20% black).</li>
+<li><strong>Mixing Two Colors:</strong>
 <code>BaseColor!Percentage!MixColor</code>. The percentage applies to
 the first color, and the remaining percentage applies to the second.
 (e.g., <code>RoyalBlue!50!ForestGreen</code> results in 50% RoyalBlue
-and 50% ForestGreen).</p>
+and 50% ForestGreen).</li>
+</ul>
 <p><strong>⚠️ Important Casing Rule:</strong> Mixed colors are strictly
 case-sensitive. Base colors must be lowercase, while extended CSS3/SVG
 colors must be written in PascalCase to align directly with LaTeX
-requirements. - Base Colors: The <a
+requirements.</p>
+<ul>
+<li>Base Colors: The <a
 href="https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide">19
-core LaTeX colors</a> must be strictly lowercase. - Extended Web Colors:
-The <a
+core LaTeX colors</a> must be strictly lowercase.</li>
+<li>Extended Web Colors: The <a
 href="https://developer.mozilla.org/en-US/docs/Web/CSS/named-color">CSS3
-/ SVG named colors</a> must be strictly PascalCase.</p>
+/ SVG named colors</a> must be strictly PascalCase.</li>
+</ul>
 <div class="sourceCode" id="cb13"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Tinted</span><span class="co">]</span>{pfa-font-color=&quot;Maroon!40&quot;}</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Shaded</span><span class="co">]</span>{pfa-font-color=&quot;MediumVioletRed!80!black&quot;}</span></code></pre></div>
