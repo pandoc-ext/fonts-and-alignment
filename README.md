@@ -26,7 +26,7 @@ extensions, which are enabled by default in modern Pandoc distributions.
 - **Nine-step font sizing scale** — `pfa-text-3xs` through `pfa-text-3xl`.
 - **Font weights, shapes, and families** — bold, medium, italic, slanted, upright, emphasis, serif, sans, mono, small caps, and normal.
 - **Text decorations** — underline, double underline, dashed underline, dotted underline, wavy underline, and strikeout.
-- **Flexible color support** — CSS3 named colors and hexadecimal colors with permissive color-name parsing.
+- **Flexible color support** — solid CSS3/hex colors with permissive parsing, plus native `xcolor` percentage mixing (tinting and shading).
 - **Text casing transformations** — uppercase and lowercase conversions applied directly to Abstract Syntax Tree (AST) text nodes.
 - **Text alignment and Fenced Div positioning** — separate controls for text alignment and horizontal positioning.
 - **Consistent PDF and HTML rendering** — equivalent styling through a shared class vocabulary.
@@ -48,79 +48,60 @@ The extension automatically registers:
 
 No additional filter or stylesheet configuration is required.
 
-### Pandoc
+### Plain Pandoc
 
 Download the filter and stylesheet:
 
 ```bash
-curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.lua
-curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.css
+curl -O [https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.lua](https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.lua)
+curl -O [https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.css](https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.css)
 ```
 
 ## Configuration
 
-### PDF Fonts
+### PDF Font Families
 
-Configure the fonts used by PDF output either in a Pandoc defaults file:
+By default, the typeface family classes (`.pfa-font-serif`, `.pfa-font-sans`, and `.pfa-font-mono`) are available immediately and will map to your LaTeX engine's standard fallback fonts. To customize these settings and use the specific typefaces of your choice, define them using Pandoc's standard font variables in a defaults file:
 
 ```yaml
 variables:
   fontsize: 12pt
-  mainfont: Noto Serif
-  sansfont: Noto Sans
-  monofont: Fira Mono
+  mainfont: "Noto Serif"   # Customizes generic text and .pfa-font-serif
+  sansfont: "Noto Sans"    # Customizes .pfa-font-sans
+  monofont: "Fira Mono"    # Customizes .pfa-font-mono
 ```
 
-or in document frontmatter:
+Or on a per-document basis inside your Markdown frontmatter:
 
 ```yaml
 ---
 fontsize: 12pt
-mainfont: Noto Serif
-sansfont: Noto Sans
-monofont: Fira Mono
+mainfont: "Noto Serif"
+sansfont: "Noto Sans"
+monofont: "Fira Mono"
 ---
 ```
 
-### HTML Fonts and Typography
+### HTML Typography and Custom Styles
 
-The bundled stylesheet is configured through CSS custom properties.
+For HTML output, the bundled companion stylesheet automatically maps the family classes to generic web fallbacks (`serif`, `sans-serif`, and `monospace`). To customize these styles to match the fonts of your choice, override the default CSS custom properties (variables) within your project's main stylesheet:
 
 ```css
 :root {
-  --pfa-normal-size: 1rem;
+  /* 1. Customize the baseline document font size (maps to .pfa-text-normal) */
+  --pfa-normal-size: 1rem; /* Corresponds to your base text size, e.g., 12pt */
 
-  --pfa-mainfont: "Noto Serif", serif;
-  --pfa-sansfont: "Noto Sans", sans-serif;
-  --pfa-monofont: "Fira Mono", monospace;
+  /* 2. Customize typeface selections for each family class */
+  --pfa-mainfont: "Noto Serif", serif;     /* Customizes .pfa-font-serif */
+  --pfa-sansfont: "Noto Sans", sans-serif;  /* Customizes .pfa-font-sans */
+  --pfa-monofont: "Fira Mono", monospace;   /* Customizes .pfa-font-mono */
 }
 
+/* Import the filter rules to inherit your custom configuration variables */
 @import url("fonts-and-alignment.css");
 ```
 
-`--pfa-normal-size` defines the HTML equivalent of LaTeX's `\normalsize`.
-All other sizing classes are calculated proportionally from this value using
-the same relative scale as the corresponding LaTeX commands.
-
-Examples:
-
-```css
-:root {
-  --pfa-normal-size: 10pt;
-}
-```
-
-```css
-:root {
-  --pfa-normal-size: 12pt;
-}
-```
-
-```css
-:root {
-  --pfa-normal-size: 18px;
-}
-```
+The `--pfa-normal-size` property acts as the sizing baseline. All other font sizing classes (`.pfa-text-3xs` through `.pfa-text-3xl`) scale up or down proportionally from whatever custom value you declare here (e.g., `1rem`, `12pt`, or `16px`), perfectly mimicking LaTeX's relative typography scaling on the web.
 
 ## Quick Start
 
@@ -253,19 +234,38 @@ survives copy-and-paste from the rendered document.
 
 ### Color
 
-A single attribute, `pfa-font-color`, accepts:
+A single attribute, `pfa-font-color`, applies colors and supports both solid values and percentage-based mixing.
 
-- Any CSS3 named color
-- Three-digit hexadecimal colors (`#333`)
-- Six-digit hexadecimal colors (`#2E8B57`)
+#### Solid Colors
 
-Examples:
+Accepts CSS3 named colors and hexadecimal values. Solid color names are completely case-insensitive and parsed permissively (`mediumvioletred`, `MediumVioletRed`, and `medium_violet_red` resolve identically).
 
 ```markdown
 [crimson sample]{pfa-font-color="crimson"}
-
 [hex sample]{pfa-font-color="#2E8B57"}
+```
 
+#### Color Mixing
+
+The filter natively supports LaTeX's `xcolor` percentage syntax. This translates to cross-format blending using `color-mix()` in HTML.
+- **Tinting (Mixing with White):** `BaseColor!Percentage`. The percentage dictates how much of the base color is kept. (e.g., `Maroon!30` results in 30% Maroon and 70% White).
+- **Shading (Mixing with Black):** `BaseColor!Percentage!black`. By using black as the second color, you darken the base color. (e.g., `MediumVioletRed!80!black` results in 80% MediumVioletRed and 20% black).
+- **Mixing Two Colors:** `BaseColor!Percentage!MixColor`. The percentage applies to the first color, and the remaining percentage applies to the second. (e.g., `RoyalBlue!50!ForestGreen` results in 50% RoyalBlue and 50% ForestGreen).
+
+**⚠️ Important Casing Rule:** Mixed colors are strictly case-sensitive. Base colors must be lowercase, while extended CSS3/SVG colors must be written in PascalCase to align directly with LaTeX requirements.
+- Base Colors: The [19 core LaTeX colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide) must be strictly lowercase.
+- Extended Web Colors: The [CSS3 / SVG named colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) must be strictly PascalCase.
+
+```markdown
+[Tinted]{pfa-font-color="Maroon!40"}
+[Shaded]{pfa-font-color="MediumVioletRed!80!black"}
+```
+
+#### Inheriting Colors
+
+When applied to a Fenced Div, all enclosed content inherits the color unless explicitly overridden.
+
+```markdown
 ::: {pfa-font-color="darkslategray"}
 The entire Fenced Div inherits dark slate gray.
 
@@ -273,19 +273,6 @@ The entire Fenced Div inherits dark slate gray.
 
 The remainder reverts to the parent color.
 :::
-```
-
-Color names are parsed permissively. The following all resolve identically:
-
-```text
-mediumvioletred
-Medium Violet Red
-medium-violet-red
-medium_violet_red
-mediumVioletRed
-MediumVioletRed
-MEDIUM_VIOLET_RED
-MEDIUMVIOLETRED
 ```
 
 ### Text Alignment
@@ -375,7 +362,7 @@ The HTML stylesheet derives all typography sizes from the
 
 ```css
 :root {
-  --pfa-normal-size: 12pt;
+  --pfa-normal-size: 1rem;
 }
 ```
 

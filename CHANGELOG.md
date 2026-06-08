@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Support for text colors via the `pfa-font-color` attribute in both Bracketed Spans and Fenced Divs.
+- Support for coloring text via the `pfa-font-color` attribute in both Bracketed Spans and Fenced Divs.
 - Support for horizontal positioning of Fenced Divs using the `pfa-block-left`, `pfa-block-center`, and `pfa-block-right` classes.
 - Validation of class names with user-facing error messages for unrecognized classes.
 

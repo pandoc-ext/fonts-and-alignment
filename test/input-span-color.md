@@ -50,26 +50,26 @@ title: Colors in Bracketed Spans
 
 [Grumpy wizards make toxic brew.]{pfa-font-color="191970"}
 
-## Darkening Colors (LaTeX syntax required)
+## Tinting Colors (LaTeX syntax required)
 
 ```markdown
-[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!70!Black"}
+[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!40!white"}
 ```
 
-[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!70!Black"}
+[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!40!white"}
 
-## Lightening Colors (LaTeX syntax required)
+## Shading Colors (LaTeX syntax required)
 
 ```markdown
-[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!70!White"}
+[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!80!black"}
 ```
 
-[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!70!White"}
+[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!80!black"}
 
 ## Mixing Colors (LaTeX syntax required)
 
 ```markdown
-[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!30!Green"}
+[Grumpy wizards make toxic brew.]{pfa-font-color="RoyalBlue!50!ForestGreen"}
 ```
 
-[Grumpy wizards make toxic brew.]{pfa-font-color="MediumVioletRed!30!Green"}
+[Grumpy wizards make toxic brew.]{pfa-font-color="RoyalBlue!50!ForestGreen"}

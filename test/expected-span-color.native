@@ -262,11 +262,11 @@ Pandoc
       ]
   , Header
       2
-      ( "darkening-colors-latex-syntax-required"
+      ( "tinting-colors-latex-syntax-required"
       , []
       , []
       )
-      [ Str "Darkening"
+      [ Str "Tinting"
       , Space
       , Str "Colors"
       , Space
@@ -281,13 +281,13 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "[Grumpy wizards make toxic brew.]{pfa-font-color=\"MediumVioletRed!70!Black\"}"
+      "[Grumpy wizards make toxic brew.]{pfa-font-color=\"MediumVioletRed!40!white\"}"
   , Para
       [ Span
           ( ""
           , []
           , [ ( "style"
-              , "color: color-mix(in srgb, #C71585 70%, #000000);"
+              , "color: color-mix(in srgb, #C71585 40%, #FFFFFF);"
               )
             ]
           )
@@ -304,11 +304,11 @@ Pandoc
       ]
   , Header
       2
-      ( "lightening-colors-latex-syntax-required"
+      ( "shading-colors-latex-syntax-required"
       , []
       , []
       )
-      [ Str "Lightening"
+      [ Str "Shading"
       , Space
       , Str "Colors"
       , Space
@@ -323,13 +323,13 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "[Grumpy wizards make toxic brew.]{pfa-font-color=\"MediumVioletRed!70!White\"}"
+      "[Grumpy wizards make toxic brew.]{pfa-font-color=\"MediumVioletRed!80!black\"}"
   , Para
       [ Span
           ( ""
           , []
           , [ ( "style"
-              , "color: color-mix(in srgb, #C71585 70%, #FFFFFF);"
+              , "color: color-mix(in srgb, #C71585 80%, #000000);"
               )
             ]
           )
@@ -365,13 +365,13 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "[Grumpy wizards make toxic brew.]{pfa-font-color=\"MediumVioletRed!30!Green\"}"
+      "[Grumpy wizards make toxic brew.]{pfa-font-color=\"RoyalBlue!50!ForestGreen\"}"
   , Para
       [ Span
           ( ""
           , []
           , [ ( "style"
-              , "color: color-mix(in srgb, #C71585 30%, #008000);"
+              , "color: color-mix(in srgb, #4169E1 50%, #228B22);"
               )
             ]
           )

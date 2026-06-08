@@ -3,6 +3,11 @@ title: |
   | Demonstration of
   | Fonts and Alignment Filter
   | for Pandoc
+header-includes:
+  - |
+    \usepackage{titlesec}
+    \titleformat{\paragraph}[hang]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+    \titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{0.5em}
 ---
 
 This document demonstrates every feature provided by the `fonts-and-alignment` Lua filter for Pandoc. Each code block shows the exact Markdown syntax used to generate the rendered output that follows, ensuring consistent results across both LaTeX/PDF and HTML formats.^[To enable equivalent styling in HTML output, include the `fonts-and-alignment.css` stylesheet distributed with this filter.]
@@ -199,53 +204,58 @@ Text decoration styles are implemented using the LaTeX `ulem` package, which is 
 
 This section describes how to apply color to text using the `pfa-font-color` attribute in both Bracketed Spans and Fenced Divs.
 
-### Flexible Color Terminology
+### Solid Colors
 
-The `pfa-font-color` attribute supports CSS3 named colors, full hexadecimal values, and three-digit shorthand hexadecimal values. For CSS3 named colors, the filter parses and normalizes the name to support different naming conventions.
+The `pfa-font-color` attribute supports CSS3 named colors, full hexadecimal values, and three-digit shorthand hexadecimal values.
 
-All naming conventions below resolve to the CSS3 color `mediumvioletred`.
+#### Flexible Color Terminology
+
+For standard solid colors, the filter automatically normalizes CSS3 color names. This means solid colors are completely case-insensitive and support various naming conventions. All examples below resolve perfectly to the CSS3 color `mediumvioletred` in both HTML and PDF formats:
 
 | Naming Convention    | Syntax                                        | Output |
 | :------------------- | :-------------------------------------------- | :---------- |
 | Lowercase            | `[Color]{pfa-font-color="mediumvioletred"}`   | [Color]{pfa-font-color="mediumvioletred"} |
-| | | |
-| Spaces               | `[Color]{pfa-font-color="Medium Violet Red"}` | [Color]{pfa-font-color="Medium Violet Red"} |
-| | | |
 | Title Case           | `[Color]{pfa-font-color="Medium Violet Red"}` | [Color]{pfa-font-color="Medium Violet Red"} |
-| | | |
 | Kebab Case           | `[Color]{pfa-font-color="medium-violet-red"}` | [Color]{pfa-font-color="medium-violet-red"} |
-| | | |
 | Snake Case           | `[Color]{pfa-font-color="medium_violet_red"}` | [Color]{pfa-font-color="medium_violet_red"} |
-| | | |
 | Camel Case           | `[Color]{pfa-font-color="mediumVioletRed"}`   | [Color]{pfa-font-color="mediumVioletRed"} |
-| | | |
 | Pascal Case          | `[Color]{pfa-font-color="MediumVioletRed"}`   | [Color]{pfa-font-color="MediumVioletRed"} |
-| | | |
 | Screaming Snake Case | `[Color]{pfa-font-color="MEDIUM_VIOLET_RED"}` | [Color]{pfa-font-color="MEDIUM_VIOLET_RED"} |
-| | | |
-| Uppercase            | `[Color]{pfa-font-color="MEDIUMVIOLETRED"}`   | [Color]{pfa-font-color="MEDIUMVIOLETRED"} |
 
-### Colors in Bracketed Spans
+#### Applying Solid Colors
 
 | Input Type    | Syntax                               | Output |
 | :------------ | :----------------------------------- | :----- |
 | CSS3 Named    | `[Sample]{pfa-font-color="crimson"}` | [Sample]{pfa-font-color="crimson"} |
 | Hex Full      | `[Sample]{pfa-font-color="#2E8B57"}` | [Sample]{pfa-font-color="#2E8B57"} |
-| Hex Shorthand^[Three-digit shorthand expands by repeating each hexadecimal digit per RGB channel (e.g., `#666` becomes `#666666`, `#F0A` becomes `#FF00AA`). This only applies when each channel consists of a single repeated hexadecimal digit. Full hexadecimal values without per-channel repetition (e.g., `#2E8B57`) are not eligible for shorthand expansion.] | `[Sample]{pfa-font-color="#666"}` | [Sample]{pfa-font-color="#666"} |
+| Hex Shorthand^[Three-digit shorthand expands by repeating each hexadecimal digit per RGB channel (e.g., `#666` becomes `#666666`). This only applies when each channel consists of a single repeated hexadecimal digit. Full hexadecimal values without per-channel repetition (e.g., `#2E8B57`) are not eligible for shorthand expansion.] | `[Sample]{pfa-font-color="#666"}` | [Sample]{pfa-font-color="#666"} |
 
-### Colors in Fenced Divs
+**Note:** While the default Pandoc LaTeX template loads `x11names` (which includes numbered variants like `LightBlue3`), CSS and web browsers do not recognize these. To ensure your colors render perfectly across both PDF and HTML formats, you must stick strictly to standard CSS3 Named Colors or Hexadecimal codes.
 
-When applied to a Fenced Div, the `pfa-font-color` attribute defines the default text color for the entire block. All enclosed content inherits this color unless explicitly overridden by a Bracketed Span.
+### Color Mixing
 
-```markdown
-::: {pfa-font-color="DarkSlateGrey"}
-The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.
-:::
-```
+The filter natively supports LaTeX's `xcolor` percentage mixing syntax, allowing you to tint or shade colors on the fly. This translates perfectly into both PDF outputs and HTML outputs (using the modern CSS `color-mix()` function).
 
-::: {pfa-font-color="DarkSlateGrey"}
-The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.
-:::
+The mixing syntax uses the exclamation mark (`!`) to separate values:
+
+* **Tinting:** `BaseColor!Percentage`. The percentage dictates how much of the base color is kept. (e.g., `Maroon!40` results in 40% Maroon and 60% White).
+* **Shading:** `BaseColor!Percentage!black`. By using black as the second color, you darken the base color. (e.g., `MediumVioletRed!80!black` results in 80% MediumVioletRed and 20% black).
+* **Mixing Two Colors:** `BaseColor!Percentage!MixColor`. The percentage applies to the first color, and the remaining percentage applies to the second. (e.g., `RoyalBlue!50!ForestGreen` results in 50% RoyalBlue and 50% ForestGreen).
+
+**Important Casing Rule:** Because mixed colors are passed directly to the LaTeX compiler, the flexible terminology rules do not apply here. You must use the exact casing expected by the LaTeX `xcolor` package, otherwise your PDF generation will fail:
+
+* **Base Colors:** The [19 core LaTeX colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide) must be strictly lowercase.
+* **Extended Web Colors:** The [CSS3 named colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) must be strictly PascalCase.
+
+| Mixing Type | Syntax | Output |
+| :-------| :------------------ | :-- |
+| Tint (40% Base) | `[Tinted]{pfa-font-color="Maroon!40"}` | [Tinted]{pfa-font-color="Maroon!40"} |
+| Shade (80% Base) | `[Shaded]{pfa-font-color="MediumVioletRed!80!black"}` | [Shade]{pfa-font-color="MediumVioletRed!80!black"} |
+| Mix (50/50) | `[Mixed]{pfa-font-color="RoyalBlue!50!ForestGreen"}` | [Mixed]{pfa-font-color="RoyalBlue!50!ForestGreen"} |
+
+### Inheriting Colors in Fenced Divs
+
+When applied to a Fenced Div, the `pfa-font-color` attribute defines the default text color for the entire block. All enclosed content inherits this color unless explicitly overridden by an inner Bracketed Span.
 
 ```markdown
 ::: {pfa-font-color="DarkSlateGrey"}
@@ -265,7 +275,7 @@ The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.
 The remaining text continues using _DarkSlateGrey_ for the remainder of the Div.
 :::
 
-**Note:** The `pfa-font-color` utility is an attribute, not a class, and should not be prefixed with a period (`.`).
+*Note:* The `pfa-font-color` utility is an attribute, not a class, and should not be prefixed with a period (`.`).
 
 ## Text Alignment within Fenced Divs
 

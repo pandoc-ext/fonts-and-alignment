@@ -74,38 +74,38 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
 
-## Darkening Colors (LaTeX syntax required)
+## Tinting Colors (LaTeX syntax required)
 
 ```markdown
-::: {pfa-font-color="MediumVioletRed!70!Black"}
+::: {pfa-font-color="MediumVioletRed!40!white"}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
 ```
 
-::: {pfa-font-color="MediumVioletRed!70!Black"}
+::: {pfa-font-color="MediumVioletRed!40!white"}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
 
-## Lightening Colors (LaTeX syntax required)
+## Shading Colors (LaTeX syntax required)
 
 ```markdown
-::: {pfa-font-color="MediumVioletRed!70!White"}
+::: {pfa-font-color="MediumVioletRed!80!black"}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
 ```
 
-::: {pfa-font-color="MediumVioletRed!70!White"}
+::: {pfa-font-color="MediumVioletRed!80!black"}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
 
 ## Mixing Colors (LaTeX syntax required)
 
 ```markdown
-::: {pfa-font-color="MediumVioletRed!30!Green"}
+::: {pfa-font-color="RoyalBlue!50!ForestGreen"}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
 ```
 
-::: {pfa-font-color="MediumVioletRed!30!Green"}
+::: {pfa-font-color="RoyalBlue!50!ForestGreen"}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 :::
