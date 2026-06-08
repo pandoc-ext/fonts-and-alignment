@@ -249,7 +249,7 @@ Accepts CSS3 named colors and hexadecimal values. Solid color names are complete
 
 The filter natively supports LaTeX's `xcolor` percentage syntax. This translates to cross-format blending using `color-mix()` in HTML.
 
-- **Tinting (Mixing with White):** `BaseColor!Percentage`. The percentage dictates how much of the base color is kept. (e.g., `Maroon!30` results in 30% Maroon and 70% White).
+- **Tinting (Mixing with White):** `BaseColor!Percentage`. The percentage dictates how much of the base color is kept. (e.g., `Maroon!30` results in 30% Maroon and 70% white).
 - **Shading (Mixing with Black):** `BaseColor!Percentage!black`. By using black as the second color, you darken the base color. (e.g., `MediumVioletRed!80!black` results in 80% MediumVioletRed and 20% black).
 - **Mixing Two Colors:** `BaseColor!Percentage!MixColor`. The percentage applies to the first color, and the remaining percentage applies to the second. (e.g., `RoyalBlue!50!ForestGreen` results in 50% RoyalBlue and 50% ForestGreen).
 

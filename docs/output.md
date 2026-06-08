@@ -330,7 +330,7 @@ The mixing syntax uses the exclamation mark (`!`) to separate values:
 
 - **Tinting:** `BaseColor!Percentage`. The percentage dictates how much
   of the base color is kept. (e.g., `Maroon!40` results in 40% Maroon
-  and 60% White).
+  and 60% white).
 - **Shading:** `BaseColor!Percentage!black`. By using black as the
   second color, you darken the base color. (e.g.,
   `MediumVioletRed!80!black` results in 80% MediumVioletRed and 20%

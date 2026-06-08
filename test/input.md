@@ -238,7 +238,7 @@ The filter natively supports LaTeX's `xcolor` percentage mixing syntax, allowing
 
 The mixing syntax uses the exclamation mark (`!`) to separate values:
 
-* **Tinting:** `BaseColor!Percentage`. The percentage dictates how much of the base color is kept. (e.g., `Maroon!40` results in 40% Maroon and 60% White).
+* **Tinting:** `BaseColor!Percentage`. The percentage dictates how much of the base color is kept. (e.g., `Maroon!40` results in 40% Maroon and 60% white).
 * **Shading:** `BaseColor!Percentage!black`. By using black as the second color, you darken the base color. (e.g., `MediumVioletRed!80!black` results in 80% MediumVioletRed and 20% black).
 * **Mixing Two Colors:** `BaseColor!Percentage!MixColor`. The percentage applies to the first color, and the remaining percentage applies to the second. (e.g., `RoyalBlue!50!ForestGreen` results in 50% RoyalBlue and 50% ForestGreen).
 
