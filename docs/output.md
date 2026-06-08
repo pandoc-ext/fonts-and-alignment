@@ -389,8 +389,8 @@ The remaining text continues using *DarkSlateGrey* for the remainder of
 the Div.
 :::
 
-*Note:* The `pfa-font-color` utility is an attribute, not a class, and
-should not be prefixed with a period (`.`).
+\***Note:** The `pfa-font-color` utility is an attribute, not a class,
+and should not be prefixed with a period (`.`).
 
 ## Text Alignment within Fenced Divs
 
