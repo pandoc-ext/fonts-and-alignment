@@ -11,7 +11,9 @@
    ========================================================================== */
 /* These remote assets are fetched strictly to provide visual parity for testing
    the standard LaTeX font families (.serif, .sans, and .tt) during compilation. */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Fira+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
 
 /* ==========================================================================
    Explicit Font Mapping for Testing Environment
@@ -20,6 +22,8 @@
    we override the variables right at the root level so our compiled utility
    classes can read them immediately. */
 :root {
+  --pfa-normal-size: 1rem;
+
   --pfa-mainfont: 'Noto Serif', serif;
   --pfa-sansfont: 'Noto Sans', sans-serif;
   --pfa-monofont: 'Fira Mono', monospace;
@@ -29,7 +33,7 @@
 /* Centers the compiled specimen output and constraints its layout width to
    simulate standard print document margins on modern desktop displays. */
 body {
-  font-family: 'Noto Serif', serif;
+  font-family: var(--pfa-mainfont);
   margin-left: auto;
   margin-right: auto;
   max-width: 90ch;

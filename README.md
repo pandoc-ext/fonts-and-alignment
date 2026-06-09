@@ -1,35 +1,30 @@
 # Fonts and Alignment Filter
 
-_Fonts and Alignment_ is a Pandoc Lua filter that brings rich typographic
-control to Markdown source documents using a unified namespaced class system
-(`pfa-*`).
+**Fonts and Alignment** is a Pandoc Lua filter that brings rich, typographic control to Markdown source documents, ensuring beautiful and consistent results across both **LaTeX/PDF** and **HTML** formats using a unified namespaced class system (`pfa-*`).
 
-For PDF output, the filter emits the appropriate LaTeX commands and
-environments.
+* **LaTeX/PDF Output:** The filter automatically translates your classes into the appropriate native LaTeX commands and environments.
+* **HTML Output:** The filter preserves the structural classes in your generated document while a companion stylesheet applies equivalent CSS styling.
 
-For HTML output, the filter preserves the same classes in the generated
-document and a companion stylesheet applies equivalent CSS styling.
+The repository includes complete specimen documents demonstrating every feature provided by the filter. Each example showcases the exact Markdown syntax used to generate the output, making the specimens useful both as a feature showcase and as a direct library of copy-and-paste examples.
 
-The repository also includes complete specimen documents that demonstrate
-every feature provided by the filter. Each example shows both the source
-Markdown and the rendered output, making the specimens useful both as a
-feature showcase and as a library of copy-and-paste examples.
+* [Live HTML Specimen (Rendered Preview)](https://htmlpreview.github.io/?https://github.com/pandoc-ext/fonts-and-alignment/blob/main/docs/input.html)
+* [PDF Specimen](docs/input.pdf)
 
-- [PDF Specimen](docs/input.pdf)
-- [Live HTML Specimen (Rendered Preview)](https://htmlpreview.github.io/?https://github.com/pandoc-ext/fonts-and-alignment/blob/main/docs/input.html)
+## Extension Requirements
 
-The filter relies on Pandoc's `bracketed_spans` and `fenced_divs`
-extensions, which are enabled by default in modern Pandoc distributions.
+The filter relies completely on Pandoc's `bracketed_spans` and `fenced_divs` extensions, which are enabled by default in modern Pandoc distributions.
+
+> ⚠️ **Important:** In the uncommon event that these extensions are explicitly disabled in your workflow, the Lua filter will be unable to interpret the custom divs and spans correctly, causing them to fail gracefully but appear as unformatted raw text in your rendered output.
 
 ## Feature Highlights
 
-- **Nine-step font sizing scale** — `pfa-text-3xs` through `pfa-text-3xl`.
-- **Font weights, shapes, and families** — bold, medium, italic, slanted, upright, emphasis, serif, sans, mono, small caps, and normal.
-- **Text decorations** — underline, double underline, dashed underline, dotted underline, wavy underline, and strikeout.
-- **Flexible color support** — solid CSS3/hex colors with permissive parsing, plus native `xcolor` percentage mixing (tinting and shading).
-- **Text casing transformations** — uppercase and lowercase conversions applied directly to Abstract Syntax Tree (AST) text nodes.
-- **Text alignment and Fenced Div positioning** — separate controls for text alignment and horizontal positioning.
-- **Consistent PDF and HTML rendering** — equivalent styling through a shared class vocabulary.
+* **Nine-step font sizing scale** — `pfa-text-3xs` through `pfa-text-3xl`.
+* **Font weights, shapes, and families** — bold, medium, italic, slanted, upright, emphasis, serif, sans, mono, small caps, and normal.
+* **Text decorations** — underline, double underline, dashed underline, dotted underline, wavy underline, and strikeout.
+* **Color support** — solid CSS3/hex colors with permissive parsing, plus native `xcolor` percentage-based color mixing.
+* **Text casing transformations** — uppercase and lowercase conversions applied directly to the Abstract Syntax Tree (AST) text nodes.
+* **Text alignment and Fenced Div positioning** — separate controls for text alignment within Fenced Divs and horizontal positioning of the Fenced Div itself.
+* **Consistent PDF and HTML rendering** — equivalent styling through a shared class vocabulary.
 
 ## Installation
 
@@ -43,25 +38,37 @@ quarto add pandoc-ext/fonts-and-alignment
 
 The extension automatically registers:
 
-- `fonts-and-alignment.lua` for all supported output formats
-- `fonts-and-alignment.css` for HTML output
+* `fonts-and-alignment.lua` for all supported output formats
+* `fonts-and-alignment.css` for HTML output
 
 No additional filter or stylesheet configuration is required.
 
-### Plain Pandoc
+### Pandoc
 
-Download the filter and stylesheet:
+Download the filter and stylesheet directly into your project directory:
 
 ```bash
-curl -O [https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.lua](https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.lua)
-curl -O [https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.css](https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/main/fonts-and-alignment.css)
+curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/v2.0.0/fonts-and-alignment.lua
+
+curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/v2.0.0/fonts-and-alignment.css
 ```
+
+Unlike the Quarto installation, Pandoc requires you to explicitly declare these assets during compilation:
+
+* Use `--lua-filter=fonts-and-alignment.lua` for all targeted output formats
+* Use `--css=fonts-and-alignment.css` specifically for HTML output
+
+*Full terminal commands and configuration templates are provided in the [Compilation and Usage](#compilation-and-usage) section below.*
 
 ## Configuration
 
-### PDF Font Families
+The following examples demonstrate how to configure both PDF and HTML outputs to use a consistent set of custom typefaces (**Noto Serif**, **Noto Sans**, and **Fira Mono**).
 
-By default, the typeface family classes (`.pfa-font-serif`, `.pfa-font-sans`, and `.pfa-font-mono`) are available immediately and will map to your LaTeX engine's standard fallback fonts. To customize these settings and use the specific typefaces of your choice, define them using Pandoc's standard font variables in a defaults file:
+### PDF Typography
+
+By default, the typeface family classes (`.pfa-font-serif`, `.pfa-font-sans`, and `.pfa-font-mono`) map directly to your LaTeX engine's standard default fonts.
+
+To use specific typefaces for PDF output, define them using Pandoc's standard font variables in a defaults file:
 
 ```yaml
 variables:
@@ -82,63 +89,71 @@ monofont: "Fira Mono"
 ---
 ```
 
-### HTML Typography and Custom Styles
+### HTML Typography
 
-For HTML output, the bundled companion stylesheet automatically maps the family classes to generic web fallbacks (`serif`, `sans-serif`, and `monospace`). To customize these styles to match the fonts of your choice, override the default CSS custom properties (variables) within your project's main stylesheet:
+For HTML output, the bundled companion stylesheet automatically maps those same family classes to cross-platform, generic web fallbacks (`serif`, `sans-serif`, and `monospace`).
+
+To load and customize these styles to match your preferred web typography, structure your project's main stylesheet as follows:
 
 ```css
+/* Load custom web fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
+
+/* Import the filter rules to inherit your custom configuration variables */
+@import url("fonts-and-alignment.css");
+
 :root {
-  /* 1. Customize the baseline document font size (maps to .pfa-text-normal) */
+  /* Customize the baseline document font size (maps to .pfa-text-normal) */
   --pfa-normal-size: 1rem; /* Corresponds to your base text size, e.g., 12pt */
 
-  /* 2. Customize typeface selections for each family class */
+  /* Customize typeface selections for each family class */
   --pfa-mainfont: "Noto Serif", serif;     /* Customizes .pfa-font-serif */
   --pfa-sansfont: "Noto Sans", sans-serif;  /* Customizes .pfa-font-sans */
   --pfa-monofont: "Fira Mono", monospace;   /* Customizes .pfa-font-mono */
 }
-
-/* Import the filter rules to inherit your custom configuration variables */
-@import url("fonts-and-alignment.css");
 ```
 
-The `--pfa-normal-size` property acts as the sizing baseline. All other font sizing classes (`.pfa-text-3xs` through `.pfa-text-3xl`) scale up or down proportionally from whatever custom value you declare here (e.g., `1rem`, `12pt`, or `16px`), perfectly mimicking LaTeX's relative typography scaling on the web.
+The `--pfa-normal-size` property acts as your typographic baseline. All other font sizing classes (`.pfa-text-3xs` through `.pfa-text-3xl`) scale up or down proportionally from whatever custom value you declare here (such as `1rem`), perfectly mimicking LaTeX's relative scaling behaviors on the web.
 
-## Quick Start
+## Markdown Syntax
 
-### Bracketed Spans
+The filter uses native Pandoc elements to apply styles. Use **Bracketed Spans** for inline text adjustments and **Fenced Divs** for block-level content structures.
 
-Bracketed Spans are intended for styling smaller inline portions of text.
+### Inline Text (Bracketed Spans)
+
+Best for styling words, phrases, or short inline selections:
 
 ```markdown
-[some text]{.pfa-font-bold}
+[This text is bold.]{.pfa-font-bold}
 
-[some text]{.pfa-font-italic .pfa-text-l}
+[This text is italic and large.]{.pfa-font-italic .pfa-text-l}
 
-[some text]{.pfa-text-uline pfa-font-color="forestgreen"}
+[This text is underlined and green.]{.pfa-text-uline pfa-font-color="forestgreen"}
 ```
 
-### Fenced Divs
+### Block Layouts (Fenced Divs)
 
-Fenced Divs are intended for styling larger blocks of content.
+Best for styling entire paragraphs, quotes, or multi-line sections:
 
 ```markdown
+::: {.pfa-text-center}
+An entire block of text centered on the page.
 :::
-A single centered paragraph.
-:::
-```
 
-When combining multiple classes or adding attributes, use standard Pandoc
-attribute syntax:
-
-```markdown
 ::: {.pfa-font-sans .pfa-font-bold pfa-font-color="midnightblue"}
-A bold sans-serif paragraph in midnight blue.
+A complete bold, sans-serif block of content styled in midnight blue.
 :::
 ```
 
-## Usage
+## Compilation and Usage
 
-### PDF
+If you are using **Quarto**, no special compilation configuration is needed—simply execute `quarto render document.qmd`. For **Pandoc**, apply the filter and assets via the command line or a defaults file configuration.
+
+### PDF Generation
+
+Compile using the Lua filter along with an explicit LaTeX rendering engine:
 
 ```bash
 pandoc \
@@ -148,16 +163,17 @@ pandoc \
   document.md
 ```
 
-Or via a defaults file:
+Or declare them cleanly inside a Pandoc defaults YAML file:
 
 ```yaml
 filters:
   - fonts-and-alignment.lua
-
 pdf-engine: lualatex
 ```
 
-### HTML
+### HTML Generation
+
+Compile using both the Lua filter and the companion stylesheet. Use the `--standalone` flag if you need a complete, self-contained web page. If you are generating raw HTML body fragments to feed into a static site generator (like Pelican or Hugo), simply omit the standalone flag:
 
 ```bash
 pandoc \
@@ -166,6 +182,16 @@ pandoc \
   --standalone \
   --output=document.html \
   document.md
+```
+
+Or declare them cleanly inside a Pandoc defaults YAML file:
+
+```yaml
+filters:
+  - fonts-and-alignment.lua
+css:
+  - fonts-and-alignment.css
+standalone: true  # Omit or set to false if building content fragments for an SSG
 ```
 
 ## Class Reference
@@ -206,10 +232,7 @@ Nine sizing hooks, applicable to both Bracketed Spans and Fenced Divs.
 
 ### Text Decorations (Bracketed Spans Only)
 
-The filter automatically loads the `ulem` package when one of these classes
-is detected in the document.
-
-These styles are also mapped to equivalent CSS properties for HTML output.
+The filter automatically loads the `ulem` package when one of these classes is detected in the document. These styles are also mapped to equivalent CSS properties for HTML output.
 
 | Class | LaTeX | Description |
 |--------|--------|--------|
@@ -222,10 +245,7 @@ These styles are also mapped to equivalent CSS properties for HTML output.
 
 ### Text Casing
 
-Both classes work for Bracketed Spans and Fenced Divs.
-
-The transformation operates directly on AST text nodes, so the resulting case
-survives copy-and-paste from the rendered document.
+Both classes work for Bracketed Spans and Fenced Divs. The transformation operates directly on AST text nodes, so the resulting case survives copy-and-paste from the rendered document.
 
 | Class | Description |
 |--------|--------|
@@ -238,7 +258,7 @@ A single attribute, `pfa-font-color`, applies colors and supports both solid val
 
 #### Solid Colors
 
-Accepts CSS3 named colors and hexadecimal values. Solid color names are completely case-insensitive and parsed permissively (`mediumvioletred`, `MediumVioletRed`, and `medium_violet_red` resolve identically).
+Accepts [CSS3 named colors](https://www.w3.org/TR/css-color-3/#svg-color) and hexadecimal values. Solid color names are completely case-insensitive and parsed permissively (`mediumvioletred`, `MediumVioletRed`, and `medium_violet_red` resolve identically).
 
 ```markdown
 [crimson sample]{pfa-font-color="crimson"}
@@ -249,18 +269,20 @@ Accepts CSS3 named colors and hexadecimal values. Solid color names are complete
 
 The filter natively supports LaTeX's `xcolor` percentage syntax. This translates to cross-format blending using `color-mix()` in HTML.
 
-- **Tinting (Mixing with White):** `BaseColor!Percentage`. The percentage dictates how much of the base color is kept. (e.g., `Maroon!30` results in 30% Maroon and 70% white).
-- **Shading (Mixing with Black):** `BaseColor!Percentage!black`. By using black as the second color, you darken the base color. (e.g., `MediumVioletRed!80!black` results in 80% MediumVioletRed and 20% black).
-- **Mixing Two Colors:** `BaseColor!Percentage!MixColor`. The percentage applies to the first color, and the remaining percentage applies to the second. (e.g., `RoyalBlue!50!ForestGreen` results in 50% RoyalBlue and 50% ForestGreen).
+The mixing syntax uses the exclamation mark (`!`) to separate values:
 
-**⚠️ Important Casing Rule:** Mixed colors are strictly case-sensitive. Base colors must be lowercase, while extended CSS3/SVG colors must be written in PascalCase to align directly with LaTeX requirements.
+| Mixing Type | Syntax Pattern | Description & Example |
+| :--- | :--- | :--- |
+| Tinting | `BaseColor!Percentage` | Blends with white. `Maroon!30` keeps 30% Maroon and 70% white. |
+| Shading | `BaseColor!Percentage!black` | Blends with black. `MediumVioletRed!80!black` darkens the base color. |
+| Two-Color Mix | `BaseColor!Percentage!MixColor` | Blends two specific colors. `RoyalBlue!50!ForestGreen` splits them 50/50. |
 
-- Base Colors: The [19 core LaTeX colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide) must be strictly lowercase.
-- Extended Web Colors: The [CSS3 / SVG named colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) must be strictly PascalCase.
+> ⚠️ **Strict Casing Rule:** Mixed color definitions are case-sensitive. The [19 core LaTeX colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide) must be written in **lowercase**. Conversely, [CSS3 named colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) must be written in **PascalCase** to maintain cross-backend compatibility.
 
 ```markdown
 [Tinted]{pfa-font-color="Maroon!40"}
 [Shaded]{pfa-font-color="MediumVioletRed!80!black"}
+[Mixed]{pfa-font-color="RoyalBlue!50!ForestGreen"}
 ```
 
 #### Inheriting Colors
@@ -279,8 +301,7 @@ The remainder reverts to the parent color.
 
 ### Text Alignment
 
-The `pfa-align-*` family controls text alignment within a Fenced Div while
-preserving explicit line breaks.
+The `pfa-align-*` family controls text alignment within a Fenced Div while preserving explicit line breaks.
 
 | Class | Behavior |
 |--------|--------|
@@ -289,7 +310,7 @@ preserving explicit line breaks.
 | `pfa-align-right` | Right-aligned, honoring explicit line breaks |
 
 ```markdown
-:::
+::: {.pfa-align-center}
 First centered line\
 Second centered line\
 Third centered line
@@ -298,8 +319,7 @@ Third centered line
 
 ### Fenced Div Positioning
 
-The `pfa-block-*` family controls the horizontal positioning of an entire
-Fenced Div without affecting the internal text alignment of its contents.
+The `pfa-block-*` family controls the horizontal positioning of an entire Fenced Div without affecting the internal text alignment of its contents.
 
 | Class | Behavior |
 |--------|--------|
@@ -329,17 +349,13 @@ A centered, bold, sans-serif, large, midnight-blue Fenced Div.
 :::
 ```
 
-When `pfa-font-color` is combined with underline or strikeout classes, the
-decoration inherits the specified color in both LaTeX and HTML output.
+When `pfa-font-color` is combined with underline or strikeout classes, the decoration inherits the specified color in both LaTeX and HTML output.
 
 ## Troubleshooting
 
 ### Colors don't appear in PDF output
 
-The filter emits `\textcolor{…}{…}` and `\color{…}` commands, which require
-the `xcolor` package.
-
-Most modern Pandoc templates load it automatically. If yours does not:
+The filter emits `\textcolor{…}{…}` and `\color{…}` commands, which require the `xcolor` package. Most modern Pandoc templates load it automatically. If yours does not:
 
 ```yaml
 header-includes:
@@ -348,10 +364,7 @@ header-includes:
 
 ### `pfa-block-*` alignment breaks the PDF build
 
-Fenced Div positioning relies on the `varwidth` package, which the filter
-loads automatically when needed.
-
-If your TeX installation is minimal:
+Fenced Div positioning relies on the `varwidth` package, which the filter loads automatically when needed. If your TeX installation is minimal:
 
 ```bash
 tlmgr install varwidth
@@ -359,8 +372,7 @@ tlmgr install varwidth
 
 ### Font sizes don't scale as expected
 
-The HTML stylesheet derives all typography sizes from the
-`--pfa-normal-size` CSS custom property.
+The HTML stylesheet derives all typography sizes from the `--pfa-normal-size` CSS custom property.
 
 ```css
 :root {
@@ -368,8 +380,7 @@ The HTML stylesheet derives all typography sizes from the
 }
 ```
 
-Changing this value scales the entire typography hierarchy while preserving
-the relative proportions between size classes.
+Changing this value scales the entire typography hierarchy while preserving the relative proportions between size classes.
 
 ## Legacy Aliases
 

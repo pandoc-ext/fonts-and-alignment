@@ -271,8 +271,9 @@ This section describes how to apply color to text using the
 
 ### Solid Colors
 
-The `pfa-font-color` attribute supports CSS3 named colors, full
-hexadecimal values, and three-digit shorthand hexadecimal values.
+The `pfa-font-color` attribute supports [CSS3 named
+colors](https://www.w3.org/TR/css-color-3/#svg-color), full hexadecimal
+values, and three-digit shorthand hexadecimal values.
 
 #### Flexible Color Terminology
 
@@ -313,11 +314,11 @@ to the CSS3 color `mediumvioletred` in both HTML and PDF formats:
   Shorthand[^2]                                                   
   ---------------------------------------------------------------------------------------------------
 
-**Note:** While the default Pandoc LaTeX template loads `x11names`
-(which includes numbered variants like `LightBlue3`), CSS and web
-browsers do not recognize these. To ensure your colors render perfectly
-across both PDF and HTML formats, you must stick strictly to standard
-CSS3 Named Colors or Hexadecimal codes.
+**Note:** While Pandoc's default LaTeX template loads `x11names` (which
+includes numbered variants like `LightBlue3`), CSS and web browsers do
+not recognize these. To ensure your colors render perfectly across both
+PDF and HTML formats, you must stick strictly to the standard CSS3 Named
+Colors or Hexadecimal codes.
 
 ### Color Mixing
 
@@ -328,29 +329,34 @@ perfectly into both PDF outputs and HTML outputs (using the modern CSS
 
 The mixing syntax uses the exclamation mark (`!`) to separate values:
 
-- **Tinting:** `BaseColor!Percentage`. The percentage dictates how much
-  of the base color is kept. (e.g., `Maroon!40` results in 40% Maroon
-  and 60% white).
-- **Shading:** `BaseColor!Percentage!black`. By using black as the
-  second color, you darken the base color. (e.g.,
-  `MediumVioletRed!80!black` results in 80% MediumVioletRed and 20%
-  black).
-- **Mixing Two Colors:** `BaseColor!Percentage!MixColor`. The percentage
-  applies to the first color, and the remaining percentage applies to
-  the second. (e.g., `RoyalBlue!50!ForestGreen` results in 50% RoyalBlue
-  and 50% ForestGreen).
+  ------------------------------------------------------------------------------
+  Mixing Type     Syntax Pattern                    Description & Example
+  --------------- --------------------------------- ----------------------------
+  Tinting         `BaseColor!Percentage`            Blends with white.
+                                                    `Maroon!40` keeps 40% Maroon
+                                                    and 60% white.
 
-**Important Casing Rule:** Because mixed colors are passed directly to
-the LaTeX compiler, the flexible terminology rules do not apply here.
-You must use the exact casing expected by the LaTeX `xcolor` package,
-otherwise your PDF generation will fail:
+  Shading         `BaseColor!Percentage!black`      Blends with black.
+                                                    `MediumVioletRed!80!black`
+                                                    keeps 80% base and 20%
+                                                    black.
 
-- **Base Colors:** The [19 core LaTeX
-  colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide)
-  must be strictly lowercase.
-- **Extended Web Colors:** The [CSS3 named
-  colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)
-  must be strictly PascalCase.
+  Two-Color Mix   `BaseColor!Percentage!MixColor`   Blends two specific colors.
+                                                    `RoyalBlue!50!ForestGreen`
+                                                    yields a 50/50 mix.
+  ------------------------------------------------------------------------------
+
+> **\[Warning\] Strict Casing Rule:** Because mixed colors are passed
+> directly to the LaTeX compiler, the flexible terminology rules do not
+> apply here. You must use the exact casing expected by the LaTeX
+> `xcolor` package, otherwise your PDF generation will break:
+>
+> - **Base Colors:** The [19 core LaTeX
+>   colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide)
+>   must be strictly **lowercase**.
+> - **Extended Web Colors:** The [CSS3 named
+>   colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)
+>   must be strictly **PascalCase**.
 
   -----------------------------------------------------------------------------------------------------------------------------------------------
   Mixing Type        Syntax                                                  Output
@@ -514,23 +520,34 @@ syntax. In addition to classes, key-value attributes such as
 
 ### Bracketed Span Composition
 
-  ----------------------------------------------------------------------------------------------------------------------------------------------
-  Style              Syntax                                                                         Output
-  ------------------ ------------------------------------------------------------------------------ --------------------------------------------
-  Bold Sans-Serif    `[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}`     [Sample]{.pfa-font-bold .pfa-font-sans
-                                                                                                    .pfa-text-l style="color: #FF0000;"}
+Multiple utilities can be combined tightly within an inline span block
+to build highly customized inline typography treatments:
 
-                                                                                                    
+#### Bold Sans-Serif Output
 
-  Italic Monospace   `[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}`                        [Sample]{.pfa-font-italic .pfa-font-mono
-                                                                                                    .pfa-text-s}
+``` markdown
+[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}
+```
 
-                                                                                                    
+[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l
+style="color: #FF0000;"}
 
-  Small Caps,        `[Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color="forestgreen"}`   [[Sample]{.underline}]{.pfa-font-smallcaps
-  Underlined,                                                                                       .pfa-text-uline style="color: #228B22;"}
-  Colored                                                                                           
-  ----------------------------------------------------------------------------------------------------------------------------------------------
+#### Italic Monospace Output
+
+``` markdown
+[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}
+```
+
+[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}
+
+#### Small Caps, Underlined, and Colored Output
+
+``` markdown
+[Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color="forestgreen"}
+```
+
+[[Sample]{.underline}]{.pfa-font-smallcaps .pfa-text-uline
+style="color: #228B22;"}
 
 ### Fenced Div Composition
 
@@ -554,55 +571,55 @@ demonstrating multiple combined utilities from the filter.
 
 **Warning:** Legacy aliases are deprecated. They are retained strictly
 for backward compatibility and will be entirely removed in the next
-major release. New documents should use the `.pfa-*` namespaces going
+major release. New documents should use the `pfa-*` namespaces going
 forward.
 
 ### Font Sizing Aliases
 
-  Legacy Classes   Modern Classes
-  ---------------- --------------------
-  `.xsmall`        `.pfa-text-xs`
-  `.small`         `.pfa-text-s`
-  `.normal`        `.pfa-text-normal`
-  `.large`         `.pfa-text-l`
-  `.xlarge`        `.pfa-text-xl`
-  `.xxlarge`       `.pfa-text-2xl`
-  `.huge`          `.pfa-text-3xl`
+  Legacy Class   Modern Class
+  -------------- -------------------
+  `xsmall`       `pfa-text-xs`
+  `small`        `pfa-text-s`
+  `normal`       `pfa-text-normal`
+  `large`        `pfa-text-l`
+  `xlarge`       `pfa-text-xl`
+  `xxlarge`      `pfa-text-2xl`
+  `huge`         `pfa-text-3xl`
 
 ### Font Weight, Shape, and Family Aliases
 
-  Legacy Classes   Shorthand   Modern Classes
-  ---------------- ----------- -----------------------
-  `.bold`          `.bf`       `.pfa-font-bold`
-  `.emphasis`      `.em`       `.pfa-font-emphasis`
-  `.italic`        `.it`       `.pfa-font-italic`
-  `.medium`        `.md`       `.pfa-font-medium`
-  `.monospace`     `.tt`       `.pfa-font-mono`
-  `.normalfont`    `.nf`       `.pfa-font-normal`
-  `.sans`          `.sf`       `.pfa-font-sans`
-  `.serif`         `.rm`       `.pfa-font-serif`
-  `.slanted`       `.sl`       `.pfa-font-slanted`
-  `.smallcaps`     `.sc`       `.pfa-font-smallcaps`
-  `.upright`       `.up`       `.pfa-font-upright`
+  Legacy Class   Shorthand   Modern Class
+  -------------- ----------- ----------------------
+  `bold`         `bf`        `pfa-font-bold`
+  `emphasis`     `em`        `pfa-font-emphasis`
+  `italic`       `it`        `pfa-font-italic`
+  `medium`       `md`        `pfa-font-medium`
+  `monospace`    `tt`        `pfa-font-mono`
+  `normalfont`   `nf`        `pfa-font-normal`
+  `sans`         `sf`        `pfa-font-sans`
+  `serif`        `rm`        `pfa-font-serif`
+  `slanted`      `sl`        `pfa-font-slanted`
+  `smallcaps`    `sc`        `pfa-font-smallcaps`
+  `upright`      `up`        `pfa-font-upright`
 
 ### Alignment Aliases
 
-  Legacy Classes   Modern Classes
-  ---------------- ---------------------
-  `.centering`     `.pfa-align-center`
-  `.raggedleft`    `.pfa-align-right`
-  `.raggedright`   `.pfa-align-left`
+  Legacy Class    Modern Class
+  --------------- --------------------
+  `centering`     `pfa-align-center`
+  `raggedleft`    `pfa-align-right`
+  `raggedright`   `pfa-align-left`
 
 ### Text Decoration Aliases
 
-  Legacy Classes   Shorthand   Modern Classes
-  ---------------- ----------- --------------------------
-  `.uline`         `.u`        `.pfa-text-uline`
-  `.uuline`        `.uu`       `.pfa-text-uline-double`
-  `.dashuline`     `.dau`      `.pfa-text-uline-dashed`
-  `.dotuline`      `.dou`      `.pfa-text-uline-dotted`
-  `.uwave`         `.uw`       `.pfa-text-uline-wave`
-  `.sout`          `.so`       `.pfa-text-strikeout`
+  Legacy Class   Shorthand   Modern Class
+  -------------- ----------- -------------------------
+  `uline`        `u`         `pfa-text-uline`
+  `uuline`       `uu`        `pfa-text-uline-double`
+  `dashuline`    `dau`       `pfa-text-uline-dashed`
+  `dotuline`     `dou`       `pfa-text-uline-dotted`
+  `uwave`        `uw`        `pfa-text-uline-wave`
+  `sout`         `so`        `pfa-text-strikeout`
 
 ## Removed Classes
 
@@ -611,11 +628,11 @@ longer recognized by the filter. Existing documents should be updated to
 use the replacement classes shown below.
 
   Removed Class   Shorthand   Removed In   Replacement
-  --------------- ----------- ------------ -----------------------
-  `.center`       ---         2.0.0        `.pfa-align-center`
-  `.flushleft`    ---         2.0.0        `.pfa-align-left`
-  `.flushright`   ---         2.0.0        `.pfa-align-right`
-  `.xout`         `.xo`       2.0.0        `.pfa-text-strikeout`
+  --------------- ----------- ------------ ----------------------
+  `center`        ---         2.0.0        `pfa-align-center`
+  `flushleft`     ---         2.0.0        `pfa-align-left`
+  `flushright`    ---         2.0.0        `pfa-align-right`
+  `xout`          `xo`        2.0.0        `pfa-text-strikeout`
 
 [^1]: To enable equivalent styling in HTML output, include the
     `fonts-and-alignment.css` stylesheet distributed with this filter.
