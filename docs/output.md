@@ -357,7 +357,7 @@ otherwise your PDF generation will fail:
   ------------------ ------------------------------------------------------- --------------------------------------------------------------------
   Tint (40% Base)    `[Tinted]{pfa-font-color="Maroon!40"}`                  [Tinted]{style="color: color-mix(in srgb, #800000 40%, #FFFFFF);"}
 
-  Shade (80% Base)   `[Shaded]{pfa-font-color="MediumVioletRed!80!black"}`   [Shade]{style="color: color-mix(in srgb, #C71585 80%, #000000);"}
+  Shade (80% Base)   `[Shaded]{pfa-font-color="MediumVioletRed!80!black"}`   [Shaded]{style="color: color-mix(in srgb, #C71585 80%, #000000);"}
 
   Mix (50/50)        `[Mixed]{pfa-font-color="RoyalBlue!50!ForestGreen"}`    [Mixed]{style="color: color-mix(in srgb, #4169E1 50%, #228B22);"}
   -----------------------------------------------------------------------------------------------------------------------------------------------

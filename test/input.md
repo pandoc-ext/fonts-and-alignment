@@ -250,7 +250,7 @@ The mixing syntax uses the exclamation mark (`!`) to separate values:
 | Mixing Type | Syntax | Output |
 | :-------| :------------------ | :-- |
 | Tint (40% Base) | `[Tinted]{pfa-font-color="Maroon!40"}` | [Tinted]{pfa-font-color="Maroon!40"} |
-| Shade (80% Base) | `[Shaded]{pfa-font-color="MediumVioletRed!80!black"}` | [Shade]{pfa-font-color="MediumVioletRed!80!black"} |
+| Shade (80% Base) | `[Shaded]{pfa-font-color="MediumVioletRed!80!black"}` | [Shaded]{pfa-font-color="MediumVioletRed!80!black"} |
 | Mix (50/50) | `[Mixed]{pfa-font-color="RoyalBlue!50!ForestGreen"}` | [Mixed]{pfa-font-color="RoyalBlue!50!ForestGreen"} |
 
 ### Inheriting Colors in Fenced Divs
