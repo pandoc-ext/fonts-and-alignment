@@ -106,10 +106,10 @@ formats.<a href="#fn1" class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a></p>
 <p>The filter relies on Pandoc’s <code>fenced_divs</code> and
 <code>bracketed_spans</code> extensions, which are typically enabled by
-default. In the uncommon event that these extensions are disabled, the
-Lua filter will be unable to interpret the corresponding divs and spans
-correctly, causing them to appear as raw text in the rendered
-output.</p>
+default. In the unlikely event that these extensions are disabled, the
+Lua filter will display a terminal warning and pass over the
+corresponding divs and spans, causing them to appear as raw text in the
+rendered output.</p>
 <h2 id="bracketed-spans-and-fenced-divs-invocations">Bracketed Spans and
 Fenced Divs Invocations</h2>
 <p>The filter may be used with Pandoc’s <code>bracketed_spans</code> and
@@ -637,14 +637,16 @@ keeps 40% Maroon and 60% white.</td>
 <td
 style="text-align: left;"><code>BaseColor!Percentage!black</code></td>
 <td style="text-align: left;">Blends with black.
-<code>MediumVioletRed!80!black</code> keeps 80% base and 20% black.</td>
+<code>MediumVioletRed!80!black</code> keeps 80% MediumVioletRed and 20%
+black.</td>
 </tr>
 <tr>
 <td style="text-align: left;">Two-Color Mix</td>
 <td
 style="text-align: left;"><code>BaseColor!Percentage!MixColor</code></td>
 <td style="text-align: left;">Blends two specific colors.
-<code>RoyalBlue!50!ForestGreen</code> yields a 50/50 mix.</td>
+<code>RoyalBlue!50!ForestGreen</code> yields a 50/50 mix of both
+colors.</td>
 </tr>
 </tbody>
 </table>
@@ -721,19 +723,18 @@ inherited color to <em>tomato</em>.</span></p>
 <p>The remaining text continues using <em>DarkSlateGrey</em> for the
 remainder of the Div.</p>
 </div>
-<p>*<strong>Note:</strong> The <code>pfa-font-color</code> utility is an
+<p><strong>Note:</strong> The <code>pfa-font-color</code> utility is an
 attribute, not a class, and should not be prefixed with a period
 (<code>.</code>).</p>
 <h2 id="text-alignment-within-fenced-divs">Text Alignment within Fenced
 Divs</h2>
-<p>The <code>.pfa-align-*</code> classes may be used to align text
-within a Fenced Div. These classes map to LaTeX alignment commands
+<p>The <code>pfa-align-*</code> classes control text alignment within a
+Fenced Div while explicitly preserving hard line breaks
+(<code>\</code>). These utilities map directly to native LaTeX commands
 (<code>\raggedright</code>, <code>\centering</code>, and
-<code>\raggedleft</code>) in PDF output while producing equivalent
-behavior in HTML.</p>
-<p>These classes also preserve explicit line breaks introduced with the
-backslash (<code>\</code>) character, which is useful for poetry,
-lyrics, and other text where line structure must be preserved.</p>
+<code>\raggedleft</code>) in PDF output and equivalent CSS behaviors in
+HTML, making them ideal for formatting poetry, lyrics, or multi-line
+blocks.</p>
 <h3 id="left-aligned-text">Left-aligned Text</h3>
 <div class="sourceCode" id="cb12"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
@@ -758,14 +759,11 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1">
 <div class="pfa-align-right">
 <p>This block of text is <em>right-aligned</em>.</p>
 </div>
-<h3 id="explicit-line-break-preservation">Explicit Line Break
-Preservation</h3>
-<p>The alignment classes preserve explicit line breaks introduced with
-the backslash (<code>\</code>) character.</p>
+<h3 id="line-break-preservation">Line Break Preservation</h3>
 <div class="sourceCode" id="cb15"><pre
 class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>This block of text \</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>is _center-aligned_ \</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>is _center-aligned_\</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="pfa-align-center">
@@ -1086,20 +1084,16 @@ use the replacement classes shown below.</p>
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>To enable equivalent styling in HTML output, include the
-<code>fonts-and-alignment.css</code> stylesheet distributed with this
-filter.<a href="#fnref1" class="footnote-back"
+<li id="fn1"><p>Requires including the companion
+<code>fonts-and-alignment.css</code> stylesheet in your HTML
+compilation.<a href="#fnref1" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Three-digit shorthand expands by repeating each
-hexadecimal digit per RGB channel (e.g., <code>#666</code> becomes
-<code>#666666</code>). This only applies when each channel consists of a
-single repeated hexadecimal digit. Full hexadecimal values without
-per-channel repetition (e.g., <code>#2E8B57</code>) are not eligible for
-shorthand expansion.<a href="#fnref2" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>For HTML the modern CSS <code>color-mix()</code>
-function is used.<a href="#fnref3" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Three-digit shorthand expands by duplicating each single
+hexadecimal digit per RGB channel (e.g., ‘#666’ expands to ‘#666666’).<a
+href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>HTML output utilizes the native CSS
+<code>color-mix()</code> function to achieve the same blend.<a
+href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 </body>

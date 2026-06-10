@@ -39,7 +39,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: {.pfa-block-left}\nThe entire block is _left-aligned_ \\\nwhile maintaining internal text alignment.\n:::"
+      "::: {.pfa-block-left}\nThe entire block is _left-aligned_\\\nwhile maintaining internal text alignment.\n:::"
   , Div
       ( ""
       , [ "pfa-block-left" ]
@@ -85,7 +85,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: {.pfa-block-center}\nThe entire block is _center-aligned_ \\\nwhile maintaining internal text alignment.\n:::"
+      "::: {.pfa-block-center}\nThe entire block is _center-aligned_\\\nwhile maintaining internal text alignment.\n:::"
   , Div
       ( ""
       , [ "pfa-block-center" ]
@@ -131,7 +131,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: {.pfa-block-right}\nThe entire block is _right-aligned_ \\\nwhile maintaining internal text alignment.\n:::"
+      "::: {.pfa-block-right}\nThe entire block is _right-aligned_\\\nwhile maintaining internal text alignment.\n:::"
   , Div
       ( ""
       , [ "pfa-block-right" ]

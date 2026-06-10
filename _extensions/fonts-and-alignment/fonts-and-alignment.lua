@@ -15,6 +15,14 @@ end
 
 local List = assert(pandoc.List, 'Cannot find the pandoc.List class')
 
+-- Verify prerequisite reader extensions are enabled
+if PANDOC_READER_OPTIONS and PANDOC_READER_OPTIONS.extensions then
+  local ext = PANDOC_READER_OPTIONS.extensions
+  if not (ext:includes('fenced_divs') and ext:includes('bracketed_spans')) then
+    io.stderr:write('[fonts-and-alignment] Warning: Required extensions "fenced_divs" or "bracketed_spans" are disabled. Filter utilities may render as raw text.\n')
+  end
+end
+
 -- ==============================================================================
 -- STATE FLAGS
 -- ==============================================================================

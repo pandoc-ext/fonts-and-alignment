@@ -2,8 +2,8 @@
 
 Fonts and Alignment is a Pandoc Lua filter that brings rich, typographic control to Markdown source documents, ensuring beautiful and consistent results across both LaTeX/PDF and HTML formats using a unified namespaced class system (`pfa-*`).
 
-* **LaTeX/PDF Output:** The filter automatically translates your classes into the appropriate native LaTeX commands and environments.
-* **HTML Output:** The filter preserves the structural classes in your generated document while a companion stylesheet applies equivalent CSS styling.
+* **LaTeX/PDF Output:** Automatically maps `pfa-*` classes to native LaTeX commands and environments.
+* **HTML Output:** Retains the structural classes in the markup, allowing the companion stylesheet to handle the CSS rendering.
 
 The repository includes complete specimen documents demonstrating every feature provided by the filter. Each example showcases the exact Markdown syntax used to generate the output, making the specimens useful both as a feature showcase and as a direct library of copy-and-paste examples.
 
@@ -14,7 +14,7 @@ The repository includes complete specimen documents demonstrating every feature 
 
 The filter relies completely on Pandoc's `bracketed_spans` and `fenced_divs` extensions, which are enabled by default in modern Pandoc distributions.
 
-> ⚠️ **Important:** In the uncommon event that these extensions are explicitly disabled in your workflow, the Lua filter will be unable to interpret the custom divs and spans correctly, causing them to fail gracefully but appear as unformatted raw text in your rendered output.
+> ⚠️ **Important:** In the unlikely event that these extensions are explicitly disabled in your workflow, the Lua filter will emit a warning to `stderr` and ignore the custom elements, causing them to appear as unformatted raw text in your rendered output.
 
 ## Feature Highlights
 
@@ -30,18 +30,15 @@ The filter relies completely on Pandoc's `bracketed_spans` and `fenced_divs` ext
 
 ### Quarto
 
-Install directly from GitHub:
+Install the extension using [Quarto](https://quarto.org):
 
 ```bash
 quarto add pandoc-ext/fonts-and-alignment
 ```
 
-The extension automatically registers:
-
-* `fonts-and-alignment.lua` for all supported output formats
-* `fonts-and-alignment.css` for HTML output
-
-No additional filter or stylesheet configuration is required.
+The extension automatically handles asset registration:
+* Registers `fonts-and-alignment.lua` for all supported output formats.
+* Registers `fonts-and-alignment.css` for HTML output.
 
 ### Pandoc
 
@@ -55,12 +52,12 @@ curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/v2.0.0/
 curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/v2.0.0/fonts-and-alignment.css
 ```
 
-Unlike the Quarto installation, Pandoc requires you to explicitly declare these assets during compilation:
+Unlike Quarto, Pandoc requires you to explicitly pass these assets as arguments during compilation:
 
-* Use `--lua-filter=fonts-and-alignment.lua` for all targeted output formats
-* Use `--css=fonts-and-alignment.css` specifically for HTML output
+* Use `--lua-filter=fonts-and-alignment.lua` for all output formats.
+* Use `--css=fonts-and-alignment.css` specifically for HTML output.
 
-Full terminal commands and configuration templates are provided in the [Compilation and Usage](#compilation-and-usage) section below.
+For font customization options, see the [Configuration](#configuration) section below. Full terminal commands and configuration templates are available in the [Compilation and Usage](#compilation-and-usage) section.
 
 ## Configuration
 
@@ -99,9 +96,9 @@ To load and customize these fonts to match your preferred web typography, struct
 
 ```css
 /* Load custom web fonts from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
+@import url('[https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap](https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap)');
+@import url('[https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap](https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap)');
+@import url('[https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap](https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap)');
 
 /* Import the filter rules to inherit your custom configuration variables */
 @import url("fonts-and-alignment.css");
@@ -254,7 +251,7 @@ Both classes work for Bracketed Spans and Fenced Divs. The transformation operat
 | `pfa-uppercase` | Uppercase every letter |
 | `pfa-lowercase` | Lowercase every letter |
 
-### Color
+## Color
 
 A single attribute, `pfa-font-color`, applies colors and supports both solid values and percentage-based mixing.
 
@@ -276,8 +273,8 @@ The mixing syntax uses the exclamation mark (`!`) to separate values:
 | Mixing Type | Syntax Pattern | Description & Example |
 | :--- | :--- | :--- |
 | Tinting | `BaseColor!Percentage` | Blends with white. `Maroon!30` keeps 30% Maroon and 70% white. |
-| Shading | `BaseColor!Percentage!black` | Blends with black. `MediumVioletRed!80!black` darkens the base color. |
-| Two-Color Mix | `BaseColor!Percentage!MixColor` | Blends two specific colors. `RoyalBlue!50!ForestGreen` splits them 50/50. |
+| Shading | `BaseColor!Percentage!black` | Blends with black. `MediumVioletRed!80!black` keeps 80% MediumVioletRed and 20% black. |
+| Two-Color Mix | `BaseColor!Percentage!MixColor` | Blends two specific colors. `RoyalBlue!50!ForestGreen` yields a 50/50 mix of both colors. |
 
 > ⚠️ **Strict Casing Rule:** Mixed color definitions are case-sensitive. The [19 core LaTeX colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide) must be written in **lowercase**. Conversely, [CSS3 named colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) must be written in **PascalCase** to maintain cross-backend compatibility.
 
@@ -303,13 +300,13 @@ The remainder reverts to the parent color.
 
 ### Text Alignment
 
-The `pfa-align-*` family controls text alignment within a Fenced Div while preserving explicit line breaks.
+The `pfa-align-*` family controls text alignment within a Fenced Div while explicitly preserving hard line breaks (`\`). These utilities map directly to native LaTeX commands (`\raggedright`, `\centering`, and `\raggedleft`) in PDF output and equivalent CSS behaviors in HTML.
 
 | Class | Behavior |
 |--------|--------|
-| `pfa-align-left` | Left-aligned, honoring explicit line breaks (`\`) |
-| `pfa-align-center` | Centered, honoring explicit line breaks |
-| `pfa-align-right` | Right-aligned, honoring explicit line breaks |
+| `pfa-align-left` | Left-aligned layout |
+| `pfa-align-center` | Centered layout |
+| `pfa-align-right` | Right-aligned layout |
 
 ```markdown
 ::: {.pfa-align-center}

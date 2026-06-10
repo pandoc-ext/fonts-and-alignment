@@ -67,10 +67,20 @@ h1, h2 {
    ========================================================================== */
 /* 1em horizontal padding on each cell yields ~2em of visual space between
    adjacent column content edges. */
-table th,
+/* table th,
 table td {
   padding-left: 1em;
   padding-right: 1em;
+} */
+
+/* Amplifies vertical breathing room across all table cells */
+table th,
+table td {
+  vertical-align: top;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 /* ==========================================================================
@@ -79,6 +89,13 @@ table td {
 /* Light grey backdrop that stays readable against default body text. */
 table {
   background-color: #f0f0f0;
+}
+
+/* ==========================================================================
+   Source Code Padding
+   ========================================================================== */
+div.sourceCode {
+  padding: 0.5em
 }
 
 /* ==========================================================================

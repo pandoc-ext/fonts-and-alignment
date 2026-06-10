@@ -1,18 +1,14 @@
 ---
 header-includes:
 - |
-  \usepackage{titlesec}
-  \titleformat{\paragraph}[hang]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-  \titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{0.5em}
+  \renewcommand{\arraystretch}{1.3}
 title: |
   | Demonstration of
   | Fonts and Alignment Filter
   | for Pandoc
 ---
 
-\usepackage{titlesec}
-\titleformat{\paragraph}[hang]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{0.5em}
+\renewcommand{\arraystretch}{1.3}
 
 This document demonstrates every feature provided by the
 `fonts-and-alignment` Lua filter for Pandoc. Each code block shows the
@@ -20,10 +16,10 @@ exact Markdown syntax used to generate the rendered output that follows,
 ensuring consistent results across both LaTeX/PDF and HTML formats.[^1]
 
 The filter relies on Pandoc's `fenced_divs` and `bracketed_spans`
-extensions, which are typically enabled by default. In the uncommon
-event that these extensions are disabled, the Lua filter will be unable
-to interpret the corresponding divs and spans correctly, causing them to
-appear as raw text in the rendered output.
+extensions, which are typically enabled by default. In the unlikely
+event that these extensions are disabled, the Lua filter will display a
+terminal warning and pass over the corresponding divs and spans, causing
+them to appear as raw text in the rendered output.
 
 ## Bracketed Spans and Fenced Divs Invocations
 
@@ -337,12 +333,13 @@ The mixing syntax uses the exclamation mark (`!`) to separate values:
 
   Shading         `BaseColor!Percentage!black`      Blends with black.
                                                     `MediumVioletRed!80!black`
-                                                    keeps 80% base and 20%
-                                                    black.
+                                                    keeps 80% MediumVioletRed
+                                                    and 20% black.
 
   Two-Color Mix   `BaseColor!Percentage!MixColor`   Blends two specific colors.
                                                     `RoyalBlue!50!ForestGreen`
-                                                    yields a 50/50 mix.
+                                                    yields a 50/50 mix of both
+                                                    colors.
   ------------------------------------------------------------------------------
 
 **\[Warning\] Strict Casing Rule:** Because mixed colors are passed
@@ -395,19 +392,16 @@ The remaining text continues using *DarkSlateGrey* for the remainder of
 the Div.
 :::
 
-\***Note:** The `pfa-font-color` utility is an attribute, not a class,
-and should not be prefixed with a period (`.`).
+**Note:** The `pfa-font-color` utility is an attribute, not a class, and
+should not be prefixed with a period (`.`).
 
 ## Text Alignment within Fenced Divs
 
-The `.pfa-align-*` classes may be used to align text within a Fenced
-Div. These classes map to LaTeX alignment commands (`\raggedright`,
-`\centering`, and `\raggedleft`) in PDF output while producing
-equivalent behavior in HTML.
-
-These classes also preserve explicit line breaks introduced with the
-backslash (`\`) character, which is useful for poetry, lyrics, and other
-text where line structure must be preserved.
+The `pfa-align-*` classes control text alignment within a Fenced Div
+while explicitly preserving hard line breaks (`\`). These utilities map
+directly to native LaTeX commands (`\raggedright`, `\centering`, and
+`\raggedleft`) in PDF output and equivalent CSS behaviors in HTML,
+making them ideal for formatting poetry, lyrics, or multi-line blocks.
 
 ### Left-aligned Text
 
@@ -445,15 +439,12 @@ This block of text is _right-aligned_.
 This block of text is *right-aligned*.
 :::
 
-### Explicit Line Break Preservation
-
-The alignment classes preserve explicit line breaks introduced with the
-backslash (`\`) character.
+### Line Break Preservation
 
 ``` markdown
 ::: {.pfa-align-center}
-This block of text \
-is _center-aligned_ \
+This block of text\
+is _center-aligned_\
 while preserving explicit line breaks.
 :::
 ```
@@ -619,13 +610,12 @@ use the replacement classes shown below.
   `flushright`    ---         2.0.0        `pfa-align-right`
   `xout`          `xo`        2.0.0        `pfa-text-strikeout`
 
-[^1]: To enable equivalent styling in HTML output, include the
-    `fonts-and-alignment.css` stylesheet distributed with this filter.
+[^1]: Requires including the companion `fonts-and-alignment.css`
+    stylesheet in your HTML compilation.
 
-[^2]: Three-digit shorthand expands by repeating each hexadecimal digit
-    per RGB channel (e.g., `#666` becomes `#666666`). This only applies
-    when each channel consists of a single repeated hexadecimal digit.
-    Full hexadecimal values without per-channel repetition (e.g.,
-    `#2E8B57`) are not eligible for shorthand expansion.
+[^2]: Three-digit shorthand expands by duplicating each single
+    hexadecimal digit per RGB channel (e.g., '#666' expands to
+    '#666666').
 
-[^3]: For HTML the modern CSS `color-mix()` function is used.
+[^3]: HTML output utilizes the native CSS `color-mix()` function to
+    achieve the same blend.

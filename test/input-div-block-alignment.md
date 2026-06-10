@@ -6,13 +6,13 @@ title: Aligning a Fenced Div
 
 ```markdown
 ::: {.pfa-block-left}
-The entire block is _left-aligned_ \
+The entire block is _left-aligned_\
 while maintaining internal text alignment.
 :::
 ```
 
 ::: {.pfa-block-left}
-The entire block is _left-aligned_ \
+The entire block is _left-aligned_\
 while maintaining internal text alignment.
 :::
 
@@ -20,13 +20,13 @@ while maintaining internal text alignment.
 
 ```markdown
 ::: {.pfa-block-center}
-The entire block is _center-aligned_ \
+The entire block is _center-aligned_\
 while maintaining internal text alignment.
 :::
 ```
 
 ::: {.pfa-block-center}
-The entire block is _center-aligned_ \
+The entire block is _center-aligned_\
 while maintaining internal text alignment.
 :::
 
@@ -34,12 +34,12 @@ while maintaining internal text alignment.
 
 ```markdown
 ::: {.pfa-block-right}
-The entire block is _right-aligned_ \
+The entire block is _right-aligned_\
 while maintaining internal text alignment.
 :::
 ```
 
 ::: {.pfa-block-right}
-The entire block is _right-aligned_ \
+The entire block is _right-aligned_\
 while maintaining internal text alignment.
 :::

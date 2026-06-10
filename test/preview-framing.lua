@@ -19,12 +19,11 @@ local function has_pfa_block_class(elem)
   return false
 end
 
--- Block-level wrappers
-local TCOLORBOX_OPEN = '\\begin{tcolorbox}[enhanced,colback=previewbg,colframe=previewframe,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt]'
+-- Centralized style declarations called from the LaTeX preamble style dictionary
+local TCOLORBOX_OPEN = '\\begin{tcolorbox}[pfapreview]'
 local TCOLORBOX_CLOSE = '\\end{tcolorbox}'
 
--- Inline-level wrappers
-local TCBOX_OPEN = '\\tcbox[enhanced,colback=previewbg,colframe=previewframe,boxrule=1pt,arc=2pt,left=2pt,right=2pt,top=1pt,bottom=1pt,on line]{'
+local TCBOX_OPEN = '\\tcbox[pfapreviewinline]{'
 local TCBOX_CLOSE = '}'
 
 local LATEX_PREAMBLE = [[
@@ -32,21 +31,36 @@ local LATEX_PREAMBLE = [[
 \usepackage{fvextra}
 \fvset{breaklines=true,breakanywhere=true}
 
-% Render section headings in Noto Serif SemiBold (body \textbf stays true bold).
+% Render standard headings in Noto Serif SemiBold safely
 \usepackage{titlesec}
 \newfontfamily\pfaheadingfont{Noto Serif}[UprightFont={* SemiBold},ItalicFont={* SemiBold Italic}]
 \titleformat*{\section}{\Large\pfaheadingfont}
 \titleformat*{\subsection}{\large\pfaheadingfont}
 \titleformat*{\subsubsection}{\normalsize\pfaheadingfont}
-\titleformat*{\paragraph}{\normalsize\pfaheadingfont}
-\titleformat*{\subparagraph}{\normalsize\pfaheadingfont}
 
-% Demo specimen frame around each pfa-* div/span.
+% Explicitly convert level-4 paragraph headings into display block headings
+\titleformat{\paragraph}[hang]{\normalsize\bfseries\pfaheadingfont}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{0.5em}
+
+% Dynamic template frame styles around each pfa-* div/span
 \usepackage[most]{tcolorbox}
 \definecolor{previewframe}{HTML}{94A3B8}
 \definecolor{previewbg}{HTML}{F8FAFC}
 
-% Flat light-gray fill for tables.
+% Centralized component style dictionary declaration
+\tcbset{
+  pfapreview/.style={
+    enhanced, colback=previewbg, colframe=previewframe,
+    boxrule=1pt, arc=3pt, left=10pt, right=10pt, top=8pt, bottom=8pt
+  },
+  pfapreviewinline/.style={
+    enhanced, colback=previewbg, colframe=previewframe,
+    boxrule=1pt, arc=2pt, left=2pt, right=2pt, top=1pt, bottom=1pt,
+    on line
+  }
+}
+
+% Flat light-gray fill for tables
 \PassOptionsToPackage{table}{xcolor}
 \usepackage{colortbl}
 \usepackage{etoolbox}
@@ -57,35 +71,30 @@ local LATEX_PREAMBLE = [[
 \BeforeBeginEnvironment{Shaded}{\par\noindent\begin{minipage}{\linewidth}}
 \AfterEndEnvironment{Shaded}{\end{minipage}\par\medskip}
 
-% Shrink-to-fit framed pfa-block-* boxes: capture multi-paragraph content into
-% a savebox via varwidth, then frame it with \tcbox (macro form, genuinely
-% shrink-to-fit). HTML achieves the same via display:table + auto margins.
+% Shrink-to-fit framed pfa-block-* boxes using centralized styling
 \usepackage{varwidth}
 \newsavebox{\pfablockbox}
 \AtEndPreamble{%
   \ifcsdef{pfa-block-center}{%
     \renewenvironment{pfa-block-center}
       {\begin{lrbox}{\pfablockbox}\begin{varwidth}{\textwidth}}
-      {\end{varwidth}\end{lrbox}\begin{center}\tcbox[enhanced,colback=previewbg,colframe=previewframe,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt]{\usebox{\pfablockbox}}\end{center}}%
+      {\end{varwidth}\end{lrbox}\begin{center}\tcbox[pfapreview]{\usebox{\pfablockbox}}\end{center}}%
   }{}%
   \ifcsdef{pfa-block-left}{%
     \renewenvironment{pfa-block-left}
       {\begin{lrbox}{\pfablockbox}\begin{varwidth}{\textwidth}}
-      {\end{varwidth}\end{lrbox}\begin{flushleft}\tcbox[enhanced,colback=previewbg,colframe=previewframe,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt]{\usebox{\pfablockbox}}\end{flushleft}}%
+      {\end{varwidth}\end{lrbox}\begin{flushleft}\tcbox[pfapreview]{\usebox{\pfablockbox}}\end{flushleft}}%
   }{}%
   \ifcsdef{pfa-block-right}{%
     \renewenvironment{pfa-block-right}
       {\begin{lrbox}{\pfablockbox}\begin{varwidth}{\textwidth}}
-      {\end{varwidth}\end{lrbox}\begin{flushright}\tcbox[enhanced,colback=previewbg,colframe=previewframe,boxrule=1pt,arc=3pt,left=10pt,right=10pt,top=8pt,bottom=8pt]{\usebox{\pfablockbox}}\end{flushright}}%
+      {\end{varwidth}\end{lrbox}\begin{flushright}\tcbox[pfapreview]{\usebox{\pfablockbox}}\end{flushright}}%
   }{}%
 }
 ]]
 
 --------------------------------------------------------------------------------
 -- PASS 1: Context Tagging
--- Pandoc walks bottom-up by default. To make Spans aware they are inside a
--- table or a framed pfa-* block, we walk those parents top-down and tag their
--- descendant Spans so Pass 2 skips framing them.
 --------------------------------------------------------------------------------
 local function tag_descendant_spans(elem)
   return pandoc.walk_block(elem, {
@@ -100,7 +109,6 @@ local TagContextPass = {
   Table = function(tbl)
     return tag_descendant_spans(tbl)
   end,
-
   Div = function(div)
     if not has_pfa_signal(div) then return nil end
     return tag_descendant_spans(div)
@@ -109,15 +117,10 @@ local TagContextPass = {
 
 --------------------------------------------------------------------------------
 -- PASS 2: Frame Generation
--- Wraps tagged elements in LaTeX tcolorbox environments, ignoring those
--- tagged by Pass 1.
 --------------------------------------------------------------------------------
 local ApplyFramesPass = {
   Div = function(elem)
     if not has_pfa_signal(elem) then return nil end
-    -- pfa-block-* divs use shrink-to-fit varwidth + flushleft/center/flushright.
-    -- A full-width tcolorbox around them hides the alignment effect entirely,
-    -- so leave them unframed in the preview.
     if has_pfa_block_class(elem) then return nil end
 
     if FORMAT:match('latex') then
@@ -131,7 +134,6 @@ local ApplyFramesPass = {
   end,
 
   Span = function(elem)
-    -- If this span was inside a table, remove the temporary tag and skip framing
     if elem.attributes['data-no-pfa-frame'] then
       elem.attributes['data-no-pfa-frame'] = nil
       return elem
@@ -156,11 +158,9 @@ local ApplyFramesPass = {
     if type(includes) ~= 'table' then includes = pandoc.List({ includes }) end
 
     includes:insert(pandoc.RawBlock('latex', LATEX_PREAMBLE))
-
     meta['header-includes'] = includes
     return meta
   end
 }
 
--- Return the passes as a sequential list so Pandoc executes them in order
 return { TagContextPass, ApplyFramesPass }

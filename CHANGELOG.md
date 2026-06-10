@@ -1,19 +1,20 @@
 # Changelog
 <!-- markdownlint-disable MD024 -->
-
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.0.0]
+## [2.0.0] — 2026-06-10
 
 ### Added
 
-- Support installation through Quarto.
+- Support installation through Quarto with automatic asset registration.
 - Support for coloring text via the `pfa-font-color` attribute in both Bracketed Spans and Fenced Divs.
+- Support for native cross-backend percentage-based color mixing (`xcolor` mixing syntax for LaTeX and `color-mix()` for HTML).
 - Support for horizontal positioning of Fenced Divs using the `pfa-block-left`, `pfa-block-center`, and `pfa-block-right` classes.
-- Validation of class names with user-facing error messages for unrecognized classes.
+- Prerequisite check that emits a `stderr` terminal warning if required reader extensions are disabled.
+- Validation of utility class names with user-facing warnings for unrecognized classes.
 
 ### Changed
 

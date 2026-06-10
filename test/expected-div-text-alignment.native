@@ -162,7 +162,7 @@ Pandoc
       , [ "markdown" ]
       , []
       )
-      "::: {.pfa-align-center}\nThis block of text \\\nis _center-aligned_ \\\nwhile preserving explicit line breaks.\n:::"
+      "::: {.pfa-align-center}\nThis block of text\\\nis _center-aligned_\\\nwhile preserving explicit line breaks.\n:::"
   , Div
       ( ""
       , [ "pfa-align-center" ]

@@ -42,14 +42,14 @@ This block of text is _right-aligned_.
 
 ```markdown
 ::: {.pfa-align-center}
-This block of text \
-is _center-aligned_ \
+This block of text\
+is _center-aligned_\
 while preserving explicit line breaks.
 :::
 ```
 
 ::: {.pfa-align-center}
-This block of text \
-is _center-aligned_ \
+This block of text\
+is _center-aligned_\
 while preserving explicit line breaks.
 :::
