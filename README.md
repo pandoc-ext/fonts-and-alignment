@@ -1,6 +1,6 @@
 # Fonts and Alignment Filter
 
-**Fonts and Alignment** is a Pandoc Lua filter that brings rich, typographic control to Markdown source documents, ensuring beautiful and consistent results across both **LaTeX/PDF** and **HTML** formats using a unified namespaced class system (`pfa-*`).
+Fonts and Alignment is a Pandoc Lua filter that brings rich, typographic control to Markdown source documents, ensuring beautiful and consistent results across both LaTeX/PDF and HTML formats using a unified namespaced class system (`pfa-*`).
 
 * **LaTeX/PDF Output:** The filter automatically translates your classes into the appropriate native LaTeX commands and environments.
 * **HTML Output:** The filter preserves the structural classes in your generated document while a companion stylesheet applies equivalent CSS styling.
@@ -48,8 +48,10 @@ No additional filter or stylesheet configuration is required.
 Download the filter and stylesheet directly into your project directory:
 
 ```bash
+# fonts-and-alignment.lua
 curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/v2.0.0/fonts-and-alignment.lua
 
+# fonts-and-alignment.css
 curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/v2.0.0/fonts-and-alignment.css
 ```
 
@@ -58,15 +60,15 @@ Unlike the Quarto installation, Pandoc requires you to explicitly declare these 
 * Use `--lua-filter=fonts-and-alignment.lua` for all targeted output formats
 * Use `--css=fonts-and-alignment.css` specifically for HTML output
 
-*Full terminal commands and configuration templates are provided in the [Compilation and Usage](#compilation-and-usage) section below.*
+Full terminal commands and configuration templates are provided in the [Compilation and Usage](#compilation-and-usage) section below.
 
 ## Configuration
 
-The following examples demonstrate how to configure both PDF and HTML outputs to use a consistent set of custom typefaces (**Noto Serif**, **Noto Sans**, and **Fira Mono**).
+The following examples demonstrate how to configure both PDF and HTML outputs to use a consistent set of custom typefaces such as Noto Serif, Noto Sans, and Fira Mono.
 
 ### PDF Typography
 
-By default, the typeface family classes (`.pfa-font-serif`, `.pfa-font-sans`, and `.pfa-font-mono`) map directly to your LaTeX engine's standard default fonts.
+By default, the typeface family classes `.pfa-font-serif`, `.pfa-font-sans`, and `.pfa-font-mono` map directly to your LaTeX engine's standard default fonts.
 
 To use specific typefaces for PDF output, define them using Pandoc's standard font variables in a defaults file:
 
@@ -91,9 +93,9 @@ monofont: "Fira Mono"
 
 ### HTML Typography
 
-For HTML output, the bundled companion stylesheet automatically maps those same family classes to cross-platform, generic web fallbacks (`serif`, `sans-serif`, and `monospace`).
+For HTML output, the bundled companion stylesheet automatically maps those same family classes to cross-platform, generic web fallbacks `serif`, `sans-serif`, and `monospace`.
 
-To load and customize these styles to match your preferred web typography, structure your project's main stylesheet as follows:
+To load and customize these fonts to match your preferred web typography, structure your project's main stylesheet as follows:
 
 ```css
 /* Load custom web fonts from Google Fonts */
@@ -119,9 +121,9 @@ The `--pfa-normal-size` property acts as your typographic baseline. All other fo
 
 ## Markdown Syntax
 
-The filter uses native Pandoc elements to apply styles. Use **Bracketed Spans** for inline text adjustments and **Fenced Divs** for block-level content structures.
+The filter uses native Pandoc elements to apply styles. Use **Bracketed Spans** for inline text elements and **Fenced Divs** for block-level elements.
 
-### Inline Text (Bracketed Spans)
+### Inline Elements (Bracketed Spans)
 
 Best for styling words, phrases, or short inline selections:
 
@@ -133,7 +135,7 @@ Best for styling words, phrases, or short inline selections:
 [This text is underlined and green.]{.pfa-text-uline pfa-font-color="forestgreen"}
 ```
 
-### Block Layouts (Fenced Divs)
+### Block Elements (Fenced Divs)
 
 Best for styling entire paragraphs, quotes, or multi-line sections:
 
@@ -329,7 +331,7 @@ The `pfa-block-*` family controls the horizontal positioning of an entire Fenced
 
 ```markdown
 ::: {.pfa-block-right}
-**Right-Anchored Shrink Block**
+Right-Anchored Shrink Block
 
 Wraps tightly around its content.
 :::

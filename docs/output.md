@@ -323,9 +323,8 @@ Colors or Hexadecimal codes.
 ### Color Mixing
 
 The filter natively supports LaTeX's `xcolor` percentage mixing syntax,
-allowing you to tint or shade colors on the fly. This translates
-perfectly into both PDF outputs and HTML outputs (using the modern CSS
-`color-mix()` function).
+allowing you to tint, shade or mix colors on the fly. This translates
+perfectly into both PDF and HTML outputs.[^3]
 
 The mixing syntax uses the exclamation mark (`!`) to separate values:
 
@@ -346,17 +345,18 @@ The mixing syntax uses the exclamation mark (`!`) to separate values:
                                                     yields a 50/50 mix.
   ------------------------------------------------------------------------------
 
-> **\[Warning\] Strict Casing Rule:** Because mixed colors are passed
-> directly to the LaTeX compiler, the flexible terminology rules do not
-> apply here. You must use the exact casing expected by the LaTeX
-> `xcolor` package, otherwise your PDF generation will break:
->
-> - **Base Colors:** The [19 core LaTeX
->   colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide)
->   must be strictly **lowercase**.
-> - **Extended Web Colors:** The [CSS3 named
->   colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)
->   must be strictly **PascalCase**.
+**\[Warning\] Strict Casing Rule:** Because mixed colors are passed
+directly to the LaTeX compiler, the flexible terminology rules do not
+apply here. You must use the exact casing expected by the LaTeX `xcolor`
+package, otherwise your PDF generation will break:
+
+- **Base Colors:** The [19 core LaTeX
+  colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide)
+  must be strictly **lowercase**.
+
+- **Extended Web Colors:** The [CSS3 named
+  colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)
+  must be strictly **PascalCase**.
 
   -----------------------------------------------------------------------------------------------------------------------------------------------
   Mixing Type        Syntax                                                  Output
@@ -520,34 +520,19 @@ syntax. In addition to classes, key-value attributes such as
 
 ### Bracketed Span Composition
 
-Multiple utilities can be combined tightly within an inline span block
-to build highly customized inline typography treatments:
+  ----------------------------------------------------------------------------------------------------------------------------------------------
+  Style              Syntax                                                                         Output
+  ------------------ ------------------------------------------------------------------------------ --------------------------------------------
+  Bold Sans-Serif    `[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}`     [Sample]{.pfa-font-bold .pfa-font-sans
+                                                                                                    .pfa-text-l style="color: #FF0000;"}
 
-#### Bold Sans-Serif Output
+  Italic Monospace   `[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}`                        [Sample]{.pfa-font-italic .pfa-font-mono
+                                                                                                    .pfa-text-s}
 
-``` markdown
-[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color="red"}
-```
-
-[Sample]{.pfa-font-bold .pfa-font-sans .pfa-text-l
-style="color: #FF0000;"}
-
-#### Italic Monospace Output
-
-``` markdown
-[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}
-```
-
-[Sample]{.pfa-font-italic .pfa-font-mono .pfa-text-s}
-
-#### Small Caps, Underlined, and Colored Output
-
-``` markdown
-[Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color="forestgreen"}
-```
-
-[[Sample]{.underline}]{.pfa-font-smallcaps .pfa-text-uline
-style="color: #228B22;"}
+  Small Caps,        `[Sample]{.pfa-font-smallcaps .pfa-text-uline pfa-font-color="forestgreen"}`   [[Sample]{.underline}]{.pfa-font-smallcaps
+  Underlined,                                                                                       .pfa-text-uline style="color: #228B22;"}
+  Colored                                                                                           
+  ----------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Fenced Div Composition
 
@@ -642,3 +627,5 @@ use the replacement classes shown below.
     when each channel consists of a single repeated hexadecimal digit.
     Full hexadecimal values without per-channel repetition (e.g.,
     `#2E8B57`) are not eligible for shorthand expansion.
+
+[^3]: For HTML the modern CSS `color-mix()` function is used.
