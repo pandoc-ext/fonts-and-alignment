@@ -37,6 +37,7 @@ quarto add pandoc-ext/fonts-and-alignment
 ```
 
 The extension automatically handles asset registration:
+
 * Registers `fonts-and-alignment.lua` for all supported output formats.
 * Registers `fonts-and-alignment.css` for HTML output.
 
@@ -115,6 +116,23 @@ To load and customize these fonts to match your preferred web typography, struct
 ```
 
 The `--pfa-normal-size` property acts as your typographic baseline. All other font sizing classes (`.pfa-text-3xs` through `.pfa-text-3xl`) scale up or down proportionally from whatever custom value you declare here (such as `1rem`), perfectly mimicking LaTeX's relative scaling behaviors on the web.
+
+#### Customization and Token Reuse (HTML Only)
+
+The companion stylesheet explicitly exposes the complete LaTeX-scaled hierarchy and family definitions as native CSS Custom Properties inside the `:root` block. This makes them fully available for global customization if desired, as well as direct reuse in other custom elements within your stylesheets (such as sidebars, headers, or navigation menus) to ensure perfectly uniform typographic proportions across your entire web layout:
+
+* Sizing Range: `var(--pfa-size-3xs)` through `var(--pfa-size-3xl)`
+* Font Families: `var(--pfa-mainfont)`, `var(--pfa-sansfont)`, and `var(--pfa-monofont)`
+
+```css
+.client-custom-sidebar {
+  /* Safely reuse design tokens for independent interface elements */
+  font-size: var(--pfa-size-s);
+  font-family: var(--pfa-sansfont);
+}
+```
+
+> ⚠️ **Backend Limitation:** These design tokens are purely runtime CSS variables for web rendering engines. They have no effect on LaTeX/PDF compilation workflows, which must rely on standard Pandoc variables or native LaTeX style overrides.
 
 ## Markdown Syntax
 
@@ -227,7 +245,7 @@ Nine sizing hooks, applicable to both Bracketed Spans and Fenced Divs.
 | `pfa-font-smallcaps` | `\textsc{…}` / `{\scshape …}` | Small caps |
 | `pfa-font-normal` | `\textnormal{…}` / `{\normalfont …}` | Normal |
 
-> Make sure your selected fonts actually provide the requested shapes and weights. LaTeX may substitute alternatives when they are unavailable.
+> ⚠️ **Font Support:** Make sure your selected fonts actually provide the requested shapes and weights. LaTeX may substitute alternatives when they are unavailable.
 
 ### Text Decorations (Bracketed Spans Only)
 
@@ -255,7 +273,7 @@ Both classes work for Bracketed Spans and Fenced Divs. The transformation operat
 
 A single attribute, `pfa-font-color`, applies colors and supports both solid values and percentage-based mixing.
 
-#### Solid Colors
+### Solid Colors
 
 Accepts [CSS3 named colors](https://www.w3.org/TR/css-color-3/#svg-color) and hexadecimal values. Solid color names are completely case-insensitive and parsed permissively (`mediumvioletred`, `MediumVioletRed`, and `medium_violet_red` resolve identically).
 
@@ -264,7 +282,7 @@ Accepts [CSS3 named colors](https://www.w3.org/TR/css-color-3/#svg-color) and he
 [hex sample]{pfa-font-color="#2E8B57"}
 ```
 
-#### Color Mixing
+### Color Mixing
 
 The filter natively supports LaTeX's `xcolor` percentage syntax. This translates to cross-format blending using `color-mix()` in HTML.
 
@@ -284,7 +302,7 @@ The mixing syntax uses the exclamation mark (`!`) to separate values:
 [Mixed]{pfa-font-color="RoyalBlue!50!ForestGreen"}
 ```
 
-#### Inheriting Colors
+### Inheriting Colors
 
 When applied to a Fenced Div, all enclosed content inherits the color unless explicitly overridden.
 
@@ -298,7 +316,7 @@ The remainder reverts to the parent color.
 :::
 ```
 
-### Text Alignment
+## Text Alignment
 
 The `pfa-align-*` family controls text alignment within a Fenced Div while explicitly preserving hard line breaks (`\`). These utilities map directly to native LaTeX commands (`\raggedright`, `\centering`, and `\raggedleft`) in PDF output and equivalent CSS behaviors in HTML.
 

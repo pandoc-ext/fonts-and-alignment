@@ -2,23 +2,33 @@
  * Pandoc Fonts and Alignment Stylesheet
  *
  * Scales typography predictably relative to the configured base document size.
- * All size utilities derive from --pfa-body-size using ratios based on the
+ * All size utilities derive from --pfa-normal-size using ratios based on the
  * LaTeX 12pt size hierarchy.
  */
 
 /* ==========================================================================
- * Base Configuration & Typography Variables
+ * Base Configuration & Typography Design Tokens
  * ========================================================================== */
 
 :root {
-  /*
-   * Base document font size — override in your own stylesheet:
-   *
-   *   :root { --pfa-body-size: 10pt; }
-   *   :root { --pfa-body-size: 18px; }
-   *   :root { --pfa-body-size: 1rem; }
-   */
+  /* Base document font size — override in your own stylesheet if needed */
   --pfa-normal-size: 1rem;
+
+  /* Typeface Selection Defaults */
+  --pfa-mainfont: serif;
+  --pfa-sansfont: sans-serif;
+  --pfa-monofont: monospace;
+
+  /* Typographic Scale Tokens (Derived from LaTeX 12pt Hierarchy) */
+  --pfa-size-3xs:    calc(var(--pfa-normal-size) * 0.5);
+  --pfa-size-2xs:    calc(var(--pfa-normal-size) * 0.6667);
+  --pfa-size-xs:     calc(var(--pfa-normal-size) * 0.8333);
+  --pfa-size-s:      calc(var(--pfa-normal-size) * 0.9125);
+  --pfa-size-normal: var(--pfa-normal-size);
+  --pfa-size-l:      calc(var(--pfa-normal-size) * 1.2);
+  --pfa-size-xl:     calc(var(--pfa-normal-size) * 1.44);
+  --pfa-size-2xl:    calc(var(--pfa-normal-size) * 1.728);
+  --pfa-size-3xl:    calc(var(--pfa-normal-size) * 2.0736);
 }
 
 /* ==========================================================================
@@ -48,24 +58,24 @@
 
 /* \textrm{} / \upshape — resets to the main serif family */
 .normalfont, .nf, .upright, .up, .pfa-font-normal, .pfa-font-upright {
-  font-family: var(--pfa-mainfont, serif);
+  font-family: var(--pfa-mainfont);
   font-style: normal;
   font-weight: 400;
 }
 
 /* \texttt{} */
 .monospace, .tt, .pfa-font-mono {
-  font-family: var(--pfa-monofont, monospace);
+  font-family: var(--pfa-monofont);
 }
 
 /* \textsf{} */
 .sans, .sf, .pfa-font-sans {
-  font-family: var(--pfa-sansfont, sans-serif);
+  font-family: var(--pfa-sansfont);
 }
 
 /* \textrm{} */
 .serif, .rm, .pfa-font-serif {
-  font-family: var(--pfa-mainfont, serif);
+  font-family: var(--pfa-mainfont);
 }
 
 /* \textsc{} */
@@ -79,54 +89,49 @@
 
 /* ==========================================================================
  * Typography Sizing Utilities
- *
- * Ratios are derived from the LaTeX 12pt size hierarchy:
- *
- *   3xs   2xs   xs      s       normal  l     xl      2xl     3xl
- *   0.50  0.67  0.83   0.91    1.00    1.20  1.44   1.728   2.074
  * ========================================================================== */
 
 .pfa-text-3xs {
-  font-size: calc(var(--pfa-normal-size) * 0.5);
+  font-size: var(--pfa-size-3xs);
 }
 
 .pfa-text-2xs {
-  font-size: calc(var(--pfa-normal-size) * 0.6667);
+  font-size: var(--pfa-size-2xs);
 }
 
 .xsmall, .pfa-text-xs {
-  font-size: calc(var(--pfa-normal-size) * 0.8333);
+  font-size: var(--pfa-size-xs);
 }
 
 .small, .pfa-text-s {
-  font-size: calc(var(--pfa-normal-size) * 0.9125);
+  font-size: var(--pfa-size-s);
 }
 
 .normal, .pfa-text-normal {
-  font-size: var(--pfa-normal-size);
+  font-size: var(--pfa-size-normal);
 }
 
 .large, .pfa-text-l {
-  font-size: calc(var(--pfa-normal-size) * 1.2);
+  font-size: var(--pfa-size-l);
 }
 
 .xlarge, .pfa-text-xl {
-  font-size: calc(var(--pfa-normal-size) * 1.44);
+  font-size: var(--pfa-size-xl);
 }
 
 .xxlarge, .pfa-text-2xl {
-  font-size: calc(var(--pfa-normal-size) * 1.728);
+  font-size: var(--pfa-size-2xl);
 }
 
 .huge, .pfa-text-3xl {
-  font-size: calc(var(--pfa-normal-size) * 2.0736);
+  font-size: var(--pfa-size-3xl);
 }
 
 /* ==========================================================================
- * Alignment
+ * Alignment & Positioning
  * ========================================================================== */
 
-/* inline / text alignment */
+/* Inline / text alignment */
 .pfa-align-center {
   text-align: center;
 }
@@ -139,11 +144,7 @@
   text-align: left;
 }
 
-/*
- * Shrink-wrap content width so auto margins can position the block.
- * This mirrors the behavior of LaTeX alignment environments for content
- * that should not expand to the full available width.
- */
+/* Block alignment via shrink-to-fit display */
 .pfa-block-center {
   display: table;
   margin-left: auto;
@@ -188,4 +189,25 @@ span.uwave, span.uw, span.pfa-text-uline-wave {
 
 span.sout, span.so, span.pfa-text-strikeout {
   text-decoration: line-through;
+}
+
+/* ==========================================================================
+ * Tables (Cross-Backend Visual Consistency)
+ * ========================================================================== */
+
+table {
+  border-collapse: collapse;
+}
+
+table tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+table th,
+table td {
+  vertical-align: top;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
