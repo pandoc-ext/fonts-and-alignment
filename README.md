@@ -47,10 +47,10 @@ Download the filter and stylesheet directly into your project directory:
 
 ```bash
 # fonts-and-alignment.lua
-curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/refs/tags/v2.0.0/_extensions/fonts-and-alignment/fonts-and-alignment.lua
+curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/refs/tags/v2.0.1/_extensions/fonts-and-alignment/fonts-and-alignment.lua
 
 # fonts-and-alignment.css
-curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/refs/tags/v2.0.0/_extensions/fonts-and-alignment/fonts-and-alignment.css
+curl -O https://raw.githubusercontent.com/pandoc-ext/fonts-and-alignment/refs/tags/v2.0.1/_extensions/fonts-and-alignment/fonts-and-alignment.css
 ```
 
 Unlike Quarto, Pandoc requires you to explicitly pass these assets as arguments during compilation:
