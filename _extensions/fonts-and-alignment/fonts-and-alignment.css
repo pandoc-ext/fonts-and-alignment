@@ -190,24 +190,3 @@ span.uwave, span.uw, span.pfa-text-uline-wave {
 span.sout, span.so, span.pfa-text-strikeout {
   text-decoration: line-through;
 }
-
-/* ==========================================================================
- * Tables (Cross-Backend Visual Consistency)
- * ========================================================================== */
-
-table {
-  border-collapse: collapse;
-}
-
-table tbody tr {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-table th,
-table td {
-  vertical-align: top;
-  padding-top: 0.65rem;
-  padding-bottom: 0.65rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
