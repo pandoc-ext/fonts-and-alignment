@@ -1,0 +1,17 @@
+to: latex
+pdf-engine: lualatex
+
+filters:
+  - type: lua
+    path: test/assets/preview-styles-and-framing.lua
+
+variables:
+  papersize: A4
+  geometry:
+    - margin=20mm
+  monofontoptions:
+    - Scale=0.9
+  colorlinks: true
+  linkcolor: blue
+  urlcolor: blue
+  citecolor: blue

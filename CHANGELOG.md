@@ -7,6 +7,45 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.0] 2026-07-29
+
+### Removed
+
+- **BREAKING CHANGE:** Completely removed all legacy, un-namespaced utility classes and shorthand aliases from both the Lua filter and the CSS stylesheet. The engine now operates exclusively on the unified `pfa-*` namespace.
+
+### Migration Guide
+
+To upgrade older documents, replace the removed legacy classes with their modern namespaced equivalents:
+
+* **Font Weights & Shapes:**
+  * `.bold`, `.bf` → `.pfa-font-bold`
+  * `.medium`, `.md` → `.pfa-font-medium`
+  * `.italic`, `.it` → `.pfa-font-italic`
+  * `.slanted`, `.sl` → `.pfa-font-slanted`
+  * `.emphasis` → `.pfa-font-emphasis`
+  * `.normalfont`, `.nf`, `.upright`, `.up` → `.pfa-font-normal` / `.pfa-font-upright`
+* **Font Families:**
+  * `.monospace`, `.tt` → `.pfa-font-mono`
+  * `.sans`, `.sf` → `.pfa-font-sans`
+  * `.serif`, `.rm` → `.pfa-font-serif`
+  * `.smallcaps`, `.sc` → `.pfa-font-smallcaps`
+* **Text Sizing & Casing:**
+  * `.xsmall` → `.pfa-text-xs`
+  * `.small` → `.pfa-text-s`
+  * `.normal` → `.pfa-text-normal`
+  * `.large` → `.pfa-text-l`
+  * `.xlarge` → `.pfa-text-xl`
+  * `.xxlarge` → `.pfa-text-2xl`
+  * `.huge` → `.pfa-text-3xl`
+  * `.upper` / `.lower` → `.pfa-uppercase` / `.pfa-lowercase`
+* **Inline Text Decorations (Spans Only):**
+  * `.uline`, `.u` → `.pfa-text-uline`
+  * `.uuline`, `.uu` → `.pfa-text-uline-double`
+  * `.dashuline`, `.dau` → `.pfa-text-uline-dashed`
+  * `.dotuline`, `.dou` → `.pfa-text-uline-dotted`
+  * `.uwave`, `.uw` → `.pfa-text-uline-wave`
+  * `.sout`, `.so` → `.pfa-text-strikeout`
+
 ## [2.0.1] — 2026-06-12
 
 ### Fixed
@@ -76,6 +115,7 @@ Initial public release of the `fonts-and-alignment` Pandoc Lua filter.
 - Legacy LaTeX-inspired shorthand aliases.
 - Documentation for Pandoc defaults file integration.
 
+[3.0.0]: https://github.com/pandoc-ext/fonts-and-alignment/compare/v2.0.1...v3.0.0
 [2.0.1]: https://github.com/pandoc-ext/fonts-and-alignment/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/pandoc-ext/fonts-and-alignment/compare/v1.0.2...v2.0.0
 [1.0.2]: https://github.com/pandoc-ext/fonts-and-alignment/compare/v1.0.1...v1.0.2

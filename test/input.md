@@ -94,17 +94,17 @@ The following typographic styles can be applied to Bracketed Spans to control we
 
 | Style        | Syntax                            | Output |
 | :----------- | :-------------------------------- | :----- |
-| Bold         | `[Sample]{.pfa-font-bold}`        | [Sample]{.pfa-font-bold} |
+| Normal       | `[Sample]{.pfa-font-normal}`      | [Sample]{.pfa-font-normal} |
 | Medium       | `[Sample]{.pfa-font-medium}`      | [Sample]{.pfa-font-medium} |
+| Bold         | `[Sample]{.pfa-font-bold}`        | [Sample]{.pfa-font-bold} |
+| Emphasis     | `[Sample]{.pfa-font-emphasis}`    | [Sample]{.pfa-font-emphasis} |
+| Upright      | `[Sample]{.pfa-font-upright}`     | [Sample]{.pfa-font-upright} |
 | Italic       | `[Sample]{.pfa-font-italic}`      | [Sample]{.pfa-font-italic} |
 | Slanted      | `[Sample]{.pfa-font-slanted}`     | [Sample]{.pfa-font-slanted} |
-| Upright      | `[Sample]{.pfa-font-upright}`     | [Sample]{.pfa-font-upright} |
-| Emphasis     | `[Sample]{.pfa-font-emphasis}`    | [Sample]{.pfa-font-emphasis} |
 | Serif        | `[Sample]{.pfa-font-serif}`       | [Sample]{.pfa-font-serif} |
 | Sans-Serif   | `[Sample]{.pfa-font-sans}`        | [Sample]{.pfa-font-sans} |
 | Monospace    | `[Sample]{.pfa-font-mono}`        | [Sample]{.pfa-font-mono} |
 | Small Caps   | `[Sample]{.pfa-font-smallcaps}`   | [Sample]{.pfa-font-smallcaps} |
-| Normal       | `[Sample]{.pfa-font-normal}`      | [Sample]{.pfa-font-normal} |
 
 ## Font Weights, Shapes, and Families in Fenced Divs
 

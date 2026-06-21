@@ -1,0 +1,17 @@
+to: typst
+pdf-engine: typst
+
+filters:
+ - type: lua
+   path: test/assets/preview-styles-and-framing.lua
+
+variables:
+  papersize: a4
+  margin:
+    top: 20mm
+    bottom: 20mm
+    left: 20mm
+    right: 20mm
+  linkcolor: "0000FF"    # Pure hex token without the hash symbol prefix
+  citecolor: "0000FF"
+  filecolor: "0000FF"

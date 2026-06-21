@@ -30,18 +30,17 @@ endif
 .DEFAULT_GOAL := help
 
 # ==============================================================================
-# Dynamic Test Detection
+# Dynamic Test Detection (Driven directly by fixture files)
 # ==============================================================================
-# 1. Find all specific test YAMLs (ignoring the base test.yaml)
-TEST_YAMLS := $(filter-out test/test.yaml, $(wildcard test/test-*.yaml))
-# 2. Extract just the name parts (e.g., "span-font-sizes")
-TEST_NAMES := $(patsubst test/test-%.yaml,%,$(TEST_YAMLS))
-# 2b. `input` is the filter's full usage manual — rendered for the docs site and
-#     previews, not a test fixture — so it is excluded from the AST-diff set.
-#     The focused span-*/div-* tests provide the correctness coverage.
-DIFF_NAMES := $(filter-out input,$(TEST_NAMES))
-# 3. Grab all markdown files in the test directory to use as dependencies
-TEST_INPUTS := $(wildcard test/*.md)
+TEST_MDS   := $(wildcard test/fixtures/*.md)
+TEST_NAMES := $(patsubst test/fixtures/%.md,%,$(TEST_MDS))
+DIFF_NAMES := $(TEST_NAMES)
+
+# Reusable Defaults Chaining Profiles
+DEFAULTS_SHARED := --defaults=test/settings/shared.yaml
+DEFAULTS_LATEX  := $(DEFAULTS_SHARED) --defaults=test/settings/latex.yaml
+DEFAULTS_TYPST  := $(DEFAULTS_SHARED) --defaults=test/settings/typst.yaml
+DEFAULTS_HTML   := $(DEFAULTS_SHARED) --defaults=test/settings/html.yaml
 
 
 # ==============================================================================
@@ -76,74 +75,99 @@ filter-proxy: $(FILTER_FILE) ## Generate the cross-platform root-level filter pr
 
 
 # ==============================================================================
-# Testing Rules (AST Generation & Diffing)
+# Testing Rules (Using clean YAML Defaults + Format Overrides)
 # ==============================================================================
 .PHONY: test
-test: $(FILTER_FILE) $(addprefix test-,$(DIFF_NAMES)) ## Run the focused AST diff tests
+test: $(FILTER_FILE) $(addprefix test-,$(DIFF_NAMES)) ## Run all multi-backend AST differential tests
 
-test-%: $(FILTER_FILE) test/test.yaml test/test-%.yaml $(TEST_INPUTS)
-	$(PANDOC) --defaults test/test.yaml --defaults test/test-$*.yaml | \
-		$(DIFF) test/expected-$*.native -
+test-%: $(FILTER_FILE) test/fixtures/%.md
+	@echo "🧪 Verifying AST layout integrity for case: $*"
+	@# 1. Validate LaTeX output pathway (Skip if test fixture is Typst-specific)
+	@case "$*" in \
+		*typst) echo "  ⏩ Skipping LaTeX pathway for Typst-specific fixture" ;; \
+		*) $(PANDOC) test/fixtures/$*.md $(DEFAULTS_LATEX) -t json | $(PANDOC) -f json -t native | $(DIFF) test/expected/latex/expected-$*.native - ;; \
+	esac
+	@# 2. Validate Typst output pathway (Skip if test fixture is LaTeX-specific)
+	@case "$*" in \
+		*latex) echo "  ⏩ Skipping Typst pathway for LaTeX-specific fixture" ;; \
+		*) if [ -f test/expected/typst/expected-$*.native ]; then \
+			$(PANDOC) test/fixtures/$*.md $(DEFAULTS_TYPST) -t json | $(PANDOC) -f json -t native | $(DIFF) test/expected/typst/expected-$*.native -; \
+		fi ;; \
+	esac
+	@# 3. Validate HTML output pathway (Unconditionally evaluated for both profiles)
+	@if [ -f test/expected/html/expected-$*.native ]; then \
+		$(PANDOC) test/fixtures/$*.md $(DEFAULTS_HTML) -t json | \
+			$(PANDOC) -f json -t native | $(DIFF) test/expected/html/expected-$*.native -; \
+	fi
 
 .PHONY: update-expected
-update-expected: $(FILTER_FILE) $(addprefix update-,$(DIFF_NAMES)) ## Overwrite expected AST test outputs
+update-expected: $(FILTER_FILE) $(addprefix update-,$(DIFF_NAMES)) ## Regenerate all target ground-truth AST snapshots
 
-update-%: $(FILTER_FILE) test/test.yaml test/test-%.yaml $(TEST_INPUTS)
-	$(PANDOC) \
-		--defaults=test/test.yaml \
-		--defaults=test/test-$*.yaml \
-		--output=test/expected-$*.native
+update-%: $(FILTER_FILE) test/fixtures/%.md
+	@mkdir -p test/expected/html test/expected/latex test/expected/typst
+	@case "$*" in \
+		*typst) rm -f test/expected/latex/expected-$*.native ;; \
+		*) $(PANDOC) test/fixtures/$*.md $(DEFAULTS_LATEX) -t json | $(PANDOC) -f json -t native > test/expected/latex/expected-$*.native ;; \
+	esac
+	@case "$*" in \
+		*latex) rm -f test/expected/typst/expected-$*.native ;; \
+		*) $(PANDOC) test/fixtures/$*.md $(DEFAULTS_TYPST) -t json | $(PANDOC) -f json -t native > test/expected/typst/expected-$*.native ;; \
+	esac
+	$(PANDOC) test/fixtures/$*.md $(DEFAULTS_HTML) -t json | $(PANDOC) -f json -t native > test/expected/html/expected-$*.native
 
 
 # ==============================================================================
-# Visual Previews Generation (Decoupled from phony job name)
+# Visual Previews Generation (Segmented Target Directories Layout)
 # ==============================================================================
 PREVIEWS_DIR := artifacts
-
-PREVIEW_HTMLS := $(addprefix $(PREVIEWS_DIR)/, $(addsuffix .html, $(TEST_NAMES)))
-PREVIEW_PDFS  := $(addprefix $(PREVIEWS_DIR)/, $(addsuffix .pdf, $(TEST_NAMES)))
-
 SYNTAX_HIGHLIGHTING := tango
 
+PREVIEW_HTMLS      := $(patsubst %,$(PREVIEWS_DIR)/html/html-%.html,$(TEST_NAMES))
+PREVIEW_LATEX_PDFS := $(patsubst %,$(PREVIEWS_DIR)/latex/latex-%.pdf,$(filter-out %typst,$(TEST_NAMES)))
+PREVIEW_TYPST_PDFS := $(patsubst %,$(PREVIEWS_DIR)/typst/typst-%.pdf,$(filter-out %latex,$(TEST_NAMES)))
+
 .PHONY: previews
-previews: $(FILTER_FILE) $(PREVIEW_HTMLS) $(PREVIEW_PDFS) ## Build visual HTML/PDF layout previews
+previews: $(FILTER_FILE) $(PREVIEW_HTMLS) $(PREVIEW_TYPST_PDFS) $(PREVIEW_LATEX_PDFS) ## Build visual layout panels mapped across isolated target directories
 
-$(PREVIEWS_DIR)/%.html: test/test.yaml test/test-%.yaml test/preview-framing.lua $(TEST_INPUTS) $(FILTER_FILE) $(DIST_CSS_FILES) | $(PREVIEWS_DIR)
-	$(PANDOC) \
-		--lua-filter=test/preview-framing.lua \
-		--defaults=test/test.yaml \
-		--defaults=test/test-$*.yaml \
-		--to=html \
+$(PREVIEWS_DIR)/html/html-%.html: test/fixtures/%.md
+	@mkdir -p $(@D)
+	@cp $(EXT_DIR)/fonts-and-alignment.css $(@D)/
+	@cp test/assets/preview-styles-and-framing.css $(@D)/
+	$(PANDOC) $< \
+		$(DEFAULTS_HTML) \
 		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
 		--number-sections \
 		--shift-heading-level-by=-1 \
-		--css=../$(CSS_FILE) \
-		--css=../test/preview-suite.css \
 		--output=$@
 
-$(PREVIEWS_DIR)/%.pdf: test/test.yaml test/test-%.yaml test/preview-framing.lua $(TEST_INPUTS) $(FILTER_FILE) | $(PREVIEWS_DIR)
-	$(PANDOC) \
-		--lua-filter=test/preview-framing.lua \
-		--defaults=test/test.yaml \
-		--defaults=test/test-$*.yaml \
+$(PREVIEWS_DIR)/typst/typst-%.pdf: test/fixtures/%.md
+	@mkdir -p $(@D)
+	$(PANDOC) $< \
+		$(DEFAULTS_TYPST) \
+		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
+		--number-sections \
+		--shift-heading-level-by=-1 \
 		--to=pdf \
+		--output=$@
+
+$(PREVIEWS_DIR)/latex/latex-%.pdf: test/fixtures/%.md
+	@mkdir -p $(@D)
+	$(PANDOC) $< \
+		$(DEFAULTS_LATEX) \
 		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
 		--number-sections \
 		--shift-heading-level-by=-1 \
+		--to=pdf \
 		--output=$@
-
-$(PREVIEWS_DIR):
-	mkdir -p $(PREVIEWS_DIR)
 
 
 # ==============================================================================
-# Documentation
+# Documentation System (With Dual-Engine Output Targets)
 # ==============================================================================
 .PHONY: docs
-docs: docs/index.html docs/input.html docs/input.pdf docs/fonts-and-alignment.lua ## Build the standalone documentation site
+docs: docs/index.html docs/input.html docs/input-latex.pdf docs/input-typst.pdf docs/fonts-and-alignment.lua ## Build the standalone docs portal with dual-format PDFs
 
-docs/index.html: README.md test/input.md $(FILTER_FILE) .tools/docs.lua \
-        docs/output.md docs/style.css
+docs/index.html: README.md test/input.md $(FILTER_FILE) .tools/docs.lua docs/output.md docs/style.css
 	@mkdir -p docs
 	pandoc \
 		--standalone \
@@ -156,35 +180,36 @@ docs/index.html: README.md test/input.md $(FILTER_FILE) .tools/docs.lua \
 		--output=$@ $<
 
 docs/style.css:
-	curl \
-		--output $@ \
+	curl --silent --show-error --output $@ \
 		'https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.css'
 
 docs/output.md: $(FILTER_FILE) test/input.md
 	$(PANDOC) \
 		--output=$@ \
-		--lua-filter=$< \
+		--lua-filter=$(FILTER_FILE) \
 		--to=markdown \
 		--standalone \
 		test/input.md
 
-docs/input.html: test/input.md $(FILTER_FILE) test/preview-suite.css
-	$(PANDOC) \
-		--standalone \
-		--lua-filter=$(FILTER_FILE) \
-		--to=html \
+docs/input.html: test/input.md
+	$(PANDOC) $< \
+		$(DEFAULTS_HTML) \
 		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
-		--css=../$(CSS_FILE) \
-		--css=../test/preview-suite.css \
-		--output=$@ $<
+		--output=$@
 
-docs/input.pdf: test/input.md $(FILTER_FILE) test/preview-framing.lua test/test.yaml
-	$(PANDOC) \
-		--lua-filter=test/preview-framing.lua \
-		--defaults=test/test.yaml \
-		--to=pdf \
+docs/input-latex.pdf: test/input.md
+	$(PANDOC) $< \
+		$(DEFAULTS_LATEX) \
 		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
-		--output=$@ $<
+		--to=pdf \
+		--output=$@
+
+docs/input-typst.pdf: test/input.md
+	$(PANDOC) $< \
+		$(DEFAULTS_TYPST) \
+		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
+		--to=pdf \
+		--output=$@
 
 docs/fonts-and-alignment.lua: $(FILTER_FILE)
 	@mkdir -p docs
@@ -195,7 +220,7 @@ docs/fonts-and-alignment.lua: $(FILTER_FILE)
 # Housekeeping
 # ==============================================================================
 .PHONY: clean
-clean: ## Remove all built artifacts, CSS distributions, and temporary files
-	rm -f docs/output.md docs/index.html docs/input.html docs/input.pdf docs/style.css docs/fonts-and-alignment.lua
+clean: ## Purge all temporary assets and generated distribution instances
+	rm -f docs/output.md docs/index.html docs/input.html docs/input-latex.pdf docs/input-typst.pdf docs/style.css docs/fonts-and-alignment.lua
 	rm -rf $(PREVIEWS_DIR)
 	rm -f $(FILTER_FILE)

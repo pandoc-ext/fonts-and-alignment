@@ -1,0 +1,162 @@
+[ Header
+    2
+    ( "bold-sans-serif" , [] , [] )
+    [ Str "Bold" , Space , Str "Sans-serif" ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-font-bold .pfa-font-sans .pfa-text-l pfa-font-color=\"red\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , [ "pfa-font-bold" , "pfa-font-sans" , "pfa-text-l" ]
+    , [ ( "pfa-font-color" , "red" ) ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    2
+    ( "italic-mono" , [] , [] )
+    [ Str "Italic" , Space , Str "Mono" ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-font-italic .pfa-font-mono .pfa-text-s}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , [ "pfa-font-italic" , "pfa-font-mono" , "pfa-text-s" ]
+    , []
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    2
+    ( "smallcaps-and-colored" , [] , [] )
+    [ Str "Smallcaps"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Colored"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-font-smallcaps pfa-font-color=\"forestgreen\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , [ "pfa-font-smallcaps" ]
+    , [ ( "pfa-font-color" , "forestgreen" ) ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+]

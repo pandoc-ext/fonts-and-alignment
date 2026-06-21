@@ -1,9 +1,11 @@
 /**
- * Pandoc Fonts and Alignment Stylesheet
+ * Pandoc Fonts and Alignment Stylesheet (v3.0.0)
  *
  * Scales typography predictably relative to the configured base document size.
  * All size utilities derive from --pfa-normal-size using ratios based on the
  * LaTeX 12pt size hierarchy.
+ *
+ * Compatible with fonts-and-alignment.lua v3.0.0
  */
 
 /* ==========================================================================
@@ -32,161 +34,119 @@
 }
 
 /* ==========================================================================
- * Font Weights, Styles, and Families
- * Aliases mirror common LaTeX font commands (\textbf, \textit, \textsf, …).
+ * Font Weights
  * ========================================================================== */
 
-/* \textbf{} */
-.bold, .bf, .pfa-font-bold {
+.pfa-weight-bold {
   font-weight: 700;
 }
 
-/* \emph{} / \textit{} / \textsl{} */
-.emphasis, .italic, .it, .slanted, .sl,
-.pfa-font-emphasis, .pfa-font-italic, .pfa-font-slanted {
-  font-style: italic;
-}
-
-.lower, .pfa-lowercase {
-  text-transform: lowercase;
-}
-
-/* medium weight (500), between normal and bold */
-.medium, .md, .pfa-font-medium {
+.pfa-weight-medium {
   font-weight: 500;
 }
 
-/* \textrm{} / \upshape — resets to the main serif family */
-.normalfont, .nf, .upright, .up, .pfa-font-normal, .pfa-font-upright {
-  font-family: var(--pfa-mainfont);
-  font-style: normal;
+.pfa-weight-normal {
   font-weight: 400;
 }
 
-/* \texttt{} */
-.monospace, .tt, .pfa-font-mono {
-  font-family: var(--pfa-monofont);
+/* ==========================================================================
+ * Font Styles
+ * ========================================================================== */
+
+.pfa-style-emphasis,
+.pfa-style-italic,
+.pfa-style-slanted {
+  font-style: italic;
 }
 
-/* \textsf{} */
-.sans, .sf, .pfa-font-sans {
-  font-family: var(--pfa-sansfont);
+.pfa-style-upright {
+  font-style: normal;
 }
 
-/* \textrm{} */
-.serif, .rm, .pfa-font-serif {
-  font-family: var(--pfa-mainfont);
-}
-
-/* \textsc{} */
-.smallcaps, .sc, .pfa-font-smallcaps {
+.pfa-style-smallcaps {
   font-variant: small-caps;
 }
 
-.upper, .pfa-uppercase {
+/* ==========================================================================
+ * Font Families
+ * ========================================================================== */
+
+.pfa-family-mono {
+  font-family: var(--pfa-monofont);
+}
+
+.pfa-family-sans {
+  font-family: var(--pfa-sansfont);
+}
+
+.pfa-family-serif {
+  font-family: var(--pfa-mainfont);
+}
+
+/* ==========================================================================
+ * Casing Transformations
+ * ========================================================================== */
+
+.pfa-case-upper {
   text-transform: uppercase;
+}
+
+.pfa-case-lower {
+  text-transform: lowercase;
 }
 
 /* ==========================================================================
  * Typography Sizing Utilities
  * ========================================================================== */
 
-.pfa-text-3xs {
+.pfa-size-3xs {
   font-size: var(--pfa-size-3xs);
 }
 
-.pfa-text-2xs {
+.pfa-size-2xs {
   font-size: var(--pfa-size-2xs);
 }
 
-.xsmall, .pfa-text-xs {
+.pfa-size-xs {
   font-size: var(--pfa-size-xs);
 }
 
-.small, .pfa-text-s {
+.pfa-size-s {
   font-size: var(--pfa-size-s);
 }
 
-.normal, .pfa-text-normal {
+.pfa-size-normal {
   font-size: var(--pfa-size-normal);
 }
 
-.large, .pfa-text-l {
+.pfa-size-l {
   font-size: var(--pfa-size-l);
 }
 
-.xlarge, .pfa-text-xl {
+.pfa-size-xl {
   font-size: var(--pfa-size-xl);
 }
 
-.xxlarge, .pfa-text-2xl {
+.pfa-size-2xl {
   font-size: var(--pfa-size-2xl);
 }
 
-.huge, .pfa-text-3xl {
+.pfa-size-3xl {
   font-size: var(--pfa-size-3xl);
 }
 
 /* ==========================================================================
- * Alignment & Positioning
+ * Standard Text Alignment
  * ========================================================================== */
 
-/* Inline / text alignment */
+.pfa-align-left {
+  text-align: left;
+}
+
 .pfa-align-center {
   text-align: center;
 }
 
 .pfa-align-right {
   text-align: right;
-}
-
-.pfa-align-left {
-  text-align: left;
-}
-
-/* Block alignment via shrink-to-fit display */
-.pfa-block-center {
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.pfa-block-left {
-  display: table;
-  margin-left: 0;
-  margin-right: auto;
-}
-
-.pfa-block-right {
-  display: table;
-  margin-left: auto;
-  margin-right: 0;
-}
-
-/* ==========================================================================
- * Inline Text Decorations (ulem package equivalents)
- * ========================================================================== */
-
-span.dashuline, span.dau, span.pfa-text-uline-dashed {
-  text-decoration: underline dashed;
-}
-
-span.dotuline, span.dou, span.pfa-text-uline-dotted {
-  text-decoration: underline dotted;
-}
-
-span.uline, span.u, span.pfa-text-uline {
-  text-decoration: underline;
-}
-
-span.uuline, span.uu, span.pfa-text-uline-double {
-  text-decoration: underline double;
-}
-
-span.uwave, span.uw, span.pfa-text-uline-wave {
-  text-decoration: underline wavy;
-}
-
-span.sout, span.so, span.pfa-text-strikeout {
-  text-decoration: line-through;
 }

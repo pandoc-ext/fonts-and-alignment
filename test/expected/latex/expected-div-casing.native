@@ -1,0 +1,412 @@
+[ Header
+    2
+    ( "pure-text-character-case-conversions" , [] , [] )
+    [ Str "Pure"
+    , Space
+    , Str "Text"
+    , Space
+    , Str "Character"
+    , Space
+    , Str "Case"
+    , Space
+    , Str "Conversions"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "applying"
+    , Space
+    , Str "casing"
+    , Space
+    , Str "utility"
+    , Space
+    , Str "classes"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-case-upper"
+    , Space
+    , Str "and"
+    , Space
+    , Code ( "" , [] , [] ) ".pfa-case-lower"
+    , Str ")"
+    , Space
+    , Str "to"
+    , Space
+    , Str "a"
+    , Space
+    , Str "Fenced"
+    , Space
+    , Str "Div"
+    , Space
+    , Str "block"
+    , Space
+    , Str "successfully"
+    , Space
+    , Str "processes"
+    , Space
+    , Str "the"
+    , Space
+    , Str "underlying"
+    , Space
+    , Str "text"
+    , Space
+    , Str "string"
+    , Space
+    , Str "array,"
+    , Space
+    , Str "forcing"
+    , Space
+    , Str "all"
+    , Space
+    , Str "plain"
+    , Space
+    , Str "text"
+    , Space
+    , Str "elements"
+    , Space
+    , Str "to"
+    , Space
+    , Str "transform"
+    , Space
+    , Str "into"
+    , Space
+    , Str "the"
+    , Space
+    , Str "targeted"
+    , Space
+    , Str "case"
+    , Space
+    , Str "during"
+    , Space
+    , Str "compilation."
+    ]
+, Header
+    3
+    ( "uppercase-transformation-.pfa-case-upper" , [] , [] )
+    [ Str "Uppercase"
+    , Space
+    , Str "Transformation"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-case-upper"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "lowercase"
+    , Space
+    , Str "string"
+    , Space
+    , Str "payloads"
+    , Space
+    , Str "wrapped"
+    , Space
+    , Str "inside"
+    , Space
+    , Str "the"
+    , Space
+    , Str "Fenced"
+    , Space
+    , Str "Div"
+    , Space
+    , Str "are"
+    , Space
+    , Str "fully"
+    , Space
+    , Str "transformed"
+    , Space
+    , Str "into"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "uppercase"
+    , Space
+    , Str "text."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-case-upper}\nlorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [ "pfa-case-upper" ] , [] )
+    [ Para
+        [ Str "LOREM"
+        , Space
+        , Str "IPSUM"
+        , Space
+        , Str "DOLOR"
+        , Space
+        , Str "SIT"
+        , Space
+        , Str "AMET,"
+        , Space
+        , Str "CONSECTETUR"
+        , Space
+        , Str "ADIPISCING"
+        , Space
+        , Str "ELIT,"
+        , Space
+        , Str "SED"
+        , Space
+        , Str "DO"
+        , Space
+        , Str "EIUSMOD"
+        , Space
+        , Str "TEMPOR"
+        , Space
+        , Str "INCIDIDUNT"
+        , Space
+        , Str "UT"
+        , Space
+        , Str "LABORE"
+        , Space
+        , Str "ET"
+        , Space
+        , Str "DOLORE"
+        , Space
+        , Str "MAGNA"
+        , Space
+        , Str "ALIQUA."
+        ]
+    ]
+, Header
+    3
+    ( "lowercase-transformation-.pfa-case-lower" , [] , [] )
+    [ Str "Lowercase"
+    , Space
+    , Str "Transformation"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-case-lower"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "uppercase"
+    , Space
+    , Str "string"
+    , Space
+    , Str "payloads"
+    , Space
+    , Str "wrapped"
+    , Space
+    , Str "inside"
+    , Space
+    , Str "the"
+    , Space
+    , Str "Fenced"
+    , Space
+    , Str "Div"
+    , Space
+    , Str "are"
+    , Space
+    , Str "fully"
+    , Space
+    , Str "transformed"
+    , Space
+    , Str "into"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "lowercase"
+    , Space
+    , Str "text."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-case-lower}\nLOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.\n:::"
+, Div
+    ( "" , [ "pfa-case-lower" ] , [] )
+    [ Para
+        [ Str "lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    2
+    ( "mixed-rich-text-structural-integrity-verification"
+    , []
+    , []
+    )
+    [ Str "Mixed"
+    , Space
+    , Str "Rich"
+    , Space
+    , Str "Text"
+    , Space
+    , Str "Structural"
+    , Space
+    , Str "Integrity"
+    , Space
+    , Str "Verification"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "ensures"
+    , Space
+    , Str "that"
+    , Space
+    , Str "when"
+    , Space
+    , Str "text"
+    , Space
+    , Str "modifications"
+    , Space
+    , Str "are"
+    , Space
+    , Str "executed"
+    , Space
+    , Str "across"
+    , Space
+    , Str "a"
+    , Space
+    , Str "Fenced"
+    , Space
+    , Str "Div,"
+    , Space
+    , Str "nested"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "formatting"
+    , Space
+    , Str "elements"
+    , Space
+    , Str "(such"
+    , Space
+    , Str "as"
+    , Space
+    , Str "bold"
+    , Space
+    , Str "markers,"
+    , Space
+    , Str "italic"
+    , Space
+    , Str "styling,"
+    , Space
+    , Str "and"
+    , Space
+    , Str "hyperlinks)"
+    , Space
+    , Str "have"
+    , Space
+    , Str "their"
+    , Space
+    , Str "internal"
+    , Space
+    , Str "text"
+    , Space
+    , Str "cases"
+    , Space
+    , Str "modified"
+    , Space
+    , Str "perfectly"
+    , Space
+    , Str "without"
+    , Space
+    , Str "dropping,"
+    , Space
+    , Str "breaking,"
+    , Space
+    , Str "or"
+    , Space
+    , Str "striping"
+    , Space
+    , Str "out"
+    , Space
+    , Str "their"
+    , Space
+    , Str "underlying"
+    , Space
+    , Str "markdown"
+    , Space
+    , Str "formatting"
+    , Space
+    , Str "wrappers."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-case-upper}\nThis text block contains **strong elements**, *emphasized elements*, and a [hyperlink mapping block](https://example.com).\n:::"
+, Div
+    ( "" , [ "pfa-case-upper" ] , [] )
+    [ Para
+        [ Str "THIS"
+        , Space
+        , Str "TEXT"
+        , Space
+        , Str "BLOCK"
+        , Space
+        , Str "CONTAINS"
+        , Space
+        , Strong [ Str "STRONG" , Space , Str "ELEMENTS" ]
+        , Str ","
+        , Space
+        , Emph [ Str "EMPHASIZED" , Space , Str "ELEMENTS" ]
+        , Str ","
+        , Space
+        , Str "AND"
+        , Space
+        , Str "A"
+        , Space
+        , Link
+            ( "" , [] , [] )
+            [ Str "HYPERLINK"
+            , Space
+            , Str "MAPPING"
+            , Space
+            , Str "BLOCK"
+            ]
+            ( "https://example.com" , "" )
+        , Str "."
+        ]
+    ]
+]

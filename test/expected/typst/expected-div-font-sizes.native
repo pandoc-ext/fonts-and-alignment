@@ -1,0 +1,699 @@
+[ Header
+    2
+    ( "systematic-typography-sizing-scale" , [] , [] )
+    [ Str "Systematic"
+    , Space
+    , Str "Typography"
+    , Space
+    , Str "Sizing"
+    , Space
+    , Str "Scale"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "test"
+    , Space
+    , Str "suite"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "the"
+    , Space
+    , Str "framework\8217s"
+    , Space
+    , Str "typography"
+    , Space
+    , Str "size"
+    , Space
+    , Str "classes"
+    , Space
+    , Str "cleanly"
+    , Space
+    , Str "translate"
+    , Space
+    , Str "across"
+    , Space
+    , Str "all"
+    , Space
+    , Str "backend"
+    , Space
+    , Str "targets."
+    ]
+, Header
+    3
+    ( "extra-extra-extra-small-3xs" , [] , [] )
+    [ Str "Extra"
+    , Space
+    , Str "Extra"
+    , Space
+    , Str "Extra"
+    , Space
+    , Str "Small"
+    , Space
+    , Str "(3xs)"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\tiny"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "0.5em"
+    , Space
+    , Str "configurations."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-size-3xs}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [ "pfa-size-3xs" ] , [] )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "extra-extra-small-2xs" , [] , [] )
+    [ Str "Extra"
+    , Space
+    , Str "Extra"
+    , Space
+    , Str "Small"
+    , Space
+    , Str "(2xs)"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\scriptsize"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "0.6667em"
+    , Space
+    , Str "configurations."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-size-2xs}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [ "pfa-size-2xs" ] , [] )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "extra-small-xs" , [] , [] )
+    [ Str "Extra" , Space , Str "Small" , Space , Str "(xs)" ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\footnotesize"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "0.8333em"
+    , Space
+    , Str "configurations."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-size-xs}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [ "pfa-size-xs" ] , [] )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "small-s" , [] , [] )
+    [ Str "Small" , Space , Str "(s)" ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\small"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "0.9125em"
+    , Space
+    , Str "configurations."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-size-s}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [ "pfa-size-s" ] , [] )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "normal-normal" , [] , [] )
+    [ Str "Normal" , Space , Str "(normal)" ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "resetting"
+    , Space
+    , Str "to"
+    , Space
+    , Str "baseline"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\normalsize"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "1.0em"
+    , Space
+    , Str "environments."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-size-normal}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [ "pfa-size-normal" ] , [] )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "large-l" , [] , [] )
+    [ Str "Large" , Space , Str "(l)" ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\large"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "1.2em"
+    , Space
+    , Str "scaling"
+    , Space
+    , Str "factors."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-size-l}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [ "pfa-size-l" ] , [] )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "extra-large-xl" , [] , [] )
+    [ Str "Extra" , Space , Str "Large" , Space , Str "(xl)" ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\Large"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "1.44em"
+    , Space
+    , Str "scaling"
+    , Space
+    , Str "factors."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-size-xl}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [ "pfa-size-xl" ] , [] )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "extra-extra-large-2xl" , [] , [] )
+    [ Str "Extra"
+    , Space
+    , Str "Extra"
+    , Space
+    , Str "Large"
+    , Space
+    , Str "(2xl)"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\LARGE"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "1.728em"
+    , Space
+    , Str "scaling"
+    , Space
+    , Str "factors."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-size-2xl}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [ "pfa-size-2xl" ] , [] )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "extra-extra-extra-large-3xl" , [] , [] )
+    [ Str "Extra"
+    , Space
+    , Str "Extra"
+    , Space
+    , Str "Extra"
+    , Space
+    , Str "Large"
+    , Space
+    , Str "(3xl)"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\huge"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "2.0736em"
+    , Space
+    , Str "typographic"
+    , Space
+    , Str "parameters."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-size-3xl}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [ "pfa-size-3xl" ] , [] )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+]

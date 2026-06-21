@@ -1,0 +1,853 @@
+[ Para
+    [ Str "This"
+    , Space
+    , Str "file"
+    , Space
+    , Str "acts"
+    , Space
+    , Str "as"
+    , Space
+    , Str "a"
+    , Space
+    , Str "comprehensive"
+    , Space
+    , Str "regression"
+    , Space
+    , Str "test"
+    , Space
+    , Str "fixture"
+    , Space
+    , Str "for"
+    , Space
+    , Str "the"
+    , Space
+    , Str "color"
+    , Space
+    , Str "parsing"
+    , Space
+    , Str "layer"
+    , Space
+    , Str "within"
+    , Space
+    , Str "the"
+    , Space
+    , Code ( "" , [] , [] ) "fonts-and-alignment"
+    , Space
+    , Str "Lua"
+    , Space
+    , Str "filter"
+    , Space
+    , Str "orchestration"
+    , Space
+    , Str "engine."
+    , Space
+    , Str "These"
+    , Space
+    , Str "tests"
+    , Space
+    , Str "ensure"
+    , Space
+    , Str "that"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "CSS/SVG"
+    , Space
+    , Str "names,"
+    , Space
+    , Str "hexadecimal"
+    , Space
+    , Str "codes,"
+    , Space
+    , Str "and"
+    , Space
+    , Str "platform-specific"
+    , Space
+    , Str "color"
+    , Space
+    , Str "manipulation"
+    , Space
+    , Str "syntaxes"
+    , Space
+    , Str "(LaTeX"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst)"
+    , Space
+    , Str "are"
+    , Space
+    , Str "correctly"
+    , Space
+    , Str "normalized"
+    , Space
+    , Str "for"
+    , Space
+    , Str "both"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "compilation"
+    , Space
+    , Str "targets"
+    , Space
+    , Str "using"
+    , Space
+    , Str "automated"
+    , Space
+    , Str "section"
+    , Space
+    , Str "sequencing."
+    ]
+, Header
+    2
+    ( "basic-normalized-color-specifications" , [] , [] )
+    [ Str "Basic"
+    , Space
+    , Str "&"
+    , Space
+    , Str "Normalized"
+    , Space
+    , Str "Color"
+    , Space
+    , Str "Specifications"
+    ]
+, Header
+    3
+    ( "named-csssvg-color-clean" , [] , [] )
+    [ Str "Named"
+    , Space
+    , Str "CSS/SVG"
+    , Space
+    , Str "Color"
+    , Space
+    , Str "(Clean)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"mediumvioletred\"}"
+, Para
+    [ Span
+        ( "" , [] , [ ( "pfa-font-color" , "mediumvioletred" ) ] )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    3
+    ( "hexadecimal-color-standard-typst-eastern-hash"
+    , []
+    , []
+    )
+    [ Str "Hexadecimal"
+    , Space
+    , Str "Color"
+    , Space
+    , Str "(Standard"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "Eastern"
+    , Space
+    , Str "Hash)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"#239dad\"}"
+, Para
+    [ Span
+        ( "" , [] , [ ( "pfa-font-color" , "#239dad" ) ] )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    3
+    ( "hexadecimal-color-shorthand-normalization" , [] , [] )
+    [ Str "Hexadecimal"
+    , Space
+    , Str "Color"
+    , Space
+    , Str "(Shorthand"
+    , Space
+    , Str "normalization)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"#F00\"}"
+, Para
+    [ Span
+        ( "" , [] , [ ( "pfa-font-color" , "#F00" ) ] )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    2
+    ( "legacy-legacy-normalization-parsing" , [] , [] )
+    [ Str "Legacy"
+    , Space
+    , Str "&"
+    , Space
+    , Str "Legacy"
+    , Space
+    , Str "Normalization"
+    , Space
+    , Str "Parsing"
+    ]
+, Para
+    [ Str "These"
+    , Space
+    , Str "specimens"
+    , Space
+    , Str "verify"
+    , Space
+    , Str "the"
+    , Space
+    , Str "normalization"
+    , Space
+    , Str "engine\8217s"
+    , Space
+    , Str "ability"
+    , Space
+    , Str "to"
+    , Space
+    , Str "clean"
+    , Space
+    , Str "up"
+    , Space
+    , Str "messy"
+    , Space
+    , Str "or"
+    , Space
+    , Str "legacy"
+    , Space
+    , Str "inputs"
+    , Space
+    , Str "that"
+    , Space
+    , Str "bleed"
+    , Space
+    , Str "through"
+    , Space
+    , Str "from"
+    , Space
+    , Str "old"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Str "configurations"
+    , Space
+    , Str "or"
+    , Space
+    , Str "hand-edited"
+    , Space
+    , Str "CSS."
+    ]
+, Header
+    3
+    ( "named-color-normalization-spaces-to-hyphens" , [] , [] )
+    [ Str "Named"
+    , Space
+    , Str "Color"
+    , Space
+    , Str "Normalization"
+    , Space
+    , Str "(Spaces"
+    , Space
+    , Str "to"
+    , Space
+    , Str "hyphens)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"medium violet red\"}"
+, Para
+    [ Span
+        ( "" , [] , [ ( "pfa-font-color" , "medium violet red" ) ] )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    3
+    ( "named-color-normalization-hyphens-to-nonecamelcase"
+    , []
+    , []
+    )
+    [ Str "Named"
+    , Space
+    , Str "Color"
+    , Space
+    , Str "Normalization"
+    , Space
+    , Str "(Hyphens"
+    , Space
+    , Str "to"
+    , Space
+    , Str "none/CamelCase)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"MEDIUM_VIOLET_RED\"}"
+, Para
+    [ Span
+        ( "" , [] , [ ( "pfa-font-color" , "MEDIUM_VIOLET_RED" ) ] )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    3
+    ( "legacy-hexadecimal-no-hash-marker" , [] , [] )
+    [ Str "Legacy"
+    , Space
+    , Str "Hexadecimal"
+    , Space
+    , Str "(No"
+    , Space
+    , Str "Hash"
+    , Space
+    , Str "Marker)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"191970\"}"
+, Para
+    [ Span
+        ( "" , [] , [ ( "pfa-font-color" , "191970" ) ] )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    2
+    ( "advanced-manipulations-latex-input-syntax" , [] , [] )
+    [ Str "Advanced"
+    , Space
+    , Str "Manipulations"
+    , Space
+    , Str "(LaTeX"
+    , Space
+    , Str "Input"
+    , Space
+    , Str "Syntax)"
+    ]
+, Para
+    [ Str "These"
+    , Space
+    , Str "tests"
+    , Space
+    , Str "specify"
+    , Space
+    , Str "dynamic"
+    , Space
+    , Str "color"
+    , Space
+    , Str "creation"
+    , Space
+    , Str "using"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Strong [ Code ( "" , [] , [] ) "xcolor" ]
+    , Space
+    , Str "exclamation"
+    , Space
+    , Str "syntax"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "base!pct!white/black"
+    , Space
+    , Str "or"
+    , Space
+    , Code ( "" , [] , [] ) "c1!pct!c2"
+    , Str ")."
+    , Space
+    , Str "When"
+    , Space
+    , Str "compiled"
+    , Space
+    , Str "to"
+    , Space
+    , Str "Typst,"
+    , Space
+    , Str "the"
+    , Space
+    , Str "filter"
+    , Space
+    , Str "intercepts"
+    , Space
+    , Str "these"
+    , Space
+    , Str "patterns"
+    , Space
+    , Str "and"
+    , Space
+    , Str "translates"
+    , Space
+    , Str "them"
+    , Space
+    , Str "into"
+    , Space
+    , Str "equivalent"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "functional"
+    , Space
+    , Str "expressions."
+    ]
+, Header
+    3
+    ( "tinting-latex-syntax-passthrough-or-translation"
+    , []
+    , []
+    )
+    [ Str "Tinting"
+    , Space
+    , Str "(LaTeX"
+    , Space
+    , Str "syntax"
+    , Space
+    , Str "passthrough"
+    , Space
+    , Str "or"
+    , Space
+    , Str "translation)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"MediumVioletRed!40!white\"}"
+, Para
+    [ Span
+        ( ""
+        , []
+        , [ ( "pfa-font-color" , "MediumVioletRed!40!white" ) ]
+        )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    3
+    ( "shading-latex-syntax-passthrough-or-translation"
+    , []
+    , []
+    )
+    [ Str "Shading"
+    , Space
+    , Str "(LaTeX"
+    , Space
+    , Str "syntax"
+    , Space
+    , Str "passthrough"
+    , Space
+    , Str "or"
+    , Space
+    , Str "translation)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"MediumVioletRed!80!black\"}"
+, Para
+    [ Span
+        ( ""
+        , []
+        , [ ( "pfa-font-color" , "MediumVioletRed!80!black" ) ]
+        )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    3
+    ( "mixing-latex-syntax-passthrough-or-translation"
+    , []
+    , []
+    )
+    [ Str "Mixing"
+    , Space
+    , Str "(LaTeX"
+    , Space
+    , Str "syntax"
+    , Space
+    , Str "passthrough"
+    , Space
+    , Str "or"
+    , Space
+    , Str "translation)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"RoyalBlue!50!ForestGreen\"}"
+, Para
+    [ Span
+        ( ""
+        , []
+        , [ ( "pfa-font-color" , "RoyalBlue!50!ForestGreen" ) ]
+        )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    2
+    ( "advanced-manipulations-native-typst-input-syntax"
+    , []
+    , []
+    )
+    [ Str "Advanced"
+    , Space
+    , Str "Manipulations"
+    , Space
+    , Str "(Native"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "Input"
+    , Space
+    , Str "Syntax)"
+    ]
+, Para
+    [ Str "These"
+    , Space
+    , Str "tests"
+    , Space
+    , Str "use"
+    , Space
+    , Str "Native"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "functional"
+    , Space
+    , Str "syntax"
+    , Space
+    , Str "for"
+    , Space
+    , Str "color"
+    , Space
+    , Str "management."
+    , Space
+    , Str "The"
+    , Space
+    , Str "filter"
+    , Space
+    , Str "detects"
+    , Space
+    , Str "these"
+    , Space
+    , Str "patterns"
+    , Space
+    , Str "and"
+    , Space
+    , Str "passes"
+    , Space
+    , Str "them"
+    , Space
+    , Str "through"
+    , Space
+    , Str "entirely"
+    , Space
+    , Str "raw"
+    , Space
+    , Str "to"
+    , Space
+    , Str "the"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "compiler."
+    , Space
+    , Str "When"
+    , Space
+    , Str "compiled"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX,"
+    , Space
+    , Str "the"
+    , Space
+    , Str "filter"
+    , Space
+    , Str "must"
+    , Space
+    , Str "intercept"
+    , Space
+    , Str "and"
+    , Space
+    , Str "normalize"
+    , Space
+    , Str "these"
+    , Space
+    , Str "into"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "hexadecimal"
+    , Space
+    , Str "expressions"
+    , Space
+    , Str "for"
+    , Space
+    , Str "compatibility."
+    ]
+, Header
+    3
+    ( "native-typst-function-eastern-hash-string-passthrough"
+    , []
+    , []
+    )
+    [ Str "Native"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "Function"
+    , Space
+    , Str "(Eastern"
+    , Space
+    , Str "Hash"
+    , Space
+    , Str "String"
+    , Space
+    , Str "passthrough)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"#F0F\"}"
+, Para
+    [ Span
+        ( "" , [] , [ ( "pfa-font-color" , "#F0F" ) ] )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    3
+    ( "native-typst-function-rgb-passthroughtranslation"
+    , []
+    , []
+    )
+    [ Str "Native"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "Function"
+    , Space
+    , Str "(rgb"
+    , Space
+    , Str "passthrough/translation)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"rgb(\\\"#FF1493\\\")\"}"
+, Para
+    [ Span
+        ( "" , [] , [ ( "pfa-font-color" , "rgb(\"#FF1493\")" ) ] )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    3
+    ( "native-typst-shading-function-.darken-passthrough"
+    , []
+    , []
+    )
+    [ Str "Native"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "Shading"
+    , Space
+    , Str "function"
+    , Space
+    , Str "(.darken()"
+    , Space
+    , Str "passthrough)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"MediumVioletRed.darken(20%)\"}"
+, Para
+    [ Span
+        ( ""
+        , []
+        , [ ( "pfa-font-color" , "MediumVioletRed.darken(20%)" ) ]
+        )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    3
+    ( "native-typst-tinting-function-.lighten-passthrough"
+    , []
+    , []
+    )
+    [ Str "Native"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "Tinting"
+    , Space
+    , Str "function"
+    , Space
+    , Str "(.lighten()"
+    , Space
+    , Str "passthrough)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"MediumVioletRed.lighten(60%)\"}"
+, Para
+    [ Span
+        ( ""
+        , []
+        , [ ( "pfa-font-color" , "MediumVioletRed.lighten(60%)" ) ]
+        )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header
+    3
+    ( "native-typst-mixing-function-color.mix-passthrough"
+    , []
+    , []
+    )
+    [ Str "Native"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "Mixing"
+    , Space
+    , Str "function"
+    , Space
+    , Str "(color.mix()"
+    , Space
+    , Str "passthrough)"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Grumpy wizards make toxic brew.]{pfa-font-color=\"color.mix((RoyalBlue, 50%), (ForestGreen, 50%))\"}"
+, Para
+    [ Span
+        ( ""
+        , []
+        , [ ( "pfa-font-color"
+            , "color.mix((RoyalBlue, 50%), (ForestGreen, 50%))"
+            )
+          ]
+        )
+        [ Str "Grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+]

@@ -1,0 +1,37 @@
+[ Header 2 ( "uppercase" , [] , [] ) [ Str "Uppercase" ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[grumpy wizards make toxic brew.]{.pfa-uppercase}"
+, Para
+    [ Span
+        ( "" , [ "pfa-uppercase" ] , [] )
+        [ Str "grumpy"
+        , Space
+        , Str "wizards"
+        , Space
+        , Str "make"
+        , Space
+        , Str "toxic"
+        , Space
+        , Str "brew."
+        ]
+    ]
+, Header 2 ( "lowercase" , [] , [] ) [ Str "Lowercase" ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[GRUMPY WIZARDS MAKE TOXIC BREW.]{.pfa-lowercase}"
+, Para
+    [ Span
+        ( "" , [ "pfa-lowercase" ] , [] )
+        [ Str "GRUMPY"
+        , Space
+        , Str "WIZARDS"
+        , Space
+        , Str "MAKE"
+        , Space
+        , Str "TOXIC"
+        , Space
+        , Str "BREW."
+        ]
+    ]
+]

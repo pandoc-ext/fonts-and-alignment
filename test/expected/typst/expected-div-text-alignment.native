@@ -1,0 +1,113 @@
+[ Header
+    2
+    ( "left-aligned-text" , [] , [] )
+    [ Str "Left-aligned" , Space , Str "Text" ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-align-left}\nThis block of text is _left-aligned_.\n:::"
+, Div
+    ( "" , [ "pfa-align-left" ] , [] )
+    [ Para
+        [ Str "This"
+        , Space
+        , Str "block"
+        , Space
+        , Str "of"
+        , Space
+        , Str "text"
+        , Space
+        , Str "is"
+        , Space
+        , Emph [ Str "left-aligned" ]
+        , Str "."
+        ]
+    ]
+, Header
+    2
+    ( "center-aligned-text" , [] , [] )
+    [ Str "Center-aligned" , Space , Str "Text" ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-align-center}\nThis block of text is _center-aligned_.\n:::"
+, Div
+    ( "" , [ "pfa-align-center" ] , [] )
+    [ Para
+        [ Str "This"
+        , Space
+        , Str "block"
+        , Space
+        , Str "of"
+        , Space
+        , Str "text"
+        , Space
+        , Str "is"
+        , Space
+        , Emph [ Str "center-aligned" ]
+        , Str "."
+        ]
+    ]
+, Header
+    2
+    ( "right-aligned-text" , [] , [] )
+    [ Str "Right-aligned" , Space , Str "Text" ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-align-right}\nThis block of text is _right-aligned_.\n:::"
+, Div
+    ( "" , [ "pfa-align-right" ] , [] )
+    [ Para
+        [ Str "This"
+        , Space
+        , Str "block"
+        , Space
+        , Str "of"
+        , Space
+        , Str "text"
+        , Space
+        , Str "is"
+        , Space
+        , Emph [ Str "right-aligned" ]
+        , Str "."
+        ]
+    ]
+, Header
+    2
+    ( "explicit-line-break-preservation" , [] , [] )
+    [ Str "Explicit"
+    , Space
+    , Str "Line"
+    , Space
+    , Str "Break"
+    , Space
+    , Str "Preservation"
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-align-center}\nThis block of text\\\nis _center-aligned_\\\nwhile preserving explicit line breaks.\n:::"
+, Div
+    ( "" , [ "pfa-align-center" ] , [] )
+    [ Para
+        [ Str "This"
+        , Space
+        , Str "block"
+        , Space
+        , Str "of"
+        , Space
+        , Str "text"
+        , LineBreak
+        , Str "is"
+        , Space
+        , Emph [ Str "center-aligned" ]
+        , LineBreak
+        , Str "while"
+        , Space
+        , Str "preserving"
+        , Space
+        , Str "explicit"
+        , Space
+        , Str "line"
+        , Space
+        , Str "breaks."
+        ]
+    ]
+]

@@ -232,18 +232,18 @@ Nine sizing hooks, applicable to both Bracketed Spans and Fenced Divs.
 ### Font Weight, Shape, and Family
 
 | Class | LaTeX (Bracketed Span / Fenced Div) | Description |
-|--------|--------|--------|
-| `pfa-font-bold` | `\textbf{…}` / `{\bfseries …}` | Bold |
+| :--- | :--- | :--- |
+| `pfa-font-normal` | `\textnormal{…}` / `{\normalfont …}` | Normal |
 | `pfa-font-medium` | `\textmd{…}` / `{\mdseries …}` | Medium |
+| `pfa-font-bold` | `\textbf{…}` / `{\bfseries …}` | Bold |
+| `pfa-font-emphasis` | `\emph{…}` / `{\em …}` | Emphasis |
+| `pfa-font-upright` | `\textup{…}` / `{\upshape …}` | Upright |
 | `pfa-font-italic` | `\textit{…}` / `{\itshape …}` | Italic |
 | `pfa-font-slanted` | `\textsl{…}` / `{\slshape …}` | Slanted |
-| `pfa-font-upright` | `\textup{…}` / `{\upshape …}` | Upright |
-| `pfa-font-emphasis` | `\emph{…}` / `{\em …}` | Emphasis |
 | `pfa-font-serif` | `\textrm{…}` / `{\rmfamily …}` | Serif |
-| `pfa-font-sans` | `\textsf{…}` / `{\sffamily …}` | Sans |
-| `pfa-font-mono` | `\texttt{…}` / `{\ttfamily …}` | Mono |
-| `pfa-font-smallcaps` | `\textsc{…}` / `{\scshape …}` | Small caps |
-| `pfa-font-normal` | `\textnormal{…}` / `{\normalfont …}` | Normal |
+| `pfa-font-sans` | `\textsf{…}` / `{\sffamily …}` | Sans-Serif |
+| `pfa-font-mono` | `\texttt{…}` / `{\ttfamily …}` | Monospace |
+| `pfa-font-smallcaps` | `\textsc{…}` / `{\scshape …}` | Small Caps |
 
 > ⚠️ **Font Support:** Make sure your selected fonts actually provide the requested shapes and weights. LaTeX may substitute alternatives when they are unavailable.
 
@@ -399,56 +399,63 @@ The HTML stylesheet derives all typography sizes from the `--pfa-normal-size` CS
 
 Changing this value scales the entire typography hierarchy while preserving the relative proportions between size classes.
 
-## Legacy Aliases
+## Migration Guide: Upgrading to v3.0.0
 
-**Deprecated — retained strictly for backward compatibility and scheduled for removal in the next major release. New documents should use the `pfa-*` namespace.**
+All legacy, un-namespaced classes and shorthand aliases have been completely removed as of version 3.0.0 of this filter. The engine now operates exclusively on the standard `pfa-*` utility namespace.
 
-### Font Weight, Shape, and Family Aliases
+> ⚠️ **Breaking Change Notice:** If you are migrating older documents, you must update your markup to use the standard namespaced equivalents (e.g., replacing `.bold` or `.bf` with `.pfa-font-bold`) to ensure consistent rendering across HTML, LaTeX, and Typst backends.
 
-| Legacy Alias | Short | Modern Class |
-|--------|--------|--------|
-| `bold` | `bf` | `pfa-font-bold` |
-| `emphasis` | `em` | `pfa-font-emphasis` |
-| `italic` | `it` | `pfa-font-italic` |
-| `medium` | `md` | `pfa-font-medium` |
-| `monospace` | `tt` | `pfa-font-mono` |
-| `normalfont` | `nf` | `pfa-font-normal` |
-| `sans` | `sf` | `pfa-font-sans` |
-| `serif` | `rm` | `pfa-font-serif` |
-| `slanted` | `sl` | `pfa-font-slanted` |
-| `smallcaps` | `sc` | `pfa-font-smallcaps` |
-| `upright` | `up` | `pfa-font-upright` |
+### Complete Namespace Mapping Index
 
-### Font Size Aliases
+| Legacy Class (Removed) | Modern Class (Strict Requirement) | Scope Context |
+| :--- | :--- | :--- |
+| `.bold`, `.bf` | `.pfa-font-bold` | Spans & Divs |
+| `.medium`, `.md` | `.pfa-font-medium` | Spans & Divs |
+| `.italic`, `.it`, `.slanted`, `.sl` | `.pfa-font-italic`, `.pfa-font-slanted` | Spans & Divs |
+| `.emphasis` | `.pfa-font-emphasis` | Spans & Divs |
+| `.normalfont`, `.nf`, `.upright`, `.up` | `.pfa-font-normal`, `.pfa-font-upright` | Spans & Divs |
+| `.monospace`, `.tt` | `.pfa-font-mono` | Spans & Divs |
+| `.sans`, `.sf` | `.pfa-font-sans` | Spans & Divs |
+| `.serif`, `.rm` | `.pfa-font-serif` | Spans & Divs |
+| `.smallcaps`, `.sc` | `.pfa-font-smallcaps` | Spans & Divs |
+| `.upper`, `.lower` | `.pfa-uppercase`, `.pfa-lowercase` | Spans & Divs |
+| `.xsmall` | `.pfa-text-xs` | Spans & Divs |
+| `.small` | `.pfa-text-s` | Spans & Divs |
+| `.normal` | `.pfa-text-normal` | Spans & Divs |
+| `.large` | `.pfa-text-l` | Spans & Divs |
+| `.xlarge` | `.pfa-text-xl` | Spans & Divs |
+| `.xxlarge` | `.pfa-text-2xl` | Spans & Divs |
+| `.huge` | `.pfa-text-3xl` | Spans & Divs |
+| `.uline`, `.u` | `.pfa-text-uline` | Spans Only |
+| `.uuline`, `.uu` | `.pfa-text-uline-double` | Spans Only |
+| `.dashuline`, `.dau` | `.pfa-text-uline-dashed` | Spans Only |
+| `.dotuline`, `.dou` | `.pfa-text-uline-dotted` | Spans Only |
+| `.uwave`, `.uw` | `.pfa-text-uline-wave` | Spans Only |
+| `.sout`, `.so` | `.pfa-text-strikeout` | Spans Only |
 
-| Legacy Alias | Modern Class |
-|--------|--------|
-| `xsmall` | `pfa-text-xs` |
-| `small` | `pfa-text-s` |
-| `normal` | `pfa-text-normal` |
-| `large` | `pfa-text-l` |
-| `xlarge` | `pfa-text-xl` |
-| `xxlarge` | `pfa-text-2xl` |
-| `huge` | `pfa-text-3xl` |
+### Migration Examples
 
-### Alignment Aliases
+#### Inline Typography & Shorthands
 
-| Legacy Alias | Modern Class |
-|--------|--------|
-| `centering` | `pfa-align-center` |
-| `raggedleft` | `pfa-align-right` |
-| `raggedright` | `pfa-align-left` |
+* **Before:** `This is [important text]{.bold} and some [code block terms]{.tt}.`
+* **After:** `This is [important text]{.pfa-font-bold} and some [code block terms]{.pfa-font-mono}.`
 
-### Text Decoration Aliases
+#### Layout & Container Text Blocks
 
-| Legacy Alias | Short | Modern Class |
-|--------|--------|--------|
-| `uline` | `u` | `pfa-text-uline` |
-| `uuline` | `uu` | `pfa-text-uline-double` |
-| `dashuline` | `dau` | `pfa-text-uline-dashed` |
-| `dotuline` | `dou` | `pfa-text-uline-dotted` |
-| `uwave` | `uw` | `pfa-text-uline-wave` |
-| `sout` | `so` | `pfa-text-strikeout` |
+* **Before:**
+
+    ```markdown
+    ::: {.large}
+    This block is scaled up globally using a legacy layout class.
+    :::
+    ```
+
+* **After:**
+
+    ```markdown
+    ::: {.pfa-text-l}
+    This block is scaled up globally using the verified framework namespace.
+    :::
 
 ## Acknowledgements
 
