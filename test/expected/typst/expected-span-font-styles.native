@@ -1,202 +1,927 @@
-[ Header 2 ( "bold" , [] , [] ) [ Str "Bold" ]
-, CodeBlock
-    ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-font-bold}"
-, Para
-    [ Span
-        ( "" , [ "pfa-font-bold" ] , [] )
-        [ Str "Grumpy"
-        , Space
-        , Str "wizards"
-        , Space
-        , Str "make"
-        , Space
-        , Str "toxic"
-        , Space
-        , Str "brew."
-        ]
+[ Header
+    2
+    ( "typography-weights-shapes-and-families-scale" , [] , [] )
+    [ Str "Typography"
+    , Space
+    , Str "Weights,"
+    , Space
+    , Str "Shapes,"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Families"
+    , Space
+    , Str "Scale"
     ]
-, Header 2 ( "medium" , [] , [] ) [ Str "Medium" ]
-, CodeBlock
-    ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-font-medium}"
 , Para
-    [ Span
-        ( "" , [ "pfa-font-medium" ] , [] )
-        [ Str "Grumpy"
-        , Space
-        , Str "wizards"
-        , Space
-        , Str "make"
-        , Space
-        , Str "toxic"
-        , Space
-        , Str "brew."
-        ]
+    [ Str "This"
+    , Space
+    , Str "test"
+    , Space
+    , Str "suite"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "the"
+    , Space
+    , Str "framework\8217s"
+    , Space
+    , Str "typography"
+    , Space
+    , Str "style"
+    , Space
+    , Str "taxonomy"
+    , Space
+    , Str "cleanly"
+    , Space
+    , Str "maps"
+    , Space
+    , Str "to"
+    , Space
+    , Str "their"
+    , Space
+    , Str "respective"
+    , Space
+    , Str "design"
+    , Space
+    , Str "properties"
+    , Space
+    , Str "for"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "elements."
     ]
-, Header 2 ( "italic" , [] , [] ) [ Str "Italic" ]
-, CodeBlock
-    ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-font-italic}"
-, Para
-    [ Span
-        ( "" , [ "pfa-font-italic" ] , [] )
-        [ Str "Grumpy"
-        , Space
-        , Str "wizards"
-        , Space
-        , Str "make"
-        , Space
-        , Str "toxic"
-        , Space
-        , Str "brew."
-        ]
+, Header
+    3
+    ( "font-weights" , [] , [] )
+    [ Str "Font" , Space , Str "Weights" ]
+, Header
+    4
+    ( "bold-pfa-weight-bold" , [] , [] )
+    [ Str "Bold"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-weight-bold"
+    , Str ")"
     ]
-, Header 2 ( "slanted" , [] , [] ) [ Str "Slanted" ]
-, CodeBlock
-    ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-font-slanted}"
 , Para
-    [ Span
-        ( "" , [ "pfa-font-slanted" ] , [] )
-        [ Str "Grumpy"
-        , Space
-        , Str "wizards"
-        , Space
-        , Str "make"
-        , Space
-        , Str "toxic"
-        , Space
-        , Str "brew."
-        ]
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\textbf"
+    , Space
+    , Str "/"
+    , Space
+    , Code ( "" , [] , [] ) "\\bfseries"
+    , Space
+    , Str "and"
+    , Space
+    , Str "native"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "bold"
+    , Space
+    , Str "text"
+    , Space
+    , Str "blocks."
     ]
-, Header 2 ( "upright" , [] , [] ) [ Str "Upright" ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-font-upright}"
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-weight-bold}"
 , Para
     [ Span
-        ( "" , [ "pfa-font-upright" ] , [] )
-        [ Str "Grumpy"
+        ( "" , [] , [] )
+        [ Str "Lorem"
         , Space
-        , Str "wizards"
+        , Str "ipsum"
         , Space
-        , Str "make"
+        , Str "dolor"
         , Space
-        , Str "toxic"
+        , Str "sit"
         , Space
-        , Str "brew."
-        ]
-    ]
-, Header 2 ( "emphasis" , [] , [] ) [ Str "Emphasis" ]
-, CodeBlock
-    ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-font-emphasis}"
-, Para
-    [ Span
-        ( "" , [ "pfa-font-emphasis" ] , [] )
-        [ Str "Grumpy"
+        , Str "amet,"
         , Space
-        , Str "wizards"
+        , Str "consectetur"
         , Space
-        , Str "make"
+        , Str "adipiscing"
         , Space
-        , Str "toxic"
+        , Str "elit,"
         , Space
-        , Str "brew."
-        ]
-    ]
-, Header 2 ( "serif" , [] , [] ) [ Str "Serif" ]
-, CodeBlock
-    ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-font-serif}"
-, Para
-    [ Span
-        ( "" , [ "pfa-font-serif" ] , [] )
-        [ Str "Grumpy"
+        , Str "sed"
         , Space
-        , Str "wizards"
+        , Str "do"
         , Space
-        , Str "make"
+        , Str "eiusmod"
         , Space
-        , Str "toxic"
+        , Str "tempor"
         , Space
-        , Str "brew."
-        ]
-    ]
-, Header 2 ( "sans-serif" , [] , [] ) [ Str "Sans-serif" ]
-, CodeBlock
-    ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-font-sans}"
-, Para
-    [ Span
-        ( "" , [ "pfa-font-sans" ] , [] )
-        [ Str "Grumpy"
+        , Str "incididunt"
         , Space
-        , Str "wizards"
+        , Str "ut"
         , Space
-        , Str "make"
+        , Str "labore"
         , Space
-        , Str "toxic"
+        , Str "et"
         , Space
-        , Str "brew."
-        ]
-    ]
-, Header 2 ( "monospace" , [] , [] ) [ Str "Monospace" ]
-, CodeBlock
-    ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-font-mono}"
-, Para
-    [ Span
-        ( "" , [ "pfa-font-mono" ] , [] )
-        [ Str "Grumpy"
+        , Str "dolore"
         , Space
-        , Str "wizards"
+        , Str "magna"
         , Space
-        , Str "make"
-        , Space
-        , Str "toxic"
-        , Space
-        , Str "brew."
+        , Str "aliqua."
         ]
     ]
 , Header
-    2
-    ( "small-capitals" , [] , [] )
-    [ Str "Small" , Space , Str "Capitals" ]
+    4
+    ( "medium-pfa-weight-medium" , [] , [] )
+    [ Str "Medium"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-weight-medium"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\textmd"
+    , Space
+    , Str "/"
+    , Space
+    , Code ( "" , [] , [] ) "\\mdseries"
+    , Space
+    , Str "and"
+    , Space
+    , Str "native"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "medium"
+    , Space
+    , Str "weight"
+    , Space
+    , Str "variables."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-font-smallcaps}"
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-weight-medium}"
 , Para
     [ Span
-        ( "" , [ "pfa-font-smallcaps" ] , [] )
-        [ Str "Grumpy"
+        ( "" , [] , [] )
+        [ Str "Lorem"
         , Space
-        , Str "wizards"
+        , Str "ipsum"
         , Space
-        , Str "make"
+        , Str "dolor"
         , Space
-        , Str "toxic"
+        , Str "sit"
         , Space
-        , Str "brew."
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
-, Header 2 ( "normal" , [] , [] ) [ Str "Normal" ]
+, Header
+    4
+    ( "normal-weight-pfa-weight-normal" , [] , [] )
+    [ Str "Normal"
+    , Space
+    , Str "Weight"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-weight-normal"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "explicit"
+    , Space
+    , Str "application"
+    , Space
+    , Str "of"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "regular"
+    , Space
+    , Str "text"
+    , Space
+    , Str "weights."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-font-normal}"
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-weight-normal}"
 , Para
     [ Span
-        ( "" , [ "pfa-font-normal" ] , [] )
-        [ Str "Grumpy"
+        ( "" , [] , [] )
+        [ Str "Lorem"
         , Space
-        , Str "wizards"
+        , Str "ipsum"
         , Space
-        , Str "make"
+        , Str "dolor"
         , Space
-        , Str "toxic"
+        , Str "sit"
         , Space
-        , Str "brew."
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "font-styles-and-shapes" , [] , [] )
+    [ Str "Font"
+    , Space
+    , Str "Styles"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Shapes"
+    ]
+, Header
+    4
+    ( "italic-pfa-style-italic" , [] , [] )
+    [ Str "Italic"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-style-italic"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "explicit"
+    , Space
+    , Str "transformation"
+    , Space
+    , Str "to"
+    , Space
+    , Str "slanted"
+    , Space
+    , Str "structural"
+    , Space
+    , Str "italic"
+    , Space
+    , Str "variants."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-style-italic}"
+, Para
+    [ Span
+        ( "" , [] , [] )
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    4
+    ( "slanted-pfa-style-slanted" , [] , [] )
+    [ Str "Slanted"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-style-slanted"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Str "oblique"
+    , Space
+    , Str "formatting"
+    , Space
+    , Str "hooks"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "\\textsl"
+    , Str ")"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "custom"
+    , Space
+    , Str "transformations."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-style-slanted}"
+, Para
+    [ Span
+        ( "" , [] , [] )
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    4
+    ( "upright-pfa-style-upright" , [] , [] )
+    [ Str "Upright"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-style-upright"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "overriding"
+    , Space
+    , Str "nested"
+    , Space
+    , Str "transformations"
+    , Space
+    , Str "back"
+    , Space
+    , Str "into"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "vertical"
+    , Space
+    , Str "postures."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-style-upright}"
+, Para
+    [ Span
+        ( "" , [] , [] )
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    4
+    ( "emphasis-pfa-style-emphasis" , [] , [] )
+    [ Str "Emphasis"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-style-emphasis"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "context-aware"
+    , Space
+    , Str "nesting"
+    , Space
+    , Str "rules"
+    , Space
+    , Str "using"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "semantic"
+    , Space
+    , Str "markdown"
+    , Space
+    , Str "emphasis"
+    , Space
+    , Str "routines."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-style-emphasis}"
+, Para
+    [ Span
+        ( "" , [] , [] )
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    4
+    ( "small-capitals-pfa-style-smallcaps" , [] , [] )
+    [ Str "Small"
+    , Space
+    , Str "Capitals"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-style-smallcaps"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "CSS"
+    , Space
+    , Code ( "" , [] , [] ) "font-variant"
+    , Str ","
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\textsc"
+    , Str ","
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "micro-typography"
+    , Space
+    , Str "blocks."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-style-smallcaps}"
+, Para
+    [ Span
+        ( "" , [] , [] )
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "font-families" , [] , [] )
+    [ Str "Font" , Space , Str "Families" ]
+, Header
+    4
+    ( "serif-pfa-family-serif" , [] , [] )
+    [ Str "Serif"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-family-serif"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "structural"
+    , Space
+    , Str "family"
+    , Space
+    , Str "font"
+    , Space
+    , Str "configuration"
+    , Space
+    , Str "maps"
+    , Space
+    , Str "to"
+    , Space
+    , Str "proportional"
+    , Space
+    , Str "serif"
+    , Space
+    , Str "fallbacks."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-family-serif}"
+, Para
+    [ Span
+        ( "" , [] , [] )
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    4
+    ( "sans-serif-pfa-family-sans" , [] , [] )
+    [ Str "Sans-serif"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-family-sans"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "structural"
+    , Space
+    , Str "family"
+    , Space
+    , Str "routing"
+    , Space
+    , Str "hooks"
+    , Space
+    , Str "map"
+    , Space
+    , Str "safely"
+    , Space
+    , Str "to"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "modern"
+    , Space
+    , Str "clean"
+    , Space
+    , Str "typography"
+    , Space
+    , Str "alternatives."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-family-sans}"
+, Para
+    [ Span
+        ( "" , [] , [] )
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    4
+    ( "monospace-pfa-family-mono" , [] , [] )
+    [ Str "Monospace"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-family-mono"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "spacing"
+    , Space
+    , Str "alignments"
+    , Space
+    , Str "scale"
+    , Space
+    , Str "perfectly"
+    , Space
+    , Str "into"
+    , Space
+    , Str "system"
+    , Space
+    , Str "tabular"
+    , Space
+    , Str "text"
+    , Space
+    , Str "components"
+    , Space
+    , Str "across"
+    , Space
+    , Str "layouts."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-family-mono}"
+, Para
+    [ Span
+        ( "" , [] , [] )
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 ]

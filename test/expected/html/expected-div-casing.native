@@ -136,7 +136,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-case-upper}\nlorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-case-upper" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "LOREM"
         , Space
@@ -227,7 +227,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-case-lower}\nLOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.\n:::"
 , Div
-    ( "" , [ "pfa-case-lower" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "lorem"
         , Space
@@ -377,7 +377,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-case-upper}\nThis text block contains **strong elements**, *emphasized elements*, and a [hyperlink mapping block](https://example.com).\n:::"
 , Div
-    ( "" , [ "pfa-case-upper" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "THIS"
         , Space

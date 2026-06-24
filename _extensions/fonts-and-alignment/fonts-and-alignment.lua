@@ -7,11 +7,12 @@
 --- @author    Nandakumar Chandrasekhar (nandac)
 --- @copyright © 2026 Nandakumar Chandrasekhar
 --- @license   MIT - see LICENSE for details
---- @version   3.2.0
---- @release   2026-06-20
+--- @version   3.5.4
+--- @release   2026-06-24
 
 PANDOC_VERSION:must_be_at_least('3.2')
 
+-- Ensure the fundamental Pandoc core library is present before continuing execution
 local pandoc_lib = assert(pandoc, 'Cannot find the pandoc library')
 if type(pandoc_lib) ~= 'table' then
   error('Expected variable pandoc to be a table')
@@ -20,7 +21,8 @@ end
 local List = assert(pandoc.List, 'Cannot find the pandoc.List class')
 local utils = require 'pandoc.utils'
 
--- Verify prerequisite reader extensions are enabled
+-- Verify prerequisite markdown extension states are enabled inside the active reader configuration.
+-- Both fenced_divs and bracketed_spans must be active to parse custom classes/attributes correctly.
 if PANDOC_READER_OPTIONS and PANDOC_READER_OPTIONS.extensions then
   local ext = PANDOC_READER_OPTIONS.extensions
   if not (ext:includes('fenced_divs') and ext:includes('bracketed_spans')) then
@@ -31,17 +33,20 @@ end
 -- ==============================================================================
 -- CONFIGURATION STATE (Clean String Fallbacks)
 -- ==============================================================================
+-- Default system-level font family mappings used when compiling for Typst targets.
+-- These values are overwritten dynamically if alternative fonts are declared in the YAML document metadata.
 local typst_fonts = {
   serif = "Libertinus Serif",
   sans  = "DejaVu Sans Mono",
   mono  = "DejaVu Sans Mono"
 }
 
-
 -- ==============================================================================
 -- SECTION 1: DATA DICTIONARIES (Constants Namespace)
 -- ==============================================================================
 
+-- Dictionary mapping standard W3C CSS color keywords to their corresponding 6-character hex representations.
+-- Used to normalize color keywords across backends that do not natively support named web colors.
 local css_colors = {
   aliceblue            = 'F0F8FF',
   antiquewhite         = 'FAEBD7',
@@ -193,6 +198,8 @@ local css_colors = {
   yellowgreen          = '9ACD32'
 }
 
+-- Dictionary mapping the taxonomy class definitions to native LaTeX typographic commands.
+-- Format: ['pfa-class'] = { 'inline_macro_command', 'block_switch_or_environment' }
 local latex_font_styles = {
   ['pfa-weight-bold']     = { 'textbf',     'bfseries'   },
   ['pfa-weight-medium']   = { 'textmd',     'mdseries'   },
@@ -207,6 +214,7 @@ local latex_font_styles = {
   ['pfa-family-serif']    = { 'textrm',     'rmfamily'   }
 }
 
+-- Dictionary defining the explicit 9-point linear absolute text metrics for LaTeX targets.
 local latex_font_sizes = {
   ['pfa-size-3xs']    = { 'tiny',         'tiny'         },
   ['pfa-size-2xs']    = { 'scriptsize',   'scriptsize'   },
@@ -219,13 +227,15 @@ local latex_font_sizes = {
   ['pfa-size-3xl']    = { 'huge',         'huge'         }
 }
 
+-- Mapping definitions routing structural alignment parameters to native LaTeX layout wrappers.
 local latex_text_alignments = {
   ['pfa-align-left']   = { nil, 'raggedright' },
   ['pfa-align-center'] = { nil, 'centering'   },
   ['pfa-align-right']  = { nil, 'raggedleft'  }
 }
 
--- All core typographic variants mapped strictly and cleanly into the main dictionary matrix
+-- Dictionary mapping the taxonomy class definitions to native Typst markup command boundaries.
+-- Format: ['pfa-class'] = { { 'inline_open', 'inline_close' }, { 'block_open', 'block_close' } }
 local typst_font_styles = {
   ['pfa-weight-bold']     = { {'#text(weight: 700)[', ']'}, {'#set text(weight: 700)\n', ''} },
   ['pfa-weight-medium']   = { {'#text(weight: 500)[', ']'}, {'#set text(weight: 500)\n', ''} },
@@ -237,6 +247,8 @@ local typst_font_styles = {
   ['pfa-style-smallcaps'] = { {'#smallcaps[', ']'}, {'#show text: smallcaps\n', ''} }
 }
 
+-- Dictionary defining the explicit 9-point linear text metrics and line-height mappings for Typst targets.
+-- Includes automatic proportional adjustments to leading constraints when font bounds scale aggressively.
 local typst_font_sizes = {
   ['pfa-size-3xs']    = { {'#text(size: 0.5em)[', ']'}, {'#set text(size: 0.5em)\n#set par(leading: 0.65em)\n', ''} },
   ['pfa-size-2xs']    = { {'#text(size: 0.6667em)[', ']'}, {'#set text(size: 0.6667em)\n#set par(leading: 0.65em)\n', ''} },
@@ -249,24 +261,33 @@ local typst_font_sizes = {
   ['pfa-size-3xl']    = { {'#text(size: 2.0736em)[', ']'}, {'#set text(size: 2.0736em)\n#set par(leading: 0.65em)\n', ''} }
 }
 
+-- Mapping definitions routing structural alignment parameters to native Typst block alignment wrappers.
 local typst_text_alignments = {
   ['pfa-align-left']   = { nil, {'#align(left)[\n', ']\n'} },
   ['pfa-align-center'] = { nil, {'#align(center)[\n', ']\n'} },
   ['pfa-align-right']  = { nil, {'#align(right)[\n', ']\n'} }
 }
 
+-- Fast-lookup table to accelerate identification of character mutation utility classes.
 local framework_casings = {
   ['pfa-case-upper'] = true,
   ['pfa-case-lower'] = true
 }
 
-
 -- ==============================================================================
 -- SECTION 2: INITIALIZATION & UTILITIES
 -- ==============================================================================
+-- Map Pandoc node variants directly to their platform-specific Raw construction commands.
 local raw_code_function = { Span = pandoc.RawInline, Div = pandoc.RawBlock }
+
+-- Global initialization table for processed LaTeX command templates.
 local latex_cmd_for_tags = { Span = {}, Div = {} }
 
+--- Dynamically pre-compiles internal lookup dictionaries into normalized syntactic LaTeX code segments.
+--- This prevents hot-path string building actions during AST structural walks.
+--- @param styles_list table Master configuration style reference array maps.
+--- @param span_end_code boolean Declares if inline elements require terminal enclosing bracing characters.
+--- @param div_is_env boolean Declares if block nodes should process as complex structural LaTeX environments.
 local function create_latex_codes(styles_list, span_end_code, div_is_env)
   for class, latex_codes in pairs(styles_list) do
     if next(latex_codes) then
@@ -281,10 +302,13 @@ local function create_latex_codes(styles_list, span_end_code, div_is_env)
   end
 end
 
+-- Pre-compile style configuration states systematically
 create_latex_codes(latex_font_styles, true, false)
 create_latex_codes(latex_font_sizes, false, false)
 create_latex_codes(latex_text_alignments, false, true)
 
+-- Construct an absolute global identification dictionary of all valid framework taxonomy tokens.
+-- This ensures unmapped or unrecognized `pfa-*` user inputs are trapped cleanly.
 local known_pfa_classes = {}
 local constant_dictionaries = {
   latex_font_styles,
@@ -302,11 +326,14 @@ for _, dict in ipairs(constant_dictionaries) do
   end
 end
 
-
 -- ==============================================================================
 -- SECTION 3: CORE LOGIC HANDLERS
 -- ==============================================================================
 
+--- Intercepts and executes deep structural character casing conversions across elements.
+--- Uses localized walking sequences to mutate underlying text nodes without damaging layout nodes.
+--- @param elem table The current structural Pandoc node context.
+--- @param tag string Identifies node depth level (either 'Span' or 'Div').
 local function apply_text_casing(elem, tag)
   local transform_func
   if elem.classes:includes('pfa-case-upper') then
@@ -316,18 +343,35 @@ local function apply_text_casing(elem, tag)
   end
 
   if transform_func then
+    -- Clean target casing tokens instantly to keep writer environments sterile
+    for i = #elem.classes, 1, -1 do
+      if elem.classes[i] == 'pfa-case-upper' or elem.classes[i] == 'pfa-case-lower' then
+        table.remove(elem.classes, i)
+      end
+    end
+    -- Route recursive string walks using node depth targets
     return (tag == 'Div') and pandoc.walk_block(elem, { Str = transform_func }) or pandoc.walk_inline(elem, { Str = transform_func })
   end
   return elem
 end
 
+--- Iterates across structural element configurations, applying standardized layout transformations.
+--- Consumes active class configuration tokens and emits targeted engine code strings.
+--- @param elem table The active structural node block context.
+--- @param tag string Node context classification (Span/Div).
+--- @param raw function Target constructor pointer referencing raw generation helpers.
+--- @param is_latex boolean Runtime execution flag validating LaTeX compilation passes.
+--- @param is_typst boolean Runtime execution flag validating Typst compilation passes.
 local function apply_standard_classes(elem, tag, raw, is_latex, is_typst)
   local code_for_class = latex_cmd_for_tags[tag]
 
+  -- Process the class list array in reverse sequence to guarantee deletion modifications don't corrupt offsets
   for i = #elem.classes, 1, -1 do
     local class_name = elem.classes[i]
+    local consumed = false
 
     if is_typst then
+      -- Target Typst custom font family dynamic definitions
       if class_name:match('^pfa%-family%-') then
         local font_family = class_name:match('pfa%-family%-(.+)')
         local font_target = typst_fonts[font_family]
@@ -339,8 +383,9 @@ local function apply_standard_classes(elem, tag, raw, is_latex, is_typst)
             elem.content:insert(1, raw('typst', '#set text(font: "' .. font_target .. '")\n'))
           end
         end
+        consumed = true
       else
-        -- All standard token evaluations now map entirely and cleanly via the central loop dictionaries
+        -- Target static lookup dictionary arrays for Typst configurations
         local target_codes = typst_font_styles[class_name] or typst_font_sizes[class_name] or typst_text_alignments[class_name]
         if target_codes then
           local codes = target_codes[tag == 'Span' and 1 or 2]
@@ -348,49 +393,52 @@ local function apply_standard_classes(elem, tag, raw, is_latex, is_typst)
             elem.content:insert(1, raw('typst', codes[1]))
             if codes[2] and codes[2] ~= '' then elem.content:insert(raw('typst', codes[2])) end
           end
+          consumed = true
         end
       end
     elseif code_for_class[class_name] and is_latex then
+      -- Target pre-compiled static codes for LaTeX configurations
       local code = code_for_class[class_name]
       elem.content:insert(1, raw('latex', code[1]))
       if code[2] then elem.content:insert(raw('latex', code[2])) end
+      consumed = true
     elseif class_name:match('^pfa%-') and not known_pfa_classes[class_name] then
+      -- Trap unidentified internal naming schemas and write clean tracking logs
       io.stderr:write('[fonts-and-alignment] Warning: Unrecognized class "' .. class_name .. '" on <' .. tag .. '>\n')
+    end
+
+    -- Strip the consumed framework token completely so it doesn't pollute the downstream layout writers
+    if consumed or (class_name:match('^pfa%-') and known_pfa_classes[class_name]) then
+      table.remove(elem.classes, i)
     end
   end
   return elem
 end
 
-
 -- ==============================================================================
--- SECTION 4: COLOR HANDLING (Engine Cross-Translation Strategy)
+-- SECTION 4: COLOR HANDLING (Unified Hex & LaTeX Exclamation Mixing)
 -- ==============================================================================
 
-local function is_native_typst_syntax(input)
-  if type(input) ~= 'string' then return false end
-  if input:find('rgb%s*%(') or input:find('cmyk%s*%(') or input:find('luma%s*%(') or
-     input:find('oklab%s*%(') or input:find('oklch%s*%(') or input:find('linear%-rgb%s*%(') or
-     input:find('hsl%s*%(') or input:find('hsv%s*%(') or input:find('spot%s*%(') or
-     input:find('color%.mix%(') then
-    return true
-  end
-  if input:find('%.darken%s*%(') or input:find('%.lighten%s*%(') or
-     input:find('%.transparentize%s*%(') or input:find('%.saturate%s*%(') or
-     input:find('%.desaturate%s*%(') then
-    return true
-  end
-  return false
-end
-
+--- Resolves literal color string arguments down to definitive structured data entities.
+--- Normalizes web keywords against standard color arrays and parses 3/6 character hex signatures.
+--- @param input string Raw structural text argument extracted from metadata properties.
+--- @return string|nil canonical_value Standardized hex notation with leading '#' character.
+--- @return string|nil raw_hex Flat hex payload string without decoration blocks.
+--- @return boolean is_hex Declares if character data evaluated to literal true-color hex elements.
 local function resolve_single_color(input)
-  local clean_name = input:lower():gsub('[^%w]', '')
+  -- Crucial: Strip any leading/trailing spaces or Windows carriage returns (\r) to safeguard string anchors
+  local clean_input = input:match("^%s*(.-)%s*$")
+  if not clean_input then return nil, nil, false end
+
+  local clean_name = clean_input:lower():gsub('[^%w]', '')
   if css_colors[clean_name] then
     local hex = css_colors[clean_name]
     return '#' .. hex, hex, true
   end
 
-  local raw_hex = input:gsub('^#', '')
-  if raw_hex:match('^[0-9a-fA-F]+$') then
+  local raw_hex = clean_input:gsub('^#', '')
+  -- Safe: Enforces native Lua hexadecimal matching flags cleanly
+  if raw_hex:match('^%x+$') then
     if #raw_hex == 6 then
       return '#' .. raw_hex:upper(), raw_hex:upper(), true
     elseif #raw_hex == 3 then
@@ -400,38 +448,20 @@ local function resolve_single_color(input)
     end
   end
 
-  if input:match('^[a-zA-Z0-9%-]+$') then return input, input, false end
+  if clean_input:match('^[a-zA-Z0-9%-]+$') then return clean_input, clean_input, false end
   return nil, nil, false
 end
 
+--- Processes cross-platform design property configurations using an unified multi-format strategy.
+--- Translates LaTeX exclamation mix formatting codes directly into native compilation signatures.
+--- @param input string Raw target attribute color parameters string array.
+--- @param is_latex boolean Compilation destination tracking flag.
+--- @param is_typst boolean Compilation destination tracking flag.
 local function resolve_color(input, is_latex, is_typst)
   if not input then return nil end
+  -- Clear cross-platform trailing spaces and carriage returns before executing any logic match passes
+  input = input:match("^%s*(.-)%s*$")
   local is_html = not (is_latex or is_typst)
-
-  -- ----------------------------------------------------------------------------
-  -- TARGET: TYPST EXECUTIONS
-  -- ----------------------------------------------------------------------------
-  if is_typst then
-    if is_native_typst_syntax(input) or input:find('css%s*%(') or input:find('%.') then
-      return { value = input, type = "raw" }
-    end
-    if input:find('!') then
-      local c1, pct, c2 = input:match('^([^!]+)!(%d+)!?([^!]*)$')
-      if c1 and pct then
-        c2 = (c2 == '' or not c2) and 'white' or c2
-        local _, tex_c1, is_hex1 = resolve_single_color(c1)
-        local _, tex_c2, is_hex2 = resolve_single_color(c2)
-        local col1 = is_hex1 and 'rgb("#' .. tex_c1:lower() .. '")' or c1:lower()
-        local col2 = is_hex2 and 'rgb("#' .. tex_c2:lower() .. '")' or c2:lower()
-        return { value = string.format('color.mix((%s, %d%%), (%s, %d%%))', col1, tonumber(pct), col2, 100 - tonumber(pct)), type = "raw" }
-      end
-    end
-    local css_val, tex_val, is_hex = resolve_single_color(input)
-    if css_val then
-      return { value = tex_val, is_hex = is_hex, type = "standard" }
-    end
-    return { value = input, type = "raw" }
-  end
 
   -- ----------------------------------------------------------------------------
   -- TARGET: LATEX EXECUTIONS
@@ -444,42 +474,27 @@ local function resolve_color(input, is_latex, is_typst)
     if css_val then
       return { value = tex_val, is_hex = is_hex, type = "standard" }
     end
+    return { value = input, type = "raw" }
+  end
 
-    local clean_input = input:gsub("^color%.", "")
-    local space, args = clean_input:match("^([a-zA-Z0-9%-]+)%s*%((.+)%)")
-    if space and args then
-      local tokens = {}
-      for tok in args:gmatch("[^,%s]+") do table.insert(tokens, tok) end
-
-      if space == "cmyk" then
-        local c = (tokens[1] or "0"):gsub("%%", "")
-        local m = (tokens[2] or "0"):gsub("%%", "")
-        local y = (tokens[3] or "0"):gsub("%%", "")
-        local k = (tokens[4] or "0"):gsub("%%", "")
-        local val = string.format("%s,%s,%s,%s", tonumber(c)/100, tonumber(m)/100, tonumber(y)/100, tonumber(k)/100)
-        return { value = val, model = "cmyk", type = "polyfill" }
-      elseif space == "luma" then
-        local pct = (tokens[1] or "0"):gsub("%%", "")
-        local val = string.format("%.3f", tonumber(pct)/100)
-        return { value = val, model = "gray", type = "polyfill" }
-      elseif space == "rgb" then
-        local hex_match = args:match("^%s*['\"]?#?(%x%x%x%x%x%x)['\"]?%s*$") or args:match("^%s*['\"]?#?(%x%x%x)['\"]?%s*$")
-        if hex_match then
-          local _, tex_hex, is_hex_flag = resolve_single_color(hex_match)
-          return { value = tex_hex, is_hex = is_hex_flag, type = "standard" }
-        elseif #tokens >= 3 then
-          local r = (tokens[1] or "0"):gsub("%%", "")
-          local g = (tokens[2] or "0"):gsub("%%", "")
-          local b = (tokens[3] or "0"):gsub("%%", "")
-          local r_num = tonumber(r) or 0
-          local g_num = tonumber(g) or 0
-          local b_num = tonumber(b) or 0
-          if tokens[1]:find("%%") then r_num = r_num / 100 * 255 end
-          if tokens[2]:find("%%") then g_num = g_num / 100 * 255 end
-          if tokens[3]:find("%%") then b_num = b_num / 100 * 255 end
-          return { value = string.format("%d,%d,%d", r_num, g_num, b_num), model = "RGB", type = "polyfill" }
-        end
+  -- ----------------------------------------------------------------------------
+  -- TARGET: TYPST EXECUTIONS
+  -- ----------------------------------------------------------------------------
+  if is_typst then
+    if input:find('!') then
+      local c1, pct, c2 = input:match('^([^!]+)!(%d+)!?([^!]*)$')
+      if c1 and pct then
+        c2 = (c2 == '' or not c2) and 'white' or c2
+        local _, hex1, is_hex1 = resolve_single_color(c1)
+        local _, hex2, is_hex2 = resolve_single_color(c2)
+        local col1 = is_hex1 and 'rgb("#' .. hex1:lower() .. '")' or c1:lower()
+        local col2 = is_hex2 and 'rgb("#' .. hex2:lower() .. '")' or c2:lower()
+        return { value = string.format('color.mix((%s, %d%%), (%s, %d%%))', col1, tonumber(pct), col2, 100 - tonumber(pct)), type = "raw" }
       end
+    end
+    local css_val, tex_val, is_hex = resolve_single_color(input)
+    if css_val then
+      return { value = tex_val, is_hex = is_hex, type = "standard" }
     end
     return { value = input, type = "raw" }
   end
@@ -488,11 +503,6 @@ local function resolve_color(input, is_latex, is_typst)
   -- TARGET: HTML/CSS EXECUTIONS
   -- ----------------------------------------------------------------------------
   if is_html then
-    local css_val = resolve_single_color(input)
-    if css_val and not input:find('!') and not is_native_typst_syntax(input) and not input:find('css%s*%(') and not input:find('%.') then
-      return { value = css_val, type = "standard" }
-    end
-
     if input:find('!') then
       local c1, pct, c2 = input:match('^([^!]+)!(%d+)!?([^!]*)$')
       if c1 and pct then
@@ -502,121 +512,23 @@ local function resolve_color(input, is_latex, is_typst)
         return { value = string.format("color-mix(in srgb, %s %s%%, %s)", css_c1, pct, css_c2), type = "raw" }
       end
     end
-
-    local css_package_color = input:match("^css%s*%s*%(%s*['\"]([^'\"]+)['\"]%s*%)")
-    if css_package_color then
-      return { value = resolve_single_color(css_package_color) or css_package_color, type = "raw" }
+    local css_val = resolve_single_color(input)
+    if css_val then
+      return { value = css_val, type = "standard" }
     end
-
-    -- Universal method chainer evaluator (.darken(), .lighten(), .tint())
-    local base_expr, method, method_arg = input:match("^(.+)%.([a-zA-Z0-9%-]+)%s*%(%s*([^%)]+)%s*%)")
-    if base_expr and method and method_arg then
-      local res_base = resolve_color(base_expr, false, false)
-      local base_val = res_base and res_base.value or base_expr
-      local pct = method_arg:gsub("%%", "")
-      if method == "darken" then
-        return { value = string.format("color-mix(in srgb, black %s%%, %s)", pct, base_val), type = "raw" }
-      elseif method == "lighten" then
-        return { value = string.format("color-mix(in srgb, white %s%%, %s)", pct, base_val), type = "raw" }
-      elseif method == "tint" then
-        local tint_pct = 100 - (tonumber(pct) or 100)
-        if tint_pct <= 0 then return { value = base_val, type = "raw" } end
-        return { value = string.format("color-mix(in srgb, white %d%%, %s)", tint_pct, base_val), type = "raw" }
-      end
-    end
-
-    -- Global coordinated coordinate spaces extractor module (strips leading color.)
-    local clean_input = input:gsub("^color%.", "")
-    local space, args = clean_input:match("^([a-zA-Z0-9%-]+)%s*%((.+)%)")
-    if space and args then
-      local tokens = {}
-      for tok in args:gmatch("[^,%s]+") do table.insert(tokens, tok) end
-
-      if space == "oklch" or space == "oklab" or space == "hsl" then
-        return { value = string.format("%s(%s %s %s)", space, tokens[1] or "0", tokens[2] or "0", tokens[3] or "0"), type = "raw" }
-      elseif space == "hsv" then
-        local h = tokens[1] or "0"
-        local s_str = (tokens[2] or "0"):gsub("%%", "")
-        local v_str = (tokens[3] or "0"):gsub("%%", "")
-        local s = tonumber(s_str) or 0
-        local v = tonumber(v_str) or 0
-        if not tokens[2]:find("%%") and s <= 1 then s = s * 100 end
-        if not tokens[3]:find("%%") and v <= 1 then v = v * 100 end
-        local l_vals = v * (100 - s / 2) / 100
-        local s_hsl = 0
-        if l_vals > 0 and l_vals < 100 then
-          s_hsl = (v - l_vals) / math.min(l_vals, 100 - l_vals) * 100
-        end
-        return { value = string.format("hsl(%s %.1f%% %.1f%%)", h, s_hsl, l_vals), type = "raw" }
-      elseif space == "cmyk" then
-        local c_str = (tokens[1] or "0"):gsub("%%", "")
-        local m_str = (tokens[2] or "0"):gsub("%%", "")
-        local y_str = (tokens[3] or "0"):gsub("%%", "")
-        local k_str = (tokens[4] or "0"):gsub("%%", "")
-        local c = tonumber(c_str) or 0
-        local m = tonumber(m_str) or 0
-        local y = tonumber(y_str) or 0
-        local k = tonumber(k_str) or 0
-        if tokens[1]:find("%%") or c > 1 then c = c / 100 end
-        if tokens[2]:find("%%") or m > 1 then m = m / 100 end
-        if tokens[3]:find("%%") or y > 1 then y = y / 100 end
-        if tokens[4]:find("%%") or k > 1 then k = k / 100 end
-        local r = math.floor(255 * (1 - c) * (1 - k) + 0.5)
-        local g = math.floor(255 * (1 - m) * (1 - k) + 0.5)
-        local b = math.floor(255 * (1 - y) * (1 - k) + 0.5)
-        return { value = string.format("rgb(%d, %d, %d)", r, g, b), type = "raw" }
-      elseif space == "rgb" then
-        local hex_match = args:match("^%s*['\"]?#?(%x%x%x%x%x%x)['\"]?%s*$") or args:match("^%s*['\"]?#?(%x%x%x)['\"]?%s*$")
-        if hex_match then
-          local res_hex = resolve_single_color(hex_match)
-          if res_hex then return { value = res_hex, type = "raw" } end
-        end
-        return { value = string.format("rgb(%s, %s, %s)", tokens[1] or "0", tokens[2] or "0", tokens[3] or "0"), type = "raw" }
-      elseif space == "luma" then
-        local pct = (tokens[1] or "0"):gsub("%%", "")
-        return { value = string.format("color-mix(in srgb, white %s%%, black)", pct), type = "raw" }
-      elseif space == "linear-rgb" then
-        local r_str = (tokens[1] or "0"):gsub("%%", "")
-        local g_str = (tokens[2] or "0"):gsub("%%", "")
-        local b_str = (tokens[3] or "0"):gsub("%%", "")
-        local r_lin = tonumber(r_str) or 0
-        local g_lin = tonumber(g_str) or 0
-        local b_lin = tonumber(b_str) or 0
-        if tokens[1]:find("%%") or r_lin > 1 then r_lin = r_lin / 100 end
-        if tokens[2]:find("%%") or g_lin > 1 then g_lin = g_lin / 100 end
-        if tokens[3]:find("%%") or b_lin > 1 then b_lin = b_lin / 100 end
-        local function linear_to_srgb(c_lin)
-          if c_lin <= 0.0031308 then return 12.92 * c_lin
-          else return 1.055 * (c_lin ^ (1/2.4)) - 0.055 end
-        end
-        local r = math.floor(math.max(0, math.min(1, linear_to_srgb(r_lin))) * 255 + 0.5)
-        local g = math.floor(math.max(0, math.min(1, linear_to_srgb(g_lin))) * 255 + 0.5)
-        local b = math.floor(math.max(0, math.min(1, linear_to_srgb(b_lin))) * 255 + 0.5)
-        return { value = string.format("rgb(%d, %d, %d)", r, g, b), type = "raw" }
-      elseif space == "spot" then
-        local internal_color = args:match("rgb%s*%([^%)]+%)") or args:match("#%x+") or tokens[2]
-        if internal_color then
-          local res_int = resolve_color(internal_color, false, false)
-          if res_int then return { value = res_int.value, type = "raw" } end
-        end
-        return { value = "black", type = "raw" }
-      end
-    end
-
-    local mc1, mp1, mc2, mp2 = input:match("color%.mix%s*%s*%(%s*%(%s*([a-zA-Z0-9%-%#%'%\"]+)%s*,%s*(%d+)%%%s*%)%s*,%s*%(%s*([a-zA-Z0-9%-%#%'%\"]+)%s*,%s*(%d+)%%%s*%)%s*%)")
-    if mc1 and mp1 and mc2 then
-      mc1 = mc1:gsub("['\"]", "")
-      mc2 = mc2:gsub("['\"]", "")
-      local res_mc1 = resolve_single_color(mc1) or mc1
-      local res_mc2 = resolve_single_color(mc2) or mc2
-      return { value = string.format("color-mix(in srgb, %s %s%%, %s)", res_mc1, mp1, res_mc2), type = "raw" }
-    end
-
     return { value = input, type = "raw" }
   end
 end
 
+--- Inspects current element constraints for active color properties, applying required structural syntax tags.
+--- Strictly standardizes entry parameters on the framework-approved 'pfa-color' namespace.
+--- @param elem table Active processing element block reference node.
+--- @param tag string Node layout depth categorization identifier (Span/Div).
+--- @param raw function System construction macro reference pointer.
+--- @param is_latex boolean Flag identifying execution targets.
+--- @param is_typst boolean Flag identifying execution targets.
 local function apply_color(elem, tag, raw, is_latex, is_typst)
+  -- Enforce strict framework standards: Inspect exclusively for pfa-color parameters
   local color_attr = elem.attributes['pfa-color']
   if not color_attr then return elem end
 
@@ -648,7 +560,6 @@ local function apply_color(elem, tag, raw, is_latex, is_typst)
   return elem
 end
 
-
 -- ==============================================================================
 -- SECTION 5: MAIN EXECUTORS
 -- ==============================================================================
@@ -664,7 +575,6 @@ local function handler(elem)
   elem = apply_color(elem, tag, raw, is_latex, is_typst)
   return elem
 end
-
 
 return {
   {

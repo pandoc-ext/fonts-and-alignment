@@ -1,5 +1,55 @@
 [ Header
     2
+    ( "systematic-typography-sizing-scale" , [] , [] )
+    [ Str "Systematic"
+    , Space
+    , Str "Typography"
+    , Space
+    , Str "Sizing"
+    , Space
+    , Str "Scale"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "test"
+    , Space
+    , Str "suite"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "the"
+    , Space
+    , Str "framework\8217s"
+    , Space
+    , Str "typography"
+    , Space
+    , Str "size"
+    , Space
+    , Str "classes"
+    , Space
+    , Str "cleanly"
+    , Space
+    , Str "translate"
+    , Space
+    , Str "across"
+    , Space
+    , Str "all"
+    , Space
+    , Str "backend"
+    , Space
+    , Str "targets"
+    , Space
+    , Str "for"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "elements."
+    ]
+, Header
+    3
     ( "extra-extra-extra-small-3xs" , [] , [] )
     [ Str "Extra"
     , Space
@@ -11,25 +61,72 @@
     , Space
     , Str "(3xs)"
     ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\tiny"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "0.5em"
+    , Space
+    , Str "configurations."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-text-3xs}"
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-size-3xs}"
 , Para
     [ Span
-        ( "" , [ "pfa-text-3xs" ] , [] )
-        [ Str "Grumpy"
+        ( "" , [] , [] )
+        [ Str "Lorem"
         , Space
-        , Str "wizards"
+        , Str "ipsum"
         , Space
-        , Str "make"
+        , Str "dolor"
         , Space
-        , Str "toxic"
+        , Str "sit"
         , Space
-        , Str "brew."
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 , Header
-    2
+    3
     ( "extra-extra-small-2xs" , [] , [] )
     [ Str "Extra"
     , Space
@@ -39,130 +136,418 @@
     , Space
     , Str "(2xs)"
     ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\scriptsize"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "0.6667em"
+    , Space
+    , Str "configurations."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-text-2xs}"
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-size-2xs}"
 , Para
     [ Span
-        ( "" , [ "pfa-text-2xs" ] , [] )
-        [ Str "Grumpy"
+        ( "" , [] , [] )
+        [ Str "Lorem"
         , Space
-        , Str "wizards"
+        , Str "ipsum"
         , Space
-        , Str "make"
+        , Str "dolor"
         , Space
-        , Str "toxic"
+        , Str "sit"
         , Space
-        , Str "brew."
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 , Header
-    2
+    3
     ( "extra-small-xs" , [] , [] )
     [ Str "Extra" , Space , Str "Small" , Space , Str "(xs)" ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\footnotesize"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "0.8333em"
+    , Space
+    , Str "configurations."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-text-xs}"
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-size-xs}"
 , Para
     [ Span
-        ( "" , [ "pfa-text-xs" ] , [] )
-        [ Str "Grumpy"
+        ( "" , [] , [] )
+        [ Str "Lorem"
         , Space
-        , Str "wizards"
+        , Str "ipsum"
         , Space
-        , Str "make"
+        , Str "dolor"
         , Space
-        , Str "toxic"
+        , Str "sit"
         , Space
-        , Str "brew."
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 , Header
-    2
+    3
     ( "small-s" , [] , [] )
     [ Str "Small" , Space , Str "(s)" ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\small"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "0.9125em"
+    , Space
+    , Str "configurations."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-text-s}"
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-size-s}"
 , Para
     [ Span
-        ( "" , [ "pfa-text-s" ] , [] )
-        [ Str "Grumpy"
+        ( "" , [] , [] )
+        [ Str "Lorem"
         , Space
-        , Str "wizards"
+        , Str "ipsum"
         , Space
-        , Str "make"
+        , Str "dolor"
         , Space
-        , Str "toxic"
+        , Str "sit"
         , Space
-        , Str "brew."
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 , Header
-    2
+    3
     ( "normal-normal" , [] , [] )
     [ Str "Normal" , Space , Str "(normal)" ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "resetting"
+    , Space
+    , Str "to"
+    , Space
+    , Str "baseline"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\normalsize"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "1.0em"
+    , Space
+    , Str "environments."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-text-normal}"
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-size-normal}"
 , Para
     [ Span
-        ( "" , [ "pfa-text-normal" ] , [] )
-        [ Str "Grumpy"
+        ( "" , [] , [] )
+        [ Str "Lorem"
         , Space
-        , Str "wizards"
+        , Str "ipsum"
         , Space
-        , Str "make"
+        , Str "dolor"
         , Space
-        , Str "toxic"
+        , Str "sit"
         , Space
-        , Str "brew."
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 , Header
-    2
+    3
     ( "large-l" , [] , [] )
     [ Str "Large" , Space , Str "(l)" ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\large"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "1.2em"
+    , Space
+    , Str "scaling"
+    , Space
+    , Str "factors."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-text-l}"
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-size-l}"
 , Para
     [ Span
-        ( "" , [ "pfa-text-l" ] , [] )
-        [ Str "Grumpy"
+        ( "" , [] , [] )
+        [ Str "Lorem"
         , Space
-        , Str "wizards"
+        , Str "ipsum"
         , Space
-        , Str "make"
+        , Str "dolor"
         , Space
-        , Str "toxic"
+        , Str "sit"
         , Space
-        , Str "brew."
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 , Header
-    2
+    3
     ( "extra-large-xl" , [] , [] )
     [ Str "Extra" , Space , Str "Large" , Space , Str "(xl)" ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\Large"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "1.44em"
+    , Space
+    , Str "scaling"
+    , Space
+    , Str "factors."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-text-xl}"
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-size-xl}"
 , Para
     [ Span
-        ( "" , [ "pfa-text-xl" ] , [] )
-        [ Str "Grumpy"
+        ( "" , [] , [] )
+        [ Str "Lorem"
         , Space
-        , Str "wizards"
+        , Str "ipsum"
         , Space
-        , Str "make"
+        , Str "dolor"
         , Space
-        , Str "toxic"
+        , Str "sit"
         , Space
-        , Str "brew."
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 , Header
-    2
+    3
     ( "extra-extra-large-2xl" , [] , [] )
     [ Str "Extra"
     , Space
@@ -172,25 +557,74 @@
     , Space
     , Str "(2xl)"
     ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\LARGE"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "1.728em"
+    , Space
+    , Str "scaling"
+    , Space
+    , Str "factors."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-text-2xl}"
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-size-2xl}"
 , Para
     [ Span
-        ( "" , [ "pfa-text-2xl" ] , [] )
-        [ Str "Grumpy"
+        ( "" , [] , [] )
+        [ Str "Lorem"
         , Space
-        , Str "wizards"
+        , Str "ipsum"
         , Space
-        , Str "make"
+        , Str "dolor"
         , Space
-        , Str "toxic"
+        , Str "sit"
         , Space
-        , Str "brew."
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 , Header
-    2
+    3
     ( "extra-extra-extra-large-3xl" , [] , [] )
     [ Str "Extra"
     , Space
@@ -202,21 +636,70 @@
     , Space
     , Str "(3xl)"
     ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "\\huge"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "2.0736em"
+    , Space
+    , Str "typographic"
+    , Space
+    , Str "parameters."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "[Grumpy wizards make toxic brew.]{.pfa-text-3xl}"
+    "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-size-3xl}"
 , Para
     [ Span
-        ( "" , [ "pfa-text-3xl" ] , [] )
-        [ Str "Grumpy"
+        ( "" , [] , [] )
+        [ Str "Lorem"
         , Space
-        , Str "wizards"
+        , Str "ipsum"
         , Space
-        , Str "make"
+        , Str "dolor"
         , Space
-        , Str "toxic"
+        , Str "sit"
         , Space
-        , Str "brew."
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 ]

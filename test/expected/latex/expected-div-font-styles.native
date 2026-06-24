@@ -92,7 +92,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-weight-bold}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-weight-bold" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "Lorem"
         , Space
@@ -173,7 +173,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-weight-medium}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-weight-medium" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "Lorem"
         , Space
@@ -246,7 +246,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-weight-normal}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-weight-normal" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "Lorem"
         , Space
@@ -328,7 +328,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-style-italic}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-style-italic" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "Lorem"
         , Space
@@ -409,7 +409,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-style-slanted}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-style-slanted" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "Lorem"
         , Space
@@ -482,7 +482,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-style-upright}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-style-upright" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "Lorem"
         , Space
@@ -557,7 +557,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-style-emphasis}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-style-emphasis" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "Lorem"
         , Space
@@ -638,7 +638,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-style-smallcaps}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-style-smallcaps" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "Lorem"
         , Space
@@ -717,7 +717,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-family-serif}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-family-serif" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "Lorem"
         , Space
@@ -798,7 +798,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-family-sans}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-family-sans" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "Lorem"
         , Space
@@ -877,7 +877,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {.pfa-family-mono}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-family-mono" ] , [] )
+    ( "" , [] , [] )
     [ Para
         [ Str "Lorem"
         , Space

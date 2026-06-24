@@ -1,77 +1,330 @@
 [ Header
     2
-    ( "left-aligned-text" , [] , [] )
-    [ Str "Left-aligned" , Space , Str "Text" ]
+    ( "systematic-text-alignment-and-layout-rules" , [] , [] )
+    [ Str "Systematic"
+    , Space
+    , Str "Text"
+    , Space
+    , Str "Alignment"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Layout"
+    , Space
+    , Str "Rules"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "test"
+    , Space
+    , Str "suite"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "the"
+    , Space
+    , Str "framework\8217s"
+    , Space
+    , Str "directional"
+    , Space
+    , Str "alignment"
+    , Space
+    , Str "and"
+    , Space
+    , Str "line"
+    , Space
+    , Str "preservation"
+    , Space
+    , Str "classes"
+    , Space
+    , Str "cleanly"
+    , Space
+    , Str "map"
+    , Space
+    , Str "to"
+    , Space
+    , Str "their"
+    , Space
+    , Str "respective"
+    , Space
+    , Str "structural"
+    , Space
+    , Str "block"
+    , Space
+    , Str "layouts"
+    , Space
+    , Str "across"
+    , Space
+    , Str "all"
+    , Space
+    , Str "backend"
+    , Space
+    , Str "engines."
+    ]
+, Header
+    3
+    ( "directional-block-alignments" , [] , [] )
+    [ Str "Directional"
+    , Space
+    , Str "Block"
+    , Space
+    , Str "Alignments"
+    ]
+, Header
+    4
+    ( "left-aligned-pfa-align-left" , [] , [] )
+    [ Str "Left-Aligned"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-align-left"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "block"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "raggedright"
+    , Space
+    , Str "environments"
+    , Space
+    , Str "and"
+    , Space
+    , Str "native"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "#align(left)"
+    , Space
+    , Str "wrappers."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "::: {.pfa-align-left}\nThis block of text is _left-aligned_.\n:::"
+    "::: {.pfa-align-left}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-align-left" ] , [] )
+    ( "" , [] , [] )
     [ Para
-        [ Str "This"
+        [ Str "Lorem"
         , Space
-        , Str "block"
+        , Str "ipsum"
         , Space
-        , Str "of"
+        , Str "dolor"
         , Space
-        , Str "text"
+        , Str "sit"
         , Space
-        , Str "is"
+        , Str "amet,"
         , Space
-        , Emph [ Str "left-aligned" ]
-        , Str "."
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 , Header
-    2
-    ( "center-aligned-text" , [] , [] )
-    [ Str "Center-aligned" , Space , Str "Text" ]
+    4
+    ( "center-aligned-pfa-align-center" , [] , [] )
+    [ Str "Center-Aligned"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-align-center"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "block"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "centering"
+    , Space
+    , Str "environments"
+    , Space
+    , Str "and"
+    , Space
+    , Str "native"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "#align(center)"
+    , Space
+    , Str "wrappers."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "::: {.pfa-align-center}\nThis block of text is _center-aligned_.\n:::"
+    "::: {.pfa-align-center}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-align-center" ] , [] )
+    ( "" , [] , [] )
     [ Para
-        [ Str "This"
+        [ Str "Lorem"
         , Space
-        , Str "block"
+        , Str "ipsum"
         , Space
-        , Str "of"
+        , Str "dolor"
         , Space
-        , Str "text"
+        , Str "sit"
         , Space
-        , Str "is"
+        , Str "amet,"
         , Space
-        , Emph [ Str "center-aligned" ]
-        , Str "."
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 , Header
-    2
-    ( "right-aligned-text" , [] , [] )
-    [ Str "Right-aligned" , Space , Str "Text" ]
+    4
+    ( "right-aligned-pfa-align-right" , [] , [] )
+    [ Str "Right-Aligned"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-align-right"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "block"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "to"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "raggedleft"
+    , Space
+    , Str "environments"
+    , Space
+    , Str "and"
+    , Space
+    , Str "native"
+    , Space
+    , Str "Typst"
+    , Space
+    , Code ( "" , [] , [] ) "#align(right)"
+    , Space
+    , Str "wrappers."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "::: {.pfa-align-right}\nThis block of text is _right-aligned_.\n:::"
+    "::: {.pfa-align-right}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-align-right" ] , [] )
+    ( "" , [] , [] )
     [ Para
-        [ Str "This"
+        [ Str "Lorem"
         , Space
-        , Str "block"
+        , Str "ipsum"
         , Space
-        , Str "of"
+        , Str "dolor"
         , Space
-        , Str "text"
+        , Str "sit"
         , Space
-        , Str "is"
+        , Str "amet,"
         , Space
-        , Emph [ Str "right-aligned" ]
-        , Str "."
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 , Header
-    2
+    3
+    ( "advanced-layout-and-line-preservation" , [] , [] )
+    [ Str "Advanced"
+    , Space
+    , Str "Layout"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Line"
+    , Space
+    , Str "Preservation"
+    ]
+, Header
+    4
     ( "explicit-line-break-preservation" , [] , [] )
     [ Str "Explicit"
     , Space
@@ -81,33 +334,98 @@
     , Space
     , Str "Preservation"
     ]
+, Para
+    [ Str "Confirms"
+    , Space
+    , Str "that"
+    , Space
+    , Str "explicit"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "trailing"
+    , Space
+    , Str "escape"
+    , Space
+    , Str "breaks"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "\\"
+    , Str ")"
+    , Space
+    , Str "preserve"
+    , Space
+    , Str "horizontal"
+    , Space
+    , Str "positioning"
+    , Space
+    , Str "and"
+    , Space
+    , Str "margin"
+    , Space
+    , Str "properties"
+    , Space
+    , Str "under"
+    , Space
+    , Str "forced"
+    , Space
+    , Str "alignment"
+    , Space
+    , Str "blocks"
+    , Space
+    , Str "without"
+    , Space
+    , Str "dropping"
+    , Space
+    , Str "structural"
+    , Space
+    , Str "layout"
+    , Space
+    , Str "bounds."
+    ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "::: {.pfa-align-center}\nThis block of text\\\nis _center-aligned_\\\nwhile preserving explicit line breaks.\n:::"
+    "::: {.pfa-align-center}\nLorem ipsum dolor sit amet,\\\nconsectetur adipiscing elit, sed do eiusmod tempor\\\nincididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [ "pfa-align-center" ] , [] )
+    ( "" , [] , [] )
     [ Para
-        [ Str "This"
+        [ Str "Lorem"
         , Space
-        , Str "block"
+        , Str "ipsum"
         , Space
-        , Str "of"
+        , Str "dolor"
         , Space
-        , Str "text"
+        , Str "sit"
+        , Space
+        , Str "amet,"
         , LineBreak
-        , Str "is"
+        , Str "consectetur"
         , Space
-        , Emph [ Str "center-aligned" ]
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
         , LineBreak
-        , Str "while"
+        , Str "incididunt"
         , Space
-        , Str "preserving"
+        , Str "ut"
         , Space
-        , Str "explicit"
+        , Str "labore"
         , Space
-        , Str "line"
+        , Str "et"
         , Space
-        , Str "breaks."
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
         ]
     ]
 ]

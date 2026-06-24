@@ -779,7 +779,7 @@
     ( "" , [ "markdown" ] , [] )
     "::: {pfa-color=\"rgb(35, 157, 173)\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
-    ( "" , [] , [ ( "style" , "color: rgb(35, 157, 173);" ) ] )
+    ( "" , [] , [] )
     [ Para
         [ Str "Lorem"
         , Space
