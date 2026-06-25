@@ -14,6 +14,7 @@ local formats_by_extension = {
   latex = 'latex',
   native = 'haskell',
   tex = 'latex',
+  typ = 'typst',
 }
 
 local function sample_blocks (sample_file)

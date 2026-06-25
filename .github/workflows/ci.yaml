@@ -29,5 +29,5 @@ jobs:
         run: |
           # Use docker image with current release.
           make test \
-            PANDOC="docker run --rm --volume $(pwd):/data \
+            PANDOC="docker run --rm -i --volume $(pwd):/data \
               --user $(id -u):$(id -g) pandoc/core:latest"
