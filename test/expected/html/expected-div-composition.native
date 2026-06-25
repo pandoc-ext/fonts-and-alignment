@@ -1,0 +1,654 @@
+[ Header
+    2
+    ( "compound-typography-configurations" , [] , [] )
+    [ Str "Compound"
+    , Space
+    , Str "Typography"
+    , Space
+    , Str "Configurations"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "the"
+    , Space
+    , Str "filter\8217s"
+    , Space
+    , Str "ability"
+    , Space
+    , Str "to"
+    , Space
+    , Str "evaluate"
+    , Space
+    , Str "multiple"
+    , Space
+    , Str "concurrent"
+    , Space
+    , Str "layout"
+    , Space
+    , Str "classes"
+    , Space
+    , Str "piled"
+    , Space
+    , Str "on"
+    , Space
+    , Str "a"
+    , Space
+    , Str "single"
+    , Space
+    , Str "Fenced"
+    , Space
+    , Str "Div"
+    , Space
+    , Str "block"
+    , Space
+    , Str "wrapper."
+    , Space
+    , Str "The"
+    , Space
+    , Str "processing"
+    , Space
+    , Str "engine"
+    , Space
+    , Str "must"
+    , Space
+    , Str "handle"
+    , Space
+    , Str "attribute"
+    , Space
+    , Str "composition"
+    , Space
+    , Str "with"
+    , Space
+    , Str "total"
+    , Space
+    , Str "order-independence,"
+    , Space
+    , Str "strip"
+    , Space
+    , Str "matching"
+    , Space
+    , Str "tokens"
+    , Space
+    , Str "from"
+    , Space
+    , Str "the"
+    , Space
+    , Str "output"
+    , Space
+    , Str "node"
+    , Space
+    , Str "context"
+    , Space
+    , Str "cleanly,"
+    , Space
+    , Str "and"
+    , Space
+    , Str "preserve"
+    , Space
+    , Str "raw"
+    , Space
+    , Str "structural"
+    , Space
+    , Str "contents"
+    , Space
+    , Str "across"
+    , Space
+    , Str "targets."
+    ]
+, Header
+    3
+    ( "bold-sans-serif-display-block" , [] , [] )
+    [ Str "Bold"
+    , Space
+    , Str "Sans-Serif"
+    , Space
+    , Str "Display"
+    , Space
+    , Str "Block"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "simultaneous"
+    , Space
+    , Str "application"
+    , Space
+    , Str "of"
+    , Space
+    , Str "weight"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-weight-bold"
+    , Str "),"
+    , Space
+    , Str "family"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-family-sans"
+    , Str "),"
+    , Space
+    , Str "display"
+    , Space
+    , Str "scale"
+    , Space
+    , Str "sizing"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-size-l"
+    , Str "),"
+    , Space
+    , Str "and"
+    , Space
+    , Str "literal"
+    , Space
+    , Str "true-color"
+    , Space
+    , Str "rendering"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-color=\"red\""
+    , Str ")."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-weight-bold .pfa-family-sans .pfa-size-l pfa-color=\"red\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [] , [ ( "style" , "color: #FF0000;" ) ] )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "bold-monospace-utility-block" , [] , [] )
+    [ Str "Bold"
+    , Space
+    , Str "Monospace"
+    , Space
+    , Str "Utility"
+    , Space
+    , Str "Block"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "simultaneous"
+    , Space
+    , Str "application"
+    , Space
+    , Str "of"
+    , Space
+    , Str "font"
+    , Space
+    , Str "weight"
+    , Space
+    , Str "rules"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-weight-bold"
+    , Str ")"
+    , Space
+    , Str "alongside"
+    , Space
+    , Str "monospace"
+    , Space
+    , Str "layout"
+    , Space
+    , Str "definitions"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-family-mono"
+    , Str ")"
+    , Space
+    , Str "and"
+    , Space
+    , Str "compressed"
+    , Space
+    , Str "scale"
+    , Space
+    , Str "sizing"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-size-s"
+    , Str ")."
+    , Space
+    , Str "This"
+    , Space
+    , Str "avoids"
+    , Space
+    , Str "missing-variant"
+    , Space
+    , Str "fallback"
+    , Space
+    , Str "limitations"
+    , Space
+    , Str "on"
+    , Space
+    , Str "system"
+    , Space
+    , Str "monospace"
+    , Space
+    , Str "profiles"
+    , Space
+    , Str "such"
+    , Space
+    , Str "as"
+    , Space
+    , Str "Fira"
+    , Space
+    , Str "Mono."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-weight-bold .pfa-family-mono .pfa-size-s}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [] , [] )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "small-caps-decorative-accent-block" , [] , [] )
+    [ Str "Small"
+    , Space
+    , Str "Caps"
+    , Space
+    , Str "Decorative"
+    , Space
+    , Str "Accent"
+    , Space
+    , Str "Block"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "coordinated"
+    , Space
+    , Str "parsing"
+    , Space
+    , Str "of"
+    , Space
+    , Str "custom"
+    , Space
+    , Str "micro-typography"
+    , Space
+    , Str "features"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-style-smallcaps"
+    , Str ")"
+    , Space
+    , Str "running"
+    , Space
+    , Str "alongside"
+    , Space
+    , Str "a"
+    , Space
+    , Str "named"
+    , Space
+    , Str "CSS"
+    , Space
+    , Str "keyword"
+    , Space
+    , Str "tracking"
+    , Space
+    , Str "token"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-color=\"forestgreen\""
+    , Str ")."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {.pfa-style-smallcaps pfa-color=\"forestgreen\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( "" , [] , [ ( "style" , "color: #228B22;" ) ] )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    2
+    ( "high-stress-layout-intersections" , [] , [] )
+    [ Str "High-Stress"
+    , Space
+    , Str "Layout"
+    , Space
+    , Str "Intersections"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "tests"
+    , Space
+    , Str "the"
+    , Space
+    , Str "structural"
+    , Space
+    , Str "boundary"
+    , Space
+    , Str "conditions"
+    , Space
+    , Str "of"
+    , Space
+    , Str "multi-class"
+    , Space
+    , Str "attribute"
+    , Space
+    , Str "handling"
+    , Space
+    , Str "when"
+    , Space
+    , Str "interacting"
+    , Space
+    , Str "with"
+    , Space
+    , Str "complex"
+    , Space
+    , Str "internal"
+    , Space
+    , Str "AST"
+    , Space
+    , Str "document"
+    , Space
+    , Str "nodes"
+    , Space
+    , Str "and"
+    , Space
+    , Str "nested"
+    , Space
+    , Str "block"
+    , Space
+    , Str "conditions."
+    ]
+, Header
+    3
+    ( "concentric-structural-block-nesting" , [] , [] )
+    [ Str "Concentric"
+    , Space
+    , Str "Structural"
+    , Space
+    , Str "Block"
+    , Space
+    , Str "Nesting"
+    ]
+, Para
+    [ Str "Ensures"
+    , Space
+    , Str "that"
+    , Space
+    , Str "evaluation"
+    , Space
+    , Str "stacks"
+    , Space
+    , Str "track"
+    , Space
+    , Str "scope"
+    , Space
+    , Str "context"
+    , Space
+    , Str "precisely"
+    , Space
+    , Str "when"
+    , Space
+    , Str "a"
+    , Space
+    , Str "nested"
+    , Space
+    , Str "block"
+    , Space
+    , Str "is"
+    , Space
+    , Str "explicitly"
+    , Space
+    , Str "evaluated"
+    , Space
+    , Str "inside"
+    , Space
+    , Str "an"
+    , Space
+    , Str "active"
+    , Space
+    , Str "parent"
+    , Space
+    , Str "container."
+    , Space
+    , Str "This"
+    , Space
+    , Str "syntax"
+    , Space
+    , Str "uses"
+    , Space
+    , Str "a"
+    , Space
+    , Str "4-colon"
+    , Space
+    , Str "exterior"
+    , Space
+    , Str "fence"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "::::"
+    , Str ")"
+    , Space
+    , Str "and"
+    , Space
+    , Str "a"
+    , Space
+    , Str "3-colon"
+    , Space
+    , Str "interior"
+    , Space
+    , Str "fence"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ":::"
+    , Str ")"
+    , Space
+    , Str "to"
+    , Space
+    , Str "enforce"
+    , Space
+    , Str "correct"
+    , Space
+    , Str "hierarchical"
+    , Space
+    , Str "tree"
+    , Space
+    , Str "parsing"
+    , Space
+    , Str "under"
+    , Space
+    , Str "Pandoc"
+    , Space
+    , Str "Markdown"
+    , Space
+    , Str "rules."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    ":::: {.pfa-family-sans .pfa-size-xl pfa-color=\"navy\"}\nThis represents the outer parent design container level.\n\n::: {.pfa-weight-bold .pfa-style-italic pfa-color=\"red\"}\nThis represents the inner child container executing nested local overrides.\n:::\n\nBack to parent element layout properties container tracking baseline variables.\n::::"
+, Div
+    ( "" , [] , [ ( "style" , "color: #000080;" ) ] )
+    [ Para
+        [ Str "This"
+        , Space
+        , Str "represents"
+        , Space
+        , Str "the"
+        , Space
+        , Str "outer"
+        , Space
+        , Str "parent"
+        , Space
+        , Str "design"
+        , Space
+        , Str "container"
+        , Space
+        , Str "level."
+        ]
+    , Div
+        ( "" , [] , [ ( "style" , "color: #FF0000;" ) ] )
+        [ Para
+            [ Str "This"
+            , Space
+            , Str "represents"
+            , Space
+            , Str "the"
+            , Space
+            , Str "inner"
+            , Space
+            , Str "child"
+            , Space
+            , Str "container"
+            , Space
+            , Str "executing"
+            , Space
+            , Str "nested"
+            , Space
+            , Str "local"
+            , Space
+            , Str "overrides."
+            ]
+        ]
+    , Para
+        [ Str "Back"
+        , Space
+        , Str "to"
+        , Space
+        , Str "parent"
+        , Space
+        , Str "element"
+        , Space
+        , Str "layout"
+        , Space
+        , Str "properties"
+        , Space
+        , Str "container"
+        , Space
+        , Str "tracking"
+        , Space
+        , Str "baseline"
+        , Space
+        , Str "variables."
+        ]
+    ]
+]

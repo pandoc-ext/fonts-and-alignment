@@ -1,0 +1,376 @@
+[ Header
+    2
+    ( "compound-inline-typography-configurations" , [] , [] )
+    [ Str "Compound"
+    , Space
+    , Str "Inline"
+    , Space
+    , Str "Typography"
+    , Space
+    , Str "Configurations"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "the"
+    , Space
+    , Str "framework\8217s"
+    , Space
+    , Str "typography"
+    , Space
+    , Str "style"
+    , Space
+    , Str "taxonomy"
+    , Space
+    , Str "evaluates"
+    , Space
+    , Str "smoothly"
+    , Space
+    , Str "when"
+    , Space
+    , Str "compiled"
+    , Space
+    , Str "within"
+    , Space
+    , Str "paragraph"
+    , Space
+    , Str "text"
+    , Space
+    , Str "flow"
+    , Space
+    , Str "constructs."
+    , Space
+    , Str "Chained"
+    , Space
+    , Str "utility"
+    , Space
+    , Str "class"
+    , Space
+    , Str "sets"
+    , Space
+    , Str "must"
+    , Space
+    , Str "parse"
+    , Space
+    , Str "with"
+    , Space
+    , Str "total"
+    , Space
+    , Str "order-independence,"
+    , Space
+    , Str "isolate"
+    , Space
+    , Str "structural"
+    , Space
+    , Str "styles"
+    , Space
+    , Str "cleanly"
+    , Space
+    , Str "to"
+    , Space
+    , Str "the"
+    , Space
+    , Str "target"
+    , Space
+    , Str "bracket"
+    , Space
+    , Str "string"
+    , Space
+    , Str "boundaries,"
+    , Space
+    , Str "and"
+    , Space
+    , Str "strip"
+    , Space
+    , Str "attributes"
+    , Space
+    , Str "cleanly"
+    , Space
+    , Str "to"
+    , Space
+    , Str "prevent"
+    , Space
+    , Str "writer"
+    , Space
+    , Str "target"
+    , Space
+    , Str "output"
+    , Space
+    , Str "pollution."
+    ]
+, Header
+    3
+    ( "bold-sans-serif-inline-block" , [] , [] )
+    [ Str "Bold"
+    , Space
+    , Str "Sans-Serif"
+    , Space
+    , Str "Inline"
+    , Space
+    , Str "Block"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "simultaneous"
+    , Space
+    , Str "application"
+    , Space
+    , Str "of"
+    , Space
+    , Str "weight"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-weight-bold"
+    , Str "),"
+    , Space
+    , Str "family"
+    , Space
+    , Str "routing"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-family-sans"
+    , Str "),"
+    , Space
+    , Str "display"
+    , Space
+    , Str "scale"
+    , Space
+    , Str "sizing"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-size-l"
+    , Str "),"
+    , Space
+    , Str "and"
+    , Space
+    , Str "true-color"
+    , Space
+    , Str "assignments"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-color=\"red\""
+    , Str ")"
+    , Space
+    , Str "inside"
+    , Space
+    , Str "continuous"
+    , Space
+    , Str "prose."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick brown fox [jumps over the lazy dog.]{.pfa-weight-bold .pfa-family-sans .pfa-size-l pfa-color=\"red\"} Baseline text resumes here."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Str "brown"
+    , Space
+    , Str "fox"
+    , Space
+    , Span
+        ( "" , [] , [ ( "style" , "color: #FF0000;" ) ] )
+        [ Str "jumps"
+        , Space
+        , Str "over"
+        , Space
+        , Str "the"
+        , Space
+        , Str "lazy"
+        , Space
+        , Str "dog."
+        ]
+    , Space
+    , Str "Baseline"
+    , Space
+    , Str "text"
+    , Space
+    , Str "resumes"
+    , Space
+    , Str "here."
+    ]
+, Header
+    3
+    ( "italic-monospace-token" , [] , [] )
+    [ Str "Italic"
+    , Space
+    , Str "Monospace"
+    , Space
+    , Str "Token"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "simultaneous"
+    , Space
+    , Str "application"
+    , Space
+    , Str "of"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "posture"
+    , Space
+    , Str "transformations"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-style-italic"
+    , Str "),"
+    , Space
+    , Str "code"
+    , Space
+    , Str "family"
+    , Space
+    , Str "routing"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-family-mono"
+    , Str "),"
+    , Space
+    , Str "and"
+    , Space
+    , Str "linear"
+    , Space
+    , Str "compact"
+    , Space
+    , Str "scale"
+    , Space
+    , Str "scaling"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-size-s"
+    , Str ")."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick brown fox [jumps over the lazy dog.]{.pfa-style-italic .pfa-family-mono .pfa-size-s} Baseline text resumes here."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Str "brown"
+    , Space
+    , Str "fox"
+    , Space
+    , Span
+        ( "" , [] , [] )
+        [ Str "jumps"
+        , Space
+        , Str "over"
+        , Space
+        , Str "the"
+        , Space
+        , Str "lazy"
+        , Space
+        , Str "dog."
+        ]
+    , Space
+    , Str "Baseline"
+    , Space
+    , Str "text"
+    , Space
+    , Str "resumes"
+    , Space
+    , Str "here."
+    ]
+, Header
+    3
+    ( "small-caps-decorative-accent" , [] , [] )
+    [ Str "Small"
+    , Space
+    , Str "Caps"
+    , Space
+    , Str "Decorative"
+    , Space
+    , Str "Accent"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "the"
+    , Space
+    , Str "framework\8217s"
+    , Space
+    , Str "ability"
+    , Space
+    , Str "to"
+    , Space
+    , Str "coordinate"
+    , Space
+    , Str "custom"
+    , Space
+    , Str "micro-typography"
+    , Space
+    , Str "features"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) ".pfa-style-smallcaps"
+    , Str ")"
+    , Space
+    , Str "alongside"
+    , Space
+    , Str "an"
+    , Space
+    , Str "explicit"
+    , Space
+    , Str "keyword"
+    , Space
+    , Str "tracking"
+    , Space
+    , Str "token"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-color=\"forestgreen\""
+    , Str ")"
+    , Space
+    , Str "over"
+    , Space
+    , Str "fine"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "slices."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick brown fox [jumps over the lazy dog.]{.pfa-style-smallcaps pfa-color=\"forestgreen\"} Baseline text resumes here."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Str "brown"
+    , Space
+    , Str "fox"
+    , Space
+    , Span
+        ( "" , [] , [ ( "style" , "color: #228B22;" ) ] )
+        [ Str "jumps"
+        , Space
+        , Str "over"
+        , Space
+        , Str "the"
+        , Space
+        , Str "lazy"
+        , Space
+        , Str "dog."
+        ]
+    , Space
+    , Str "Baseline"
+    , Space
+    , Str "text"
+    , Space
+    , Str "resumes"
+    , Space
+    , Str "here."
+    ]
+]

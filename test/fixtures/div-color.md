@@ -48,7 +48,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 
-
 ## 2. String Normalization and Sanitation
 
 This section tests the filter's input sanitation, ensuring variations such as spaces, underscores, uppercase letters, or omitted hash prefixes are normalized into valid color values.

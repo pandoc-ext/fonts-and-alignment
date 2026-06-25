@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Nandakumar Chandrasekhar" />
+  <meta name="dcterms.date" content="2026-06-20" />
+  <title>input</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {  background-color: #f8f8f8; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ef2929; } /* Alert */
+    code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #204a87; } /* Attribute */
+    code span.bn { color: #0000cf; } /* BaseN */
+    code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4e9a06; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #8f5902; font-style: italic; } /* Comment */
+    code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+    code span.dt { color: #204a87; } /* DataType */
+    code span.dv { color: #0000cf; } /* DecVal */
+    code span.er { color: #a40000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #0000cf; } /* Float */
+    code span.fu { color: #204a87; font-weight: bold; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+    code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+    code span.ot { color: #8f5902; } /* Other */
+    code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+    code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+    code span.ss { color: #4e9a06; } /* SpecialString */
+    code span.st { color: #4e9a06; } /* String */
+    code span.va { color: #000000; } /* Variable */
+    code span.vs { color: #4e9a06; } /* VerbatimString */
+    code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="fonts-and-alignment.css" />
+  <link rel="stylesheet" href="preview-styles-and-framing.css" />
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title"><div
+class="line-block">Demonstration
+of<br />
+Fonts and Alignment
+Filter<br />
+for Pandoc</div></h1>
+<p class="author">Nandakumar
+Chandrasekhar</p>
+<p class="date">2026-06-20</p>
+</header>
+<p>This document demonstrates
+every feature provided by the
+<code>fonts-and-alignment</code>
+Lua filter for Pandoc. Each
+code block shows the exact
+Markdown syntax used to
+generate the rendered output
+that follows, ensuring
+consistent results across both
+LaTeX/PDF and HTML formats.<a
+href="#fn1"
+class="footnote-ref"
+id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<p>The filter relies on
+Pandoc’s
+<code>fenced_divs</code> and
+<code>bracketed_spans</code>
+extensions, which are
+typically enabled by default.
+In the unlikely event that
+these extensions are disabled,
+the Lua filter will display a
+terminal warning and pass over
+the corresponding divs and
+spans, causing them to appear
+as raw text in the rendered
+output.</p>
+<h2
+id="bracketed-spans-and-fenced-divs-invocations">Bracketed
+Spans and Fenced Divs
+Invocations</h2>
+<p>The filter may be used with
+Pandoc’s
+<code>bracketed_spans</code>
+and <code>fenced_divs</code>
+syntax extensions, as
+demonstrated below. Bracketed
+Spans are intended for styling
+smaller inline portions of
+text, while Fenced Divs are
+used for styling larger blocks
+of content. This follows
+Pandoc’s standard syntax
+conventions. For more
+information on this syntax,
+please refer to the official
+Pandoc documentation: <a
+href="https://pandoc.org/demo/example33/8.18-divs-and-spans.html">Divs
+and Spans — Pandoc User’s
+Guide</a>.</p>
+<div class="sourceCode"
+id="cb1"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This font is extra extra large.</span><span class="co">]</span>{.pfa-size-2xl}</span></code></pre></div>
+<p><span>This font is extra
+extra large.</span></p>
+<div class="sourceCode"
+id="cb2"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-size-2xl}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>This font is extra extra large.</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>This font is extra extra
+large.</p>
+</div>
+<h2
+id="font-sizing-in-bracketed-spans">Font
+Sizing in Bracketed Spans</h2>
+<p>The filter provides nine
+predefined sizing hooks that
+allow text within Bracketed
+Spans to be scaled relative to
+the document’s base font
+size.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 49%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Size</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">tiny</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-size-3xs}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">scriptsize</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-size-2xs}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">footnotesize</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-size-xs}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">small</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-size-s}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">normal</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-size-normal}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">large</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-size-l}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Large</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-size-xl}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">LARGE</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-size-2xl}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">huge</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-size-3xl}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+</tbody>
+</table>
+<h2
+id="font-sizing-in-fenced-divs">Font
+Sizing in Fenced Divs</h2>
+<p>The same sizing classes can
+also be applied to Fenced
+Divs, allowing an entire block
+of text to be rendered at a
+specific font size.</p>
+<h3
+id="extra-small-font-size">Extra
+Small Font Size</h3>
+<div class="sourceCode"
+id="cb3"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-size-xs}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders at the _extra small_ font size.</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>This paragraph renders at
+the <em>extra small</em> font
+size.</p>
+</div>
+<h3
+id="normal-font-size">Normal
+Font Size</h3>
+<div class="sourceCode"
+id="cb4"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-size-normal}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders at the _normal_ font size.</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>This paragraph renders at
+the <em>normal</em> font
+size.</p>
+</div>
+<h3 id="large-font-size">Large
+Font Size</h3>
+<div class="sourceCode"
+id="cb5"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-size-l}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders at the _large_ font size.</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>This paragraph renders at
+the <em>large</em> font
+size.</p>
+</div>
+<h2
+id="font-weights-shapes-and-families-in-bracketed-spans">Font
+Weights, Shapes, and Families
+in Bracketed Spans</h2>
+<p>The following typographic
+styles can be applied to
+Bracketed Spans to control
+weight, style, and
+typeface.</p>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 64%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Style</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">Normal</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-weight-normal}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Medium</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-weight-medium}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Bold</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-weight-bold}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Emphasis</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-style-emphasis}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Upright</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-style-upright}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Italic</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-style-italic}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Slanted</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-style-slanted}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Small
+Caps</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-style-smallcaps}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Serif</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-family-serif}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Sans-Serif</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-family-sans}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Monospace</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-family-mono}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+</tbody>
+</table>
+<h2
+id="font-weights-shapes-and-families-in-fenced-divs">Font
+Weights, Shapes, and Families
+in Fenced Divs</h2>
+<p>These same typographic
+classes can also be applied to
+Fenced Divs, allowing an
+entire block of text to adopt
+a particular visual style.</p>
+<h3 id="bold-weight">Bold
+Weight</h3>
+<div class="sourceCode"
+id="cb6"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-weight-bold}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>This paragraph renders in bold type.</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>This paragraph renders in
+bold type.</p>
+</div>
+<h3
+id="sans-serif-family">Sans-Serif
+Family</h3>
+<div class="sourceCode"
+id="cb7"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-family-sans}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>This paragraph uses a sans-serif typeface.</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>This paragraph uses a
+sans-serif typeface.</p>
+</div>
+<h3 id="small-caps">Small
+Caps</h3>
+<div class="sourceCode"
+id="cb8"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-style-smallcaps}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>This paragraph is rendered in small caps.</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>This paragraph is rendered
+in small caps.</p>
+</div>
+<h2
+id="text-casing-transformations">Text
+Casing Transformations</h2>
+<p>Unlike purely visual
+styling in HTML/CSS—where <a
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform"><code>text-transform</code></a>
+only changes how text is
+rendered—these casing
+transformations operate at the
+<a
+href="https://pandoc.org/MANUAL.html#abstract-syntax-tree">Pandoc
+Abstract Syntax Tree (AST)</a>
+level and modify the actual
+document content. This ensures
+that uppercase and lowercase
+conversions are preserved
+consistently across all output
+formats and remain intact when
+copied into other
+applications.</p>
+<h3
+id="casing-transformations-in-bracketed-spans">Casing
+Transformations in Bracketed
+Spans</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 65%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Casing</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">Uppercase</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-case-upper}</code></td>
+<td
+style="text-align: left;"><span>SAMPLE</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Lowercase</td>
+<td
+style="text-align: left;"><code>[SAMPLE]{.pfa-case-lower}</code></td>
+<td
+style="text-align: left;"><span>sample</span></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="casing-transformations-in-fenced-divs">Casing
+Transformations in Fenced
+Divs</h3>
+<h4
+id="lowercase">Lowercase</h4>
+<div class="sourceCode"
+id="cb9"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-case-lower}</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>THIS PARAGRAPH IS TRANSFORMED TO LOWERCASE.</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>this paragraph is
+transformed to lowercase.</p>
+</div>
+<h4
+id="uppercase">Uppercase</h4>
+<div class="sourceCode"
+id="cb10"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-case-upper}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>this paragraph is transformed to uppercase.</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>THIS PARAGRAPH IS
+TRANSFORMED TO UPPERCASE.</p>
+</div>
+<h2 id="colors">Colors</h2>
+<p>This section describes how
+to apply color to text using
+the <code>pfa-color</code>
+attribute in both Bracketed
+Spans and Fenced Divs.</p>
+<h3 id="solid-colors">Solid
+Colors</h3>
+<p>The <code>pfa-color</code>
+attribute supports <a
+href="https://www.w3.org/TR/css-color-3/#svg-color">CSS3
+named colors</a>, full
+hexadecimal values, and
+three-digit shorthand
+hexadecimal values.</p>
+<h4
+id="flexible-color-terminology">Flexible
+Color Terminology</h4>
+<p>For standard solid colors,
+the filter automatically
+normalizes CSS3 color names.
+This means solid colors are
+completely case-insensitive
+and support various naming
+conventions. All examples
+below resolve perfectly to the
+CSS3 color
+<code>mediumvioletred</code>
+in both HTML and PDF
+formats:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 59%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Naming
+Convention</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">Lowercase</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-color="mediumvioletred"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Title
+Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-color="Medium Violet Red"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Kebab
+Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-color="medium-violet-red"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Snake
+Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-color="medium_violet_red"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Camel
+Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-color="mediumVioletRed"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Pascal
+Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-color="MediumVioletRed"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Screaming
+Snake Case</td>
+<td
+style="text-align: left;"><code>[Color]{pfa-color="MEDIUM_VIOLET_RED"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #C71585;">Color</span></td>
+</tr>
+</tbody>
+</table>
+<h4
+id="applying-solid-colors">Applying
+Solid Colors</h4>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 65%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Input
+Type</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">CSS3
+Named</td>
+<td
+style="text-align: left;"><code>[Sample]{pfa-color="crimson"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #DC143C;">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Hex
+Full</td>
+<td
+style="text-align: left;"><code>[Sample]{pfa-color="#2E8B57"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #2E8B57;">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Hex
+Shorthand<a href="#fn2"
+class="footnote-ref"
+id="fnref2"
+role="doc-noteref"><sup>2</sup></a></td>
+<td
+style="text-align: left;"><code>[Sample]{pfa-color="#666"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #666666;">Sample</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong>
+While Pandoc’s default LaTeX
+template loads
+<code>x11names</code> (which
+includes numbered variants
+like <code>LightBlue3</code>),
+CSS and web browsers do not
+recognize these. To ensure
+your colors render perfectly
+across both PDF and HTML
+formats, you must stick
+strictly to the standard CSS3
+Named Colors or Hexadecimal
+codes.</p>
+<h3 id="color-mixing">Color
+Mixing</h3>
+<p>The filter natively
+supports LaTeX’s
+<code>xcolor</code> percentage
+mixing syntax, allowing you to
+tint, shade or mix colors on
+the fly. This translates
+perfectly into both PDF and
+HTML outputs.<a href="#fn3"
+class="footnote-ref"
+id="fnref3"
+role="doc-noteref"><sup>3</sup></a></p>
+<p>The mixing syntax uses the
+exclamation mark
+(<code>!</code>) to separate
+values:</p>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 42%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Mixing
+Type</th>
+<th
+style="text-align: left;">Syntax
+Pattern</th>
+<th
+style="text-align: left;">Description
+&amp; Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">Tinting</td>
+<td
+style="text-align: left;"><code>BaseColor!Percentage</code></td>
+<td
+style="text-align: left;">Blends
+with white.
+<code>Maroon!40</code> keeps
+40% Maroon and 60% white.</td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Shading</td>
+<td
+style="text-align: left;"><code>BaseColor!Percentage!black</code></td>
+<td
+style="text-align: left;">Blends
+with black.
+<code>MediumVioletRed!80!black</code>
+keeps 80% MediumVioletRed and
+20% black.</td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Two-Color
+Mix</td>
+<td
+style="text-align: left;"><code>BaseColor!Percentage!MixColor</code></td>
+<td
+style="text-align: left;">Blends
+two specific colors.
+<code>RoyalBlue!50!ForestGreen</code>
+yields a 50/50 mix of both
+colors.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>[Warning] Strict
+Casing Rule:</strong> Because
+mixed colors are passed
+directly to the LaTeX
+compiler, the flexible
+terminology rules do not apply
+here. You must use the exact
+casing expected by the LaTeX
+<code>xcolor</code> package,
+otherwise your PDF generation
+will break:</p>
+<ul>
+<li><p><strong>Base
+Colors:</strong> The <a
+href="https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide">19
+core LaTeX colors</a> must be
+strictly
+<strong>lowercase</strong>.</p></li>
+<li><p><strong>Extended Web
+Colors:</strong> The <a
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/named-color">CSS3
+named colors</a> must be
+strictly
+<strong>PascalCase</strong>.</p></li>
+</ul>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 63%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Mixing
+Type</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">Tint
+(40% Base)</td>
+<td
+style="text-align: left;"><code>[Tinted]{pfa-color="Maroon!40"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: color-mix(in srgb, #800000 40%, #FFFFFF);">Tinted</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Shade
+(80% Base)</td>
+<td
+style="text-align: left;"><code>[Shaded]{pfa-color="MediumVioletRed!80!black"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: color-mix(in srgb, #C71585 80%, #000000);">Shaded</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Mix
+(50/50)</td>
+<td
+style="text-align: left;"><code>[Mixed]{pfa-font-color="RoyalBlue!50!ForestGreen"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: color-mix(in srgb, #4169E1 50%, #228B22);">Mixed</span></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="inheriting-colors-in-fenced-divs">Inheriting
+Colors in Fenced Divs</h3>
+<p>When applied to a Fenced
+Div, the
+<code>pfa-color</code>
+attribute defines the default
+text color for the entire
+block. All enclosed content
+inherits this color unless
+explicitly overridden by an
+inner Bracketed Span.</p>
+<div class="sourceCode"
+id="cb11"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>::: {pfa-color=&quot;DarkSlateGrey&quot;}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This Bracketed Span overrides the inherited color to _tomato_.</span><span class="co">]</span>{pfa-color=&quot;tomato&quot;}</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>The remaining text continues using _DarkSlateGrey_ for the remainder of the Div.</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div style="color: #2F4F4F;">
+<p>The Fenced Div defines
+<em>DarkSlateGrey</em> as the
+default text color for this
+block.</p>
+<p><span
+style="color: #FF6347;">This
+Bracketed Span overrides the
+inherited color to
+<em>tomato</em>.</span></p>
+<p>The remaining text
+continues using
+<em>DarkSlateGrey</em> for the
+remainder of the Div.</p>
+</div>
+<p><strong>Note:</strong> The
+<code>pfa-color</code> utility
+is an attribute, not a class,
+and should not be prefixed
+with a period
+(<code>.</code>).</p>
+<h2
+id="text-alignment-within-fenced-divs">Text
+Alignment within Fenced
+Divs</h2>
+<p>The
+<code>pfa-align-*</code>
+classes control text alignment
+within a Fenced Div while
+explicitly preserving hard
+line breaks (<code>\</code>).
+These utilities map directly
+to native LaTeX commands
+(<code>\raggedright</code>,
+<code>\centering</code>, and
+<code>\raggedleft</code>) in
+PDF output and equivalent CSS
+behaviors in HTML, making them
+ideal for formatting poetry,
+lyrics, or multi-line
+blocks.</p>
+<h3
+id="left-aligned-text">Left-aligned
+Text</h3>
+<div class="sourceCode"
+id="cb12"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>This block of text is _left-aligned_.</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>This block of text is
+<em>left-aligned</em>.</p>
+</div>
+<h3
+id="center-aligned-text">Center-aligned
+Text</h3>
+<div class="sourceCode"
+id="cb13"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>This block of text is _center-aligned_.</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>This block of text is
+<em>center-aligned</em>.</p>
+</div>
+<h3
+id="right-aligned-text">Right-aligned
+Text</h3>
+<div class="sourceCode"
+id="cb14"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>This block of text is _right-aligned_.</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>This block of text is
+<em>right-aligned</em>.</p>
+</div>
+<h3
+id="line-break-preservation">Line
+Break Preservation</h3>
+<div class="sourceCode"
+id="cb15"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>is _center-aligned_\</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div>
+<p>This block of text<br />
+is
+<em>center-aligned</em><br />
+while preserving explicit line
+breaks.</p>
+</div>
+<h2
+id="combining-multiple-classes">Combining
+Multiple Classes</h2>
+<p>Multiple typographic
+utilities can be combined
+within the same element. Font,
+size, color, alignment, and
+decoration classes are
+designed to compose
+independently and can be
+applied together to both
+Bracketed Spans and Fenced
+Divs.</p>
+<p>Class names are
+space-separated within
+<code>{}</code> following
+Pandoc attribute syntax. In
+addition to classes, key-value
+attributes such as
+<code>pfa-color</code> may be
+included alongside class
+definitions.</p>
+<h3
+id="bracketed-span-composition">Bracketed
+Span Composition</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 62%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Style</th>
+<th
+style="text-align: left;">Syntax</th>
+<th
+style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;">Bold
+Sans-Serif</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-wight-bold .pfa-family-sans .pfa-size-l pfa-color="red"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #FF0000;">Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Italic
+Monospace</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-style-italic .pfa-family-mono .pfa-size-s}</code></td>
+<td
+style="text-align: left;"><span>Sample</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;">Small
+Caps, Colored</td>
+<td
+style="text-align: left;"><code>[Sample]{.pfa-style-smallcaps pfa-color="forestgreen"}</code></td>
+<td
+style="text-align: left;"><span
+style="color: #228B22;">Sample</span></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="fenced-div-composition">Fenced
+Div Composition</h3>
+<p>Multiple utilities can also
+be applied to Fenced Divs to
+control alignment, typography,
+and color simultaneously. The
+resulting block inherits all
+specified styles while
+preserving Pandoc’s standard
+attribute behavior.</p>
+<div class="sourceCode"
+id="cb16"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-family-sans .pfa-weight-bold .pfa-size-l pfa-color=&quot;midnightblue&quot;}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div style="color: #191970;">
+<p>A centered, bold,
+sans-serif, large,
+midnight-blue Fenced Div
+demonstrating multiple
+combined utilities from the
+filter.</p>
+</div>
+<h2
+id="legacy-aliases-deprecated">Legacy
+Aliases (Deprecated)</h2>
+<p><strong>Warning:</strong>
+Legacy aliases are deprecated.
+They are retained strictly for
+backward compatibility and
+will be entirely removed in
+the next major release. New
+documents should use the
+<code>pfa-*</code> namespaces
+going forward.</p>
+<h3
+id="font-sizing-aliases">Font
+Sizing Aliases</h3>
+<table>
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Legacy
+Class</th>
+<th
+style="text-align: left;">Modern
+Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>xsmall</code></td>
+<td
+style="text-align: left;"><code>pfa-text-xs</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>small</code></td>
+<td
+style="text-align: left;"><code>pfa-text-s</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>normal</code></td>
+<td
+style="text-align: left;"><code>pfa-text-normal</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>large</code></td>
+<td
+style="text-align: left;"><code>pfa-text-l</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>xlarge</code></td>
+<td
+style="text-align: left;"><code>pfa-text-xl</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>xxlarge</code></td>
+<td
+style="text-align: left;"><code>pfa-text-2xl</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>huge</code></td>
+<td
+style="text-align: left;"><code>pfa-text-3xl</code></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="font-weight-shape-and-family-aliases">Font
+Weight, Shape, and Family
+Aliases</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 23%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Legacy
+Class</th>
+<th
+style="text-align: left;">Shorthand</th>
+<th
+style="text-align: left;">Modern
+Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>bold</code></td>
+<td
+style="text-align: left;"><code>bf</code></td>
+<td
+style="text-align: left;"><code>pfa-font-bold</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>emphasis</code></td>
+<td
+style="text-align: left;"><code>em</code></td>
+<td
+style="text-align: left;"><code>pfa-font-emphasis</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>italic</code></td>
+<td
+style="text-align: left;"><code>it</code></td>
+<td
+style="text-align: left;"><code>pfa-font-italic</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>medium</code></td>
+<td
+style="text-align: left;"><code>md</code></td>
+<td
+style="text-align: left;"><code>pfa-font-medium</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>monospace</code></td>
+<td
+style="text-align: left;"><code>tt</code></td>
+<td
+style="text-align: left;"><code>pfa-font-mono</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>normalfont</code></td>
+<td
+style="text-align: left;"><code>nf</code></td>
+<td
+style="text-align: left;"><code>pfa-font-normal</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>sans</code></td>
+<td
+style="text-align: left;"><code>sf</code></td>
+<td
+style="text-align: left;"><code>pfa-font-sans</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>serif</code></td>
+<td
+style="text-align: left;"><code>rm</code></td>
+<td
+style="text-align: left;"><code>pfa-font-serif</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>slanted</code></td>
+<td
+style="text-align: left;"><code>sl</code></td>
+<td
+style="text-align: left;"><code>pfa-font-slanted</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>smallcaps</code></td>
+<td
+style="text-align: left;"><code>sc</code></td>
+<td
+style="text-align: left;"><code>pfa-font-smallcaps</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>upright</code></td>
+<td
+style="text-align: left;"><code>up</code></td>
+<td
+style="text-align: left;"><code>pfa-font-upright</code></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="alignment-aliases">Alignment
+Aliases</h3>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Legacy
+Class</th>
+<th
+style="text-align: left;">Modern
+Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>centering</code></td>
+<td
+style="text-align: left;"><code>pfa-align-center</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>raggedleft</code></td>
+<td
+style="text-align: left;"><code>pfa-align-right</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>raggedright</code></td>
+<td
+style="text-align: left;"><code>pfa-align-left</code></td>
+</tr>
+</tbody>
+</table>
+<h3
+id="text-decoration-aliases">Text
+Decoration Aliases</h3>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 22%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Legacy
+Class</th>
+<th
+style="text-align: left;">Shorthand</th>
+<th
+style="text-align: left;">Modern
+Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>uline</code></td>
+<td
+style="text-align: left;"><code>u</code></td>
+<td
+style="text-align: left;"><code>pfa-text-uline</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>uuline</code></td>
+<td
+style="text-align: left;"><code>uu</code></td>
+<td
+style="text-align: left;"><code>pfa-text-uline-double</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>dashuline</code></td>
+<td
+style="text-align: left;"><code>dau</code></td>
+<td
+style="text-align: left;"><code>pfa-text-uline-dashed</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>dotuline</code></td>
+<td
+style="text-align: left;"><code>dou</code></td>
+<td
+style="text-align: left;"><code>pfa-text-uline-dotted</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>uwave</code></td>
+<td
+style="text-align: left;"><code>uw</code></td>
+<td
+style="text-align: left;"><code>pfa-text-uline-wave</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>sout</code></td>
+<td
+style="text-align: left;"><code>so</code></td>
+<td
+style="text-align: left;"><code>pfa-text-strikeout</code></td>
+</tr>
+</tbody>
+</table>
+<h2
+id="removed-classes">Removed
+Classes</h2>
+<p>The following legacy
+classes were removed in
+version 2.0.0 and are no
+longer recognized by the
+filter. Existing documents
+should be updated to use the
+replacement classes shown
+below.</p>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 20%" />
+<col style="width: 23%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th
+style="text-align: left;">Removed
+Class</th>
+<th
+style="text-align: left;">Shorthand</th>
+<th
+style="text-align: left;">Removed
+In</th>
+<th
+style="text-align: left;">Replacement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>center</code></td>
+<td
+style="text-align: left;">—</td>
+<td
+style="text-align: left;">2.0.0</td>
+<td
+style="text-align: left;"><code>pfa-align-center</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>flushleft</code></td>
+<td
+style="text-align: left;">—</td>
+<td
+style="text-align: left;">2.0.0</td>
+<td
+style="text-align: left;"><code>pfa-align-left</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>flushright</code></td>
+<td
+style="text-align: left;">—</td>
+<td
+style="text-align: left;">2.0.0</td>
+<td
+style="text-align: left;"><code>pfa-align-right</code></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>xout</code></td>
+<td
+style="text-align: left;"><code>xo</code></td>
+<td
+style="text-align: left;">2.0.0</td>
+<td
+style="text-align: left;"><code>pfa-text-strikeout</code></td>
+</tr>
+</tbody>
+</table>
+<section id="footnotes"
+class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Requires
+including the companion
+<code>fonts-and-alignment.css</code>
+stylesheet in your HTML
+compilation.<a href="#fnref1"
+class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Three-digit
+shorthand expands by
+duplicating each single
+hexadecimal digit per RGB
+channel (e.g., ‘#666’ expands
+to ‘#666666’).<a
+href="#fnref2"
+class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>HTML output
+utilizes the native CSS
+<code>color-mix()</code>
+function to achieve the same
+blend.<a href="#fnref3"
+class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>
