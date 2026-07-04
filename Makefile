@@ -165,7 +165,7 @@ $(PREVIEWS_DIR)/latex/latex-%.pdf: test/fixtures/%.md
 # Documentation System (With Dual-Engine Output Targets)
 # ==============================================================================
 .PHONY: docs
-docs: docs/index.html docs/input.html docs/input-latex.pdf docs/input-typst.pdf docs/fonts-and-alignment.lua ## Build the standalone docs portal with dual-format PDFs
+docs: docs/index.html docs/input-html.html docs/input-latex.pdf docs/input-typst.pdf docs/fonts-and-alignment.lua ## Build the standalone docs portal with dual-format PDFs
 
 docs/index.html: README.md test/input.md $(FILTER_FILE) .tools/docs.lua docs/output.md docs/style.css
 	@mkdir -p docs
@@ -191,7 +191,7 @@ docs/output.md: $(FILTER_FILE) test/input.md
 		--standalone \
 		test/input.md
 
-docs/input.html: test/input.md
+docs/input-html.html: test/input.md
 	$(PANDOC) $< \
 		$(DEFAULTS_HTML) \
 		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \

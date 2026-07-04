@@ -121,29 +121,29 @@ The following typographic styles can be applied to Bracketed Spans to
 control weight, style, and typeface.
 
   -----------------------------------------------------------------------
-  Style            Syntax                                        Output
-  ---------------- --------------------------------------------- --------
-  Normal           `[Sample]{.pfa-weight-normal}`                Sample
+  Style             Syntax                                       Output
+  ----------------- -------------------------------------------- --------
+  Normal            `[Sample]{.pfa-weight-normal}`               Sample
 
-  Medium           `[Sample]{.pfa-weight-medium}`                Sample
+  Medium            `[Sample]{.pfa-weight-medium}`               Sample
 
-  Bold             `[Sample]{.pfa-weight-bold}`                  Sample
+  Bold              `[Sample]{.pfa-weight-bold}`                 Sample
 
-  Emphasis         `[Sample]{.pfa-style-emphasis}`               Sample
+  Emphasis          `[Sample]{.pfa-style-emphasis}`              Sample
 
-  Upright          `[Sample]{.pfa-style-upright}`                Sample
+  Upright           `[Sample]{.pfa-style-upright}`               Sample
 
-  Italic           `[Sample]{.pfa-style-italic}`                 Sample
+  Italic            `[Sample]{.pfa-style-italic}`                Sample
 
-  Slanted          `[Sample]{.pfa-style-slanted}`                Sample
+  Slanted           `[Sample]{.pfa-style-slanted}`               Sample
 
-  Small Caps       `[Sample]{.pfa-style-smallcaps}`              Sample
+  Small Caps        `[Sample]{.pfa-style-smallcaps}`             Sample
 
-  Serif            `[Sample]{.pfa-family-serif}`                 Sample
+  Serif             `[Sample]{.pfa-family-serif}`                Sample
 
-  Sans-Serif       `[Sample]{.pfa-family-sans}`                  Sample
+  Sans-Serif        `[Sample]{.pfa-family-sans}`                 Sample
 
-  Monospace        `[Sample]{.pfa-family-mono}`                  Sample
+  Monospace         `[Sample]{.pfa-family-mono}`                 Sample
   -----------------------------------------------------------------------
 
 ## Font Weights, Shapes, and Families in Fenced Divs
@@ -274,14 +274,13 @@ to the CSS3 color `mediumvioletred` in both HTML and PDF formats:
 #### Applying Solid Colors
 
   ---------------------------------------------------------------------------------------------------
-  Input Type       Syntax                                         Output
-  ---------------- ---------------------------------------------- -----------------------------------
-  CSS3 Named       `[Sample]{pfa-color="crimson"}`                [Sample]{style="color: #DC143C;"}
+  Input Type        Syntax                                        Output
+  ----------------- --------------------------------------------- -----------------------------------
+  CSS3 Named        `[Sample]{pfa-color="crimson"}`               [Sample]{style="color: #DC143C;"}
 
-  Hex Full         `[Sample]{pfa-color="#2E8B57"}`                [Sample]{style="color: #2E8B57;"}
+  Hex Full          `[Sample]{pfa-color="#2E8B57"}`               [Sample]{style="color: #2E8B57;"}
 
-  Hex              `[Sample]{pfa-color="#666"}`                   [Sample]{style="color: #666666;"}
-  Shorthand[^2]                                                   
+  Hex Shorthand[^2] `[Sample]{pfa-color="#666"}`                  [Sample]{style="color: #666666;"}
   ---------------------------------------------------------------------------------------------------
 
 **Note:** While Pandoc's default LaTeX template loads `x11names` (which
@@ -369,6 +368,107 @@ the Div.
 **Note:** The `pfa-color` utility is an attribute, not a class, and
 should not be prefixed with a period (`.`).
 
+## Background Colors
+
+The `pfa-bg-color` attribute allows you to define a background fill for
+Fenced Divs and Bracketed Spans. This attribute supports the same color
+naming conventions as `pfa-color`, including CSS3 named colors, hex
+codes, and mixing syntax.
+
+### Background Colors in Fenced Divs
+
+When applied to a Fenced Div, `pfa-bg-color` fills the entire container.
+We recommend using this alongside `pfa-padding` to prevent text from
+colliding with the container edges.
+
+``` markdown
+::: {pfa-bg-color="lightsteelblue" pfa-padding="1em"}
+This block has a _lightsteelblue_ background and 1em of padding on all sides.
+:::
+```
+
+::: {style="background-color: #B0C4DE;padding: 1em;"}
+This block has a *lightsteelblue* background and 1em of padding on all
+sides.
+:::
+
+### Background Highlights in Bracketed Spans
+
+When applied to a Bracketed Span, `pfa-bg-color` acts as an inline
+highlight.
+
+``` markdown
+The [quick brown fox]{pfa-bg-color="gold" pfa-padding="0.2em 0.4em"} jumps over the lazy dog.
+```
+
+The quick [brown fox
+jumps]{style="background-color: #FFD700;padding: 0.2em 0.4em;"} over the
+lazy dog.
+
+## Padding and Layout Spacing
+
+The `pfa-padding` attribute provides fine-grained control over the
+internal spacing of containers. It supports CSS-style shorthand syntax
+to apply padding to individual edges.
+
+### Shorthand Padding Logic
+
+The `pfa-padding` attribute supports the standard CSS shorthand rules,
+ensuring consistent spacing across HTML, LaTeX, and Typst:
+
+- **1 Value (`1em`):** Applied to all four sides.
+- **2 Values (`1em 0.5em`):** First value for Top/Bottom, second for
+  Left/Right.
+- **3 Values (`1em 0.5em 2em`):** Top, Left/Right, Bottom.
+- **4 Values (`1em 0.5em 2em 0.2em`):** Top, Right, Bottom, Left.
+
+**Supported Units:** To guarantee cross-platform stability, only
+typographic units are supported: `pt`, `em`, and `ex`.
+
+### Individual Edge Control (Fenced Divs)
+
+``` markdown
+::: {pfa-bg-color="lavender" pfa-padding="0.5em 2em 1em 0.5em"}
+This block uses asymmetric padding: 0.5em top, 2em right, 1em bottom, and 0.5em left.
+:::
+```
+
+::: {style="background-color: #E6E6FA;padding: 0.5em 2em 1em 0.5em;"}
+This block uses asymmetric padding: 0.5em top, 2em right, 1em bottom,
+and 0.5em left.
+:::
+
+### Inline Bounding Boxes (Bracketed Spans)
+
+When `pfa-padding` is applied to a Bracketed Span, the filter
+dynamically upgrades the element to a structural box, ensuring the
+background fill and padding respect the inline bounding area correctly.
+
+``` markdown
+[Highlighted with padding]{pfa-bg-color="cyan" pfa-padding="0.2em 0.5em"}
+```
+
+[Highlighted with
+padding]{style="background-color: #00FFFF;padding: 0.2em 0.5em;"}
+
+## Typst Named Palette
+
+In addition to standard CSS colors, the filter provides access to the
+[19 predefined named
+colors](https://typst.app/docs/reference/visualize/color/#predefined-colors)
+from the Typst palette. To use these, prefix the color name with
+`typst`.
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Syntax                                                                          Output
+  ------------------------------------------------------------------------------- ----------------------------------------------------------------------------
+  `[Sample]{pfa-bg-color="typstmaroon" pfa-color="white" pfa-padding="0.2em"}`    [Sample]{style="color: #FFFFFF;background-color: #85144B;padding: 0.2em;"}
+
+  `[Sample]{pfa-bg-color="typsteastern" pfa-color="white" pfa-padding="0.2em"}`   [Sample]{style="color: #FFFFFF;background-color: #239DAD;padding: 0.2em;"}
+
+  `[Sample]{pfa-bg-color="typstorange" pfa-padding="0.2em"}`                      [Sample]{style="background-color: #FF851B;padding: 0.2em;"}
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Text Alignment within Fenced Divs
 
 The `pfa-align-*` classes control text alignment within a Fenced Div
@@ -442,16 +542,15 @@ may be included alongside class definitions.
 
 ### Bracketed Span Composition
 
-  ---------------------------------------------------------------------------------------------------------------------------------
-  Style              Syntax                                                                     Output
-  ------------------ -------------------------------------------------------------------------- -----------------------------------
-  Bold Sans-Serif    `[Sample]{.pfa-wight-bold .pfa-family-sans .pfa-size-l pfa-color="red"}`   [Sample]{style="color: #FF0000;"}
+  -----------------------------------------------------------------------------------------------------------------------------------
+  Style                Syntax                                                                     Output
+  -------------------- -------------------------------------------------------------------------- -----------------------------------
+  Bold Sans-Serif      `[Sample]{.pfa-wight-bold .pfa-family-sans .pfa-size-l pfa-color="red"}`   [Sample]{style="color: #FF0000;"}
 
-  Italic Monospace   `[Sample]{.pfa-style-italic .pfa-family-mono .pfa-size-s}`                 Sample
+  Italic Monospace     `[Sample]{.pfa-style-italic .pfa-family-mono .pfa-size-s}`                 Sample
 
-  Small Caps,        `[Sample]{.pfa-style-smallcaps pfa-color="forestgreen"}`                   [Sample]{style="color: #228B22;"}
-  Colored                                                                                       
-  ---------------------------------------------------------------------------------------------------------------------------------
+  Small Caps, Colored  `[Sample]{.pfa-style-smallcaps pfa-color="forestgreen"}`                   [Sample]{style="color: #228B22;"}
+  -----------------------------------------------------------------------------------------------------------------------------------
 
 ### Fenced Div Composition
 

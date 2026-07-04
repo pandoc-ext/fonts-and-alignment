@@ -93,7 +93,7 @@ This paragraph renders at the _large_ font size.
 The following typographic styles can be applied to Bracketed Spans to control weight, style, and typeface.
 
 | Style        | Syntax                            | Output |
-| :----------- | :-------------------------------- | :----- |
+| :----------- | :----------------------------- | :----- |
 | Normal       | `[Sample]{.pfa-weight-normal}`      | [Sample]{.pfa-weight-normal} |
 | Medium       | `[Sample]{.pfa-weight-medium}`      | [Sample]{.pfa-weight-medium} |
 | Bold         | `[Sample]{.pfa-weight-bold}`        | [Sample]{.pfa-weight-bold} |
@@ -208,7 +208,7 @@ For standard solid colors, the filter automatically normalizes CSS3 color names.
 #### Applying Solid Colors
 
 | Input Type    | Syntax                               | Output |
-| :------------ | :----------------------------------- | :----- |
+| :------------ | :-------------------------------- | :----- |
 | CSS3 Named    | `[Sample]{pfa-color="crimson"}` | [Sample]{pfa-color="crimson"} |
 | Hex Full      | `[Sample]{pfa-color="#2E8B57"}` | [Sample]{pfa-color="#2E8B57"} |
 | Hex Shorthand^[Three-digit shorthand expands by duplicating each single hexadecimal digit per RGB channel (e.g., '#666' expands to '#666666').] | `[Sample]{pfa-color="#666"}` | [Sample]{pfa-color="#666"} |
@@ -234,7 +234,7 @@ The mixing syntax uses the exclamation mark (`!`) to separate values:
 * **Extended Web Colors:** The [CSS3 named colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) must be strictly **PascalCase**.
 
 | Mixing Type | Syntax | Output |
-| :-------| :------------------ | :-- |
+| :-------| :------------------ | :--- |
 | Tint (40% Base) | `[Tinted]{pfa-color="Maroon!40"}` | [Tinted]{pfa-color="Maroon!40"} |
 | Shade (80% Base) | `[Shaded]{pfa-color="MediumVioletRed!80!black"}` | [Shaded]{pfa-color="MediumVioletRed!80!black"} |
 | Mix (50/50) | `[Mixed]{pfa-font-color="RoyalBlue!50!ForestGreen"}` | [Mixed]{pfa-color="RoyalBlue!50!ForestGreen"} |
@@ -262,6 +262,81 @@ The remaining text continues using _DarkSlateGrey_ for the remainder of the Div.
 :::
 
 **Note:** The `pfa-color` utility is an attribute, not a class, and should not be prefixed with a period (`.`).
+
+## Background Colors
+
+The `pfa-bg-color` attribute allows you to define a background fill for Fenced Divs and Bracketed Spans. This attribute supports the same color naming conventions as `pfa-color`, including CSS3 named colors, hex codes, and mixing syntax.
+
+### Background Colors in Fenced Divs
+
+When applied to a Fenced Div, `pfa-bg-color` fills the entire container. We recommend using this alongside `pfa-padding` to prevent text from colliding with the container edges.
+
+```markdown
+::: {pfa-bg-color="lightsteelblue" pfa-padding="1em"}
+This block has a _lightsteelblue_ background and 1em of padding on all sides.
+:::
+```
+
+::: {pfa-bg-color="lightsteelblue" pfa-padding="1em"}
+This block has a _lightsteelblue_ background and 1em of padding on all sides.
+:::
+
+### Background Highlights in Bracketed Spans
+
+When applied to a Bracketed Span, `pfa-bg-color` acts as an inline highlight.
+
+```markdown
+The [quick brown fox]{pfa-bg-color="gold" pfa-padding="0.2em 0.4em"} jumps over the lazy dog.
+```
+
+The quick [brown fox jumps]{pfa-bg-color="gold" pfa-padding="0.2em 0.4em"} over the lazy dog.
+
+## Padding and Layout Spacing
+
+The `pfa-padding` attribute provides fine-grained control over the internal spacing of containers. It supports CSS-style shorthand syntax to apply padding to individual edges.
+
+### Shorthand Padding Logic
+
+The `pfa-padding` attribute supports the standard CSS shorthand rules, ensuring consistent spacing across HTML, LaTeX, and Typst:
+
+* **1 Value (`1em`):** Applied to all four sides.
+* **2 Values (`1em 0.5em`):** First value for Top/Bottom, second for Left/Right.
+* **3 Values (`1em 0.5em 2em`):** Top, Left/Right, Bottom.
+* **4 Values (`1em 0.5em 2em 0.2em`):** Top, Right, Bottom, Left.
+
+**Supported Units:** To guarantee cross-platform stability, only typographic units are supported: `pt`, `em`, and `ex`.
+
+### Individual Edge Control (Fenced Divs)
+
+```markdown
+::: {pfa-bg-color="lavender" pfa-padding="0.5em 2em 1em 0.5em"}
+This block uses asymmetric padding: 0.5em top, 2em right, 1em bottom, and 0.5em left.
+:::
+```
+
+::: {pfa-bg-color="lavender" pfa-padding="0.5em 2em 1em 0.5em"}
+This block uses asymmetric padding: 0.5em top, 2em right, 1em bottom, and 0.5em left.
+:::
+
+### Inline Bounding Boxes (Bracketed Spans)
+
+When `pfa-padding` is applied to a Bracketed Span, the filter dynamically upgrades the element to a structural box, ensuring the background fill and padding respect the inline bounding area correctly.
+
+```markdown
+[Highlighted with padding]{pfa-bg-color="cyan" pfa-padding="0.2em 0.5em"}
+```
+
+[Highlighted with padding]{pfa-bg-color="cyan" pfa-padding="0.2em 0.5em"}
+
+## Typst Named Palette
+
+In addition to standard CSS colors, the filter provides access to the [19 predefined named colors](https://typst.app/docs/reference/visualize/color/#predefined-colors) from the Typst palette. To use these, prefix the color name with `typst`.
+
+| Syntax | Output |
+| --- | --- |
+| `[Sample]{pfa-bg-color="typstmaroon" pfa-color="white" pfa-padding="0.2em"}` | [Sample]{pfa-bg-color="typstmaroon" pfa-color="white" pfa-padding="0.2em"} |
+| `[Sample]{pfa-bg-color="typsteastern" pfa-color="white" pfa-padding="0.2em"}` | [Sample]{pfa-bg-color="typsteastern" pfa-color="white" pfa-padding="0.2em"} |
+| `[Sample]{pfa-bg-color="typstorange" pfa-padding="0.2em"}` | [Sample]{pfa-bg-color="typstorange" pfa-padding="0.2em"} |
 
 ## Text Alignment within Fenced Divs
 
@@ -328,7 +403,7 @@ Class names are space-separated within `{}` following Pandoc attribute syntax. I
 ### Bracketed Span Composition
 
 | Style                               | Syntax                                                                       | Output |
-| :-------------------------- | :----------------------------------------------------------------- | :----------- |
+| :-------------------------- | :---------------------------------------------------- | :------------- |
 | Bold Sans-Serif                     | `[Sample]{.pfa-wight-bold .pfa-family-sans .pfa-size-l pfa-color="red"}`   | [Sample]{.pfa-weight-bold .pfa-family-sans .pfa-size-l pfa-color="red"} |
 | Italic Monospace                    | `[Sample]{.pfa-style-italic .pfa-family-mono .pfa-size-s}`                    | [Sample]{.pfa-style-italic .pfa-family-mono .pfa-size-s} |
 | Small Caps, Colored     | `[Sample]{.pfa-style-smallcaps pfa-color="forestgreen"}` | [Sample]{.pfa-style-smallcaps pfa-color="forestgreen"} |
