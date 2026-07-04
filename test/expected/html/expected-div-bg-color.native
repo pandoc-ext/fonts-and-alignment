@@ -1,0 +1,1282 @@
+[ Header
+    2
+    ( "standard-background-color-specifications" , [] , [] )
+    [ Str "Standard"
+    , Space
+    , Str "Background"
+    , Space
+    , Str "Color"
+    , Space
+    , Str "Specifications"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "the"
+    , Space
+    , Str "filter"
+    , Space
+    , Str "processes"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "CSS/SVG"
+    , Space
+    , Str "named"
+    , Space
+    , Str "keywords"
+    , Space
+    , Str "and"
+    , Space
+    , Str "explicit"
+    , Space
+    , Str "hexadecimal"
+    , Space
+    , Str "declarations,"
+    , Space
+    , Str "applying"
+    , Space
+    , Str "them"
+    , Space
+    , Str "successfully"
+    , Space
+    , Str "as"
+    , Space
+    , Str "structural"
+    , Space
+    , Str "block"
+    , Space
+    , Str "backgrounds"
+    , Space
+    , Str "across"
+    , Space
+    , Str "HTML,"
+    , Space
+    , Str "LaTeX,"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Typst."
+    ]
+, Header
+    3
+    ( "named-csssvg-keywords-pfa-bg-colormediumvioletred"
+    , []
+    , []
+    )
+    [ Str "Named"
+    , Space
+    , Str "CSS/SVG"
+    , Space
+    , Str "Keywords"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"mediumvioletred\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "lowercase"
+    , Space
+    , Str "CSS/SVG"
+    , Space
+    , Str "named"
+    , Space
+    , Str "colors"
+    , Space
+    , Str "are"
+    , Space
+    , Str "recognized"
+    , Space
+    , Str "and"
+    , Space
+    , Str "mapped"
+    , Space
+    , Str "correctly"
+    , Space
+    , Str "to"
+    , Space
+    , Str "the"
+    , Space
+    , Str "background"
+    , Space
+    , Str "container."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"mediumvioletred\" pfa-padding=\"1em\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style" , "background-color: #C71585;padding: 1em;" )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "complete-hexadecimal-declaration-pfa-bg-color239dad"
+    , []
+    , []
+    )
+    [ Str "Complete"
+    , Space
+    , Str "Hexadecimal"
+    , Space
+    , Str "Declaration"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"#239dad\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "full"
+    , Space
+    , Str "6-character"
+    , Space
+    , Str "hex"
+    , Space
+    , Str "values"
+    , Space
+    , Str "prefixed"
+    , Space
+    , Str "with"
+    , Space
+    , Str "a"
+    , Space
+    , Str "hash"
+    , Space
+    , Str "output"
+    , Space
+    , Str "the"
+    , Space
+    , Str "expected"
+    , Space
+    , Str "container"
+    , Space
+    , Str "background"
+    , Space
+    , Str "fill."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"#239dad\" pfa-padding=\"1em\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style" , "background-color: #239DAD;padding: 1em;" )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "shorthand-hexadecimal-declaration-pfa-bg-colorf00"
+    , []
+    , []
+    )
+    [ Str "Shorthand"
+    , Space
+    , Str "Hexadecimal"
+    , Space
+    , Str "Declaration"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"#F00\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "3-character"
+    , Space
+    , Str "compressed"
+    , Space
+    , Str "hex"
+    , Space
+    , Str "strings"
+    , Space
+    , Str "are"
+    , Space
+    , Str "intercepted,"
+    , Space
+    , Str "expanded"
+    , Space
+    , Str "to"
+    , Space
+    , Str "their"
+    , Space
+    , Str "full"
+    , Space
+    , Str "6-character"
+    , Space
+    , Str "equivalent"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "#FF0000"
+    , Str "),"
+    , Space
+    , Str "and"
+    , Space
+    , Str "applied"
+    , Space
+    , Str "to"
+    , Space
+    , Str "the"
+    , Space
+    , Str "container."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"#F00\" pfa-padding=\"1em\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style" , "background-color: #FF0000;padding: 1em;" )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    2
+    ( "string-normalization-and-sanitation" , [] , [] )
+    [ Str "String"
+    , Space
+    , Str "Normalization"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Sanitation"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "tests"
+    , Space
+    , Str "the"
+    , Space
+    , Str "filter\8217s"
+    , Space
+    , Str "input"
+    , Space
+    , Str "sanitation,"
+    , Space
+    , Str "ensuring"
+    , Space
+    , Str "variations"
+    , Space
+    , Str "such"
+    , Space
+    , Str "as"
+    , Space
+    , Str "spaces,"
+    , Space
+    , Str "underscores,"
+    , Space
+    , Str "uppercase"
+    , Space
+    , Str "letters,"
+    , Space
+    , Str "or"
+    , Space
+    , Str "omitted"
+    , Space
+    , Str "hash"
+    , Space
+    , Str "prefixes"
+    , Space
+    , Str "are"
+    , Space
+    , Str "normalized"
+    , Space
+    , Str "into"
+    , Space
+    , Str "valid"
+    , Space
+    , Str "background"
+    , Space
+    , Str "color"
+    , Space
+    , Str "values."
+    ]
+, Header
+    3
+    ( "spaces-and-mixed-case-pfa-bg-colormedium-violet-red"
+    , []
+    , []
+    )
+    [ Str "Spaces"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Mixed"
+    , Space
+    , Str "Case"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"medium violet red\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "the"
+    , Space
+    , Str "filter"
+    , Space
+    , Str "strips"
+    , Space
+    , Str "spaces"
+    , Space
+    , Str "and"
+    , Space
+    , Str "normalizes"
+    , Space
+    , Str "character"
+    , Space
+    , Str "casing"
+    , Space
+    , Str "to"
+    , Space
+    , Str "resolve"
+    , Space
+    , Str "the"
+    , Space
+    , Str "background"
+    , Space
+    , Str "color."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"medium violet red\" pfa-padding=\"1em\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style" , "background-color: #C71585;padding: 1em;" )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "underscores-and-uppercase-pfa-bg-colormedium_violet_red"
+    , []
+    , []
+    )
+    [ Str "Underscores"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Uppercase"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"MEDIUM_VIOLET_RED\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "snake_case"
+    , Space
+    , Str "underscore"
+    , Space
+    , Str "patterns"
+    , Space
+    , Str "are"
+    , Space
+    , Str "removed"
+    , Space
+    , Str "during"
+    , Space
+    , Str "token"
+    , Space
+    , Str "resolution."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"MEDIUM_VIOLET_RED\" pfa-padding=\"1em\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style" , "background-color: #C71585;padding: 1em;" )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "hexadecimal-without-hash-prefix-pfa-bg-color191970"
+    , []
+    , []
+    )
+    [ Str "Hexadecimal"
+    , Space
+    , Str "without"
+    , Space
+    , Str "Hash"
+    , Space
+    , Str "Prefix"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"191970\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "raw"
+    , Space
+    , Str "6-character"
+    , Space
+    , Str "alphanumeric"
+    , Space
+    , Str "hex"
+    , Space
+    , Str "strings"
+    , Space
+    , Str "are"
+    , Space
+    , Str "processed"
+    , Space
+    , Str "safely"
+    , Space
+    , Str "without"
+    , Space
+    , Str "requiring"
+    , Space
+    , Str "a"
+    , Space
+    , Str "leading"
+    , Space
+    , Str "hash"
+    , Space
+    , Str "mark."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"191970\" pfa-padding=\"1em\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style" , "background-color: #191970;padding: 1em;" )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    2
+    ( "background-color-mixtures-latex-syntax-engine"
+    , []
+    , []
+    )
+    [ Str "Background"
+    , Space
+    , Str "Color"
+    , Space
+    , Str "Mixtures"
+    , Space
+    , Str "(LaTeX"
+    , Space
+    , Str "Syntax"
+    , Space
+    , Str "Engine)"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "LaTeX-style"
+    , Space
+    , Str "dynamic"
+    , Space
+    , Str "color"
+    , Space
+    , Str "mixing"
+    , Space
+    , Str "declarations"
+    , Space
+    , Str "using"
+    , Space
+    , Str "exclamation"
+    , Space
+    , Str "marks"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "!"
+    , Str ")"
+    , Space
+    , Str "work"
+    , Space
+    , Str "natively"
+    , Space
+    , Str "in"
+    , Space
+    , Str "LaTeX"
+    , Space
+    , Code ( "" , [] , [] ) "tcolorbox"
+    , Space
+    , Str "wrappers,"
+    , Space
+    , Str "while"
+    , Space
+    , Str "being"
+    , Space
+    , Str "parsed"
+    , Space
+    , Str "and"
+    , Space
+    , Str "translated"
+    , Space
+    , Str "accurately"
+    , Space
+    , Str "into"
+    , Space
+    , Code ( "" , [] , [] ) "color-mix()"
+    , Space
+    , Str "for"
+    , Space
+    , Str "HTML/CSS"
+    , Space
+    , Str "and"
+    , Space
+    , Code ( "" , [] , [] ) "color.mix()"
+    , Space
+    , Str "block"
+    , Space
+    , Str "fills"
+    , Space
+    , Str "for"
+    , Space
+    , Str "Typst."
+    ]
+, Header
+    3
+    ( "tinting-pfa-bg-colormediumvioletred40white" , [] , [] )
+    [ Str "Tinting"
+    , Space
+    , Str "("
+    , Code
+        ( "" , [] , [] ) "pfa-bg-color=\"MediumVioletRed!40!white\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "a"
+    , Space
+    , Str "base"
+    , Space
+    , Str "background"
+    , Space
+    , Str "color"
+    , Space
+    , Str "can"
+    , Space
+    , Str "be"
+    , Space
+    , Str "tinted"
+    , Space
+    , Str "by"
+    , Space
+    , Str "mixing"
+    , Space
+    , Str "it"
+    , Space
+    , Str "with"
+    , Space
+    , Str "a"
+    , Space
+    , Str "specified"
+    , Space
+    , Str "percentage"
+    , Space
+    , Str "of"
+    , Space
+    , Str "white."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"MediumVioletRed!40!white\" pfa-padding=\"1em\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style"
+        , "background-color: color-mix(in srgb, #C71585 40%, #FFFFFF);padding: 1em;"
+        )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "shading-pfa-bg-colormediumvioletred80black" , [] , [] )
+    [ Str "Shading"
+    , Space
+    , Str "("
+    , Code
+        ( "" , [] , [] ) "pfa-bg-color=\"MediumVioletRed!80!black\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "a"
+    , Space
+    , Str "base"
+    , Space
+    , Str "background"
+    , Space
+    , Str "color"
+    , Space
+    , Str "can"
+    , Space
+    , Str "be"
+    , Space
+    , Str "shaded"
+    , Space
+    , Str "by"
+    , Space
+    , Str "mixing"
+    , Space
+    , Str "it"
+    , Space
+    , Str "with"
+    , Space
+    , Str "a"
+    , Space
+    , Str "specified"
+    , Space
+    , Str "percentage"
+    , Space
+    , Str "of"
+    , Space
+    , Str "black."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"MediumVioletRed!80!black\" pfa-padding=\"1em\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style"
+        , "background-color: color-mix(in srgb, #C71585 80%, #000000);padding: 1em;"
+        )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "dual-color-blending-pfa-bg-colorroyalblue50forestgreen"
+    , []
+    , []
+    )
+    [ Str "Dual-Color"
+    , Space
+    , Str "Blending"
+    , Space
+    , Str "("
+    , Code
+        ( "" , [] , [] ) "pfa-bg-color=\"RoyalBlue!50!ForestGreen\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "two"
+    , Space
+    , Str "distinct"
+    , Space
+    , Str "background"
+    , Space
+    , Str "colors"
+    , Space
+    , Str "can"
+    , Space
+    , Str "be"
+    , Space
+    , Str "blended"
+    , Space
+    , Str "together"
+    , Space
+    , Str "at"
+    , Space
+    , Str "a"
+    , Space
+    , Str "given"
+    , Space
+    , Str "ratio."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"RoyalBlue!50!ForestGreen\" pfa-padding=\"1em\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style"
+        , "background-color: color-mix(in srgb, #4169E1 50%, #228B22);padding: 1em;"
+        )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    2
+    ( "framework-specific-palette-targeting" , [] , [] )
+    [ Str "Framework-Specific"
+    , Space
+    , Str "Palette"
+    , Space
+    , Str "Targeting"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "the"
+    , Space
+    , Str "isolation"
+    , Space
+    , Str "and"
+    , Space
+    , Str "execution"
+    , Space
+    , Str "of"
+    , Space
+    , Str "engine-specific"
+    , Space
+    , Str "color"
+    , Space
+    , Str "dictionaries"
+    , Space
+    , Str "to"
+    , Space
+    , Str "prevent"
+    , Space
+    , Str "cross-standard"
+    , Space
+    , Str "naming"
+    , Space
+    , Str "collisions."
+    ]
+, Header
+    3
+    ( "typst-named-palette-override-pfa-bg-colortypstmaroon"
+    , []
+    , []
+    )
+    [ Str "Typst"
+    , Space
+    , Str "Named"
+    , Space
+    , Str "Palette"
+    , Space
+    , Str "Override"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"typstmaroon\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "a"
+    , Space
+    , Code ( "" , [] , [] ) "typst-"
+    , Space
+    , Str "prefixed"
+    , Space
+    , Str "color"
+    , Space
+    , Str "string"
+    , Space
+    , Str "correctly"
+    , Space
+    , Str "bypasses"
+    , Space
+    , Str "the"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "CSS"
+    , Space
+    , Str "color"
+    , Space
+    , Str "definition"
+    , Space
+    , Str "(where"
+    , Space
+    , Str "CSS"
+    , Space
+    , Str "maroon"
+    , Space
+    , Str "is"
+    , Space
+    , Code ( "" , [] , [] ) "#800000"
+    , Str ")"
+    , Space
+    , Str "and"
+    , Space
+    , Str "forces"
+    , Space
+    , Str "the"
+    , Space
+    , Str "specific"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "framework"
+    , Space
+    , Str "hex"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "#85144B"
+    , Str ")"
+    , Space
+    , Str "safely"
+    , Space
+    , Str "across"
+    , Space
+    , Str "all"
+    , Space
+    , Str "compiler"
+    , Space
+    , Str "targets."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"typstmaroon\" pfa-padding=\"1em\" pfa-color=\"white\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style"
+        , "color: #FFFFFF;background-color: #85144B;padding: 1em;"
+        )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+]

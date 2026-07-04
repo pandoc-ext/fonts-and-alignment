@@ -1,0 +1,860 @@
+[ Header
+    2
+    ( "standard-background-color-specifications" , [] , [] )
+    [ Str "Standard"
+    , Space
+    , Str "Background"
+    , Space
+    , Str "Color"
+    , Space
+    , Str "Specifications"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "the"
+    , Space
+    , Str "filter"
+    , Space
+    , Str "processes"
+    , Space
+    , Str "named"
+    , Space
+    , Str "CSS/SVG"
+    , Space
+    , Str "keywords"
+    , Space
+    , Str "and"
+    , Space
+    , Str "explicit"
+    , Space
+    , Str "hexadecimal"
+    , Space
+    , Str "declarations"
+    , Space
+    , Str "for"
+    , Space
+    , Str "background"
+    , Space
+    , Str "fills"
+    , Space
+    , Str "on"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "Bracketed"
+    , Space
+    , Str "Spans."
+    , Space
+    , Str "We"
+    , Space
+    , Str "include"
+    , Space
+    , Code ( "" , [] , [] ) "pfa-padding=\"0.2em 0.4em\""
+    , Space
+    , Str "to"
+    , Space
+    , Str "ensure"
+    , Space
+    , Str "the"
+    , Space
+    , Str "background"
+    , Space
+    , Str "fill"
+    , Space
+    , Str "renders"
+    , Space
+    , Str "with"
+    , Space
+    , Str "proper"
+    , Space
+    , Str "spacing"
+    , Space
+    , Str "around"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "text."
+    ]
+, Header
+    3
+    ( "named-csssvg-keywords-pfa-bg-colormediumvioletred"
+    , []
+    , []
+    )
+    [ Str "Named"
+    , Space
+    , Str "CSS/SVG"
+    , Space
+    , Str "Keywords"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"mediumvioletred\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "named"
+    , Space
+    , Str "color"
+    , Space
+    , Str "keywords"
+    , Space
+    , Str "are"
+    , Space
+    , Str "correctly"
+    , Space
+    , Str "mapped"
+    , Space
+    , Str "to"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "background"
+    , Space
+    , Str "highlights."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"mediumvioletred\" pfa-padding=\"0.2em 0.4em\"} over the lazy dog."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "background-color: #C71585;padding: 0.2em 0.4em;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
+, Header
+    3
+    ( "complete-hexadecimal-declaration-pfa-bg-color239dad"
+    , []
+    , []
+    )
+    [ Str "Complete"
+    , Space
+    , Str "Hexadecimal"
+    , Space
+    , Str "Declaration"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"#239dad\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "full"
+    , Space
+    , Str "6-character"
+    , Space
+    , Str "hex"
+    , Space
+    , Str "values"
+    , Space
+    , Str "output"
+    , Space
+    , Str "the"
+    , Space
+    , Str "expected"
+    , Space
+    , Str "background"
+    , Space
+    , Str "highlight."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"#239dad\" pfa-padding=\"0.2em 0.4em\"} over the lazy dog."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "background-color: #239DAD;padding: 0.2em 0.4em;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
+, Header
+    3
+    ( "shorthand-hexadecimal-declaration-pfa-bg-colorf00"
+    , []
+    , []
+    )
+    [ Str "Shorthand"
+    , Space
+    , Str "Hexadecimal"
+    , Space
+    , Str "Declaration"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"#F00\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "3-character"
+    , Space
+    , Str "hex"
+    , Space
+    , Str "strings"
+    , Space
+    , Str "are"
+    , Space
+    , Str "expanded"
+    , Space
+    , Str "to"
+    , Space
+    , Str "their"
+    , Space
+    , Str "6-character"
+    , Space
+    , Str "equivalent"
+    , Space
+    , Str "and"
+    , Space
+    , Str "applied"
+    , Space
+    , Str "as"
+    , Space
+    , Str "an"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "fill."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"#F00\" pfa-padding=\"0.2em 0.4em\"} over the lazy dog."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "background-color: #FF0000;padding: 0.2em 0.4em;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
+, Header
+    2
+    ( "string-normalization-and-sanitation" , [] , [] )
+    [ Str "String"
+    , Space
+    , Str "Normalization"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Sanitation"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "tests"
+    , Space
+    , Str "the"
+    , Space
+    , Str "filter\8217s"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "token"
+    , Space
+    , Str "validation,"
+    , Space
+    , Str "ensuring"
+    , Space
+    , Str "that"
+    , Space
+    , Str "variations"
+    , Space
+    , Str "in"
+    , Space
+    , Str "string"
+    , Space
+    , Str "formatting"
+    , Space
+    , Str "are"
+    , Space
+    , Str "normalized."
+    ]
+, Header
+    3
+    ( "spaces-and-mixed-case-pfa-bg-colormedium-violet-red"
+    , []
+    , []
+    )
+    [ Str "Spaces"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Mixed"
+    , Space
+    , Str "Case"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"medium violet red\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "the"
+    , Space
+    , Str "filter"
+    , Space
+    , Str "strips"
+    , Space
+    , Str "internal"
+    , Space
+    , Str "spaces"
+    , Space
+    , Str "and"
+    , Space
+    , Str "standardizes"
+    , Space
+    , Str "character"
+    , Space
+    , Str "casing."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"medium violet red\" pfa-padding=\"0.2em 0.4em\"} over the lazy dog.\n"
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "background-color: #C71585;padding: 0.2em 0.4em;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
+, Header
+    3
+    ( "underscores-and-uppercase-pfa-bg-colormedium_violet_red"
+    , []
+    , []
+    )
+    [ Str "Underscores"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Uppercase"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"MEDIUM_VIOLET_RED\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "snake_case"
+    , Space
+    , Str "underscore"
+    , Space
+    , Str "patterns"
+    , Space
+    , Str "are"
+    , Space
+    , Str "removed"
+    , Space
+    , Str "during"
+    , Space
+    , Str "token"
+    , Space
+    , Str "resolution."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"MEDIUM_VIOLET_RED\" pfa-padding=\"0.2em 0.4em\"} over the lazy dog."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "background-color: #C71585;padding: 0.2em 0.4em;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
+, Header
+    3
+    ( "hexadecimal-without-hash-prefix-pfa-bg-color191970"
+    , []
+    , []
+    )
+    [ Str "Hexadecimal"
+    , Space
+    , Str "without"
+    , Space
+    , Str "Hash"
+    , Space
+    , Str "Prefix"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"191970\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "raw"
+    , Space
+    , Str "6-character"
+    , Space
+    , Str "alphanumeric"
+    , Space
+    , Str "hex"
+    , Space
+    , Str "strings"
+    , Space
+    , Str "resolve"
+    , Space
+    , Str "safely."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"191970\" pfa-padding=\"0.2em 0.4em\"} over the lazy dog."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "background-color: #191970;padding: 0.2em 0.4em;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
+, Header
+    2
+    ( "background-color-mixtures-latex-syntax-engine"
+    , []
+    , []
+    )
+    [ Str "Background"
+    , Space
+    , Str "Color"
+    , Space
+    , Str "Mixtures"
+    , Space
+    , Str "(LaTeX"
+    , Space
+    , Str "Syntax"
+    , Space
+    , Str "Engine)"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "specifies"
+    , Space
+    , Str "dynamic"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "color"
+    , Space
+    , Str "mixing"
+    , Space
+    , Str "for"
+    , Space
+    , Str "backgrounds"
+    , Space
+    , Str "using"
+    , Space
+    , Str "exclamation"
+    , Space
+    , Str "marks"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "!"
+    , Str ")."
+    ]
+, Header
+    3
+    ( "tinting-pfa-bg-colormediumvioletred40white" , [] , [] )
+    [ Str "Tinting"
+    , Space
+    , Str "("
+    , Code
+        ( "" , [] , [] ) "pfa-bg-color=\"MediumVioletRed!40!white\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "background"
+    , Space
+    , Str "mixing"
+    , Space
+    , Str "with"
+    , Space
+    , Str "white"
+    , Space
+    , Str "components"
+    , Space
+    , Str "to"
+    , Space
+    , Str "execute"
+    , Space
+    , Str "relative"
+    , Space
+    , Str "tinting"
+    , Space
+    , Str "effects."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"MediumVioletRed!40!white\" pfa-padding=\"0.2em 0.4em\"} over the lazy dog."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "background-color: color-mix(in srgb, #C71585 40%, #FFFFFF);padding: 0.2em 0.4em;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
+, Header
+    3
+    ( "shading-pfa-bg-colormediumvioletred80black" , [] , [] )
+    [ Str "Shading"
+    , Space
+    , Str "("
+    , Code
+        ( "" , [] , [] ) "pfa-bg-color=\"MediumVioletRed!80!black\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "background"
+    , Space
+    , Str "mixing"
+    , Space
+    , Str "with"
+    , Space
+    , Str "black"
+    , Space
+    , Str "components"
+    , Space
+    , Str "to"
+    , Space
+    , Str "execute"
+    , Space
+    , Str "shading"
+    , Space
+    , Str "properties."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"MediumVioletRed!80!black\" pfa-padding=\"0.2em 0.4em\"} over the lazy dog."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "background-color: color-mix(in srgb, #C71585 80%, #000000);padding: 0.2em 0.4em;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
+, Header
+    3
+    ( "dual-color-blending-pfa-bg-colorroyalblue50forestgreen"
+    , []
+    , []
+    )
+    [ Str "Dual-Color"
+    , Space
+    , Str "Blending"
+    , Space
+    , Str "("
+    , Code
+        ( "" , [] , [] ) "pfa-bg-color=\"RoyalBlue!50!ForestGreen\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "cross-compilation"
+    , Space
+    , Str "execution"
+    , Space
+    , Str "when"
+    , Space
+    , Str "blending"
+    , Space
+    , Str "two"
+    , Space
+    , Str "named"
+    , Space
+    , Str "colors"
+    , Space
+    , Str "for"
+    , Space
+    , Str "the"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "background"
+    , Space
+    , Str "fill."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"RoyalBlue!50!ForestGreen\" pfa-padding=\"0.2em 0.4em\"} over the lazy dog."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "background-color: color-mix(in srgb, #4169E1 50%, #228B22);padding: 0.2em 0.4em;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
+, Header
+    2
+    ( "framework-specific-palette-targeting" , [] , [] )
+    [ Str "Framework-Specific"
+    , Space
+    , Str "Palette"
+    , Space
+    , Str "Targeting"
+    ]
+, Header
+    3
+    ( "typst-named-palette-override-pfa-bg-colortypstmaroon"
+    , []
+    , []
+    )
+    [ Str "Typst"
+    , Space
+    , Str "Named"
+    , Space
+    , Str "Palette"
+    , Space
+    , Str "Override"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-color=\"typstmaroon\""
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "a"
+    , Space
+    , Code ( "" , [] , [] ) "typst-"
+    , Space
+    , Str "prefixed"
+    , Space
+    , Str "color"
+    , Space
+    , Str "string"
+    , Space
+    , Str "correctly"
+    , Space
+    , Str "uses"
+    , Space
+    , Str "the"
+    , Space
+    , Str "Typst"
+    , Space
+    , Str "framework"
+    , Space
+    , Str "hex"
+    , Space
+    , Str "mapping"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "#85144B"
+    , Str ")"
+    , Space
+    , Str "as"
+    , Space
+    , Str "an"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "background."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"typstmaroon\" pfa-padding=\"0.2em 0.4em\" pfa-color=\"white\"} over the lazy dog."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "color: #FFFFFF;background-color: #85144B;padding: 0.2em 0.4em;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
+]

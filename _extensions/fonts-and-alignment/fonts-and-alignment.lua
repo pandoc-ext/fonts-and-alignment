@@ -7,8 +7,11 @@
 --- @author    Nandakumar Chandrasekhar (nandac)
 --- @copyright © 2026 Nandakumar Chandrasekhar
 --- @license   MIT - see LICENSE for details
---- @version   3.5.4
---- @release   2026-06-24
+--- @version   3.0.0
+--- @release   2026-07-04
+---
+--- @note      LaTeX Block Backgrounds and Padding (pfa-bg-color / pfa-padding) require
+---            \usepackage[most]{tcolorbox} in your document preamble.
 
 PANDOC_VERSION:must_be_at_least('3.2')
 
@@ -33,8 +36,6 @@ end
 -- ==============================================================================
 -- CONFIGURATION STATE (Clean String Fallbacks)
 -- ==============================================================================
--- Default system-level font family mappings used when compiling for Typst targets.
--- These values are overwritten dynamically if alternative fonts are declared in the YAML document metadata.
 local typst_fonts = {
   serif = "Libertinus Serif",
   sans  = "DejaVu Sans Mono",
@@ -45,161 +46,69 @@ local typst_fonts = {
 -- SECTION 1: DATA DICTIONARIES (Constants Namespace)
 -- ==============================================================================
 
--- Dictionary mapping standard W3C CSS color keywords to their corresponding 6-character hex representations.
--- Used to normalize color keywords across backends that do not natively support named web colors.
 local css_colors = {
-  aliceblue            = 'F0F8FF',
-  antiquewhite         = 'FAEBD7',
-  aqua                 = '00FFFF',
-  aquamarine           = '7FFFD4',
-  azure                = 'F0FFFF',
-  beige                = 'F5F5DC',
-  bisque               = 'FFE4C4',
-  black                = '000000',
-  blanchedalmond       = 'FFEBCD',
-  blue                 = '0000FF',
-  blueviolet           = '8A2BE2',
-  brown                = 'A52A2A',
-  burlywood            = 'DEB887',
-  cadetblue            = '5F9EA0',
-  chartreuse           = '7FFF00',
-  chocolate            = 'D2691E',
-  coral                = 'FF7F50',
-  cornflowerblue       = '6495ED',
-  cornsilk             = 'FFF8DC',
-  crimson              = 'DC143C',
-  cyan                 = '00FFFF',
-  darkblue             = '00008B',
-  darkcyan             = '008B8B',
-  darkgoldenrod        = 'B8860B',
-  darkgray             = 'A9A9A9',
-  darkgreen            = '006400',
-  darkgrey             = 'A9A9A9',
-  darkkhaki            = 'BDB76B',
-  darkmagenta          = '8B008B',
-  darkolivegreen       = '556B2F',
-  darkorange           = 'FF8C00',
-  darkorchid           = '9932CC',
-  darkred              = '8B0000',
-  darksalmon           = 'E9967A',
-  darkseagreen         = '8FBC8F',
-  darkslateblue        = '483D8B',
-  darkslategray       = '2F4F4F',
-  darkslategrey       = '2F4F4F',
-  darkturquoise        = '00CED1',
-  darkviolet           = '9400D3',
-  deeppink             = 'FF1493',
-  deepskyblue          = '00BFFF',
-  dimgray              = '696969',
-  dimgrey              = '696969',
-  dodgerblue           = '1E90FF',
-  firebrick            = 'B22222',
-  floralwhite          = 'FFFAF0',
-  forestgreen          = '228B22',
-  fuchsia              = 'FF00FF',
-  gainsboro            = 'DCDCDC',
-  ghostwhite           = 'F8F8FF',
-  gold                 = 'FFD700',
-  goldenrod            = 'DAA520',
-  gray                 = '808080',
-  green                = '008000',
-  greenyellow          = 'ADFF2F',
-  grey                 = '808080',
-  honeydew             = 'F0FFF0',
-  hotpink              = 'FF69B4',
-  indianred            = 'CD5C5C',
-  indigo               = '4B0082',
-  ivory                = 'FFFFF0',
-  khaki                = 'F0E68C',
-  lavender             = 'E6E6FA',
-  lavenderblush        = 'FFF0F5',
-  lawngreen            = '7CFC00',
-  lemonchiffon         = 'FFFACD',
-  lightblue            = 'ADD8E6',
-  lightcoral           = 'F08080',
-  lightcyan            = 'E0FFFF',
-  lightgoldenrodyellow = 'FAFAD2',
-  lightgray            = 'D3D3D3',
-  lightgreen           = '90EE90',
-  lightgrey            = 'D3D3D3',
-  lightpink            = 'FFB6C1',
-  lightsalmon          = 'FFA07A',
-  lightseagreen        = '20B2AA',
-  lightskyblue         = '87CEFA',
-  lightslate_gray      = '778899',
-  lightslate_grey      = '778899',
-  lightsteelblue       = 'B0C4DE',
-  lightyellow          = 'FFFFE0',
-  lime                 = '00FF00',
-  limegreen            = '32CD32',
-  linen                = 'FAF0E6',
-  magenta              = 'FF00FF',
-  maroon               = '800000',
-  mediumaquamarine     = '66CDAA',
-  mediumblue           = '0000CD',
-  mediumorchid         = 'BA55D3',
-  mediumpurple         = '9370DB',
-  mediumseagreen       = '3CB371',
-  mediumslate_blue     = '7B68EE',
-  mediumspringgreen    = '00FA9A',
-  mediumturquoise      = '48D1CC',
-  mediumvioletred      = 'C71585',
-  midnightblue         = '191970',
-  mintcream            = 'F5FFFA',
-  mistyrose            = 'FFE4E1',
-  moccasin             = 'FFE4B5',
-  navajowhite          = 'FFDEAD',
-  navy                 = '000080',
-  oldlace              = 'FDF5E6',
-  olive                = '808000',
-  olivedrab            = '6B8E23',
-  orange               = 'FFA500',
-  orangered            = 'FF4500',
-  orchid               = 'DA70D6',
-  palegoldenrod        = 'EEE8AA',
-  palegreen            = '98FB98',
-  paleturquoise        = 'AFEEEE',
-  palevioletred        = 'DB7093',
-  papayawhip           = 'FFEFD5',
-  peachpuff            = 'FFDAB9',
-  peru                 = 'CD853F',
-  pink                 = 'FFC0CB',
-  plum                 = 'DDA0DD',
-  powderblue           = 'B0E0E6',
-  purple               = '800080',
-  rebeccapurple        = '663399',
-  red                  = 'FF0000',
-  rosybrown            = 'BC8F8F',
-  royalblue            = '4169E1',
-  saddlebrown          = '8B4513',
-  salmon               = 'FA8072',
-  sandybrown           = 'F4A460',
-  seagreen             = '2E8B57',
-  seashell             = 'FFF5EE',
-  sienna               = 'A0522D',
-  silver               = 'C0C0C0',
-  skyblue              = '87CEEB',
-  slate_blue           = '6A5ACD',
-  slategray            = '708090',
-  slategrey            = '708090',
-  snow                 = 'FFFAFA',
-  springgreen          = '00FF7F',
-  steelblue            = '4682B4',
-  tan                  = 'D2B48C',
-  teal                 = '008000',
-  thistle              = 'D8BFD8',
-  tomato               = 'FF6347',
-  turquoise            = '40E0D0',
-  violet               = 'EE82EE',
-  wheat                = 'F5DEB3',
-  white                = 'FFFFFF',
-  whitesmoke           = 'F5F5F5',
-  yellow               = 'FFFF00',
+  aliceblue            = 'F0F8FF', antiquewhite         = 'FAEBD7', aqua                 = '00FFFF',
+  aquamarine           = '7FFFD4', azure                = 'F0FFFF', beige                = 'F5F5DC',
+  bisque               = 'FFE4C4', black                = '000000', blanchedalmond       = 'FFEBCD',
+  blue                 = '0000FF', blueviolet           = '8A2BE2', brown                = 'A52A2A',
+  burlywood            = 'DEB887', cadetblue            = '5F9EA0', chartreuse           = '7FFF00',
+  chocolate            = 'D2691E', coral                = 'FF7F50', cornflowerblue       = '6495ED',
+  cornsilk             = 'FFF8DC', crimson              = 'DC143C', cyan                 = '00FFFF',
+  darkblue             = '00008B', darkcyan             = '008B8B', darkgoldenrod        = 'B8860B',
+  darkgray             = 'A9A9A9', darkgreen            = '006400', darkgrey             = 'A9A9A9',
+  darkkhaki            = 'BDB76B', darkmagenta          = '8B008B', darkolivegreen       = '556B2F',
+  darkorange           = 'FF8C00', darkorchid           = '9932CC', darkred              = '8B0000',
+  darksalmon           = 'E9967A', darkseagreen         = '8FBC8F', darkslateblue        = '483D8B',
+  darkslategray        = '2F4F4F', darkslategrey        = '2F4F4F', darkturquoise        = '00CED1',
+  darkviolet           = '9400D3', deeppink             = 'FF1493', deepskyblue          = '00BFFF',
+  dimgray              = '696969', dimgrey              = '696969', dodgerblue           = '1E90FF',
+  firebrick            = 'B22222', floralwhite          = 'FFFAF0', forestgreen          = '228B22',
+  fuchsia              = 'FF00FF', gainsboro            = 'DCDCDC', ghostwhite           = 'F8F8FF',
+  gold                 = 'FFD700', goldenrod            = 'DAA520', gray                 = '808080',
+  green                = '008000', greenyellow          = 'ADFF2F', grey                 = '808080',
+  honeydew             = 'F0FFF0', hotpink              = 'FF69B4', indianred            = 'CD5C5C',
+  indigo               = '4B0082', ivory                = 'FFFFF0', khaki                = 'F0E68C',
+  lavender             = 'E6E6FA', lavenderblush        = 'FFF0F5', lawngreen            = '7CFC00',
+  lemonchiffon         = 'FFFACD', lightblue            = 'ADD8E6', lightcoral           = 'F08080',
+  lightcyan            = 'E0FFFF', lightgoldenrodyellow = 'FAFAD2', lightgray            = 'D3D3D3',
+  lightgreen           = '90EE90', lightgrey            = 'D3D3D3', lightpink            = 'FFB6C1',
+  lightsalmon          = 'FFA07A', lightseagreen        = '20B2AA', lightskyblue         = '87CEFA',
+  lightslate_gray      = '778899', lightslate_grey      = '778899', lightsteelblue       = 'B0C4DE',
+  lightyellow          = 'FFFFE0', lime                 = '00FF00', limegreen            = '32CD32',
+  linen                = 'FAF0E6', magenta              = 'FF00FF', maroon               = '800000',
+  mediumaquamarine     = '66CDAA', mediumblue           = '0000CD', mediumorchid         = 'BA55D3',
+  mediumpurple         = '9370DB', mediumseagreen       = '3CB371', mediumslate_blue     = '7B68EE',
+  mediumspringgreen    = '00FA9A', mediumturquoise      = '48D1CC', mediumvioletred      = 'C71585',
+  midnightblue         = '191970', mintcream            = 'F5FFFA', mistyrose            = 'FFE4E1',
+  moccasin             = 'FFE4B5', navajowhite          = 'FFDEAD', navy                 = '000080',
+  oldlace              = 'FDF5E6', olive                = '808000', olivedrab            = '6B8E23',
+  orange               = 'FFA500', orangered            = 'FF4500', orchid               = 'DA70D6',
+  palegoldenrod        = 'EEE8AA', palegreen            = '98FB98', paleturquoise        = 'AFEEEE',
+  palevioletred        = 'DB7093', papayawhip           = 'FFEFD5', peachpuff            = 'FFDAB9',
+  peru                 = 'CD853F', pink                 = 'FFC0CB', plum                 = 'DDA0DD',
+  powderblue           = 'B0E0E6', purple               = '800080', rebeccapurple        = '663399',
+  red                  = 'FF0000', rosybrown            = 'BC8F8F', royalblue            = '4169E1',
+  saddlebrown          = '8B4513', salmon               = 'FA8072', sandybrown           = 'F4A460',
+  seagreen             = '2E8B57', seashell             = 'FFF5EE', sienna               = 'A0522D',
+  silver               = 'C0C0C0', skyblue              = '87CEEB', slate_blue           = '6A5ACD',
+  slategray            = '708090', slategrey            = '708090', snow                 = 'FFFAFA',
+  springgreen          = '00FF7F', steelblue            = '4682B4', tan                  = 'D2B48C',
+  teal                 = '008000', thistle              = 'D8BFD8', tomato               = 'FF6347',
+  turquoise            = '40E0D0', violet               = 'EE82EE', wheat                = 'F5DEB3',
+  white                = 'FFFFFF', whitesmoke           = 'F5F5F5', yellow               = 'FFFF00',
   yellowgreen          = '9ACD32'
 }
 
--- Dictionary mapping the taxonomy class definitions to native LaTeX typographic commands.
--- Format: ['pfa-class'] = { 'inline_macro_command', 'block_switch_or_environment' }
+local typst_palette = {
+  typstblack   = '000000', typstgray    = 'AAAAAA', typstgrey    = 'AAAAAA',
+  typstsilver  = 'DDDDDD', typstwhite   = 'FFFFFF', typstnavy    = '001F3F',
+  typstblue    = '0074D9', typstaqua    = '7FDBFF', typstteal    = '39CCCC',
+  typsteastern = '239DAD', typstpurple  = 'B10DC9', typstfuchsia = 'F012BE',
+  typstmaroon  = '85144B', typstred     = 'FF4136', typstorange  = 'FF851B',
+  typstyellow  = 'FFDC00', typstolive   = '3D9970', typstgreen   = '2ECC40',
+  typstlime    = '01FF70'
+}
+
 local latex_font_styles = {
   ['pfa-weight-bold']     = { 'textbf',     'bfseries'   },
   ['pfa-weight-medium']   = { 'textmd',     'mdseries'   },
@@ -214,7 +123,6 @@ local latex_font_styles = {
   ['pfa-family-serif']    = { 'textrm',     'rmfamily'   }
 }
 
--- Dictionary defining the explicit 9-point linear absolute text metrics for LaTeX targets.
 local latex_font_sizes = {
   ['pfa-size-3xs']    = { 'tiny',         'tiny'         },
   ['pfa-size-2xs']    = { 'scriptsize',   'scriptsize'   },
@@ -227,15 +135,12 @@ local latex_font_sizes = {
   ['pfa-size-3xl']    = { 'huge',         'huge'         }
 }
 
--- Mapping definitions routing structural alignment parameters to native LaTeX layout wrappers.
 local latex_text_alignments = {
   ['pfa-align-left']   = { nil, 'raggedright' },
   ['pfa-align-center'] = { nil, 'centering'   },
   ['pfa-align-right']  = { nil, 'raggedleft'  }
 }
 
--- Dictionary mapping the taxonomy class definitions to native Typst markup command boundaries.
--- Format: ['pfa-class'] = { { 'inline_open', 'inline_close' }, { 'block_open', 'block_close' } }
 local typst_font_styles = {
   ['pfa-weight-bold']     = { {'#text(weight: 700)[', ']'}, {'#set text(weight: 700)\n', ''} },
   ['pfa-weight-medium']   = { {'#text(weight: 500)[', ']'}, {'#set text(weight: 500)\n', ''} },
@@ -247,8 +152,6 @@ local typst_font_styles = {
   ['pfa-style-smallcaps'] = { {'#smallcaps[', ']'}, {'#show text: smallcaps\n', ''} }
 }
 
--- Dictionary defining the explicit 9-point linear text metrics and line-height mappings for Typst targets.
--- Includes automatic proportional adjustments to leading constraints when font bounds scale aggressively.
 local typst_font_sizes = {
   ['pfa-size-3xs']    = { {'#text(size: 0.5em)[', ']'}, {'#set text(size: 0.5em)\n#set par(leading: 0.65em)\n', ''} },
   ['pfa-size-2xs']    = { {'#text(size: 0.6667em)[', ']'}, {'#set text(size: 0.6667em)\n#set par(leading: 0.65em)\n', ''} },
@@ -261,14 +164,12 @@ local typst_font_sizes = {
   ['pfa-size-3xl']    = { {'#text(size: 2.0736em)[', ']'}, {'#set text(size: 2.0736em)\n#set par(leading: 0.65em)\n', ''} }
 }
 
--- Mapping definitions routing structural alignment parameters to native Typst block alignment wrappers.
 local typst_text_alignments = {
   ['pfa-align-left']   = { nil, {'#align(left)[\n', ']\n'} },
   ['pfa-align-center'] = { nil, {'#align(center)[\n', ']\n'} },
   ['pfa-align-right']  = { nil, {'#align(right)[\n', ']\n'} }
 }
 
--- Fast-lookup table to accelerate identification of character mutation utility classes.
 local framework_casings = {
   ['pfa-case-upper'] = true,
   ['pfa-case-lower'] = true
@@ -277,17 +178,9 @@ local framework_casings = {
 -- ==============================================================================
 -- SECTION 2: INITIALIZATION & UTILITIES
 -- ==============================================================================
--- Map Pandoc node variants directly to their platform-specific Raw construction commands.
 local raw_code_function = { Span = pandoc.RawInline, Div = pandoc.RawBlock }
-
--- Global initialization table for processed LaTeX command templates.
 local latex_cmd_for_tags = { Span = {}, Div = {} }
 
---- Dynamically pre-compiles internal lookup dictionaries into normalized syntactic LaTeX code segments.
---- This prevents hot-path string building actions during AST structural walks.
---- @param styles_list table Master configuration style reference array maps.
---- @param span_end_code boolean Declares if inline elements require terminal enclosing bracing characters.
---- @param div_is_env boolean Declares if block nodes should process as complex structural LaTeX environments.
 local function create_latex_codes(styles_list, span_end_code, div_is_env)
   for class, latex_codes in pairs(styles_list) do
     if next(latex_codes) then
@@ -302,38 +195,25 @@ local function create_latex_codes(styles_list, span_end_code, div_is_env)
   end
 end
 
--- Pre-compile style configuration states systematically
 create_latex_codes(latex_font_styles, true, false)
 create_latex_codes(latex_font_sizes, false, false)
 create_latex_codes(latex_text_alignments, false, true)
 
--- Construct an absolute global identification dictionary of all valid framework taxonomy tokens.
--- This ensures unmapped or unrecognized `pfa-*` user inputs are trapped cleanly.
 local known_pfa_classes = {}
 local constant_dictionaries = {
-  latex_font_styles,
-  latex_font_sizes,
-  latex_text_alignments,
-  typst_font_styles,
-  typst_font_sizes,
-  typst_text_alignments,
+  latex_font_styles, latex_font_sizes, latex_text_alignments,
+  typst_font_styles, typst_font_sizes, typst_text_alignments,
   framework_casings
 }
 
 for _, dict in ipairs(constant_dictionaries) do
-  for class_name in pairs(dict) do
-    known_pfa_classes[class_name] = true
-  end
+  for class_name in pairs(dict) do known_pfa_classes[class_name] = true end
 end
 
 -- ==============================================================================
 -- SECTION 3: CORE LOGIC HANDLERS
 -- ==============================================================================
 
---- Intercepts and executes deep structural character casing conversions across elements.
---- Uses localized walking sequences to mutate underlying text nodes without damaging layout nodes.
---- @param elem table The current structural Pandoc node context.
---- @param tag string Identifies node depth level (either 'Span' or 'Div').
 local function apply_text_casing(elem, tag)
   local transform_func
   if elem.classes:includes('pfa-case-upper') then
@@ -343,35 +223,24 @@ local function apply_text_casing(elem, tag)
   end
 
   if transform_func then
-    -- Clean target casing tokens instantly to keep writer environments sterile
     for i = #elem.classes, 1, -1 do
       if elem.classes[i] == 'pfa-case-upper' or elem.classes[i] == 'pfa-case-lower' then
         table.remove(elem.classes, i)
       end
     end
-    -- Route recursive string walks using node depth targets
     return (tag == 'Div') and pandoc.walk_block(elem, { Str = transform_func }) or pandoc.walk_inline(elem, { Str = transform_func })
   end
   return elem
 end
 
---- Iterates across structural element configurations, applying standardized layout transformations.
---- Consumes active class configuration tokens and emits targeted engine code strings.
---- @param elem table The active structural node block context.
---- @param tag string Node context classification (Span/Div).
---- @param raw function Target constructor pointer referencing raw generation helpers.
---- @param is_latex boolean Runtime execution flag validating LaTeX compilation passes.
---- @param is_typst boolean Runtime execution flag validating Typst compilation passes.
 local function apply_standard_classes(elem, tag, raw, is_latex, is_typst)
   local code_for_class = latex_cmd_for_tags[tag]
 
-  -- Process the class list array in reverse sequence to guarantee deletion modifications don't corrupt offsets
   for i = #elem.classes, 1, -1 do
     local class_name = elem.classes[i]
     local consumed = false
 
     if is_typst then
-      -- Target Typst custom font family dynamic definitions
       if class_name:match('^pfa%-family%-') then
         local font_family = class_name:match('pfa%-family%-(.+)')
         local font_target = typst_fonts[font_family]
@@ -385,7 +254,6 @@ local function apply_standard_classes(elem, tag, raw, is_latex, is_typst)
         end
         consumed = true
       else
-        -- Target static lookup dictionary arrays for Typst configurations
         local target_codes = typst_font_styles[class_name] or typst_font_sizes[class_name] or typst_text_alignments[class_name]
         if target_codes then
           local codes = target_codes[tag == 'Span' and 1 or 2]
@@ -397,17 +265,14 @@ local function apply_standard_classes(elem, tag, raw, is_latex, is_typst)
         end
       end
     elseif code_for_class[class_name] and is_latex then
-      -- Target pre-compiled static codes for LaTeX configurations
       local code = code_for_class[class_name]
       elem.content:insert(1, raw('latex', code[1]))
       if code[2] then elem.content:insert(raw('latex', code[2])) end
       consumed = true
     elseif class_name:match('^pfa%-') and not known_pfa_classes[class_name] then
-      -- Trap unidentified internal naming schemas and write clean tracking logs
       io.stderr:write('[fonts-and-alignment] Warning: Unrecognized class "' .. class_name .. '" on <' .. tag .. '>\n')
     end
 
-    -- Strip the consumed framework token completely so it doesn't pollute the downstream layout writers
     if consumed or (class_name:match('^pfa%-') and known_pfa_classes[class_name]) then
       table.remove(elem.classes, i)
     end
@@ -416,28 +281,25 @@ local function apply_standard_classes(elem, tag, raw, is_latex, is_typst)
 end
 
 -- ==============================================================================
--- SECTION 4: COLOR HANDLING (Unified Hex & LaTeX Exclamation Mixing)
+-- SECTION 4: BOX MODEL & COLOR HANDLING
 -- ==============================================================================
 
---- Resolves literal color string arguments down to definitive structured data entities.
---- Normalizes web keywords against standard color arrays and parses 3/6 character hex signatures.
---- @param input string Raw structural text argument extracted from metadata properties.
---- @return string|nil canonical_value Standardized hex notation with leading '#' character.
---- @return string|nil raw_hex Flat hex payload string without decoration blocks.
---- @return boolean is_hex Declares if character data evaluated to literal true-color hex elements.
 local function resolve_single_color(input)
-  -- Crucial: Strip any leading/trailing spaces or Windows carriage returns (\r) to safeguard string anchors
   local clean_input = input:match("^%s*(.-)%s*$")
   if not clean_input then return nil, nil, false end
 
   local clean_name = clean_input:lower():gsub('[^%w]', '')
+
+  if typst_palette[clean_name] then
+    local hex = typst_palette[clean_name]
+    return '#' .. hex, hex, true
+  end
   if css_colors[clean_name] then
     local hex = css_colors[clean_name]
     return '#' .. hex, hex, true
   end
 
   local raw_hex = clean_input:gsub('^#', '')
-  -- Safe: Enforces native Lua hexadecimal matching flags cleanly
   if raw_hex:match('^%x+$') then
     if #raw_hex == 6 then
       return '#' .. raw_hex:upper(), raw_hex:upper(), true
@@ -448,38 +310,25 @@ local function resolve_single_color(input)
     end
   end
 
-  if clean_input:match('^[a-zA-Z0-9%-]+$') then return clean_input, clean_input, false end
+  if clean_input:match('^[a-zA-Z%-]+$') then
+    error(string.format('\n\n[fonts-and-alignment] CRITICAL ERROR: Undefined color keyword "%s".\nColor must be a valid standard CSS keyword, a Hex code (e.g. #FF0000), or valid cross-platform mixing syntax.\nHalting compilation to prevent LaTeX engine crash.\n', clean_input))
+  end
+
   return nil, nil, false
 end
 
---- Processes cross-platform design property configurations using an unified multi-format strategy.
---- Translates LaTeX exclamation mix formatting codes directly into native compilation signatures.
---- @param input string Raw target attribute color parameters string array.
---- @param is_latex boolean Compilation destination tracking flag.
---- @param is_typst boolean Compilation destination tracking flag.
 local function resolve_color(input, is_latex, is_typst)
   if not input then return nil end
-  -- Clear cross-platform trailing spaces and carriage returns before executing any logic match passes
   input = input:match("^%s*(.-)%s*$")
   local is_html = not (is_latex or is_typst)
 
-  -- ----------------------------------------------------------------------------
-  -- TARGET: LATEX EXECUTIONS
-  -- ----------------------------------------------------------------------------
   if is_latex then
-    if input:find('!') then
-      return { value = input, type = "raw" }
-    end
+    if input:find('!') then return { value = input, type = "raw" } end
     local css_val, tex_val, is_hex = resolve_single_color(input)
-    if css_val then
-      return { value = tex_val, is_hex = is_hex, type = "standard" }
-    end
+    if css_val then return { value = tex_val, is_hex = is_hex, type = "standard" } end
     return { value = input, type = "raw" }
   end
 
-  -- ----------------------------------------------------------------------------
-  -- TARGET: TYPST EXECUTIONS
-  -- ----------------------------------------------------------------------------
   if is_typst then
     if input:find('!') then
       local c1, pct, c2 = input:match('^([^!]+)!(%d+)!?([^!]*)$')
@@ -493,15 +342,10 @@ local function resolve_color(input, is_latex, is_typst)
       end
     end
     local css_val, tex_val, is_hex = resolve_single_color(input)
-    if css_val then
-      return { value = tex_val, is_hex = is_hex, type = "standard" }
-    end
+    if css_val then return { value = tex_val, is_hex = is_hex, type = "standard" } end
     return { value = input, type = "raw" }
   end
 
-  -- ----------------------------------------------------------------------------
-  -- TARGET: HTML/CSS EXECUTIONS
-  -- ----------------------------------------------------------------------------
   if is_html then
     if input:find('!') then
       local c1, pct, c2 = input:match('^([^!]+)!(%d+)!?([^!]*)$')
@@ -513,50 +357,179 @@ local function resolve_color(input, is_latex, is_typst)
       end
     end
     local css_val = resolve_single_color(input)
-    if css_val then
-      return { value = css_val, type = "standard" }
-    end
+    if css_val then return { value = css_val, type = "standard" } end
     return { value = input, type = "raw" }
   end
 end
 
---- Inspects current element constraints for active color properties, applying required structural syntax tags.
---- Strictly standardizes entry parameters on the framework-approved 'pfa-color' namespace.
---- @param elem table Active processing element block reference node.
---- @param tag string Node layout depth categorization identifier (Span/Div).
---- @param raw function System construction macro reference pointer.
---- @param is_latex boolean Flag identifying execution targets.
---- @param is_typst boolean Flag identifying execution targets.
+-- NEW: Parses CSS shorthand padding rules and enforces a safe-unit allowlist
+local function parse_padding_shorthand(pad_str)
+  if not pad_str then return nil, nil, nil, nil end
+
+  -- Define the strictly allowed cross-platform units (Typography standards only)
+  local safe_units = { pt = true, em = true, ex = true }
+  local tokens = {}
+
+  for token in pad_str:gmatch("%S+") do
+    -- Allow unitless '0', otherwise validate the number and the unit suffix
+    if token ~= "0" then
+      local val, unit = token:match('^(%d*%.?%d+)(%a+)$')
+
+      if not (val and unit and safe_units[unit]) then
+        error(string.format(
+          '\n\n[fonts-and-alignment] CRITICAL ERROR: Invalid padding value "%s".\n' ..
+          'To guarantee cross-platform stability, padding must use safe typography units (pt, em, ex).\n' ..
+          'Pixels (px), percentages (%%), and physical drafting units (mm, cm, in) are not supported.\n' ..
+          'Halting compilation.\n', token))
+      end
+    end
+    table.insert(tokens, token)
+  end
+
+  if #tokens == 1 then
+    return tokens[1], tokens[1], tokens[1], tokens[1]
+  elseif #tokens == 2 then
+    return tokens[1], tokens[2], tokens[1], tokens[2]
+  elseif #tokens == 3 then
+    return tokens[1], tokens[2], tokens[3], tokens[2]
+  elseif #tokens >= 4 then
+    return tokens[1], tokens[2], tokens[3], tokens[4]
+  end
+
+  return '0pt', '0pt', '0pt', '0pt'
+end
+
 local function apply_color(elem, tag, raw, is_latex, is_typst)
-  -- Enforce strict framework standards: Inspect exclusively for pfa-color parameters
-  local color_attr = elem.attributes['pfa-color']
-  if not color_attr then return elem end
+  local text_color_attr = elem.attributes['pfa-color']
+  local bg_color_attr   = elem.attributes['pfa-bg-color']
+  local padding_attr    = elem.attributes['pfa-padding']
 
-  local res = resolve_color(color_attr, is_latex, is_typst)
+  if not (text_color_attr or bg_color_attr or padding_attr) then return elem end
+
+  local tc_res = text_color_attr and resolve_color(text_color_attr, is_latex, is_typst) or nil
+  local bg_res = bg_color_attr and resolve_color(bg_color_attr, is_latex, is_typst) or nil
+
   elem.attributes['pfa-color'] = nil
+  elem.attributes['pfa-bg-color'] = nil
+  elem.attributes['pfa-padding'] = nil
 
-  if not res or not res.value then return elem end
+  if not (tc_res or bg_res or padding_attr) then return elem end
 
   if is_latex then
-    local fmt = res.model and ('[' .. res.model .. ']{') or (res.is_hex and '[HTML]{' or '{')
-    local begin_code = (tag == 'Span') and ('\\textcolor' .. fmt .. res.value .. '}{') or ('{\\color' .. fmt .. res.value .. '} ')
-    elem.content:insert(1, raw('latex', begin_code))
-    elem.content:insert(raw('latex', '}'))
-  elseif is_typst then
-    local color_code = res.value
-    if res.type == "standard" then
-      color_code = res.is_hex and 'rgb("#' .. res.value:lower() .. '")' or res.value:lower()
+    local function get_latex_color_fmt(res)
+      if not res or not res.value then return '' end
+      return res.model and ('[' .. res.model .. ']{' .. res.value .. '}') or (res.is_hex and '[HTML]{' .. res.value .. '}') or ('{' .. res.value .. '}')
     end
 
     if tag == 'Span' then
-      elem.content:insert(1, raw('typst', '#text(fill: ' .. color_code .. ')['))
-      elem.content:insert(raw('typst', ']'))
+      local open, close = '', ''
+      if padding_attr and bg_res then
+        local pt = parse_padding_shorthand(padding_attr)
+        open = open .. '\\begingroup\\setlength{\\fboxsep}{' .. pt .. '}'
+        close = '\\endgroup' .. close
+      end
+      if bg_res then
+        open = open .. '\\colorbox' .. get_latex_color_fmt(bg_res) .. '{'
+        close = '}' .. close
+      end
+      if tc_res then
+        open = open .. '\\textcolor' .. get_latex_color_fmt(tc_res) .. '{'
+        close = '}' .. close
+      end
+      if open ~= '' then
+        elem.content:insert(1, raw('latex', open))
+        elem.content:insert(raw('latex', close))
+      end
     else
-      elem.content:insert(1, raw('typst', '#set text(fill: ' .. color_code .. ')\n'))
+      local open, close = '', ''
+      if bg_res or padding_attr then
+        local pt, pr, pb, pl = parse_padding_shorthand(padding_attr or '0pt')
+        local opts = 'boxrule=0pt, frame hidden, sharp corners, breakable, boxsep=0pt, top=' .. pt .. ', right=' .. pr .. ', bottom=' .. pb .. ', left=' .. pl
+
+        if bg_res then
+          local model = bg_res.model or (bg_res.is_hex and 'HTML' or nil)
+          if model then
+            open = open .. '\\begingroup\n\\definecolor{pfabgtemp}{' .. model .. '}{' .. bg_res.value .. '}\n\\begin{tcolorbox}[colback=pfabgtemp, colframe=pfabgtemp, ' .. opts .. ']\n'
+            close = '\n\\end{tcolorbox}\n\\endgroup' .. close
+          else
+            open = open .. '\\begin{tcolorbox}[colback=' .. bg_res.value .. ', colframe=' .. bg_res.value .. ', ' .. opts .. ']\n'
+            close = '\n\\end{tcolorbox}' .. close
+          end
+        else
+          open = open .. '\\begin{tcolorbox}[interior hidden, ' .. opts .. ']\n'
+          close = '\n\\end{tcolorbox}' .. close
+        end
+      end
+
+      if tc_res then
+        open = open .. '{\\color' .. get_latex_color_fmt(tc_res) .. ' '
+        close = '}' .. close
+      end
+
+      if open ~= '' then
+        elem.content:insert(1, raw('latex', open))
+        elem.content:insert(raw('latex', close))
+      end
     end
+
+  elseif is_typst then
+    local function format_typst_color(res)
+      if not res or not res.value then return nil end
+      return res.type == "standard" and (res.is_hex and 'rgb("#' .. res.value:lower() .. '")' or res.value:lower()) or res.value
+    end
+
+    local tc_code = format_typst_color(tc_res)
+    local bg_code = format_typst_color(bg_res)
+
+    if tag == 'Span' then
+      local open, close = '', ''
+      if padding_attr then
+        local pt, pr, pb, pl = parse_padding_shorthand(padding_attr)
+        local fill_arg = bg_code and (', fill: ' .. bg_code) or ''
+        open = open .. '#box(inset: (top: ' .. pt .. ', right: ' .. pr .. ', bottom: ' .. pb .. ', left: ' .. pl .. ')' .. fill_arg .. ')['
+        close = ']' .. close
+      elseif bg_code then
+        open = open .. '#highlight(fill: ' .. bg_code .. ')['
+        close = ']' .. close
+      end
+
+      if tc_code then
+        open = open .. '#text(fill: ' .. tc_code .. ')['
+        close = ']' .. close
+      end
+
+      if open ~= '' then
+        elem.content:insert(1, raw('typst', open))
+        elem.content:insert(raw('typst', close))
+      end
+    else
+      local open = '#[\n'
+      local close = '\n]'
+
+      if bg_code or padding_attr then
+        local pt, pr, pb, pl = parse_padding_shorthand(padding_attr or '0pt')
+        local fill_arg = bg_code and (', fill: ' .. bg_code) or ''
+        open = open .. '#block(width: 100%, inset: (top: ' .. pt .. ', right: ' .. pr .. ', bottom: ' .. pb .. ', left: ' .. pl .. ')' .. fill_arg .. ')[\n'
+        close = '\n]' .. close
+      end
+      if tc_code then
+        open = open .. '#set text(fill: ' .. tc_code .. ')\n'
+      end
+
+      if open ~= '#[\n' then
+        elem.content:insert(1, raw('typst', open))
+        elem.content:insert(raw('typst', close))
+      end
+    end
+
   else
-    elem.attributes['style'] = (elem.attributes['style'] or '') .. 'color: ' .. res.value .. ';'
+    local style = elem.attributes['style'] or ''
+    if tc_res and tc_res.value then style = style .. 'color: ' .. tc_res.value .. ';' end
+    if bg_res and bg_res.value then style = style .. 'background-color: ' .. bg_res.value .. ';' end
+    if padding_attr then style = style .. 'padding: ' .. padding_attr .. ';' end
+    if style ~= '' then elem.attributes['style'] = style end
   end
+
   return elem
 end
 

@@ -104,7 +104,7 @@ local TYPST_PREAMBLE     = [[
 #show heading.where(level: 3): set block(above: 1.7875em, below: 0.825em)
 #show heading.where(level: 3): set text(size: 12pt, weight: "semibold")
 
-#show heading.where(level: 4): set block(above: 1.7875em, below: 0.5em)
+#show heading.where(level: 4): set block(above: 1.7875em, below: 0.825em)
 #show heading.where(level: 4): set text(size: 12pt, weight: "semibold")
 
 // Native Typst link styling engine override rule
