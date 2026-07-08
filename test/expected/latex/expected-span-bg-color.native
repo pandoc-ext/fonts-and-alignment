@@ -857,4 +857,308 @@
     , Space
     , Str "dog."
     ]
+, Header
+    2
+    ( "border-and-radius-modifications" , [] , [] )
+    [ Str "Border"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Radius"
+    , Space
+    , Str "Modifications"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "the"
+    , Space
+    , Str "filter\8217s"
+    , Space
+    , Str "ability"
+    , Space
+    , Str "to"
+    , Space
+    , Str "apply"
+    , Space
+    , Str "stroke/border"
+    , Space
+    , Str "widths,"
+    , Space
+    , Str "border"
+    , Space
+    , Str "colors,"
+    , Space
+    , Str "and"
+    , Space
+    , Str "corner"
+    , Space
+    , Str "radii"
+    , Space
+    , Str "to"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "background"
+    , Space
+    , Str "containers."
+    ]
+, Header
+    3
+    ( "standard-border-styling-pfa-bg-border-width-pfa-bg-border-color"
+    , []
+    , []
+    )
+    [ Str "Standard"
+    , Space
+    , Str "Border"
+    , Space
+    , Str "Styling"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-border-width"
+    , Str ","
+    , Space
+    , Code ( "" , [] , [] ) "pfa-bg-border-color"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "a"
+    , Space
+    , Str "solid"
+    , Space
+    , Str "border"
+    , Space
+    , Str "is"
+    , Space
+    , Str "applied"
+    , Space
+    , Str "around"
+    , Space
+    , Str "the"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "box"
+    , Space
+    , Str "using"
+    , Space
+    , Str "absolute"
+    , Space
+    , Str "point"
+    , Space
+    , Str "units"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pt"
+    , Str ")"
+    , Space
+    , Str "and"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "color"
+    , Space
+    , Str "names."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"ghostwhite\" pfa-padding=\"0.2em 0.4em\" pfa-bg-border-width=\"1pt\" pfa-bg-border-color=\"navy\"} over the lazy dog."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "background-color: #F8F8FF;padding: 0.2em 0.4em;border: 1pt solid #000080;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
+, Header
+    3
+    ( "rounded-corners-pfa-bg-radius" , [] , [] )
+    [ Str "Rounded"
+    , Space
+    , Str "Corners"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-radius"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "corner"
+    , Space
+    , Str "radii"
+    , Space
+    , Str "apply"
+    , Space
+    , Str "evenly"
+    , Space
+    , Str "to"
+    , Space
+    , Str "all"
+    , Space
+    , Str "four"
+    , Space
+    , Str "corners"
+    , Space
+    , Str "of"
+    , Space
+    , Str "the"
+    , Space
+    , Str "inline"
+    , Space
+    , Str "box"
+    , Space
+    , Str "using"
+    , Space
+    , Str "relative"
+    , Space
+    , Str "typography"
+    , Space
+    , Str "units"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "em"
+    , Str ")."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"lightgray\" pfa-padding=\"0.2em 0.4em\" pfa-bg-radius=\"0.4em\"} over the lazy dog."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "background-color: #D3D3D3;padding: 0.2em 0.4em;border-radius: 0.4em;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
+, Header
+    3
+    ( "combined-badgepill-effect" , [] , [] )
+    [ Str "Combined"
+    , Space
+    , Str "Badge/Pill"
+    , Space
+    , Str "Effect"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "the"
+    , Space
+    , Str "simultaneous"
+    , Space
+    , Str "processing"
+    , Space
+    , Str "of"
+    , Space
+    , Str "background"
+    , Space
+    , Str "fill,"
+    , Space
+    , Str "text"
+    , Space
+    , Str "color,"
+    , Space
+    , Str "padding,"
+    , Space
+    , Str "border"
+    , Space
+    , Str "width,"
+    , Space
+    , Str "border"
+    , Space
+    , Str "color,"
+    , Space
+    , Str "and"
+    , Space
+    , Str "a"
+    , Space
+    , Str "large"
+    , Space
+    , Str "border"
+    , Space
+    , Str "radius"
+    , Space
+    , Str "to"
+    , Space
+    , Str "create"
+    , Space
+    , Str "a"
+    , Space
+    , Str "unified"
+    , Space
+    , Quoted DoubleQuote [ Str "pill" ]
+    , Space
+    , Str "badge"
+    , Space
+    , Str "effect."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "The quick [brown fox jumps]{pfa-bg-color=\"aliceblue\" pfa-color=\"navy\" pfa-padding=\"0.2em 0.6em\" pfa-bg-border-width=\"0.5pt\" pfa-bg-border-color=\"steelblue\" pfa-bg-radius=\"1em\"} over the lazy dog."
+, Para
+    [ Str "The"
+    , Space
+    , Str "quick"
+    , Space
+    , Span
+        ( ""
+        , []
+        , [ ( "style"
+            , "color: #000080;background-color: #F0F8FF;padding: 0.2em 0.6em;border: 0.5pt solid #4682B4;border-radius: 1em;"
+            )
+          ]
+        )
+        [ Str "brown" , Space , Str "fox" , Space , Str "jumps" ]
+    , Space
+    , Str "over"
+    , Space
+    , Str "the"
+    , Space
+    , Str "lazy"
+    , Space
+    , Str "dog."
+    ]
 ]

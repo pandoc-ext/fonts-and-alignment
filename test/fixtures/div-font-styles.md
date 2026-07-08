@@ -94,17 +94,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 
-#### Emphasis (`pfa-style-emphasis`)
+#### Emphasis (`pfa-style-emph`)
 
 Verifies context-aware nesting rules using standard semantic markdown emphasis routines.
 
 ```markdown
-::: {.pfa-style-emphasis}
+::: {.pfa-style-emph}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 ```
 
-::: {.pfa-style-emphasis}
+::: {.pfa-style-emph}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 :::
 

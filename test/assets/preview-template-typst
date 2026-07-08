@@ -1,0 +1,166 @@
+#let horizontalrule = line(start: (25%,0%), end: (75%,0%))
+
+#show terms.item: it => block(breakable: false)[
+  #text(weight: "bold")[#it.term]
+  #block(inset: (left: 1.5em, top: -0.4em))[#it.description]
+]
+
+#set table(
+  inset: 6pt,
+  stroke: none
+)
+
+#show figure.where(
+  kind: table
+): set figure.caption(position: $if(table-caption-position)$$table-caption-position$$else$top$endif$)
+
+#show figure.where(
+  kind: image
+): set figure.caption(position: $if(figure-caption-position)$$figure-caption-position$$else$bottom$endif$)
+
+$if(highlighting-definitions)$
+// syntax highlighting functions from skylighting:
+$highlighting-definitions$
+
+$endif$
+$if(template)$
+#import "$template$": conf
+$else$
+$template.typst()$
+$endif$
+
+$if(smart)$
+$else$
+#set smartquote(enabled: false)
+
+$endif$
+$for(header-includes)$
+$header-includes$
+
+$endfor$
+
+// 1. CONF FUNCTION STRIPPED OF FRONTMATTER
+#show: doc => conf(
+$if(keywords)$
+  keywords: ($for(keywords)$$keywords$$sep$,$endfor$),
+$endif$
+$if(lang)$
+  lang: "$lang$",
+$endif$
+$if(region)$
+  region: "$region$",
+$endif$
+$if(margin)$
+  margin: ($for(margin/pairs)$$margin.key$: $margin.value$,$endfor$),
+$endif$
+$if(papersize)$
+  paper: "$papersize$",
+$endif$
+$if(mainfont)$
+  font: ("$mainfont$",),
+$endif$
+$if(fontsize)$
+  fontsize: $fontsize$,
+$endif$
+$if(mathfont)$
+  mathfont: ($for(mathfont)$"$mathfont$",$endfor$),
+$endif$
+$if(codefont)$
+  codefont: ($for(codefont)$"$codefont$",$endfor$),
+$endif$
+$if(linestretch)$
+  linestretch: $linestretch$,
+$endif$
+$if(section-numbering)$
+  sectionnumbering: "$section-numbering$",
+$endif$
+  pagenumbering: $if(page-numbering)$"$page-numbering$"$else$none$endif$,
+$if(linkcolor)$
+  linkcolor: [$linkcolor$],
+$endif$
+$if(citecolor)$
+  citecolor: [$citecolor$],
+$endif$
+$if(filecolor)$
+  filecolor: [$filecolor$],
+$endif$
+  cols: $if(columns)$$columns$$else$1$endif$,
+  doc,
+)
+
+// 2. CUSTOM FRONTMATTER INJECTION
+$if(title)$
+#align(center)[
+  #block(below: 1.5em)[
+    #text(weight: "regular", size: 20.74pt)[$title$]
+  ]
+]
+$endif$
+
+$if(subtitle)$
+#align(center)[
+  #block(below: 1.5em)[
+    #text(weight: "semibold", size: 1.2em, fill: gray.darken(20%))[$subtitle$]
+  ]
+]
+$endif$
+
+$if(author)$
+#align(center)[
+  #block(above: 3em, below: 0.3em)[
+    #text(weight: "medium", size: 14.4pt)[
+      $for(author)$
+        $if(author.name)$
+          $author.name$
+        $else$
+          $author$
+        $endif$
+      $sep$,
+      $endfor$
+    ]
+  ]
+]
+$endif$
+
+$if(date)$
+#align(center)[
+  #block(above: 2.5em, below: 4.5em)[
+    #text(weight: "regular", size: 14.4pt)[$date$]
+  ]
+]
+$endif$
+
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+$if(toc)$
+#outline(
+  title: auto,
+  depth: $toc-depth$
+);
+$endif$
+
+$body$
+
+$if(citations)$
+$for(nocite-ids)$
+#cite(label("${it}"), form: none)
+$endfor$
+$if(csl)$
+
+#set bibliography(style: "$csl$")
+$elseif(bibliographystyle)$
+
+#set bibliography(style: "$bibliographystyle$")
+$endif$
+$if(bibliography)$
+
+#bibliography(($for(bibliography)$"$bibliography$"$sep$,$endfor$)$if(full-bibliography)$, full: true$endif$)
+$endif$
+$endif$
+$for(include-after)$
+
+$include-after$
+$endfor$

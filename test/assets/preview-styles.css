@@ -51,6 +51,7 @@ header#title-block-header {
    text by default; bump them up so code samples match the body text scale. */
 code, kbd, samp, pre {
   font-size: 1.1em;
+  color: #85144B; /* Typst Maroon for inline code */
 }
 
 /* ==========================================================================

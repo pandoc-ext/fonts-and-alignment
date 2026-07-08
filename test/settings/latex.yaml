@@ -1,16 +1,17 @@
 to: latex
 pdf-engine: lualatex
 
-filters:
-  - type: lua
-    path: test/assets/preview-styles-and-framing.lua
+include-in-header:
+  - _extensions/fonts-and-alignment/pfa-tcolorbox-preamble.tex
+  - _extensions/fonts-and-alignment/pfa-varwidth-preamble.tex
+  - test/assets/preview-styles.tex
 
 variables:
   papersize: A4
   geometry:
     - margin=20mm
   monofontoptions:
-    - Scale=0.9
+    - Scale=0.97
   colorlinks: true
   linkcolor: blue
   urlcolor: blue

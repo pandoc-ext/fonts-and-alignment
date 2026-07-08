@@ -1279,4 +1279,399 @@
         , Str "aliqua."
         ]
     ]
+, Header
+    2
+    ( "border-and-radius-modifications" , [] , [] )
+    [ Str "Border"
+    , Space
+    , Str "and"
+    , Space
+    , Str "Radius"
+    , Space
+    , Str "Modifications"
+    ]
+, Para
+    [ Str "This"
+    , Space
+    , Str "section"
+    , Space
+    , Str "verifies"
+    , Space
+    , Str "the"
+    , Space
+    , Str "filter\8217s"
+    , Space
+    , Str "ability"
+    , Space
+    , Str "to"
+    , Space
+    , Str "apply"
+    , Space
+    , Str "stroke/border"
+    , Space
+    , Str "widths,"
+    , Space
+    , Str "border"
+    , Space
+    , Str "colors,"
+    , Space
+    , Str "and"
+    , Space
+    , Str "corner"
+    , Space
+    , Str "radii"
+    , Space
+    , Str "to"
+    , Space
+    , Str "structural"
+    , Space
+    , Str "block"
+    , Space
+    , Str "containers"
+    , Space
+    , Str "(Fenced"
+    , Space
+    , Str "Divs)"
+    , Space
+    , Str "to"
+    , Space
+    , Str "create"
+    , Space
+    , Str "modern"
+    , Space
+    , Str "callout"
+    , Space
+    , Str "cards."
+    ]
+, Header
+    3
+    ( "standard-border-styling-pfa-bg-border-width-pfa-bg-border-color"
+    , []
+    , []
+    )
+    [ Str "Standard"
+    , Space
+    , Str "Border"
+    , Space
+    , Str "Styling"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-border-width"
+    , Str ","
+    , Space
+    , Code ( "" , [] , [] ) "pfa-bg-border-color"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "a"
+    , Space
+    , Str "solid,"
+    , Space
+    , Str "uniform"
+    , Space
+    , Str "border"
+    , Space
+    , Str "is"
+    , Space
+    , Str "applied"
+    , Space
+    , Str "around"
+    , Space
+    , Str "the"
+    , Space
+    , Str "entire"
+    , Space
+    , Str "block"
+    , Space
+    , Str "container"
+    , Space
+    , Str "using"
+    , Space
+    , Str "absolute"
+    , Space
+    , Str "point"
+    , Space
+    , Str "units"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pt"
+    , Str ")"
+    , Space
+    , Str "and"
+    , Space
+    , Str "standard"
+    , Space
+    , Str "color"
+    , Space
+    , Str "names."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"ghostwhite\" pfa-padding=\"1em\" pfa-bg-border-width=\"2pt\" pfa-bg-border-color=\"navy\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style"
+        , "background-color: #F8F8FF;padding: 1em;border: 2pt solid #000080;"
+        )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "rounded-corners-pfa-bg-radius" , [] , [] )
+    [ Str "Rounded"
+    , Space
+    , Str "Corners"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "pfa-bg-radius"
+    , Str ")"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "that"
+    , Space
+    , Str "corner"
+    , Space
+    , Str "radii"
+    , Space
+    , Str "apply"
+    , Space
+    , Str "evenly"
+    , Space
+    , Str "to"
+    , Space
+    , Str "all"
+    , Space
+    , Str "four"
+    , Space
+    , Str "corners"
+    , Space
+    , Str "of"
+    , Space
+    , Str "the"
+    , Space
+    , Str "block"
+    , Space
+    , Str "container"
+    , Space
+    , Str "using"
+    , Space
+    , Str "relative"
+    , Space
+    , Str "typography"
+    , Space
+    , Str "units"
+    , Space
+    , Str "("
+    , Code ( "" , [] , [] ) "em"
+    , Str ")."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"lightgray\" pfa-padding=\"1em\" pfa-bg-radius=\"0.5em\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style"
+        , "background-color: #D3D3D3;padding: 1em;border-radius: 0.5em;"
+        )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
+, Header
+    3
+    ( "combined-callout-card-effect" , [] , [] )
+    [ Str "Combined"
+    , Space
+    , Str "Callout"
+    , Space
+    , Str "Card"
+    , Space
+    , Str "Effect"
+    ]
+, Para
+    [ Str "Verifies"
+    , Space
+    , Str "the"
+    , Space
+    , Str "simultaneous"
+    , Space
+    , Str "processing"
+    , Space
+    , Str "of"
+    , Space
+    , Str "background"
+    , Space
+    , Str "fill,"
+    , Space
+    , Str "text"
+    , Space
+    , Str "color,"
+    , Space
+    , Str "padding,"
+    , Space
+    , Str "border"
+    , Space
+    , Str "width,"
+    , Space
+    , Str "border"
+    , Space
+    , Str "color,"
+    , Space
+    , Str "and"
+    , Space
+    , Str "border"
+    , Space
+    , Str "radius"
+    , Space
+    , Str "to"
+    , Space
+    , Str "create"
+    , Space
+    , Str "a"
+    , Space
+    , Str "unified"
+    , Space
+    , Str "structural"
+    , Space
+    , Str "callout"
+    , Space
+    , Str "card."
+    ]
+, CodeBlock
+    ( "" , [ "markdown" ] , [] )
+    "::: {pfa-bg-color=\"aliceblue\" pfa-color=\"navy\" pfa-padding=\"1.5em\" pfa-bg-border-width=\"1pt\" pfa-bg-border-color=\"steelblue\" pfa-bg-radius=\"0.5em\"}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+, Div
+    ( ""
+    , []
+    , [ ( "style"
+        , "color: #000080;background-color: #F0F8FF;padding: 1.5em;border: 1pt solid #4682B4;border-radius: 0.5em;"
+        )
+      ]
+    )
+    [ Para
+        [ Str "Lorem"
+        , Space
+        , Str "ipsum"
+        , Space
+        , Str "dolor"
+        , Space
+        , Str "sit"
+        , Space
+        , Str "amet,"
+        , Space
+        , Str "consectetur"
+        , Space
+        , Str "adipiscing"
+        , Space
+        , Str "elit,"
+        , Space
+        , Str "sed"
+        , Space
+        , Str "do"
+        , Space
+        , Str "eiusmod"
+        , Space
+        , Str "tempor"
+        , Space
+        , Str "incididunt"
+        , Space
+        , Str "ut"
+        , Space
+        , Str "labore"
+        , Space
+        , Str "et"
+        , Space
+        , Str "dolore"
+        , Space
+        , Str "magna"
+        , Space
+        , Str "aliqua."
+        ]
+    ]
 ]

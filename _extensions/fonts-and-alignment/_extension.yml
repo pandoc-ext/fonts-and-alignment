@@ -10,3 +10,8 @@ contributes:
     html:
       css:
         - fonts-and-alignment.css
+
+    pdf:
+      include-in-header:
+        - pfa-tcolorbox-preamble.tex
+        - pfa-varwidth-preamble.tex

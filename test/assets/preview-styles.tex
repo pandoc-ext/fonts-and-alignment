@@ -1,0 +1,42 @@
+% Wrap long lines inside highlighted code blocks
+\usepackage{fvextra}
+\fvset{breaklines=true,breakanywhere=true}
+
+% Render standard headings in Noto Serif SemiBold safely
+\usepackage{titlesec}
+\newfontfamily\pfaheadingfont{Noto Serif}[UprightFont={* SemiBold},ItalicFont={* SemiBold Italic}]
+\titleformat*{\section}{\Large\pfaheadingfont}
+\titleformat*{\subsection}{\large\pfaheadingfont}
+\titleformat*{\subsubsection}{\normalsize\pfaheadingfont}
+
+% Explicitly convert level-4 paragraph headings into display block headings
+\titleformat{\paragraph}[hang]{\normalsize\bfseries\pfaheadingfont}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{0.5em}
+
+% Flat light-gray fill for tables
+\PassOptionsToPackage{table}{xcolor}
+\usepackage{colortbl}
+\usepackage{etoolbox}
+\definecolor{pfatablebg}{gray}{0.94}
+\AtBeginEnvironment{longtable}{\rowcolors{2}{pfatablebg}{pfatablebg}}
+
+% Increases the vertical spacing between rows in tables and matrices by 30%
+\renewcommand{\arraystretch}{1.3}
+
+% Wrap the Shaded environment in a minipage
+\BeforeBeginEnvironment{Shaded}{\par\noindent\begin{minipage}{\linewidth}}
+\AfterEndEnvironment{Shaded}{\end{minipage}\par\medskip}
+
+% Surgical color injection for code blocks
+% We use \protect\textcolor instead of the global \renewcommand
+% which avoids disrupting the table cell layout.
+\usepackage{xcolor}
+\definecolor{codecolor}{HTML}{85144B} % Typst maroon
+
+% This targets the standard inline code produced by Pandoc
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{\textcolor{codecolor}{\oldtexttt{#1}}}
+
+% This targets the \verb-based inline code, but keeps it in a simple
+% box-less wrapper that won't break table alignment
+\def\passthrough#1{\textcolor{codecolor}{#1}}

@@ -1,0 +1,21 @@
+% Shrink-to-fit framed pfa-block-* boxes using centralized styling
+% Note: This requires tcolorbox to be loaded prior to this script.
+\usepackage{varwidth}
+\newsavebox{\pfablockbox}
+\AtEndPreamble{%
+  \ifcsdef{pfa-block-center}{%
+    \renewenvironment{pfa-block-center}
+      {\begin{lrbox}{\pfablockbox}\begin{varwidth}{\textwidth}}
+      {\end{varwidth}\end{lrbox}\begin{center}\tcbox[pfapreview]{\usebox{\pfablockbox}}\end{center}}%
+  }{}%
+  \ifcsdef{pfa-block-left}{%
+    \renewenvironment{pfa-block-left}
+      {\begin{lrbox}{\pfablockbox}\begin{varwidth}{\textwidth}}
+      {\end{varwidth}\end{lrbox}\begin{flushleft}\tcbox[pfapreview]{\usebox{\pfablockbox}}\end{flushleft}}%
+  }{}%
+  \ifcsdef{pfa-block-right}{%
+    \renewenvironment{pfa-block-right}
+      {\begin{lrbox}{\pfablockbox}\begin{varwidth}{\textwidth}}
+      {\end{varwidth}\end{lrbox}\begin{flushright}\tcbox[pfapreview]{\usebox{\pfablockbox}}\end{flushright}}%
+  }{}%
+}

@@ -116,3 +116,37 @@ The quick [brown fox jumps]{pfa-bg-color="typstmaroon" pfa-padding="0.2em 0.4em"
 ```
 
 The quick [brown fox jumps]{pfa-bg-color="typstmaroon" pfa-padding="0.2em 0.4em" pfa-color="white"} over the lazy dog.
+
+## Border and Radius Modifications
+
+This section verifies the filter's ability to apply stroke/border widths, border colors, and corner radii to inline background containers.
+
+### Standard Border Styling (`pfa-bg-border-width`, `pfa-bg-border-color`)
+
+Verifies that a solid border is applied around the inline box using absolute point units (`pt`) and standard color names.
+
+```markdown
+The quick [brown fox jumps]{pfa-bg-color="ghostwhite" pfa-padding="0.2em 0.4em" pfa-bg-border-width="1pt" pfa-bg-border-color="navy"} over the lazy dog.
+```
+
+The quick [brown fox jumps]{pfa-bg-color="ghostwhite" pfa-padding="0.2em 0.4em" pfa-bg-border-width="1pt" pfa-bg-border-color="navy"} over the lazy dog.
+
+### Rounded Corners (`pfa-bg-radius`)
+
+Verifies that corner radii apply evenly to all four corners of the inline box using relative typography units (`em`).
+
+```markdown
+The quick [brown fox jumps]{pfa-bg-color="lightgray" pfa-padding="0.2em 0.4em" pfa-bg-radius="0.4em"} over the lazy dog.
+```
+
+The quick [brown fox jumps]{pfa-bg-color="lightgray" pfa-padding="0.2em 0.4em" pfa-bg-radius="0.4em"} over the lazy dog.
+
+### Combined Badge/Pill Effect
+
+Verifies the simultaneous processing of background fill, text color, padding, border width, border color, and a large border radius to create a unified "pill" badge effect.
+
+```markdown
+The quick [brown fox jumps]{pfa-bg-color="aliceblue" pfa-color="navy" pfa-padding="0.2em 0.6em" pfa-bg-border-width="0.5pt" pfa-bg-border-color="steelblue" pfa-bg-radius="1em"} over the lazy dog.
+```
+
+The quick [brown fox jumps]{pfa-bg-color="aliceblue" pfa-color="navy" pfa-padding="0.2em 0.6em" pfa-bg-border-width="0.5pt" pfa-bg-border-color="steelblue" pfa-bg-radius="1em"} over the lazy dog.

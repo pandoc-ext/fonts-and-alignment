@@ -525,11 +525,11 @@
     ]
 , Header
     4
-    ( "emphasis-pfa-style-emphasis" , [] , [] )
+    ( "emphasis-pfa-style-emph" , [] , [] )
     [ Str "Emphasis"
     , Space
     , Str "("
-    , Code ( "" , [] , [] ) "pfa-style-emphasis"
+    , Code ( "" , [] , [] ) "pfa-style-emph"
     , Str ")"
     ]
 , Para
@@ -555,7 +555,7 @@
     ]
 , CodeBlock
     ( "" , [ "markdown" ] , [] )
-    "::: {.pfa-style-emphasis}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
+    "::: {.pfa-style-emph}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n:::"
 , Div
     ( "" , [] , [] )
     [ Para

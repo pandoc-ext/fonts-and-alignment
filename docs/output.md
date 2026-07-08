@@ -1,78 +1,76 @@
 ---
-header-includes:
-- |
-  \renewcommand{\arraystretch}{1.3}
 title: |
   | Demonstration of
   | Fonts and Alignment Filter
   | for Pandoc
 ---
 
-\renewcommand{\arraystretch}{1.3}
+## Introduction
 
-This document demonstrates every feature provided by the
-`fonts-and-alignment` Lua filter for Pandoc. Each code block shows the
-exact Markdown syntax used to generate the rendered output that follows,
-ensuring consistent results across both LaTeX/PDF and HTML formats.[^1]
+This document showcases the features of the `fonts-and-alignment` Pandoc
+Lua filter. Each example displays the required Markdown syntax alongside
+its rendered output, ensuring consistent typography across LaTeX, Typst,
+and HTML formats.[^1]
 
-The filter relies on Pandoc's `fenced_divs` and `bracketed_spans`
-extensions, which are typically enabled by default. In the unlikely
-event that these extensions are disabled, the Lua filter will display a
-terminal warning and pass over the corresponding divs and spans, causing
-them to appear as raw text in the rendered output.
+The extension leverages Pandoc's `fenced_divs` and `bracketed_spans`
+extensions. If these are disabled, the filter will issue a terminal
+warning and render the elements as raw text instead of applying the
+styles.
 
 ## Bracketed Spans and Fenced Divs Invocations
 
-The filter may be used with Pandoc's `bracketed_spans` and `fenced_divs`
-syntax extensions, as demonstrated below. Bracketed Spans are intended
-for styling smaller inline portions of text, while Fenced Divs are used
-for styling larger blocks of content. This follows Pandoc's standard
-syntax conventions. For more information on this syntax, please refer to
-the official Pandoc documentation: [Divs and Spans --- Pandoc User's
-Guide](https://pandoc.org/demo/example33/8.18-divs-and-spans.html).
+This filter follows Pandoc's standard conventions for container-based
+styling: use Bracketed Spans for inline text and Fenced Divs for
+block-level content. For further details on these syntax standards,
+please refer to [Pandoc User's Guide: Divs and
+Spans](https://pandoc.org/demo/example33/8.18-divs-and-spans.html).
 
 ``` markdown
-[This font is extra extra large.]{.pfa-size-2xl}
+[This is a line of text in extra extra large font.]{.pfa-size-2xl}
 ```
 
-This font is extra extra large.
+This is a line of text in extra extra large font.
 
 ``` markdown
 ::: {.pfa-size-2xl}
-This font is extra extra large.
+This multiline block showcases the filters's capability to apply extra extra large font to an entire section of text by wrapping the content in a Fenced Div.
 :::
 ```
 
 ::: {}
-This font is extra extra large.
+This multiline block showcases the filters's capability to apply extra
+extra large font to an entire section of text by wrapping the content in
+a Fenced Div.
 :::
 
 ## Font Sizing in Bracketed Spans
 
-The filter provides nine predefined sizing hooks that allow text within
-Bracketed Spans to be scaled relative to the document's base font size.
+The extension provides nine predefined sizing hooks to scale text
+relative to the document's base/normal font size. The *LaTeX Reference*
+column is provided for descriptive purposes, as these labels are not
+native to Typst or HTML/CSS.
 
-  ------------------------------------------------------------------------
-  Size           Syntax                             Output
-  -------------- ---------------------------------- ----------------------
-  tiny           `[Sample]{.pfa-size-3xs}`          Sample
+  -----------------------------------------------------------------------
+  LaTeX Reference   Syntax                           Output
+  ----------------- -------------------------------- --------------------
+  tiny              `[Sample]{.pfa-size-3xs}`        Sample
 
-  scriptsize     `[Sample]{.pfa-size-2xs}`          Sample
+  scriptsize        `[Sample]{.pfa-size-2xs}`        Sample
 
-  footnotesize   `[Sample]{.pfa-size-xs}`           Sample
+  footnotesize      `[Sample]{.pfa-size-xs}`         Sample
 
-  small          `[Sample]{.pfa-size-s}`            Sample
+  small             `[Sample]{.pfa-size-s}`          Sample
 
-  normal         `[Sample]{.pfa-size-normal}`       Sample
+  normal            `[Sample]{.pfa-size-normal}`     Sample
 
-  large          `[Sample]{.pfa-size-l}`            Sample
+  large             `[Sample]{.pfa-size-l}`          Sample
 
-  Large          `[Sample]{.pfa-size-xl}`           Sample
+  Large             `[Sample]{.pfa-size-xl}`         Sample
 
-  LARGE          `[Sample]{.pfa-size-2xl}`          Sample
+  LARGE             `[Sample]{.pfa-size-2xl}`        Sample
 
-  huge           `[Sample]{.pfa-size-3xl}`          Sample
-  ------------------------------------------------------------------------
+  huge              `[Sample]{.pfa-size-3xl}`        Sample
+  -----------------------------------------------------------------------
 
 ## Font Sizing in Fenced Divs
 
@@ -83,7 +81,7 @@ entire block of text to be rendered at a specific font size.
 
 ``` markdown
 ::: {.pfa-size-xs}
-This paragraph renders at the _extra small_ font size.
+This paragraph renders at the *extra small* font size.
 :::
 ```
 
@@ -95,7 +93,7 @@ This paragraph renders at the *extra small* font size.
 
 ``` markdown
 ::: {.pfa-size-normal}
-This paragraph renders at the _normal_ font size.
+This paragraph renders at the *normal* font size.
 :::
 ```
 
@@ -107,7 +105,7 @@ This paragraph renders at the *normal* font size.
 
 ``` markdown
 ::: {.pfa-size-l}
-This paragraph renders at the _large_ font size.
+This paragraph renders at the *large* font size.
 :::
 ```
 
@@ -117,34 +115,36 @@ This paragraph renders at the *large* font size.
 
 ## Font Weights, Shapes, and Families in Bracketed Spans
 
-The following typographic styles can be applied to Bracketed Spans to
-control weight, style, and typeface.
+The extension provides predefined typographic styles for Bracketed
+Spans. These styles are mapped to equivalent rendering properties across
+all formats to ensure consistent output, regardless of the underlying
+engine.
 
-  -----------------------------------------------------------------------
-  Style             Syntax                                       Output
-  ----------------- -------------------------------------------- --------
-  Normal            `[Sample]{.pfa-weight-normal}`               Sample
+  ------------------------------------------------------------------------
+  Typographic Style       Syntax                                 Output
+  ----------------------- -------------------------------------- ---------
+  Normal (weight)         `[Sample]{.pfa-weight-normal}`         Sample
 
-  Medium            `[Sample]{.pfa-weight-medium}`               Sample
+  Medium (weight)         `[Sample]{.pfa-weight-medium}`         Sample
 
-  Bold              `[Sample]{.pfa-weight-bold}`                 Sample
+  Bold (weight)           `[Sample]{.pfa-weight-bold}`           Sample
 
-  Emphasis          `[Sample]{.pfa-style-emphasis}`              Sample
+  Emphasis (style)        `[Sample]{.pfa-style-emph}`            Sample
 
-  Upright           `[Sample]{.pfa-style-upright}`               Sample
+  Upright (style)         `[Sample]{.pfa-style-upright}`         Sample
 
-  Italic            `[Sample]{.pfa-style-italic}`                Sample
+  Italic (style)          `[Sample]{.pfa-style-italic}`          Sample
 
-  Slanted           `[Sample]{.pfa-style-slanted}`               Sample
+  Slanted (style)         `[Sample]{.pfa-style-slanted}`         Sample
 
-  Small Caps        `[Sample]{.pfa-style-smallcaps}`             Sample
+  Small Caps (style)      `[Sample]{.pfa-style-smallcaps}`       Sample
 
-  Serif             `[Sample]{.pfa-family-serif}`                Sample
+  Serif (family)          `[Sample]{.pfa-family-serif}`          Sample
 
-  Sans-Serif        `[Sample]{.pfa-family-sans}`                 Sample
+  Sans-Serif (family)     `[Sample]{.pfa-family-sans}`           Sample
 
-  Monospace         `[Sample]{.pfa-family-mono}`                 Sample
-  -----------------------------------------------------------------------
+  Monospace (family)      `[Sample]{.pfa-family-mono}`           Sample
+  ------------------------------------------------------------------------
 
 ## Font Weights, Shapes, and Families in Fenced Divs
 
@@ -155,36 +155,36 @@ allowing an entire block of text to adopt a particular visual style.
 
 ``` markdown
 ::: {.pfa-weight-bold}
-This paragraph renders in bold type.
+This paragraph is in bold weight.
 :::
 ```
 
 ::: {}
-This paragraph renders in bold type.
-:::
-
-### Sans-Serif Family
-
-``` markdown
-::: {.pfa-family-sans}
-This paragraph uses a sans-serif typeface.
-:::
-```
-
-::: {}
-This paragraph uses a sans-serif typeface.
+This paragraph is in bold weight.
 :::
 
 ### Small Caps
 
 ``` markdown
 ::: {.pfa-style-smallcaps}
-This paragraph is rendered in small caps.
+This paragraph is in small caps.
 :::
 ```
 
 ::: {}
-This paragraph is rendered in small caps.
+This paragraph is in small caps.
+:::
+
+### Sans-Serif Family
+
+``` markdown
+::: {.pfa-family-sans}
+This paragraph is in sans-serif.
+:::
+```
+
+::: {}
+This paragraph is in sans-serif.
 :::
 
 ## Text Casing Transformations
@@ -236,42 +236,39 @@ THIS PARAGRAPH IS TRANSFORMED TO UPPERCASE.
 
 ## Colors
 
-This section describes how to apply color to text using the `pfa-color`
-attribute in both Bracketed Spans and Fenced Divs.
+This section describes how to apply color and spacing using the
+`pfa-color`, `pfa-bg-color`, and `pfa-padding` attributes within
+Bracketed Spans and Fenced Divs.
 
-### Solid Colors
+### Color Fundamentals
 
-The `pfa-color` attribute supports [CSS3 named
-colors](https://www.w3.org/TR/css-color-3/#svg-color), full hexadecimal
-values, and three-digit shorthand hexadecimal values.
+The filter normalizes color inputs to ensure they render identically
+across LaTeX, Typst, and HTML.
 
 #### Flexible Color Terminology
 
-For standard solid colors, the filter automatically normalizes CSS3
-color names. This means solid colors are completely case-insensitive and
-support various naming conventions. All examples below resolve perfectly
-to the CSS3 color `mediumvioletred` in both HTML and PDF formats:
+For solid colors, the filter is case-insensitive and accepts most naming
+conventions. All examples below resolve to the CSS3 `mediumvioletred`:
 
-  ------------------------------------------------------------------------------------------------
-  Naming Convention  Syntax                                     Output
-  ------------------ ------------------------------------------ ----------------------------------
-  Lowercase          `[Color]{pfa-color="mediumvioletred"}`     [Color]{style="color: #C71585;"}
+  -----------------------------------------------------------------------------------------------------
+  Naming Convention       Syntax                                     Output
+  ----------------------- ------------------------------------------ ----------------------------------
+  Lowercase               `[Color]{pfa-color="mediumvioletred"}`     [Color]{style="color: #C71585;"}
 
-  Title Case         `[Color]{pfa-color="Medium Violet Red"}`   [Color]{style="color: #C71585;"}
+  Title Case              `[Color]{pfa-color="Medium Violet Red"}`   [Color]{style="color: #C71585;"}
 
-  Kebab Case         `[Color]{pfa-color="medium-violet-red"}`   [Color]{style="color: #C71585;"}
+  Kebab Case              `[Color]{pfa-color="medium-violet-red"}`   [Color]{style="color: #C71585;"}
 
-  Snake Case         `[Color]{pfa-color="medium_violet_red"}`   [Color]{style="color: #C71585;"}
+  Snake Case              `[Color]{pfa-color="medium_violet_red"}`   [Color]{style="color: #C71585;"}
 
-  Camel Case         `[Color]{pfa-color="mediumVioletRed"}`     [Color]{style="color: #C71585;"}
+  Camel Case              `[Color]{pfa-color="mediumVioletRed"}`     [Color]{style="color: #C71585;"}
 
-  Pascal Case        `[Color]{pfa-color="MediumVioletRed"}`     [Color]{style="color: #C71585;"}
+  Pascal Case             `[Color]{pfa-color="MediumVioletRed"}`     [Color]{style="color: #C71585;"}
 
-  Screaming Snake    `[Color]{pfa-color="MEDIUM_VIOLET_RED"}`   [Color]{style="color: #C71585;"}
-  Case                                                          
-  ------------------------------------------------------------------------------------------------
+  Screaming Snake Case    `[Color]{pfa-color="MEDIUM_VIOLET_RED"}`   [Color]{style="color: #C71585;"}
+  -----------------------------------------------------------------------------------------------------
 
-#### Applying Solid Colors
+#### Input Types
 
   ---------------------------------------------------------------------------------------------------
   Input Type        Syntax                                        Output
@@ -283,50 +280,32 @@ to the CSS3 color `mediumvioletred` in both HTML and PDF formats:
   Hex Shorthand[^2] `[Sample]{pfa-color="#666"}`                  [Sample]{style="color: #666666;"}
   ---------------------------------------------------------------------------------------------------
 
-**Note:** While Pandoc's default LaTeX template loads `x11names` (which
-includes numbered variants like `LightBlue3`), CSS and web browsers do
-not recognize these. To ensure your colors render perfectly across both
-PDF and HTML formats, you must stick strictly to the standard CSS3 Named
-Colors or Hexadecimal codes.
+**Compatibility Note:** To ensure cross-platform stability, use standard
+CSS3 named colors or hex codes. Avoid LaTeX-specific numbered variants
+(e.g., `LightBlue3`), as these are not supported in web browsers or CSS.
 
 ### Color Mixing
 
-The filter natively supports LaTeX's `xcolor` percentage mixing syntax,
-allowing you to tint, shade or mix colors on the fly. This translates
-perfectly into both PDF and HTML outputs.[^3]
+The extension supports LaTeX's `xcolor` percentage-mixing syntax for
+tints, shades, and blends. This is the standardized syntax for this
+extension because it maps reliably across Typst, LaTeX, and HTML (which
+leverages the native CSS `color-mix()` function).
 
-The mixing syntax uses the exclamation mark (`!`) to separate values:
+#### Supported Mixing Methods
 
-  ------------------------------------------------------------------------------
-  Mixing Type     Syntax Pattern                    Description & Example
-  --------------- --------------------------------- ----------------------------
-  Tinting         `BaseColor!Percentage`            Blends with white.
-                                                    `Maroon!40` keeps 40% Maroon
-                                                    and 60% white.
+- **Tinting (Blending with White):**
+  - Syntax: `BaseColor!Percentage`
+  - Example: `Maroon!40` (Yields 40% Maroon and 60% white)
+- **Shading (Blending with Black):**
+  - Syntax: `BaseColor!Percentage!black`
+  - Example: `MediumVioletRed!80!black` (Yields 80% MediumVioletRed and
+    20% black)
+- **Two-Color Mix:**
+  - Syntax: `BaseColor!Percentage!MixColor`
+  - Example: `RoyalBlue!50!ForestGreen` (Yields a 50/50 mix of both
+    colors)
 
-  Shading         `BaseColor!Percentage!black`      Blends with black.
-                                                    `MediumVioletRed!80!black`
-                                                    keeps 80% MediumVioletRed
-                                                    and 20% black.
-
-  Two-Color Mix   `BaseColor!Percentage!MixColor`   Blends two specific colors.
-                                                    `RoyalBlue!50!ForestGreen`
-                                                    yields a 50/50 mix of both
-                                                    colors.
-  ------------------------------------------------------------------------------
-
-**\[Warning\] Strict Casing Rule:** Because mixed colors are passed
-directly to the LaTeX compiler, the flexible terminology rules do not
-apply here. You must use the exact casing expected by the LaTeX `xcolor`
-package, otherwise your PDF generation will break:
-
-- **Base Colors:** The [19 core LaTeX
-  colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide)
-  must be strictly **lowercase**.
-
-- **Extended Web Colors:** The [CSS3 named
-  colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)
-  must be strictly **PascalCase**.
+#### Syntax Examples
 
   ----------------------------------------------------------------------------------------------------------------------------------------------
   Mixing Type        Syntax                                                 Output
@@ -338,136 +317,78 @@ package, otherwise your PDF generation will break:
   Mix (50/50)        `[Mixed]{pfa-font-color="RoyalBlue!50!ForestGreen"}`   [Mixed]{style="color: color-mix(in srgb, #4169E1 50%, #228B22);"}
   ----------------------------------------------------------------------------------------------------------------------------------------------
 
-### Inheriting Colors in Fenced Divs
+#### Important Compatibility Rules
 
-When applied to a Fenced Div, the `pfa-color` attribute defines the
-default text color for the entire block. All enclosed content inherits
-this color unless explicitly overridden by an inner Bracketed Span.
+- **Strictly Use LaTeX Syntax:** Always use the `BaseColor!Percentage`
+  pattern. This is the only syntax guaranteed to translate correctly
+  across all three output formats.
+
+- **Avoid Typst Native Syntax:** If you use native Typst color syntax
+  (e.g., `color.mix()`), the filter will pass it directly to Typst. It
+  will not be translated for LaTeX or HTML, and those formats will
+  likely receive a fallback color.
+
+- **Binary Mixing Only:** You may blend a maximum of two colors.
+  Multi-color mixing (e.g., Red!30!Blue!30!Green) is not supported.
+
+- **Casing Matters:** Because mixing strings are passed directly to
+  LaTeX, casing must be exact:
+
+  - Use lowercase for [core LaTeX
+    colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide)
+    (e.g., `black`, `red`).
+  - Use PascalCase for [CSS3 named
+    colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)
+    (e.g., `RoyalBlue`, `MediumVioletRed`).
+
+### Styling Elements
+
+#### Foreground and Background
+
+Use `pfa-color` for text and `pfa-bg-color` for container backgrounds.
 
 ``` markdown
-::: {pfa-color="DarkSlateGrey"}
-The Fenced Div defines _DarkSlateGrey_ as the default text color for this block.
-
-[This Bracketed Span overrides the inherited color to _tomato_.]{pfa-color="tomato"}
-
-The remaining text continues using _DarkSlateGrey_ for the remainder of the Div.
+::: {pfa-color="DarkSlateGrey" pfa-bg-color="lightsteelblue" pfa-padding="1em"}
+This block has a default text color and a background fill.
+[This span overrides the text color.]{pfa-color="tomato"}
 :::
 ```
 
-::: {style="color: #2F4F4F;"}
-The Fenced Div defines *DarkSlateGrey* as the default text color for
-this block.
-
-[This Bracketed Span overrides the inherited color to
-*tomato*.]{style="color: #FF6347;"}
-
-The remaining text continues using *DarkSlateGrey* for the remainder of
-the Div.
+::: {style="color: #2F4F4F;background-color: #B0C4DE;padding: 1em;"}
+This block has a default text color and a background fill. [This span
+overrides the text color.]{style="color: #FF6347;"}
 :::
 
-**Note:** The `pfa-color` utility is an attribute, not a class, and
-should not be prefixed with a period (`.`).
+#### Layout Spacing (`pfa-padding`)
 
-## Background Colors
+The pfa-padding attribute controls internal spacing using standard CSS
+shorthand.
 
-The `pfa-bg-color` attribute allows you to define a background fill for
-Fenced Divs and Bracketed Spans. This attribute supports the same color
-naming conventions as `pfa-color`, including CSS3 named colors, hex
-codes, and mixing syntax.
+- **One value (`1em`):** Applied to all four sides evenly.
 
-### Background Colors in Fenced Divs
+- **Two values (`1em 0.5em`):** The first value applies to the top and
+  bottom; the second applies to the left and right.
 
-When applied to a Fenced Div, `pfa-bg-color` fills the entire container.
-We recommend using this alongside `pfa-padding` to prevent text from
-colliding with the container edges.
+- **Three values (`1em 0.5em 2em`):** The first value is the top, the
+  second applies to both the left and right, and the third is the
+  bottom.
 
-``` markdown
-::: {pfa-bg-color="lightsteelblue" pfa-padding="1em"}
-This block has a _lightsteelblue_ background and 1em of padding on all sides.
-:::
-```
+- **Four values (`1em 0.5em 2em 0.2em`):** Applied in clockwise order:
+  top, right, bottom, and left.
 
-::: {style="background-color: #B0C4DE;padding: 1em;"}
-This block has a *lightsteelblue* background and 1em of padding on all
-sides.
-:::
+**Supported Units:** Only `pt`, `em`, and `ex` are supported to
+guarantee stability.
 
-### Background Highlights in Bracketed Spans
+### Typst Named Palette
 
-When applied to a Bracketed Span, `pfa-bg-color` acts as an inline
-highlight.
+You can access Typst's native predefined colors by prefixing the color
+name with typst.
 
-``` markdown
-The [quick brown fox]{pfa-bg-color="gold" pfa-padding="0.2em 0.4em"} jumps over the lazy dog.
-```
+- **Syntax:**
+  `[Sample]{pfa-bg-color="typstmaroon" pfa-color="white" pfa-padding="0.2em"}`
 
-The quick [brown fox
-jumps]{style="background-color: #FFD700;padding: 0.2em 0.4em;"} over the
-lazy dog.
-
-## Padding and Layout Spacing
-
-The `pfa-padding` attribute provides fine-grained control over the
-internal spacing of containers. It supports CSS-style shorthand syntax
-to apply padding to individual edges.
-
-### Shorthand Padding Logic
-
-The `pfa-padding` attribute supports the standard CSS shorthand rules,
-ensuring consistent spacing across HTML, LaTeX, and Typst:
-
-- **1 Value (`1em`):** Applied to all four sides.
-- **2 Values (`1em 0.5em`):** First value for Top/Bottom, second for
-  Left/Right.
-- **3 Values (`1em 0.5em 2em`):** Top, Left/Right, Bottom.
-- **4 Values (`1em 0.5em 2em 0.2em`):** Top, Right, Bottom, Left.
-
-**Supported Units:** To guarantee cross-platform stability, only
-typographic units are supported: `pt`, `em`, and `ex`.
-
-### Individual Edge Control (Fenced Divs)
-
-``` markdown
-::: {pfa-bg-color="lavender" pfa-padding="0.5em 2em 1em 0.5em"}
-This block uses asymmetric padding: 0.5em top, 2em right, 1em bottom, and 0.5em left.
-:::
-```
-
-::: {style="background-color: #E6E6FA;padding: 0.5em 2em 1em 0.5em;"}
-This block uses asymmetric padding: 0.5em top, 2em right, 1em bottom,
-and 0.5em left.
-:::
-
-### Inline Bounding Boxes (Bracketed Spans)
-
-When `pfa-padding` is applied to a Bracketed Span, the filter
-dynamically upgrades the element to a structural box, ensuring the
-background fill and padding respect the inline bounding area correctly.
-
-``` markdown
-[Highlighted with padding]{pfa-bg-color="cyan" pfa-padding="0.2em 0.5em"}
-```
-
-[Highlighted with
-padding]{style="background-color: #00FFFF;padding: 0.2em 0.5em;"}
-
-## Typst Named Palette
-
-In addition to standard CSS colors, the filter provides access to the
-[19 predefined named
-colors](https://typst.app/docs/reference/visualize/color/#predefined-colors)
-from the Typst palette. To use these, prefix the color name with
-`typst`.
-
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Syntax                                                                          Output
-  ------------------------------------------------------------------------------- ----------------------------------------------------------------------------
-  `[Sample]{pfa-bg-color="typstmaroon" pfa-color="white" pfa-padding="0.2em"}`    [Sample]{style="color: #FFFFFF;background-color: #85144B;padding: 0.2em;"}
-
-  `[Sample]{pfa-bg-color="typsteastern" pfa-color="white" pfa-padding="0.2em"}`   [Sample]{style="color: #FFFFFF;background-color: #239DAD;padding: 0.2em;"}
-
-  `[Sample]{pfa-bg-color="typstorange" pfa-padding="0.2em"}`                      [Sample]{style="background-color: #FF851B;padding: 0.2em;"}
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+- **Output:**
+  [Sample]{style="color: #FFFFFF;background-color: #85144B;padding: 0.2em;"}
 
 ## Text Alignment within Fenced Divs
 
@@ -481,7 +402,7 @@ making them ideal for formatting poetry, lyrics, or multi-line blocks.
 
 ``` markdown
 ::: {.pfa-align-left}
-This block of text is _left-aligned_.
+This block of text is *left-aligned*.
 :::
 ```
 
@@ -493,7 +414,7 @@ This block of text is *left-aligned*.
 
 ``` markdown
 ::: {.pfa-align-center}
-This block of text is _center-aligned_.
+This block of text is *center-aligned*.
 :::
 ```
 
@@ -505,7 +426,7 @@ This block of text is *center-aligned*.
 
 ``` markdown
 ::: {.pfa-align-right}
-This block of text is _right-aligned_.
+This block of text is *right-aligned*.
 :::
 ```
 
@@ -518,7 +439,7 @@ This block of text is *right-aligned*.
 ``` markdown
 ::: {.pfa-align-center}
 This block of text\
-is _center-aligned_\
+is *center-aligned*\
 while preserving explicit line breaks.
 :::
 ```
@@ -637,12 +558,9 @@ use the replacement classes shown below.
   `flushright`    ---         2.0.0        `pfa-align-right`
   `xout`          `xo`        2.0.0        `pfa-text-strikeout`
 
-[^1]: Requires including the companion `fonts-and-alignment.css`
-    stylesheet in your HTML compilation.
+[^1]: HTML output requires the companion fonts-and-alignment.css
+    stylesheet.
 
 [^2]: Three-digit shorthand expands by duplicating each single
     hexadecimal digit per RGB channel (e.g., '#666' expands to
     '#666666').
-
-[^3]: HTML output utilizes the native CSS `color-mix()` function to
-    achieve the same blend.

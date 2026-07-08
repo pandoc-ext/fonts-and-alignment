@@ -70,15 +70,15 @@ Verifies overriding nested transformations back into standard vertical postures.
 
 [Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-style-upright}
 
-#### Emphasis (`pfa-style-emphasis`)
+#### Emphasis (`pfa-style-emph`)
 
 Verifies context-aware nesting rules using standard semantic markdown emphasis routines.
 
 ```markdown
-[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-style-emphasis}
+[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-style-emph}
 ```
 
-[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-style-emphasis}
+[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]{.pfa-style-emph}
 
 #### Small Capitals (`pfa-style-smallcaps`)
 

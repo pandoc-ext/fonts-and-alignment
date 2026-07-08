@@ -132,7 +132,7 @@ previews: $(FILTER_FILE) $(PREVIEW_HTMLS) $(PREVIEW_TYPST_PDFS) $(PREVIEW_LATEX_
 $(PREVIEWS_DIR)/html/html-%.html: test/fixtures/%.md
 	@mkdir -p $(@D)
 	@cp $(EXT_DIR)/fonts-and-alignment.css $(@D)/
-	@cp test/assets/preview-styles-and-framing.css $(@D)/
+	@cp test/assets/preview-styles.css $(@D)/
 	$(PANDOC) $< \
 		$(DEFAULTS_HTML) \
 		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
