@@ -120,7 +120,7 @@ update-%: $(FILTER_FILE) test/fixtures/%.md
 # Visual Previews Generation (Segmented Target Directories Layout)
 # ==============================================================================
 PREVIEWS_DIR := artifacts
-SYNTAX_HIGHLIGHTING := tango
+SYNTAX_HIGHLIGHTING := zenburn
 
 PREVIEW_HTMLS      := $(patsubst %,$(PREVIEWS_DIR)/html/html-%.html,$(TEST_NAMES))
 PREVIEW_LATEX_PDFS := $(patsubst %,$(PREVIEWS_DIR)/latex/latex-%.pdf,$(filter-out %typst,$(TEST_NAMES)))
@@ -165,7 +165,7 @@ $(PREVIEWS_DIR)/latex/latex-%.pdf: test/fixtures/%.md
 # Documentation System (With Dual-Engine Output Targets)
 # ==============================================================================
 .PHONY: docs
-docs: docs/index.html docs/input-html.html docs/input-latex.pdf docs/input-typst.pdf docs/fonts-and-alignment.lua ## Build the standalone docs portal with dual-format PDFs
+docs: docs/index.html docs/input-html.html docs/input-latex.pdf docs/input-typst.typ docs/input-typst.pdf docs/fonts-and-alignment.lua ## Build the standalone docs portal with dual-format PDFs
 
 docs/index.html: README.md test/input.md $(FILTER_FILE) .tools/docs.lua docs/output.md docs/style.css
 	@mkdir -p docs
@@ -202,6 +202,13 @@ docs/input-latex.pdf: test/input.md
 		$(DEFAULTS_LATEX) \
 		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
 		--to=pdf \
+		--output=$@
+
+docs/input-typst.typ: test/input.md
+	$(PANDOC) $< \
+		$(DEFAULTS_TYPST) \
+		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
+		--to=typst \
 		--output=$@
 
 docs/input-typst.pdf: test/input.md

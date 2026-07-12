@@ -13,14 +13,35 @@
 #show heading.where(level: 4): set block(above: 1.7875em, below: 1em)
 #show heading.where(level: 4): set text(size: 12pt, weight: "semibold")
 
-#show table: set table(fill: rgb("F4F4F4"))
-#show link: set text(fill: rgb("0000FF"))
-#show raw: set text(font: "Fira Mono", size: 1.25em)
-#show raw: set text(spacing: 100%)
+// Set a consistent color for links and footnotes to improve visibility
+#show link: set text(fill: blue)
+#show footnote: set text(blue)
+
+// Remove the default justification from lists and enums to avoid awkward spacing
 #show list: set par(justify: false)
 #show enum: set par(justify: false)
-#show raw.where(block: false): it => {
-    show ".": "." + sym.zws
-    show "-": "-" + sym.zws
+
+// Add a subtle background to tables to help them pop from the page
+#show table: set table(fill: rgb("F4F4F4"))
+
+// The Brutal Reset: Strip all default grid strokes globally
+#set table(stroke: none)
+
+// The Interception & Rebuild
+#show table: it => {
+  // Neutralize any hardcoded horizontal lines Pandoc injects
+  show table.hline: none
+
+  // Define the internal structure: Draw ONLY a line under the header (row 0)
+  set table(stroke: (x, y) => if y == 0 { (bottom: 0.5pt + black) } else { none })
+
+  // Wrap the now-naked table in our crisp, single outer borders
+  box(
+    stroke: (top: 1pt + black, bottom: 1pt + black),
+    outset: (y: 0.3em),
     it
+  )
 }
+
+// Set font globally for all code
+#show raw: set text(font: "Fira Mono", size: 1.25em, spacing: 100%)

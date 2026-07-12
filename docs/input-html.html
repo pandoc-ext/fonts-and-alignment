@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc 3.10" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Nandakumar Chandrasekhar" />
-  <meta name="dcterms.date" content="2026-07-04" />
+  <meta name="dcterms.date" content="2026-07-08" />
   <title>input</title>
   <style>
     /* Default styles provided by pandoc.
@@ -107,7 +107,7 @@ Filter<br />
 for Pandoc</div></h1>
 <p class="author">Nandakumar
 Chandrasekhar</p>
-<p class="date">2026-07-04</p>
+<p class="date">2026-07-08</p>
 </header>
 <h2
 id="introduction">Introduction</h2>
@@ -581,15 +581,14 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1">
 <p>THIS PARAGRAPH IS
 TRANSFORMED TO UPPERCASE.</p>
 </div>
-<h2 id="colors">Colors</h2>
+<h2
+id="colors-and-backgrounds">Colors
+and Backgrounds</h2>
 <p>This section describes how
-to apply color and spacing
-using the
-<code>pfa-color</code>,
-<code>pfa-bg-color</code>, and
-<code>pfa-padding</code>
-attributes within Bracketed
-Spans and Fenced Divs.</p>
+to apply colors to text, as
+well as how to apply
+background fills, padding, and
+borders to your content.</p>
 <h3
 id="color-fundamentals">Color
 Fundamentals</h3>
@@ -604,19 +603,19 @@ Color Terminology</h4>
 filter is case-insensitive and
 accepts most naming
 conventions. All examples
-below resolve to the CSS3
+below resolve to the standard
+CSS3
 <code>mediumvioletred</code>:</p>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col style="width: 32%" />
-<col style="width: 50%" />
-<col style="width: 17%" />
+<col style="width: 23%" />
+<col style="width: 60%" />
+<col style="width: 16%" />
 </colgroup>
 <thead>
 <tr>
 <th
-style="text-align: left;">Naming
-Convention</th>
+style="text-align: left;">Naming</th>
 <th
 style="text-align: left;">Syntax</th>
 <th
@@ -628,70 +627,50 @@ style="text-align: left;">Output</th>
 <td
 style="text-align: left;">Lowercase</td>
 <td
-style="text-align: left;"><code>[Color]{pfa-color="mediumvioletred"}</code></td>
+style="text-align: left;"><code>[Sample]{pfa-color="mediumvioletred"}</code></td>
 <td
 style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
+style="color: #C71585;">Sample</span></td>
 </tr>
 <tr>
 <td
 style="text-align: left;">Title
 Case</td>
 <td
-style="text-align: left;"><code>[Color]{pfa-color="Medium Violet Red"}</code></td>
+style="text-align: left;"><code>[Sample]{pfa-color="Medium Violet Red"}</code></td>
 <td
 style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
+style="color: #C71585;">Sample</span></td>
 </tr>
 <tr>
 <td
 style="text-align: left;">Kebab
 Case</td>
 <td
-style="text-align: left;"><code>[Color]{pfa-color="medium-violet-red"}</code></td>
+style="text-align: left;"><code>[Sample]{pfa-color="medium-violet-red"}</code></td>
 <td
 style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
+style="color: #C71585;">Sample</span></td>
 </tr>
 <tr>
 <td
 style="text-align: left;">Snake
 Case</td>
 <td
-style="text-align: left;"><code>[Color]{pfa-color="medium_violet_red"}</code></td>
+style="text-align: left;"><code>[Sample]{pfa-color="medium_violet_red"}</code></td>
 <td
 style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
-</tr>
-<tr>
-<td
-style="text-align: left;">Camel
-Case</td>
-<td
-style="text-align: left;"><code>[Color]{pfa-color="mediumVioletRed"}</code></td>
-<td
-style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
+style="color: #C71585;">Sample</span></td>
 </tr>
 <tr>
 <td
 style="text-align: left;">Pascal
 Case</td>
 <td
-style="text-align: left;"><code>[Color]{pfa-color="MediumVioletRed"}</code></td>
+style="text-align: left;"><code>[Sample]{pfa-color="MediumVioletRed"}</code></td>
 <td
 style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
-</tr>
-<tr>
-<td
-style="text-align: left;">Screaming
-Snake Case</td>
-<td
-style="text-align: left;"><code>[Color]{pfa-color="MEDIUM_VIOLET_RED"}</code></td>
-<td
-style="text-align: left;"><span
-style="color: #C71585;">Color</span></td>
+style="color: #C71585;">Sample</span></td>
 </tr>
 </tbody>
 </table>
@@ -699,9 +678,9 @@ style="color: #C71585;">Color</span></td>
 Types</h4>
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 63%" />
-<col style="width: 11%" />
+<col style="width: 22%" />
+<col style="width: 54%" />
+<col style="width: 22%" />
 </colgroup>
 <thead>
 <tr>
@@ -767,54 +746,50 @@ LaTeX’s <code>xcolor</code>
 percentage-mixing syntax for
 tints, shades, and blends.
 This is the standardized
-syntax for this extension
-because it maps reliably
-across Typst, LaTeX, and HTML
-(which leverages the native
-CSS <code>color-mix()</code>
+syntax because it maps
+reliably across Typst, LaTeX,
+and HTML (which leverages the
+native CSS
+<code>color-mix()</code>
 function).</p>
 <h4
 id="supported-mixing-methods">Supported
 Mixing Methods</h4>
 <ul>
-<li><strong>Tinting (Blending
-with White):</strong>
-<ul>
-<li>Syntax:
-<code>BaseColor!Percentage</code></li>
-<li>Example:
-<code>Maroon!40</code> (Yields
-40% Maroon and 60% white)</li>
-</ul></li>
-<li><strong>Shading (Blending
-with Black):</strong>
-<ul>
-<li>Syntax:
-<code>BaseColor!Percentage!black</code></li>
-<li>Example:
+<li><p><strong>Tinting
+(blending with
+white):</strong> Use the
+pattern
+<code>BaseColor!Percentage</code>.
+For example,
+<code>Maroon!40</code> yields
+40% Maroon and 60%
+white.</p></li>
+<li><p><strong>Shading
+(blending with
+black):</strong> Use the
+pattern
+<code>BaseColor!Percentage!black</code>.
+For example,
 <code>MediumVioletRed!80!black</code>
-(Yields 80% MediumVioletRed
-and 20% black)</li>
-</ul></li>
-<li><strong>Two-Color
-Mix:</strong>
-<ul>
-<li>Syntax:
-<code>BaseColor!Percentage!MixColor</code></li>
-<li>Example:
+yields 80% MediumVioletRed and
+20% black.</p></li>
+<li><p><strong>Two-Color
+Mix:</strong> Use the pattern
+<code>BaseColor!Percentage!MixColor</code>.
+For example,
 <code>RoyalBlue!50!ForestGreen</code>
-(Yields a 50/50 mix of both
-colors)</li>
-</ul></li>
+yields a 50/50 mix of both
+colors.</p></li>
 </ul>
 <h4
 id="syntax-examples">Syntax
 Examples</h4>
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 61%" />
-<col style="width: 12%" />
+<col style="width: 29%" />
+<col style="width: 50%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr>
@@ -833,30 +808,30 @@ style="text-align: left;">Output</th>
 style="text-align: left;">Tint
 (40% Base)</td>
 <td
-style="text-align: left;"><code>[Tinted]{pfa-color="Maroon!40"}</code></td>
+style="text-align: left;"><code>[Sample]{pfa-color="Maroon!40"}</code></td>
 <td
 style="text-align: left;"><span
-style="color: color-mix(in srgb, #800000 40%, #FFFFFF);">Tinted</span></td>
+style="color: color-mix(in srgb, #800000 40%, #FFFFFF);">Sample</span></td>
 </tr>
 <tr>
 <td
 style="text-align: left;">Shade
 (80% Base)</td>
 <td
-style="text-align: left;"><code>[Shaded]{pfa-color="MediumVioletRed!80!black"}</code></td>
+style="text-align: left;"><code>[Sample]{pfa-color="MediumVioletRed!80!black"}</code></td>
 <td
 style="text-align: left;"><span
-style="color: color-mix(in srgb, #C71585 80%, #000000);">Shaded</span></td>
+style="color: color-mix(in srgb, #C71585 80%, #000000);">Sample</span></td>
 </tr>
 <tr>
 <td
 style="text-align: left;">Mix
 (50/50)</td>
 <td
-style="text-align: left;"><code>[Mixed]{pfa-font-color="RoyalBlue!50!ForestGreen"}</code></td>
+style="text-align: left;"><code>[Sample]{pfa-color="RoyalBlue!50!ForestGreen"}</code></td>
 <td
 style="text-align: left;"><span
-style="color: color-mix(in srgb, #4169E1 50%, #228B22);">Mixed</span></td>
+style="color: color-mix(in srgb, #4169E1 50%, #228B22);">Sample</span></td>
 </tr>
 </tbody>
 </table>
@@ -879,103 +854,148 @@ use native Typst color syntax
 <code>color.mix()</code>), the
 filter will pass it directly
 to Typst. It will not be
-translated for LaTeX or HTML,
-and those formats will likely
-receive a fallback
-color.</p></li>
+translated for LaTeX or
+HTML.</p></li>
 <li><p><strong>Binary Mixing
 Only:</strong> You may blend a
 maximum of two colors.
 Multi-color mixing (e.g.,
-Red!30!Blue!30!Green) is not
-supported.</p></li>
+<code>Red!30!Blue!30!Green</code>)
+is not supported.</p></li>
 <li><p><strong>Casing
 Matters:</strong> Because
 mixing strings are passed
 directly to LaTeX, casing must
 be exact:</p>
 <ul>
-<li>Use lowercase for <a
-href="https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide">core
+<li><p>Use lowercase for <a
+href="https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide">Core
 LaTeX colors</a> (e.g.,
 <code>black</code>,
-<code>red</code>).</li>
-<li>Use PascalCase for <a
+<code>red</code>).</p></li>
+<li><p>Use PascalCase for <a
 href="https://developer.mozilla.org/en-US/docs/Web/CSS/named-color">CSS3
 named colors</a> (e.g.,
 <code>RoyalBlue</code>,
-<code>MediumVioletRed</code>).</li>
+<code>MediumVioletRed</code>).</p></li>
 </ul></li>
 </ul>
 <h3
-id="styling-elements">Styling
-Elements</h3>
-<h4
-id="foreground-and-background">Foreground
-and Background</h4>
-<p>Use <code>pfa-color</code>
-for text and
-<code>pfa-bg-color</code> for
-container backgrounds.</p>
+id="foreground-styling">Foreground
+Styling</h3>
+<p>Use the
+<code>pfa-color</code>
+attribute to change the color
+of the text itself. It can be
+applied to inline spans or
+multiline blocks.</p>
 <div class="sourceCode"
 id="cb11"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>::: {pfa-color=&quot;DarkSlateGrey&quot; pfa-bg-color=&quot;lightsteelblue&quot; pfa-padding=&quot;1em&quot;}</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>This block has a default text color and a background fill.</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This span overrides the text color.</span><span class="co">]</span>{pfa-color=&quot;tomato&quot;}</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<div
-style="color: #2F4F4F;background-color: #B0C4DE;padding: 1em;">
-<p>This block has a default
-text color and a background
-fill. <span
-style="color: #FF6347;">This
-span overrides the text
-color.</span></p>
-</div>
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>This is normal text, but <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;tomato&quot;} overrides the default text color.</span></code></pre></div>
+<p>This is normal text, but
+<span
+style="color: #FF6347;">Sample</span>
+overrides the default text
+color.</p>
+<h3
+id="backgrounds-and-borders">Backgrounds
+and Borders</h3>
+<p>By combining background
+fills, padding, borders, and
+corner radii, you can
+highlight and emphasize text.
+These attributes can be
+applied to both inline
+bracketed spans and multiline
+fenced divs.</p>
 <h4
-id="layout-spacing-pfa-padding">Layout
-Spacing
-(<code>pfa-padding</code>)</h4>
-<p>The pfa-padding attribute
-controls internal spacing
-using standard CSS
-shorthand.</p>
+id="the-core-attributes">The
+Core Attributes</h4>
 <ul>
-<li><p><strong>One value
-(<code>1em</code>):</strong>
-Applied to all four sides
-evenly.</p></li>
-<li><p><strong>Two values
-(<code>1em 0.5em</code>):</strong>
-The first value applies to the
-top and bottom; the second
-applies to the left and
-right.</p></li>
-<li><p><strong>Three values
-(<code>1em 0.5em 2em</code>):</strong>
-The first value is the top,
-the second applies to both the
-left and right, and the third
-is the bottom.</p></li>
-<li><p><strong>Four values
-(<code>1em 0.5em 2em 0.2em</code>):</strong>
-Applied in clockwise order:
-top, right, bottom, and
-left.</p></li>
-</ul>
-<p><strong>Supported
-Units:</strong> Only
-<code>pt</code>,
+<li><p><code>pfa-bg-color</code>:
+Defines the background fill
+color of the
+container.</p></li>
+<li><p><code>pfa-padding</code>:
+Controls internal spacing
+using standard CSS shorthands.
+Only <code>pt</code>,
 <code>em</code>, and
 <code>ex</code> are supported
-to guarantee stability.</p>
+to guarantee cross-platform
+stability.</p>
+<ul>
+<li><p>One value
+(<code>1em</code>): Applied to
+all four sides
+evenly.</p></li>
+<li><p>Two values
+(<code>1em 0.5em</code>):
+Top/Bottom, then
+Left/Right.</p></li>
+<li><p>Three values
+(<code>1em 0.5em 2em</code>):
+Top, Left/Right,
+Bottom.</p></li>
+<li><p>Four values
+(<code>1em 0.5em 2em 0.2em</code>):
+Top, Right, Bottom,
+Left.</p></li>
+</ul></li>
+<li><p><code>pfa-bg-border-width</code>:
+Defines the thickness of the
+border around all four sides.
+We strongly recommend using
+<code>pt</code> to ensure
+crisp print rendering. If this
+is omitted, the border
+defaults to
+<code>1pt</code>.</p></li>
+<li><p><code>pfa-bg-border-color</code>:
+Defines the color of the
+border.</p></li>
+<li><p><code>pfa-bg-radius</code>:
+Rounds all four corners of the
+container uniformly. We
+recommend using
+<code>em</code> so the curve
+scales naturally with your
+text size.</p></li>
+</ul>
+<h4
+id="example-1-inline-spans">Example
+1: Inline Spans</h4>
+<div class="sourceCode"
+id="cb12"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>This is a <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-bg-color=&quot;aliceblue&quot; pfa-color=&quot;navy&quot; pfa-padding=&quot;0.2em 0.6em&quot; pfa-bg-border-width=&quot;0.5pt&quot; pfa-bg-border-color=&quot;steelblue&quot; pfa-bg-radius=&quot;1em&quot;} of an inline badge.</span></code></pre></div>
+<p>This is a <span
+style="color: #000080;background-color: #F0F8FF;padding: 0.2em 0.6em;border: 0.5pt solid #4682B4;border-radius: 1em;">Sample</span>
+of an inline badge.</p>
+<h4
+id="example-2-multiline-blocks">Example
+2: Multiline Blocks</h4>
+<div class="sourceCode"
+id="cb13"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>::: {pfa-bg-color=&quot;ghostwhite&quot; pfa-padding=&quot;1.5em&quot; pfa-bg-border-width=&quot;1.5pt&quot; pfa-bg-border-color=&quot;maroon&quot; pfa-bg-radius=&quot;0.4em&quot;}</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>**Important Note:** This block utilizes the full suite of styling attributes to create a container with a light background, a maroon border, and rounded corners.</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div
+style="background-color: #F8F8FF;padding: 1.5em;border: 1.5pt solid #800000;border-radius: 0.4em;">
+<p><strong>Important
+Note:</strong> This block
+utilizes the full suite of
+styling attributes to create a
+container with a light
+background, a maroon border,
+and rounded corners.</p>
+</div>
 <h3
 id="typst-named-palette">Typst
 Named Palette</h3>
 <p>You can access Typst’s
 native predefined colors by
 prefixing the color name with
-typst.</p>
+<code>typst</code>.</p>
 <ul>
 <li><p><strong>Syntax:</strong>
 <code>[Sample]{pfa-bg-color="typstmaroon" pfa-color="white" pfa-padding="0.2em"}</code></p></li>
@@ -1007,10 +1027,10 @@ blocks.</p>
 id="left-aligned-text">Left-aligned
 Text</h3>
 <div class="sourceCode"
-id="cb12"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>This block of text is *left-aligned*.</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb14"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>This block of text is *left-aligned*.</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div>
 <p>This block of text is
 <em>left-aligned</em>.</p>
@@ -1019,10 +1039,10 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1">
 id="center-aligned-text">Center-aligned
 Text</h3>
 <div class="sourceCode"
-id="cb13"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>This block of text is *center-aligned*.</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb15"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>This block of text is *center-aligned*.</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div>
 <p>This block of text is
 <em>center-aligned</em>.</p>
@@ -1031,10 +1051,10 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1">
 id="right-aligned-text">Right-aligned
 Text</h3>
 <div class="sourceCode"
-id="cb14"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>This block of text is *right-aligned*.</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb16"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>This block of text is *right-aligned*.</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div>
 <p>This block of text is
 <em>right-aligned</em>.</p>
@@ -1043,12 +1063,12 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1">
 id="line-break-preservation">Line
 Break Preservation</h3>
 <div class="sourceCode"
-id="cb15"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>is *center-aligned*\</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb17"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>is *center-aligned*\</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div>
 <p>This block of text<br />
 is
@@ -1141,10 +1161,10 @@ specified styles while
 preserving Pandoc’s standard
 attribute behavior.</p>
 <div class="sourceCode"
-id="cb16"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-family-sans .pfa-weight-bold .pfa-size-l pfa-color=&quot;midnightblue&quot;}</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+id="cb18"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-family-sans .pfa-weight-bold .pfa-size-l pfa-color=&quot;midnightblue&quot;}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div style="color: #191970;">
 <p>A centered, bold,
 sans-serif, large,

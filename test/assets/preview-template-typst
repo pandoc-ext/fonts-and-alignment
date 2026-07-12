@@ -22,6 +22,36 @@ $if(highlighting-definitions)$
 // syntax highlighting functions from skylighting:
 $highlighting-definitions$
 
+// State that Skylighting sets around its content so NormalTok can tell whether
+// it is being rendered inline or inside a code block.
+#let _sk-ctx = state("sk-ctx", "inline")
+
+// NormalTok: maroon when inline, original zenburn gray inside code blocks.
+// context{} defers the fill decision to layout time so the state set by
+// Skylighting below is visible even though NormalTok is called first.
+#let NormalTok(s) = context {
+  if _sk-ctx.get() == "block" { text(fill: rgb("#cccccc"), raw(s)) }
+  else { text(fill: maroon, raw(s)) }
+}
+
+// Skylighting: reimplemented to frame content with state updates and add
+// padding/radius that the pandoc-generated version omits.
+#let Skylighting(fill: none, number: false, start: 1, sourcelines) = {
+  let blocks = []
+  let lnum = start - 1
+  for ln in sourcelines {
+    if number {
+      lnum = lnum + 1
+      blocks = blocks + box(
+        width: if start + sourcelines.len() > 999 { 30pt } else { 24pt },
+        text([#lnum])
+      )
+    }
+    blocks = blocks + ln + EndLine()
+  }
+  [#_sk-ctx.update("block")#block(fill: rgb("#303030"), inset: 1em, radius: 4pt, width: 100%, blocks)#_sk-ctx.update("inline")]
+}
+
 $endif$
 $if(template)$
 #import "$template$": conf

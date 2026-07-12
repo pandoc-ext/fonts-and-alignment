@@ -182,9 +182,9 @@ this paragraph is transformed to uppercase.
 this paragraph is transformed to uppercase.
 :::
 
-## Colors
+## Colors and Backgrounds
 
-This section describes how to apply color and spacing using the `pfa-color`, `pfa-bg-color`, and `pfa-padding` attributes within Bracketed Spans and Fenced Divs.
+This section describes how to apply colors to text, as well as how to apply background fills, padding, and borders to your content.
 
 ### Color Fundamentals
 
@@ -192,101 +192,117 @@ The filter normalizes color inputs to ensure they render identically across LaTe
 
 #### Flexible Color Terminology
 
-For solid colors, the filter is case-insensitive and accepts most naming conventions. All examples below resolve to the CSS3 `mediumvioletred`:
+For solid colors, the filter is case-insensitive and accepts most naming conventions. All examples below resolve to the standard CSS3 `mediumvioletred`:
 
-| Naming Convention    | Syntax                                        | Output |
-| :-------------------- | :------------------------------- | :---------- |
-| Lowercase            | `[Color]{pfa-color="mediumvioletred"}`   | [Color]{pfa-color="mediumvioletred"} |
-| Title Case           | `[Color]{pfa-color="Medium Violet Red"}` | [Color]{pfa-color="Medium Violet Red"} |
-| Kebab Case           | `[Color]{pfa-color="medium-violet-red"}` | [Color]{pfa-color="medium-violet-red"} |
-| Snake Case           | `[Color]{pfa-color="medium_violet_red"}` | [Color]{pfa-color="medium_violet_red"} |
-| Camel Case           | `[Color]{pfa-color="mediumVioletRed"}`   | [Color]{pfa-color="mediumVioletRed"} |
-| Pascal Case          | `[Color]{pfa-color="MediumVioletRed"}`   | [Color]{pfa-color="MediumVioletRed"} |
-| Screaming Snake Case | `[Color]{pfa-color="MEDIUM_VIOLET_RED"}` | [Color]{pfa-color="MEDIUM_VIOLET_RED"} |
+| Naming | Syntax | Output |
+| :------ | :----------------- | :----|
+| Lowercase | `[Sample]{pfa-color="mediumvioletred"}` | [Sample]{pfa-color="mediumvioletred"} |
+| Title Case | `[Sample]{pfa-color="Medium Violet Red"}` | [Sample]{pfa-color="Medium Violet Red"} |
+| Kebab Case | `[Sample]{pfa-color="medium-violet-red"}` | [Sample]{pfa-color="medium-violet-red"} |
+| Snake Case | `[Sample]{pfa-color="medium_violet_red"}` | [Sample]{pfa-color="medium_violet_red"} |
+| Pascal Case | `[Sample]{pfa-color="MediumVioletRed"}` | [Sample]{pfa-color="MediumVioletRed"} |
 
 #### Input Types
 
-| Input Type    | Syntax                               | Output |
-| :------------ | :-------------------------------- | :----- |
-| CSS3 Named    | `[Sample]{pfa-color="crimson"}` | [Sample]{pfa-color="crimson"} |
-| Hex Full      | `[Sample]{pfa-color="#2E8B57"}` | [Sample]{pfa-color="#2E8B57"} |
+| Input Type | Syntax | Output |
+| :---- | :----------- | :---- |
+| CSS3 Named | `[Sample]{pfa-color="crimson"}` | [Sample]{pfa-color="crimson"} |
+| Hex Full | `[Sample]{pfa-color="#2E8B57"}` | [Sample]{pfa-color="#2E8B57"} |
 | Hex Shorthand^[Three-digit shorthand expands by duplicating each single hexadecimal digit per RGB channel (e.g., '#666' expands to '#666666').] | `[Sample]{pfa-color="#666"}` | [Sample]{pfa-color="#666"} |
 
 **Compatibility Note:** To ensure cross-platform stability, use standard CSS3 named colors or hex codes. Avoid LaTeX-specific numbered variants (e.g., `LightBlue3`), as these are not supported in web browsers or CSS.
 
 ### Color Mixing
 
-The extension supports LaTeX’s `xcolor` percentage-mixing syntax for tints, shades, and blends. This is the standardized syntax for this extension because it maps reliably across Typst, LaTeX, and HTML (which leverages the native CSS `color-mix()` function).
+The extension supports LaTeX’s `xcolor` percentage-mixing syntax for tints, shades, and blends. This is the standardized syntax because it maps reliably across Typst, LaTeX, and HTML (which leverages the native CSS `color-mix()` function).
 
 #### Supported Mixing Methods
 
-* **Tinting (Blending with White):**
-  * Syntax: `BaseColor!Percentage`
-  * Example: `Maroon!40` (Yields 40% Maroon and 60% white)
+* **Tinting (blending with white):** Use the pattern `BaseColor!Percentage`. For example, `Maroon!40` yields 40% Maroon and 60% white.
 
-* **Shading (Blending with Black):**
-  * Syntax: `BaseColor!Percentage!black`
-  * Example: `MediumVioletRed!80!black` (Yields 80% MediumVioletRed and 20% black)
+* **Shading (blending with black):** Use the pattern `BaseColor!Percentage!black`. For example, `MediumVioletRed!80!black` yields 80% MediumVioletRed and 20% black.
 
-* **Two-Color Mix:**
-  * Syntax: `BaseColor!Percentage!MixColor`
-  * Example: `RoyalBlue!50!ForestGreen` (Yields a 50/50 mix of both colors)
+* **Two-Color Mix:** Use the pattern `BaseColor!Percentage!MixColor`. For example, `RoyalBlue!50!ForestGreen` yields a 50/50 mix of both colors.
 
 #### Syntax Examples
 
 | Mixing Type | Syntax | Output |
-| :-------| :------------------ | :--- |
-| Tint (40% Base) | `[Tinted]{pfa-color="Maroon!40"}` | [Tinted]{pfa-color="Maroon!40"} |
-| Shade (80% Base) | `[Shaded]{pfa-color="MediumVioletRed!80!black"}` | [Shaded]{pfa-color="MediumVioletRed!80!black"} |
-| Mix (50/50) | `[Mixed]{pfa-font-color="RoyalBlue!50!ForestGreen"}` | [Mixed]{pfa-color="RoyalBlue!50!ForestGreen"} |
+| :------ | :----------- | :---- |
+| Tint (40% Base) | `[Sample]{pfa-color="Maroon!40"}` | [Sample]{pfa-color="Maroon!40"} |
+| Shade (80% Base) | `[Sample]{pfa-color="MediumVioletRed!80!black"}` | [Sample]{pfa-color="MediumVioletRed!80!black"} |
+| Mix (50/50) | `[Sample]{pfa-color="RoyalBlue!50!ForestGreen"}` | [Sample]{pfa-color="RoyalBlue!50!ForestGreen"} |
 
 #### Important Compatibility Rules
 
 * **Strictly Use LaTeX Syntax:** Always use the `BaseColor!Percentage` pattern. This is the only syntax guaranteed to translate correctly across all three output formats.
 
-* **Avoid Typst Native Syntax:** If you use native Typst color syntax (e.g., `color.mix()`), the filter will pass it directly to Typst. It will not be translated for LaTeX or HTML, and those formats will likely receive a fallback color.
+* **Avoid Typst Native Syntax:** If you use native Typst color syntax (e.g., `color.mix()`), the filter will pass it directly to Typst. It will not be translated for LaTeX or HTML.
 
-* **Binary Mixing Only:** You may blend a maximum of two colors. Multi-color mixing (e.g., Red!30!Blue!30!Green) is not supported.
+* **Binary Mixing Only:** You may blend a maximum of two colors. Multi-color mixing (e.g., `Red!30!Blue!30!Green`) is not supported.
 
 * **Casing Matters:** Because mixing strings are passed directly to LaTeX, casing must be exact:
-  * Use lowercase for [core LaTeX colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide) (e.g., `black`, `red`).
+
+  * Use lowercase for [Core LaTeX colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide) (e.g., `black`, `red`).
+
   * Use PascalCase for [CSS3 named colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) (e.g., `RoyalBlue`, `MediumVioletRed`).
 
-### Styling Elements
+### Foreground Styling
 
-#### Foreground and Background
-
-Use `pfa-color` for text and `pfa-bg-color` for container backgrounds.
+Use the `pfa-color` attribute to change the color of the text itself. It can be applied to inline spans or multiline blocks.
 
 ```markdown
-::: {pfa-color="DarkSlateGrey" pfa-bg-color="lightsteelblue" pfa-padding="1em"}
-This block has a default text color and a background fill.
-[This span overrides the text color.]{pfa-color="tomato"}
+This is normal text, but [Sample]{pfa-color="tomato"} overrides the default text color.
+```
+
+This is normal text, but [Sample]{pfa-color="tomato"} overrides the default text color.
+
+### Backgrounds and Borders
+
+By combining background fills, padding, borders, and corner radii, you can highlight and emphasize text. These attributes can be applied to both inline bracketed spans and multiline fenced divs.
+
+#### The Core Attributes
+
+* `pfa-bg-color`: Defines the background fill color of the container.
+
+* `pfa-padding`: Controls internal spacing using standard CSS shorthands. Only `pt`, `em`, and `ex` are supported to guarantee cross-platform stability.
+
+  * One value (`1em`): Applied to all four sides evenly.
+
+  * Two values (`1em 0.5em`): Top/Bottom, then Left/Right.
+
+  * Three values (`1em 0.5em 2em`): Top, Left/Right, Bottom.
+
+  * Four values (`1em 0.5em 2em 0.2em`): Top, Right, Bottom, Left.
+
+* `pfa-bg-border-width`: Defines the thickness of the border around all four sides. We strongly recommend using `pt` to ensure crisp print rendering. If this is omitted, the border defaults to `1pt`.
+
+* `pfa-bg-border-color`: Defines the color of the border.
+
+* `pfa-bg-radius`: Rounds all four corners of the container uniformly. We recommend using `em` so the curve scales naturally with your text size.
+
+#### Example 1: Inline Spans
+
+```markdown
+This is a [Sample]{pfa-bg-color="aliceblue" pfa-color="navy" pfa-padding="0.2em 0.6em" pfa-bg-border-width="0.5pt" pfa-bg-border-color="steelblue" pfa-bg-radius="1em"} of an inline badge.
+```
+
+This is a [Sample]{pfa-bg-color="aliceblue" pfa-color="navy" pfa-padding="0.2em 0.6em" pfa-bg-border-width="0.5pt" pfa-bg-border-color="steelblue" pfa-bg-radius="1em"} of an inline badge.
+
+#### Example 2: Multiline Blocks
+
+```markdown
+::: {pfa-bg-color="ghostwhite" pfa-padding="1.5em" pfa-bg-border-width="1.5pt" pfa-bg-border-color="maroon" pfa-bg-radius="0.4em"}
+**Important Note:** This block utilizes the full suite of styling attributes to create a container with a light background, a maroon border, and rounded corners.
 :::
 ```
 
-::: {pfa-color="DarkSlateGrey" pfa-bg-color="lightsteelblue" pfa-padding="1em"}
-This block has a default text color and a background fill.
-[This span overrides the text color.]{pfa-color="tomato"}
+::: {pfa-bg-color="ghostwhite" pfa-padding="1.5em" pfa-bg-border-width="1.5pt" pfa-bg-border-color="maroon" pfa-bg-radius="0.4em"}
+**Important Note:** This block utilizes the full suite of styling attributes to create a container with a light background, a maroon border, and rounded corners.
 :::
-
-#### Layout Spacing (`pfa-padding`)
-
-The pfa-padding attribute controls internal spacing using standard CSS shorthand.
-
-* **One value (`1em`):** Applied to all four sides evenly.
-
-* **Two values (`1em 0.5em`):** The first value applies to the top and bottom; the second applies to the left and right.
-
-* **Three values (`1em 0.5em 2em`):** The first value is the top, the second applies to both the left and right, and the third is the bottom.
-
-* **Four values (`1em 0.5em 2em 0.2em`):** Applied in clockwise order: top, right, bottom, and left.
-
-**Supported Units:** Only `pt`, `em`, and `ex` are supported to guarantee stability.
 
 ### Typst Named Palette
 
-You can access Typst's native predefined colors by prefixing the color name with typst.
+You can access Typst's native predefined colors by prefixing the color name with `typst`.
 
 * **Syntax:** `[Sample]{pfa-bg-color="typstmaroon" pfa-color="white" pfa-padding="0.2em"}`
 

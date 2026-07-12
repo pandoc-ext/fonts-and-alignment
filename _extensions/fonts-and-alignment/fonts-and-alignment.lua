@@ -79,7 +79,7 @@ local css_colors = {
 }
 
 local typst_palette = {
-  typstblack = '000000', typstgray = 'AAAAAA', typstgrey = 'AAAAAA', typstsilver = 'DDDDDD',
+  typstblack = '000000', typstgray = 'AAAAAA', typstsilver = 'DDDDDD',
   typstwhite = 'FFFFFF', typstnavy = '001F3F', typstblue = '0074D9', typstaqua = '7FDBFF',
   typstteal = '39CCCC', typsteastern = '239DAD', typstpurple = 'B10DC9', typstfuchsia = 'F012BE',
   typstmaroon = '85144B', typstred = 'FF4136', typstorange = 'FF851B', typstyellow = 'FFDC00',
@@ -459,7 +459,7 @@ local function apply_color(elem, tag, raw, is_latex, is_typst)
       end
 
       if bw_attr or bc_col then
-        table.insert(opts, 'boxrule=' .. (bw_attr or '0.5pt'))
+        table.insert(opts, 'boxrule=' .. (bw_attr or '1pt'))
         if bc_col then table.insert(opts, 'colframe=' .. bc_col) end
       else
         table.insert(opts, 'boxrule=0pt, frame hidden')
@@ -554,7 +554,7 @@ local function apply_color(elem, tag, raw, is_latex, is_typst)
       style = style .. 'padding: ' .. padding_attr .. ';'
     end
     if bw_attr or bc_res then
-      local w = bw_attr or '1px'
+      local w = bw_attr or '1pt'
       local c = (bc_res and bc_res.value) or 'black'
       style = style .. 'border: ' .. w .. ' solid ' .. c .. ';'
     end

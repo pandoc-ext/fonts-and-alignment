@@ -1202,9 +1202,9 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb23-182"><a href="#cb23-182" aria-hidden="true" tabindex="-1"></a>this paragraph is transformed to uppercase.</span>
 <span id="cb23-183"><a href="#cb23-183" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb23-184"><a href="#cb23-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-185"><a href="#cb23-185" aria-hidden="true" tabindex="-1"></a><span class="fu">## Colors</span></span>
+<span id="cb23-185"><a href="#cb23-185" aria-hidden="true" tabindex="-1"></a><span class="fu">## Colors and Backgrounds</span></span>
 <span id="cb23-186"><a href="#cb23-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-187"><a href="#cb23-187" aria-hidden="true" tabindex="-1"></a>This section describes how to apply color and spacing using the <span class="in">`pfa-color`</span>, <span class="in">`pfa-bg-color`</span>, and <span class="in">`pfa-padding`</span> attributes within Bracketed Spans and Fenced Divs.</span>
+<span id="cb23-187"><a href="#cb23-187" aria-hidden="true" tabindex="-1"></a>This section describes how to apply colors to text, as well as how to apply background fills, padding, and borders to your content.</span>
 <span id="cb23-188"><a href="#cb23-188" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-189"><a href="#cb23-189" aria-hidden="true" tabindex="-1"></a><span class="fu">### Color Fundamentals</span></span>
 <span id="cb23-190"><a href="#cb23-190" aria-hidden="true" tabindex="-1"></a></span>
@@ -1212,251 +1212,267 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb23-192"><a href="#cb23-192" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-193"><a href="#cb23-193" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Flexible Color Terminology</span></span>
 <span id="cb23-194"><a href="#cb23-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-195"><a href="#cb23-195" aria-hidden="true" tabindex="-1"></a>For solid colors, the filter is case-insensitive and accepts most naming conventions. All examples below resolve to the CSS3 <span class="in">`mediumvioletred`</span>:</span>
+<span id="cb23-195"><a href="#cb23-195" aria-hidden="true" tabindex="-1"></a>For solid colors, the filter is case-insensitive and accepts most naming conventions. All examples below resolve to the standard CSS3 <span class="in">`mediumvioletred`</span>:</span>
 <span id="cb23-196"><a href="#cb23-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-197"><a href="#cb23-197" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Naming Convention    <span class="pp">|</span> Syntax                                        <span class="pp">|</span> Output <span class="pp">|</span></span>
-<span id="cb23-198"><a href="#cb23-198" aria-hidden="true" tabindex="-1"></a><span class="pp">| :--------------------</span> <span class="pp">| :-------------------------------</span> <span class="pp">| :----------</span> <span class="pp">|</span></span>
-<span id="cb23-199"><a href="#cb23-199" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lowercase            <span class="pp">|</span> <span class="in">`[Color]{pfa-color=&quot;mediumvioletred&quot;}`</span>   <span class="pp">|</span> <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{pfa-color=&quot;mediumvioletred&quot;} <span class="pp">|</span></span>
-<span id="cb23-200"><a href="#cb23-200" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Title Case           <span class="pp">|</span> <span class="in">`[Color]{pfa-color=&quot;Medium Violet Red&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{pfa-color=&quot;Medium Violet Red&quot;} <span class="pp">|</span></span>
-<span id="cb23-201"><a href="#cb23-201" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Kebab Case           <span class="pp">|</span> <span class="in">`[Color]{pfa-color=&quot;medium-violet-red&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{pfa-color=&quot;medium-violet-red&quot;} <span class="pp">|</span></span>
-<span id="cb23-202"><a href="#cb23-202" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Snake Case           <span class="pp">|</span> <span class="in">`[Color]{pfa-color=&quot;medium_violet_red&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{pfa-color=&quot;medium_violet_red&quot;} <span class="pp">|</span></span>
-<span id="cb23-203"><a href="#cb23-203" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Camel Case           <span class="pp">|</span> <span class="in">`[Color]{pfa-color=&quot;mediumVioletRed&quot;}`</span>   <span class="pp">|</span> <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{pfa-color=&quot;mediumVioletRed&quot;} <span class="pp">|</span></span>
-<span id="cb23-204"><a href="#cb23-204" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Pascal Case          <span class="pp">|</span> <span class="in">`[Color]{pfa-color=&quot;MediumVioletRed&quot;}`</span>   <span class="pp">|</span> <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{pfa-color=&quot;MediumVioletRed&quot;} <span class="pp">|</span></span>
-<span id="cb23-205"><a href="#cb23-205" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Screaming Snake Case <span class="pp">|</span> <span class="in">`[Color]{pfa-color=&quot;MEDIUM_VIOLET_RED&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{pfa-color=&quot;MEDIUM_VIOLET_RED&quot;} <span class="pp">|</span></span>
+<span id="cb23-197"><a href="#cb23-197" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Naming <span class="pp">|</span> Syntax <span class="pp">|</span> Output <span class="pp">|</span></span>
+<span id="cb23-198"><a href="#cb23-198" aria-hidden="true" tabindex="-1"></a><span class="pp">| :------</span> <span class="pp">| :-----------------</span> <span class="pp">| :----|</span></span>
+<span id="cb23-199"><a href="#cb23-199" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lowercase <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;mediumvioletred&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;mediumvioletred&quot;} <span class="pp">|</span></span>
+<span id="cb23-200"><a href="#cb23-200" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Title Case <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;Medium Violet Red&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;Medium Violet Red&quot;} <span class="pp">|</span></span>
+<span id="cb23-201"><a href="#cb23-201" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Kebab Case <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;medium-violet-red&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;medium-violet-red&quot;} <span class="pp">|</span></span>
+<span id="cb23-202"><a href="#cb23-202" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Snake Case <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;medium_violet_red&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;medium_violet_red&quot;} <span class="pp">|</span></span>
+<span id="cb23-203"><a href="#cb23-203" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Pascal Case <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;MediumVioletRed&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;MediumVioletRed&quot;} <span class="pp">|</span></span>
+<span id="cb23-204"><a href="#cb23-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-205"><a href="#cb23-205" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Input Types</span></span>
 <span id="cb23-206"><a href="#cb23-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-207"><a href="#cb23-207" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Input Types</span></span>
-<span id="cb23-208"><a href="#cb23-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-209"><a href="#cb23-209" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Input Type    <span class="pp">|</span> Syntax                               <span class="pp">|</span> Output <span class="pp">|</span></span>
-<span id="cb23-210"><a href="#cb23-210" aria-hidden="true" tabindex="-1"></a><span class="pp">| :------------</span> <span class="pp">| :--------------------------------</span> <span class="pp">| :-----</span> <span class="pp">|</span></span>
-<span id="cb23-211"><a href="#cb23-211" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> CSS3 Named    <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;crimson&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;crimson&quot;} <span class="pp">|</span></span>
-<span id="cb23-212"><a href="#cb23-212" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Hex Full      <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;#2E8B57&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;#2E8B57&quot;} <span class="pp">|</span></span>
-<span id="cb23-213"><a href="#cb23-213" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Hex Shorthand^<span class="co">[</span><span class="ot">Three-digit shorthand expands by duplicating each single hexadecimal digit per RGB channel (e.g., &#39;#666&#39; expands to &#39;#666666&#39;).</span><span class="co">]</span> <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;#666&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;#666&quot;} <span class="pp">|</span></span>
+<span id="cb23-207"><a href="#cb23-207" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Input Type <span class="pp">|</span> Syntax <span class="pp">|</span> Output <span class="pp">|</span></span>
+<span id="cb23-208"><a href="#cb23-208" aria-hidden="true" tabindex="-1"></a><span class="pp">| :----</span> <span class="pp">| :-----------</span> <span class="pp">| :----</span> <span class="pp">|</span></span>
+<span id="cb23-209"><a href="#cb23-209" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> CSS3 Named <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;crimson&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;crimson&quot;} <span class="pp">|</span></span>
+<span id="cb23-210"><a href="#cb23-210" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Hex Full <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;#2E8B57&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;#2E8B57&quot;} <span class="pp">|</span></span>
+<span id="cb23-211"><a href="#cb23-211" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Hex Shorthand^<span class="co">[</span><span class="ot">Three-digit shorthand expands by duplicating each single hexadecimal digit per RGB channel (e.g., &#39;#666&#39; expands to &#39;#666666&#39;).</span><span class="co">]</span> <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;#666&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;#666&quot;} <span class="pp">|</span></span>
+<span id="cb23-212"><a href="#cb23-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-213"><a href="#cb23-213" aria-hidden="true" tabindex="-1"></a>**Compatibility Note:** To ensure cross-platform stability, use standard CSS3 named colors or hex codes. Avoid LaTeX-specific numbered variants (e.g., <span class="in">`LightBlue3`</span>), as these are not supported in web browsers or CSS.</span>
 <span id="cb23-214"><a href="#cb23-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-215"><a href="#cb23-215" aria-hidden="true" tabindex="-1"></a>**Compatibility Note:** To ensure cross-platform stability, use standard CSS3 named colors or hex codes. Avoid LaTeX-specific numbered variants (e.g., <span class="in">`LightBlue3`</span>), as these are not supported in web browsers or CSS.</span>
+<span id="cb23-215"><a href="#cb23-215" aria-hidden="true" tabindex="-1"></a><span class="fu">### Color Mixing</span></span>
 <span id="cb23-216"><a href="#cb23-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-217"><a href="#cb23-217" aria-hidden="true" tabindex="-1"></a><span class="fu">### Color Mixing</span></span>
+<span id="cb23-217"><a href="#cb23-217" aria-hidden="true" tabindex="-1"></a>The extension supports LaTeX’s <span class="in">`xcolor`</span> percentage-mixing syntax for tints, shades, and blends. This is the standardized syntax because it maps reliably across Typst, LaTeX, and HTML (which leverages the native CSS <span class="in">`color-mix()`</span> function).</span>
 <span id="cb23-218"><a href="#cb23-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-219"><a href="#cb23-219" aria-hidden="true" tabindex="-1"></a>The extension supports LaTeX’s <span class="in">`xcolor`</span> percentage-mixing syntax for tints, shades, and blends. This is the standardized syntax for this extension because it maps reliably across Typst, LaTeX, and HTML (which leverages the native CSS <span class="in">`color-mix()`</span> function).</span>
+<span id="cb23-219"><a href="#cb23-219" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Supported Mixing Methods</span></span>
 <span id="cb23-220"><a href="#cb23-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-221"><a href="#cb23-221" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Supported Mixing Methods</span></span>
+<span id="cb23-221"><a href="#cb23-221" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Tinting (blending with white):** Use the pattern <span class="in">`BaseColor!Percentage`</span>. For example, <span class="in">`Maroon!40`</span> yields 40% Maroon and 60% white.</span>
 <span id="cb23-222"><a href="#cb23-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-223"><a href="#cb23-223" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Tinting (Blending with White):**</span>
-<span id="cb23-224"><a href="#cb23-224" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Syntax: <span class="in">`BaseColor!Percentage`</span></span>
-<span id="cb23-225"><a href="#cb23-225" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Example: <span class="in">`Maroon!40`</span> (Yields 40% Maroon and 60% white)</span>
+<span id="cb23-223"><a href="#cb23-223" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Shading (blending with black):** Use the pattern <span class="in">`BaseColor!Percentage!black`</span>. For example, <span class="in">`MediumVioletRed!80!black`</span> yields 80% MediumVioletRed and 20% black.</span>
+<span id="cb23-224"><a href="#cb23-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-225"><a href="#cb23-225" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Two-Color Mix:** Use the pattern <span class="in">`BaseColor!Percentage!MixColor`</span>. For example, <span class="in">`RoyalBlue!50!ForestGreen`</span> yields a 50/50 mix of both colors.</span>
 <span id="cb23-226"><a href="#cb23-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-227"><a href="#cb23-227" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Shading (Blending with Black):**</span>
-<span id="cb23-228"><a href="#cb23-228" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Syntax: <span class="in">`BaseColor!Percentage!black`</span></span>
-<span id="cb23-229"><a href="#cb23-229" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Example: <span class="in">`MediumVioletRed!80!black`</span> (Yields 80% MediumVioletRed and 20% black)</span>
-<span id="cb23-230"><a href="#cb23-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-231"><a href="#cb23-231" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Two-Color Mix:**</span>
-<span id="cb23-232"><a href="#cb23-232" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Syntax: <span class="in">`BaseColor!Percentage!MixColor`</span></span>
-<span id="cb23-233"><a href="#cb23-233" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Example: <span class="in">`RoyalBlue!50!ForestGreen`</span> (Yields a 50/50 mix of both colors)</span>
+<span id="cb23-227"><a href="#cb23-227" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Syntax Examples</span></span>
+<span id="cb23-228"><a href="#cb23-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-229"><a href="#cb23-229" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Mixing Type <span class="pp">|</span> Syntax <span class="pp">|</span> Output <span class="pp">|</span></span>
+<span id="cb23-230"><a href="#cb23-230" aria-hidden="true" tabindex="-1"></a><span class="pp">| :------</span> <span class="pp">| :-----------</span> <span class="pp">| :----</span> <span class="pp">|</span></span>
+<span id="cb23-231"><a href="#cb23-231" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tint (40% Base) <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;Maroon!40&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;Maroon!40&quot;} <span class="pp">|</span></span>
+<span id="cb23-232"><a href="#cb23-232" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Shade (80% Base) <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;MediumVioletRed!80!black&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;MediumVioletRed!80!black&quot;} <span class="pp">|</span></span>
+<span id="cb23-233"><a href="#cb23-233" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Mix (50/50) <span class="pp">|</span> <span class="in">`[Sample]{pfa-color=&quot;RoyalBlue!50!ForestGreen&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;RoyalBlue!50!ForestGreen&quot;} <span class="pp">|</span></span>
 <span id="cb23-234"><a href="#cb23-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-235"><a href="#cb23-235" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Syntax Examples</span></span>
+<span id="cb23-235"><a href="#cb23-235" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Important Compatibility Rules</span></span>
 <span id="cb23-236"><a href="#cb23-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-237"><a href="#cb23-237" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Mixing Type <span class="pp">|</span> Syntax <span class="pp">|</span> Output <span class="pp">|</span></span>
-<span id="cb23-238"><a href="#cb23-238" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-------| :------------------</span> <span class="pp">| :---</span> <span class="pp">|</span></span>
-<span id="cb23-239"><a href="#cb23-239" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tint (40% Base) <span class="pp">|</span> <span class="in">`[Tinted]{pfa-color=&quot;Maroon!40&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Tinted</span><span class="co">]</span>{pfa-color=&quot;Maroon!40&quot;} <span class="pp">|</span></span>
-<span id="cb23-240"><a href="#cb23-240" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Shade (80% Base) <span class="pp">|</span> <span class="in">`[Shaded]{pfa-color=&quot;MediumVioletRed!80!black&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Shaded</span><span class="co">]</span>{pfa-color=&quot;MediumVioletRed!80!black&quot;} <span class="pp">|</span></span>
-<span id="cb23-241"><a href="#cb23-241" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Mix (50/50) <span class="pp">|</span> <span class="in">`[Mixed]{pfa-font-color=&quot;RoyalBlue!50!ForestGreen&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Mixed</span><span class="co">]</span>{pfa-color=&quot;RoyalBlue!50!ForestGreen&quot;} <span class="pp">|</span></span>
+<span id="cb23-237"><a href="#cb23-237" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Strictly Use LaTeX Syntax:** Always use the <span class="in">`BaseColor!Percentage`</span> pattern. This is the only syntax guaranteed to translate correctly across all three output formats.</span>
+<span id="cb23-238"><a href="#cb23-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-239"><a href="#cb23-239" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Avoid Typst Native Syntax:** If you use native Typst color syntax (e.g., <span class="in">`color.mix()`</span>), the filter will pass it directly to Typst. It will not be translated for LaTeX or HTML.</span>
+<span id="cb23-240"><a href="#cb23-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-241"><a href="#cb23-241" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Binary Mixing Only:** You may blend a maximum of two colors. Multi-color mixing (e.g., <span class="in">`Red!30!Blue!30!Green`</span>) is not supported.</span>
 <span id="cb23-242"><a href="#cb23-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-243"><a href="#cb23-243" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Important Compatibility Rules</span></span>
+<span id="cb23-243"><a href="#cb23-243" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Casing Matters:** Because mixing strings are passed directly to LaTeX, casing must be exact:</span>
 <span id="cb23-244"><a href="#cb23-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-245"><a href="#cb23-245" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Strictly Use LaTeX Syntax:** Always use the <span class="in">`BaseColor!Percentage`</span> pattern. This is the only syntax guaranteed to translate correctly across all three output formats.</span>
+<span id="cb23-245"><a href="#cb23-245" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Use lowercase for <span class="co">[</span><span class="ot">Core LaTeX colors</span><span class="co">](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide)</span> (e.g., <span class="in">`black`</span>, <span class="in">`red`</span>).</span>
 <span id="cb23-246"><a href="#cb23-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-247"><a href="#cb23-247" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Avoid Typst Native Syntax:** If you use native Typst color syntax (e.g., <span class="in">`color.mix()`</span>), the filter will pass it directly to Typst. It will not be translated for LaTeX or HTML, and those formats will likely receive a fallback color.</span>
+<span id="cb23-247"><a href="#cb23-247" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Use PascalCase for <span class="co">[</span><span class="ot">CSS3 named colors</span><span class="co">](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)</span> (e.g., <span class="in">`RoyalBlue`</span>, <span class="in">`MediumVioletRed`</span>).</span>
 <span id="cb23-248"><a href="#cb23-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-249"><a href="#cb23-249" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Binary Mixing Only:** You may blend a maximum of two colors. Multi-color mixing (e.g., Red!30!Blue!30!Green) is not supported.</span>
+<span id="cb23-249"><a href="#cb23-249" aria-hidden="true" tabindex="-1"></a><span class="fu">### Foreground Styling</span></span>
 <span id="cb23-250"><a href="#cb23-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-251"><a href="#cb23-251" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Casing Matters:** Because mixing strings are passed directly to LaTeX, casing must be exact:</span>
-<span id="cb23-252"><a href="#cb23-252" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Use lowercase for <span class="co">[</span><span class="ot">core LaTeX colors</span><span class="co">](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide)</span> (e.g., <span class="in">`black`</span>, <span class="in">`red`</span>).</span>
-<span id="cb23-253"><a href="#cb23-253" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Use PascalCase for <span class="co">[</span><span class="ot">CSS3 named colors</span><span class="co">](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)</span> (e.g., <span class="in">`RoyalBlue`</span>, <span class="in">`MediumVioletRed`</span>).</span>
-<span id="cb23-254"><a href="#cb23-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-255"><a href="#cb23-255" aria-hidden="true" tabindex="-1"></a><span class="fu">### Styling Elements</span></span>
+<span id="cb23-251"><a href="#cb23-251" aria-hidden="true" tabindex="-1"></a>Use the <span class="in">`pfa-color`</span> attribute to change the color of the text itself. It can be applied to inline spans or multiline blocks.</span>
+<span id="cb23-252"><a href="#cb23-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-253"><a href="#cb23-253" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb23-254"><a href="#cb23-254" aria-hidden="true" tabindex="-1"></a>This is normal text, but <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;tomato&quot;} overrides the default text color.</span>
+<span id="cb23-255"><a href="#cb23-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-256"><a href="#cb23-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-257"><a href="#cb23-257" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Foreground and Background</span></span>
+<span id="cb23-257"><a href="#cb23-257" aria-hidden="true" tabindex="-1"></a>This is normal text, but <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;tomato&quot;} overrides the default text color.</span>
 <span id="cb23-258"><a href="#cb23-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-259"><a href="#cb23-259" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`pfa-color`</span> for text and <span class="in">`pfa-bg-color`</span> for container backgrounds.</span>
+<span id="cb23-259"><a href="#cb23-259" aria-hidden="true" tabindex="-1"></a><span class="fu">### Backgrounds and Borders</span></span>
 <span id="cb23-260"><a href="#cb23-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-261"><a href="#cb23-261" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb23-262"><a href="#cb23-262" aria-hidden="true" tabindex="-1"></a>::: {pfa-color=&quot;DarkSlateGrey&quot; pfa-bg-color=&quot;lightsteelblue&quot; pfa-padding=&quot;1em&quot;}</span>
-<span id="cb23-263"><a href="#cb23-263" aria-hidden="true" tabindex="-1"></a>This block has a default text color and a background fill.</span>
-<span id="cb23-264"><a href="#cb23-264" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This span overrides the text color.</span><span class="co">]</span>{pfa-color=&quot;tomato&quot;}</span>
-<span id="cb23-265"><a href="#cb23-265" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-266"><a href="#cb23-266" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-267"><a href="#cb23-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-268"><a href="#cb23-268" aria-hidden="true" tabindex="-1"></a>::: {pfa-color=&quot;DarkSlateGrey&quot; pfa-bg-color=&quot;lightsteelblue&quot; pfa-padding=&quot;1em&quot;}</span>
-<span id="cb23-269"><a href="#cb23-269" aria-hidden="true" tabindex="-1"></a>This block has a default text color and a background fill.</span>
-<span id="cb23-270"><a href="#cb23-270" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This span overrides the text color.</span><span class="co">]</span>{pfa-color=&quot;tomato&quot;}</span>
-<span id="cb23-271"><a href="#cb23-271" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-261"><a href="#cb23-261" aria-hidden="true" tabindex="-1"></a>By combining background fills, padding, borders, and corner radii, you can highlight and emphasize text. These attributes can be applied to both inline bracketed spans and multiline fenced divs.</span>
+<span id="cb23-262"><a href="#cb23-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-263"><a href="#cb23-263" aria-hidden="true" tabindex="-1"></a><span class="fu">#### The Core Attributes</span></span>
+<span id="cb23-264"><a href="#cb23-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-265"><a href="#cb23-265" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`pfa-bg-color`</span>: Defines the background fill color of the container.</span>
+<span id="cb23-266"><a href="#cb23-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-267"><a href="#cb23-267" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`pfa-padding`</span>: Controls internal spacing using standard CSS shorthands. Only <span class="in">`pt`</span>, <span class="in">`em`</span>, and <span class="in">`ex`</span> are supported to guarantee cross-platform stability.</span>
+<span id="cb23-268"><a href="#cb23-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-269"><a href="#cb23-269" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>One value (<span class="in">`1em`</span>): Applied to all four sides evenly.</span>
+<span id="cb23-270"><a href="#cb23-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-271"><a href="#cb23-271" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Two values (<span class="in">`1em 0.5em`</span>): Top/Bottom, then Left/Right.</span>
 <span id="cb23-272"><a href="#cb23-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-273"><a href="#cb23-273" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Layout Spacing (`pfa-padding`)</span></span>
+<span id="cb23-273"><a href="#cb23-273" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Three values (<span class="in">`1em 0.5em 2em`</span>): Top, Left/Right, Bottom.</span>
 <span id="cb23-274"><a href="#cb23-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-275"><a href="#cb23-275" aria-hidden="true" tabindex="-1"></a>The pfa-padding attribute controls internal spacing using standard CSS shorthand.</span>
+<span id="cb23-275"><a href="#cb23-275" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Four values (<span class="in">`1em 0.5em 2em 0.2em`</span>): Top, Right, Bottom, Left.</span>
 <span id="cb23-276"><a href="#cb23-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-277"><a href="#cb23-277" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**One value (`1em`):** Applied to all four sides evenly.</span>
+<span id="cb23-277"><a href="#cb23-277" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`pfa-bg-border-width`</span>: Defines the thickness of the border around all four sides. We strongly recommend using <span class="in">`pt`</span> to ensure crisp print rendering. If this is omitted, the border defaults to <span class="in">`1pt`</span>.</span>
 <span id="cb23-278"><a href="#cb23-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-279"><a href="#cb23-279" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Two values (`1em 0.5em`):** The first value applies to the top and bottom; the second applies to the left and right.</span>
+<span id="cb23-279"><a href="#cb23-279" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`pfa-bg-border-color`</span>: Defines the color of the border.</span>
 <span id="cb23-280"><a href="#cb23-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-281"><a href="#cb23-281" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Three values (`1em 0.5em 2em`):** The first value is the top, the second applies to both the left and right, and the third is the bottom.</span>
+<span id="cb23-281"><a href="#cb23-281" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`pfa-bg-radius`</span>: Rounds all four corners of the container uniformly. We recommend using <span class="in">`em`</span> so the curve scales naturally with your text size.</span>
 <span id="cb23-282"><a href="#cb23-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-283"><a href="#cb23-283" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Four values (`1em 0.5em 2em 0.2em`):** Applied in clockwise order: top, right, bottom, and left.</span>
+<span id="cb23-283"><a href="#cb23-283" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Example 1: Inline Spans</span></span>
 <span id="cb23-284"><a href="#cb23-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-285"><a href="#cb23-285" aria-hidden="true" tabindex="-1"></a>**Supported Units:** Only <span class="in">`pt`</span>, <span class="in">`em`</span>, and <span class="in">`ex`</span> are supported to guarantee stability.</span>
-<span id="cb23-286"><a href="#cb23-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-287"><a href="#cb23-287" aria-hidden="true" tabindex="-1"></a><span class="fu">### Typst Named Palette</span></span>
+<span id="cb23-285"><a href="#cb23-285" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb23-286"><a href="#cb23-286" aria-hidden="true" tabindex="-1"></a>This is a <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-bg-color=&quot;aliceblue&quot; pfa-color=&quot;navy&quot; pfa-padding=&quot;0.2em 0.6em&quot; pfa-bg-border-width=&quot;0.5pt&quot; pfa-bg-border-color=&quot;steelblue&quot; pfa-bg-radius=&quot;1em&quot;} of an inline badge.</span>
+<span id="cb23-287"><a href="#cb23-287" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-288"><a href="#cb23-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-289"><a href="#cb23-289" aria-hidden="true" tabindex="-1"></a>You can access Typst&#39;s native predefined colors by prefixing the color name with typst.</span>
+<span id="cb23-289"><a href="#cb23-289" aria-hidden="true" tabindex="-1"></a>This is a <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-bg-color=&quot;aliceblue&quot; pfa-color=&quot;navy&quot; pfa-padding=&quot;0.2em 0.6em&quot; pfa-bg-border-width=&quot;0.5pt&quot; pfa-bg-border-color=&quot;steelblue&quot; pfa-bg-radius=&quot;1em&quot;} of an inline badge.</span>
 <span id="cb23-290"><a href="#cb23-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-291"><a href="#cb23-291" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Syntax:** <span class="in">`[Sample]{pfa-bg-color=&quot;typstmaroon&quot; pfa-color=&quot;white&quot; pfa-padding=&quot;0.2em&quot;}`</span></span>
+<span id="cb23-291"><a href="#cb23-291" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Example 2: Multiline Blocks</span></span>
 <span id="cb23-292"><a href="#cb23-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-293"><a href="#cb23-293" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Output:** <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-bg-color=&quot;typstmaroon&quot; pfa-color=&quot;white&quot; pfa-padding=&quot;0.2em&quot;}</span>
-<span id="cb23-294"><a href="#cb23-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-295"><a href="#cb23-295" aria-hidden="true" tabindex="-1"></a><span class="fu">## Text Alignment within Fenced Divs</span></span>
-<span id="cb23-296"><a href="#cb23-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-297"><a href="#cb23-297" aria-hidden="true" tabindex="-1"></a>The <span class="in">`pfa-align-*`</span> classes control text alignment within a Fenced Div while explicitly preserving hard line breaks (<span class="in">`\`</span>). These utilities map directly to native LaTeX commands (<span class="in">`\raggedright`</span>, <span class="in">`\centering`</span>, and <span class="in">`\raggedleft`</span>) in PDF output and equivalent CSS behaviors in HTML, making them ideal for formatting poetry, lyrics, or multi-line blocks.</span>
+<span id="cb23-293"><a href="#cb23-293" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb23-294"><a href="#cb23-294" aria-hidden="true" tabindex="-1"></a>::: {pfa-bg-color=&quot;ghostwhite&quot; pfa-padding=&quot;1.5em&quot; pfa-bg-border-width=&quot;1.5pt&quot; pfa-bg-border-color=&quot;maroon&quot; pfa-bg-radius=&quot;0.4em&quot;}</span>
+<span id="cb23-295"><a href="#cb23-295" aria-hidden="true" tabindex="-1"></a>**Important Note:** This block utilizes the full suite of styling attributes to create a container with a light background, a maroon border, and rounded corners.</span>
+<span id="cb23-296"><a href="#cb23-296" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-297"><a href="#cb23-297" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-298"><a href="#cb23-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-299"><a href="#cb23-299" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left-aligned Text</span></span>
-<span id="cb23-300"><a href="#cb23-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-301"><a href="#cb23-301" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb23-302"><a href="#cb23-302" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
-<span id="cb23-303"><a href="#cb23-303" aria-hidden="true" tabindex="-1"></a>This block of text is *left-aligned*.</span>
-<span id="cb23-304"><a href="#cb23-304" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-305"><a href="#cb23-305" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-299"><a href="#cb23-299" aria-hidden="true" tabindex="-1"></a>::: {pfa-bg-color=&quot;ghostwhite&quot; pfa-padding=&quot;1.5em&quot; pfa-bg-border-width=&quot;1.5pt&quot; pfa-bg-border-color=&quot;maroon&quot; pfa-bg-radius=&quot;0.4em&quot;}</span>
+<span id="cb23-300"><a href="#cb23-300" aria-hidden="true" tabindex="-1"></a>**Important Note:** This block utilizes the full suite of styling attributes to create a container with a light background, a maroon border, and rounded corners.</span>
+<span id="cb23-301"><a href="#cb23-301" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-302"><a href="#cb23-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-303"><a href="#cb23-303" aria-hidden="true" tabindex="-1"></a><span class="fu">### Typst Named Palette</span></span>
+<span id="cb23-304"><a href="#cb23-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-305"><a href="#cb23-305" aria-hidden="true" tabindex="-1"></a>You can access Typst&#39;s native predefined colors by prefixing the color name with <span class="in">`typst`</span>.</span>
 <span id="cb23-306"><a href="#cb23-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-307"><a href="#cb23-307" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
-<span id="cb23-308"><a href="#cb23-308" aria-hidden="true" tabindex="-1"></a>This block of text is *left-aligned*.</span>
-<span id="cb23-309"><a href="#cb23-309" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-307"><a href="#cb23-307" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Syntax:** <span class="in">`[Sample]{pfa-bg-color=&quot;typstmaroon&quot; pfa-color=&quot;white&quot; pfa-padding=&quot;0.2em&quot;}`</span></span>
+<span id="cb23-308"><a href="#cb23-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-309"><a href="#cb23-309" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Output:** <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-bg-color=&quot;typstmaroon&quot; pfa-color=&quot;white&quot; pfa-padding=&quot;0.2em&quot;}</span>
 <span id="cb23-310"><a href="#cb23-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-311"><a href="#cb23-311" aria-hidden="true" tabindex="-1"></a><span class="fu">### Center-aligned Text</span></span>
+<span id="cb23-311"><a href="#cb23-311" aria-hidden="true" tabindex="-1"></a><span class="fu">## Text Alignment within Fenced Divs</span></span>
 <span id="cb23-312"><a href="#cb23-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-313"><a href="#cb23-313" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb23-314"><a href="#cb23-314" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
-<span id="cb23-315"><a href="#cb23-315" aria-hidden="true" tabindex="-1"></a>This block of text is *center-aligned*.</span>
-<span id="cb23-316"><a href="#cb23-316" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-317"><a href="#cb23-317" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-318"><a href="#cb23-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-319"><a href="#cb23-319" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
-<span id="cb23-320"><a href="#cb23-320" aria-hidden="true" tabindex="-1"></a>This block of text is *center-aligned*.</span>
-<span id="cb23-321"><a href="#cb23-321" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-313"><a href="#cb23-313" aria-hidden="true" tabindex="-1"></a>The <span class="in">`pfa-align-*`</span> classes control text alignment within a Fenced Div while explicitly preserving hard line breaks (<span class="in">`\`</span>). These utilities map directly to native LaTeX commands (<span class="in">`\raggedright`</span>, <span class="in">`\centering`</span>, and <span class="in">`\raggedleft`</span>) in PDF output and equivalent CSS behaviors in HTML, making them ideal for formatting poetry, lyrics, or multi-line blocks.</span>
+<span id="cb23-314"><a href="#cb23-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-315"><a href="#cb23-315" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left-aligned Text</span></span>
+<span id="cb23-316"><a href="#cb23-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-317"><a href="#cb23-317" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb23-318"><a href="#cb23-318" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
+<span id="cb23-319"><a href="#cb23-319" aria-hidden="true" tabindex="-1"></a>This block of text is *left-aligned*.</span>
+<span id="cb23-320"><a href="#cb23-320" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-321"><a href="#cb23-321" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-322"><a href="#cb23-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-323"><a href="#cb23-323" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right-aligned Text</span></span>
-<span id="cb23-324"><a href="#cb23-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-325"><a href="#cb23-325" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb23-326"><a href="#cb23-326" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
-<span id="cb23-327"><a href="#cb23-327" aria-hidden="true" tabindex="-1"></a>This block of text is *right-aligned*.</span>
-<span id="cb23-328"><a href="#cb23-328" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-329"><a href="#cb23-329" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-330"><a href="#cb23-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-331"><a href="#cb23-331" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
-<span id="cb23-332"><a href="#cb23-332" aria-hidden="true" tabindex="-1"></a>This block of text is *right-aligned*.</span>
-<span id="cb23-333"><a href="#cb23-333" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-323"><a href="#cb23-323" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
+<span id="cb23-324"><a href="#cb23-324" aria-hidden="true" tabindex="-1"></a>This block of text is *left-aligned*.</span>
+<span id="cb23-325"><a href="#cb23-325" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-326"><a href="#cb23-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-327"><a href="#cb23-327" aria-hidden="true" tabindex="-1"></a><span class="fu">### Center-aligned Text</span></span>
+<span id="cb23-328"><a href="#cb23-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-329"><a href="#cb23-329" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb23-330"><a href="#cb23-330" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb23-331"><a href="#cb23-331" aria-hidden="true" tabindex="-1"></a>This block of text is *center-aligned*.</span>
+<span id="cb23-332"><a href="#cb23-332" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-333"><a href="#cb23-333" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-334"><a href="#cb23-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-335"><a href="#cb23-335" aria-hidden="true" tabindex="-1"></a><span class="fu">### Line Break Preservation</span></span>
-<span id="cb23-336"><a href="#cb23-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-337"><a href="#cb23-337" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb23-338"><a href="#cb23-338" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
-<span id="cb23-339"><a href="#cb23-339" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
-<span id="cb23-340"><a href="#cb23-340" aria-hidden="true" tabindex="-1"></a>is *center-aligned*\</span>
-<span id="cb23-341"><a href="#cb23-341" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
-<span id="cb23-342"><a href="#cb23-342" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-343"><a href="#cb23-343" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-344"><a href="#cb23-344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-345"><a href="#cb23-345" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
-<span id="cb23-346"><a href="#cb23-346" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
-<span id="cb23-347"><a href="#cb23-347" aria-hidden="true" tabindex="-1"></a>is *center-aligned*\</span>
-<span id="cb23-348"><a href="#cb23-348" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
+<span id="cb23-335"><a href="#cb23-335" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb23-336"><a href="#cb23-336" aria-hidden="true" tabindex="-1"></a>This block of text is *center-aligned*.</span>
+<span id="cb23-337"><a href="#cb23-337" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-338"><a href="#cb23-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-339"><a href="#cb23-339" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right-aligned Text</span></span>
+<span id="cb23-340"><a href="#cb23-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-341"><a href="#cb23-341" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb23-342"><a href="#cb23-342" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
+<span id="cb23-343"><a href="#cb23-343" aria-hidden="true" tabindex="-1"></a>This block of text is *right-aligned*.</span>
+<span id="cb23-344"><a href="#cb23-344" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-345"><a href="#cb23-345" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-346"><a href="#cb23-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-347"><a href="#cb23-347" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
+<span id="cb23-348"><a href="#cb23-348" aria-hidden="true" tabindex="-1"></a>This block of text is *right-aligned*.</span>
 <span id="cb23-349"><a href="#cb23-349" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb23-350"><a href="#cb23-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-351"><a href="#cb23-351" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combining Multiple Classes</span></span>
+<span id="cb23-351"><a href="#cb23-351" aria-hidden="true" tabindex="-1"></a><span class="fu">### Line Break Preservation</span></span>
 <span id="cb23-352"><a href="#cb23-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-353"><a href="#cb23-353" aria-hidden="true" tabindex="-1"></a>Multiple typographic utilities can be combined within the same element. Font, size, color, alignment, and decoration classes are designed to compose independently and can be applied together to both Bracketed Spans and Fenced Divs.</span>
-<span id="cb23-354"><a href="#cb23-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-355"><a href="#cb23-355" aria-hidden="true" tabindex="-1"></a>Class names are space-separated within <span class="in">`{}`</span> following Pandoc attribute syntax. In addition to classes, key-value attributes such as <span class="in">`pfa-color`</span> may be included alongside class definitions.</span>
-<span id="cb23-356"><a href="#cb23-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-357"><a href="#cb23-357" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bracketed Span Composition</span></span>
-<span id="cb23-358"><a href="#cb23-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-359"><a href="#cb23-359" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Style                               <span class="pp">|</span> Syntax                                                                       <span class="pp">|</span> Output <span class="pp">|</span></span>
-<span id="cb23-360"><a href="#cb23-360" aria-hidden="true" tabindex="-1"></a><span class="pp">| :--------------------------</span> <span class="pp">| :----------------------------------------------------</span> <span class="pp">| :-------------</span> <span class="pp">|</span></span>
-<span id="cb23-361"><a href="#cb23-361" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Bold Sans-Serif                     <span class="pp">|</span> <span class="in">`[Sample]{.pfa-wight-bold .pfa-family-sans .pfa-size-l pfa-color=&quot;red&quot;}`</span>   <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-weight-bold .pfa-family-sans .pfa-size-l pfa-color=&quot;red&quot;} <span class="pp">|</span></span>
-<span id="cb23-362"><a href="#cb23-362" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Italic Monospace                    <span class="pp">|</span> <span class="in">`[Sample]{.pfa-style-italic .pfa-family-mono .pfa-size-s}`</span>                    <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-style-italic .pfa-family-mono .pfa-size-s} <span class="pp">|</span></span>
-<span id="cb23-363"><a href="#cb23-363" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Small Caps, Colored     <span class="pp">|</span> <span class="in">`[Sample]{.pfa-style-smallcaps pfa-color=&quot;forestgreen&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-style-smallcaps pfa-color=&quot;forestgreen&quot;} <span class="pp">|</span></span>
-<span id="cb23-364"><a href="#cb23-364" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-365"><a href="#cb23-365" aria-hidden="true" tabindex="-1"></a><span class="fu">### Fenced Div Composition</span></span>
+<span id="cb23-353"><a href="#cb23-353" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb23-354"><a href="#cb23-354" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb23-355"><a href="#cb23-355" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
+<span id="cb23-356"><a href="#cb23-356" aria-hidden="true" tabindex="-1"></a>is *center-aligned*\</span>
+<span id="cb23-357"><a href="#cb23-357" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
+<span id="cb23-358"><a href="#cb23-358" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-359"><a href="#cb23-359" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-360"><a href="#cb23-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-361"><a href="#cb23-361" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb23-362"><a href="#cb23-362" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
+<span id="cb23-363"><a href="#cb23-363" aria-hidden="true" tabindex="-1"></a>is *center-aligned*\</span>
+<span id="cb23-364"><a href="#cb23-364" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
+<span id="cb23-365"><a href="#cb23-365" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb23-366"><a href="#cb23-366" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-367"><a href="#cb23-367" aria-hidden="true" tabindex="-1"></a>Multiple utilities can also be applied to Fenced Divs to control alignment, typography, and color simultaneously. The resulting block inherits all specified styles while preserving Pandoc’s standard attribute behavior.</span>
+<span id="cb23-367"><a href="#cb23-367" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combining Multiple Classes</span></span>
 <span id="cb23-368"><a href="#cb23-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-369"><a href="#cb23-369" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
-<span id="cb23-370"><a href="#cb23-370" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-family-sans .pfa-weight-bold .pfa-size-l pfa-color=&quot;midnightblue&quot;}</span>
-<span id="cb23-371"><a href="#cb23-371" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
-<span id="cb23-372"><a href="#cb23-372" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-373"><a href="#cb23-373" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-369"><a href="#cb23-369" aria-hidden="true" tabindex="-1"></a>Multiple typographic utilities can be combined within the same element. Font, size, color, alignment, and decoration classes are designed to compose independently and can be applied together to both Bracketed Spans and Fenced Divs.</span>
+<span id="cb23-370"><a href="#cb23-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-371"><a href="#cb23-371" aria-hidden="true" tabindex="-1"></a>Class names are space-separated within <span class="in">`{}`</span> following Pandoc attribute syntax. In addition to classes, key-value attributes such as <span class="in">`pfa-color`</span> may be included alongside class definitions.</span>
+<span id="cb23-372"><a href="#cb23-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-373"><a href="#cb23-373" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bracketed Span Composition</span></span>
 <span id="cb23-374"><a href="#cb23-374" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-375"><a href="#cb23-375" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-family-sans .pfa-weight-bold .pfa-size-l pfa-color=&quot;midnightblue&quot;}</span>
-<span id="cb23-376"><a href="#cb23-376" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
-<span id="cb23-377"><a href="#cb23-377" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-378"><a href="#cb23-378" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-379"><a href="#cb23-379" aria-hidden="true" tabindex="-1"></a><span class="fu">## Legacy Aliases (Deprecated)</span></span>
+<span id="cb23-375"><a href="#cb23-375" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Style                               <span class="pp">|</span> Syntax                                                                       <span class="pp">|</span> Output <span class="pp">|</span></span>
+<span id="cb23-376"><a href="#cb23-376" aria-hidden="true" tabindex="-1"></a><span class="pp">| :--------------------------</span> <span class="pp">| :----------------------------------------------------</span> <span class="pp">| :-------------</span> <span class="pp">|</span></span>
+<span id="cb23-377"><a href="#cb23-377" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Bold Sans-Serif                     <span class="pp">|</span> <span class="in">`[Sample]{.pfa-wight-bold .pfa-family-sans .pfa-size-l pfa-color=&quot;red&quot;}`</span>   <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-weight-bold .pfa-family-sans .pfa-size-l pfa-color=&quot;red&quot;} <span class="pp">|</span></span>
+<span id="cb23-378"><a href="#cb23-378" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Italic Monospace                    <span class="pp">|</span> <span class="in">`[Sample]{.pfa-style-italic .pfa-family-mono .pfa-size-s}`</span>                    <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-style-italic .pfa-family-mono .pfa-size-s} <span class="pp">|</span></span>
+<span id="cb23-379"><a href="#cb23-379" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Small Caps, Colored     <span class="pp">|</span> <span class="in">`[Sample]{.pfa-style-smallcaps pfa-color=&quot;forestgreen&quot;}`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{.pfa-style-smallcaps pfa-color=&quot;forestgreen&quot;} <span class="pp">|</span></span>
 <span id="cb23-380"><a href="#cb23-380" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-381"><a href="#cb23-381" aria-hidden="true" tabindex="-1"></a>**Warning:** Legacy aliases are deprecated. They are retained strictly for backward compatibility and will be entirely removed in the next major release. New documents should use the <span class="in">`pfa-*`</span> namespaces going forward.</span>
+<span id="cb23-381"><a href="#cb23-381" aria-hidden="true" tabindex="-1"></a><span class="fu">### Fenced Div Composition</span></span>
 <span id="cb23-382"><a href="#cb23-382" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-383"><a href="#cb23-383" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Sizing Aliases</span></span>
+<span id="cb23-383"><a href="#cb23-383" aria-hidden="true" tabindex="-1"></a>Multiple utilities can also be applied to Fenced Divs to control alignment, typography, and color simultaneously. The resulting block inherits all specified styles while preserving Pandoc’s standard attribute behavior.</span>
 <span id="cb23-384"><a href="#cb23-384" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-385"><a href="#cb23-385" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Class <span class="pp">|</span> Modern Class <span class="pp">|</span></span>
-<span id="cb23-386"><a href="#cb23-386" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-----------</span> <span class="pp">| :----------------</span> <span class="pp">|</span></span>
-<span id="cb23-387"><a href="#cb23-387" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`xsmall`</span>     <span class="pp">|</span> <span class="in">`pfa-text-xs`</span>     <span class="pp">|</span></span>
-<span id="cb23-388"><a href="#cb23-388" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`small`</span>      <span class="pp">|</span> <span class="in">`pfa-text-s`</span>      <span class="pp">|</span></span>
-<span id="cb23-389"><a href="#cb23-389" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`normal`</span>     <span class="pp">|</span> <span class="in">`pfa-text-normal`</span> <span class="pp">|</span></span>
-<span id="cb23-390"><a href="#cb23-390" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`large`</span>      <span class="pp">|</span> <span class="in">`pfa-text-l`</span>      <span class="pp">|</span></span>
-<span id="cb23-391"><a href="#cb23-391" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`xlarge`</span>     <span class="pp">|</span> <span class="in">`pfa-text-xl`</span>     <span class="pp">|</span></span>
-<span id="cb23-392"><a href="#cb23-392" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`xxlarge`</span>    <span class="pp">|</span> <span class="in">`pfa-text-2xl`</span>    <span class="pp">|</span></span>
-<span id="cb23-393"><a href="#cb23-393" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`huge`</span>       <span class="pp">|</span> <span class="in">`pfa-text-3xl`</span>    <span class="pp">|</span></span>
+<span id="cb23-385"><a href="#cb23-385" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb23-386"><a href="#cb23-386" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-family-sans .pfa-weight-bold .pfa-size-l pfa-color=&quot;midnightblue&quot;}</span>
+<span id="cb23-387"><a href="#cb23-387" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
+<span id="cb23-388"><a href="#cb23-388" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb23-389"><a href="#cb23-389" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-390"><a href="#cb23-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-391"><a href="#cb23-391" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-family-sans .pfa-weight-bold .pfa-size-l pfa-color=&quot;midnightblue&quot;}</span>
+<span id="cb23-392"><a href="#cb23-392" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
+<span id="cb23-393"><a href="#cb23-393" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb23-394"><a href="#cb23-394" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-395"><a href="#cb23-395" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Weight, Shape, and Family Aliases</span></span>
+<span id="cb23-395"><a href="#cb23-395" aria-hidden="true" tabindex="-1"></a><span class="fu">## Legacy Aliases (Deprecated)</span></span>
 <span id="cb23-396"><a href="#cb23-396" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-397"><a href="#cb23-397" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Class <span class="pp">|</span> Shorthand <span class="pp">|</span> Modern Class <span class="pp">|</span></span>
-<span id="cb23-398"><a href="#cb23-398" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-----------</span> <span class="pp">| :---------</span> <span class="pp">| :-------------------</span> <span class="pp">|</span></span>
-<span id="cb23-399"><a href="#cb23-399" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`bold`</span>       <span class="pp">|</span> <span class="in">`bf`</span>       <span class="pp">|</span> <span class="in">`pfa-font-bold`</span>      <span class="pp">|</span></span>
-<span id="cb23-400"><a href="#cb23-400" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`emphasis`</span>   <span class="pp">|</span> <span class="in">`em`</span>       <span class="pp">|</span> <span class="in">`pfa-font-emphasis`</span>  <span class="pp">|</span></span>
-<span id="cb23-401"><a href="#cb23-401" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`italic`</span>     <span class="pp">|</span> <span class="in">`it`</span>       <span class="pp">|</span> <span class="in">`pfa-font-italic`</span>    <span class="pp">|</span></span>
-<span id="cb23-402"><a href="#cb23-402" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`medium`</span>     <span class="pp">|</span> <span class="in">`md`</span>       <span class="pp">|</span> <span class="in">`pfa-font-medium`</span>    <span class="pp">|</span></span>
-<span id="cb23-403"><a href="#cb23-403" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`monospace`</span>  <span class="pp">|</span> <span class="in">`tt`</span>       <span class="pp">|</span> <span class="in">`pfa-font-mono`</span>      <span class="pp">|</span></span>
-<span id="cb23-404"><a href="#cb23-404" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`normalfont`</span> <span class="pp">|</span> <span class="in">`nf`</span>       <span class="pp">|</span> <span class="in">`pfa-font-normal`</span>    <span class="pp">|</span></span>
-<span id="cb23-405"><a href="#cb23-405" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`sans`</span>       <span class="pp">|</span> <span class="in">`sf`</span>       <span class="pp">|</span> <span class="in">`pfa-font-sans`</span>      <span class="pp">|</span></span>
-<span id="cb23-406"><a href="#cb23-406" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`serif`</span>      <span class="pp">|</span> <span class="in">`rm`</span>       <span class="pp">|</span> <span class="in">`pfa-font-serif`</span>     <span class="pp">|</span></span>
-<span id="cb23-407"><a href="#cb23-407" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`slanted`</span>    <span class="pp">|</span> <span class="in">`sl`</span>       <span class="pp">|</span> <span class="in">`pfa-font-slanted`</span>   <span class="pp">|</span></span>
-<span id="cb23-408"><a href="#cb23-408" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`smallcaps`</span>  <span class="pp">|</span> <span class="in">`sc`</span>       <span class="pp">|</span> <span class="in">`pfa-font-smallcaps`</span> <span class="pp">|</span></span>
-<span id="cb23-409"><a href="#cb23-409" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`upright`</span>    <span class="pp">|</span> <span class="in">`up`</span>       <span class="pp">|</span> <span class="in">`pfa-font-upright`</span>   <span class="pp">|</span></span>
+<span id="cb23-397"><a href="#cb23-397" aria-hidden="true" tabindex="-1"></a>**Warning:** Legacy aliases are deprecated. They are retained strictly for backward compatibility and will be entirely removed in the next major release. New documents should use the <span class="in">`pfa-*`</span> namespaces going forward.</span>
+<span id="cb23-398"><a href="#cb23-398" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-399"><a href="#cb23-399" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Sizing Aliases</span></span>
+<span id="cb23-400"><a href="#cb23-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-401"><a href="#cb23-401" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Class <span class="pp">|</span> Modern Class <span class="pp">|</span></span>
+<span id="cb23-402"><a href="#cb23-402" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-----------</span> <span class="pp">| :----------------</span> <span class="pp">|</span></span>
+<span id="cb23-403"><a href="#cb23-403" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`xsmall`</span>     <span class="pp">|</span> <span class="in">`pfa-text-xs`</span>     <span class="pp">|</span></span>
+<span id="cb23-404"><a href="#cb23-404" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`small`</span>      <span class="pp">|</span> <span class="in">`pfa-text-s`</span>      <span class="pp">|</span></span>
+<span id="cb23-405"><a href="#cb23-405" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`normal`</span>     <span class="pp">|</span> <span class="in">`pfa-text-normal`</span> <span class="pp">|</span></span>
+<span id="cb23-406"><a href="#cb23-406" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`large`</span>      <span class="pp">|</span> <span class="in">`pfa-text-l`</span>      <span class="pp">|</span></span>
+<span id="cb23-407"><a href="#cb23-407" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`xlarge`</span>     <span class="pp">|</span> <span class="in">`pfa-text-xl`</span>     <span class="pp">|</span></span>
+<span id="cb23-408"><a href="#cb23-408" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`xxlarge`</span>    <span class="pp">|</span> <span class="in">`pfa-text-2xl`</span>    <span class="pp">|</span></span>
+<span id="cb23-409"><a href="#cb23-409" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`huge`</span>       <span class="pp">|</span> <span class="in">`pfa-text-3xl`</span>    <span class="pp">|</span></span>
 <span id="cb23-410"><a href="#cb23-410" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-411"><a href="#cb23-411" aria-hidden="true" tabindex="-1"></a><span class="fu">### Alignment Aliases</span></span>
+<span id="cb23-411"><a href="#cb23-411" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Weight, Shape, and Family Aliases</span></span>
 <span id="cb23-412"><a href="#cb23-412" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-413"><a href="#cb23-413" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Class <span class="pp">|</span> Modern Class <span class="pp">|</span></span>
-<span id="cb23-414"><a href="#cb23-414" aria-hidden="true" tabindex="-1"></a><span class="pp">| :------------</span> <span class="pp">| :------------------</span> <span class="pp">|</span></span>
-<span id="cb23-415"><a href="#cb23-415" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`centering`</span>   <span class="pp">|</span> <span class="in">`pfa-align-center`</span> <span class="pp">|</span></span>
-<span id="cb23-416"><a href="#cb23-416" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`raggedleft`</span>  <span class="pp">|</span> <span class="in">`pfa-align-right`</span>  <span class="pp">|</span></span>
-<span id="cb23-417"><a href="#cb23-417" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`raggedright`</span> <span class="pp">|</span> <span class="in">`pfa-align-left`</span>   <span class="pp">|</span></span>
-<span id="cb23-418"><a href="#cb23-418" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-419"><a href="#cb23-419" aria-hidden="true" tabindex="-1"></a><span class="fu">### Text Decoration Aliases</span></span>
-<span id="cb23-420"><a href="#cb23-420" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-421"><a href="#cb23-421" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Class <span class="pp">|</span> Shorthand <span class="pp">|</span> Modern Class <span class="pp">|</span></span>
-<span id="cb23-422"><a href="#cb23-422" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-----------</span> <span class="pp">| :---------</span> <span class="pp">| :----------------------</span> <span class="pp">|</span></span>
-<span id="cb23-423"><a href="#cb23-423" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`uline`</span>      <span class="pp">|</span> <span class="in">`u`</span>        <span class="pp">|</span> <span class="in">`pfa-text-uline`</span>        <span class="pp">|</span></span>
-<span id="cb23-424"><a href="#cb23-424" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`uuline`</span>     <span class="pp">|</span> <span class="in">`uu`</span>       <span class="pp">|</span> <span class="in">`pfa-text-uline-double`</span> <span class="pp">|</span></span>
-<span id="cb23-425"><a href="#cb23-425" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`dashuline`</span>  <span class="pp">|</span> <span class="in">`dau`</span>      <span class="pp">|</span> <span class="in">`pfa-text-uline-dashed`</span> <span class="pp">|</span></span>
-<span id="cb23-426"><a href="#cb23-426" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`dotuline`</span>   <span class="pp">|</span> <span class="in">`dou`</span>      <span class="pp">|</span> <span class="in">`pfa-text-uline-dotted`</span> <span class="pp">|</span></span>
-<span id="cb23-427"><a href="#cb23-427" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`uwave`</span>      <span class="pp">|</span> <span class="in">`uw`</span>       <span class="pp">|</span> <span class="in">`pfa-text-uline-wave`</span>   <span class="pp">|</span></span>
-<span id="cb23-428"><a href="#cb23-428" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`sout`</span>       <span class="pp">|</span> <span class="in">`so`</span>       <span class="pp">|</span> <span class="in">`pfa-text-strikeout`</span>    <span class="pp">|</span></span>
-<span id="cb23-429"><a href="#cb23-429" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-430"><a href="#cb23-430" aria-hidden="true" tabindex="-1"></a><span class="fu">## Removed Classes</span></span>
-<span id="cb23-431"><a href="#cb23-431" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-432"><a href="#cb23-432" aria-hidden="true" tabindex="-1"></a>The following legacy classes were removed in version 2.0.0 and are no longer recognized by the filter. Existing documents should be updated to use the replacement classes shown below.</span>
-<span id="cb23-433"><a href="#cb23-433" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-434"><a href="#cb23-434" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Removed Class <span class="pp">|</span> Shorthand <span class="pp">|</span> Removed In <span class="pp">|</span> Replacement <span class="pp">|</span></span>
-<span id="cb23-435"><a href="#cb23-435" aria-hidden="true" tabindex="-1"></a><span class="pp">| :------------</span> <span class="pp">| :--------</span> <span class="pp">| :---------</span> <span class="pp">| :----------</span> <span class="pp">|</span></span>
-<span id="cb23-436"><a href="#cb23-436" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`center`</span>     <span class="pp">|</span> —         <span class="pp">|</span> 2.0.0      <span class="pp">|</span> <span class="in">`pfa-align-center`</span> <span class="pp">|</span></span>
-<span id="cb23-437"><a href="#cb23-437" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`flushleft`</span>  <span class="pp">|</span> —         <span class="pp">|</span> 2.0.0      <span class="pp">|</span> <span class="in">`pfa-align-left`</span> <span class="pp">|</span></span>
-<span id="cb23-438"><a href="#cb23-438" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`flushright`</span> <span class="pp">|</span> —         <span class="pp">|</span> 2.0.0      <span class="pp">|</span> <span class="in">`pfa-align-right`</span> <span class="pp">|</span></span>
-<span id="cb23-439"><a href="#cb23-439" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`xout`</span>       <span class="pp">|</span> <span class="in">`xo`</span>     <span class="pp">|</span> 2.0.0      <span class="pp">|</span> <span class="in">`pfa-text-strikeout`</span> <span class="pp">|</span></span></code></pre></div>
+<span id="cb23-413"><a href="#cb23-413" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Class <span class="pp">|</span> Shorthand <span class="pp">|</span> Modern Class <span class="pp">|</span></span>
+<span id="cb23-414"><a href="#cb23-414" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-----------</span> <span class="pp">| :---------</span> <span class="pp">| :-------------------</span> <span class="pp">|</span></span>
+<span id="cb23-415"><a href="#cb23-415" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`bold`</span>       <span class="pp">|</span> <span class="in">`bf`</span>       <span class="pp">|</span> <span class="in">`pfa-font-bold`</span>      <span class="pp">|</span></span>
+<span id="cb23-416"><a href="#cb23-416" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`emphasis`</span>   <span class="pp">|</span> <span class="in">`em`</span>       <span class="pp">|</span> <span class="in">`pfa-font-emphasis`</span>  <span class="pp">|</span></span>
+<span id="cb23-417"><a href="#cb23-417" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`italic`</span>     <span class="pp">|</span> <span class="in">`it`</span>       <span class="pp">|</span> <span class="in">`pfa-font-italic`</span>    <span class="pp">|</span></span>
+<span id="cb23-418"><a href="#cb23-418" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`medium`</span>     <span class="pp">|</span> <span class="in">`md`</span>       <span class="pp">|</span> <span class="in">`pfa-font-medium`</span>    <span class="pp">|</span></span>
+<span id="cb23-419"><a href="#cb23-419" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`monospace`</span>  <span class="pp">|</span> <span class="in">`tt`</span>       <span class="pp">|</span> <span class="in">`pfa-font-mono`</span>      <span class="pp">|</span></span>
+<span id="cb23-420"><a href="#cb23-420" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`normalfont`</span> <span class="pp">|</span> <span class="in">`nf`</span>       <span class="pp">|</span> <span class="in">`pfa-font-normal`</span>    <span class="pp">|</span></span>
+<span id="cb23-421"><a href="#cb23-421" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`sans`</span>       <span class="pp">|</span> <span class="in">`sf`</span>       <span class="pp">|</span> <span class="in">`pfa-font-sans`</span>      <span class="pp">|</span></span>
+<span id="cb23-422"><a href="#cb23-422" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`serif`</span>      <span class="pp">|</span> <span class="in">`rm`</span>       <span class="pp">|</span> <span class="in">`pfa-font-serif`</span>     <span class="pp">|</span></span>
+<span id="cb23-423"><a href="#cb23-423" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`slanted`</span>    <span class="pp">|</span> <span class="in">`sl`</span>       <span class="pp">|</span> <span class="in">`pfa-font-slanted`</span>   <span class="pp">|</span></span>
+<span id="cb23-424"><a href="#cb23-424" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`smallcaps`</span>  <span class="pp">|</span> <span class="in">`sc`</span>       <span class="pp">|</span> <span class="in">`pfa-font-smallcaps`</span> <span class="pp">|</span></span>
+<span id="cb23-425"><a href="#cb23-425" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`upright`</span>    <span class="pp">|</span> <span class="in">`up`</span>       <span class="pp">|</span> <span class="in">`pfa-font-upright`</span>   <span class="pp">|</span></span>
+<span id="cb23-426"><a href="#cb23-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-427"><a href="#cb23-427" aria-hidden="true" tabindex="-1"></a><span class="fu">### Alignment Aliases</span></span>
+<span id="cb23-428"><a href="#cb23-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-429"><a href="#cb23-429" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Class <span class="pp">|</span> Modern Class <span class="pp">|</span></span>
+<span id="cb23-430"><a href="#cb23-430" aria-hidden="true" tabindex="-1"></a><span class="pp">| :------------</span> <span class="pp">| :------------------</span> <span class="pp">|</span></span>
+<span id="cb23-431"><a href="#cb23-431" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`centering`</span>   <span class="pp">|</span> <span class="in">`pfa-align-center`</span> <span class="pp">|</span></span>
+<span id="cb23-432"><a href="#cb23-432" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`raggedleft`</span>  <span class="pp">|</span> <span class="in">`pfa-align-right`</span>  <span class="pp">|</span></span>
+<span id="cb23-433"><a href="#cb23-433" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`raggedright`</span> <span class="pp">|</span> <span class="in">`pfa-align-left`</span>   <span class="pp">|</span></span>
+<span id="cb23-434"><a href="#cb23-434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-435"><a href="#cb23-435" aria-hidden="true" tabindex="-1"></a><span class="fu">### Text Decoration Aliases</span></span>
+<span id="cb23-436"><a href="#cb23-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-437"><a href="#cb23-437" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Legacy Class <span class="pp">|</span> Shorthand <span class="pp">|</span> Modern Class <span class="pp">|</span></span>
+<span id="cb23-438"><a href="#cb23-438" aria-hidden="true" tabindex="-1"></a><span class="pp">| :-----------</span> <span class="pp">| :---------</span> <span class="pp">| :----------------------</span> <span class="pp">|</span></span>
+<span id="cb23-439"><a href="#cb23-439" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`uline`</span>      <span class="pp">|</span> <span class="in">`u`</span>        <span class="pp">|</span> <span class="in">`pfa-text-uline`</span>        <span class="pp">|</span></span>
+<span id="cb23-440"><a href="#cb23-440" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`uuline`</span>     <span class="pp">|</span> <span class="in">`uu`</span>       <span class="pp">|</span> <span class="in">`pfa-text-uline-double`</span> <span class="pp">|</span></span>
+<span id="cb23-441"><a href="#cb23-441" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`dashuline`</span>  <span class="pp">|</span> <span class="in">`dau`</span>      <span class="pp">|</span> <span class="in">`pfa-text-uline-dashed`</span> <span class="pp">|</span></span>
+<span id="cb23-442"><a href="#cb23-442" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`dotuline`</span>   <span class="pp">|</span> <span class="in">`dou`</span>      <span class="pp">|</span> <span class="in">`pfa-text-uline-dotted`</span> <span class="pp">|</span></span>
+<span id="cb23-443"><a href="#cb23-443" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`uwave`</span>      <span class="pp">|</span> <span class="in">`uw`</span>       <span class="pp">|</span> <span class="in">`pfa-text-uline-wave`</span>   <span class="pp">|</span></span>
+<span id="cb23-444"><a href="#cb23-444" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`sout`</span>       <span class="pp">|</span> <span class="in">`so`</span>       <span class="pp">|</span> <span class="in">`pfa-text-strikeout`</span>    <span class="pp">|</span></span>
+<span id="cb23-445"><a href="#cb23-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-446"><a href="#cb23-446" aria-hidden="true" tabindex="-1"></a><span class="fu">## Removed Classes</span></span>
+<span id="cb23-447"><a href="#cb23-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-448"><a href="#cb23-448" aria-hidden="true" tabindex="-1"></a>The following legacy classes were removed in version 2.0.0 and are no longer recognized by the filter. Existing documents should be updated to use the replacement classes shown below.</span>
+<span id="cb23-449"><a href="#cb23-449" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-450"><a href="#cb23-450" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Removed Class <span class="pp">|</span> Shorthand <span class="pp">|</span> Removed In <span class="pp">|</span> Replacement <span class="pp">|</span></span>
+<span id="cb23-451"><a href="#cb23-451" aria-hidden="true" tabindex="-1"></a><span class="pp">| :------------</span> <span class="pp">| :--------</span> <span class="pp">| :---------</span> <span class="pp">| :----------</span> <span class="pp">|</span></span>
+<span id="cb23-452"><a href="#cb23-452" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`center`</span>     <span class="pp">|</span> —         <span class="pp">|</span> 2.0.0      <span class="pp">|</span> <span class="in">`pfa-align-center`</span> <span class="pp">|</span></span>
+<span id="cb23-453"><a href="#cb23-453" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`flushleft`</span>  <span class="pp">|</span> —         <span class="pp">|</span> 2.0.0      <span class="pp">|</span> <span class="in">`pfa-align-left`</span> <span class="pp">|</span></span>
+<span id="cb23-454"><a href="#cb23-454" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`flushright`</span> <span class="pp">|</span> —         <span class="pp">|</span> 2.0.0      <span class="pp">|</span> <span class="in">`pfa-align-right`</span> <span class="pp">|</span></span>
+<span id="cb23-455"><a href="#cb23-455" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`xout`</span>       <span class="pp">|</span> <span class="in">`xo`</span>     <span class="pp">|</span> 2.0.0      <span class="pp">|</span> <span class="in">`pfa-text-strikeout`</span> <span class="pp">|</span></span></code></pre></div>
 <h3 id="output.md">output.md</h3>
 <div class="sourceCode" id="cb24"><pre
 class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
@@ -1695,336 +1711,363 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb24-234"><a href="#cb24-234" aria-hidden="true" tabindex="-1"></a>THIS PARAGRAPH IS TRANSFORMED TO UPPERCASE.</span>
 <span id="cb24-235"><a href="#cb24-235" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb24-236"><a href="#cb24-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-237"><a href="#cb24-237" aria-hidden="true" tabindex="-1"></a><span class="fu">## Colors</span></span>
+<span id="cb24-237"><a href="#cb24-237" aria-hidden="true" tabindex="-1"></a><span class="fu">## Colors and Backgrounds</span></span>
 <span id="cb24-238"><a href="#cb24-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-239"><a href="#cb24-239" aria-hidden="true" tabindex="-1"></a>This section describes how to apply color and spacing using the</span>
-<span id="cb24-240"><a href="#cb24-240" aria-hidden="true" tabindex="-1"></a><span class="in">`pfa-color`</span>, <span class="in">`pfa-bg-color`</span>, and <span class="in">`pfa-padding`</span> attributes within</span>
-<span id="cb24-241"><a href="#cb24-241" aria-hidden="true" tabindex="-1"></a>Bracketed Spans and Fenced Divs.</span>
-<span id="cb24-242"><a href="#cb24-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-243"><a href="#cb24-243" aria-hidden="true" tabindex="-1"></a><span class="fu">### Color Fundamentals</span></span>
-<span id="cb24-244"><a href="#cb24-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-245"><a href="#cb24-245" aria-hidden="true" tabindex="-1"></a>The filter normalizes color inputs to ensure they render identically</span>
-<span id="cb24-246"><a href="#cb24-246" aria-hidden="true" tabindex="-1"></a>across LaTeX, Typst, and HTML.</span>
-<span id="cb24-247"><a href="#cb24-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-248"><a href="#cb24-248" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Flexible Color Terminology</span></span>
-<span id="cb24-249"><a href="#cb24-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-250"><a href="#cb24-250" aria-hidden="true" tabindex="-1"></a>For solid colors, the filter is case-insensitive and accepts most naming</span>
-<span id="cb24-251"><a href="#cb24-251" aria-hidden="true" tabindex="-1"></a>conventions. All examples below resolve to the CSS3 <span class="in">`mediumvioletred`</span>:</span>
+<span id="cb24-239"><a href="#cb24-239" aria-hidden="true" tabindex="-1"></a>This section describes how to apply colors to text, as well as how to</span>
+<span id="cb24-240"><a href="#cb24-240" aria-hidden="true" tabindex="-1"></a>apply background fills, padding, and borders to your content.</span>
+<span id="cb24-241"><a href="#cb24-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-242"><a href="#cb24-242" aria-hidden="true" tabindex="-1"></a><span class="fu">### Color Fundamentals</span></span>
+<span id="cb24-243"><a href="#cb24-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-244"><a href="#cb24-244" aria-hidden="true" tabindex="-1"></a>The filter normalizes color inputs to ensure they render identically</span>
+<span id="cb24-245"><a href="#cb24-245" aria-hidden="true" tabindex="-1"></a>across LaTeX, Typst, and HTML.</span>
+<span id="cb24-246"><a href="#cb24-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-247"><a href="#cb24-247" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Flexible Color Terminology</span></span>
+<span id="cb24-248"><a href="#cb24-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-249"><a href="#cb24-249" aria-hidden="true" tabindex="-1"></a>For solid colors, the filter is case-insensitive and accepts most naming</span>
+<span id="cb24-250"><a href="#cb24-250" aria-hidden="true" tabindex="-1"></a>conventions. All examples below resolve to the standard CSS3</span>
+<span id="cb24-251"><a href="#cb24-251" aria-hidden="true" tabindex="-1"></a><span class="in">`mediumvioletred`</span>:</span>
 <span id="cb24-252"><a href="#cb24-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-253"><a href="#cb24-253" aria-hidden="true" tabindex="-1"></a>  -----------------------------------------------------------------------------------------------------</span>
-<span id="cb24-254"><a href="#cb24-254" aria-hidden="true" tabindex="-1"></a>  Naming Convention       Syntax                                     Output</span>
-<span id="cb24-255"><a href="#cb24-255" aria-hidden="true" tabindex="-1"></a>  ----------------------- ------------------------------------------ ----------------------------------</span>
-<span id="cb24-256"><a href="#cb24-256" aria-hidden="true" tabindex="-1"></a>  Lowercase               <span class="in">`[Color]{pfa-color=&quot;mediumvioletred&quot;}`</span>     <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb24-253"><a href="#cb24-253" aria-hidden="true" tabindex="-1"></a>  ------------------------------------------------------------------------------------------------</span>
+<span id="cb24-254"><a href="#cb24-254" aria-hidden="true" tabindex="-1"></a>  Naming           Syntax                                      Output</span>
+<span id="cb24-255"><a href="#cb24-255" aria-hidden="true" tabindex="-1"></a>  ---------------- ------------------------------------------- -----------------------------------</span>
+<span id="cb24-256"><a href="#cb24-256" aria-hidden="true" tabindex="-1"></a>  Lowercase        <span class="in">`[Sample]{pfa-color=&quot;mediumvioletred&quot;}`</span>     <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
 <span id="cb24-257"><a href="#cb24-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-258"><a href="#cb24-258" aria-hidden="true" tabindex="-1"></a>  Title Case              <span class="in">`[Color]{pfa-color=&quot;Medium Violet Red&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb24-258"><a href="#cb24-258" aria-hidden="true" tabindex="-1"></a>  Title Case       <span class="in">`[Sample]{pfa-color=&quot;Medium Violet Red&quot;}`</span>   <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
 <span id="cb24-259"><a href="#cb24-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-260"><a href="#cb24-260" aria-hidden="true" tabindex="-1"></a>  Kebab Case              <span class="in">`[Color]{pfa-color=&quot;medium-violet-red&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb24-260"><a href="#cb24-260" aria-hidden="true" tabindex="-1"></a>  Kebab Case       <span class="in">`[Sample]{pfa-color=&quot;medium-violet-red&quot;}`</span>   <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
 <span id="cb24-261"><a href="#cb24-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-262"><a href="#cb24-262" aria-hidden="true" tabindex="-1"></a>  Snake Case              <span class="in">`[Color]{pfa-color=&quot;medium_violet_red&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb24-262"><a href="#cb24-262" aria-hidden="true" tabindex="-1"></a>  Snake Case       <span class="in">`[Sample]{pfa-color=&quot;medium_violet_red&quot;}`</span>   <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
 <span id="cb24-263"><a href="#cb24-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-264"><a href="#cb24-264" aria-hidden="true" tabindex="-1"></a>  Camel Case              <span class="in">`[Color]{pfa-color=&quot;mediumVioletRed&quot;}`</span>     <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
-<span id="cb24-265"><a href="#cb24-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-266"><a href="#cb24-266" aria-hidden="true" tabindex="-1"></a>  Pascal Case             <span class="in">`[Color]{pfa-color=&quot;MediumVioletRed&quot;}`</span>     <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
-<span id="cb24-267"><a href="#cb24-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-268"><a href="#cb24-268" aria-hidden="true" tabindex="-1"></a>  Screaming Snake Case    <span class="in">`[Color]{pfa-color=&quot;MEDIUM_VIOLET_RED&quot;}`</span>   <span class="co">[</span><span class="ot">Color</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
-<span id="cb24-269"><a href="#cb24-269" aria-hidden="true" tabindex="-1"></a>  -----------------------------------------------------------------------------------------------------</span>
-<span id="cb24-270"><a href="#cb24-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-271"><a href="#cb24-271" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Input Types</span></span>
-<span id="cb24-272"><a href="#cb24-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-273"><a href="#cb24-273" aria-hidden="true" tabindex="-1"></a>  ---------------------------------------------------------------------------------------------------</span>
-<span id="cb24-274"><a href="#cb24-274" aria-hidden="true" tabindex="-1"></a>  Input Type        Syntax                                        Output</span>
-<span id="cb24-275"><a href="#cb24-275" aria-hidden="true" tabindex="-1"></a>  ----------------- --------------------------------------------- -----------------------------------</span>
-<span id="cb24-276"><a href="#cb24-276" aria-hidden="true" tabindex="-1"></a>  CSS3 Named        <span class="in">`[Sample]{pfa-color=&quot;crimson&quot;}`</span>               <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #DC143C;&quot;}</span>
-<span id="cb24-277"><a href="#cb24-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-278"><a href="#cb24-278" aria-hidden="true" tabindex="-1"></a>  Hex Full          <span class="in">`[Sample]{pfa-color=&quot;#2E8B57&quot;}`</span>               <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #2E8B57;&quot;}</span>
+<span id="cb24-264"><a href="#cb24-264" aria-hidden="true" tabindex="-1"></a>  Pascal Case      <span class="in">`[Sample]{pfa-color=&quot;MediumVioletRed&quot;}`</span>     <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #C71585;&quot;}</span>
+<span id="cb24-265"><a href="#cb24-265" aria-hidden="true" tabindex="-1"></a>  ------------------------------------------------------------------------------------------------</span>
+<span id="cb24-266"><a href="#cb24-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-267"><a href="#cb24-267" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Input Types</span></span>
+<span id="cb24-268"><a href="#cb24-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-269"><a href="#cb24-269" aria-hidden="true" tabindex="-1"></a>  -------------------------------------------------------------------------------------------</span>
+<span id="cb24-270"><a href="#cb24-270" aria-hidden="true" tabindex="-1"></a>  Input Type       Syntax                                 Output</span>
+<span id="cb24-271"><a href="#cb24-271" aria-hidden="true" tabindex="-1"></a>  ---------------- -------------------------------------- -----------------------------------</span>
+<span id="cb24-272"><a href="#cb24-272" aria-hidden="true" tabindex="-1"></a>  CSS3 Named       <span class="in">`[Sample]{pfa-color=&quot;crimson&quot;}`</span>        <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #DC143C;&quot;}</span>
+<span id="cb24-273"><a href="#cb24-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-274"><a href="#cb24-274" aria-hidden="true" tabindex="-1"></a>  Hex Full         <span class="in">`[Sample]{pfa-color=&quot;#2E8B57&quot;}`</span>        <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #2E8B57;&quot;}</span>
+<span id="cb24-275"><a href="#cb24-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-276"><a href="#cb24-276" aria-hidden="true" tabindex="-1"></a>  Hex              <span class="in">`[Sample]{pfa-color=&quot;#666&quot;}`</span>           <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #666666;&quot;}</span>
+<span id="cb24-277"><a href="#cb24-277" aria-hidden="true" tabindex="-1"></a>  Shorthand<span class="ot">[^2]</span>                                           </span>
+<span id="cb24-278"><a href="#cb24-278" aria-hidden="true" tabindex="-1"></a>  -------------------------------------------------------------------------------------------</span>
 <span id="cb24-279"><a href="#cb24-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-280"><a href="#cb24-280" aria-hidden="true" tabindex="-1"></a>  Hex Shorthand<span class="ot">[^2]</span> <span class="in">`[Sample]{pfa-color=&quot;#666&quot;}`</span>                  <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #666666;&quot;}</span>
-<span id="cb24-281"><a href="#cb24-281" aria-hidden="true" tabindex="-1"></a>  ---------------------------------------------------------------------------------------------------</span>
-<span id="cb24-282"><a href="#cb24-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-283"><a href="#cb24-283" aria-hidden="true" tabindex="-1"></a>**Compatibility Note:** To ensure cross-platform stability, use standard</span>
-<span id="cb24-284"><a href="#cb24-284" aria-hidden="true" tabindex="-1"></a>CSS3 named colors or hex codes. Avoid LaTeX-specific numbered variants</span>
-<span id="cb24-285"><a href="#cb24-285" aria-hidden="true" tabindex="-1"></a>(e.g., <span class="in">`LightBlue3`</span>), as these are not supported in web browsers or CSS.</span>
-<span id="cb24-286"><a href="#cb24-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-287"><a href="#cb24-287" aria-hidden="true" tabindex="-1"></a><span class="fu">### Color Mixing</span></span>
-<span id="cb24-288"><a href="#cb24-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-289"><a href="#cb24-289" aria-hidden="true" tabindex="-1"></a>The extension supports LaTeX&#39;s <span class="in">`xcolor`</span> percentage-mixing syntax for</span>
-<span id="cb24-290"><a href="#cb24-290" aria-hidden="true" tabindex="-1"></a>tints, shades, and blends. This is the standardized syntax for this</span>
-<span id="cb24-291"><a href="#cb24-291" aria-hidden="true" tabindex="-1"></a>extension because it maps reliably across Typst, LaTeX, and HTML (which</span>
-<span id="cb24-292"><a href="#cb24-292" aria-hidden="true" tabindex="-1"></a>leverages the native CSS <span class="in">`color-mix()`</span> function).</span>
-<span id="cb24-293"><a href="#cb24-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-294"><a href="#cb24-294" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Supported Mixing Methods</span></span>
-<span id="cb24-295"><a href="#cb24-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-296"><a href="#cb24-296" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Tinting (Blending with White):**</span>
-<span id="cb24-297"><a href="#cb24-297" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Syntax: <span class="in">`BaseColor!Percentage`</span></span>
-<span id="cb24-298"><a href="#cb24-298" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Example: <span class="in">`Maroon!40`</span> (Yields 40% Maroon and 60% white)</span>
-<span id="cb24-299"><a href="#cb24-299" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Shading (Blending with Black):**</span>
-<span id="cb24-300"><a href="#cb24-300" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Syntax: <span class="in">`BaseColor!Percentage!black`</span></span>
-<span id="cb24-301"><a href="#cb24-301" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Example: <span class="in">`MediumVioletRed!80!black`</span> (Yields 80% MediumVioletRed and</span>
-<span id="cb24-302"><a href="#cb24-302" aria-hidden="true" tabindex="-1"></a>    20% black)</span>
-<span id="cb24-303"><a href="#cb24-303" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Two-Color Mix:**</span>
-<span id="cb24-304"><a href="#cb24-304" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Syntax: <span class="in">`BaseColor!Percentage!MixColor`</span></span>
-<span id="cb24-305"><a href="#cb24-305" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Example: <span class="in">`RoyalBlue!50!ForestGreen`</span> (Yields a 50/50 mix of both</span>
-<span id="cb24-306"><a href="#cb24-306" aria-hidden="true" tabindex="-1"></a>    colors)</span>
-<span id="cb24-307"><a href="#cb24-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-308"><a href="#cb24-308" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Syntax Examples</span></span>
-<span id="cb24-309"><a href="#cb24-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-310"><a href="#cb24-310" aria-hidden="true" tabindex="-1"></a>  ----------------------------------------------------------------------------------------------------------------------------------------------</span>
-<span id="cb24-311"><a href="#cb24-311" aria-hidden="true" tabindex="-1"></a>  Mixing Type        Syntax                                                 Output</span>
-<span id="cb24-312"><a href="#cb24-312" aria-hidden="true" tabindex="-1"></a>  ------------------ ------------------------------------------------------ --------------------------------------------------------------------</span>
-<span id="cb24-313"><a href="#cb24-313" aria-hidden="true" tabindex="-1"></a>  Tint (40% Base)    <span class="in">`[Tinted]{pfa-color=&quot;Maroon!40&quot;}`</span>                      <span class="co">[</span><span class="ot">Tinted</span><span class="co">]</span>{style=&quot;color: color-mix(in srgb, #800000 40%, #FFFFFF);&quot;}</span>
-<span id="cb24-314"><a href="#cb24-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-315"><a href="#cb24-315" aria-hidden="true" tabindex="-1"></a>  Shade (80% Base)   <span class="in">`[Shaded]{pfa-color=&quot;MediumVioletRed!80!black&quot;}`</span>       <span class="co">[</span><span class="ot">Shaded</span><span class="co">]</span>{style=&quot;color: color-mix(in srgb, #C71585 80%, #000000);&quot;}</span>
+<span id="cb24-280"><a href="#cb24-280" aria-hidden="true" tabindex="-1"></a>**Compatibility Note:** To ensure cross-platform stability, use standard</span>
+<span id="cb24-281"><a href="#cb24-281" aria-hidden="true" tabindex="-1"></a>CSS3 named colors or hex codes. Avoid LaTeX-specific numbered variants</span>
+<span id="cb24-282"><a href="#cb24-282" aria-hidden="true" tabindex="-1"></a>(e.g., <span class="in">`LightBlue3`</span>), as these are not supported in web browsers or CSS.</span>
+<span id="cb24-283"><a href="#cb24-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-284"><a href="#cb24-284" aria-hidden="true" tabindex="-1"></a><span class="fu">### Color Mixing</span></span>
+<span id="cb24-285"><a href="#cb24-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-286"><a href="#cb24-286" aria-hidden="true" tabindex="-1"></a>The extension supports LaTeX&#39;s <span class="in">`xcolor`</span> percentage-mixing syntax for</span>
+<span id="cb24-287"><a href="#cb24-287" aria-hidden="true" tabindex="-1"></a>tints, shades, and blends. This is the standardized syntax because it</span>
+<span id="cb24-288"><a href="#cb24-288" aria-hidden="true" tabindex="-1"></a>maps reliably across Typst, LaTeX, and HTML (which leverages the native</span>
+<span id="cb24-289"><a href="#cb24-289" aria-hidden="true" tabindex="-1"></a>CSS <span class="in">`color-mix()`</span> function).</span>
+<span id="cb24-290"><a href="#cb24-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-291"><a href="#cb24-291" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Supported Mixing Methods</span></span>
+<span id="cb24-292"><a href="#cb24-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-293"><a href="#cb24-293" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Tinting (blending with white):** Use the pattern</span>
+<span id="cb24-294"><a href="#cb24-294" aria-hidden="true" tabindex="-1"></a>  <span class="in">`BaseColor!Percentage`</span>. For example, <span class="in">`Maroon!40`</span> yields 40% Maroon and</span>
+<span id="cb24-295"><a href="#cb24-295" aria-hidden="true" tabindex="-1"></a>  60% white.</span>
+<span id="cb24-296"><a href="#cb24-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-297"><a href="#cb24-297" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Shading (blending with black):** Use the pattern</span>
+<span id="cb24-298"><a href="#cb24-298" aria-hidden="true" tabindex="-1"></a>  <span class="in">`BaseColor!Percentage!black`</span>. For example, <span class="in">`MediumVioletRed!80!black`</span></span>
+<span id="cb24-299"><a href="#cb24-299" aria-hidden="true" tabindex="-1"></a>  yields 80% MediumVioletRed and 20% black.</span>
+<span id="cb24-300"><a href="#cb24-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-301"><a href="#cb24-301" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Two-Color Mix:** Use the pattern <span class="in">`BaseColor!Percentage!MixColor`</span>.</span>
+<span id="cb24-302"><a href="#cb24-302" aria-hidden="true" tabindex="-1"></a>  For example, <span class="in">`RoyalBlue!50!ForestGreen`</span> yields a 50/50 mix of both</span>
+<span id="cb24-303"><a href="#cb24-303" aria-hidden="true" tabindex="-1"></a>  colors.</span>
+<span id="cb24-304"><a href="#cb24-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-305"><a href="#cb24-305" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Syntax Examples</span></span>
+<span id="cb24-306"><a href="#cb24-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-307"><a href="#cb24-307" aria-hidden="true" tabindex="-1"></a>  --------------------------------------------------------------------------------------------------------------------------------------------</span>
+<span id="cb24-308"><a href="#cb24-308" aria-hidden="true" tabindex="-1"></a>  Mixing Type          Syntax                                             Output</span>
+<span id="cb24-309"><a href="#cb24-309" aria-hidden="true" tabindex="-1"></a>  -------------------- -------------------------------------------------- --------------------------------------------------------------------</span>
+<span id="cb24-310"><a href="#cb24-310" aria-hidden="true" tabindex="-1"></a>  Tint (40% Base)      <span class="in">`[Sample]{pfa-color=&quot;Maroon!40&quot;}`</span>                  <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: color-mix(in srgb, #800000 40%, #FFFFFF);&quot;}</span>
+<span id="cb24-311"><a href="#cb24-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-312"><a href="#cb24-312" aria-hidden="true" tabindex="-1"></a>  Shade (80% Base)     <span class="in">`[Sample]{pfa-color=&quot;MediumVioletRed!80!black&quot;}`</span>   <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: color-mix(in srgb, #C71585 80%, #000000);&quot;}</span>
+<span id="cb24-313"><a href="#cb24-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-314"><a href="#cb24-314" aria-hidden="true" tabindex="-1"></a>  Mix (50/50)          <span class="in">`[Sample]{pfa-color=&quot;RoyalBlue!50!ForestGreen&quot;}`</span>   <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: color-mix(in srgb, #4169E1 50%, #228B22);&quot;}</span>
+<span id="cb24-315"><a href="#cb24-315" aria-hidden="true" tabindex="-1"></a>  --------------------------------------------------------------------------------------------------------------------------------------------</span>
 <span id="cb24-316"><a href="#cb24-316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-317"><a href="#cb24-317" aria-hidden="true" tabindex="-1"></a>  Mix (50/50)        <span class="in">`[Mixed]{pfa-font-color=&quot;RoyalBlue!50!ForestGreen&quot;}`</span>   <span class="co">[</span><span class="ot">Mixed</span><span class="co">]</span>{style=&quot;color: color-mix(in srgb, #4169E1 50%, #228B22);&quot;}</span>
-<span id="cb24-318"><a href="#cb24-318" aria-hidden="true" tabindex="-1"></a>  ----------------------------------------------------------------------------------------------------------------------------------------------</span>
-<span id="cb24-319"><a href="#cb24-319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-320"><a href="#cb24-320" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Important Compatibility Rules</span></span>
-<span id="cb24-321"><a href="#cb24-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-322"><a href="#cb24-322" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Strictly Use LaTeX Syntax:** Always use the <span class="in">`BaseColor!Percentage`</span></span>
-<span id="cb24-323"><a href="#cb24-323" aria-hidden="true" tabindex="-1"></a>  pattern. This is the only syntax guaranteed to translate correctly</span>
-<span id="cb24-324"><a href="#cb24-324" aria-hidden="true" tabindex="-1"></a>  across all three output formats.</span>
-<span id="cb24-325"><a href="#cb24-325" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-326"><a href="#cb24-326" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Avoid Typst Native Syntax:** If you use native Typst color syntax</span>
-<span id="cb24-327"><a href="#cb24-327" aria-hidden="true" tabindex="-1"></a>  (e.g., <span class="in">`color.mix()`</span>), the filter will pass it directly to Typst. It</span>
-<span id="cb24-328"><a href="#cb24-328" aria-hidden="true" tabindex="-1"></a>  will not be translated for LaTeX or HTML, and those formats will</span>
-<span id="cb24-329"><a href="#cb24-329" aria-hidden="true" tabindex="-1"></a>  likely receive a fallback color.</span>
-<span id="cb24-330"><a href="#cb24-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-331"><a href="#cb24-331" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Binary Mixing Only:** You may blend a maximum of two colors.</span>
-<span id="cb24-332"><a href="#cb24-332" aria-hidden="true" tabindex="-1"></a>  Multi-color mixing (e.g., Red!30!Blue!30!Green) is not supported.</span>
-<span id="cb24-333"><a href="#cb24-333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-334"><a href="#cb24-334" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Casing Matters:** Because mixing strings are passed directly to</span>
-<span id="cb24-335"><a href="#cb24-335" aria-hidden="true" tabindex="-1"></a>  LaTeX, casing must be exact:</span>
+<span id="cb24-317"><a href="#cb24-317" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Important Compatibility Rules</span></span>
+<span id="cb24-318"><a href="#cb24-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-319"><a href="#cb24-319" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Strictly Use LaTeX Syntax:** Always use the <span class="in">`BaseColor!Percentage`</span></span>
+<span id="cb24-320"><a href="#cb24-320" aria-hidden="true" tabindex="-1"></a>  pattern. This is the only syntax guaranteed to translate correctly</span>
+<span id="cb24-321"><a href="#cb24-321" aria-hidden="true" tabindex="-1"></a>  across all three output formats.</span>
+<span id="cb24-322"><a href="#cb24-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-323"><a href="#cb24-323" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Avoid Typst Native Syntax:** If you use native Typst color syntax</span>
+<span id="cb24-324"><a href="#cb24-324" aria-hidden="true" tabindex="-1"></a>  (e.g., <span class="in">`color.mix()`</span>), the filter will pass it directly to Typst. It</span>
+<span id="cb24-325"><a href="#cb24-325" aria-hidden="true" tabindex="-1"></a>  will not be translated for LaTeX or HTML.</span>
+<span id="cb24-326"><a href="#cb24-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-327"><a href="#cb24-327" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Binary Mixing Only:** You may blend a maximum of two colors.</span>
+<span id="cb24-328"><a href="#cb24-328" aria-hidden="true" tabindex="-1"></a>  Multi-color mixing (e.g., <span class="in">`Red!30!Blue!30!Green`</span>) is not supported.</span>
+<span id="cb24-329"><a href="#cb24-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-330"><a href="#cb24-330" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Casing Matters:** Because mixing strings are passed directly to</span>
+<span id="cb24-331"><a href="#cb24-331" aria-hidden="true" tabindex="-1"></a>  LaTeX, casing must be exact:</span>
+<span id="cb24-332"><a href="#cb24-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-333"><a href="#cb24-333" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Use lowercase for [Core LaTeX</span>
+<span id="cb24-334"><a href="#cb24-334" aria-hidden="true" tabindex="-1"></a>    colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide)</span>
+<span id="cb24-335"><a href="#cb24-335" aria-hidden="true" tabindex="-1"></a>    (e.g., <span class="in">`black`</span>, <span class="in">`red`</span>).</span>
 <span id="cb24-336"><a href="#cb24-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-337"><a href="#cb24-337" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Use lowercase for [core LaTeX</span>
-<span id="cb24-338"><a href="#cb24-338" aria-hidden="true" tabindex="-1"></a>    colors](https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide)</span>
-<span id="cb24-339"><a href="#cb24-339" aria-hidden="true" tabindex="-1"></a>    (e.g., <span class="in">`black`</span>, <span class="in">`red`</span>).</span>
-<span id="cb24-340"><a href="#cb24-340" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Use PascalCase for [CSS3 named</span>
-<span id="cb24-341"><a href="#cb24-341" aria-hidden="true" tabindex="-1"></a>    colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)</span>
-<span id="cb24-342"><a href="#cb24-342" aria-hidden="true" tabindex="-1"></a>    (e.g., <span class="in">`RoyalBlue`</span>, <span class="in">`MediumVioletRed`</span>).</span>
-<span id="cb24-343"><a href="#cb24-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-344"><a href="#cb24-344" aria-hidden="true" tabindex="-1"></a><span class="fu">### Styling Elements</span></span>
+<span id="cb24-337"><a href="#cb24-337" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Use PascalCase for [CSS3 named</span>
+<span id="cb24-338"><a href="#cb24-338" aria-hidden="true" tabindex="-1"></a>    colors](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)</span>
+<span id="cb24-339"><a href="#cb24-339" aria-hidden="true" tabindex="-1"></a>    (e.g., <span class="in">`RoyalBlue`</span>, <span class="in">`MediumVioletRed`</span>).</span>
+<span id="cb24-340"><a href="#cb24-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-341"><a href="#cb24-341" aria-hidden="true" tabindex="-1"></a><span class="fu">### Foreground Styling</span></span>
+<span id="cb24-342"><a href="#cb24-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-343"><a href="#cb24-343" aria-hidden="true" tabindex="-1"></a>Use the <span class="in">`pfa-color`</span> attribute to change the color of the text itself. It</span>
+<span id="cb24-344"><a href="#cb24-344" aria-hidden="true" tabindex="-1"></a>can be applied to inline spans or multiline blocks.</span>
 <span id="cb24-345"><a href="#cb24-345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-346"><a href="#cb24-346" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Foreground and Background</span></span>
-<span id="cb24-347"><a href="#cb24-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-348"><a href="#cb24-348" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`pfa-color`</span> for text and <span class="in">`pfa-bg-color`</span> for container backgrounds.</span>
+<span id="cb24-346"><a href="#cb24-346" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb24-347"><a href="#cb24-347" aria-hidden="true" tabindex="-1"></a>This is normal text, but <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-color=&quot;tomato&quot;} overrides the default text color.</span>
+<span id="cb24-348"><a href="#cb24-348" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb24-349"><a href="#cb24-349" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-350"><a href="#cb24-350" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb24-351"><a href="#cb24-351" aria-hidden="true" tabindex="-1"></a>::: {pfa-color=&quot;DarkSlateGrey&quot; pfa-bg-color=&quot;lightsteelblue&quot; pfa-padding=&quot;1em&quot;}</span>
-<span id="cb24-352"><a href="#cb24-352" aria-hidden="true" tabindex="-1"></a>This block has a default text color and a background fill.</span>
-<span id="cb24-353"><a href="#cb24-353" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">This span overrides the text color.</span><span class="co">]</span>{pfa-color=&quot;tomato&quot;}</span>
-<span id="cb24-354"><a href="#cb24-354" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb24-355"><a href="#cb24-355" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb24-356"><a href="#cb24-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-357"><a href="#cb24-357" aria-hidden="true" tabindex="-1"></a>::: {style=&quot;color: #2F4F4F;background-color: #B0C4DE;padding: 1em;&quot;}</span>
-<span id="cb24-358"><a href="#cb24-358" aria-hidden="true" tabindex="-1"></a>This block has a default text color and a background fill. [This span</span>
-<span id="cb24-359"><a href="#cb24-359" aria-hidden="true" tabindex="-1"></a>overrides the text color.]{style=&quot;color: #FF6347;&quot;}</span>
-<span id="cb24-360"><a href="#cb24-360" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb24-361"><a href="#cb24-361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-362"><a href="#cb24-362" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Layout Spacing (`pfa-padding`)</span></span>
-<span id="cb24-363"><a href="#cb24-363" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-364"><a href="#cb24-364" aria-hidden="true" tabindex="-1"></a>The pfa-padding attribute controls internal spacing using standard CSS</span>
-<span id="cb24-365"><a href="#cb24-365" aria-hidden="true" tabindex="-1"></a>shorthand.</span>
+<span id="cb24-350"><a href="#cb24-350" aria-hidden="true" tabindex="-1"></a>This is normal text, but <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #FF6347;&quot;} overrides the</span>
+<span id="cb24-351"><a href="#cb24-351" aria-hidden="true" tabindex="-1"></a>default text color.</span>
+<span id="cb24-352"><a href="#cb24-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-353"><a href="#cb24-353" aria-hidden="true" tabindex="-1"></a><span class="fu">### Backgrounds and Borders</span></span>
+<span id="cb24-354"><a href="#cb24-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-355"><a href="#cb24-355" aria-hidden="true" tabindex="-1"></a>By combining background fills, padding, borders, and corner radii, you</span>
+<span id="cb24-356"><a href="#cb24-356" aria-hidden="true" tabindex="-1"></a>can highlight and emphasize text. These attributes can be applied to</span>
+<span id="cb24-357"><a href="#cb24-357" aria-hidden="true" tabindex="-1"></a>both inline bracketed spans and multiline fenced divs.</span>
+<span id="cb24-358"><a href="#cb24-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-359"><a href="#cb24-359" aria-hidden="true" tabindex="-1"></a><span class="fu">#### The Core Attributes</span></span>
+<span id="cb24-360"><a href="#cb24-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-361"><a href="#cb24-361" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`pfa-bg-color`</span>: Defines the background fill color of the container.</span>
+<span id="cb24-362"><a href="#cb24-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-363"><a href="#cb24-363" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`pfa-padding`</span>: Controls internal spacing using standard CSS</span>
+<span id="cb24-364"><a href="#cb24-364" aria-hidden="true" tabindex="-1"></a>  shorthands. Only <span class="in">`pt`</span>, <span class="in">`em`</span>, and <span class="in">`ex`</span> are supported to guarantee</span>
+<span id="cb24-365"><a href="#cb24-365" aria-hidden="true" tabindex="-1"></a>  cross-platform stability.</span>
 <span id="cb24-366"><a href="#cb24-366" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-367"><a href="#cb24-367" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**One value (`1em`):** Applied to all four sides evenly.</span>
+<span id="cb24-367"><a href="#cb24-367" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>One value (<span class="in">`1em`</span>): Applied to all four sides evenly.</span>
 <span id="cb24-368"><a href="#cb24-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-369"><a href="#cb24-369" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Two values (`1em 0.5em`):** The first value applies to the top and</span>
-<span id="cb24-370"><a href="#cb24-370" aria-hidden="true" tabindex="-1"></a>  bottom; the second applies to the left and right.</span>
-<span id="cb24-371"><a href="#cb24-371" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-372"><a href="#cb24-372" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Three values (`1em 0.5em 2em`):** The first value is the top, the</span>
-<span id="cb24-373"><a href="#cb24-373" aria-hidden="true" tabindex="-1"></a>  second applies to both the left and right, and the third is the</span>
-<span id="cb24-374"><a href="#cb24-374" aria-hidden="true" tabindex="-1"></a>  bottom.</span>
-<span id="cb24-375"><a href="#cb24-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-376"><a href="#cb24-376" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Four values (`1em 0.5em 2em 0.2em`):** Applied in clockwise order:</span>
-<span id="cb24-377"><a href="#cb24-377" aria-hidden="true" tabindex="-1"></a>  top, right, bottom, and left.</span>
+<span id="cb24-369"><a href="#cb24-369" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Two values (<span class="in">`1em 0.5em`</span>): Top/Bottom, then Left/Right.</span>
+<span id="cb24-370"><a href="#cb24-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-371"><a href="#cb24-371" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Three values (<span class="in">`1em 0.5em 2em`</span>): Top, Left/Right, Bottom.</span>
+<span id="cb24-372"><a href="#cb24-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-373"><a href="#cb24-373" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Four values (<span class="in">`1em 0.5em 2em 0.2em`</span>): Top, Right, Bottom, Left.</span>
+<span id="cb24-374"><a href="#cb24-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-375"><a href="#cb24-375" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`pfa-bg-border-width`</span>: Defines the thickness of the border around all</span>
+<span id="cb24-376"><a href="#cb24-376" aria-hidden="true" tabindex="-1"></a>  four sides. We strongly recommend using <span class="in">`pt`</span> to ensure crisp print</span>
+<span id="cb24-377"><a href="#cb24-377" aria-hidden="true" tabindex="-1"></a>  rendering. If this is omitted, the border defaults to <span class="in">`1pt`</span>.</span>
 <span id="cb24-378"><a href="#cb24-378" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-379"><a href="#cb24-379" aria-hidden="true" tabindex="-1"></a>**Supported Units:** Only <span class="in">`pt`</span>, <span class="in">`em`</span>, and <span class="in">`ex`</span> are supported to</span>
-<span id="cb24-380"><a href="#cb24-380" aria-hidden="true" tabindex="-1"></a>guarantee stability.</span>
-<span id="cb24-381"><a href="#cb24-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-382"><a href="#cb24-382" aria-hidden="true" tabindex="-1"></a><span class="fu">### Typst Named Palette</span></span>
-<span id="cb24-383"><a href="#cb24-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-384"><a href="#cb24-384" aria-hidden="true" tabindex="-1"></a>You can access Typst&#39;s native predefined colors by prefixing the color</span>
-<span id="cb24-385"><a href="#cb24-385" aria-hidden="true" tabindex="-1"></a>name with typst.</span>
+<span id="cb24-379"><a href="#cb24-379" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`pfa-bg-border-color`</span>: Defines the color of the border.</span>
+<span id="cb24-380"><a href="#cb24-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-381"><a href="#cb24-381" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`pfa-bg-radius`</span>: Rounds all four corners of the container uniformly.</span>
+<span id="cb24-382"><a href="#cb24-382" aria-hidden="true" tabindex="-1"></a>  We recommend using <span class="in">`em`</span> so the curve scales naturally with your text</span>
+<span id="cb24-383"><a href="#cb24-383" aria-hidden="true" tabindex="-1"></a>  size.</span>
+<span id="cb24-384"><a href="#cb24-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-385"><a href="#cb24-385" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Example 1: Inline Spans</span></span>
 <span id="cb24-386"><a href="#cb24-386" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-387"><a href="#cb24-387" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Syntax:**</span>
-<span id="cb24-388"><a href="#cb24-388" aria-hidden="true" tabindex="-1"></a>  <span class="in">`[Sample]{pfa-bg-color=&quot;typstmaroon&quot; pfa-color=&quot;white&quot; pfa-padding=&quot;0.2em&quot;}`</span></span>
-<span id="cb24-389"><a href="#cb24-389" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-390"><a href="#cb24-390" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Output:**</span>
-<span id="cb24-391"><a href="#cb24-391" aria-hidden="true" tabindex="-1"></a>  <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #FFFFFF;background-color: #85144B;padding: 0.2em;&quot;}</span>
-<span id="cb24-392"><a href="#cb24-392" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-393"><a href="#cb24-393" aria-hidden="true" tabindex="-1"></a><span class="fu">## Text Alignment within Fenced Divs</span></span>
+<span id="cb24-387"><a href="#cb24-387" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb24-388"><a href="#cb24-388" aria-hidden="true" tabindex="-1"></a>This is a <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{pfa-bg-color=&quot;aliceblue&quot; pfa-color=&quot;navy&quot; pfa-padding=&quot;0.2em 0.6em&quot; pfa-bg-border-width=&quot;0.5pt&quot; pfa-bg-border-color=&quot;steelblue&quot; pfa-bg-radius=&quot;1em&quot;} of an inline badge.</span>
+<span id="cb24-389"><a href="#cb24-389" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-390"><a href="#cb24-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-391"><a href="#cb24-391" aria-hidden="true" tabindex="-1"></a>This is a</span>
+<span id="cb24-392"><a href="#cb24-392" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #000080;background-color: #F0F8FF;padding: 0.2em 0.6em;border: 0.5pt solid #4682B4;border-radius: 1em;&quot;}</span>
+<span id="cb24-393"><a href="#cb24-393" aria-hidden="true" tabindex="-1"></a>of an inline badge.</span>
 <span id="cb24-394"><a href="#cb24-394" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-395"><a href="#cb24-395" aria-hidden="true" tabindex="-1"></a>The <span class="in">`pfa-align-*`</span> classes control text alignment within a Fenced Div</span>
-<span id="cb24-396"><a href="#cb24-396" aria-hidden="true" tabindex="-1"></a>while explicitly preserving hard line breaks (<span class="in">`\`</span>). These utilities map</span>
-<span id="cb24-397"><a href="#cb24-397" aria-hidden="true" tabindex="-1"></a>directly to native LaTeX commands (<span class="in">`\raggedright`</span>, <span class="in">`\centering`</span>, and</span>
-<span id="cb24-398"><a href="#cb24-398" aria-hidden="true" tabindex="-1"></a><span class="in">`\raggedleft`</span>) in PDF output and equivalent CSS behaviors in HTML,</span>
-<span id="cb24-399"><a href="#cb24-399" aria-hidden="true" tabindex="-1"></a>making them ideal for formatting poetry, lyrics, or multi-line blocks.</span>
-<span id="cb24-400"><a href="#cb24-400" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-401"><a href="#cb24-401" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left-aligned Text</span></span>
+<span id="cb24-395"><a href="#cb24-395" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Example 2: Multiline Blocks</span></span>
+<span id="cb24-396"><a href="#cb24-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-397"><a href="#cb24-397" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb24-398"><a href="#cb24-398" aria-hidden="true" tabindex="-1"></a>::: {pfa-bg-color=&quot;ghostwhite&quot; pfa-padding=&quot;1.5em&quot; pfa-bg-border-width=&quot;1.5pt&quot; pfa-bg-border-color=&quot;maroon&quot; pfa-bg-radius=&quot;0.4em&quot;}</span>
+<span id="cb24-399"><a href="#cb24-399" aria-hidden="true" tabindex="-1"></a>**Important Note:** This block utilizes the full suite of styling attributes to create a container with a light background, a maroon border, and rounded corners.</span>
+<span id="cb24-400"><a href="#cb24-400" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb24-401"><a href="#cb24-401" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb24-402"><a href="#cb24-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-403"><a href="#cb24-403" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb24-404"><a href="#cb24-404" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
-<span id="cb24-405"><a href="#cb24-405" aria-hidden="true" tabindex="-1"></a>This block of text is *left-aligned*.</span>
-<span id="cb24-406"><a href="#cb24-406" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb24-407"><a href="#cb24-407" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-403"><a href="#cb24-403" aria-hidden="true" tabindex="-1"></a>::: {style=&quot;background-color: #F8F8FF;padding: 1.5em;border: 1.5pt solid #800000;border-radius: 0.4em;&quot;}</span>
+<span id="cb24-404"><a href="#cb24-404" aria-hidden="true" tabindex="-1"></a>**Important Note:** This block utilizes the full suite of styling</span>
+<span id="cb24-405"><a href="#cb24-405" aria-hidden="true" tabindex="-1"></a>attributes to create a container with a light background, a maroon</span>
+<span id="cb24-406"><a href="#cb24-406" aria-hidden="true" tabindex="-1"></a>border, and rounded corners.</span>
+<span id="cb24-407"><a href="#cb24-407" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb24-408"><a href="#cb24-408" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-409"><a href="#cb24-409" aria-hidden="true" tabindex="-1"></a>::: {}</span>
-<span id="cb24-410"><a href="#cb24-410" aria-hidden="true" tabindex="-1"></a>This block of text is *left-aligned*.</span>
-<span id="cb24-411"><a href="#cb24-411" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb24-412"><a href="#cb24-412" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-413"><a href="#cb24-413" aria-hidden="true" tabindex="-1"></a><span class="fu">### Center-aligned Text</span></span>
-<span id="cb24-414"><a href="#cb24-414" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-415"><a href="#cb24-415" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb24-416"><a href="#cb24-416" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
-<span id="cb24-417"><a href="#cb24-417" aria-hidden="true" tabindex="-1"></a>This block of text is *center-aligned*.</span>
-<span id="cb24-418"><a href="#cb24-418" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb24-419"><a href="#cb24-419" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb24-420"><a href="#cb24-420" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-421"><a href="#cb24-421" aria-hidden="true" tabindex="-1"></a>::: {}</span>
-<span id="cb24-422"><a href="#cb24-422" aria-hidden="true" tabindex="-1"></a>This block of text is *center-aligned*.</span>
-<span id="cb24-423"><a href="#cb24-423" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb24-424"><a href="#cb24-424" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-425"><a href="#cb24-425" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right-aligned Text</span></span>
-<span id="cb24-426"><a href="#cb24-426" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-427"><a href="#cb24-427" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb24-428"><a href="#cb24-428" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
-<span id="cb24-429"><a href="#cb24-429" aria-hidden="true" tabindex="-1"></a>This block of text is *right-aligned*.</span>
-<span id="cb24-430"><a href="#cb24-430" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb24-431"><a href="#cb24-431" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb24-432"><a href="#cb24-432" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-433"><a href="#cb24-433" aria-hidden="true" tabindex="-1"></a>::: {}</span>
-<span id="cb24-434"><a href="#cb24-434" aria-hidden="true" tabindex="-1"></a>This block of text is *right-aligned*.</span>
-<span id="cb24-435"><a href="#cb24-435" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb24-436"><a href="#cb24-436" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-437"><a href="#cb24-437" aria-hidden="true" tabindex="-1"></a><span class="fu">### Line Break Preservation</span></span>
-<span id="cb24-438"><a href="#cb24-438" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-439"><a href="#cb24-439" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb24-440"><a href="#cb24-440" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
-<span id="cb24-441"><a href="#cb24-441" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
-<span id="cb24-442"><a href="#cb24-442" aria-hidden="true" tabindex="-1"></a>is *center-aligned*\</span>
-<span id="cb24-443"><a href="#cb24-443" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
-<span id="cb24-444"><a href="#cb24-444" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb24-445"><a href="#cb24-445" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb24-446"><a href="#cb24-446" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-447"><a href="#cb24-447" aria-hidden="true" tabindex="-1"></a>::: {}</span>
-<span id="cb24-448"><a href="#cb24-448" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
-<span id="cb24-449"><a href="#cb24-449" aria-hidden="true" tabindex="-1"></a>is *center-aligned*\</span>
-<span id="cb24-450"><a href="#cb24-450" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
-<span id="cb24-451"><a href="#cb24-451" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb24-452"><a href="#cb24-452" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-453"><a href="#cb24-453" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combining Multiple Classes</span></span>
-<span id="cb24-454"><a href="#cb24-454" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-455"><a href="#cb24-455" aria-hidden="true" tabindex="-1"></a>Multiple typographic utilities can be combined within the same element.</span>
-<span id="cb24-456"><a href="#cb24-456" aria-hidden="true" tabindex="-1"></a>Font, size, color, alignment, and decoration classes are designed to</span>
-<span id="cb24-457"><a href="#cb24-457" aria-hidden="true" tabindex="-1"></a>compose independently and can be applied together to both Bracketed</span>
-<span id="cb24-458"><a href="#cb24-458" aria-hidden="true" tabindex="-1"></a>Spans and Fenced Divs.</span>
+<span id="cb24-409"><a href="#cb24-409" aria-hidden="true" tabindex="-1"></a><span class="fu">### Typst Named Palette</span></span>
+<span id="cb24-410"><a href="#cb24-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-411"><a href="#cb24-411" aria-hidden="true" tabindex="-1"></a>You can access Typst&#39;s native predefined colors by prefixing the color</span>
+<span id="cb24-412"><a href="#cb24-412" aria-hidden="true" tabindex="-1"></a>name with <span class="in">`typst`</span>.</span>
+<span id="cb24-413"><a href="#cb24-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-414"><a href="#cb24-414" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Syntax:**</span>
+<span id="cb24-415"><a href="#cb24-415" aria-hidden="true" tabindex="-1"></a>  <span class="in">`[Sample]{pfa-bg-color=&quot;typstmaroon&quot; pfa-color=&quot;white&quot; pfa-padding=&quot;0.2em&quot;}`</span></span>
+<span id="cb24-416"><a href="#cb24-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-417"><a href="#cb24-417" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Output:**</span>
+<span id="cb24-418"><a href="#cb24-418" aria-hidden="true" tabindex="-1"></a>  <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #FFFFFF;background-color: #85144B;padding: 0.2em;&quot;}</span>
+<span id="cb24-419"><a href="#cb24-419" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-420"><a href="#cb24-420" aria-hidden="true" tabindex="-1"></a><span class="fu">## Text Alignment within Fenced Divs</span></span>
+<span id="cb24-421"><a href="#cb24-421" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-422"><a href="#cb24-422" aria-hidden="true" tabindex="-1"></a>The <span class="in">`pfa-align-*`</span> classes control text alignment within a Fenced Div</span>
+<span id="cb24-423"><a href="#cb24-423" aria-hidden="true" tabindex="-1"></a>while explicitly preserving hard line breaks (<span class="in">`\`</span>). These utilities map</span>
+<span id="cb24-424"><a href="#cb24-424" aria-hidden="true" tabindex="-1"></a>directly to native LaTeX commands (<span class="in">`\raggedright`</span>, <span class="in">`\centering`</span>, and</span>
+<span id="cb24-425"><a href="#cb24-425" aria-hidden="true" tabindex="-1"></a><span class="in">`\raggedleft`</span>) in PDF output and equivalent CSS behaviors in HTML,</span>
+<span id="cb24-426"><a href="#cb24-426" aria-hidden="true" tabindex="-1"></a>making them ideal for formatting poetry, lyrics, or multi-line blocks.</span>
+<span id="cb24-427"><a href="#cb24-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-428"><a href="#cb24-428" aria-hidden="true" tabindex="-1"></a><span class="fu">### Left-aligned Text</span></span>
+<span id="cb24-429"><a href="#cb24-429" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-430"><a href="#cb24-430" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb24-431"><a href="#cb24-431" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-left}</span>
+<span id="cb24-432"><a href="#cb24-432" aria-hidden="true" tabindex="-1"></a>This block of text is *left-aligned*.</span>
+<span id="cb24-433"><a href="#cb24-433" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb24-434"><a href="#cb24-434" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-435"><a href="#cb24-435" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-436"><a href="#cb24-436" aria-hidden="true" tabindex="-1"></a>::: {}</span>
+<span id="cb24-437"><a href="#cb24-437" aria-hidden="true" tabindex="-1"></a>This block of text is *left-aligned*.</span>
+<span id="cb24-438"><a href="#cb24-438" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb24-439"><a href="#cb24-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-440"><a href="#cb24-440" aria-hidden="true" tabindex="-1"></a><span class="fu">### Center-aligned Text</span></span>
+<span id="cb24-441"><a href="#cb24-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-442"><a href="#cb24-442" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb24-443"><a href="#cb24-443" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb24-444"><a href="#cb24-444" aria-hidden="true" tabindex="-1"></a>This block of text is *center-aligned*.</span>
+<span id="cb24-445"><a href="#cb24-445" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb24-446"><a href="#cb24-446" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-447"><a href="#cb24-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-448"><a href="#cb24-448" aria-hidden="true" tabindex="-1"></a>::: {}</span>
+<span id="cb24-449"><a href="#cb24-449" aria-hidden="true" tabindex="-1"></a>This block of text is *center-aligned*.</span>
+<span id="cb24-450"><a href="#cb24-450" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb24-451"><a href="#cb24-451" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-452"><a href="#cb24-452" aria-hidden="true" tabindex="-1"></a><span class="fu">### Right-aligned Text</span></span>
+<span id="cb24-453"><a href="#cb24-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-454"><a href="#cb24-454" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb24-455"><a href="#cb24-455" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-right}</span>
+<span id="cb24-456"><a href="#cb24-456" aria-hidden="true" tabindex="-1"></a>This block of text is *right-aligned*.</span>
+<span id="cb24-457"><a href="#cb24-457" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb24-458"><a href="#cb24-458" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb24-459"><a href="#cb24-459" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-460"><a href="#cb24-460" aria-hidden="true" tabindex="-1"></a>Class names are space-separated within <span class="in">`{}`</span> following Pandoc attribute</span>
-<span id="cb24-461"><a href="#cb24-461" aria-hidden="true" tabindex="-1"></a>syntax. In addition to classes, key-value attributes such as <span class="in">`pfa-color`</span></span>
-<span id="cb24-462"><a href="#cb24-462" aria-hidden="true" tabindex="-1"></a>may be included alongside class definitions.</span>
+<span id="cb24-460"><a href="#cb24-460" aria-hidden="true" tabindex="-1"></a>::: {}</span>
+<span id="cb24-461"><a href="#cb24-461" aria-hidden="true" tabindex="-1"></a>This block of text is *right-aligned*.</span>
+<span id="cb24-462"><a href="#cb24-462" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb24-463"><a href="#cb24-463" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-464"><a href="#cb24-464" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bracketed Span Composition</span></span>
+<span id="cb24-464"><a href="#cb24-464" aria-hidden="true" tabindex="-1"></a><span class="fu">### Line Break Preservation</span></span>
 <span id="cb24-465"><a href="#cb24-465" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-466"><a href="#cb24-466" aria-hidden="true" tabindex="-1"></a>  -----------------------------------------------------------------------------------------------------------------------------------</span>
-<span id="cb24-467"><a href="#cb24-467" aria-hidden="true" tabindex="-1"></a>  Style                Syntax                                                                     Output</span>
-<span id="cb24-468"><a href="#cb24-468" aria-hidden="true" tabindex="-1"></a>  -------------------- -------------------------------------------------------------------------- -----------------------------------</span>
-<span id="cb24-469"><a href="#cb24-469" aria-hidden="true" tabindex="-1"></a>  Bold Sans-Serif      <span class="in">`[Sample]{.pfa-wight-bold .pfa-family-sans .pfa-size-l pfa-color=&quot;red&quot;}`</span>   <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #FF0000;&quot;}</span>
-<span id="cb24-470"><a href="#cb24-470" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-471"><a href="#cb24-471" aria-hidden="true" tabindex="-1"></a>  Italic Monospace     <span class="in">`[Sample]{.pfa-style-italic .pfa-family-mono .pfa-size-s}`</span>                 Sample</span>
-<span id="cb24-472"><a href="#cb24-472" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-473"><a href="#cb24-473" aria-hidden="true" tabindex="-1"></a>  Small Caps, Colored  <span class="in">`[Sample]{.pfa-style-smallcaps pfa-color=&quot;forestgreen&quot;}`</span>                   <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #228B22;&quot;}</span>
-<span id="cb24-474"><a href="#cb24-474" aria-hidden="true" tabindex="-1"></a>  -----------------------------------------------------------------------------------------------------------------------------------</span>
-<span id="cb24-475"><a href="#cb24-475" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-476"><a href="#cb24-476" aria-hidden="true" tabindex="-1"></a><span class="fu">### Fenced Div Composition</span></span>
-<span id="cb24-477"><a href="#cb24-477" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-478"><a href="#cb24-478" aria-hidden="true" tabindex="-1"></a>Multiple utilities can also be applied to Fenced Divs to control</span>
-<span id="cb24-479"><a href="#cb24-479" aria-hidden="true" tabindex="-1"></a>alignment, typography, and color simultaneously. The resulting block</span>
-<span id="cb24-480"><a href="#cb24-480" aria-hidden="true" tabindex="-1"></a>inherits all specified styles while preserving Pandoc&#39;s standard</span>
-<span id="cb24-481"><a href="#cb24-481" aria-hidden="true" tabindex="-1"></a>attribute behavior.</span>
-<span id="cb24-482"><a href="#cb24-482" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-483"><a href="#cb24-483" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb24-484"><a href="#cb24-484" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-family-sans .pfa-weight-bold .pfa-size-l pfa-color=&quot;midnightblue&quot;}</span>
-<span id="cb24-485"><a href="#cb24-485" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
-<span id="cb24-486"><a href="#cb24-486" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb24-487"><a href="#cb24-487" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb24-488"><a href="#cb24-488" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-489"><a href="#cb24-489" aria-hidden="true" tabindex="-1"></a>::: {style=&quot;color: #191970;&quot;}</span>
-<span id="cb24-490"><a href="#cb24-490" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div</span>
-<span id="cb24-491"><a href="#cb24-491" aria-hidden="true" tabindex="-1"></a>demonstrating multiple combined utilities from the filter.</span>
-<span id="cb24-492"><a href="#cb24-492" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb24-493"><a href="#cb24-493" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-494"><a href="#cb24-494" aria-hidden="true" tabindex="-1"></a><span class="fu">## Legacy Aliases (Deprecated)</span></span>
-<span id="cb24-495"><a href="#cb24-495" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-496"><a href="#cb24-496" aria-hidden="true" tabindex="-1"></a>**Warning:** Legacy aliases are deprecated. They are retained strictly</span>
-<span id="cb24-497"><a href="#cb24-497" aria-hidden="true" tabindex="-1"></a>for backward compatibility and will be entirely removed in the next</span>
-<span id="cb24-498"><a href="#cb24-498" aria-hidden="true" tabindex="-1"></a>major release. New documents should use the <span class="in">`pfa-*`</span> namespaces going</span>
-<span id="cb24-499"><a href="#cb24-499" aria-hidden="true" tabindex="-1"></a>forward.</span>
-<span id="cb24-500"><a href="#cb24-500" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-501"><a href="#cb24-501" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Sizing Aliases</span></span>
+<span id="cb24-466"><a href="#cb24-466" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb24-467"><a href="#cb24-467" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center}</span>
+<span id="cb24-468"><a href="#cb24-468" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
+<span id="cb24-469"><a href="#cb24-469" aria-hidden="true" tabindex="-1"></a>is *center-aligned*\</span>
+<span id="cb24-470"><a href="#cb24-470" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
+<span id="cb24-471"><a href="#cb24-471" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb24-472"><a href="#cb24-472" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-473"><a href="#cb24-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-474"><a href="#cb24-474" aria-hidden="true" tabindex="-1"></a>::: {}</span>
+<span id="cb24-475"><a href="#cb24-475" aria-hidden="true" tabindex="-1"></a>This block of text\</span>
+<span id="cb24-476"><a href="#cb24-476" aria-hidden="true" tabindex="-1"></a>is *center-aligned*\</span>
+<span id="cb24-477"><a href="#cb24-477" aria-hidden="true" tabindex="-1"></a>while preserving explicit line breaks.</span>
+<span id="cb24-478"><a href="#cb24-478" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb24-479"><a href="#cb24-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-480"><a href="#cb24-480" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combining Multiple Classes</span></span>
+<span id="cb24-481"><a href="#cb24-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-482"><a href="#cb24-482" aria-hidden="true" tabindex="-1"></a>Multiple typographic utilities can be combined within the same element.</span>
+<span id="cb24-483"><a href="#cb24-483" aria-hidden="true" tabindex="-1"></a>Font, size, color, alignment, and decoration classes are designed to</span>
+<span id="cb24-484"><a href="#cb24-484" aria-hidden="true" tabindex="-1"></a>compose independently and can be applied together to both Bracketed</span>
+<span id="cb24-485"><a href="#cb24-485" aria-hidden="true" tabindex="-1"></a>Spans and Fenced Divs.</span>
+<span id="cb24-486"><a href="#cb24-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-487"><a href="#cb24-487" aria-hidden="true" tabindex="-1"></a>Class names are space-separated within <span class="in">`{}`</span> following Pandoc attribute</span>
+<span id="cb24-488"><a href="#cb24-488" aria-hidden="true" tabindex="-1"></a>syntax. In addition to classes, key-value attributes such as <span class="in">`pfa-color`</span></span>
+<span id="cb24-489"><a href="#cb24-489" aria-hidden="true" tabindex="-1"></a>may be included alongside class definitions.</span>
+<span id="cb24-490"><a href="#cb24-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-491"><a href="#cb24-491" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bracketed Span Composition</span></span>
+<span id="cb24-492"><a href="#cb24-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-493"><a href="#cb24-493" aria-hidden="true" tabindex="-1"></a>  -----------------------------------------------------------------------------------------------------------------------------------</span>
+<span id="cb24-494"><a href="#cb24-494" aria-hidden="true" tabindex="-1"></a>  Style                Syntax                                                                     Output</span>
+<span id="cb24-495"><a href="#cb24-495" aria-hidden="true" tabindex="-1"></a>  -------------------- -------------------------------------------------------------------------- -----------------------------------</span>
+<span id="cb24-496"><a href="#cb24-496" aria-hidden="true" tabindex="-1"></a>  Bold Sans-Serif      <span class="in">`[Sample]{.pfa-wight-bold .pfa-family-sans .pfa-size-l pfa-color=&quot;red&quot;}`</span>   <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #FF0000;&quot;}</span>
+<span id="cb24-497"><a href="#cb24-497" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-498"><a href="#cb24-498" aria-hidden="true" tabindex="-1"></a>  Italic Monospace     <span class="in">`[Sample]{.pfa-style-italic .pfa-family-mono .pfa-size-s}`</span>                 Sample</span>
+<span id="cb24-499"><a href="#cb24-499" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-500"><a href="#cb24-500" aria-hidden="true" tabindex="-1"></a>  Small Caps, Colored  <span class="in">`[Sample]{.pfa-style-smallcaps pfa-color=&quot;forestgreen&quot;}`</span>                   <span class="co">[</span><span class="ot">Sample</span><span class="co">]</span>{style=&quot;color: #228B22;&quot;}</span>
+<span id="cb24-501"><a href="#cb24-501" aria-hidden="true" tabindex="-1"></a>  -----------------------------------------------------------------------------------------------------------------------------------</span>
 <span id="cb24-502"><a href="#cb24-502" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-503"><a href="#cb24-503" aria-hidden="true" tabindex="-1"></a>  Legacy Class   Modern Class</span>
-<span id="cb24-504"><a href="#cb24-504" aria-hidden="true" tabindex="-1"></a>  -------------- -------------------</span>
-<span id="cb24-505"><a href="#cb24-505" aria-hidden="true" tabindex="-1"></a>  <span class="in">`xsmall`</span>       <span class="in">`pfa-text-xs`</span></span>
-<span id="cb24-506"><a href="#cb24-506" aria-hidden="true" tabindex="-1"></a>  <span class="in">`small`</span>        <span class="in">`pfa-text-s`</span></span>
-<span id="cb24-507"><a href="#cb24-507" aria-hidden="true" tabindex="-1"></a>  <span class="in">`normal`</span>       <span class="in">`pfa-text-normal`</span></span>
-<span id="cb24-508"><a href="#cb24-508" aria-hidden="true" tabindex="-1"></a>  <span class="in">`large`</span>        <span class="in">`pfa-text-l`</span></span>
-<span id="cb24-509"><a href="#cb24-509" aria-hidden="true" tabindex="-1"></a>  <span class="in">`xlarge`</span>       <span class="in">`pfa-text-xl`</span></span>
-<span id="cb24-510"><a href="#cb24-510" aria-hidden="true" tabindex="-1"></a>  <span class="in">`xxlarge`</span>      <span class="in">`pfa-text-2xl`</span></span>
-<span id="cb24-511"><a href="#cb24-511" aria-hidden="true" tabindex="-1"></a>  <span class="in">`huge`</span>         <span class="in">`pfa-text-3xl`</span></span>
-<span id="cb24-512"><a href="#cb24-512" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-513"><a href="#cb24-513" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Weight, Shape, and Family Aliases</span></span>
-<span id="cb24-514"><a href="#cb24-514" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-515"><a href="#cb24-515" aria-hidden="true" tabindex="-1"></a>  Legacy Class   Shorthand   Modern Class</span>
-<span id="cb24-516"><a href="#cb24-516" aria-hidden="true" tabindex="-1"></a>  -------------- ----------- ----------------------</span>
-<span id="cb24-517"><a href="#cb24-517" aria-hidden="true" tabindex="-1"></a>  <span class="in">`bold`</span>         <span class="in">`bf`</span>        <span class="in">`pfa-font-bold`</span></span>
-<span id="cb24-518"><a href="#cb24-518" aria-hidden="true" tabindex="-1"></a>  <span class="in">`emphasis`</span>     <span class="in">`em`</span>        <span class="in">`pfa-font-emphasis`</span></span>
-<span id="cb24-519"><a href="#cb24-519" aria-hidden="true" tabindex="-1"></a>  <span class="in">`italic`</span>       <span class="in">`it`</span>        <span class="in">`pfa-font-italic`</span></span>
-<span id="cb24-520"><a href="#cb24-520" aria-hidden="true" tabindex="-1"></a>  <span class="in">`medium`</span>       <span class="in">`md`</span>        <span class="in">`pfa-font-medium`</span></span>
-<span id="cb24-521"><a href="#cb24-521" aria-hidden="true" tabindex="-1"></a>  <span class="in">`monospace`</span>    <span class="in">`tt`</span>        <span class="in">`pfa-font-mono`</span></span>
-<span id="cb24-522"><a href="#cb24-522" aria-hidden="true" tabindex="-1"></a>  <span class="in">`normalfont`</span>   <span class="in">`nf`</span>        <span class="in">`pfa-font-normal`</span></span>
-<span id="cb24-523"><a href="#cb24-523" aria-hidden="true" tabindex="-1"></a>  <span class="in">`sans`</span>         <span class="in">`sf`</span>        <span class="in">`pfa-font-sans`</span></span>
-<span id="cb24-524"><a href="#cb24-524" aria-hidden="true" tabindex="-1"></a>  <span class="in">`serif`</span>        <span class="in">`rm`</span>        <span class="in">`pfa-font-serif`</span></span>
-<span id="cb24-525"><a href="#cb24-525" aria-hidden="true" tabindex="-1"></a>  <span class="in">`slanted`</span>      <span class="in">`sl`</span>        <span class="in">`pfa-font-slanted`</span></span>
-<span id="cb24-526"><a href="#cb24-526" aria-hidden="true" tabindex="-1"></a>  <span class="in">`smallcaps`</span>    <span class="in">`sc`</span>        <span class="in">`pfa-font-smallcaps`</span></span>
-<span id="cb24-527"><a href="#cb24-527" aria-hidden="true" tabindex="-1"></a>  <span class="in">`upright`</span>      <span class="in">`up`</span>        <span class="in">`pfa-font-upright`</span></span>
-<span id="cb24-528"><a href="#cb24-528" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-529"><a href="#cb24-529" aria-hidden="true" tabindex="-1"></a><span class="fu">### Alignment Aliases</span></span>
-<span id="cb24-530"><a href="#cb24-530" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-531"><a href="#cb24-531" aria-hidden="true" tabindex="-1"></a>  Legacy Class    Modern Class</span>
-<span id="cb24-532"><a href="#cb24-532" aria-hidden="true" tabindex="-1"></a>  --------------- --------------------</span>
-<span id="cb24-533"><a href="#cb24-533" aria-hidden="true" tabindex="-1"></a>  <span class="in">`centering`</span>     <span class="in">`pfa-align-center`</span></span>
-<span id="cb24-534"><a href="#cb24-534" aria-hidden="true" tabindex="-1"></a>  <span class="in">`raggedleft`</span>    <span class="in">`pfa-align-right`</span></span>
-<span id="cb24-535"><a href="#cb24-535" aria-hidden="true" tabindex="-1"></a>  <span class="in">`raggedright`</span>   <span class="in">`pfa-align-left`</span></span>
-<span id="cb24-536"><a href="#cb24-536" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-537"><a href="#cb24-537" aria-hidden="true" tabindex="-1"></a><span class="fu">### Text Decoration Aliases</span></span>
-<span id="cb24-538"><a href="#cb24-538" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-539"><a href="#cb24-539" aria-hidden="true" tabindex="-1"></a>  Legacy Class   Shorthand   Modern Class</span>
-<span id="cb24-540"><a href="#cb24-540" aria-hidden="true" tabindex="-1"></a>  -------------- ----------- -------------------------</span>
-<span id="cb24-541"><a href="#cb24-541" aria-hidden="true" tabindex="-1"></a>  <span class="in">`uline`</span>        <span class="in">`u`</span>         <span class="in">`pfa-text-uline`</span></span>
-<span id="cb24-542"><a href="#cb24-542" aria-hidden="true" tabindex="-1"></a>  <span class="in">`uuline`</span>       <span class="in">`uu`</span>        <span class="in">`pfa-text-uline-double`</span></span>
-<span id="cb24-543"><a href="#cb24-543" aria-hidden="true" tabindex="-1"></a>  <span class="in">`dashuline`</span>    <span class="in">`dau`</span>       <span class="in">`pfa-text-uline-dashed`</span></span>
-<span id="cb24-544"><a href="#cb24-544" aria-hidden="true" tabindex="-1"></a>  <span class="in">`dotuline`</span>     <span class="in">`dou`</span>       <span class="in">`pfa-text-uline-dotted`</span></span>
-<span id="cb24-545"><a href="#cb24-545" aria-hidden="true" tabindex="-1"></a>  <span class="in">`uwave`</span>        <span class="in">`uw`</span>        <span class="in">`pfa-text-uline-wave`</span></span>
-<span id="cb24-546"><a href="#cb24-546" aria-hidden="true" tabindex="-1"></a>  <span class="in">`sout`</span>         <span class="in">`so`</span>        <span class="in">`pfa-text-strikeout`</span></span>
-<span id="cb24-547"><a href="#cb24-547" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-548"><a href="#cb24-548" aria-hidden="true" tabindex="-1"></a><span class="fu">## Removed Classes</span></span>
-<span id="cb24-549"><a href="#cb24-549" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-550"><a href="#cb24-550" aria-hidden="true" tabindex="-1"></a>The following legacy classes were removed in version 2.0.0 and are no</span>
-<span id="cb24-551"><a href="#cb24-551" aria-hidden="true" tabindex="-1"></a>longer recognized by the filter. Existing documents should be updated to</span>
-<span id="cb24-552"><a href="#cb24-552" aria-hidden="true" tabindex="-1"></a>use the replacement classes shown below.</span>
-<span id="cb24-553"><a href="#cb24-553" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-554"><a href="#cb24-554" aria-hidden="true" tabindex="-1"></a>  Removed Class   Shorthand   Removed In   Replacement</span>
-<span id="cb24-555"><a href="#cb24-555" aria-hidden="true" tabindex="-1"></a>  --------------- ----------- ------------ ----------------------</span>
-<span id="cb24-556"><a href="#cb24-556" aria-hidden="true" tabindex="-1"></a>  <span class="in">`center`</span>        ---         2.0.0        <span class="in">`pfa-align-center`</span></span>
-<span id="cb24-557"><a href="#cb24-557" aria-hidden="true" tabindex="-1"></a>  <span class="in">`flushleft`</span>     ---         2.0.0        <span class="in">`pfa-align-left`</span></span>
-<span id="cb24-558"><a href="#cb24-558" aria-hidden="true" tabindex="-1"></a>  <span class="in">`flushright`</span>    ---         2.0.0        <span class="in">`pfa-align-right`</span></span>
-<span id="cb24-559"><a href="#cb24-559" aria-hidden="true" tabindex="-1"></a>  <span class="in">`xout`</span>          <span class="in">`xo`</span>        2.0.0        <span class="in">`pfa-text-strikeout`</span></span>
-<span id="cb24-560"><a href="#cb24-560" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-561"><a href="#cb24-561" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>HTML output requires the companion fonts-and-alignment.css</span>
-<span id="cb24-562"><a href="#cb24-562" aria-hidden="true" tabindex="-1"></a>    stylesheet.</span>
+<span id="cb24-503"><a href="#cb24-503" aria-hidden="true" tabindex="-1"></a><span class="fu">### Fenced Div Composition</span></span>
+<span id="cb24-504"><a href="#cb24-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-505"><a href="#cb24-505" aria-hidden="true" tabindex="-1"></a>Multiple utilities can also be applied to Fenced Divs to control</span>
+<span id="cb24-506"><a href="#cb24-506" aria-hidden="true" tabindex="-1"></a>alignment, typography, and color simultaneously. The resulting block</span>
+<span id="cb24-507"><a href="#cb24-507" aria-hidden="true" tabindex="-1"></a>inherits all specified styles while preserving Pandoc&#39;s standard</span>
+<span id="cb24-508"><a href="#cb24-508" aria-hidden="true" tabindex="-1"></a>attribute behavior.</span>
+<span id="cb24-509"><a href="#cb24-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-510"><a href="#cb24-510" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb24-511"><a href="#cb24-511" aria-hidden="true" tabindex="-1"></a>::: {.pfa-align-center .pfa-family-sans .pfa-weight-bold .pfa-size-l pfa-color=&quot;midnightblue&quot;}</span>
+<span id="cb24-512"><a href="#cb24-512" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div demonstrating multiple combined utilities from the filter.</span>
+<span id="cb24-513"><a href="#cb24-513" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb24-514"><a href="#cb24-514" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-515"><a href="#cb24-515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-516"><a href="#cb24-516" aria-hidden="true" tabindex="-1"></a>::: {style=&quot;color: #191970;&quot;}</span>
+<span id="cb24-517"><a href="#cb24-517" aria-hidden="true" tabindex="-1"></a>A centered, bold, sans-serif, large, midnight-blue Fenced Div</span>
+<span id="cb24-518"><a href="#cb24-518" aria-hidden="true" tabindex="-1"></a>demonstrating multiple combined utilities from the filter.</span>
+<span id="cb24-519"><a href="#cb24-519" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb24-520"><a href="#cb24-520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-521"><a href="#cb24-521" aria-hidden="true" tabindex="-1"></a><span class="fu">## Legacy Aliases (Deprecated)</span></span>
+<span id="cb24-522"><a href="#cb24-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-523"><a href="#cb24-523" aria-hidden="true" tabindex="-1"></a>**Warning:** Legacy aliases are deprecated. They are retained strictly</span>
+<span id="cb24-524"><a href="#cb24-524" aria-hidden="true" tabindex="-1"></a>for backward compatibility and will be entirely removed in the next</span>
+<span id="cb24-525"><a href="#cb24-525" aria-hidden="true" tabindex="-1"></a>major release. New documents should use the <span class="in">`pfa-*`</span> namespaces going</span>
+<span id="cb24-526"><a href="#cb24-526" aria-hidden="true" tabindex="-1"></a>forward.</span>
+<span id="cb24-527"><a href="#cb24-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-528"><a href="#cb24-528" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Sizing Aliases</span></span>
+<span id="cb24-529"><a href="#cb24-529" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-530"><a href="#cb24-530" aria-hidden="true" tabindex="-1"></a>  Legacy Class   Modern Class</span>
+<span id="cb24-531"><a href="#cb24-531" aria-hidden="true" tabindex="-1"></a>  -------------- -------------------</span>
+<span id="cb24-532"><a href="#cb24-532" aria-hidden="true" tabindex="-1"></a>  <span class="in">`xsmall`</span>       <span class="in">`pfa-text-xs`</span></span>
+<span id="cb24-533"><a href="#cb24-533" aria-hidden="true" tabindex="-1"></a>  <span class="in">`small`</span>        <span class="in">`pfa-text-s`</span></span>
+<span id="cb24-534"><a href="#cb24-534" aria-hidden="true" tabindex="-1"></a>  <span class="in">`normal`</span>       <span class="in">`pfa-text-normal`</span></span>
+<span id="cb24-535"><a href="#cb24-535" aria-hidden="true" tabindex="-1"></a>  <span class="in">`large`</span>        <span class="in">`pfa-text-l`</span></span>
+<span id="cb24-536"><a href="#cb24-536" aria-hidden="true" tabindex="-1"></a>  <span class="in">`xlarge`</span>       <span class="in">`pfa-text-xl`</span></span>
+<span id="cb24-537"><a href="#cb24-537" aria-hidden="true" tabindex="-1"></a>  <span class="in">`xxlarge`</span>      <span class="in">`pfa-text-2xl`</span></span>
+<span id="cb24-538"><a href="#cb24-538" aria-hidden="true" tabindex="-1"></a>  <span class="in">`huge`</span>         <span class="in">`pfa-text-3xl`</span></span>
+<span id="cb24-539"><a href="#cb24-539" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-540"><a href="#cb24-540" aria-hidden="true" tabindex="-1"></a><span class="fu">### Font Weight, Shape, and Family Aliases</span></span>
+<span id="cb24-541"><a href="#cb24-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-542"><a href="#cb24-542" aria-hidden="true" tabindex="-1"></a>  Legacy Class   Shorthand   Modern Class</span>
+<span id="cb24-543"><a href="#cb24-543" aria-hidden="true" tabindex="-1"></a>  -------------- ----------- ----------------------</span>
+<span id="cb24-544"><a href="#cb24-544" aria-hidden="true" tabindex="-1"></a>  <span class="in">`bold`</span>         <span class="in">`bf`</span>        <span class="in">`pfa-font-bold`</span></span>
+<span id="cb24-545"><a href="#cb24-545" aria-hidden="true" tabindex="-1"></a>  <span class="in">`emphasis`</span>     <span class="in">`em`</span>        <span class="in">`pfa-font-emphasis`</span></span>
+<span id="cb24-546"><a href="#cb24-546" aria-hidden="true" tabindex="-1"></a>  <span class="in">`italic`</span>       <span class="in">`it`</span>        <span class="in">`pfa-font-italic`</span></span>
+<span id="cb24-547"><a href="#cb24-547" aria-hidden="true" tabindex="-1"></a>  <span class="in">`medium`</span>       <span class="in">`md`</span>        <span class="in">`pfa-font-medium`</span></span>
+<span id="cb24-548"><a href="#cb24-548" aria-hidden="true" tabindex="-1"></a>  <span class="in">`monospace`</span>    <span class="in">`tt`</span>        <span class="in">`pfa-font-mono`</span></span>
+<span id="cb24-549"><a href="#cb24-549" aria-hidden="true" tabindex="-1"></a>  <span class="in">`normalfont`</span>   <span class="in">`nf`</span>        <span class="in">`pfa-font-normal`</span></span>
+<span id="cb24-550"><a href="#cb24-550" aria-hidden="true" tabindex="-1"></a>  <span class="in">`sans`</span>         <span class="in">`sf`</span>        <span class="in">`pfa-font-sans`</span></span>
+<span id="cb24-551"><a href="#cb24-551" aria-hidden="true" tabindex="-1"></a>  <span class="in">`serif`</span>        <span class="in">`rm`</span>        <span class="in">`pfa-font-serif`</span></span>
+<span id="cb24-552"><a href="#cb24-552" aria-hidden="true" tabindex="-1"></a>  <span class="in">`slanted`</span>      <span class="in">`sl`</span>        <span class="in">`pfa-font-slanted`</span></span>
+<span id="cb24-553"><a href="#cb24-553" aria-hidden="true" tabindex="-1"></a>  <span class="in">`smallcaps`</span>    <span class="in">`sc`</span>        <span class="in">`pfa-font-smallcaps`</span></span>
+<span id="cb24-554"><a href="#cb24-554" aria-hidden="true" tabindex="-1"></a>  <span class="in">`upright`</span>      <span class="in">`up`</span>        <span class="in">`pfa-font-upright`</span></span>
+<span id="cb24-555"><a href="#cb24-555" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-556"><a href="#cb24-556" aria-hidden="true" tabindex="-1"></a><span class="fu">### Alignment Aliases</span></span>
+<span id="cb24-557"><a href="#cb24-557" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-558"><a href="#cb24-558" aria-hidden="true" tabindex="-1"></a>  Legacy Class    Modern Class</span>
+<span id="cb24-559"><a href="#cb24-559" aria-hidden="true" tabindex="-1"></a>  --------------- --------------------</span>
+<span id="cb24-560"><a href="#cb24-560" aria-hidden="true" tabindex="-1"></a>  <span class="in">`centering`</span>     <span class="in">`pfa-align-center`</span></span>
+<span id="cb24-561"><a href="#cb24-561" aria-hidden="true" tabindex="-1"></a>  <span class="in">`raggedleft`</span>    <span class="in">`pfa-align-right`</span></span>
+<span id="cb24-562"><a href="#cb24-562" aria-hidden="true" tabindex="-1"></a>  <span class="in">`raggedright`</span>   <span class="in">`pfa-align-left`</span></span>
 <span id="cb24-563"><a href="#cb24-563" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-564"><a href="#cb24-564" aria-hidden="true" tabindex="-1"></a><span class="ot">[^2]: </span>Three-digit shorthand expands by duplicating each single</span>
-<span id="cb24-565"><a href="#cb24-565" aria-hidden="true" tabindex="-1"></a>    hexadecimal digit per RGB channel (e.g., &#39;#666&#39; expands to</span>
-<span id="cb24-566"><a href="#cb24-566" aria-hidden="true" tabindex="-1"></a>    &#39;#666666&#39;).</span></code></pre></div>
+<span id="cb24-564"><a href="#cb24-564" aria-hidden="true" tabindex="-1"></a><span class="fu">### Text Decoration Aliases</span></span>
+<span id="cb24-565"><a href="#cb24-565" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-566"><a href="#cb24-566" aria-hidden="true" tabindex="-1"></a>  Legacy Class   Shorthand   Modern Class</span>
+<span id="cb24-567"><a href="#cb24-567" aria-hidden="true" tabindex="-1"></a>  -------------- ----------- -------------------------</span>
+<span id="cb24-568"><a href="#cb24-568" aria-hidden="true" tabindex="-1"></a>  <span class="in">`uline`</span>        <span class="in">`u`</span>         <span class="in">`pfa-text-uline`</span></span>
+<span id="cb24-569"><a href="#cb24-569" aria-hidden="true" tabindex="-1"></a>  <span class="in">`uuline`</span>       <span class="in">`uu`</span>        <span class="in">`pfa-text-uline-double`</span></span>
+<span id="cb24-570"><a href="#cb24-570" aria-hidden="true" tabindex="-1"></a>  <span class="in">`dashuline`</span>    <span class="in">`dau`</span>       <span class="in">`pfa-text-uline-dashed`</span></span>
+<span id="cb24-571"><a href="#cb24-571" aria-hidden="true" tabindex="-1"></a>  <span class="in">`dotuline`</span>     <span class="in">`dou`</span>       <span class="in">`pfa-text-uline-dotted`</span></span>
+<span id="cb24-572"><a href="#cb24-572" aria-hidden="true" tabindex="-1"></a>  <span class="in">`uwave`</span>        <span class="in">`uw`</span>        <span class="in">`pfa-text-uline-wave`</span></span>
+<span id="cb24-573"><a href="#cb24-573" aria-hidden="true" tabindex="-1"></a>  <span class="in">`sout`</span>         <span class="in">`so`</span>        <span class="in">`pfa-text-strikeout`</span></span>
+<span id="cb24-574"><a href="#cb24-574" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-575"><a href="#cb24-575" aria-hidden="true" tabindex="-1"></a><span class="fu">## Removed Classes</span></span>
+<span id="cb24-576"><a href="#cb24-576" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-577"><a href="#cb24-577" aria-hidden="true" tabindex="-1"></a>The following legacy classes were removed in version 2.0.0 and are no</span>
+<span id="cb24-578"><a href="#cb24-578" aria-hidden="true" tabindex="-1"></a>longer recognized by the filter. Existing documents should be updated to</span>
+<span id="cb24-579"><a href="#cb24-579" aria-hidden="true" tabindex="-1"></a>use the replacement classes shown below.</span>
+<span id="cb24-580"><a href="#cb24-580" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-581"><a href="#cb24-581" aria-hidden="true" tabindex="-1"></a>  Removed Class   Shorthand   Removed In   Replacement</span>
+<span id="cb24-582"><a href="#cb24-582" aria-hidden="true" tabindex="-1"></a>  --------------- ----------- ------------ ----------------------</span>
+<span id="cb24-583"><a href="#cb24-583" aria-hidden="true" tabindex="-1"></a>  <span class="in">`center`</span>        ---         2.0.0        <span class="in">`pfa-align-center`</span></span>
+<span id="cb24-584"><a href="#cb24-584" aria-hidden="true" tabindex="-1"></a>  <span class="in">`flushleft`</span>     ---         2.0.0        <span class="in">`pfa-align-left`</span></span>
+<span id="cb24-585"><a href="#cb24-585" aria-hidden="true" tabindex="-1"></a>  <span class="in">`flushright`</span>    ---         2.0.0        <span class="in">`pfa-align-right`</span></span>
+<span id="cb24-586"><a href="#cb24-586" aria-hidden="true" tabindex="-1"></a>  <span class="in">`xout`</span>          <span class="in">`xo`</span>        2.0.0        <span class="in">`pfa-text-strikeout`</span></span>
+<span id="cb24-587"><a href="#cb24-587" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-588"><a href="#cb24-588" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>HTML output requires the companion fonts-and-alignment.css</span>
+<span id="cb24-589"><a href="#cb24-589" aria-hidden="true" tabindex="-1"></a>    stylesheet.</span>
+<span id="cb24-590"><a href="#cb24-590" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-591"><a href="#cb24-591" aria-hidden="true" tabindex="-1"></a><span class="ot">[^2]: </span>Three-digit shorthand expands by duplicating each single</span>
+<span id="cb24-592"><a href="#cb24-592" aria-hidden="true" tabindex="-1"></a>    hexadecimal digit per RGB channel (e.g., &#39;#666&#39; expands to</span>
+<span id="cb24-593"><a href="#cb24-593" aria-hidden="true" tabindex="-1"></a>    &#39;#666666&#39;).</span></code></pre></div>
 <h2 id="Code">Code</h2>
 <p><a href="fonts-and-alignment.lua">fonts-and-alignment.lua</a></p>
 <div class="sourceCode" id="fonts-and-alignment.lua"><pre
