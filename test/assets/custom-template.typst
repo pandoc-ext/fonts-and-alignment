@@ -22,36 +22,6 @@ $if(highlighting-definitions)$
 // syntax highlighting functions from skylighting:
 $highlighting-definitions$
 
-// State that Skylighting sets around its content so NormalTok can tell whether
-// it is being rendered inline or inside a code block.
-#let _sk-ctx = state("sk-ctx", "inline")
-
-// NormalTok: maroon when inline, original zenburn gray inside code blocks.
-// context{} defers the fill decision to layout time so the state set by
-// Skylighting below is visible even though NormalTok is called first.
-#let NormalTok(s) = context {
-  if _sk-ctx.get() == "block" { text(fill: rgb("#cccccc"), raw(s)) }
-  else { text(fill: maroon, raw(s)) }
-}
-
-// Skylighting: reimplemented to frame content with state updates and add
-// padding/radius that the pandoc-generated version omits.
-#let Skylighting(fill: none, number: false, start: 1, sourcelines) = {
-  let blocks = []
-  let lnum = start - 1
-  for ln in sourcelines {
-    if number {
-      lnum = lnum + 1
-      blocks = blocks + box(
-        width: if start + sourcelines.len() > 999 { 30pt } else { 24pt },
-        text([#lnum])
-      )
-    }
-    blocks = blocks + ln + EndLine()
-  }
-  [#_sk-ctx.update("block")#block(fill: rgb("#303030"), inset: 1em, radius: 4pt, width: 100%, blocks)#_sk-ctx.update("inline")]
-}
-
 $endif$
 $if(template)$
 #import "$template$": conf
@@ -69,16 +39,61 @@ $header-includes$
 
 $endfor$
 
-// 1. CONF FUNCTION STRIPPED OF FRONTMATTER
+// --- GLOBAL FONT FIX ---
+// These are defined in the global scope so content blocks (like title and authors)
+// inherit them at creation time, preventing Libertinus fallbacks.
+$if(mainfont)$
+#set text(font: "$mainfont$")
+$endif$
+$if(codefont)$
+#show raw: set text(font: ($for(codefont)$"$codefont$"$sep$, $endfor$))
+$endif$
+// -----------------------
+
+#import "/test/assets/preview-styles.typ": *
+
 #show: doc => conf(
+$if(title)$
+  title: [$title$],
+$endif$
+$if(subtitle)$
+  subtitle: [$subtitle$],
+$endif$
+$if(author)$
+  authors: (
+$for(author)$
+$if(author.name)$
+    ( name: [$author.name$],
+      affiliation: [$author.affiliation$],
+      email: [$author.email$] ),
+$else$
+    ( name: [$author$],
+      affiliation: "",
+      email: "" ),
+$endif$
+$endfor$
+    ),
+$endif$
 $if(keywords)$
   keywords: ($for(keywords)$$keywords$$sep$,$endfor$),
+$endif$
+$if(date)$
+  date: [$date$],
 $endif$
 $if(lang)$
   lang: "$lang$",
 $endif$
 $if(region)$
   region: "$region$",
+$endif$
+$if(abstract-title)$
+  abstract-title: [$abstract-title$],
+$endif$
+$if(abstract)$
+  abstract: [$abstract$],
+$endif$
+$if(thanks)$
+  thanks: [$thanks$],
 $endif$
 $if(margin)$
   margin: ($for(margin/pairs)$$margin.key$: $margin.value$,$endfor$),
@@ -87,7 +102,7 @@ $if(papersize)$
   paper: "$papersize$",
 $endif$
 $if(mainfont)$
-  font: ("$mainfont$",),
+  font: "$mainfont$",
 $endif$
 $if(fontsize)$
   fontsize: $fontsize$,
@@ -117,49 +132,6 @@ $endif$
   cols: $if(columns)$$columns$$else$1$endif$,
   doc,
 )
-
-// 2. CUSTOM FRONTMATTER INJECTION
-$if(title)$
-#align(center)[
-  #block(below: 1.5em)[
-    #text(weight: "regular", size: 20.74pt)[$title$]
-  ]
-]
-$endif$
-
-$if(subtitle)$
-#align(center)[
-  #block(below: 1.5em)[
-    #text(weight: "semibold", size: 1.2em, fill: gray.darken(20%))[$subtitle$]
-  ]
-]
-$endif$
-
-$if(author)$
-#align(center)[
-  #block(above: 3em, below: 0.3em)[
-    #text(weight: "medium", size: 14.4pt)[
-      $for(author)$
-        $if(author.name)$
-          $author.name$
-        $else$
-          $author$
-        $endif$
-      $sep$,
-      $endfor$
-    ]
-  ]
-]
-$endif$
-
-$if(date)$
-#align(center)[
-  #block(above: 2.5em, below: 4.5em)[
-    #text(weight: "regular", size: 14.4pt)[$date$]
-  ]
-]
-$endif$
-
 
 $for(include-before)$
 $include-before$

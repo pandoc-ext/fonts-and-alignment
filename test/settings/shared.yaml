@@ -1,5 +1,4 @@
 standalone: true
-columns: 30
 
 filters:
   - type: lua

@@ -1,10 +1,7 @@
 to: typst
 pdf-engine: typst
 
-template: test/assets/preview-template-typst
-
-include-in-header:
-  - test/assets/preview-styles.typ
+template: test/assets/custom-template.typst
 
 variables:
   papersize: a4

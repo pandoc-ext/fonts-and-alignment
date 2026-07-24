@@ -186,101 +186,30 @@
   }
   doc
 }
-#set par(leading: 0.8em, spacing: 1.8em)
 
-// Heading metrics explicitly calibrated to LaTeX's 12pt document standard scale
-#show heading.where(level: 1): set block(above: 1.925em, below: 1.265em)
-#show heading.where(level: 1): set text(size: 17.28pt, weight: "semibold")
+// --- GLOBAL FONT FIX ---
+// These are defined in the global scope so content blocks (like title and authors)
+// inherit them at creation time, preventing Libertinus fallbacks.
+#set text(font: "Noto Serif")
+#show raw: set text(font: ("Fira Mono"))
+// -----------------------
 
-#show heading.where(level: 2): set block(above: 1.7875em, below: 1.2em)
-#show heading.where(level: 2): set text(size: 14.4pt, weight: "semibold")
+#import "/test/assets/preview-styles.typ": *
 
-#show heading.where(level: 3): set block(above: 1.7875em, below: 1em)
-#show heading.where(level: 3): set text(size: 12pt, weight: "semibold")
-
-#show heading.where(level: 4): set block(above: 1.7875em, below: 1em)
-#show heading.where(level: 4): set text(size: 12pt, weight: "semibold")
-
-// Set a consistent color for links and footnotes to improve visibility
-#show link: set text(fill: blue)
-#show footnote: set text(blue)
-
-// 1. Global Font Setup
-#show raw: set text(font: "Fira Mono", size: 1.25em, spacing: 100%)
-#show raw.where(block: false): it => {
-  show ".": "." + sym.zws
-  show "-": "-" + sym.zws
-  it
-}
-
-// 2. INLINE Code: Maroon text with badge padding
-#show raw.where(block: false): it => box(
-  inset: (x: 0.25em, y: 0pt),
-  outset: (y: 0.25em),
-  radius: 2pt,
-  text(fill: maroon)[#it]
-)
-
-#show block: it => {
-  let f = it.fields()
-  if "fill" in f and f.fill != none and ("inset" not in f or f.inset != 1em) {
-    // Explicitly reset the text color for raw elements inside this block
-    // to override the global maroon rule
-    show raw: set text(fill: rgb("#dcdccc"))
-
-    block(
-      fill: f.fill,
-      inset: 1em,
-      radius: 4pt,
-      width: 100%,
-      it.body
-    )
-  } else {
-    it
-  }
-}
-
-// 4. (Fallback) Un-highlighted Fenced Blocks
-#show raw.where(block: true): it => block(
-  fill: rgb("#3f3f3f"),
-  inset: 1em,
-  radius: 4pt,
-  width: 100%,
-  text(fill: rgb("#dcdccc"))[#it]
-)
-
-// Remove the default justification from lists and enums to avoid awkward spacing
-#show list: set par(justify: false)
-#show enum: set par(justify: false)
-
-// Add a subtle background to tables to help them pop from the page
-#show table: set table(fill: rgb("F4F4F4"))
-
-// The Brutal Reset: Strip all default grid strokes globally
-#set table(stroke: none)
-
-// The Interception & Rebuild
-#show table: it => {
-  // Neutralize any hardcoded horizontal lines Pandoc injects
-  show table.hline: none
-
-  // Define the internal structure: Draw ONLY a line under the header (row 0)
-  set table(stroke: (x, y) => if y == 0 { (bottom: 0.5pt + black) } else { none })
-
-  // Wrap the now-naked table in our crisp, single outer borders
-  box(
-    stroke: (top: 1pt + black, bottom: 1pt + black),
-    outset: (y: 0.3em),
-    it
-  )
-}
-
-
-// 1. CONF FUNCTION STRIPPED OF FRONTMATTER
 #show: doc => conf(
+  title: [Demonstration of \ Fonts and Alignment Filter \ for Pandoc
+
+],
+  authors: (
+    ( name: [Nandakumar Chandrasekhar],
+      affiliation: "",
+      email: "" ),
+    ),
+  date: [2026-07-08],
+  abstract-title: [Abstract],
   margin: (bottom: 20mm,left: 20mm,right: 20mm,top: 20mm,),
   paper: "a4",
-  font: ("Noto Serif",),
+  font: "Noto Serif",
   fontsize: 12pt,
   codefont: ("Fira Mono",),
   linestretch: 1.25,
@@ -289,79 +218,31 @@
   doc,
 )
 
-// 2. CUSTOM FRONTMATTER INJECTION
-#align(center)[
-  #block(below: 1.5em)[
-    #text(weight: "regular", size: 20.74pt)[Demonstration
-of \ Fonts and Alignment
-Filter \ for Pandoc
-
-]
-  ]
-]
-
-
-#align(center)[
-  #block(above: 3em, below: 0.3em)[
-    #text(weight: "medium", size: 14.4pt)[
-                        Nandakumar
-                        Chandrasekhar
-                  ]
-  ]
-]
-
-#align(center)[
-  #block(above: 2.5em, below: 4.5em)[
-    #text(weight: "regular", size: 14.4pt)[2026-07-08]
-  ]
-]
-
-
 
 == Introduction
 <introduction>
-This document showcases the
-features of the
-#NormalTok("fonts-and-alignment");
-Pandoc Lua filter. Each
-example displays the required
-Markdown syntax alongside its
-rendered output, ensuring
-consistent typography across
-LaTeX, Typst, and HTML
-formats.#footnote[HTML output
-requires the companion
-fonts-and-alignment.css
-stylesheet.]
+This document showcases the features of the
+#NormalTok("fonts-and-alignment"); Pandoc Lua filter. Each example
+displays the required Markdown syntax alongside its rendered output,
+ensuring consistent typography across LaTeX, Typst, and HTML
+formats.#footnote[HTML output requires the companion
+fonts-and-alignment.css stylesheet.]
 
-The extension leverages
-Pandoc's
-#NormalTok("fenced_divs"); and
-#NormalTok("bracketed_spans");
-extensions. If these are
-disabled, the filter will
-issue a terminal warning and
-render the elements as raw
-text instead of applying the
-styles.
+The extension leverages Pandoc's #NormalTok("fenced_divs"); and
+#NormalTok("bracketed_spans"); extensions. If these are disabled, the
+filter will issue a terminal warning and render the elements as raw text
+instead of applying the styles.
 
 == Bracketed Spans and Fenced Divs Invocations
 <bracketed-spans-and-fenced-divs-invocations>
-This filter follows Pandoc's
-standard conventions for
-container-based styling: use
-Bracketed Spans for inline
-text and Fenced Divs for
-block-level content. For
-further details on these
-syntax standards, please refer
-to
+This filter follows Pandoc's standard conventions for container-based
+styling: use Bracketed Spans for inline text and Fenced Divs for
+block-level content. For further details on these syntax standards,
+please refer to
 #link("https://pandoc.org/demo/example33/8.18-divs-and-spans.html")[Pandoc User's Guide: Divs and Spans].
 
 #Skylighting(([#CommentTok("[");#OtherTok("This is a line of text in extra extra large font.");#CommentTok("]");#NormalTok("{.pfa-size-2xl}");],));
-#text(size: 1.728em)[This is a
-line of text in extra extra
-large font.]
+#text(size: 1.728em)[This is a line of text in extra extra large font.]
 
 #Skylighting(([#NormalTok("::: {.pfa-size-2xl}");],
 [#NormalTok("This multiline block showcases the filters's capability to apply extra extra large font to an entire section of text by wrapping the content in a Fenced Div.");],
@@ -369,32 +250,23 @@ large font.]
 #block[
 #set text(size: 1.728em)
 #set par(leading: 0.65em)
-This multiline block showcases
-the filters's capability to
-apply extra extra large font
-to an entire section of text
-by wrapping the content in a
-Fenced Div.
+This multiline block showcases the filters's capability to apply extra
+extra large font to an entire section of text by wrapping the content in
+a Fenced Div.
 
 ]
 == Font Sizing in Bracketed Spans
 <font-sizing-in-bracketed-spans>
-The extension provides nine
-predefined sizing hooks to
-scale text relative to the
-document's base/normal font
-size. The #emph[LaTeX
-Reference] column is provided
-for descriptive purposes, as
-these labels are not native to
-Typst or HTML/CSS.
+The extension provides nine predefined sizing hooks to scale text
+relative to the document's base/normal font size. The #emph[LaTeX
+Reference] column is provided for descriptive purposes, as these labels
+are not native to Typst or HTML/CSS.
 
 #figure(
   align(center)[#table(
     columns: (24.62%, 46.15%, 29.23%),
     align: (left,left,left,),
-    table.header([LaTeX
-      Reference], [Syntax], [Output],),
+    table.header([LaTeX Reference], [Syntax], [Output],),
     table.hline(),
     [tiny], [#NormalTok("[Sample]{.pfa-size-3xs}");], [#text(size: 0.5em)[Sample]],
     [scriptsize], [#NormalTok("[Sample]{.pfa-size-2xs}");], [#text(size: 0.6667em)[Sample]],
@@ -411,11 +283,8 @@ Typst or HTML/CSS.
 
 == Font Sizing in Fenced Divs
 <font-sizing-in-fenced-divs>
-The same sizing classes can
-also be applied to Fenced
-Divs, allowing an entire block
-of text to be rendered at a
-specific font size.
+The same sizing classes can also be applied to Fenced Divs, allowing an
+entire block of text to be rendered at a specific font size.
 
 === Extra Small Font Size
 <extra-small-font-size>
@@ -425,8 +294,7 @@ specific font size.
 #block[
 #set text(size: 0.8333em)
 #set par(leading: 0.65em)
-This paragraph renders at the
-#emph[extra small] font size.
+This paragraph renders at the #emph[extra small] font size.
 
 ]
 === Normal Font Size
@@ -437,8 +305,7 @@ This paragraph renders at the
 #block[
 #set text(size: 1.0em)
 #set par(leading: 0.65em)
-This paragraph renders at the
-#emph[normal] font size.
+This paragraph renders at the #emph[normal] font size.
 
 ]
 === Large Font Size
@@ -449,28 +316,21 @@ This paragraph renders at the
 #block[
 #set text(size: 1.2em)
 #set par(leading: 0.65em)
-This paragraph renders at the
-#emph[large] font size.
+This paragraph renders at the #emph[large] font size.
 
 ]
 == Font Weights, Shapes, and Families in Bracketed Spans
 <font-weights-shapes-and-families-in-bracketed-spans>
-The extension provides
-predefined typographic styles
-for Bracketed Spans. These
-styles are mapped to
-equivalent rendering
-properties across all formats
-to ensure consistent output,
-regardless of the underlying
+The extension provides predefined typographic styles for Bracketed
+Spans. These styles are mapped to equivalent rendering properties across
+all formats to ensure consistent output, regardless of the underlying
 engine.
 
 #figure(
   align(center)[#table(
     columns: (32.61%, 54.35%, 13.04%),
     align: (left,left,left,),
-    table.header([Typographic
-      Style], [Syntax], [Output],),
+    table.header([Typographic Style], [Syntax], [Output],),
     table.hline(),
     [Normal
     (weight)], [#NormalTok("[Sample]{.pfa-weight-normal}");], [#text(weight: 400, style: "normal")[Sample]],
@@ -500,11 +360,8 @@ engine.
 
 == Font Weights, Shapes, and Families in Fenced Divs
 <font-weights-shapes-and-families-in-fenced-divs>
-These same typographic classes
-can also be applied to Fenced
-Divs, allowing an entire block
-of text to adopt a particular
-visual style.
+These same typographic classes can also be applied to Fenced Divs,
+allowing an entire block of text to adopt a particular visual style.
 
 === Bold Weight
 <bold-weight>
@@ -513,8 +370,7 @@ visual style.
 [#NormalTok(":::");],));
 #block[
 #set text(weight: 700)
-This paragraph is in bold
-weight.
+This paragraph is in bold weight.
 
 ]
 === Small Caps
@@ -524,8 +380,7 @@ weight.
 [#NormalTok(":::");],));
 #block[
 #show text: smallcaps
-This paragraph is in small
-caps.
+This paragraph is in small caps.
 
 ]
 === Sans-Serif Family
@@ -535,26 +390,19 @@ caps.
 [#NormalTok(":::");],));
 #block[
 #set text(font: "Noto Sans")
-This paragraph is in
-sans-serif.
+This paragraph is in sans-serif.
 
 ]
 == Text Casing Transformations
 <text-casing-transformations>
-Unlike purely visual styling
-in HTML/CSS---where
+Unlike purely visual styling in HTML/CSS---where
 #link("https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform")[#NormalTok("text-transform");]
-only changes how text is
-rendered---these casing
-transformations operate at the
+only changes how text is rendered---these casing transformations operate
+at the
 #link("https://pandoc.org/MANUAL.html#abstract-syntax-tree")[Pandoc Abstract Syntax Tree (AST)]
-level and modify the actual
-document content. This ensures
-that uppercase and lowercase
-conversions are preserved
-consistently across all output
-formats and remain intact when
-copied into other
+level and modify the actual document content. This ensures that
+uppercase and lowercase conversions are preserved consistently across
+all output formats and remain intact when copied into other
 applications.
 
 === Casing Transformations in Bracketed Spans
@@ -579,8 +427,7 @@ applications.
 [#NormalTok("THIS PARAGRAPH IS TRANSFORMED TO LOWERCASE.");],
 [#NormalTok(":::");],));
 #block[
-this paragraph is transformed
-to lowercase.
+this paragraph is transformed to lowercase.
 
 ]
 ==== Uppercase
@@ -589,33 +436,23 @@ to lowercase.
 [#NormalTok("this paragraph is transformed to uppercase.");],
 [#NormalTok(":::");],));
 #block[
-THIS PARAGRAPH IS TRANSFORMED
-TO UPPERCASE.
+THIS PARAGRAPH IS TRANSFORMED TO UPPERCASE.
 
 ]
 == Colors and Backgrounds
 <colors-and-backgrounds>
-This section describes how to
-apply colors to text, as well
-as how to apply background
-fills, padding, and borders to
-your content.
+This section describes how to apply colors to text, as well as how to
+apply background fills, padding, and borders to your content.
 
 === Color Fundamentals
 <color-fundamentals>
-The filter normalizes color
-inputs to ensure they render
-identically across LaTeX,
-Typst, and HTML.
+The filter normalizes color inputs to ensure they render identically
+across LaTeX, Typst, and HTML.
 
 ==== Flexible Color Terminology
 <flexible-color-terminology>
-For solid colors, the filter
-is case-insensitive and
-accepts most naming
-conventions. All examples
-below resolve to the standard
-CSS3
+For solid colors, the filter is case-insensitive and accepts most naming
+conventions. All examples below resolve to the standard CSS3
 #NormalTok("mediumvioletred");:
 
 #figure(
@@ -643,75 +480,46 @@ CSS3
   align(center)[#table(
     columns: (22.73%, 54.55%, 22.73%),
     align: (left,left,left,),
-    table.header([Input
-      Type], [Syntax], [Output],),
+    table.header([Input Type], [Syntax], [Output],),
     table.hline(),
     [CSS3
     Named], [#NormalTok("[Sample]{pfa-color=\"crimson\"}");], [#text(fill: rgb("#dc143c"))[Sample]],
     [Hex
     Full], [#NormalTok("[Sample]{pfa-color=\"#2E8B57\"}");], [#text(fill: rgb("#2e8b57"))[Sample]],
-    [Hex
-    Shorthand#footnote[Three-digit
-    shorthand expands by
-    duplicating each single
-    hexadecimal digit per RGB
-    channel (e.g., '\#666'
-    expands to
+    [Hex Shorthand#footnote[Three-digit shorthand expands by duplicating
+    each single hexadecimal digit per RGB channel (e.g., '\#666' expands
+    to
     '\#666666').]], [#NormalTok("[Sample]{pfa-color=\"#666\"}");], [#text(fill: rgb("#666666"))[Sample]],
   )]
   , kind: table
   )
 
-#strong[Compatibility Note:]
-To ensure cross-platform
-stability, use standard CSS3
-named colors or hex codes.
-Avoid LaTeX-specific numbered
-variants (e.g.,
-#NormalTok("LightBlue3");), as
-these are not supported in web
-browsers or CSS.
+#strong[Compatibility Note:] To ensure cross-platform stability, use
+standard CSS3 named colors or hex codes. Avoid LaTeX-specific numbered
+variants (e.g., #NormalTok("LightBlue3");), as these are not supported
+in web browsers or CSS.
 
 === Color Mixing
 <color-mixing>
-The extension supports LaTeX's
-#NormalTok("xcolor");
-percentage-mixing syntax for
-tints, shades, and blends.
-This is the standardized
-syntax because it maps
-reliably across Typst, LaTeX,
-and HTML (which leverages the
-native CSS
-#NormalTok("color-mix()");
-function).
+The extension supports LaTeX's #NormalTok("xcolor"); percentage-mixing
+syntax for tints, shades, and blends. This is the standardized syntax
+because it maps reliably across Typst, LaTeX, and HTML (which leverages
+the native CSS #NormalTok("color-mix()"); function).
 
 ==== Supported Mixing Methods
 <supported-mixing-methods>
-- #strong[Tinting (blending
-  with white):] Use the
-  pattern
-  #NormalTok("BaseColor!Percentage");.
-  For example,
-  #NormalTok("Maroon!40");
-  yields 40% Maroon and 60%
-  white.
+- #strong[Tinting (blending with white):] Use the pattern
+  #NormalTok("BaseColor!Percentage");. For example,
+  #NormalTok("Maroon!40"); yields 40% Maroon and 60% white.
 
-- #strong[Shading (blending
-  with black):] Use the
-  pattern
-  #NormalTok("BaseColor!Percentage!black");.
-  For example,
-  #NormalTok("MediumVioletRed!80!black");
-  yields 80% MediumVioletRed
-  and 20% black.
+- #strong[Shading (blending with black):] Use the pattern
+  #NormalTok("BaseColor!Percentage!black");. For example,
+  #NormalTok("MediumVioletRed!80!black"); yields 80% MediumVioletRed and
+  20% black.
 
-- #strong[Two-Color Mix:] Use
-  the pattern
-  #NormalTok("BaseColor!Percentage!MixColor");.
-  For example,
-  #NormalTok("RoyalBlue!50!ForestGreen");
-  yields a 50/50 mix of both
+- #strong[Two-Color Mix:] Use the pattern
+  #NormalTok("BaseColor!Percentage!MixColor");. For example,
+  #NormalTok("RoyalBlue!50!ForestGreen"); yields a 50/50 mix of both
   colors.
 
 ==== Syntax Examples
@@ -720,8 +528,7 @@ function).
   align(center)[#table(
     columns: (29.17%, 50%, 20.83%),
     align: (left,left,left,),
-    table.header([Mixing
-      Type], [Syntax], [Output],),
+    table.header([Mixing Type], [Syntax], [Output],),
     table.hline(),
     [Tint (40%
     Base)], [#NormalTok("[Sample]{pfa-color=\"Maroon!40\"}");], [#text(fill: color.mix((rgb("#800000"), 40%), (rgb("#ffffff"), 60%)))[Sample]],
@@ -735,127 +542,73 @@ function).
 
 ==== Important Compatibility Rules
 <important-compatibility-rules>
-- #strong[Strictly Use LaTeX
-  Syntax:] Always use the
-  #NormalTok("BaseColor!Percentage");
-  pattern. This is the only
-  syntax guaranteed to
-  translate correctly across
-  all three output formats.
+- #strong[Strictly Use LaTeX Syntax:] Always use the
+  #NormalTok("BaseColor!Percentage"); pattern. This is the only syntax
+  guaranteed to translate correctly across all three output formats.
 
-- #strong[Avoid Typst Native
-  Syntax:] If you use native
-  Typst color syntax (e.g.,
-  #NormalTok("color.mix()");),
-  the filter will pass it
-  directly to Typst. It will
-  not be translated for LaTeX
-  or HTML.
+- #strong[Avoid Typst Native Syntax:] If you use native Typst color
+  syntax (e.g., #NormalTok("color.mix()");), the filter will pass it
+  directly to Typst. It will not be translated for LaTeX or HTML.
 
-- #strong[Binary Mixing Only:]
-  You may blend a maximum of
-  two colors. Multi-color
-  mixing (e.g.,
-  #NormalTok("Red!30!Blue!30!Green");)
-  is not supported.
+- #strong[Binary Mixing Only:] You may blend a maximum of two colors.
+  Multi-color mixing (e.g., #NormalTok("Red!30!Blue!30!Green");) is not
+  supported.
 
-- #strong[Casing Matters:]
-  Because mixing strings are
-  passed directly to LaTeX,
-  casing must be exact:
+- #strong[Casing Matters:] Because mixing strings are passed directly to
+  LaTeX, casing must be exact:
 
   - Use lowercase for
     #link("https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX#Reference_guide")[Core LaTeX colors]
-    (e.g.,
-    #NormalTok("black");,
-    #NormalTok("red");).
+    (e.g., #NormalTok("black");, #NormalTok("red");).
 
   - Use PascalCase for
     #link("https://developer.mozilla.org/en-US/docs/Web/CSS/named-color")[CSS3 named colors]
-    (e.g.,
-    #NormalTok("RoyalBlue");,
-    #NormalTok("MediumVioletRed");).
+    (e.g., #NormalTok("RoyalBlue");, #NormalTok("MediumVioletRed");).
 
 === Foreground Styling
 <foreground-styling>
-Use the
-#NormalTok("pfa-color");
-attribute to change the color
-of the text itself. It can be
-applied to inline spans or
-multiline blocks.
+Use the #NormalTok("pfa-color"); attribute to change the color of the
+text itself. It can be applied to inline spans or multiline blocks.
 
 #Skylighting(([#NormalTok("This is normal text, but ");#CommentTok("[");#OtherTok("Sample");#CommentTok("]");#NormalTok("{pfa-color=\"tomato\"} overrides the default text color.");],));
-This is normal text, but
-#text(fill: rgb("#ff6347"))[Sample]
-overrides the default text
-color.
+This is normal text, but #text(fill: rgb("#ff6347"))[Sample] overrides
+the default text color.
 
 === Backgrounds and Borders
 <backgrounds-and-borders>
-By combining background fills,
-padding, borders, and corner
-radii, you can highlight and
-emphasize text. These
-attributes can be applied to
-both inline bracketed spans
-and multiline fenced divs.
+By combining background fills, padding, borders, and corner radii, you
+can highlight and emphasize text. These attributes can be applied to
+both inline bracketed spans and multiline fenced divs.
 
 ==== The Core Attributes
 <the-core-attributes>
-- #NormalTok("pfa-bg-color");:
-  Defines the background fill
-  color of the container.
+- #NormalTok("pfa-bg-color");: Defines the background fill color of the
+  container.
 
-- #NormalTok("pfa-padding");:
-  Controls internal spacing
-  using standard CSS
-  shorthands. Only
-  #NormalTok("pt");,
-  #NormalTok("em");, and
-  #NormalTok("ex"); are
-  supported to guarantee
-  cross-platform stability.
+- #NormalTok("pfa-padding");: Controls internal spacing using standard
+  CSS shorthands. Only #NormalTok("pt");, #NormalTok("em");, and
+  #NormalTok("ex"); are supported to guarantee cross-platform stability.
 
-  - One value
-    (#NormalTok("1em");):
-    Applied to all four sides
-    evenly.
+  - One value (#NormalTok("1em");): Applied to all four sides evenly.
 
-  - Two values
-    (#NormalTok("1em 0.5em");):
-    Top/Bottom, then
-    Left/Right.
+  - Two values (#NormalTok("1em 0.5em");): Top/Bottom, then Left/Right.
 
-  - Three values
-    (#NormalTok("1em 0.5em 2em");):
-    Top, Left/Right, Bottom.
+  - Three values (#NormalTok("1em 0.5em 2em");): Top, Left/Right,
+    Bottom.
 
-  - Four values
-    (#NormalTok("1em 0.5em 2em 0.2em");):
-    Top, Right, Bottom, Left.
+  - Four values (#NormalTok("1em 0.5em 2em 0.2em");): Top, Right,
+    Bottom, Left.
 
-- #NormalTok("pfa-bg-border-width");:
-  Defines the thickness of the
-  border around all four
-  sides. We strongly recommend
-  using #NormalTok("pt"); to
-  ensure crisp print
-  rendering. If this is
-  omitted, the border defaults
-  to #NormalTok("1pt");.
+- #NormalTok("pfa-bg-border-width");: Defines the thickness of the
+  border around all four sides. We strongly recommend using
+  #NormalTok("pt"); to ensure crisp print rendering. If this is omitted,
+  the border defaults to #NormalTok("1pt");.
 
-- #NormalTok("pfa-bg-border-color");:
-  Defines the color of the
-  border.
+- #NormalTok("pfa-bg-border-color");: Defines the color of the border.
 
-- #NormalTok("pfa-bg-radius");:
-  Rounds all four corners of
-  the container uniformly. We
-  recommend using
-  #NormalTok("em"); so the
-  curve scales naturally with
-  your text size.
+- #NormalTok("pfa-bg-radius");: Rounds all four corners of the container
+  uniformly. We recommend using #NormalTok("em"); so the curve scales
+  naturally with your text size.
 
 ==== Example 1: Inline Spans
 <example-1-inline-spans>
@@ -871,21 +624,16 @@ of an inline badge.
 [#NormalTok(":::");],));
 #block[
 #block(width: 100%, inset: (top: 1.5em, right: 1.5em, bottom: 1.5em, left: 1.5em), fill: rgb("#f8f8ff"), stroke: 1.5pt + rgb("#800000"), radius: 0.4em)[
-#strong[Important Note:] This
-block utilizes the full suite
-of styling attributes to
-create a container with a
-light background, a maroon
+#strong[Important Note:] This block utilizes the full suite of styling
+attributes to create a container with a light background, a maroon
 border, and rounded corners.
 
 ]
 ]
 === Typst Named Palette
 <typst-named-palette>
-You can access Typst's native
-predefined colors by prefixing
-the color name with
-#NormalTok("typst");.
+You can access Typst's native predefined colors by prefixing the color
+name with #NormalTok("typst");.
 
 - #strong[Syntax:]
   #NormalTok("[Sample]{pfa-bg-color=\"typstmaroon\" pfa-color=\"white\" pfa-padding=\"0.2em\"}");
@@ -895,22 +643,12 @@ the color name with
 
 == Text Alignment within Fenced Divs
 <text-alignment-within-fenced-divs>
-The #NormalTok("pfa-align-*");
-classes control text alignment
-within a Fenced Div while
-explicitly preserving hard
-line breaks
-(#NormalTok("\\");). These
-utilities map directly to
-native LaTeX commands
-(#NormalTok("\\raggedright");,
-#NormalTok("\\centering");,
-and
-#NormalTok("\\raggedleft");)
-in PDF output and equivalent
-CSS behaviors in HTML, making
-them ideal for formatting
-poetry, lyrics, or multi-line
+The #NormalTok("pfa-align-*"); classes control text alignment within a
+Fenced Div while explicitly preserving hard line breaks
+(#NormalTok("\\");). These utilities map directly to native LaTeX
+commands (#NormalTok("\\raggedright");, #NormalTok("\\centering");, and
+#NormalTok("\\raggedleft");) in PDF output and equivalent CSS behaviors
+in HTML, making them ideal for formatting poetry, lyrics, or multi-line
 blocks.
 
 === Left-aligned Text
@@ -920,8 +658,7 @@ blocks.
 [#NormalTok(":::");],));
 #block[
 #align(left)[
-This block of text is
-#emph[left-aligned].
+This block of text is #emph[left-aligned].
 
 ]
 ]
@@ -932,8 +669,7 @@ This block of text is
 [#NormalTok(":::");],));
 #block[
 #align(center)[
-This block of text is
-#emph[center-aligned].
+This block of text is #emph[center-aligned].
 
 ]
 ]
@@ -944,8 +680,7 @@ This block of text is
 [#NormalTok(":::");],));
 #block[
 #align(right)[
-This block of text is
-#emph[right-aligned].
+This block of text is #emph[right-aligned].
 
 ]
 ]
@@ -958,34 +693,21 @@ This block of text is
 [#NormalTok(":::");],));
 #block[
 #align(center)[
-This block of text \ is
-#emph[center-aligned] \ while
-preserving explicit line
-breaks.
+This block of text \ is #emph[center-aligned] \ while preserving
+explicit line breaks.
 
 ]
 ]
 == Combining Multiple Classes
 <combining-multiple-classes>
-Multiple typographic utilities
-can be combined within the
-same element. Font, size,
-color, alignment, and
-decoration classes are
-designed to compose
-independently and can be
-applied together to both
-Bracketed Spans and Fenced
-Divs.
+Multiple typographic utilities can be combined within the same element.
+Font, size, color, alignment, and decoration classes are designed to
+compose independently and can be applied together to both Bracketed
+Spans and Fenced Divs.
 
-Class names are
-space-separated within
-#NormalTok("{}"); following
-Pandoc attribute syntax. In
-addition to classes, key-value
-attributes such as
-#NormalTok("pfa-color"); may
-be included alongside class
+Class names are space-separated within #NormalTok("{}"); following
+Pandoc attribute syntax. In addition to classes, key-value attributes
+such as #NormalTok("pfa-color"); may be included alongside class
 definitions.
 
 === Bracketed Span Composition
@@ -1008,13 +730,9 @@ definitions.
 
 === Fenced Div Composition
 <fenced-div-composition>
-Multiple utilities can also be
-applied to Fenced Divs to
-control alignment, typography,
-and color simultaneously. The
-resulting block inherits all
-specified styles while
-preserving Pandoc's standard
+Multiple utilities can also be applied to Fenced Divs to control
+alignment, typography, and color simultaneously. The resulting block
+inherits all specified styles while preserving Pandoc's standard
 attribute behavior.
 
 #Skylighting(([#NormalTok("::: {.pfa-align-center .pfa-family-sans .pfa-weight-bold .pfa-size-l pfa-color=\"midnightblue\"}");],
@@ -1027,34 +745,25 @@ attribute behavior.
 #set text(weight: 700)
 #set text(size: 1.2em)
 #set par(leading: 0.65em)
-A centered, bold, sans-serif,
-large, midnight-blue Fenced
-Div demonstrating multiple
-combined utilities from the
-filter.
+A centered, bold, sans-serif, large, midnight-blue Fenced Div
+demonstrating multiple combined utilities from the filter.
 
 ]
 ]
 == Legacy Aliases (Deprecated)
 <legacy-aliases-deprecated>
-#strong[Warning:] Legacy
-aliases are deprecated. They
-are retained strictly for
-backward compatibility and
-will be entirely removed in
-the next major release. New
-documents should use the
-#NormalTok("pfa-*");
+#strong[Warning:] Legacy aliases are deprecated. They are retained
+strictly for backward compatibility and will be entirely removed in the
+next major release. New documents should use the #NormalTok("pfa-*");
 namespaces going forward.
 
 === Font Sizing Aliases
 <font-sizing-aliases>
 #figure(
   align(center)[#table(
-    columns: (41.38%, 58.62%),
+    columns: 2,
     align: (left,left,),
-    table.header([Legacy
-      Class], [Modern Class],),
+    table.header([Legacy Class], [Modern Class],),
     table.hline(),
     [#NormalTok("xsmall");], [#NormalTok("pfa-text-xs");],
     [#NormalTok("small");], [#NormalTok("pfa-text-s");],
@@ -1071,11 +780,9 @@ namespaces going forward.
 <font-weight-shape-and-family-aliases>
 #figure(
   align(center)[#table(
-    columns: (28.57%, 23.81%, 47.62%),
+    columns: 3,
     align: (left,left,left,),
-    table.header([Legacy
-      Class], [Shorthand], [Modern
-      Class],),
+    table.header([Legacy Class], [Shorthand], [Modern Class],),
     table.hline(),
     [#NormalTok("bold");], [#NormalTok("bf");], [#NormalTok("pfa-font-bold");],
     [#NormalTok("emphasis");], [#NormalTok("em");], [#NormalTok("pfa-font-emphasis");],
@@ -1096,10 +803,9 @@ namespaces going forward.
 <alignment-aliases>
 #figure(
   align(center)[#table(
-    columns: (40.62%, 59.38%),
+    columns: 2,
     align: (left,left,),
-    table.header([Legacy
-      Class], [Modern Class],),
+    table.header([Legacy Class], [Modern Class],),
     table.hline(),
     [#NormalTok("centering");], [#NormalTok("pfa-align-center");],
     [#NormalTok("raggedleft");], [#NormalTok("pfa-align-right");],
@@ -1112,11 +818,9 @@ namespaces going forward.
 <text-decoration-aliases>
 #figure(
   align(center)[#table(
-    columns: (26.67%, 22.22%, 51.11%),
+    columns: 3,
     align: (left,left,left,),
-    table.header([Legacy
-      Class], [Shorthand], [Modern
-      Class],),
+    table.header([Legacy Class], [Shorthand], [Modern Class],),
     table.hline(),
     [#NormalTok("uline");], [#NormalTok("u");], [#NormalTok("pfa-text-uline");],
     [#NormalTok("uuline");], [#NormalTok("uu");], [#NormalTok("pfa-text-uline-double");],
@@ -1130,20 +834,15 @@ namespaces going forward.
 
 == Removed Classes
 <removed-classes>
-The following legacy classes
-were removed in version 2.0.0
-and are no longer recognized
-by the filter. Existing
-documents should be updated to
-use the replacement classes
-shown below.
+The following legacy classes were removed in version 2.0.0 and are no
+longer recognized by the filter. Existing documents should be updated to
+use the replacement classes shown below.
 
 #figure(
   align(center)[#table(
-    columns: (30.23%, 20.93%, 23.26%, 25.58%),
+    columns: 4,
     align: (left,left,left,left,),
-    table.header([Removed
-      Class], [Shorthand], [Removed
+    table.header([Removed Class], [Shorthand], [Removed
       In], [Replacement],),
     table.hline(),
     [#NormalTok("center");], [---], [2.0.0], [#NormalTok("pfa-align-center");],

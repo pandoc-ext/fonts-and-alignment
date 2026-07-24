@@ -209,6 +209,7 @@ docs/input-typst.typ: test/input.md
 		$(DEFAULTS_TYPST) \
 		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
 		--to=typst \
+		--pdf-engine-opt=--root=. \
 		--output=$@
 
 docs/input-typst.pdf: test/input.md
@@ -216,6 +217,7 @@ docs/input-typst.pdf: test/input.md
 		$(DEFAULTS_TYPST) \
 		--syntax-highlighting=$(SYNTAX_HIGHLIGHTING) \
 		--to=pdf \
+		--pdf-engine-opt=--root=. \
 		--output=$@
 
 docs/fonts-and-alignment.lua: $(FILTER_FILE)
@@ -228,6 +230,6 @@ docs/fonts-and-alignment.lua: $(FILTER_FILE)
 # ==============================================================================
 .PHONY: clean
 clean: ## Purge all temporary assets and generated distribution instances
-	rm -f docs/output.md docs/index.html docs/input.html docs/input-latex.pdf docs/input-typst.pdf docs/style.css docs/fonts-and-alignment.lua
+	rm -f docs/output.md docs/index.html docs/input.html docs/input-latex.pdf docs/input-typst.pdf docs/input-typst.typ docs/style.css docs/fonts-and-alignment.lua
 	rm -rf $(PREVIEWS_DIR)
 	rm -f $(FILTER_FILE)
